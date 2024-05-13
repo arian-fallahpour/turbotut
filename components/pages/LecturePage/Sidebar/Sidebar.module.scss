@@ -1,0 +1,62 @@
+@import "@/sass/abstracts/mixins";
+
+.Sidebar {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+
+  max-height: calc(100vh - 2 * var(--gap-lg));
+  position: sticky;
+  top: var(--gap-lg);
+  background: var(--c-panel-bg);
+  border: 0.1rem solid var(--c-panel-bd);
+  border-radius: var(--bd-radius);
+
+  & > * {
+    padding: var(--gap-md) var(--gap-lg);
+  }
+
+  &Header {
+    border-bottom: inherit;
+  }
+
+  &Content {
+    display: grid;
+    overflow: auto;
+    gap: var(--gap-md);
+
+    align-content: start;
+  }
+
+  &Intro {
+    position: relative;
+  }
+
+  &Chapters {
+    display: grid;
+    gap: inherit;
+  }
+
+  &Nav {
+    border-top: inherit;
+
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.Intro {
+  display: grid;
+  gap: var(--gap-sm);
+
+  list-style: none;
+  padding-inline-start: 0;
+
+  &Item {
+  }
+}
+
+.Chapters {
+  display: grid;
+  gap: inherit;
+}

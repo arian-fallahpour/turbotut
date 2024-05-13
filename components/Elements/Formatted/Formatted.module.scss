@@ -1,0 +1,77 @@
+.Formatted {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  font-size: 1.6rem;
+  min-height: 70rem;
+  max-width: 100rem;
+
+  h1:not(:first-child),
+  h2:not(:first-child),
+  h3:not(:first-child) {
+    margin-top: 1em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--txt-title);
+    font-weight: var(--font-weight-bold);
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.37em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  ul,
+  ol {
+    padding-inline-start: 1.37em;
+  }
+
+  ul:not(:first-child),
+  ol:not(:first-child),
+  p:not(:first-child) {
+    margin-top: 0.63em;
+    font-weight: var(--font-weight-normal);
+  }
+
+  figure {
+    position: relative;
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    aspect-ratio: calc(16 / 9);
+    background-color: white;
+    border-radius: var(--bd-radius);
+
+    &:not(:first-child) {
+      margin-top: 1em;
+    }
+
+    & > div {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      & > img {
+        object-fit: contain;
+        display: block;
+      }
+    }
+
+    & > figcaption {
+      text-align: center;
+      font-style: italic;
+    }
+  }
+}

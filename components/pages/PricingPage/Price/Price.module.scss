@@ -1,0 +1,97 @@
+.Price {
+  max-width: 30rem;
+  display: grid;
+  gap: var(--gap-lg);
+  border-radius: var(--bd-radius);
+  padding: var(--gap-lg);
+  position: relative;
+  overflow: hidden;
+  border: 0.1rem solid;
+
+  &--blue {
+    border-color: rgba(var(--c-blue-light-rgb), 0.3);
+
+    &::before {
+      background-image: radial-gradient(
+        circle at 50% 0%,
+        rgba(var(--c-blue-light-rgb), 0.3),
+        transparent
+      );
+    }
+  }
+
+  &--orange {
+    border-color: rgba(var(--c-orange-rgb), 0.4);
+
+    &::before {
+      background-image: radial-gradient(
+        circle at 50% 0%,
+        rgba(var(--c-orange-rgb), 0.3),
+        transparent
+      );
+    }
+  }
+
+  // Placed over so that title and other text can be slightly colored
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+  }
+
+  &Header {
+    display: grid;
+    justify-items: center;
+    gap: var(--gap-sm);
+
+    & > * {
+      line-height: 1;
+    }
+  }
+
+  &Cost {
+    font-size: 5rem;
+
+    display: grid;
+    justify-items: center;
+    grid-template-columns: auto 1fr auto;
+
+    & > span {
+      color: var(--txt-text);
+    }
+  }
+
+  &List {
+    display: grid;
+    gap: var(--gap-sm);
+    align-content: start;
+  }
+
+  &ListItem {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+
+    & > * {
+      display: block;
+    }
+
+    & > :global(.text-emoji) {
+      font-size: 3rem;
+    }
+  }
+
+  &Button {
+    display: grid;
+
+    & > * {
+      width: 100%;
+    }
+  }
+}

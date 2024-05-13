@@ -1,0 +1,53 @@
+@import "@/sass/abstracts/mixins";
+
+section.ProblemSection {
+}
+
+.ProblemSection {
+  &Content {
+    display: grid;
+    grid-template-columns: repeat(3, 35rem);
+    gap: var(--gap-lg);
+    justify-content: center;
+
+    & > * {
+      aspect-ratio: 1;
+
+      padding: var(--gap-lg);
+      border-radius: var(--bd-radius);
+    }
+  }
+}
+
+.Reality {
+  display: grid;
+  align-content: center;
+  gap: var(--gap-md);
+
+  @include shiny(red, var(--bd-radius));
+}
+
+.Problems {
+  padding: 0;
+  display: grid;
+  gap: var(--gap-md);
+  grid-template-rows: auto 1fr;
+
+  &Content {
+    display: grid;
+    gap: inherit;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+.Problem {
+  display: grid;
+  justify-items: center;
+  font-size: 1.25rem;
+  align-content: start;
+
+  & > :global(.text-emoji) {
+    font-size: 3rem;
+  }
+}

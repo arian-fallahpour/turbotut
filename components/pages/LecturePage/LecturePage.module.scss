@@ -1,0 +1,23 @@
+section.LectureSection {
+  display: grid;
+  grid-template-columns: 35rem 1fr;
+  padding: 0;
+
+  width: 100%;
+  max-width: 160rem;
+  margin: 0 auto;
+
+  gap: var(--gap-lg);
+  padding: var(--gap-lg);
+  position: relative;
+}
+
+.LectureSection {
+  &Sidebar {
+    display: grid;
+  }
+
+  &Content {
+    position: relative;
+  }
+}

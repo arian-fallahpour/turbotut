@@ -1,0 +1,43 @@
+.Subject {
+  display: grid;
+  gap: var(--gap-lg);
+  padding: var(--gap-lg);
+  border-radius: var(--bd-radius);
+  border: 0.1rem solid var(--c-panel-bd);
+  background: var(--c-panel-bg);
+
+  &Title {
+    justify-self: start;
+  }
+
+  &--orange &Title {
+    filter: drop-shadow(0 0 2rem var(--c-orange));
+    color: var(--c-orange);
+  }
+
+  &--green &Title {
+    filter: drop-shadow(0 0 2rem var(--c-green));
+    color: var(--c-green);
+  }
+
+  &--red &Title {
+    filter: drop-shadow(0 0 2rem var(--c-red));
+    color: var(--c-red);
+  }
+
+  &--blue &Title {
+    filter: drop-shadow(0 0 2rem var(--c-blue-light));
+    color: var(--c-blue-light);
+  }
+
+  &Container {
+    overflow-x: auto;
+  }
+
+  &Courses {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    gap: var(--gap-lg);
+  }
+}

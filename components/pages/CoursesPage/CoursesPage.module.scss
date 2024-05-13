@@ -1,0 +1,12 @@
+.CoursesSection {
+  align-content: start;
+
+  & > :global(.header) {
+    justify-self: center;
+  }
+}
+
+.Subjects {
+  display: grid;
+  gap: var(--gap-lg);
+}

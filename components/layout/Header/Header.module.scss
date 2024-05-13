@@ -1,0 +1,22 @@
+.Header {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  padding: 5rem;
+  gap: var(--gap-lg);
+  height: 70vh;
+
+  & > :global(.header) {
+    display: grid;
+    justify-items: center;
+
+    & > * {
+      display: block;
+    }
+  }
+
+  & > :global(.paragraph) {
+    max-width: 40rem;
+    text-align: center;
+  }
+}

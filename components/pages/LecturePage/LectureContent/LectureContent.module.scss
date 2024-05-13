@@ -1,0 +1,15 @@
+.LectureContent {
+  padding: var(--gap-lg);
+
+  display: grid;
+  gap: var(--gap-lg);
+
+  &Header {
+    position: relative;
+  }
+}
+
+.Lecture {
+  display: grid;
+  gap: var(--gap-sm);
+}

@@ -1,0 +1,168 @@
+@mixin shiny($color: orange, $border-radius: 0) {
+  color: var(--txt-title);
+  background-image: linear-gradient(
+    to top right,
+    var(--c-#{$color}-light),
+    var(--c-#{$color}-dark)
+  );
+  font-weight: var(--font-weight-bold);
+  position: relative;
+
+  & > * {
+    position: relative;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: calc(100% - 2 * var(--bd-width));
+    height: calc(100% - 2 * var(--bd-width));
+    background-image: linear-gradient(
+      to bottom left,
+      var(--c-#{$color}-light),
+      var(--c-#{$color}-dark)
+    );
+
+    @if $border-radius == 100% {
+      border-radius: inherit;
+    } @else {
+      border-radius: calc(#{$border-radius} - var(--bd-width));
+    }
+  }
+}
+
+@mixin glass($color: orange, $border-radius: var(--bd-radius)) {
+  border-radius: $border-radius;
+  overflow: hidden;
+  background: transparent;
+  border: var(--bd-width) solid rgba(var(--c-#{$color}-rgb), 0.5);
+  color: var(--c-#{$color});
+
+  &:hover,
+  &:focus {
+    border-color: rgba(var(--c-#{$color}-rgb), 0.7);
+
+    &::before {
+      background-size: 120%;
+    }
+  }
+
+  & > * {
+    position: relative;
+  }
+
+  &::before {
+    transition: background 0.2s ease;
+
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient(
+      circle at 50% -20rem,
+      rgba(var(--c-#{$color}-rgb), 0.5),
+      transparent
+    );
+  }
+}
+
+// MEDIA QUERY MANAGER
+@mixin respond($breakpoint) {
+  @if $breakpoint == 300 {
+    @media only screen and (max-width: 18.75em) {
+      // 300 px
+      @content;
+    }
+  }
+  @if $breakpoint == 400 {
+    @media only screen and (max-width: 25em) {
+      // 400 px
+      @content;
+    }
+  }
+  @if $breakpoint == 500 {
+    @media only screen and (max-width: 31.25em) {
+      // 500 px
+      @content;
+    }
+  }
+  @if $breakpoint == 600 {
+    @media only screen and (max-width: 37.5em) {
+      // 600 px
+      @content;
+    }
+  }
+  @if $breakpoint == 700 {
+    @media only screen and (max-width: 43.75em) {
+      // 700 px
+      @content;
+    }
+  }
+  @if $breakpoint == 800 {
+    @media only screen and (max-width: 50em) {
+      // 800 px
+      @content;
+    }
+  }
+  @if $breakpoint == 900 {
+    @media only screen and (max-width: 56.25em) {
+      // 900 px
+      @content;
+    }
+  }
+  @if $breakpoint == 1000 {
+    @media only screen and (max-width: 62.5em) {
+      // 1000 px
+      @content;
+    }
+  }
+  @if $breakpoint == 1100 {
+    @media only screen and (max-width: 68.75em) {
+      // 1100 px
+      @content;
+    }
+  }
+  @if $breakpoint == 1200 {
+    @media only screen and (max-width: 75em) {
+      // 1200 px
+      @content;
+    }
+  }
+  @if $breakpoint == 1300 {
+    @media only screen and (max-width: 81.25em) {
+      // 1300 px
+      @content;
+    }
+  }
+  @if $breakpoint == 1400 {
+    @media only screen and (max-width: 87.5em) {
+      // 1400 px
+      @content;
+    }
+  }
+  @if $breakpoint == 1500 {
+    @media only screen and (max-width: 93.75em) {
+      // 1500 px
+      @content;
+    }
+  }
+  @if $breakpoint == 1920 {
+    @media only screen and (min-width: 120em) {
+      // 1920 px
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media (hover: none) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "name": "one course",
+    "cost": 9.99,
+    "duration": "forever",
+    "color": "blue",
+    "benefits": [
+      {
+        "emoji": "⚡️",
+        "description": "Get one subject done and dusted"
+      },
+      {
+        "emoji": "🎓",
+        "description": "In depth coverage of the topic"
+      },
+      {
+        "emoji": "🧠",
+        "description": "Access to secret study tricks"
+      }
+    ],
+    "cta": "View Courses",
+    "link": "/courses"
+  },
+  {
+    "name": "premium",
+    "cost": 19.99,
+    "duration": "forever",
+    "color": "orange",
+    "benefits": [
+      {
+        "emoji": "🤯",
+        "description": "Get access to ALL courses"
+      },
+      {
+        "emoji": "⭐️",
+        "description": "Ace all your classes"
+      },
+      {
+        "emoji": "🧠",
+        "description": "Access to secret study tricks"
+      }
+    ],
+    "cta": "Buy Now",
+    "link": "/checkout?pricing=premium"
+  }
+]

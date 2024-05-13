@@ -1,0 +1,21 @@
+.Footer {
+  display: grid;
+  padding: var(--gap-xl);
+  gap: var(--gap-md);
+  justify-items: center;
+}
+
+.Links {
+  display: flex;
+  gap: var(--gap-md);
+  list-style: none;
+}
+
+.Link {
+  & *,
+  & > *,
+  & > *:link,
+  & > *:visited {
+    text-transform: uppercase;
+  }
+}

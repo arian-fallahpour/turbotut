@@ -1,0 +1,80 @@
+[
+  {
+    "type": "h1",
+    "content": "Understanding limits"
+  },
+  {
+    "type": "h2",
+    "content": "What are limits"
+  },
+  {
+    "type": "h3",
+    "content": "Formal definition"
+  },
+  {
+    "type": "p",
+    "content": "The limit of a function $ f(x) $ is denoted by:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "be careful"
+      },
+      {
+        "type": "p",
+        "content": "be vigilant"
+      },
+      {
+        "type": "ul",
+        "content": "trust yourself",
+        "contents": [
+          {
+            "type": "p",
+            "content": "stay safe"
+          },
+          {
+            "type": "p",
+            "content": "stay sound"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "ol",
+    "content": "don't die",
+    "contents": [
+      {
+        "type": "p",
+        "content": "be careful"
+      },
+      {
+        "type": "p",
+        "content": "be vigilant"
+      },
+      {
+        "type": "p",
+        "content": "be watchful"
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "style": {
+      "textAlign": "center",
+      "fontSize": "2em"
+    },
+    "content": "$\\lim_{x\\rightarrow a} f(x)$"
+  },
+  {
+    "type": "img",
+    "content": "limit notation",
+    "filename": "quadratic-equation.png"
+  },
+  {
+    "type": "video",
+    "filename": "limits-2.mp4"
+  }
+]

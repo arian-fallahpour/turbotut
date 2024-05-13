@@ -1,0 +1,20 @@
+.NavProfile {
+  position: relative;
+
+  &Button {
+    transition: scale 0.2s ease;
+
+    display: block;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 0.1rem solid rgba(var(--c-orange-rgb), 0.5);
+
+    &:hover,
+    &:focus {
+      scale: 1.05;
+    }
+  }
+}

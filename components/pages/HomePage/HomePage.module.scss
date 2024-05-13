@@ -1,0 +1,53 @@
+@import "@/sass/abstracts/mixins";
+
+.Section {
+  justify-items: center;
+  align-content: center;
+
+  height: 60vh;
+
+  &Header {
+    $border-radius: 22rem;
+
+    padding: 1.5rem 3rem;
+    border-radius: $border-radius;
+    width: max-content;
+    position: relative;
+
+    display: block;
+
+    &--red {
+      @include shiny(red, 22rem);
+    }
+
+    &--green {
+      @include shiny(green, 22rem);
+    }
+
+    &--orange {
+      @include shiny(orange, 22rem);
+    }
+  }
+
+  &Content {
+    & > :global(.paragraph) {
+      text-align: center;
+    }
+  }
+
+  &List {
+    display: grid;
+    gap: var(--gap-sm);
+  }
+
+  &ListItem {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+
+    &Icon {
+      color: white;
+      font-size: 3rem;
+    }
+  }
+}

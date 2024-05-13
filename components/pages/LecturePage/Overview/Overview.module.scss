@@ -1,0 +1,81 @@
+.Overview {
+  $max-width: 50rem;
+
+  padding: var(--gap-lg);
+
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: var(--gap-lg);
+
+  & > :global(.paragraph) {
+    max-width: $max-width;
+  }
+
+  &Title {
+    & > :global(.header-card) {
+      color: var(--txt-text);
+    }
+  }
+
+  &Image {
+    height: $max-width;
+    width: $max-width;
+    position: relative;
+    border-radius: var(--bd-radius);
+    overflow: hidden;
+
+    & > img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .Content {
+    $padding: var(--gap-md) var(--gap-lg);
+    $border: 0.1rem solid var(--c-panel-bd);
+    width: $max-width;
+
+    display: grid;
+
+    border-radius: var(--bd-radius);
+    border: $border;
+
+    &Header {
+      padding: $padding;
+      border-bottom: $border;
+    }
+
+    &Intro,
+    &Chapters {
+      list-style: none;
+      display: grid;
+      gap: inherit;
+    }
+
+    &IntroItem {
+      border-bottom: $border;
+    }
+
+    &IntroItem,
+    &Chapter {
+      display: grid;
+      gap: var(--gap-sm);
+      padding: $padding;
+
+      &:not(:last-child) {
+        border-bottom: $border;
+      }
+    }
+
+    &Lectures {
+      list-style: none;
+
+      display: grid;
+      gap: inherit;
+    }
+
+    &Lecture {
+    }
+  }
+}

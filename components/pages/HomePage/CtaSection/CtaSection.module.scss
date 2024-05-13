@@ -1,0 +1,35 @@
+section.CtaSection {
+}
+
+.CtaSection {
+}
+
+.Cta {
+  background-image: radial-gradient(
+    circle at 65% 125%,
+    rgba(var(--c-orange-rgb), 1),
+    rgba(var(--c-blue-rgb), 1)
+  );
+  height: 30rem;
+  border-radius: var(--bd-radius);
+  overflow: hidden;
+  padding: var(--gap-lg);
+
+  display: grid;
+  justify-content: start;
+
+  &Content {
+    display: grid;
+    gap: var(--gap-md);
+    grid-template-rows: auto 1fr auto;
+    align-content: start;
+    justify-items: start;
+    max-width: 40rem;
+  }
+
+  &Image {
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+  }
+}

@@ -1,0 +1,54 @@
+:root {
+  --txt-title: #fff;
+  --txt-text: #ffffff93;
+
+  --c-orange-light: rgb(244, 187, 68);
+  --c-orange-light-rgb: 244, 187, 68;
+  --c-orange: rgb(255, 165, 0);
+  --c-orange-rgb: 255, 165, 0;
+  --c-orange-dark: rgb(214, 66, 8);
+  --c-orange-dark-rgb: 214, 66, 8;
+
+  --c-red-light: rgb(255, 60, 60);
+  --c-red-light-rgb: 255, 60, 60;
+  --c-red: rgb(255, 0, 0);
+  --c-red-rgb: 255, 0, 0;
+  --c-red-dark: rgb(181, 0, 0);
+  --c-red-dark-rgb: 181, 0, 0;
+
+  --c-green-light: rgb(95, 219, 0);
+  --c-green-light-rgb: 95, 219, 0;
+  --c-green: rgb(80, 185, 0);
+  --c-green-rgb: 80, 185, 0;
+  --c-green-dark: rgb(58, 133, 0);
+  --c-green-dark-rgb: 58, 133, 0;
+
+  --c-blue-light: rgb(92, 111, 255);
+  --c-blue-light-rgb: 92, 111, 255;
+  --c-blue: rgb(29, 55, 255);
+  --c-blue-rgb: 29, 55, 255;
+  --c-blue-dark: rgb(0, 25, 217);
+  --c-blue-dark-rgb: 0, 25, 217;
+
+  --c-lecture-bg: #1a1c24;
+  --c-lecture-bd: #070708;
+
+  --c-panel-bg: rgba(255, 255, 255, 0.05);
+  --c-panel-bd: rgba(255, 255, 255, 0.15);
+
+  --gap-sm: 1rem;
+  --gap-md: 2rem;
+  --gap-lg: 3rem;
+  --gap-xl: 5rem;
+
+  --font-weight-bold: 800;
+  --font-weight-normal: 700;
+  --font-size-text: 1.5rem;
+
+  --bd-radius: 2rem;
+  --bd-width: 0.1rem;
+
+  --bg-main: radial-gradient(circle at 25% -25%, #0c0b0e 15%, #0b0031);
+  --bg-flat: #150826;
+  --bg-flat-l: #211631;
+}

@@ -1,0 +1,59 @@
+$padding: var(--gap-md);
+
+.Accordion {
+  border-radius: 2rem;
+  list-style: none;
+  transition: max-height 0.5s ease;
+  border-collapse: collapse;
+
+  border: 0.1rem solid var(--c-panel-bd);
+  border-radius: var(--bd-radius);
+  overflow: hidden;
+}
+
+.Item {
+  background-color: var(--c-panel-bg);
+
+  &:not(:last-child) {
+    border-bottom: inherit;
+  }
+
+  &.selected & {
+    &Content {
+      grid-template-rows: 1fr;
+    }
+
+    &Overflow {
+      opacity: 1;
+    }
+  }
+
+  &Button {
+    cursor: pointer;
+    padding: $padding;
+    font-weight: var(--font-weight-bold);
+    text-align: start;
+    border: none;
+    background: transparent;
+  }
+
+  &Title {
+    text-transform: lowercase;
+  }
+
+  &Content {
+    transition: grid-template-rows 0.2s ease;
+    grid-template-rows: 0fr;
+    display: grid;
+  }
+
+  &Overflow {
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.2s 0.1s ease-in-out;
+
+    & :global(.paragraph) {
+      padding-top: $padding;
+    }
+  }
+}

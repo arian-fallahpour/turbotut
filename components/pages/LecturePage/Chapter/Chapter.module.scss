@@ -1,0 +1,24 @@
+.Chapter {
+  display: grid;
+  gap: var(--gap-sm);
+
+  color: inherit;
+
+  &Header {
+    border-radius: 22rem;
+    text-transform: uppercase;
+  }
+}
+
+.Lectures {
+  display: grid;
+  gap: var(--gap-sm);
+
+  list-style: none;
+  padding-inline-start: 0;
+  color: inherit;
+}
+
+.Lecture {
+  color: inherit;
+}

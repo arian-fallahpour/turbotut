@@ -1,0 +1,18 @@
+{
+  "math": {
+    "color": "blue",
+    "emoji": "📐"
+  },
+  "physics": {
+    "color": "red",
+    "emoji": "⚖️"
+  },
+  "chemistry": {
+    "color": "orange",
+    "emoji": "🧪"
+  },
+  "biology": {
+    "color": "green",
+    "emoji": "🌱"
+  }
+}

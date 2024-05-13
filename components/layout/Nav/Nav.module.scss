@@ -1,0 +1,40 @@
+.Nav {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-lg);
+  padding: var(--gap-lg);
+
+  &.absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &Logo {
+    height: 5.5rem;
+    width: 5.5rem;
+    position: relative;
+  }
+
+  &Title {
+    font-weight: 900;
+    font-size: 3rem;
+    text-transform: uppercase;
+    flex: 1;
+    color: var(--txt-title);
+  }
+
+  &List {
+    display: flex;
+    gap: var(--gap-lg);
+    list-style: none;
+  }
+
+  &ListItem {
+  }
+
+  &Profile {
+  }
+}
