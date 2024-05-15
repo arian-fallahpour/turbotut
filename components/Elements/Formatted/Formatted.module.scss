@@ -6,12 +6,6 @@
   min-height: 70rem;
   max-width: 100rem;
 
-  h1:not(:first-child),
-  h2:not(:first-child),
-  h3:not(:first-child) {
-    margin-top: 1em;
-  }
-
   h1,
   h2,
   h3 {
@@ -36,42 +30,45 @@
     padding-inline-start: 1.37em;
   }
 
-  ul:not(:first-child),
-  ol:not(:first-child),
-  p:not(:first-child) {
-    margin-top: 0.63em;
+  ul,
+  ol,
+  p {
     font-weight: var(--font-weight-normal);
+  }
+
+  *:not(:first-child):not(li) {
+    margin-top: 0.37em;
+  }
+
+  *:not(:last-child):not(li) {
+    margin-bottom: 0.37em;
+  }
+
+  p:global(.latex) {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 1em auto !important;
   }
 
   figure {
     position: relative;
-    max-width: 50rem;
+    max-width: 60rem;
     width: 100%;
-    margin: 0 auto;
-    height: auto;
-    aspect-ratio: calc(16 / 9);
-    background-color: white;
-    border-radius: var(--bd-radius);
+    font-size: var(--font-size-text);
+    margin: 0.63em auto !important;
 
-    &:not(:first-child) {
-      margin-top: 1em;
-    }
-
-    & > div {
-      position: relative;
+    & > img {
       width: 100%;
-      height: 100%;
-      overflow: hidden;
-
-      & > img {
-        object-fit: contain;
-        display: block;
-      }
+      height: auto;
+      border-radius: var(--bd-radius);
+      display: block;
     }
 
     & > figcaption {
       text-align: center;
       font-style: italic;
+      font-size: inherit;
+      margin-top: 0.37em;
     }
   }
 }

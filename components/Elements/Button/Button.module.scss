@@ -265,7 +265,7 @@
 
     &:hover,
     &:focus-visible {
-      $color: rgba(var(--c-orange-rgb), 0.8);
+      $color: rgba(var(--c-orange-rgb), 1);
       border: 0.1rem solid $color;
       background: $color;
       color: var(--bg-flat);

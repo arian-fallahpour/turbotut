@@ -1,9 +1,6 @@
 import mongoose from "mongoose";
 import subjects from "@/data/subjects.json";
 import slugify from "slugify";
-import { capitalize } from "@/utils/helper";
-
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const courseSchema = new mongoose.Schema({
   name: {
@@ -58,7 +55,6 @@ const courseSchema = new mongoose.Schema({
   comingSoon: { type: Boolean, default: false },
   chaptersCount: { type: Number, default: 0 },
   lecturesCount: { type: Number, default: 0 },
-  stripeProductId: String,
 });
 
 courseSchema.pre("save", function (next) {
@@ -74,36 +70,6 @@ courseSchema.pre("save", function (next) {
   if (!this.slug || this.isModified("name")) {
     this.slug = slugify(this.name);
   }
-
-  next();
-});
-
-// Create a stripeProduct when a new course is created
-courseSchema.pre("save", async function (next) {
-  if (!this.isNew) return next();
-
-  // TODO: Fix image, only works for localhost
-  // Create stripe product
-  const imagePath = `/images/courses/${this.image}`;
-  const product = await stripe.products.create({
-    name: capitalize(this.name),
-    description: this.summary,
-    default_price_data: {
-      currency: "USD",
-      unit_amount: 999,
-    },
-    images: [
-      `http://localhost:3000/_next/image?url=${encodeURIComponent(
-        imagePath
-      )}&w=1080&q=75`,
-    ],
-    metadata: {
-      courseId: this._id.toString(),
-    },
-  });
-
-  // Store product id on document
-  this.stripeProductId = product.id;
 
   next();
 });

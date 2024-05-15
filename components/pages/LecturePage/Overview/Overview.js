@@ -2,8 +2,6 @@ import React from "react";
 import classes from "./Overview.module.scss";
 import Image from "next/image";
 import Button from "@/components/Elements/Button/Button";
-import Link from "next/link";
-
 const Overview = ({ course }) => {
   return (
     <div className={classes.Overview}>
@@ -59,7 +57,6 @@ const Overview = ({ course }) => {
         </ul>
       </div>
 
-      {/* Buttons */}
       <Button
         className={classes.OverviewCta}
         styleName="login"
@@ -68,8 +65,6 @@ const Overview = ({ course }) => {
       >
         $14.99 per month
       </Button>
-
-      <nav className={classes.OverviewNav}></nav>
     </div>
   );
 };

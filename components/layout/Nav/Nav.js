@@ -4,7 +4,7 @@ import classes from "./Nav.module.scss";
 import Button from "@/components/Elements/Button/Button";
 import NavProfile from "./NavProfile/NavProfile";
 
-import business from "@/data/business.json";
+import business from "@/data/business";
 import Image from "next/image";
 import { join } from "@/utils/helper";
 

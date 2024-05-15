@@ -11,9 +11,11 @@ const Subject = ({ subject, courses }) => {
 
   return (
     <div className={join(classes.Subject, classes[`Subject--${color}`])}>
-      <h2 className={join("header", "header-section", classes.SubjectTitle)}>
-        {`${subject} ${emoji}`}
-      </h2>
+      <div className={classes.SubjectHeader}>
+        <h2 className={join("header", "header-section", classes.SubjectTitle)}>
+          {`${subject} ${emoji}`}
+        </h2>
+      </div>
       <div className={classes.SubjectContainer}>
         <div className={classes.SubjectCourses}>
           {courses.map((course) => (

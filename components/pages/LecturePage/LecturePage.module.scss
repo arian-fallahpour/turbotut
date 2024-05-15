@@ -1,6 +1,6 @@
 section.LectureSection {
   display: grid;
-  grid-template-columns: 35rem 1fr;
+  grid-template-columns: var(--length-sidebar-max) 1fr;
   padding: 0;
 
   width: 100%;

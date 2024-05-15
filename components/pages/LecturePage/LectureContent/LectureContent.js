@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./LectureContent.module.scss";
 
+import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import Formatted, {
   FormattedContent,
 } from "@/components/Elements/Formatted/Formatted";
@@ -36,10 +37,14 @@ const LectureContent = async ({ lecture }) => {
         <h1 className="header header-title text-center">{lecture.name}</h1>
       </header>
       <div className={classes.Lecture}>
-        <FormattedContent>
-          {error && <div>{error.message}</div>}
-          {!error && contents.map((data, i) => <Formatted key={i} {...data} />)}
-        </FormattedContent>
+        {error && <ErrorBlock message={error.message} type="info" />}
+        {!error && (
+          <FormattedContent>
+            {contents.map((data, i) => (
+              <Formatted key={i} {...data} />
+            ))}
+          </FormattedContent>
+        )}
       </div>
     </article>
   );

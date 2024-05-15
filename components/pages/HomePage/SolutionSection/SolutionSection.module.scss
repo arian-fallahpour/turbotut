@@ -15,7 +15,7 @@ section.SolutionSection {
 
 .Content {
   display: grid;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 
   &List {
     list-style: none;
@@ -43,18 +43,19 @@ section.SolutionSection {
     border-radius: var(--bd-radius);
     border: 0.1rem solid var(--c-panel-bd);
     background: var(--c-panel-bg);
-    padding: var(--gap-md);
+
     position: relative;
     z-index: 2;
 
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: var(--gap-md);
+    align-items: center;
   }
 
   &Content {
     display: grid;
     gap: var(--gap-sm);
+    padding: var(--gap-md);
 
     & > :global(.ul) {
       list-style: disc;
@@ -66,5 +67,12 @@ section.SolutionSection {
     color: var(--c-green);
     line-height: 1;
     filter: drop-shadow(0 0.5rem 1rem var(--c-green));
+    height: 100%;
+
+    display: grid;
+    align-items: center;
+
+    padding: var(--gap-md);
+    border-right: inherit;
   }
 }

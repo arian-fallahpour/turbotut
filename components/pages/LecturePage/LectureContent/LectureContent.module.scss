@@ -1,7 +1,9 @@
 .LectureContent {
   padding: var(--gap-lg);
+  min-height: 100vh;
 
   display: grid;
+  align-content: start;
   gap: var(--gap-lg);
 
   &Header {

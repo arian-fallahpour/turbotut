@@ -26,22 +26,18 @@ export const GET = routeHandler(
       user: user._id,
       startsAt: { $lt: new Date(Date.now()) },
       endsAt: { $gt: new Date(Date.now()) },
-    });
+    }).select({ _id: 1 });
 
     // If lecture is paid and user is not premium, check if user owns the course
     if (lecture.type === "paid" && !subscription) {
-      const course = await Course.findById(lecture.course).select({ _id: 1 });
       const purchase = await Purchase.findOne({
         user: user._id,
-        course: course._id,
+        course: lecture.course,
       });
 
       // If user did not make a purchase with this course, they cannot access content
       if (!purchase)
-        return new AppError(
-          "Buy premium, or buy this course to gain access to this lecture",
-          401
-        );
+        return new AppError("Buy premium to gain access to this lecture", 401);
     }
 
     // Find content associated with lecture
@@ -52,9 +48,15 @@ export const GET = routeHandler(
         404
       );
 
-    // TODO: Fetch content file from S3 or local diskeqsw
+    // Find course
+    const course = await Course.findById(lecture.course).select({
+      _id: 1,
+      name: 1,
+    });
+
+    // TODO: Fetch content file local
     const fileBuffer = await fsp.readFile(
-      process.cwd() + "/public/contents-test/" + content.src
+      process.cwd() + `/data/content/${course.name}/${content.filename}`
     );
     const contents = JSON.parse(fileBuffer);
 

@@ -6,10 +6,10 @@ const contentSchema = new mongoose.Schema({
     ref: "Lecture",
     required: [true, "Content must be attached to a lecture"],
   },
-  src: {
+  filename: {
     type: String,
-    required: [true, "Content requires a src"],
-    maxLength: [3000, "Content src cannot be longer than 2000 characters"],
+    required: [true, "Content requires the filename of the file"],
+    maxLength: [250, "Content filename cannot be longer than 250 characters"],
   },
 });
 

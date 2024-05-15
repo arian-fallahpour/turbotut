@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useCallback } from "react";
-import { redirect, useSearchParams } from "next/navigation";
+
+import business from "@/data/business";
 
 import { loadStripe } from "@stripe/stripe-js";
 import {
@@ -12,28 +13,20 @@ import { STRIPE_PUBLIC_KEY } from "@/utils/config";
 
 const stripePromise = loadStripe(STRIPE_PUBLIC_KEY);
 
-const Checkout = () => {
-  // Create fetch string depending on pricing type
-  const searchParams = useSearchParams();
-  const pricingType = searchParams.get("pricing");
-  let fetchString;
-  if (pricingType === "course") {
-    const courseSlug = searchParams.get("course");
-    fetchString = `/api/stripe/checkout-sessions/course/${courseSlug}`;
-  } else if (pricingType === "premium") {
-    fetchString = `/api/stripe/checkout-sessions/premium`;
-  } else {
-    redirect("/"); // Redirect if pricing type is invalid
-  }
+// TODO: Manage errors
 
+const Checkout = () => {
   const fetchClientSecret = useCallback(() => {
+    const lookUpKey = business.plans[0].stripeLookUpKey;
+    const fetchString = `/api/stripe/checkout-session/${lookUpKey}`;
+
     // Create a Checkout Session
     return fetch(fetchString, {
       method: "POST",
     })
       .then((res) => res.json())
       .then((data) => data.clientSecret);
-  }, [fetchString]);
+  }, []);
 
   const options = { fetchClientSecret };
 

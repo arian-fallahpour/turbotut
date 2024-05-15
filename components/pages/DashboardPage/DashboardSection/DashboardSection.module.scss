@@ -1,0 +1,8 @@
+section.DashboardSection {
+  display: grid;
+  grid-template-columns: var(--length-sidebar-max) 1fr;
+  padding: var(--gap-lg);
+}
+
+.DashboardSection {
+}

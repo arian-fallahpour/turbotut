@@ -11,13 +11,10 @@ const Chapter = ({ course, chapter, lectureSlug, color }) => {
         {chapter.name}
       </h2>
 
-      <ul className={join("ul", classes.Lectures)}>
+      <ul className={classes.Lectures}>
         {chapter.lectures?.length > 0 &&
           chapter.lectures.map((lecture) => (
-            <li
-              key={"lecture-" + lecture.name}
-              className={join("li", classes.Lecture)}
-            >
+            <li key={"lecture-" + lecture.name} className={classes.Lecture}>
               <Lecture
                 name={lecture.name}
                 href={`/courses/${course.slug}/lecture/${lecture.slug}`}

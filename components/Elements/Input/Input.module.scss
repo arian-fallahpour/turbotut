@@ -1,0 +1,72 @@
+.Input {
+  position: relative;
+  outline: none;
+
+  overflow: hidden;
+  border-radius: 22rem;
+  display: grid;
+
+  transition: 0.2s ease box-shadow;
+
+  $padding-top: 0.75rem;
+  $padding-left: 1.5rem;
+
+  &:focus-within {
+    box-shadow: 0 0.5rem 2rem -1rem rgba(var(--c-orange-rgb), 0.2);
+  }
+
+  &:focus-within > input {
+    outline: 0;
+    border-color: rgba(var(--c-orange-rgb), 0.4);
+  }
+
+  &:focus-within > label {
+    outline: 0;
+  }
+
+  & > input {
+    transition: border 0.2s ease;
+
+    padding: $padding-top $padding-left;
+    border-radius: 22rem;
+    border: 0.1rem solid var(--c-panel-bd);
+
+    &:not(:placeholder-shown) {
+      border-color: rgba(white, 0.25);
+    }
+
+    &:not(:placeholder-shown) + label {
+      filter: blur(10px);
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  & > label {
+    transition: filter 0.5s ease;
+
+    opacity: 1;
+    position: absolute;
+    left: $padding-left;
+    top: 50%;
+    translate: 0 -50%;
+    pointer-events: none;
+  }
+
+  &.invalid {
+  }
+
+  &Transparent {
+    & > input {
+      background: transparent;
+    }
+  }
+
+  &Panel {
+    & > input {
+      background: var(--c-panel-bg);
+    }
+  }
+}

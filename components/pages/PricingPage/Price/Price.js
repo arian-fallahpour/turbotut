@@ -1,30 +1,37 @@
 import React from "react";
 import classes from "./Price.module.scss";
 import Button from "@/components/Elements/Button/Button";
-import { join } from "@/utils/helper";
 
-const Price = ({ name, cost, color, duration, benefits, cta, link }) => {
+import FlashOnRoundedIcon from "@mui/icons-material/FlashOnRounded";
+import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
+import KeyRoundedIcon from "@mui/icons-material/KeyRounded";
+
+const icons = { FlashOnRoundedIcon, SchoolRoundedIcon, KeyRoundedIcon };
+
+const Price = ({ name, price, duration, benefits }) => {
   return (
-    <div className={join(classes.Price, classes[`Price--${color}`])}>
+    <div className={classes.Price}>
       <div className={classes.PriceHeader}>
-        <h2 className="header header-card text-center uppercase">{name}</h2>
-        <h3 className={join("header", `color-${color}`, classes.PriceCost)}>
-          {cost}
-        </h3>
-        <p className="paragraph">{duration}</p>
-      </div>
-      <ul className={join("ul", classes.PriceList)}>
-        {benefits.map((benefit, i) => (
-          <li key={i} className={join("li", classes.PriceListItem)}>
-            <span className="text-emoji">{benefit.emoji}</span>
-            <span>{benefit.description}</span>
-          </li>
-        ))}
-      </ul>
-      <div className={classes.PriceButton}>
-        <Button styleName="fill" variantName={color} href={link} isLink>
-          {cta}
+        <div className={classes.PriceCost}>
+          <h2 className="header header-card text-center uppercase">{name}</h2>
+          <h3 className={"header color-orange text-center"}>${price}</h3>
+          <p className="paragraph text-center">{duration}</p>
+        </div>
+        <Button styleName="fill" variantName="orange" href="/checkout" isLink>
+          Checkout
         </Button>
+      </div>
+      <div className={classes.PriceContent}>
+        <ul className={classes.Benefits}>
+          {benefits.map((benefit, i) => (
+            <li key={i} className={classes.Benefit}>
+              <span className={classes.BenefitIcon}>
+                <benefit.IconTag fontSize="inherit" />
+              </span>
+              <p className="paragraph">{benefit.description}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

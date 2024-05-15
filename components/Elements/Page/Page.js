@@ -6,14 +6,20 @@ import Footer from "@/components/layout/Footer/Footer";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 
-const Page = async ({ children, background = "main", absoluteNav = false }) => {
+const Page = async ({
+  children,
+  background = "main",
+  absoluteNav = false,
+  hideNav = false,
+  hideFooter = false,
+}) => {
   const session = await getServerSession(options);
 
   return (
     <Fragment>
-      <Nav user={session.user} isAbsolute={absoluteNav} />
+      {!hideNav && <Nav user={session.user} isAbsolute={absoluteNav} />}
       <main className="main">{children}</main>
-      <Footer />
+      {!hideFooter && <Footer />}
       <Login />
       <Background style={background} />
     </Fragment>

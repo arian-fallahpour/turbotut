@@ -1,9 +1,8 @@
 import React from "react";
 import classes from "./Footer.module.scss";
 import Button from "@/components/Elements/Button/Button";
-import { join } from "@/utils/helper";
 
-import business from "@/data/business.json";
+import business from "@/data/business";
 
 const Footer = () => {
   return (

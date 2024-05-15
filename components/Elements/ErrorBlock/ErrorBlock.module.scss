@@ -1,0 +1,82 @@
+.ErrorBlock {
+  display: grid;
+  align-content: start;
+  justify-content: center;
+
+  &Container {
+    position: relative;
+    border-radius: var(--bd-radius);
+    border: 0.1rem solid transparent;
+    overflow: hidden;
+
+    display: grid;
+    justify-items: center;
+  }
+
+  // LAYOUTS
+  &Container.row {
+    padding: var(--gap-md);
+  }
+
+  &Container.col {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: var(--gap-sm);
+    padding: var(--gap-sm);
+  }
+
+  &Container.col &Gradient {
+    background-image: radial-gradient(
+      circle at 50% -50%,
+      rgba(var(--c-red-rgb), 0.2),
+      transparent
+    );
+  }
+
+  // TYPES
+  &Container.error {
+    color: var(--c-red);
+    border-color: rgba(var(--c-red-rgb), 0.3);
+  }
+  &Container.error &Gradient {
+    background-image: radial-gradient(
+      circle at 50% 25%,
+      rgba(var(--c-red-rgb), 0.2),
+      transparent
+    );
+  }
+
+  &Container.info {
+    color: white;
+    border-color: var(--c-panel-bd);
+  }
+
+  &Container.info &Gradient {
+    background-image: radial-gradient(
+      circle at 50% -50%,
+      rgba(white, 0.1),
+      transparent
+    );
+  }
+
+  &Gradient {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  &Icon {
+    font-size: 2rem;
+    line-height: 1;
+    opacity: 0.9;
+  }
+
+  &Message {
+    color: inherit;
+    max-width: 30rem;
+    opacity: 0.7;
+  }
+}

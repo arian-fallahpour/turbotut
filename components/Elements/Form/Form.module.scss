@@ -1,0 +1,23 @@
+.Form {
+  display: grid;
+  gap: var(--gap-lg);
+
+  &Row,
+  &Col {
+    display: grid;
+    gap: inherit;
+    align-content: start;
+  }
+
+  &Row {
+    & > * {
+      grid-row: 1 / span 1;
+    }
+  }
+
+  &Col {
+    & > * {
+      grid-column: 1 / span 1;
+    }
+  }
+}

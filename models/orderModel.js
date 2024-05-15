@@ -1,14 +1,6 @@
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
-  type: {
-    type: String,
-    required: [true, "Specify an order type"],
-    enum: {
-      values: ["purchase", "subscription"],
-      message: "Order type must either be purchase or subscription",
-    },
-  },
   user: {
     type: mongoose.Schema.ObjectId,
     ref: "User",

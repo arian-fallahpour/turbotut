@@ -5,17 +5,9 @@ import "katex/dist/katex.min.css";
 import React from "react";
 import classes from "./Formatted.module.scss";
 import Latex from "react-latex-next";
-import Image from "next/image";
+import FormattedImage from "./FormattedImage/FormattedImage";
 
-const Formatted = ({
-  type,
-  content,
-  contents,
-  style,
-  isCourseImage,
-  filename,
-  isChild,
-}) => {
+const Formatted = ({ type, content, contents, style, filename, isChild }) => {
   const Tag = type;
 
   const loopTypes = ["ul", "ol"];
@@ -35,19 +27,17 @@ const Formatted = ({
   } else if (type === "img") {
     return (
       <figure style={style}>
-        <div>
-          <Image
-            alt={content}
-            src={`/images/${
-              isCourseImage ? "courses" : "lectures"
-            }/${filename}`}
-            fill
-          />
-        </div>
+        <FormattedImage alt={content} src={`/images/lectures/${filename}`} />
         {content && <figcaption>{content}</figcaption>}
       </figure>
     );
   } else if (type === "video") {
+  } else if (type === "latex") {
+    return (
+      <p className="latex">
+        <Latex displayMode>{content}</Latex>
+      </p>
+    );
   } else {
     return (
       <Tag style={style}>

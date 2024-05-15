@@ -1,0 +1,84 @@
+section.AccountSection {
+}
+
+.Account {
+}
+
+.Form {
+  display: grid;
+  grid-template-columns: 12.5rem 1fr;
+  gap: var(--gap-lg);
+
+  background: var(--c-panel-bg);
+  border: 0.1rem solid var(--c-panel-bd);
+  border-radius: var(--bd-radius);
+  padding: var(--gap-lg);
+
+  &Sidebar,
+  &Main {
+    display: grid;
+    align-content: start;
+  }
+
+  &Submit {
+    justify-self: start;
+  }
+}
+
+.Picture {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &:hover > &Image,
+  &:focus-within > &Image {
+    scale: 1.05;
+  }
+
+  &:hover > &Label,
+  &:focus-within > &Label {
+    opacity: 1;
+  }
+
+  &Image {
+    object-fit: cover;
+
+    transition: scale 0.2s ease;
+  }
+
+  &Input {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    opacity: 0;
+    z-index: 3;
+    scale: 1;
+  }
+
+  &Label {
+    transition: opacity 0.2s ease;
+
+    scale: 1;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 22rem;
+    background-color: rgba(black, 0.15);
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-size: 1.75rem;
+  }
+}

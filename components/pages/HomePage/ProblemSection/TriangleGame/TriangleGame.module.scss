@@ -1,6 +1,8 @@
 .TriangleGame {
-  border: 0.1rem solid rgba(var(--c-red-rgb), 0.4);
-  background: rgba(var(--c-red-rgb), 0.1);
+  border: 0.1rem solid var(--c-panel-bd);
+  background: var(--c-panel-bg);
+  // border: 0.1rem solid rgba(var(--c-red-rgb), 0.4);
+  // background: rgba(var(--c-red-rgb), 0.1);
 
   display: grid;
   gap: var(--gap-md);

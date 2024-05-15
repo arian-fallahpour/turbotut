@@ -1,10 +1,14 @@
 .Subject {
   display: grid;
-  gap: var(--gap-lg);
-  padding: var(--gap-lg);
+
   border-radius: var(--bd-radius);
   border: 0.1rem solid var(--c-panel-bd);
   background: var(--c-panel-bg);
+
+  &Header {
+    padding: var(--gap-md) var(--gap-lg);
+    border-bottom: inherit;
+  }
 
   &Title {
     justify-self: start;
@@ -32,6 +36,7 @@
 
   &Container {
     overflow-x: auto;
+    padding: var(--gap-lg);
   }
 
   &Courses {

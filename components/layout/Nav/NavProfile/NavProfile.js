@@ -19,7 +19,7 @@ const NavProfile = ({ user }) => {
   return (
     <div className={classes.NavProfile}>
       {user ? (
-        <Link className={classes.NavProfileButton} href="/settings">
+        <Link className={classes.NavProfileButton} href="/profile">
           <Image alt={user.name} src={user.image} fill />
         </Link>
       ) : (

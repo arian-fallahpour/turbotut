@@ -1,12 +1,15 @@
 import Order from "@/models/orderModel";
-import Purchase from "@/models/purchaseModel";
 import Subscription from "@/models/subscriptionModel";
+import { connectDB } from "@/utils/database";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-export const POST = async function (req, res) {
+export const POST = async function (req, {}) {
+  await connectDB();
+
+  // Get stripe data
   const payload = await req.text();
   const sig = headers().get("stripe-signature");
 
@@ -22,44 +25,36 @@ export const POST = async function (req, res) {
     return NextResponse.json(`Webhook Error: ${err.message}`, { status: 400 });
   }
 
-  // Fulfill order
-  if (event.type === "checkout.session.completed") {
-    // Retrieve session
-    const session = await stripe.checkout.sessions.retrieve(
-      event.data.object.id,
-      { expand: ["line_items", "line_items.data.price.product"] }
+  console.log(event.type);
+
+  // Check if subscription invoice has been paid
+  if (event.type === "invoice.paid") {
+    const invoice = event.data.object;
+
+    // Retrieve subscription object
+    const subscription = await stripe.subscriptions.retrieve(
+      invoice.subscription
     );
-    const { orderType, purchaseType, userId } = session.metadata;
-    const lineItems = session.line_items;
 
-    // Create Order with correct type
-    const order = await Order.create({
-      type: orderType,
+    const { userId } = subscription.metadata;
+
+    //  Create order
+    const order = await Order.create({ user: userId });
+
+    // Grant user access to premium for the billing cycle
+    console.log("Subscription being created/renewed");
+    await Subscription.create({
       user: userId,
+      order: order._id,
+      startsAt: new Date(subscription.current_period_start * 1000),
+      endsAt: new Date(subscription.current_period_end * 1000),
     });
-
-    // Create a Purchase document to grant user access to course
-    if (purchaseType === "course") {
-      const { courseId } = lineItems.data[0].price.product.metadata; // Always only 1 line item currently for one-course purchases
-
-      await Purchase.create({
-        user: userId,
-        order: order._id,
-        course: courseId,
-      });
-    }
-
-    // Create a Subscription document to grant user access to premium
-    if (purchaseType === "premium") {
-      await Subscription.create({
-        user: userId,
-        order: order._id,
-        // Start and end dates are automatically created via default values for now
-      });
-    }
   }
 
-  // TODO: reset all stripe products and test again
+  // TODO:  reset   all stripe products and test again
+  //        NOTES:  invoice gets payed a around a day after it gets sent,
+  //                so there is a period where the user does not get access
+  //                to premium between billing cycles
 
   return new Response(null, { status: 204 });
 };

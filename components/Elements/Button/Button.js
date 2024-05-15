@@ -13,8 +13,8 @@ const Button = forwardRef(
       isDisabled,
       isLoading,
       children,
-      styleName,
-      variantName,
+      styleName = "fill",
+      variantName = "orange",
       className,
       activeClassName,
       ...otherProps

@@ -15,12 +15,10 @@ const subscriptionSchema = new mongoose.Schema({
   startsAt: {
     type: Date,
     required: [true, "Please specify a start date"],
-    default: new Date(Date.now() - 1000),
   },
   endsAt: {
     type: Date,
     required: [true, "Please specify an end date"],
-    default: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30), // 30 days after Date.now()
   },
   createdAt: {
     type: Date,
