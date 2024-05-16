@@ -25,8 +25,6 @@ export const POST = async function (req, {}) {
     return NextResponse.json(`Webhook Error: ${err.message}`, { status: 400 });
   }
 
-  console.log(event.type);
-
   // Check if subscription invoice has been paid
   if (event.type === "invoice.paid") {
     const invoice = event.data.object;
@@ -42,19 +40,38 @@ export const POST = async function (req, {}) {
     const order = await Order.create({ user: userId });
 
     // Grant user access to premium for the billing cycle
-    console.log("Subscription being created/renewed");
+    const invoiceDelaySeconds = 60 * 60 * 24 * 2; // Leeway for in between billing cycles
     await Subscription.create({
       user: userId,
       order: order._id,
       startsAt: new Date(subscription.current_period_start * 1000),
-      endsAt: new Date(subscription.current_period_end * 1000),
+      endsAt: new Date(
+        (subscription.current_period_end + invoiceDelaySeconds) * 1000
+      ),
+      stripeSubscriptionId: subscription.id,
     });
   }
 
-  // TODO:  reset   all stripe products and test again
-  //        NOTES:  invoice gets payed a around a day after it gets sent,
-  //                so there is a period where the user does not get access
-  //                to premium between billing cycles
+  // Set default payment method if user does not already have one
+  if (event.type === "payment_method.attached") {
+    const paymentMethod = event.data.object;
+
+    // Find customer
+    const customer = await stripe.customers.retrieve(paymentMethod.customer);
+
+    // Set default payment method if doesn't already have it set
+    if (!customer.invoice_settings.default_payment_method) {
+      await stripe.customers.update(paymentMethod.customer, {
+        invoice_settings: {
+          default_payment_method: paymentMethod.id,
+        },
+      });
+    }
+
+    // TODO:  Set default payment method if default method is deleted
+  }
 
   return new Response(null, { status: 204 });
 };
+
+// TODO: TEST SUBSCRIPTIONS EXTENSIVELY

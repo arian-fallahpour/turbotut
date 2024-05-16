@@ -1,26 +1,39 @@
+$padding: var(--gap-lg);
+
 section.AccountSection {
 }
 
-.Account {
-}
-
-.Form {
+form.Form {
   display: grid;
-  grid-template-columns: 12.5rem 1fr;
-  gap: var(--gap-lg);
+  gap: 0;
 
   background: var(--c-panel-bg);
   border: 0.1rem solid var(--c-panel-bd);
   border-radius: var(--bd-radius);
-  padding: var(--gap-lg);
 
-  &Sidebar,
-  &Main {
+  & > *:not(:last-child) {
+    border-bottom: inherit;
+  }
+
+  .FormContent {
+    display: grid;
+    gap: var(--gap-lg);
+    grid-template-columns: 12.5rem 1fr;
+    padding: $padding;
+  }
+
+  .FormSidebar,
+  .FormMain {
     display: grid;
     align-content: start;
   }
 
-  &Submit {
+  .FormActions {
+    padding: var(--gap-md) $padding;
+    display: grid;
+  }
+
+  .FormSubmit {
     justify-self: start;
   }
 }
@@ -81,4 +94,13 @@ section.AccountSection {
     align-content: center;
     font-size: 1.75rem;
   }
+}
+
+.Signout {
+  // max-width: 30rem;
+  // width: 100%;
+
+  display: grid;
+  // justify-self: center;
+  justify-self: start;
 }

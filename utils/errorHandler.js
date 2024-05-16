@@ -4,6 +4,8 @@ const errorHandler = (error) => {
   error.statusCode = error.statusCode || 500;
   error.status = error.status || "error";
 
+  // TODO: Setup proper errors (array based)
+
   // Log the error into the console
   console.log("ERROR: ", error.message);
 

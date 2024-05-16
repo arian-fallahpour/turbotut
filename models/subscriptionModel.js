@@ -25,7 +25,19 @@ const subscriptionSchema = new mongoose.Schema({
     default: new Date(Date.now()),
     immutable: [true, "The creation date of this order cannot be changed"],
   },
+  stripeSubscriptionId: {
+    type: String,
+    required: [true, "Please provide a stripe subscription id"],
+  },
 });
+
+subscriptionSchema.statics.findActive = async function (userId) {
+  return await mongoose.model("Subscription").findOne({
+    user: userId,
+    startsAt: { $lt: new Date(Date.now()) },
+    endsAt: { $gt: new Date(Date.now()) },
+  });
+};
 
 const Subscription =
   mongoose.models.Subscription ||

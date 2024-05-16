@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 import catchAsync from "./catchAsync";
 import User from "@/models/userModel";
 
-export const connectDB = async () => {
-  let isConnected = false;
+let isConnected = false;
 
+export const connectDB = async () => {
   if (isConnected) {
     if (process.env.NODE_ENV === "development") {
       console.log("<< Database already connected >>");

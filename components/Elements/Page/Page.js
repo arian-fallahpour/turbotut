@@ -5,6 +5,10 @@ import Login from "@/components/layout/Login/Login";
 import Footer from "@/components/layout/Footer/Footer";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
+import {
+  requiresSession as enforeSessionOnly,
+  restrictTo as restrictToRoles,
+} from "@/utils/authentication";
 
 const Page = async ({
   children,
@@ -12,15 +16,29 @@ const Page = async ({
   absoluteNav = false,
   hideNav = false,
   hideFooter = false,
+  session,
+  requiresSession,
+  restrictTo = [],
 }) => {
-  const session = await getServerSession(options);
+  if (!session) {
+    session = await getServerSession(options);
+  }
+
+  if (requiresSession) {
+    enforeSessionOnly(session);
+  }
+
+  if (restrictTo && restrictTo.length > 0) {
+    restrictToRoles(session, restrictTo);
+  }
 
   return (
     <Fragment>
-      {!hideNav && <Nav user={session.user} isAbsolute={absoluteNav} />}
+      {!hideNav && <Nav user={session?.user} isAbsolute={absoluteNav} />}
       <main className="main">{children}</main>
       {!hideFooter && <Footer />}
       <Login />
+
       <Background style={background} />
     </Fragment>
   );

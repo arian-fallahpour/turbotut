@@ -1,5 +1,8 @@
+import { toCap } from "@/utils/helper";
 import mongoose from "mongoose";
 import validator from "validator";
+
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const userSchema = new mongoose.Schema({
   firstName: {
@@ -39,6 +42,21 @@ const userSchema = new mongoose.Schema({
     },
   },
   picture: String,
+  stripeCustomerId: String,
+});
+
+// Create stripe customer
+userSchema.pre("save", async function (next) {
+  if (this.isNew || !this.stripeCustomerId) {
+    const customer = await stripe.customers.create({
+      email: this.email,
+      name: `${toCap(this.firsName)} ${toCap(this.lastName)}`,
+    });
+
+    this.stripeCustomerId = customer.id;
+  }
+
+  next();
 });
 
 const User = mongoose.models?.User || mongoose.model("User", userSchema);

@@ -21,8 +21,6 @@ const TriangleGame = () => {
     setSelected((arr) => (!arr.includes(i) ? [...arr, i] : arr));
   };
 
-  console.log(lastUnselected);
-
   return (
     <div className={classes.TriangleGame}>
       <div className={classes.TriangleGameHeader}>

@@ -1,6 +1,7 @@
 import Subscription from "@/models/subscriptionModel";
 import AppError from "@/utils/AppError";
 import { routeHandler } from "@/utils/authentication";
+import { getDomain } from "@/utils/dataFetch";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
@@ -32,14 +33,10 @@ export const POST = routeHandler(
     });
     const premiumPrice = prices.data[0];
 
-    // Create domain
-    const protocol = headers().get("x-forwarded-proto");
-    const host = headers().get("host");
-    const domain = `${protocol}://${host}`;
-
     // Create stripe session
     const session = await stripe.checkout.sessions.create({
       ui_mode: "embedded",
+      customer: user.stripeCustomerId,
       billing_address_collection: "auto",
       line_items: [
         {
@@ -58,7 +55,7 @@ export const POST = routeHandler(
           userEmail: user.email, // Used for technical support
         },
       },
-      return_url: `${domain}/return?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: `${getDomain()}/return?session_id={CHECKOUT_SESSION_ID}`,
     });
 
     // Send client secret to response

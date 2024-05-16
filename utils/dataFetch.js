@@ -10,3 +10,11 @@ export async function fetchAuth(url, options) {
     },
   });
 }
+
+export function getDomain() {
+  const protocol = headers().get("x-forwarded-proto");
+  const host = headers().get("host");
+  const domain = `${protocol}://${host}`;
+
+  return domain;
+}

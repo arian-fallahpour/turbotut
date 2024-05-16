@@ -1,0 +1,105 @@
+$padding-top: var(--gap-md);
+$padding-left: var(--gap-lg);
+
+.Subscription {
+  border-radius: var(--bd-radius);
+  border: 0.1rem solid var(--c-panel-bd);
+  background: var(--c-panel-bg);
+  padding: $padding-top 0;
+
+  &.revealed > &Header {
+    border-bottom-color: transparent;
+  }
+
+  &.revealed &Expand > svg {
+    rotate: 45deg;
+    color: var(--txt-text);
+  }
+
+  &.revealed &Content {
+    border-top-color: var(--c-panel-bd);
+  }
+
+  &Error {
+    padding-top: $padding-top;
+  }
+
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $padding-left;
+  }
+
+  &Expand {
+    background: transparent;
+    color: var(--txt-text);
+    font-size: 3.5rem;
+    padding: 0;
+
+    &:hover > svg,
+    &:focus-visible > svg {
+      color: var(--txt-title) !important; // important due to weird bug
+    }
+
+    & > svg {
+      transition: rotate 0.5s ease, color 0.5s ease;
+    }
+  }
+
+  &Content {
+    display: grid;
+    border-top: 0.1rem solid transparent;
+    margin-top: $padding-top;
+
+    transition: border 0.5s ease;
+  }
+
+  &List {
+    padding: var(--gap-md) $padding-left;
+
+    display: grid;
+    gap: var(--gap-md);
+    list-style: none;
+  }
+
+  &Actions {
+    padding: $padding-top $padding-left 0 $padding-left;
+
+    display: flex;
+    justify-content: space-between;
+    gap: inherit;
+    align-items: center;
+    border-top: 0.1rem solid var(--c-panel-bd);
+  }
+}
+
+.Card {
+  background-color: transparent;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--gap-md);
+  align-items: center;
+
+  &Image {
+    & img {
+      object-fit: contain;
+    }
+  }
+
+  &Change {
+    background: transparent;
+    border-radius: 22rem;
+    color: var(--c-orange);
+    background: rgba(var(--c-orange-rgb), 0.05);
+    border-top: inherit;
+
+    transition: background 0.2s ease;
+
+    &:hover,
+    &:focus {
+      background: rgba(var(--c-orange-rgb), 0.1);
+    }
+  }
+}

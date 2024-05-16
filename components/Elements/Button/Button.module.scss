@@ -181,6 +181,21 @@
     @include shiny(green, 100%);
   }
 
+  &Fill--red,
+  &Fill--red:link,
+  &Fill--red:visited {
+    box-shadow: 0rem -0.5rem 1rem -0.7rem var(--c-red),
+      0 0.5rem 1rem -0.7rem var(--c-red);
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: 0rem -0.6rem 1.2rem -0.5rem var(--c-red),
+        0 0.6rem 1.2rem -0.5rem var(--c-red);
+    }
+
+    @include shiny(red, 100%);
+  }
+
   &Fill--white,
   &Fill--white:link,
   &Fill--white:visited {
@@ -241,6 +256,23 @@
         rgba(var(--c-orange-rgb), 0.5),
         transparent
       );
+    }
+  }
+
+  &Login--red,
+  &Login--red:link,
+  &Login--red:visited {
+    $color: rgba(var(--c-red-rgb), 0.5);
+    border: 0.1rem solid $color;
+    color: $color;
+    background: transparent;
+
+    &:hover,
+    &:focus-visible {
+      $color: rgba(var(--c-red-rgb), 1);
+      border: 0.1rem solid $color;
+      background: $color;
+      color: var(--bg-flat);
     }
   }
 

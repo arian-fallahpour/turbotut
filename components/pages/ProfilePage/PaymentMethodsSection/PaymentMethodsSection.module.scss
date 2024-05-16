@@ -1,0 +1,120 @@
+$padding-top: var(--gap-md);
+$padding-left: var(--gap-lg);
+
+section.PaymentMethodsSection {
+}
+
+.PaymentMethods {
+  padding: $padding-top 0;
+  border-radius: var(--bd-radius);
+  border: 0.1rem solid var(--c-panel-bd);
+  background: var(--c-panel-bg);
+  padding: $padding-top 0;
+
+  &.revealed > &Header {
+    border-bottom-color: transparent;
+  }
+
+  &.revealed &Expand > svg {
+    rotate: 45deg;
+    color: var(--txt-text);
+  }
+
+  &.revealed &Content {
+    border-top-color: var(--c-panel-bd);
+  }
+
+  &Error {
+    padding-top: $padding-top;
+  }
+
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $padding-left;
+  }
+
+  &Expand {
+    background: transparent;
+    color: var(--txt-text);
+    font-size: 3.5rem;
+    padding: 0;
+
+    &:hover > svg,
+    &:focus-visible > svg {
+      color: var(--txt-title) !important; // important due to weird bug
+    }
+
+    & > svg {
+      transition: rotate 0.5s ease, color 0.5s ease;
+    }
+  }
+
+  &Content {
+    display: grid;
+    border-top: 0.1rem solid transparent;
+    margin-top: $padding-top;
+
+    transition: border 0.5s ease;
+  }
+
+  &Actions {
+    margin: $padding-top $padding-left 0 $padding-left;
+    justify-self: start;
+  }
+}
+
+.Cards {
+  display: grid;
+
+  &Error {
+    margin-top: $padding-top;
+    padding-bottom: $padding-top;
+    border-bottom: 0.1rem solid var(--c-panel-bd);
+  }
+}
+
+.Card {
+  display: flex;
+  gap: var(--gap-md);
+  align-items: center;
+  padding: var(--gap-sm) $padding-left;
+
+  border-bottom: 0.1rem solid var(--c-panel-bd);
+
+  &Brand {
+    & img {
+      object-fit: contain;
+    }
+  }
+
+  &Content {
+    flex: 1;
+  }
+
+  &Default,
+  &SetDefault {
+    color: var(--c-orange);
+    background: rgba(var(--c-orange-rgb), 0.1);
+    border: 0.1rem solid rgba(var(--c-orange-rgb), 0.2);
+    border-radius: 22rem;
+    font-size: 1.35rem;
+    padding: 0.25rem 1rem;
+  }
+
+  &SetDefault {
+    transition: opacity 0.2s ease;
+    opacity: 0.5;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+    }
+  }
+
+  &Remove {
+    width: 4rem;
+    height: 4rem;
+  }
+}

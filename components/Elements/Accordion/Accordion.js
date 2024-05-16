@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import classes from "./Accordion.module.scss";
 import { join } from "@/utils/helper";
+import Reveal from "../Reveal/Reveal";
 
 const Accordion = ({ items }) => {
   const [selected, setSelected] = useState(null);
@@ -11,21 +12,21 @@ const Accordion = ({ items }) => {
     const isSelected = selected === i;
 
     return (
-      <li
-        key={i}
-        className={join(classes.Item, isSelected ? classes.selected : null)}
-        onClick={() => setSelected((prev) => (prev === i ? null : i))}
-      >
-        <button className={classes.ItemButton} aria-expanded={isSelected}>
+      <li key={i} className={join(classes.Item)}>
+        <button
+          className={classes.ItemButton}
+          aria-expanded={isSelected}
+          onClick={() => setSelected((prev) => (prev === i ? null : i))}
+        >
           <h3 className={join("header", "header-card", classes.ItemTitle)}>
             {item.title}
           </h3>
-          <div className={classes.ItemContent}>
-            <div className={classes.ItemOverflow}>
-              <p className="paragraph">{item.description}</p>
-            </div>
-          </div>
         </button>
+        <Reveal revealed={isSelected} className={classes.ItemReveal}>
+          <div className={classes.ItemContent}>
+            <p className="paragraph">{item.description}</p>
+          </div>
+        </Reveal>
       </li>
     );
   });

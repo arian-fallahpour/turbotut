@@ -13,6 +13,7 @@ $padding: var(--gap-md);
 
 .Item {
   background-color: var(--c-panel-bg);
+  display: grid;
 
   &:not(:last-child) {
     border-bottom: inherit;
@@ -41,19 +42,12 @@ $padding: var(--gap-md);
     text-transform: lowercase;
   }
 
-  &Content {
-    transition: grid-template-rows 0.2s ease;
-    grid-template-rows: 0fr;
-    display: grid;
+  &Reveal {
+    margin-top: var();
   }
 
-  &Overflow {
-    overflow: hidden;
-    opacity: 0;
-    transition: opacity 0.2s 0.1s ease-in-out;
-
-    & :global(.paragraph) {
-      padding-top: $padding;
-    }
+  &Content {
+    padding: $padding;
+    padding-top: 0;
   }
 }

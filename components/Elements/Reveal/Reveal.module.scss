@@ -1,0 +1,14 @@
+.Outer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s ease;
+
+  &.revealed {
+    grid-template-rows: 1fr;
+  }
+}
+
+.Inner {
+  overflow: hidden;
+  grid-row: 1 / span 2;
+}

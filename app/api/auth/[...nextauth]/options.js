@@ -5,7 +5,7 @@ export const options = {
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: "/?login=true",
-    signOut: "/?logout=true",
+    signOut: "/",
     newUser: "/courses",
   },
   providers: [
@@ -30,7 +30,7 @@ export const options = {
     }),
   ],
   callbacks: {
-    async jwt({ token, user, account }) {
+    async jwt({ token, user }) {
       if (user) {
         token._id = user._id;
         token.name = user.name;

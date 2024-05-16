@@ -11,13 +11,9 @@
   $padding-top: 0.75rem;
   $padding-left: 1.5rem;
 
-  &:focus-within {
-    box-shadow: 0 0.5rem 2rem -1rem rgba(var(--c-orange-rgb), 0.2);
-  }
-
   &:focus-within > input {
     outline: 0;
-    border-color: rgba(var(--c-orange-rgb), 0.4);
+    border-color: rgba(white, 0.25);
   }
 
   &:focus-within > label {
@@ -36,7 +32,7 @@
     }
 
     &:not(:placeholder-shown) + label {
-      filter: blur(10px);
+      opacity: 0;
     }
 
     &::placeholder {
@@ -45,7 +41,7 @@
   }
 
   & > label {
-    transition: filter 0.5s ease;
+    transition: opacity 0.2s ease;
 
     opacity: 1;
     position: absolute;
