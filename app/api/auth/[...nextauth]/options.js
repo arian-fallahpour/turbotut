@@ -1,3 +1,4 @@
+import Subscription from "@/models/subscriptionModel";
 import { connectDB, signupUpdateUser } from "@/utils/database";
 import GitHubProvider from "next-auth/providers/github";
 
@@ -23,6 +24,12 @@ export const options = {
           picture: profile.avatar_url,
         });
 
+        // Check if user has premium
+        const subscription = await Subscription.findActive(user._id);
+        if (subscription) {
+          user.subscription = "premium";
+        }
+
         return user;
       },
       clientId: process.env.GITHUB_ID,
@@ -36,6 +43,7 @@ export const options = {
         token.name = user.name;
         token.image = user.picture;
         token.role = user.role;
+        token.subscription = user.subscription;
       }
 
       return token;
@@ -46,6 +54,7 @@ export const options = {
         session.user.name = token.name;
         session.user.role = token.role;
         session.user.image = token.image;
+        session.user.subscription = token.subscription;
       }
 
       if (session) return session;

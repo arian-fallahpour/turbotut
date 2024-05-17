@@ -6,10 +6,9 @@ import FlashOnRoundedIcon from "@mui/icons-material/FlashOnRounded";
 
 import Section from "@/components/Elements/Section/Section";
 import Button from "@/components/Elements/Button/Button";
+import Image from "next/image";
 
 const SolutionSection = () => {
-  // four horizontal blocks
-
   return (
     <Section className={classes.SolutionSection}>
       <div className={classes.SolutionSectionContent}>
@@ -78,7 +77,13 @@ const SolutionSection = () => {
         </div>
       </div>
       <div className={classes.SolutionSectionImage}>
-        <div className={classes.Image}></div>
+        <div className={classes.Image}>
+          <Image
+            alt="Student studying hard"
+            src="/images/app/studying-1.png"
+            fill
+          />
+        </div>
       </div>
     </Section>
   );

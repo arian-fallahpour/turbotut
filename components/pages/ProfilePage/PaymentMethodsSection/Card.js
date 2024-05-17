@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import classes from "./PaymentMethodsSection.module.scss";
 import Button from "@/components/Elements/Button/Button";
@@ -14,6 +12,7 @@ const Card = ({
   last4,
   isDefault,
   onDetachCard,
+  onSetDefault,
 }) => {
   return (
     <li className={classes.Card}>
@@ -33,10 +32,20 @@ const Card = ({
       </div>
       {isDefault && <span className={classes.CardDefault}>default</span>}
       {!isDefault && (
-        <Button className={classes.CardSetDefault}>set default</Button>
+        <Button
+          className={classes.CardSetDefault}
+          onClick={() => onSetDefault(id)}
+        >
+          set default
+        </Button>
       )}
-      <Button className={classes.CardRemove} styleName="fill" variantName="red">
-        <DeleteIcon fontSize="inherit" onClick={() => onDetachCard(id)} />
+      <Button
+        className={classes.CardRemove}
+        styleName="fill"
+        variantName="red"
+        onClick={() => onDetachCard(id)}
+      >
+        <DeleteIcon fontSize="inherit" />
       </Button>
     </li>
   );

@@ -49,8 +49,8 @@ const Button = forwardRef(
         href={otherProps.href}
         disabled={isDisabled}
         replace={isHashLink ? true : otherProps.replace}
-        {...otherProps}
         ref={ref}
+        {...otherProps}
       >
         {["fill", "circle"].includes(styleName) ? (
           <span className={classes.children}>{children}</span>

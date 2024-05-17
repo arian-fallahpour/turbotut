@@ -8,8 +8,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const NavProfile = ({ user }) => {
-  // TODO: Add profile icon to nav
-
   const { setVisibility } = useContext(LoginContext);
 
   const showLoginHandler = () => {
@@ -27,6 +25,7 @@ const NavProfile = ({ user }) => {
           login
         </Button>
       )}
+      {user?.subscription === "premium" && <div>subscribed</div>}
     </div>
   );
 };

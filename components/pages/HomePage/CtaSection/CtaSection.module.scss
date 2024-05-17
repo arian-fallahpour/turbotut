@@ -30,6 +30,12 @@ section.CtaSection {
   &Image {
     position: absolute;
     bottom: 0;
-    right: 20%;
+    right: 10rem;
+    height: 50rem;
+    width: 50rem;
+
+    & > img {
+      object-fit: contain;
+    }
   }
 }

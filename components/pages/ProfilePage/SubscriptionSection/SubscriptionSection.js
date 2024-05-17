@@ -21,7 +21,7 @@ const SubscriptionSection = ({ className, limit }) => {
   const toggleRevealedHandler = () => {
     const fetchData = async () => {
       // Fetch data if not available already
-      if (!data) {
+      if (!data && !revealed) {
         // Add loading state
         startProgress();
 
@@ -33,14 +33,13 @@ const SubscriptionSection = ({ className, limit }) => {
         // Check for any errors
         if (!res.ok) {
           setError(new Error(resData.message));
-          return;
         }
 
         // Remove loading state
         stopProgress();
 
         // Set state data
-        setData(resData.data);
+        setData(resData.data || {});
       }
 
       setRevealed((p) => !p);
@@ -68,7 +67,6 @@ const SubscriptionSection = ({ className, limit }) => {
       // Check for any errors
       if (!res.ok) {
         setError(new Error(resData.message));
-        return;
       }
 
       // Remove loading state

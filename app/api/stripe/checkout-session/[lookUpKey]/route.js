@@ -7,8 +7,6 @@ import { NextResponse } from "next/server";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-// TODO: Setup payment settings in stripe
-
 export const POST = routeHandler(
   async function (req, { params }) {
     const { user } = req.data;

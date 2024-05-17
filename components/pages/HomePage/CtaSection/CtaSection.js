@@ -3,6 +3,7 @@ import classes from "./CtaSection.module.scss";
 
 import Section from "@/components/Elements/Section/Section";
 import Button from "@/components/Elements/Button/Button";
+import Image from "next/image";
 
 const CtaSection = () => {
   // One big rounded rectangle with a nice image in the back
@@ -20,7 +21,13 @@ const CtaSection = () => {
             view courses
           </Button>
         </div>
-        <div className={classes.CtaImage}></div>
+        <div className={classes.CtaImage}>
+          <Image
+            alt="People using a chalk board"
+            src="/images/app/studying-2.png"
+            fill
+          />
+        </div>
       </div>
     </Section>
   );

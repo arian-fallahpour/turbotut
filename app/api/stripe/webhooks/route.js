@@ -52,7 +52,7 @@ export const POST = async function (req, {}) {
     });
   }
 
-  // Set default payment method if user does not already have one
+  // Set default payment method if one has been attached and there is none already
   if (event.type === "payment_method.attached") {
     const paymentMethod = event.data.object;
 
@@ -67,11 +67,32 @@ export const POST = async function (req, {}) {
         },
       });
     }
+  }
 
-    // TODO:  Set default payment method if default method is deleted
+  // Set default payment method if current default method is deleted
+  if (event.type === "customer.updated") {
+    const customer = event.data.object;
+
+    if (!customer.invoice_settings.default_payment_method) {
+      // Find all customer's payment methods
+      const paymentMethods = await stripe.customers.listPaymentMethods(
+        customer.id
+      );
+      const firstPaymentMethod = paymentMethods.data[0];
+
+      // Set customer's default payment method
+      if (firstPaymentMethod) {
+        await stripe.customers.update(customer.id, {
+          invoice_settings: { default_payment_method: firstPaymentMethod.id },
+        });
+      }
+    }
   }
 
   return new Response(null, { status: 204 });
 };
 
 // TODO: TEST SUBSCRIPTIONS EXTENSIVELY
+// What if the user updates their subscription to renew, but does not have a card?
+//      --> It simply does not call the invoice.paid, so a subscription will not be created on our end
+//          However, they may have 1-2 extra days due to the leeway

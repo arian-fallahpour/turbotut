@@ -13,7 +13,10 @@ export const GET = routeHandler(
     // Get customer's subscription
     const subscription = await Subscription.findActive(user._id);
     if (!subscription)
-      return new AppError("You do currently have an active subscription", 400);
+      return new AppError(
+        "You do not currently have an active subscription",
+        400
+      );
 
     // Get stripe subscription
     const stripeSubscription = await stripe.subscriptions.retrieve(

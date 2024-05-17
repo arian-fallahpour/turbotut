@@ -1,28 +1,34 @@
 "use client";
 
-import Section from "@/components/Elements/Section/Section";
+import React, { useContext, useState } from "react";
 import classes from "./PaymentMethodsSection.module.scss";
 import { join } from "@/utils/helper";
-import React, { Fragment, useState } from "react";
+import { BASE_URL, STRIPE_PUBLIC_KEY } from "@/utils/config";
+import { ModalContext } from "@/store/modal-context";
+
+import Card from "./Card";
+import Modal from "./Modal";
+import Section from "@/components/Elements/Section/Section";
 import Button from "@/components/Elements/Button/Button";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import Reveal from "@/components/Elements/Reveal/Reveal";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
-import { BASE_URL, STRIPE_PUBLIC_KEY } from "@/utils/config";
-import Card from "./Card";
+
 import { loadStripe } from "@stripe/stripe-js";
 import { startProgress, stopProgress } from "next-nprogress-bar";
+
 const stripePromise = loadStripe(STRIPE_PUBLIC_KEY);
 
 const PaymentMethodsSection = ({ className, limit }) => {
   const [revealed, setRevealed] = useState(false);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const { showModal, hideModal } = useContext(ModalContext);
 
   const toggleRevealedHandler = () => {
     const fetchData = async () => {
       // Fetch data if not available already
-      if (!data) {
+      if (!data && !revealed) {
         // Add loading state
         startProgress();
 
@@ -34,7 +40,6 @@ const PaymentMethodsSection = ({ className, limit }) => {
         // Check for any errors
         if (!res.ok) {
           setError(new Error(resData.message));
-          return;
         }
 
         // Remove loading state
@@ -50,7 +55,7 @@ const PaymentMethodsSection = ({ className, limit }) => {
     fetchData();
   };
 
-  const addCardHandler = (id) => {
+  const addCardHandler = () => {
     const addCard = async () => {
       // Add loading state
       startProgress();
@@ -60,13 +65,11 @@ const PaymentMethodsSection = ({ className, limit }) => {
         method: "POST",
         cache: "no-store",
       });
-
       const resData = await res.json();
 
       // Check for any errors
       if (!res.ok) {
         setError(new Error(resData.message));
-        return;
       }
 
       // Remove loading state
@@ -86,7 +89,7 @@ const PaymentMethodsSection = ({ className, limit }) => {
     addCard();
   };
 
-  const detachCardHandler = (id) => {
+  const detachCardConfirmHandler = (id) => {
     const detachCard = async () => {
       // Add loading state
       startProgress();
@@ -98,24 +101,66 @@ const PaymentMethodsSection = ({ className, limit }) => {
           cache: "no-store",
         }
       );
+      const resData = await res.json();
 
       // Check for any errors
       if (!res.ok) {
-        const resData = await res.json();
         setError(new Error(resData.message));
+        return;
       }
 
-      // TODO: Add modal that warns about cancelling subscription
+      // Remove loading state
+      stopProgress();
+
+      // Hide modal
+      hideModal();
+
+      // Update data
+      setData(resData.data);
+    };
+
+    detachCard();
+  };
+
+  const showDetachModalHandler = (id) => {
+    // Show confirmation modal
+    showModal(
+      <Modal
+        onCancel={hideModal}
+        onConfirm={() => detachCardConfirmHandler(id)}
+        cards={data.cards}
+      />
+    );
+  };
+
+  const setDefaultCardHandler = (id) => {
+    const setDefault = async () => {
+      // Add loading state
+      startProgress();
+
+      const res = await fetch(
+        `${BASE_URL}/api/users/my-payment-methods/${id}/default`,
+        {
+          method: "PATCH",
+          cache: "no-store",
+        }
+      );
+      const resData = await res.json();
+
+      // Check for any errors
+      if (!res.ok) {
+        setError(new Error(resData.message));
+        return;
+      }
 
       // Remove loading state
       stopProgress();
 
       // Update data
-      const updatedData = data.cards.filter((card) => card.id !== id);
-      setData({ cards: updatedData });
+      setData(resData.data);
     };
 
-    detachCard();
+    setDefault();
   };
 
   return (
@@ -143,43 +188,43 @@ const PaymentMethodsSection = ({ className, limit }) => {
         {/* REVEAL */}
         <Reveal revealed={revealed}>
           <div className={classes.PaymentMethodsContent}>
-            {error && (
-              <ErrorBlock
-                className={classes.PaymentMethodsError}
-                message={error.message}
-              />
-            )}
-            {!error && (
-              <Fragment>
-                <ul className={classes.Cards}>
-                  {data?.cards.length === 0 && (
-                    <ErrorBlock
-                      className={classes.CardsError}
-                      type="info"
-                      message="You do not have any payment methods"
-                    />
-                  )}
+            <ul className={classes.Cards}>
+              {/* API error */}
+              {error && (
+                <ErrorBlock
+                  className={classes.PaymentMethodsError}
+                  message={error.message}
+                />
+              )}
 
-                  {data?.cards.length > 0 &&
-                    data.cards.map((card) => (
-                      <Card
-                        key={card.id}
-                        id={card.id}
-                        {...card.card}
-                        onDetachCard={detachCardHandler}
-                      />
-                    ))}
-                </ul>
+              {/* No cards */}
+              {data?.cards.length === 0 && (
+                <ErrorBlock
+                  className={classes.CardsError}
+                  type="info"
+                  message="You do not have any payment methods"
+                />
+              )}
 
-                <Button
-                  className={classes.PaymentMethodsActions}
-                  styleName="fill"
-                  onClick={addCardHandler}
-                >
-                  add card
-                </Button>
-              </Fragment>
-            )}
+              {data?.cards.length > 0 &&
+                data.cards.map((card) => (
+                  <Card
+                    key={card.id}
+                    id={card.id}
+                    {...card.card}
+                    onSetDefault={setDefaultCardHandler}
+                    onDetachCard={showDetachModalHandler}
+                  />
+                ))}
+            </ul>
+
+            <Button
+              className={classes.PaymentMethodsActions}
+              styleName="fill"
+              onClick={addCardHandler}
+            >
+              add card
+            </Button>
           </div>
         </Reveal>
       </div>
@@ -188,3 +233,4 @@ const PaymentMethodsSection = ({ className, limit }) => {
 };
 
 export default PaymentMethodsSection;
+// TODO: Test UI and API in "extreme" cases

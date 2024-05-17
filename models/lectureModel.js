@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import Chapter from "./chapterModel";
 import slugify from "slugify";
+import Course from "./courseModel";
 
 const lectureSchema = new mongoose.Schema({
   name: {
@@ -57,7 +58,7 @@ lectureSchema.pre("save", async function (next) {
   next();
 });
 
-// Adds lecture to chapter when created
+// Adds lecture to chapter when created and updates course's lectureCount
 lectureSchema.post("save", { document: true }, async function (doc, next) {
   console.log("Adding lecture to chapter");
 
@@ -75,7 +76,13 @@ lectureSchema.post("save", { document: true }, async function (doc, next) {
   chapter.lectures.push(doc._id);
   await chapter.save();
 
-  // TODO: Update course's lecturesCount
+  // Find course
+  const course = await Course.findById(doc.course).select({ lecturesCount: 1 });
+  if (!course) return next();
+
+  // Update course's lecture
+  course.lecturesCount += 1;
+  await course.save();
 
   next();
 });
@@ -95,7 +102,13 @@ lectureSchema.post("deleteOne", { document: true }, async function (doc, next) {
   // Save chapter
   await chapter.save();
 
-  // TODO: Update course's lecturesCount
+  // Find course
+  const course = await Course.findById(doc.course).select({ lecturesCount: 1 });
+  if (!course) return next();
+
+  // Update course's lecture
+  course.lecturesCount -= 1;
+  await course.save();
 
   next();
 });

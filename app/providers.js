@@ -4,6 +4,7 @@ import { LoginProvider } from "@/store/login-context";
 import { SessionProvider } from "next-auth/react";
 import { Suspense } from "react";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
+import { ModalProvider } from "@/store/modal-context";
 
 export function Providers({ children }) {
   return (
@@ -15,7 +16,9 @@ export function Providers({ children }) {
         // shallowRouting
       />
       <SessionProvider>
-        <LoginProvider>{children}</LoginProvider>
+        <ModalProvider>
+          <LoginProvider>{children}</LoginProvider>
+        </ModalProvider>
       </SessionProvider>
     </Suspense>
   );

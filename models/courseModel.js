@@ -53,8 +53,16 @@ const courseSchema = new mongoose.Schema({
   slug: String,
   isArchived: { type: Boolean, default: false },
   comingSoon: { type: Boolean, default: false },
-  chaptersCount: { type: Number, default: 0 },
-  lecturesCount: { type: Number, default: 0 },
+  chaptersCount: {
+    type: Number,
+    default: 0,
+    min: [0, "Chapters count cannot be less than 0"],
+  },
+  lecturesCount: {
+    type: Number,
+    default: 0,
+    min: [0, "Lectures count cannot be less than 0"],
+  },
 });
 
 courseSchema.pre("save", function (next) {

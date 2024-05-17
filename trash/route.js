@@ -92,7 +92,5 @@ export const POST = async function (req, res) {
     // }
   }
 
-  // TODO: reset all stripe products and test again
-
   return new Response(null, { status: 204 });
 };

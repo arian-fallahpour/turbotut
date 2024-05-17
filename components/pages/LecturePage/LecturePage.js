@@ -6,39 +6,28 @@ import Section from "@/components/Elements/Section/Section";
 import Sidebar from "./Sidebar/Sidebar";
 import LectureContent from "./LectureContent/LectureContent";
 import Overview from "./Overview/Overview";
+import { connectDB } from "@/utils/database";
 
 // Added to prevent error
 import Course from "@/models/courseModel";
 import Chapter from "@/models/chapterModel";
 import Lecture from "@/models/lectureModel";
-import { connectDB } from "@/utils/database";
 
 const getData = async (courseSlug) => {
   await connectDB();
 
-  const course = await Course.findOne({ slug: courseSlug })
-    .select({
-      name: 1,
-      subject: 1,
-      image: 1,
-      description: 1,
-      chapters: 1,
-      slug: 1,
-    })
-    .populate({
-      path: "chapters",
-      select: { name: 1, lectures: 1 },
-      populate: {
-        path: "lectures",
-        select: { name: 1, slug: 1 },
-      },
-    });
+  // Query course data for sidebar
+  const course = await Course.findOne({ slug: courseSlug }).populate({
+    path: "chapters",
+    select: { name: 1, lectures: 1 },
+    populate: {
+      path: "lectures",
+      select: { name: 1, slug: 1 },
+    },
+  });
   if (!course) throw new Error("Course not found");
 
   const data = JSON.parse(JSON.stringify(course));
-
-  // TODO: Check if user has bought the course
-  data.isBought = false; // placeholder for now
 
   return data;
 };

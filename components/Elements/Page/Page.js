@@ -9,6 +9,7 @@ import {
   requiresSession as enforeSessionOnly,
   restrictTo as restrictToRoles,
 } from "@/utils/authentication";
+import Modal from "../Modal/Modal";
 
 const Page = async ({
   children,
@@ -38,7 +39,7 @@ const Page = async ({
       <main className="main">{children}</main>
       {!hideFooter && <Footer />}
       <Login />
-
+      <Modal />
       <Background style={background} />
     </Fragment>
   );

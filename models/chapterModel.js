@@ -39,20 +39,17 @@ chapterSchema.pre("save", function (next) {
 
 // Adds chapter to course
 chapterSchema.post("save", { document: true }, async function (doc, next) {
-  console.log("Adding chapter to course");
-
   // Check if document was just created
   if (!doc.wasNew) return;
 
   // Check if course exists
   const course = await Course.findById(doc.course);
-  if (!course) return next(new AppError("Course was not found", 404));
+  if (!course) return next();
 
-  // Add chapter to course
+  // Add chapter to course and update chaptersCount
   course.chapters.push(doc._id);
+  course.chaptersCount += 1;
   await course.save();
-
-  // TODO: Update course's chaptersCount
 
   next();
 });
@@ -65,12 +62,11 @@ chapterSchema.post("deleteOne", { document: true }, async function (doc, next) {
   const course = await Course.findById(doc.course);
   if (!course) return next();
 
-  // Find and remove chapter from course
+  // Find and remove chapter from course, and update chaptersCount
   const index = course.chapters.findIndex((ch) => ch._id === doc._id);
   course.chapters.splice(index, 1);
+  course.chaptersCount -= 1;
   await course.save();
-
-  // TODO: Update course's chaptersCount
 
   next();
 });

@@ -5,31 +5,34 @@ import { NextResponse } from "next/server";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-// Detach
-export const DELETE = routeHandler(
+export const PATCH = routeHandler(
   async function (req, { params }) {
+    if (!params.id)
+      return new AppError("Please provide the payment method id", 400);
+
     const { user } = req.data;
 
-    if (!params.id)
-      return new AppError("Please provide a paymentMethod id", 400);
-
-    // Detach payment method in stripe
-    await stripe.paymentMethods.detach(params.id);
-
-    // Retrieve payment methods
-    const stripeCustomer = await stripe.customers.retrieve(
-      user.stripeCustomerId
+    // Update user's default payment method
+    const stripeCustomer = await stripe.customers.update(
+      user.stripeCustomerId,
+      {
+        invoice_settings: { default_payment_method: params.id },
+      }
     );
+
+    // Get customer's payment methods
     const stripePaymentMethods = await stripe.customers.listPaymentMethods(
       user.stripeCustomerId
     );
+
+    // Filter payment methods data
     const cards = filterPaymentMethods(stripePaymentMethods, stripeCustomer);
 
-    // Return 204 no content
+    // Send response
     return NextResponse.json(
       {
-        status: "sucess",
-        message: "successfully deleted payment method",
+        status: "success",
+        message: "Successfully changed default payment method",
         data: {
           cards,
         },

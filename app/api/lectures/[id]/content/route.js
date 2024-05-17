@@ -54,7 +54,7 @@ export const GET = routeHandler(
       name: 1,
     });
 
-    // TODO: Fetch content file local
+    // Fetch local content file
     const fileBuffer = await fsp.readFile(
       process.cwd() + `/data/content/${course.name}/${content.filename}`
     );
