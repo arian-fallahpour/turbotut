@@ -94,5 +94,6 @@ export const POST = async function (req, {}) {
 
 // TODO: TEST SUBSCRIPTIONS EXTENSIVELY
 // What if the user updates their subscription to renew, but does not have a card?
-//      --> It simply does not call the invoice.paid, so a subscription will not be created on our end
+//      --> It should simply not call the invoice.paid, so a subscription will not be created on our end
 //          However, they may have 1-2 extra days due to the leeway
+//          This should still be tested
