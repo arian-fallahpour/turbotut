@@ -14,11 +14,7 @@ export const GET = routeHandler(
     if (!user)
       return new AppError("Login session invalid, please login again", 400);
 
-    console.log("0");
-
     await connectDB();
-
-    console.log("1");
 
     // Find lecture
     const lecture = await Lecture.findById(params.id).select({
@@ -26,7 +22,6 @@ export const GET = routeHandler(
       course: 1,
     });
     if (!lecture) return new AppError("Lecture does not exist", 404);
-    console.log("2");
 
     // Check if user has a premium subscription
     const subscription = await Subscription.findOne({
@@ -37,8 +32,6 @@ export const GET = routeHandler(
     if (!subscription)
       return new AppError("Buy premium to gain access to this lecture", 401);
 
-    console.log("3");
-
     // Find content associated with lecture
     const content = await Content.findOne({ lecture: params.id });
     if (!content)
@@ -46,15 +39,12 @@ export const GET = routeHandler(
         "This lecture currently does not have any content",
         404
       );
-    console.log("4");
 
     // Find course
     const course = await Course.findById(lecture.course).select({
       _id: 1,
       name: 1,
     });
-
-    console.log("5");
 
     // Fetch local content file
     const fileBuffer = await fsp.readFile(
