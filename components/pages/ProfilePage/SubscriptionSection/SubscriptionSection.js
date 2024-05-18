@@ -161,7 +161,7 @@ const SubscriptionSection = ({ className, limit }) => {
                 <div className={classes.SubscriptionActions}>
                   {data?.subscription.cancelsAtPeriodEnd && (
                     <Button
-                      styleName="fill"
+                      styleName="shiny"
                       variantName="green"
                       onClick={() => changeSubscriptionHandler(false)}
                     >
@@ -170,7 +170,7 @@ const SubscriptionSection = ({ className, limit }) => {
                   )}
                   {!data?.subscription.cancelsAtPeriodEnd && (
                     <Button
-                      styleName="fill"
+                      styleName="shiny"
                       variantName="red"
                       onClick={() => changeSubscriptionHandler(true)}
                     >

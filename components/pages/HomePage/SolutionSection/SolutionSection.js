@@ -67,7 +67,6 @@ const SolutionSection = () => {
 
           <Button
             className={classes.ContentButton}
-            styleName="fill"
             variantName="green"
             href="/courses/calculus"
             isLink

@@ -41,7 +41,6 @@ const Card = ({
       )}
       <Button
         className={classes.CardRemove}
-        styleName="fill"
         variantName="red"
         onClick={() => onDetachCard(id)}
       >

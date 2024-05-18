@@ -13,7 +13,7 @@ const Header = () => {
         Easily learn entire high school subjects in only{" "}
         <span className="color-red underline-fancy">one sitting!</span>
       </p>
-      <Button styleName="fill">Get Started</Button>
+      <Button styleName="shiny">Get Started</Button>
     </header>
   );
 };

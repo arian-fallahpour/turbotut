@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 $padding-top: var(--gap-md);
 $padding-left: var(--gap-lg);
 
@@ -95,12 +97,11 @@ section.PaymentMethodsSection {
 
   &Default,
   &SetDefault {
-    color: var(--c-orange);
-    background: rgba(var(--c-orange-rgb), 0.1);
-    border: 0.1rem solid rgba(var(--c-orange-rgb), 0.2);
-    border-radius: 22rem;
     font-size: 1.35rem;
+    border-radius: 22rem;
     padding: 0.25rem 1rem;
+
+    @include glass(orange, 100%, true);
   }
 
   &SetDefault {

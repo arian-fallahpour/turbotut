@@ -66,8 +66,23 @@
     justify-content: space-between;
   }
 
+  &Exit:nth-of-type(1) {
+    font-size: 3rem !important;
+  }
+
   & > :global(.paragraph) {
     justify-self: center;
     align-self: end;
+  }
+
+  &Button {
+    & > svg {
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      left: var(--gap-sm);
+      top: 50%;
+      translate: 0 -50%;
+    }
   }
 }

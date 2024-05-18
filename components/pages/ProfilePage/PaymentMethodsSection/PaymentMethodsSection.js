@@ -220,7 +220,7 @@ const PaymentMethodsSection = ({ className, limit }) => {
 
             <Button
               className={classes.PaymentMethodsActions}
-              styleName="fill"
+              styleName="shiny"
               onClick={addCardHandler}
             >
               add card

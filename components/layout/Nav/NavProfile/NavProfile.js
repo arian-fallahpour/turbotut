@@ -21,9 +21,7 @@ const NavProfile = ({ user }) => {
           <Image alt={user.name} src={user.image} fill />
         </Link>
       ) : (
-        <Button styleName="fill" onClick={showLoginHandler}>
-          login
-        </Button>
+        <Button onClick={showLoginHandler}>login</Button>
       )}
       {user?.subscription === "premium" && (
         <div className={classes.NavProfileSubscribed}>premium</div>

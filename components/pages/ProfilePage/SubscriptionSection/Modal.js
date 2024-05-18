@@ -18,10 +18,10 @@ const Modal = ({ onCancel, onConfirm }) => {
         </p>
       </div>
       <div className={classes.ModalActions}>
-        <Button styleName="fill" variantName="red" onClick={onCancel}>
+        <Button styleName="shiny" variantName="red" onClick={onCancel}>
           back
         </Button>
-        <Button styleName="fill" variantName="green" onClick={onConfirm}>
+        <Button styleName="shiny" variantName="green" onClick={onConfirm}>
           cancel subscription
         </Button>
       </div>

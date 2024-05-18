@@ -17,7 +17,7 @@ const Price = ({ name, price, duration, benefits }) => {
           <h3 className={"header color-orange text-center"}>${price}</h3>
           <p className="paragraph text-center">{duration}</p>
         </div>
-        <Button styleName="fill" variantName="orange" href="/checkout" isLink>
+        <Button styleName="shiny" variantName="orange" href="/checkout" isLink>
           Checkout
         </Button>
       </div>

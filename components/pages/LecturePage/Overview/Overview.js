@@ -59,7 +59,6 @@ const Overview = ({ course }) => {
 
       <Button
         className={classes.OverviewCta}
-        styleName="login"
         href="/checkout?pricing=premium"
         isLink
       >

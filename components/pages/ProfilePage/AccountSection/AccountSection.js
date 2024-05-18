@@ -43,14 +43,14 @@ const AccountSection = ({ className, limit }) => {
           </FormCol>
         </FormRow>
         <FormRow className={classes.FormActions}>
-          <Button className={classes.FormSubmit} styleName="fill">
+          <Button className={classes.FormSubmit} styleName="shiny">
             update
           </Button>
         </FormRow>
       </Form> */}
       <h2 className="header header-section">profile</h2>
       <div className={classes.Signout}>
-        <Button styleName="login" onClick={() => signOut()}>
+        <Button variantName="orange" onClick={() => signOut()}>
           Sign out
         </Button>
       </div>

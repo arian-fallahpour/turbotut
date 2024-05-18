@@ -40,7 +40,7 @@ const TriangleGame = () => {
             selected.includes(0) ? classes.selected : null,
             lastUnselected === 0 ? classes.unselected : null
           )}
-          styleName="fill"
+          styleName="shiny"
           variantName="orange"
           onClick={() => onClickHandler(0)}
         >
@@ -53,7 +53,7 @@ const TriangleGame = () => {
             selected.includes(1) ? classes.selected : null,
             lastUnselected === 1 ? classes.unselected : null
           )}
-          styleName="fill"
+          styleName="shiny"
           variantName="blue"
           onClick={() => onClickHandler(1)}
         >
@@ -66,7 +66,7 @@ const TriangleGame = () => {
             selected.includes(2) ? classes.selected : null,
             lastUnselected === 2 ? classes.unselected : null
           )}
-          styleName="fill"
+          styleName="shiny"
           variantName="green"
           onClick={() => onClickHandler(2)}
         >

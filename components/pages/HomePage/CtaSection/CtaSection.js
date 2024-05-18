@@ -17,7 +17,7 @@ const CtaSection = () => {
             Don&apos;t wait! Get learning as fast as possible and ace all your
             tests and exams.
           </p>
-          <Button styleName="fill" variantName="white" href="/courses" isLink>
+          <Button variantName="white" href="/courses" isLink>
             view courses
           </Button>
         </div>

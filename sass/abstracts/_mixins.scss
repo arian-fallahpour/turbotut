@@ -1,4 +1,4 @@
-@mixin shiny($color: orange, $border-radius: 0) {
+@mixin shiny($color: orange, $border-radius: var(--bd-radius)) {
   color: var(--txt-title);
   background-image: linear-gradient(
     to top right,
@@ -36,41 +36,20 @@
   }
 }
 
-@mixin glass($color: orange, $border-radius: var(--bd-radius)) {
-  border-radius: $border-radius;
-  overflow: hidden;
-  background: transparent;
-  border: var(--bd-width) solid rgba(var(--c-#{$color}-rgb), 0.5);
+@mixin glass($color: orange, $border-radius: var(--bd-radius), $hover: false) {
+  transition: background 0.2s ease, border 0.2s ease;
+
+  background: rgba(var(--c-#{$color}-rgb), 0.1);
+  border: 0.1rem solid rgba(var(--c-#{$color}-rgb), 0.4);
   color: var(--c-#{$color});
 
-  &:hover,
-  &:focus {
-    border-color: rgba(var(--c-#{$color}-rgb), 0.7);
-
-    &::before {
-      background-size: 120%;
+  @if $hover == true {
+    &:hover,
+    &:focus-visible {
+      filter: unset;
+      border: 0.1rem solid rgba(var(--c-#{$color}-rgb), 0.5);
+      background: rgba(var(--c-#{$color}-rgb), 0.15);
     }
-  }
-
-  & > * {
-    position: relative;
-  }
-
-  &::before {
-    transition: background 0.2s ease;
-
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: radial-gradient(
-      circle at 50% -20rem,
-      rgba(var(--c-#{$color}-rgb), 0.5),
-      transparent
-    );
   }
 }
 

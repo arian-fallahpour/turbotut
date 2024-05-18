@@ -9,6 +9,10 @@ import Button from "@/components/Elements/Button/Button";
 
 import { LoginContext } from "@/store/login-context";
 import { join } from "@/utils/helper";
+import LogoGoogle from "@/public/images/logos/LogoGoogle";
+import LogoGithub from "@/public/images/logos/LogoGithub";
+
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 const Login = () => {
   const { isVisible, setVisibility } = useContext(LoginContext);
@@ -26,15 +30,30 @@ const Login = () => {
       <div className={join(classes.Login, isVisible ? classes.visible : null)}>
         <div className={classes.LoginHeader}>
           <h2 className="header header-section text-center">login</h2>
-          <Button styleName="nav" variantName="orange" onClick={exitHandler}>
-            <i className="material-symbols-rounded">close</i>
+          <Button
+            className={classes.LoginExit}
+            styleName="nav"
+            variantName="orange"
+            onClick={exitHandler}
+          >
+            <CloseRoundedIcon fontSize="inherit" />
           </Button>
         </div>
         <p className="paragraph">Log in instantly with:</p>
-        <Button styleName="login" onClick={() => signIn("google")}>
+        <Button
+          className={classes.LoginButton}
+          styleName="glass"
+          onClick={() => signIn("google")}
+        >
+          <LogoGoogle />
           Google
         </Button>
-        <Button styleName="login" onClick={() => signIn("github")}>
+        <Button
+          className={classes.LoginButton}
+          styleName="glass"
+          onClick={() => signIn("github")}
+        >
+          <LogoGithub />
           GitHub
         </Button>
       </div>

@@ -52,7 +52,7 @@ const Course = ({ data, color }) => {
 
           <Button
             className={classes.CourseButton}
-            styleName="circle"
+            styleName="shiny"
             variantName={color}
           >
             <PlayArrowRoundedIcon fontSize="inherit" />

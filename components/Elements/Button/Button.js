@@ -28,12 +28,13 @@ const Button = forwardRef(
       otherProps.onBlur = otherProps.onMouseLeave;
 
     // Determine className
+    const styleClassName = classes["Button" + toCap(styleName || "")];
+    const variantClassName =
+      classes["Button" + toCap(styleName || "") + "--" + variantName];
     const buttonClassName = join(
       classes.Button,
-      styleName ? classes["Button" + toCap(styleName)] : null,
-      variantName
-        ? classes["Button" + toCap(styleName) + "--" + variantName]
-        : null,
+      styleName ? styleClassName : null,
+      variantName ? variantClassName : null,
       className ? className : null,
       isLoading ? classes.loading : null,
       isDisabled ? classes.disabled : null,
@@ -49,10 +50,10 @@ const Button = forwardRef(
         href={otherProps.href}
         disabled={isDisabled}
         replace={isHashLink ? true : otherProps.replace}
-        ref={ref}
         {...otherProps}
+        ref={ref}
       >
-        {["fill", "circle"].includes(styleName) ? (
+        {["shiny", "circle"].includes(styleName) ? (
           <span className={classes.children}>{children}</span>
         ) : (
           children

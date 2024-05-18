@@ -9,349 +9,261 @@
   cursor: pointer;
   user-select: none;
 
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
+  gap: var(--gap-sm);
+
+  color: var(--txt-title);
+  background: var(--c-orange);
+  border-radius: 22rem;
+  text-transform: lowercase;
+
+  transition: filter 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    filter: brightness(1.1);
+  }
 
   &:disabled {
-    opacity: 0.5;
     pointer-events: none;
+    opacity: 0.75;
   }
 
   & .children {
     display: flex;
-    gap: 1rem;
+    gap: inherit;
     align-items: center;
     justify-content: center;
   }
 
-  &Text,
-  &Text:link,
-  &Text:visited {
-    display: inline-block;
-    padding: 0;
-    color: var(--txt-text);
-    background: transparent;
-    font-weight: var(--font-weight-normal);
-    font-size: var(--font-size-text);
+  & {
+    &--blue {
+      background: var(--c-blue);
+    }
 
-    transition: color 0.2s ease;
+    &--green {
+      background: var(--c-green);
+    }
 
-    &:hover,
-    &:focus-visible {
+    &--red {
+      background: var(--c-red);
+    }
+
+    &--white {
+      background: white;
       color: var(--c-orange);
+
+      &:hover,
+      &:focus-visible {
+        filter: brightness(0.95);
+      }
     }
   }
 
-  &Nav,
-  &Nav:link,
-  &Nav:visited {
-    transition: color 0.2s, text-shadow 0.2s;
+  &Shiny {
+    &,
+    &:link,
+    &:visited {
+      transition: filter 0.5s ease, box-shadow 0.5s ease;
 
-    padding: 0;
-    text-transform: lowercase;
-    color: var(--txt-text);
-    background: transparent;
+      @include shiny(orange, 100%);
 
-    &:hover,
-    &:focus-visible {
-      color: var(--txt-title);
-    }
-  }
+      box-shadow: 0rem -1rem 1.75rem -1.25rem rgba(var(--c-orange-rgb), 0.5),
+        0 1rem 1.75rem -1.25rem rgba(var(--c-orange-rgb), 0.5);
 
-  &Nav--orange,
-  &Nav--orange:link,
-  &Nav--orange:visited {
-    &:hover,
-    &:focus-visible {
-      color: var(--c-orange);
-      text-shadow: 0 0 3rem var(--c-orange);
-    }
-  }
-
-  &Circle,
-  &Circle:link,
-  &Circle:visited {
-    transition: scale 0.2s;
-
-    height: 6rem;
-    width: 6rem;
-    border-radius: 100%;
-
-    &:hover,
-    &:focus-visible {
-      scale: 1.1;
-    }
-
-    & > * {
-      position: relative;
-      height: 3rem;
-    }
-
-    & i {
-      font-size: 4rem;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-    }
-  }
-
-  &Circle,
-  &Circle:link,
-  &Circle:visited,
-  &Circle--orange,
-  &Circle--orange:link,
-  &Circle--orange:visited {
-    @include shiny(orange, 100%);
-  }
-
-  &Circle--green,
-  &Circle--green:link,
-  &Circle--green:visited {
-    @include shiny(green, 100%);
-  }
-
-  &Circle--red,
-  &Circle--red:link,
-  &Circle--red:visited {
-    @include shiny(red, 100%);
-  }
-
-  &Circle--blue,
-  &Circle--blue:link,
-  &Circle--blue:visited {
-    @include shiny(blue, 100%);
-  }
-
-  &Fill,
-  &Fill:link,
-  &Fill:visited {
-    transition: box-shadow 0.2s;
-
-    border-radius: 22rem;
-    text-transform: lowercase;
-  }
-
-  &Fill,
-  &Fill:link,
-  &Fill:visited,
-  &Fill--orange,
-  &Fill--orange:link,
-  &Fill--orange:visited {
-    box-shadow: 0rem -0.5rem 1rem -0.7rem var(--c-orange),
-      0 0.5rem 1rem -0.7rem var(--c-orange);
-
-    &:hover,
-    &:focus-visible {
-      box-shadow: 0rem -0.6rem 1.2rem -0.5rem var(--c-orange),
-        0 0.6rem 1.2rem -0.5rem var(--c-orange);
-    }
-
-    @include shiny(orange, 100%);
-  }
-
-  &Fill--blue,
-  &Fill--blue:link,
-  &Fill--blue:visited {
-    box-shadow: 0rem -0.5rem 1rem -0.7rem var(--c-blue),
-      0 0.5rem 1rem -0.7rem var(--c-blue);
-
-    &:hover,
-    &:focus-visible {
-      box-shadow: 0rem -0.6rem 1.2rem -0.5rem var(--c-blue),
-        0 0.6rem 1.2rem -0.5rem var(--c-blue);
-    }
-
-    @include shiny(blue, 100%);
-  }
-
-  &Fill--green,
-  &Fill--green:link,
-  &Fill--green:visited {
-    box-shadow: 0rem -0.5rem 1rem -0.7rem var(--c-green),
-      0 0.5rem 1rem -0.7rem var(--c-green);
-
-    &:hover,
-    &:focus-visible {
-      box-shadow: 0rem -0.6rem 1.2rem -0.5rem var(--c-green),
-        0 0.6rem 1.2rem -0.5rem var(--c-green);
-    }
-
-    @include shiny(green, 100%);
-  }
-
-  &Fill--red,
-  &Fill--red:link,
-  &Fill--red:visited {
-    box-shadow: 0rem -0.5rem 1rem -0.7rem var(--c-red),
-      0 0.5rem 1rem -0.7rem var(--c-red);
-
-    &:hover,
-    &:focus-visible {
-      box-shadow: 0rem -0.6rem 1.2rem -0.5rem var(--c-red),
-        0 0.6rem 1.2rem -0.5rem var(--c-red);
-    }
-
-    @include shiny(red, 100%);
-  }
-
-  &Fill--white,
-  &Fill--white:link,
-  &Fill--white:visited {
-    background-image: none;
-    background-color: white;
-    color: var(--c-orange);
-    box-shadow: unset;
-
-    transition: scale 0.2s ease;
-
-    &:hover,
-    &:focus-visible {
-      box-shadow: unset;
-      scale: 1.02;
-    }
-
-    &::before {
-      display: none;
-    }
-  }
-
-  &Login,
-  &Login:link,
-  &Login:visited {
-    transition: border-color 0.2s ease;
-
-    border-radius: 22rem;
-    overflow: hidden;
-    background: transparent;
-    border: 0.1rem solid rgba(var(--c-orange-rgb), 0.5);
-    color: var(--c-orange);
-
-    &:hover,
-    &:focus-visible {
-      border-color: rgba(var(--c-orange-rgb), 0.7);
-
-      &::before {
-        background-size: 120%;
+      &:hover,
+      &:focus-visible {
+        box-shadow: 0rem -1rem 1.75rem -1.25rem rgba(var(--c-orange-rgb), 1),
+          0 1rem 1.75rem -1.25rem rgba(var(--c-orange-rgb), 1);
       }
     }
 
-    & > * {
-      position: relative;
+    &--blue,
+    &--blue:link,
+    &--blue:visited {
+      @include shiny(blue, 100%);
+
+      box-shadow: 0rem -1rem 1.75rem -1.25rem rgba(var(--c-blue-rgb), 0.5),
+        0 1rem 1.75rem -1.25rem rgba(var(--c-blue-rgb), 0.5);
+
+      &:hover,
+      &:focus-visible {
+        box-shadow: 0rem -1rem 1.75rem -1.25rem rgba(var(--c-blue-rgb), 1),
+          0 1rem 1.75rem -1.25rem rgba(var(--c-blue-rgb), 1);
+      }
     }
 
-    &::before {
-      transition: background 0.2s ease;
+    &--green,
+    &--green:link,
+    &--green:visited {
+      @include shiny(green, 100%);
 
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-image: radial-gradient(
-        circle at 50% -20rem,
-        rgba(var(--c-orange-rgb), 0.5),
-        transparent
-      );
+      box-shadow: 0rem -1rem 1.75rem -1.25rem rgba(var(--c-green-rgb), 0.5),
+        0 1rem 1.75rem -1.25rem rgba(var(--c-green-rgb), 0.5);
+
+      &:hover,
+      &:focus-visible {
+        box-shadow: 0rem -1rem 1.75rem -1.25rem rgba(var(--c-green-rgb), 1),
+          0 1rem 1.75rem -1.25rem rgba(var(--c-green-rgb), 1);
+      }
+    }
+
+    &--red,
+    &--red:link,
+    &--red:visited {
+      @include shiny(red, 100%);
+
+      box-shadow: 0rem -1rem 1.75rem -1.25rem rgba(var(--c-red-rgb), 0.5),
+        0 1rem 1.75rem -1.25rem rgba(var(--c-red-rgb), 0.5);
+
+      &:hover,
+      &:focus-visible {
+        box-shadow: 0rem -1rem 1.75rem -1.25rem rgba(var(--c-red-rgb), 1),
+          0 1rem 1.75rem -1.25rem rgba(var(--c-red-rgb), 1);
+      }
     }
   }
 
-  &Login--red,
-  &Login--red:link,
-  &Login--red:visited {
-    $color: rgba(var(--c-red-rgb), 0.5);
-    border: 0.1rem solid $color;
-    color: $color;
-    background: transparent;
+  &Glass {
+    &,
+    &:link,
+    &:visited {
+      @include glass(orange, 100%, true);
+    }
+  }
 
-    &:hover,
-    &:focus-visible {
-      $color: rgba(var(--c-red-rgb), 1);
+  &Text {
+    &,
+    &Text:link,
+    &Text:visited {
+      display: inline-block;
+      padding: 0;
+      color: var(--txt-text);
+      background: transparent;
+      font-weight: var(--font-weight-normal);
+      font-size: var(--font-size-text);
+
+      transition: color 0.2s ease;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--c-orange);
+      }
+    }
+  }
+
+  &Nav {
+    &,
+    &:link,
+    &:visited {
+      transition: color 0.2s, text-shadow 0.2s;
+
+      padding: 0;
+      text-transform: lowercase;
+      color: var(--txt-text);
+      background: transparent;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--txt-title);
+      }
+    }
+
+    &--orange,
+    &--orange:link,
+    &--orange:visited {
+      &:hover,
+      &:focus-visible {
+        color: var(--c-orange);
+        text-shadow: 0 0 3rem var(--c-orange);
+      }
+    }
+  }
+
+  &Login {
+    &,
+    &:link,
+    &:visited {
+      transition: border-color 0.2s ease;
+
+      border-radius: 22rem;
+      overflow: hidden;
+      background: transparent;
+      border: 0.1rem solid rgba(var(--c-orange-rgb), 0.5);
+      color: var(--c-orange);
+
+      &:hover,
+      &:focus-visible {
+        border-color: rgba(var(--c-orange-rgb), 0.7);
+
+        &::before {
+          background-size: 120%;
+        }
+      }
+
+      & > * {
+        position: relative;
+      }
+
+      &::before {
+        transition: background 0.2s ease;
+
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: radial-gradient(
+          circle at 50% -20rem,
+          rgba(var(--c-orange-rgb), 0.5),
+          transparent
+        );
+      }
+    }
+  }
+
+  &Border {
+    &,
+    &:link,
+    &:visited {
+      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+        border 0.2s ease-in-out;
+
+      height: 4rem;
+      width: 4rem;
+      border-radius: 100%;
+
+      $color: rgba(white, 0.3);
       border: 0.1rem solid $color;
-      background: $color;
-      color: var(--bg-flat);
+      color: $color;
+      background: transparent;
+
+      &:hover,
+      &:focus-visible {
+        background: rgba(white, 0.1);
+        color: var(--txt-text);
+      }
     }
-  }
 
-  &Border,
-  &Border:link,
-  &Border:visited {
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-      border 0.2s ease-in-out;
-
-    height: 4rem;
-    width: 4rem;
-    border-radius: 100%;
-  }
-
-  &Border--orange,
-  &Border--orange:link,
-  &Border--orange:visited {
-    $color: rgba(var(--c-orange-rgb), 0.5);
-    border: 0.1rem solid $color;
-    color: $color;
-    background: transparent;
-
-    &:hover,
-    &:focus-visible {
-      $color: rgba(var(--c-orange-rgb), 1);
+    &--orange,
+    &--orange:link,
+    &--orange:visited {
+      $color: rgba(var(--c-orange-rgb), 0.6);
       border: 0.1rem solid $color;
-      background: $color;
-      color: var(--bg-flat);
-    }
-  }
+      color: $color;
+      background: transparent;
 
-  &Border--blue,
-  &Border--blue:link,
-  &Border--blue:visited {
-    $color: rgba(var(--c-blue-rgb), 0.8);
-    border: 0.1rem solid $color;
-    color: $color;
-    background: transparent;
-
-    &:hover,
-    &:focus-visible {
-      $color: rgba(var(--c-blue-rgb), 0.8);
-      border: 0.1rem solid $color;
-      background: $color;
-      color: var(--bg-flat);
-    }
-  }
-
-  &Border--green,
-  &Border--green:link,
-  &Border--green:visited {
-    $color: rgba(var(--c-green-rgb), 0.5);
-    border: 0.1rem solid $color;
-    color: $color;
-    background: transparent;
-
-    &:hover,
-    &:focus-visible {
-      $color: rgba(var(--c-green-rgb), 0.8);
-      border: 0.1rem solid $color;
-      background: $color;
-      color: var(--bg-flat);
-    }
-  }
-
-  &Border--red,
-  &Border--red:link,
-  &Border--red:visited {
-    $color: rgba(var(--c-red-rgb), 0.6);
-    border: 0.1rem solid $color;
-    color: $color;
-    background: transparent;
-
-    &:hover,
-    &:focus-visible {
-      $color: rgba(var(--c-red-rgb), 0.8);
-      border: 0.1rem solid $color;
-      background: $color;
-      color: var(--bg-flat);
+      &:hover,
+      &:focus-visible {
+        $color: rgba(var(--c-orange-rgb), 0.8);
+        border-color: $color;
+        background: $color;
+        color: var(--bg-flat);
+      }
     }
   }
 }
