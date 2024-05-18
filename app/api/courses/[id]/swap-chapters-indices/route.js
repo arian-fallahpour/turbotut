@@ -2,15 +2,13 @@ import Course from "@/models/courseModel";
 import AppError from "@/utils/AppError";
 import { routeHandler } from "@/utils/authentication";
 import { connectDB } from "@/utils/database";
-import { getBody } from "@/utils/helper";
 import { NextResponse } from "next/server";
 
 export const PATCH = routeHandler(
   async function changeIndices(req, { params }) {
     await connectDB();
 
-    const body = await getBody(req);
-    if (!body || !body.swaps)
+    if (!req.data.body || !req.data.body.swaps)
       return new AppError("Please provide index swaps", 400);
 
     // Find course
@@ -18,7 +16,7 @@ export const PATCH = routeHandler(
     if (!course) return new AppError("Could not find course", 404);
 
     // Make changes and save
-    body.swaps.forEach(([i, j]) => {
+    req.data.body.swaps.forEach(([i, j]) => {
       const b = course.chapters[j];
       course.chapters[j] = course.chapters[i];
       course.chapters[i] = b;

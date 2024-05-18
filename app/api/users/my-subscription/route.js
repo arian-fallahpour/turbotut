@@ -1,7 +1,6 @@
 import Subscription from "@/models/subscriptionModel";
 import AppError from "@/utils/AppError";
 import { routeHandler } from "@/utils/authentication";
-import { getBody } from "@/utils/helper";
 import { NextResponse } from "next/server";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
@@ -51,10 +50,8 @@ export const PATCH = routeHandler(
     const subscription = await Subscription.findActive(user._id);
 
     // Filter changes in body
-    const body = await getBody(req);
-
     const filteredChanges = {
-      cancel_at_period_end: body.cancelsAtPeriodEnd,
+      cancel_at_period_end: req.data.body.cancelsAtPeriodEnd,
     };
 
     // Update stripe subscription

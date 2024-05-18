@@ -10,8 +10,3 @@ export const capitalize = (string) => {
   string = string.join(" ");
   return string;
 };
-
-export const getBody = async (req) => {
-  const body = await req.json().catch((err) => null);
-  return body;
-};

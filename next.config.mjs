@@ -1,3 +1,5 @@
+import { createSecureHeaders } from "next-secure-headers";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: { serverComponentsExternalPackages: ["mongoose"] },
@@ -9,6 +11,26 @@ const nextConfig = {
         hostname: "avatars.githubusercontent.com",
       },
     ],
+  },
+
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: createSecureHeaders({
+          contentSecurityPolicy: {
+            directives: {
+              defaultSrc: ["'self'"],
+              styleSrc: ["'self'", "'unsafe-inline'"],
+              imgSrc: ["'self'"],
+              baseUri: "self",
+              formAction: "self",
+              frameAncestors: true,
+            },
+          },
+        }),
+      },
+    ];
   },
 };
 

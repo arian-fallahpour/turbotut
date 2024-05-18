@@ -48,6 +48,7 @@ function handleValidationError(error) {
   error.statusCode = 400;
   error.status = "fail";
   error.message = error._message;
+  error.isOperational = true;
 
   Object.values(error.errors).forEach((err) => {
     if (err.name === "CastError") {
@@ -64,6 +65,7 @@ function handleDuplicateFieldError(error) {
   const keys = Object.keys(error.keyPattern);
   error.statusCode = 400;
   error.status = "fail";
+  error.isOperational = true;
 
   if (keys.length === 1) {
     error.message = `Provided ${keys[0]} is taken`;

@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import catchAsync from "./catchAsync";
 import { connectDB } from "./database";
 import AppError from "./AppError";
-import { getBody } from "./helper";
 
 const getName = (Model, plural = false) => {
   if (plural) {
@@ -68,14 +67,15 @@ export const getOne = (Model) =>
 export const createOne = (Model) =>
   catchAsync(async function (req, {}) {
     // Check if body exists
-    const body = await getBody(req);
-    if (!body) return new AppError("Please provide JSON data in the body", 400);
+    if (!req.data.body)
+      return new AppError("Please provide JSON data in the body", 400);
+    console.log(req.data.body);
 
     // Connect to database
     await connectDB();
 
     // Create new document
-    const documentNew = await Model.create(body);
+    const documentNew = await Model.create(req.data.body);
     const name = getName(Model);
 
     // Send response
@@ -93,8 +93,8 @@ export const createOne = (Model) =>
 export const updateOne = (Model) =>
   catchAsync(async function (req, { params }) {
     // Check if body exists
-    const body = await getBody(req);
-    if (!body) return new AppError("Please provide JSON data in the body", 400);
+    if (!req.data.body)
+      return new AppError("Please provide JSON data in the body", 400);
 
     // Check if id is provided
     const name = getName(Model);
@@ -105,10 +105,14 @@ export const updateOne = (Model) =>
     await connectDB();
 
     // Find and update document
-    const documentUpdated = await Model.findByIdAndUpdate(params.id, body, {
-      runValidators: true,
-      new: true,
-    });
+    const documentUpdated = await Model.findByIdAndUpdate(
+      params.id,
+      req.data.body,
+      {
+        runValidators: true,
+        new: true,
+      }
+    );
 
     // Send response
     return NextResponse.json(

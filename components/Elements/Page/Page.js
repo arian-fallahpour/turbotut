@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import Background from "../Background/Background";
 import Nav from "@/components/layout/Nav/Nav";
-import Login from "@/components/layout/Login/Login";
 import Footer from "@/components/layout/Footer/Footer";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
@@ -38,7 +37,6 @@ const Page = async ({
       {!hideNav && <Nav user={session?.user} isAbsolute={absoluteNav} />}
       <main className="main">{children}</main>
       {!hideFooter && <Footer />}
-      <Login />
       <Modal />
       <Background style={background} />
     </Fragment>

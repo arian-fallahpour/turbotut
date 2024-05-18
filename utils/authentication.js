@@ -1,10 +1,15 @@
-import { getServerSession } from "next-auth";
-import catchAsync from "./catchAsync";
-import { options as authOptions } from "@/app/api/auth/[...nextauth]/options";
-import AppError from "./AppError";
-import User from "@/models/userModel";
-import { connectDB } from "./database";
 import { redirect } from "next/navigation";
+
+import catchAsync from "./catchAsync";
+import AppError from "./AppError";
+import { connectDB } from "./database";
+
+import User from "@/models/userModel";
+
+import { getServerSession } from "next-auth";
+import { options as authOptions } from "@/app/api/auth/[...nextauth]/options";
+import { sanitizeFilter } from "mongoose";
+import { rateLimit } from "./security";
 
 export const routeHandler = (fn, options = {}) =>
   catchAsync(async (...args) => {
@@ -13,9 +18,28 @@ export const routeHandler = (fn, options = {}) =>
       restrictTo: options.restrictTo || null,
     };
 
+    const [req, { params, query }] = args;
+    args[0].data = {};
+
+    // SECURITY HTTP HEADERS
+    console.log(query);
+
+    // DATA SANITATION: NoSQL query injection
+    const body = await req.json().catch((err) => null);
+    args[0].data.body = sanitizeFilter(body);
+    args[1].params = sanitizeFilter(params);
+    // TODO: Add sanitation for query when used
+
+    // DATA SANITATION: XSS protection
+
+    // RATE LIMITING
+    const rateLimitError = rateLimit(req);
+    if (rateLimitError) return rateLimitError;
+
+    // Retrieve session
     const session = await getServerSession(authOptions);
 
-    // Protect route from requests without a session
+    // AUTH: Session requirement
     let user;
     if (options.requiresSession || options.restrictTo) {
       await connectDB();
@@ -33,13 +57,13 @@ export const routeHandler = (fn, options = {}) =>
         );
     }
 
-    // Protect from users without specific roles
+    // AUTH: Role restriction
     if (options.restrictTo && !options.restrictTo.includes(user.role)) {
       return new AppError("You do not have access to this action", 401);
     }
 
     // add user to a data object in request
-    args[0].data = { user };
+    args[0].data.user = user;
 
     // Continue with function if authorized
     return fn(...args);
@@ -56,3 +80,16 @@ export const restrictTo = (session, roles) => {
     redirect("/?login=true");
   }
 };
+
+// TODO
+/**
+ * Security features that need to be added
+ * - Rate limiting
+ *
+ *
+ * Security testing procedure
+ * - Test protected and restricted endpoints
+ *
+ *
+ *
+ */
