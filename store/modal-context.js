@@ -14,10 +14,12 @@ export const ModalProvider = ({ children }) => {
   const showModalHandler = (content) => {
     setContent(content);
     setVisible(true);
+    document.body.style.overflow = "hidden";
   };
 
   const hideModalHandler = () => {
     setVisible(false);
+    document.body.style.overflow = "auto";
   };
 
   const loginContext = {

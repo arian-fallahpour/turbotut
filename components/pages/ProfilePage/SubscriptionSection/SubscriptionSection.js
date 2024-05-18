@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import classes from "./SubscriptionSection.module.scss";
 import Section from "@/components/Elements/Section/Section";
 import Button from "@/components/Elements/Button/Button";
@@ -12,11 +12,14 @@ import business from "@/data/business";
 import Reveal from "@/components/Elements/Reveal/Reveal";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import { startProgress, stopProgress } from "next-nprogress-bar";
+import { ModalContext } from "@/store/modal-context";
+import Modal from "./Modal";
 
 const SubscriptionSection = ({ className, limit }) => {
   const [revealed, setRevealed] = useState(false);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const { showModal, hideModal } = useContext(ModalContext);
 
   const toggleRevealedHandler = () => {
     const fetchData = async () => {
@@ -48,7 +51,7 @@ const SubscriptionSection = ({ className, limit }) => {
     fetchData();
   };
 
-  const changeSubscriptionHandler = (cancelsAtPeriodEnd) => {
+  const changeSubscriptionConfirmHandler = (cancelsAtPeriodEnd) => {
     const changeSubscription = async (cancelsAtPeriodEnd) => {
       // Add loading state
       startProgress();
@@ -72,6 +75,9 @@ const SubscriptionSection = ({ className, limit }) => {
       // Remove loading state
       stopProgress();
 
+      // Hide modal
+      hideModal();
+
       // update state with new data
       setData((p) => ({
         ...p,
@@ -80,6 +86,19 @@ const SubscriptionSection = ({ className, limit }) => {
     };
 
     changeSubscription(cancelsAtPeriodEnd);
+  };
+
+  const changeSubscriptionHandler = (cancelsAtPeriodEnd) => {
+    if (cancelsAtPeriodEnd) {
+      showModal(
+        <Modal
+          onCancel={hideModal}
+          onConfirm={() => changeSubscriptionConfirmHandler(cancelsAtPeriodEnd)}
+        />
+      );
+    } else {
+      changeSubscriptionConfirmHandler(cancelsAtPeriodEnd);
+    }
   };
 
   const dataSubscriptionStartEndText =

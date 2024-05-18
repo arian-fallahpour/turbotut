@@ -103,3 +103,30 @@ $padding-left: var(--gap-lg);
     }
   }
 }
+
+.Modal {
+  background-color: var(--bg-flat-l);
+  border: 0.1rem solid var(--c-panel-bd);
+  border-radius: var(--bd-radius);
+  backdrop-filter: blur(20px);
+
+  & > * {
+    padding: var(--gap-md) var(--gap-lg);
+  }
+
+  &Header {
+    border-bottom: inherit;
+  }
+
+  &Content {
+    border-bottom: inherit;
+    max-width: 50rem;
+    display: grid;
+    gap: var(--gap-sm);
+  }
+
+  &Actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}

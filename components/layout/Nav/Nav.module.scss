@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: var(--gap-lg);
-  padding: var(--gap-lg);
+  padding: var(--gap-md) var(--gap-lg);
 
   &.absolute {
     position: absolute;
@@ -13,9 +13,13 @@
   }
 
   &Logo {
-    height: 5.5rem;
-    width: 5.5rem;
+    height: 6.5rem;
+    width: 6.5rem;
     position: relative;
+
+    & > img {
+      object-fit: contain;
+    }
   }
 
   &Title {

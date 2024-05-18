@@ -9,8 +9,6 @@ import Image from "next/image";
 import { join } from "@/utils/helper";
 
 const Nav = ({ user, isAbsolute }) => {
-  console.log(user);
-
   return (
     <nav className={join(classes.Nav, isAbsolute ? classes.absolute : null)}>
       <div className={classes.NavLogo}>

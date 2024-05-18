@@ -25,7 +25,9 @@ const NavProfile = ({ user }) => {
           login
         </Button>
       )}
-      {user?.subscription === "premium" && <div>subscribed</div>}
+      {user?.subscription === "premium" && (
+        <div className={classes.NavProfileSubscribed}>premium</div>
+      )}
     </div>
   );
 };
