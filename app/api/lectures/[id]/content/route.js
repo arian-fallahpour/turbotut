@@ -58,21 +58,18 @@ export const GET = routeHandler(
     });
 
     // Fetch local content file
-    console.log(
-      process.cwd() + `/data/content/${course.name}/${content.filename}`
-    );
-    const fileBuffer = await fsp.readFile(
-      process.cwd() + `/data/content/${course.name}/${content.filename}`,
-      "utf8"
-    );
-    const contents = JSON.parse(fileBuffer);
+    // const fileBuffer = await fsp.readFile(
+    //   process.cwd() + `/data/content/${course.name}/${content.filename}`,
+    //   "utf8"
+    // );
+    // const contents = JSON.parse(fileBuffer);
 
     // Send response
     return NextResponse.json({
       status: "success",
       data: {
         lecture,
-        contents,
+        contents: {},
       },
     });
   },
