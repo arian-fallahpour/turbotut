@@ -10,8 +10,8 @@ import { connectDB } from "@/utils/database";
 
 // Added to prevent error
 import Course from "@/models/courseModel";
-import Chapter from "@/models/chapterModel";
-import Lecture from "@/models/lectureModel";
+// import Chapter from "@/models/chapterModel";
+// import Lecture from "@/models/lectureModel";
 
 const getData = async (courseSlug) => {
   await connectDB();
