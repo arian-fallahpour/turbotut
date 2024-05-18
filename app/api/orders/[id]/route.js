@@ -1,6 +1,16 @@
 import Order from "@/models/orderModel";
+import { routeHandler } from "@/utils/authentication";
 import { deleteOne, getOne, updateOne } from "@/utils/factoryHandler";
 
-export const GET = getOne(Order);
-export const DELETE = deleteOne(Order);
-export const PATCH = updateOne(Order);
+export const GET = routeHandler(getOne(Order), {
+  requiresSession: true,
+  restrictTo: ["admin"],
+});
+export const DELETE = routeHandler(deleteOne(Order), {
+  requiresSession: true,
+  restrictTo: ["admin"],
+});
+export const PATCH = routeHandler(updateOne(Order), {
+  requiresSession: true,
+  restrictTo: ["admin"],
+});

@@ -40,9 +40,7 @@ export const GET = routeHandler(
       { status: 200 }
     );
   },
-  {
-    requiresSession: true,
-  }
+  { requiresSession: true }
 );
 
 export const PATCH = routeHandler(

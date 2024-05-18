@@ -2,7 +2,6 @@ import Subscription from "@/models/subscriptionModel";
 import AppError from "@/utils/AppError";
 import { routeHandler } from "@/utils/authentication";
 import { getDomain } from "@/utils/dataFetch";
-import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);

@@ -7,12 +7,15 @@ import Lecture from "@/models/lectureModel";
 import Purchase from "@/models/purchaseModel";
 import Course from "@/models/courseModel";
 import Subscription from "@/models/subscriptionModel";
+import { connectDB } from "@/utils/database";
 
 export const GET = routeHandler(
   async function (req, { params }) {
     const { user } = req.data;
     if (!user)
       return new AppError("Login session invalid, please login again", 400);
+
+    await connectDB();
 
     // Find lecture
     const lecture = await Lecture.findById(params.id).select({

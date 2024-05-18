@@ -1,6 +1,16 @@
 import Course from "@/models/courseModel";
+import { routeHandler } from "@/utils/authentication";
 import { deleteOne, getOne, updateOne } from "@/utils/factoryHandler";
 
-export const GET = getOne(Course);
-export const DELETE = deleteOne(Course);
-export const PATCH = updateOne(Course);
+export const GET = routeHandler(getOne(Course), {
+  requiresSession: true,
+  restrictTo: ["admin"],
+});
+export const DELETE = routeHandler(deleteOne(Course), {
+  requiresSession: true,
+  restrictTo: ["admin"],
+});
+export const PATCH = routeHandler(updateOne(Course), {
+  requiresSession: true,
+  restrictTo: ["admin"],
+});

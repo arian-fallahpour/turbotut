@@ -4,5 +4,9 @@ import { createOne, getAll } from "@/utils/factoryHandler";
 
 export const GET = routeHandler(getAll(Subscription), {
   requiresSession: true,
+  restrictTo: ["admin"],
 });
-export const POST = createOne(Subscription);
+export const POST = routeHandler(createOne(Subscription), {
+  requiresSession: true,
+  restrictTo: ["admin"],
+});

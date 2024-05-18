@@ -1,6 +1,16 @@
 import Content from "@/models/contentModel";
+import { routeHandler } from "@/utils/authentication";
 import { deleteOne, getOne, updateOne } from "@/utils/factoryHandler";
 
-export const GET = getOne(Content);
-export const DELETE = deleteOne(Content);
-export const PATCH = updateOne(Content);
+export const GET = routeHandler(getOne(Content), {
+  requiresSession: true,
+  restrictTo: ["admin"],
+});
+export const DELETE = routeHandler(deleteOne(Content), {
+  requiresSession: true,
+  restrictTo: ["admin"],
+});
+export const PATCH = routeHandler(updateOne(Content), {
+  requiresSession: true,
+  restrictTo: ["admin"],
+});

@@ -1,37 +1,41 @@
 import Chapter from "@/models/chapterModel";
 import AppError from "@/utils/AppError";
+import { routeHandler } from "@/utils/authentication";
 import catchAsync from "@/utils/catchAsync";
 import { connectDB } from "@/utils/database";
 import { getBody } from "@/utils/helper";
 import { NextResponse } from "next/server";
 
-export const PATCH = catchAsync(async function changeIndices(req, { params }) {
-  await connectDB();
+export const PATCH = routeHandler(
+  async function changeIndices(req, { params }) {
+    await connectDB();
 
-  const body = await getBody(req);
-  if (!body || !body.swaps)
-    return new AppError("Please provide index swaps", 400);
+    const body = await getBody(req);
+    if (!body || !body.swaps)
+      return new AppError("Please provide index swaps", 400);
 
-  // Find course
-  const chapter = await Chapter.findById(params.id);
-  if (!chapter) return new AppError("Could not find chapter", 404);
+    // Find course
+    const chapter = await Chapter.findById(params.id);
+    if (!chapter) return new AppError("Could not find chapter", 404);
 
-  // Make changes and save
-  body.swaps.forEach(([i, j]) => {
-    const b = chapter.lectures[j];
-    chapter.lectures[j] = chapter.lectures[i];
-    chapter.lectures[i] = b;
-  });
-  await chapter.save();
+    // Make changes and save
+    body.swaps.forEach(([i, j]) => {
+      const b = chapter.lectures[j];
+      chapter.lectures[j] = chapter.lectures[i];
+      chapter.lectures[i] = b;
+    });
+    await chapter.save();
 
-  // Return chapter
-  return NextResponse.json(
-    {
-      status: "success",
-      data: {
-        chapter,
+    // Return chapter
+    return NextResponse.json(
+      {
+        status: "success",
+        data: {
+          chapter,
+        },
       },
-    },
-    { status: 200 }
-  );
-});
+      { status: 200 }
+    );
+  },
+  { requiresSession: true, restrictTo: ["admin"] }
+);
