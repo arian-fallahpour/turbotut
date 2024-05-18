@@ -1,10 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import catchAsync from "./catchAsync";
 import { connectDB } from "./database";
 import AppError from "./AppError";
 import { getBody } from "./helper";
-import { getServerSession } from "next-auth";
-import { options } from "@/app/api/auth/[...nextauth]/options";
 
 const getName = (Model, plural = false) => {
   if (plural) {

@@ -5,7 +5,7 @@ import { connectDB } from "@/utils/database";
 async function getData() {
   await connectDB();
 
-  const courses = await Course.find().select();
+  const courses = await Course.find();
 
   return { courses };
 }
