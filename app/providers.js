@@ -1,6 +1,5 @@
 "use client";
 
-import { LoginProvider } from "@/store/login-context";
 import { SessionProvider } from "next-auth/react";
 import { Suspense } from "react";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
@@ -16,9 +15,7 @@ export function Providers({ children }) {
         // shallowRouting
       />
       <SessionProvider>
-        <ModalProvider>
-          <LoginProvider>{children}</LoginProvider>
-        </ModalProvider>
+        <ModalProvider>{children}</ModalProvider>
       </SessionProvider>
     </Suspense>
   );
