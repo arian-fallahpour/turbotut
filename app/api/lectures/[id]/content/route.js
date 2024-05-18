@@ -8,6 +8,7 @@ import Purchase from "@/models/purchaseModel";
 import Course from "@/models/courseModel";
 import Subscription from "@/models/subscriptionModel";
 import { connectDB } from "@/utils/database";
+import { getDomain } from "@/utils/dataFetch";
 
 export const GET = routeHandler(
   async function (req, { params }) {
@@ -59,7 +60,7 @@ export const GET = routeHandler(
 
     // Fetch local content file
     const fileBuffer = await fsp.readFile(
-      process.cwd() + `/data/content/${course.name}/${content.filename}`
+      `${getDomain()}/data/content/${course.name}/${content.filename}`
     );
     const contents = JSON.parse(fileBuffer);
 
