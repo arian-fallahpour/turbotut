@@ -57,18 +57,18 @@ export const GET = routeHandler(
     console.log("5");
 
     // Fetch local content file
-    // const fileBuffer = await fsp.readFile(
-    //   process.cwd() + `/data/content/${course.name}/${content.filename}`,
-    //   "utf8"
-    // );
-    // const contents = JSON.parse(fileBuffer);
+    const fileBuffer = await fsp.readFile(
+      process.cwd() + `/data/content/${course.name}/${content.filename}`,
+      "utf8"
+    );
+    const contents = JSON.parse(fileBuffer);
 
     // Send response
     return NextResponse.json({
       status: "success",
       data: {
         lecture,
-        contents: {},
+        contents,
       },
     });
   },
