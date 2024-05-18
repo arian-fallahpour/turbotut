@@ -40,9 +40,8 @@ const LectureContent = async ({ lecture }) => {
         {error && <ErrorBlock message={error.message} type="info" />}
         {!error && (
           <FormattedContent>
-            {contents.map((data, i) => (
-              <Formatted key={i} {...data} />
-            ))}
+            {contents &&
+              contents.map((data, i) => <Formatted key={i} {...data} />)}
           </FormattedContent>
         )}
       </div>
