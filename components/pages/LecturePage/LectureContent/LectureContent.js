@@ -6,7 +6,6 @@ import Formatted, {
   FormattedContent,
 } from "@/components/Elements/Formatted/Formatted";
 import { fetchAuth } from "@/utils/dataFetch";
-import { BASE_URL } from "@/utils/config";
 
 // Added to prevent error
 import Lecture from "@/models/lectureModel";
@@ -14,7 +13,7 @@ import Content from "@/models/contentModel";
 
 // Should be revalidated every 1-6 hours or so
 const getData = async (lectureId) => {
-  const res = await fetchAuth(`${BASE_URL}/api/lectures/${lectureId}/content`, {
+  const res = await fetchAuth(`/api/lectures/${lectureId}/content`, {
     next: { revalidate: 60 * 60 * 4 },
   });
 

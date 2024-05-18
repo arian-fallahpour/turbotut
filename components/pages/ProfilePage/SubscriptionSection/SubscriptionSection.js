@@ -7,7 +7,6 @@ import Button from "@/components/Elements/Button/Button";
 
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import { join } from "@/utils/helper";
-import { BASE_URL } from "@/utils/config";
 import business from "@/data/business";
 import Reveal from "@/components/Elements/Reveal/Reveal";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
@@ -28,7 +27,7 @@ const SubscriptionSection = ({ className, limit }) => {
         // Add loading state
         startProgress();
 
-        const res = await fetch(`${BASE_URL}/api/users/my-subscription`, {
+        const res = await fetch(`/api/users/my-subscription`, {
           cache: "no-store",
         });
         const resData = await res.json();
@@ -57,7 +56,7 @@ const SubscriptionSection = ({ className, limit }) => {
       startProgress();
 
       // Make request to cancel subscription
-      const res = await fetch(`${BASE_URL}/api/users/my-subscription`, {
+      const res = await fetch(`/api/users/my-subscription`, {
         method: "PATCH",
         cache: "no-store",
         body: JSON.stringify({

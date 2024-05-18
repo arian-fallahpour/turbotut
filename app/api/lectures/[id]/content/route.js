@@ -14,6 +14,8 @@ export const GET = routeHandler(
     if (!user)
       return new AppError("Login session invalid, please login again", 400);
 
+    console.log("0");
+
     await connectDB();
 
     console.log("1");
@@ -55,18 +57,18 @@ export const GET = routeHandler(
     console.log("5");
 
     // Fetch local content file
-    const fileBuffer = await fsp.readFile(
-      process.cwd() + `/data/content/${course.name}/${content.filename}`,
-      "utf8"
-    );
-    const contents = JSON.parse(fileBuffer);
+    // const fileBuffer = await fsp.readFile(
+    //   process.cwd() + `/data/content/${course.name}/${content.filename}`,
+    //   "utf8"
+    // );
+    // const contents = JSON.parse(fileBuffer);
 
     // Send response
     return NextResponse.json({
       status: "success",
       data: {
         lecture,
-        contents,
+        contents: {},
       },
     });
   },

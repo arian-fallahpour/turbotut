@@ -3,7 +3,7 @@
 import React, { useContext, useState } from "react";
 import classes from "./PaymentMethodsSection.module.scss";
 import { join } from "@/utils/helper";
-import { BASE_URL, STRIPE_PUBLIC_KEY } from "@/utils/config";
+import { STRIPE_PUBLIC_KEY } from "@/utils/config";
 import { ModalContext } from "@/store/modal-context";
 
 import Card from "./Card";
@@ -32,7 +32,7 @@ const PaymentMethodsSection = ({ className, limit }) => {
         // Add loading state
         startProgress();
 
-        const res = await fetch(`${BASE_URL}/api/users/my-payment-methods`, {
+        const res = await fetch(`/api/users/my-payment-methods`, {
           cache: "no-store",
         });
         const resData = await res.json();
@@ -61,7 +61,7 @@ const PaymentMethodsSection = ({ className, limit }) => {
       startProgress();
 
       // Make request to get checkout session id
-      const res = await fetch(`${BASE_URL}/api/users/my-payment-methods`, {
+      const res = await fetch(`/api/users/my-payment-methods`, {
         method: "POST",
         cache: "no-store",
       });
@@ -94,13 +94,10 @@ const PaymentMethodsSection = ({ className, limit }) => {
       // Add loading state
       startProgress();
 
-      const res = await fetch(
-        `${BASE_URL}/api/users/my-payment-methods/${id}`,
-        {
-          method: "DELETE",
-          cache: "no-store",
-        }
-      );
+      const res = await fetch(`/api/users/my-payment-methods/${id}`, {
+        method: "DELETE",
+        cache: "no-store",
+      });
       const resData = await res.json();
 
       // Check for any errors
@@ -138,13 +135,10 @@ const PaymentMethodsSection = ({ className, limit }) => {
       // Add loading state
       startProgress();
 
-      const res = await fetch(
-        `${BASE_URL}/api/users/my-payment-methods/${id}/default`,
-        {
-          method: "PATCH",
-          cache: "no-store",
-        }
-      );
+      const res = await fetch(`/api/users/my-payment-methods/${id}/default`, {
+        method: "PATCH",
+        cache: "no-store",
+      });
       const resData = await res.json();
 
       // Check for any errors
