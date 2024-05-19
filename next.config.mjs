@@ -1,5 +1,3 @@
-import { createSecureHeaders } from "next-secure-headers";
-
 const cspHeader = `
     default-src 'self';
     connect-src 'self' https://api.stripe.com https://maps.googleapis.com;
