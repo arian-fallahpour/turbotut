@@ -44,14 +44,28 @@ export const GET = routeHandler(
 
 export const PATCH = routeHandler(
   async function (req) {
-    const { user } = req.data;
+    const { user, body } = req.data;
 
     // Retrieve user's subscription
     const subscription = await Subscription.findActive(user._id);
 
+    // If user wants to keep renewing, check if they have a payment method
+    if ("cancelsAtPeriodEnd" in body && !body.cancelsAtPeriodEnd) {
+      const stripePaymentMethods = await stripe.customers.listPaymentMethods(
+        user.stripeCustomerId
+      );
+
+      console.log(stripePaymentMethods.data);
+
+      if (stripePaymentMethods.data.length === 0)
+        return new AppError(
+          "Please add a payment method before allowing renewals for your subscription"
+        );
+    }
+
     // Filter changes in body
     const filteredChanges = {
-      cancel_at_period_end: req.data.body.cancelsAtPeriodEnd,
+      cancel_at_period_end: body.cancelsAtPeriodEnd,
     };
 
     // Update stripe subscription

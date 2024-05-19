@@ -16,20 +16,20 @@ import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 
 import { loadStripe } from "@stripe/stripe-js";
 import { startProgress, stopProgress } from "next-nprogress-bar";
+import { GlobalErrorContext } from "@/store/error-context";
 
 const stripePromise = loadStripe(STRIPE_PUBLIC_KEY);
 
 const PaymentMethodsSection = ({ className, limit }) => {
   const [revealed, setRevealed] = useState(false);
   const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+  const { setGlobalError } = useContext(GlobalErrorContext);
   const { showModal, hideModal } = useContext(ModalContext);
 
   const toggleRevealedHandler = () => {
     const fetchData = async () => {
       // Fetch data if not available already
       if (!data && !revealed) {
-        // Add loading state
         startProgress();
 
         const res = await fetch(`/api/users/my-payment-methods`, {
@@ -37,13 +37,13 @@ const PaymentMethodsSection = ({ className, limit }) => {
         });
         const resData = await res.json();
 
+        stopProgress();
+
         // Check for any errors
         if (!res.ok) {
-          setError(new Error(resData.message));
+          setGlobalError(new Error(resData.message));
+          return;
         }
-
-        // Remove loading state
-        stopProgress();
 
         // Set state data
         setData(resData.data);
@@ -55,43 +55,8 @@ const PaymentMethodsSection = ({ className, limit }) => {
     fetchData();
   };
 
-  const addCardHandler = () => {
-    const addCard = async () => {
-      // Add loading state
-      startProgress();
-
-      // Make request to get checkout session id
-      const res = await fetch(`/api/users/my-payment-methods`, {
-        method: "POST",
-        cache: "no-store",
-      });
-      const resData = await res.json();
-
-      // Check for any errors
-      if (!res.ok) {
-        setError(new Error(resData.message));
-      }
-
-      // Remove loading state
-      stopProgress();
-
-      // Redirect user to checkout
-      const stripe = await stripePromise;
-      const { error } = await stripe.redirectToCheckout({
-        sessionId: resData.sessionId,
-      });
-
-      if (error) {
-        setError(error);
-      }
-    };
-
-    addCard();
-  };
-
   const detachCardConfirmHandler = (id) => {
     const detachCard = async () => {
-      // Add loading state
       startProgress();
 
       const res = await fetch(`/api/users/my-payment-methods/${id}`, {
@@ -100,17 +65,14 @@ const PaymentMethodsSection = ({ className, limit }) => {
       });
       const resData = await res.json();
 
+      stopProgress();
+      hideModal();
+
       // Check for any errors
       if (!res.ok) {
-        setError(new Error(resData.message));
+        setGlobalError(new Error(resData.message));
         return;
       }
-
-      // Remove loading state
-      stopProgress();
-
-      // Hide modal
-      hideModal();
 
       // Update data
       setData(resData.data);
@@ -119,7 +81,7 @@ const PaymentMethodsSection = ({ className, limit }) => {
     detachCard();
   };
 
-  const showDetachModalHandler = (id) => {
+  const detachCardModalHandler = (id) => {
     // Show confirmation modal
     showModal(
       <Modal
@@ -141,20 +103,50 @@ const PaymentMethodsSection = ({ className, limit }) => {
       });
       const resData = await res.json();
 
+      stopProgress();
+
       // Check for any errors
       if (!res.ok) {
-        setError(new Error(resData.message));
+        setGlobalError(new Error(resData.message));
         return;
       }
-
-      // Remove loading state
-      stopProgress();
 
       // Update data
       setData(resData.data);
     };
 
     setDefault();
+  };
+
+  const attachCardHandler = () => {
+    const addCard = async () => {
+      startProgress();
+
+      // Make request to get checkout session id
+      const res = await fetch(`/api/users/my-payment-methods`, {
+        method: "POST",
+        cache: "no-store",
+      });
+      const resData = await res.json();
+
+      stopProgress();
+
+      // Check for any errors
+      if (!res.ok) {
+        setGlobalError(new Error(resData.message));
+        return;
+      }
+
+      // Redirect user to checkout
+      const stripe = await stripePromise;
+      const { error } = await stripe.redirectToCheckout({
+        sessionId: resData.sessionId,
+      });
+
+      if (error) setGlobalError(error);
+    };
+
+    addCard();
   };
 
   return (
@@ -183,14 +175,6 @@ const PaymentMethodsSection = ({ className, limit }) => {
         <Reveal revealed={revealed}>
           <div className={classes.PaymentMethodsContent}>
             <ul className={classes.Cards}>
-              {/* API error */}
-              {error && (
-                <ErrorBlock
-                  className={classes.PaymentMethodsError}
-                  message={error.message}
-                />
-              )}
-
               {/* No cards */}
               {data?.cards.length === 0 && (
                 <ErrorBlock
@@ -207,7 +191,7 @@ const PaymentMethodsSection = ({ className, limit }) => {
                     id={card.id}
                     {...card.card}
                     onSetDefault={setDefaultCardHandler}
-                    onDetachCard={showDetachModalHandler}
+                    onDetachCard={detachCardModalHandler}
                   />
                 ))}
             </ul>
@@ -215,7 +199,7 @@ const PaymentMethodsSection = ({ className, limit }) => {
             <Button
               className={classes.PaymentMethodsActions}
               styleName="shiny"
-              onClick={addCardHandler}
+              onClick={attachCardHandler}
             >
               add card
             </Button>

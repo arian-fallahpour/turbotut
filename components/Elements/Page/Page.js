@@ -9,6 +9,7 @@ import {
   restrictTo as restrictToRoles,
 } from "@/utils/authentication";
 import Modal from "../Modal/Modal";
+import GlobalError from "../GlobalError/GlobalError";
 
 const Page = async ({
   children,
@@ -34,6 +35,7 @@ const Page = async ({
 
   return (
     <Fragment>
+      <GlobalError />
       {!hideNav && <Nav user={session?.user} isAbsolute={absoluteNav} />}
       <main className="main">{children}</main>
       {!hideFooter && <Footer />}

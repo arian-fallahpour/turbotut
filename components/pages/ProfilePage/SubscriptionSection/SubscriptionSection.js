@@ -13,11 +13,13 @@ import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import { startProgress, stopProgress } from "next-nprogress-bar";
 import { ModalContext } from "@/store/modal-context";
 import Modal from "./Modal";
+import { GlobalErrorContext } from "@/store/error-context";
 
 const SubscriptionSection = ({ className, limit }) => {
   const [revealed, setRevealed] = useState(false);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const { setGlobalError } = useContext(GlobalErrorContext);
   const { showModal, hideModal } = useContext(ModalContext);
 
   const toggleRevealedHandler = () => {
@@ -68,7 +70,10 @@ const SubscriptionSection = ({ className, limit }) => {
 
       // Check for any errors
       if (!res.ok) {
-        setError(new Error(resData.message));
+        setGlobalError(new Error(resData.message));
+        stopProgress();
+        hideModal();
+        return;
       }
 
       // Remove loading state
@@ -87,7 +92,7 @@ const SubscriptionSection = ({ className, limit }) => {
     changeSubscription(cancelsAtPeriodEnd);
   };
 
-  const changeSubscriptionHandler = (cancelsAtPeriodEnd) => {
+  const changeSubscriptionModalHandler = (cancelsAtPeriodEnd) => {
     if (cancelsAtPeriodEnd) {
       showModal(
         <Modal
@@ -162,7 +167,7 @@ const SubscriptionSection = ({ className, limit }) => {
                     <Button
                       styleName="shiny"
                       variantName="green"
-                      onClick={() => changeSubscriptionHandler(false)}
+                      onClick={() => changeSubscriptionModalHandler(false)}
                     >
                       continue subscription
                     </Button>
@@ -171,7 +176,7 @@ const SubscriptionSection = ({ className, limit }) => {
                     <Button
                       styleName="shiny"
                       variantName="red"
-                      onClick={() => changeSubscriptionHandler(true)}
+                      onClick={() => changeSubscriptionModalHandler(true)}
                     >
                       cancel subscription
                     </Button>

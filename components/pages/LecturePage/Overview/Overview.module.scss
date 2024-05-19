@@ -53,7 +53,7 @@
       gap: inherit;
     }
 
-    &Intro {
+    &Intro:not(:last-child) {
       border-bottom: $border;
     }
 

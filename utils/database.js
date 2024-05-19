@@ -28,34 +28,37 @@ export const connectDB = async () => {
   }
 };
 
-export const signupUpdateUser = catchAsync(
-  async ({ firstName, lastName, email, picture }) => {
-    await connectDB();
+export const signupUpdateUser = async ({
+  firstName,
+  lastName,
+  email,
+  picture,
+}) => {
+  await connectDB();
 
-    let user = await User.findOne({ email });
+  let user = await User.findOne({ email });
 
-    // If user exists, update current one
-    if (user) {
-      user.firstName = firstName;
-      user.lastName = lastName;
-      user.email = email;
-      user.picture = picture;
-      await user.save();
-    }
-
-    // If user does not exist, create a new one
-    else {
-      user = await User.create({
-        firstName,
-        lastName,
-        email,
-        picture,
-      });
-    }
-
-    return user;
+  // If user exists, update current one
+  if (user) {
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.email = email;
+    user.picture = picture;
+    await user.save();
   }
-);
+
+  // If user does not exist, create a new one
+  else {
+    user = await User.create({
+      firstName,
+      lastName,
+      email,
+      picture,
+    });
+  }
+
+  return user;
+};
 
 export const isValidObjectId = (Model) =>
   async function (val) {

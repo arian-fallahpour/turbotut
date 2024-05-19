@@ -10,6 +10,7 @@ import LogoGoogle from "@/public/images/logos/LogoGoogle";
 import LogoGithub from "@/public/images/logos/LogoGithub";
 
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import { startProgress } from "next-nprogress-bar";
 
 const Login = ({ onExit }) => {
   return (
@@ -30,7 +31,10 @@ const Login = ({ onExit }) => {
       <Button
         className={classes.LoginButton}
         styleName="glass"
-        onClick={() => signIn("google")}
+        onClick={() => {
+          startProgress();
+          signIn("google");
+        }}
       >
         <LogoGoogle />
         Google
@@ -38,7 +42,10 @@ const Login = ({ onExit }) => {
       <Button
         className={classes.LoginButton}
         styleName="glass"
-        onClick={() => signIn("github")}
+        onClick={() => {
+          startProgress();
+          signIn("github");
+        }}
       >
         <LogoGithub />
         GitHub

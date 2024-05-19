@@ -69,7 +69,6 @@ export const createOne = (Model) =>
     // Check if body exists
     if (!req.data.body)
       return new AppError("Please provide JSON data in the body", 400);
-    console.log(req.data.body);
 
     // Connect to database
     await connectDB();

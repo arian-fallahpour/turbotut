@@ -50,7 +50,7 @@ userSchema.pre("save", async function (next) {
   if (this.isNew || !this.stripeCustomerId) {
     const customer = await stripe.customers.create({
       email: this.email,
-      name: `${toCap(this.firsName)} ${toCap(this.lastName)}`,
+      name: `${toCap(this.firstName)} ${toCap(this.lastName)}`,
     });
 
     this.stripeCustomerId = customer.id;

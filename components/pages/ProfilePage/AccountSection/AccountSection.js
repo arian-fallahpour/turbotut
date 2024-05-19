@@ -10,6 +10,7 @@ import Section from "@/components/Elements/Section/Section";
 import Button from "@/components/Elements/Button/Button";
 import { join } from "@/utils/helper";
 import { signOut } from "next-auth/react";
+import { startProgress } from "next-nprogress-bar";
 
 const AccountSection = ({ className, limit }) => {
   return (
@@ -50,7 +51,13 @@ const AccountSection = ({ className, limit }) => {
       </Form> */}
       <h2 className="header header-section">profile</h2>
       <div className={classes.Signout}>
-        <Button variantName="orange" onClick={() => signOut()}>
+        <Button
+          variantName="orange"
+          onClick={() => {
+            startProgress();
+            signOut();
+          }}
+        >
           Sign out
         </Button>
       </div>

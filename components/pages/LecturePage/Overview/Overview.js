@@ -35,26 +35,28 @@ const Overview = ({ course }) => {
             </Button>
           </li>
         </ul>
-        <ul className={classes.ContentChapters}>
-          {course.chapters.map((chp) => (
-            <li key={chp.name} className={classes.ContentChapter}>
-              <h4 className="header header-card">{chp.name}</h4>
-              <ul className={classes.ContentLectures}>
-                {chp.lectures.map((lec) => (
-                  <li key={lec.name} className={classes.ContentLecture}>
-                    <Button
-                      styleName="text"
-                      href={`/courses/${course.slug}/lecture/${lec.slug}`}
-                      isLink
-                    >
-                      {lec.name}
-                    </Button>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
+        {course.chapters && course.chapters.length > 0 && (
+          <ul className={classes.ContentChapters}>
+            {course.chapters.map((chp) => (
+              <li key={chp.name} className={classes.ContentChapter}>
+                <h4 className="header header-card">{chp.name}</h4>
+                <ul className={classes.ContentLectures}>
+                  {chp.lectures.map((lec) => (
+                    <li key={lec.name} className={classes.ContentLecture}>
+                      <Button
+                        styleName="text"
+                        href={`/courses/${course.slug}/lecture/${lec.slug}`}
+                        isLink
+                      >
+                        {lec.name}
+                      </Button>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       <Button

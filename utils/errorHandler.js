@@ -14,7 +14,7 @@ const errorHandler = (error) => {
 
   // Log error if not operational
   if (!error.isOperational) {
-    console.error("** NON-OPERATIONAL ERROR **", error);
+    console.error("*** NON-OPERATIONAL ERROR ***: ", error);
   }
 
   // Send prod error if in production
