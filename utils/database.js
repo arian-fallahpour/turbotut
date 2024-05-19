@@ -5,6 +5,7 @@ import User from "@/models/userModel";
 let isConnected = false;
 
 export const connectDB = async () => {
+  // Check if already connected
   if (isConnected) {
     if (process.env.NODE_ENV === "development") {
       console.log("<< Database already connected >>");
@@ -14,10 +15,11 @@ export const connectDB = async () => {
   }
 
   try {
-    const uri = process.env.DB_CONNECT.replace(
-      "<password>",
-      process.env.DB_PASS
-    );
+    let uri = process.env.DB_CONNECT;
+    uri = uri.replace("<username>", process.env.DB_USER);
+    uri = uri.replace("<password>", process.env.DB_PASS);
+
+    // Connect to database
     await mongoose.connect(uri, {
       autoIndex: true,
     });

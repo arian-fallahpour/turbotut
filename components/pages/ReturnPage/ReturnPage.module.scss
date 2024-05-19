@@ -1,0 +1,38 @@
+@import "@/sass/abstracts/mixins";
+
+section.ReturnPage {
+  flex: 1;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  position: relative;
+  height: 100%;
+}
+
+.Success {
+  border-radius: var(--bd-radius);
+  width: 35rem;
+
+  border: 0.1rem solid var(--c-panel-bd);
+  background: var(--c-panel-bg);
+
+  display: grid;
+
+  & > *:not(:last-child) {
+    border-bottom: inherit;
+  }
+
+  & > * {
+    padding: var(--gap-md) var(--gap-lg);
+  }
+
+  &Header {
+    text-align: center;
+  }
+
+  &Content {
+    display: grid;
+    gap: var(--gap-sm);
+  }
+}

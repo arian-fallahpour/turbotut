@@ -3,8 +3,6 @@ import { connectDB, signupUpdateUser } from "@/utils/database";
 import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
-// TODO: If bug in vercel, most likely due to me forgetting to update environment variables for github AND google (both)
-
 export const options = {
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
