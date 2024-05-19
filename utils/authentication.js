@@ -18,11 +18,8 @@ export const routeHandler = (fn, options = {}) =>
       restrictTo: options.restrictTo || null,
     };
 
-    const [req, { params, query }] = args;
+    const [req, { params }] = args;
     args[0].data = {};
-
-    // SECURITY HTTP HEADERS
-    console.log(query);
 
     // DATA SANITATION: NoSQL query injection
     const body = await req.json().catch((err) => null);
@@ -30,7 +27,7 @@ export const routeHandler = (fn, options = {}) =>
     args[1].params = sanitizeFilter(params);
     // TODO: Add sanitation for query when used
 
-    // DATA SANITATION: XSS protection
+    // PARAMETER POLLUTION PROTECTION
 
     // RATE LIMITING
     const rateLimitError = rateLimit(req);

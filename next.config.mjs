@@ -2,9 +2,11 @@ import { createSecureHeaders } from "next-secure-headers";
 
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
+    connect-src 'self' https://api.stripe.com https://maps.googleapis.com;
+    frame-src 'self' https://js.stripe.com https://hooks.stripe.com;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' https://js.stripe.com https://maps.googleapis.com;
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data:;
+    img-src 'self' blob: data: https://*.stripe.com;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
