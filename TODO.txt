@@ -1,3 +1,5 @@
-1. Check out the XSS vulnerability for showdown (markdown package)
-2. Add proper route protections
-3. Optimize ssr and ssg for fetches
+Fix links and images for homepage
+Create content for courses
+Test endpoints for vulnerabilities
+Add CTA for lecturepage (maybe)
+Add Google Oauth

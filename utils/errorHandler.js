@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import AppError from "./AppError";
 
 const errorHandler = (error) => {
   // error = JSON.parse(JSON.stringify(error));
@@ -8,6 +9,8 @@ const errorHandler = (error) => {
   // Refactor errors
   if (error.name === "ValidationError") error = handleValidationError(error);
   if (error.code === 11000) error = handleDuplicateFieldError(error);
+  if (error.type === "StripeInvalidRequestError")
+    error = handleStripeError(error);
 
   // Log error if not operational
   if (!error.isOperational) {
@@ -79,6 +82,14 @@ function handleDuplicateFieldError(error) {
   keys.forEach((key) => {
     error.errors[key] = "Please provide a different value";
   });
+
+  return error;
+}
+
+function handleStripeError(error) {
+  if (error.raw.code === "resource_missing") {
+    return new AppError("Please provide a valid and existing id", 400);
+  }
 
   return error;
 }
