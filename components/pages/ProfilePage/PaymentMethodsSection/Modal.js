@@ -20,10 +20,10 @@ const Modal = ({ onCancel, onConfirm, cards }) => {
         )}
       </div>
       <div className={classes.ModalActions}>
-        <Button styleName="shiny" variantName="red" onClick={onCancel}>
+        <Button variantName="red" onClick={onCancel}>
           cancel
         </Button>
-        <Button styleName="shiny" variantName="green" onClick={onConfirm}>
+        <Button variantName="green" onClick={onConfirm}>
           detach card
         </Button>
       </div>

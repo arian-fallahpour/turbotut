@@ -1,19 +1,20 @@
 "use client";
 
 import React, { Fragment, useContext, useState } from "react";
+import { ModalContext } from "@/store/modal-context";
+import { GlobalErrorContext } from "@/store/error-context";
 import classes from "./SubscriptionSection.module.scss";
-import Section from "@/components/Elements/Section/Section";
-import Button from "@/components/Elements/Button/Button";
 
-import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import { join } from "@/utils/helper";
 import business from "@/data/business";
+import { startProgress, stopProgress } from "next-nprogress-bar";
+
+import Section from "@/components/Elements/Section/Section";
+import Button from "@/components/Elements/Button/Button";
 import Reveal from "@/components/Elements/Reveal/Reveal";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
-import { startProgress, stopProgress } from "next-nprogress-bar";
-import { ModalContext } from "@/store/modal-context";
+import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import Modal from "./Modal";
-import { GlobalErrorContext } from "@/store/error-context";
 
 const SubscriptionSection = ({ className, limit }) => {
   const [revealed, setRevealed] = useState(false);

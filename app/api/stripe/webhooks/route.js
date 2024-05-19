@@ -25,6 +25,8 @@ export const POST = async function (req, {}) {
     return NextResponse.json(`Webhook Error: ${err.message}`, { status: 400 });
   }
 
+  console.log(event.type);
+
   // Check if subscription invoice has been paid
   if (event.type === "invoice.paid") {
     const invoice = event.data.object;
@@ -89,11 +91,19 @@ export const POST = async function (req, {}) {
     }
   }
 
+  // Set subscription's endsAt to today when stripe subscription is cancelled
+  if (event.type === "customer.subscription.deleted") {
+    const subscription = await Subscription.findOne({
+      stripeSubscriptionId: event.data.object.id,
+    });
+
+    // TODO: Set subscription status to cancelled
+
+    if (subscription) {
+      subscription.endsAt = new Date(Date.now());
+      await subscription.save();
+    }
+  }
+
   return new Response(null, { status: 204 });
 };
-
-// TODO: TEST SUBSCRIPTIONS EXTENSIVELY
-// What if the user updates their subscription to renew, but does not have a card?
-//      --> It should simply not call the invoice.paid, so a subscription will not be created on our end
-//          However, they may have 1-2 extra days due to the leeway
-//          This should still be tested

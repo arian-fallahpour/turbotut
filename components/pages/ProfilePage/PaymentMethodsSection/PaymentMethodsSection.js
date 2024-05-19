@@ -3,8 +3,8 @@
 import React, { useContext, useState } from "react";
 import classes from "./PaymentMethodsSection.module.scss";
 import { join } from "@/utils/helper";
-import { STRIPE_PUBLIC_KEY } from "@/utils/config";
 import { ModalContext } from "@/store/modal-context";
+import { STRIPE_PUBLIC_KEY } from "@/utils/config";
 
 import Card from "./Card";
 import Modal from "./Modal";
@@ -160,7 +160,6 @@ const PaymentMethodsSection = ({ className, limit }) => {
           revealed ? classes.revealed : null
         )}
       >
-        {/* HEADER */}
         <div className={classes.PaymentMethodsHeader}>
           <h2 className="header header-section">payment methods</h2>
           <Button
@@ -170,12 +169,9 @@ const PaymentMethodsSection = ({ className, limit }) => {
             <AddRoundedIcon fontSize="inherit" />
           </Button>
         </div>
-
-        {/* REVEAL */}
         <Reveal revealed={revealed}>
           <div className={classes.PaymentMethodsContent}>
             <ul className={classes.Cards}>
-              {/* No cards */}
               {data?.cards.length === 0 && (
                 <ErrorBlock
                   className={classes.CardsError}
@@ -211,4 +207,3 @@ const PaymentMethodsSection = ({ className, limit }) => {
 };
 
 export default PaymentMethodsSection;
-// TODO: Test UI and API in "extreme" cases
