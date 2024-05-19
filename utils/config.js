@@ -1,2 +1,1 @@
-export const STRIPE_PUBLIC_KEY =
-  "pk_test_51PEYEaErmmehb3yOgtCJLNTQOk7y8Ibb9cLYGAS9UpxqdBwjK9bUrkrDj099ceka1EfkdP4ozlj5DvEuz7NsX4Tc00Rz28tJIC";
+export const STRIPE_PUBLIC_KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY;
