@@ -24,7 +24,7 @@ export const GET = routeHandler(
     if (!lecture) return new AppError("Lecture does not exist", 404);
 
     // Check if user has a premium subscription if not admin
-    if (user.role !== admin) {
+    if (user.role !== "admin") {
       const subscription = await Subscription.findOne({
         user: user._id,
         startsAt: { $lt: new Date(Date.now()) },
