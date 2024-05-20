@@ -2,6 +2,10 @@
   background-color: var(--c-panel-bg);
   border: 0.1rem solid var(--c-panel-bd);
   border-radius: var(--bd-radius);
+  height: calc(100vh - 2 * var(--gap-lg));
+
+  position: sticky;
+  top: var(--gap-lg);
 
   & > *:not(:last-child) {
     border-bottom: inherit;

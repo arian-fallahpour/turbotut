@@ -48,7 +48,8 @@ export const GET = routeHandler(
 
     // Fetch local content file
     const fileBuffer = await fsp.readFile(
-      process.cwd() + `/data/content/${course.name}/${content.filename}`,
+      process.cwd() +
+        `/data/lectures/contents/${course.name}/${content.filename}`,
       "utf8"
     );
     const contents = JSON.parse(fileBuffer);

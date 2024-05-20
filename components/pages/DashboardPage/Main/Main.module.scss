@@ -1,2 +1,7 @@
-.main {
+.Main {
+  border: 0.1rem solid var(--c-panel-bd);
+  background: var(--c-panel-bg);
+  border-radius: var(--bd-radius);
+  padding: var(--gap-lg);
+  min-height: 120vh;
 }

@@ -6,6 +6,9 @@
   min-height: 70rem;
   max-width: 100rem;
 
+  display: grid;
+  align-content: start;
+
   h1,
   h2,
   h3 {
@@ -48,6 +51,7 @@
     font-size: 1.5em;
     text-align: center;
     margin: 1em auto !important;
+    justify-self: center;
   }
 
   figure {
@@ -56,11 +60,13 @@
     width: 100%;
     font-size: var(--font-size-text);
     margin: 0.63em auto !important;
+    justify-self: center;
 
     & > img {
       width: 100%;
       height: auto;
       border-radius: var(--bd-radius);
+      border: 0.1rem solid var(--c-panel-bd);
       display: block;
     }
 
@@ -70,5 +76,15 @@
       font-size: inherit;
       margin-top: 0.37em;
     }
+  }
+
+  video {
+    max-width: 60rem;
+    width: 100%;
+    height: auto;
+    margin: 0.63em auto !important;
+    border-radius: var(--bd-radius);
+    border: 0.1rem solid var(--c-panel-bd);
+    justify-self: center;
   }
 }

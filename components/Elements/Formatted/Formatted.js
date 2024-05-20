@@ -32,6 +32,11 @@ const Formatted = ({ type, content, contents, style, filename, isChild }) => {
       </figure>
     );
   } else if (type === "video") {
+    return (
+      <video width={1280} height={720} autoPlay muted loop>
+        <source src={`/lectures/videos/${filename}`} type="video/mp4" />
+      </video>
+    );
   } else if (type === "latex") {
     return (
       <p className="latex">
