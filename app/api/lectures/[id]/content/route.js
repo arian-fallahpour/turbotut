@@ -23,14 +23,16 @@ export const GET = routeHandler(
     });
     if (!lecture) return new AppError("Lecture does not exist", 404);
 
-    // Check if user has a premium subscription
-    const subscription = await Subscription.findOne({
-      user: user._id,
-      startsAt: { $lt: new Date(Date.now()) },
-      endsAt: { $gt: new Date(Date.now()) },
-    }).select({ _id: 1 });
-    if (!subscription)
-      return new AppError("Buy premium to gain access to this lecture", 401);
+    // Check if user has a premium subscription if not admin
+    if (user.role !== admin) {
+      const subscription = await Subscription.findOne({
+        user: user._id,
+        startsAt: { $lt: new Date(Date.now()) },
+        endsAt: { $gt: new Date(Date.now()) },
+      }).select({ _id: 1 });
+      if (!subscription)
+        return new AppError("Buy premium to gain access to this lecture", 401);
+    }
 
     // Find content associated with lecture
     const content = await Content.findOne({ lecture: params.id });
