@@ -58,6 +58,9 @@
     }
 
     &IntroItem {
+      & > a {
+        padding: 0;
+      }
     }
 
     &IntroItem,
@@ -79,6 +82,10 @@
     }
 
     &Lecture {
+      display: grid;
+      & > a {
+        padding: 0;
+      }
     }
   }
 }
