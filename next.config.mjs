@@ -27,6 +27,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
       },
+      {
+        protocol: "https",
+        hostname: "turbotut.s3.us-east-2.amazonaws.com",
+      },
     ],
   },
 

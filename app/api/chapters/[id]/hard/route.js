@@ -1,7 +1,7 @@
 import Chapter from "@/models/chapterModel";
+import Course from "@/models/courseModel";
 import Lecture from "@/models/lectureModel";
-import { requiresSession, routeHandler } from "@/utils/authentication";
-import catchAsync from "@/utils/catchAsync";
+import { routeHandler } from "@/utils/authentication";
 import { connectDB } from "@/utils/database";
 
 // Deletes chapter and all of its lectures
@@ -17,8 +17,15 @@ export const DELETE = routeHandler(
     // Delete chapter's lectures (Query is ok in this case)
     await Lecture.deleteMany({ chapter: chapter.id });
 
+    // Update course
+    const course = await Course.findOne({ chapters: chapter._id });
+    course.chaptersCount -= 1;
+    course.chapters.pull(chapter._id);
+
     // Delete chapter
     await chapter.deleteOne();
+
+    return new Response(null, { status: 204 });
   },
   { requiresSession: true, restrictTo: ["admin"] }
 );

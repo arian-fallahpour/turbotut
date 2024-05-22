@@ -1,3 +1,5 @@
+// NOTE: Be careful with margins, since it may affect latex
+
 .Formatted {
   width: 100%;
   margin: 0 auto;
@@ -14,6 +16,8 @@
   h3 {
     color: var(--txt-title);
     font-weight: var(--font-weight-bold);
+    text-transform: capitalize;
+    margin-top: 1.37em;
   }
 
   h1 {
@@ -36,33 +40,30 @@
   ul,
   ol,
   p {
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-thin);
   }
 
-  *:not(:first-child):not(li) {
-    margin-top: 0.37em;
-  }
-
-  *:not(:last-child):not(li) {
-    margin-bottom: 0.37em;
+  *:not(:first-child):not(span) {
+    margin-top: 0.75em;
   }
 
   p:global(.latex) {
     font-size: 1.5em;
     text-align: center;
-    margin: 1em auto !important;
     justify-self: center;
   }
 
   figure {
     position: relative;
-    max-width: 60rem;
-    width: 100%;
     font-size: var(--font-size-text);
-    margin: 0.63em auto !important;
     justify-self: center;
+    margin: 2em 0 !important;
+
+    display: grid;
+    justify-items: center;
 
     & > img {
+      max-width: 40em;
       width: 100%;
       height: auto;
       border-radius: var(--bd-radius);
@@ -78,13 +79,20 @@
     }
   }
 
-  video {
-    max-width: 60rem;
-    width: 100%;
-    height: auto;
-    margin: 0.63em auto !important;
-    border-radius: var(--bd-radius);
-    border: 0.1rem solid var(--c-panel-bd);
+  :global(.video) {
     justify-self: center;
+    display: grid;
+    justify-items: center;
+    margin: 2em 0 !important;
+
+    video {
+      display: block;
+      max-width: 40em;
+      width: 100%;
+      height: auto;
+      border-radius: var(--bd-radius);
+      overflow: hidden;
+      border: 0.1rem solid var(--c-panel-bd);
+    }
   }
 }

@@ -65,17 +65,9 @@ const courseSchema = new mongoose.Schema({
   },
 });
 
+// Create a new slug every time name is modified
 courseSchema.pre("save", function (next) {
-  if (this.isModified("name")) {
-    this.name;
-  }
-
-  next();
-});
-
-// Creat a new slug every time name is modified
-courseSchema.pre("save", function (next) {
-  if (!this.slug || this.isModified("name")) {
+  if (this.isNew) {
     this.slug = slugify(this.name);
   }
 

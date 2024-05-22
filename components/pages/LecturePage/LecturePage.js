@@ -12,6 +12,8 @@ import { connectDB } from "@/utils/database";
 import Course from "@/models/courseModel";
 import Chapter from "@/models/chapterModel";
 import Lecture from "@/models/lectureModel";
+import Latex from "react-latex-next";
+import { redirect } from "next/navigation";
 
 const getData = async (courseSlug) => {
   await connectDB();
@@ -35,6 +37,8 @@ const getData = async (courseSlug) => {
 const LecturePage = async ({ params, isOverview }) => {
   const course = await getData(params.courseSlug);
   const lecture = findLecture(course, params.lectureSlug);
+
+  // TODO: If lecture is not found, error is thrown, fix
 
   return (
     <Page background="flat">

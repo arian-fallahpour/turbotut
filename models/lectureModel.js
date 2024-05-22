@@ -16,11 +16,6 @@ const lectureSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: "Chapter",
   },
-  course: {
-    required: [true, "Lecture must belong to a course"],
-    type: mongoose.Schema.ObjectId,
-    ref: "Course",
-  },
   type: {
     type: String,
     enum: {
@@ -48,11 +43,14 @@ lectureSchema.pre("save", function (next) {
 
 // Create slug
 lectureSchema.pre("save", async function (next) {
-  if (!this.slug || this.isModified("name")) {
-    const chapter = await Chapter.findById(this.chapter);
-    if (!chapter) return next();
+  if (this.isNew) {
+    const chapter = await Chapter.findById(this.chapter).select({
+      course: 1,
+      name: 1,
+    });
+    const course = await Course.findById(chapter.course).select({ name: 1 });
 
-    this.slug = slugify(`${chapter.name} ${this.name}`);
+    this.slug = slugify(`${course.name} ${chapter.name} ${this.name}`);
   }
 
   next();
@@ -77,7 +75,9 @@ lectureSchema.post("save", { document: true }, async function (doc, next) {
   await chapter.save();
 
   // Find course
-  const course = await Course.findById(doc.course).select({ lecturesCount: 1 });
+  const course = await Course.findById(chapter.course).select({
+    lecturesCount: 1,
+  });
   if (!course) return next();
 
   // Update course's lecture

@@ -5,11 +5,11 @@ const contentSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: "Lecture",
     required: [true, "Content must be attached to a lecture"],
+    unique: [true, "You can only have one content per lecture"],
   },
-  filename: {
+  url: {
     type: String,
-    required: [true, "Content requires the filename of the file"],
-    maxLength: [250, "Content filename cannot be longer than 250 characters"],
+    required: [true, "Content requires the url of the file"],
   },
 });
 

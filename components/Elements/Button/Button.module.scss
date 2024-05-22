@@ -134,6 +134,15 @@
     }
   }
 
+  &Tint {
+    &,
+    &:link,
+    &:visited {
+      @include glass(orange, 100%, true);
+    }
+    background: transparent;
+  }
+
   &Text {
     &,
     &Text:link,

@@ -19,7 +19,7 @@ export const GET = routeHandler(
     // Find lecture
     const lecture = await Lecture.findById(params.id).select({
       type: 1,
-      course: 1,
+      chapter: 1,
     });
     if (!lecture) return new AppError("Lecture does not exist", 404);
 
@@ -42,19 +42,18 @@ export const GET = routeHandler(
         404
       );
 
-    // Find course
-    const course = await Course.findById(lecture.course).select({
-      _id: 1,
-      name: 1,
-    });
-
-    // Fetch local content file
-    const fileBuffer = await fsp.readFile(
-      process.cwd() +
-        `/data/lectures/contents/${course.name}/${content.filename}`,
-      "utf8"
-    );
-    const contents = JSON.parse(fileBuffer);
+    // Fetch content
+    let contents;
+    if (process.env.NODE_ENV === "production") {
+      const res = await fetch(content.url);
+      contents = await res.json();
+    } else {
+      contents = await fsp.readFile(
+        process.cwd() + "/test-data/content-test.json",
+        "utf8"
+      );
+      contents = JSON.parse(contents);
+    }
 
     // Send response
     return NextResponse.json({

@@ -14,18 +14,20 @@ import { rateLimit } from "./security";
 export const routeHandler = (fn, options = {}) =>
   catchAsync(async (...args) => {
     options = {
-      requiresSession: options.requiresSession || false,
+      requiresSession:
+        options.requiresSession === undefined ? false : options.requiresSession,
       restrictTo: options.restrictTo || null,
+      parseBody: options.parseBody === undefined ? true : options.parseBody,
     };
 
     const [req, { params }] = args;
     args[0].data = {};
 
     // DATA SANITATION: NoSQL query injection
-    const body = await req.json().catch((err) => null);
-    args[0].data.body = sanitizeFilter(body);
-    args[1].params = sanitizeFilter(params);
-    // TODO: Add sanitation for query when used
+    if (options.parseBody) {
+      const body = await req.json().catch((err) => null);
+      args[0].data.body = sanitizeFilter(body);
+    }
 
     // PARAMETER POLLUTION PROTECTION
 
@@ -77,16 +79,3 @@ export const restrictTo = (session, roles) => {
     redirect("/?login=true");
   }
 };
-
-// TODO
-/**
- * Security features that need to be added
- * - Rate limiting
- *
- *
- * Security testing procedure
- * - Test protected and restricted endpoints
- *
- *
- *
- */

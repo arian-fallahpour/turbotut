@@ -1,3 +1,5 @@
+import "katex/dist/katex.min.css";
+
 import React from "react";
 import classes from "./LectureContent.module.scss";
 
@@ -10,6 +12,7 @@ import { fetchAuth, getDomain } from "@/utils/dataFetch";
 // Added to prevent error
 import Lecture from "@/models/lectureModel";
 import Content from "@/models/contentModel";
+import Latex from "react-latex-next";
 
 // Should be revalidated every 1-6 hours or so
 const getData = async (lectureId) => {
@@ -36,15 +39,21 @@ const LectureContent = async ({ lecture }) => {
       <header className={classes.LectureContentHeader}>
         <h1 className="header header-title text-center">{lecture.name}</h1>
       </header>
-      <div className={classes.Lecture}>
-        {error && <ErrorBlock message={error.message} type="info" />}
+      <FormattedContent>
+        {error && (
+          <ErrorBlock
+            className={classes.LectureContentError}
+            message={error.message}
+            type="info"
+          />
+        )}
         {!error && (
-          <FormattedContent>
+          <div className={classes.Formatted}>
             {contents?.length &&
               contents.map((data, i) => <Formatted key={i} {...data} />)}
-          </FormattedContent>
+          </div>
         )}
-      </div>
+      </FormattedContent>
     </article>
   );
 };
