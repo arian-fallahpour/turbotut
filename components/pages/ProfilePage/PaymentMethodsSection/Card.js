@@ -30,11 +30,22 @@ const Card = ({
           {("0" + expiryMonth).slice(-2)}/{expiryYear.toString().substring(2)}
         </div>
       </div>
-      {isDefault && <span className={classes.CardDefault}>default</span>}
+      {isDefault && (
+        <Button
+          className={classes.CardSetDefault}
+          styleName="glass"
+          size="small"
+          disabled
+        >
+          default
+        </Button>
+      )}
       {!isDefault && (
         <Button
           className={classes.CardSetDefault}
+          styleName="glass"
           onClick={() => onSetDefault(id)}
+          size="small"
         >
           set default
         </Button>

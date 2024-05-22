@@ -57,6 +57,11 @@ const maxFileSize = 1024 * 1024 * 2; // 2Mb
 
 export const POST = routeHandler(
   async function (req) {
+    return NextResponse.json({
+      status: "fail",
+      message:
+        "This route is not going to be used until proper upload/retrieval functionality is implemented",
+    });
     await connectDB();
 
     const formData = await req.formData();

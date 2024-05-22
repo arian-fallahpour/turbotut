@@ -62,6 +62,8 @@ const Formatted = ({ type, content, contents, style, url, isChild }) => {
 
 export default Formatted;
 
+// TODO: add edit mode
+
 export const FormattedContent = ({ children, ...otherProps }) => {
   return (
     <div className={classes.Formatted} {...otherProps}>

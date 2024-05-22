@@ -1,9 +1,6 @@
 @import "@/sass/abstracts/mixins";
 
 .Button {
-  padding: 0.75rem 1.75rem;
-  font-weight: var(--font-weight-bold);
-  font-size: 1.7rem;
   position: relative;
   border: none;
   cursor: pointer;
@@ -21,6 +18,24 @@
 
   transition: filter 0.2s ease;
 
+  &.size-small {
+    padding: 0.25rem 1rem;
+    font-size: 1.35rem;
+    font-weight: var(--font-weight-bold);
+  }
+
+  &.size-normal {
+    padding: 0.75rem 1.75rem;
+    font-size: 1.7rem;
+    font-weight: var(--font-weight-bold);
+  }
+
+  &.size-large {
+    padding: 1rem 2.25rem;
+    font-size: 1.95rem;
+    font-weight: var(--font-weight-bold);
+  }
+
   &:hover,
   &:focus-visible {
     filter: brightness(1.1);
@@ -36,6 +51,12 @@
     gap: inherit;
     align-items: center;
     justify-content: center;
+  }
+
+  & > svg,
+  & .children > svg {
+    width: 1.5em;
+    height: 1.5em;
   }
 
   & {
@@ -131,6 +152,18 @@
     &:link,
     &:visited {
       @include glass(orange, 100%, true);
+    }
+
+    &--white,
+    &--white:link,
+    &--white:visited {
+      @include glass(white, 100%, true);
+    }
+
+    &--red,
+    &--red:link,
+    &--red:visited {
+      @include glass(red, 100%, true);
     }
   }
 

@@ -1,0 +1,28 @@
+.Table {
+  display: grid;
+
+  &Row {
+    display: grid;
+    align-items: center;
+    gap: var(--gap-md);
+    padding: var(--gap-sm) var(--gap-md);
+
+    & > * {
+      grid-row: 1 / span 1;
+    }
+  }
+
+  &Header,
+  &Cell {
+    display: grid;
+  }
+
+  &Header {
+    color: var(--txt-title);
+  }
+
+  &Cell {
+    white-space: nowrap;
+    overflow: scroll;
+  }
+}

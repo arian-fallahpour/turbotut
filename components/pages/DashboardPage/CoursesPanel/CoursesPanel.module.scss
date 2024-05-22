@@ -1,0 +1,9 @@
+.CoursesPanel {
+  display: grid;
+}
+
+.Table {
+  &Row {
+    grid-template-columns: 30rem 1fr 12.5rem 12.5rem 5rem;
+  }
+}

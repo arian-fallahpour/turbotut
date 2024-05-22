@@ -1,0 +1,23 @@
+.ChaptersPanel {
+  display: grid;
+  gap: var(--gap-sm);
+
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &Add {
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: 2rem;
+  }
+
+  &Table {
+  }
+}
+
+.TableRow {
+  grid-template-columns: 15rem 1fr 12.5rem 5rem;
+}

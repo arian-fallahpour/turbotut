@@ -10,7 +10,5 @@ export default async function Page({ params }) {
   requiresSession(session);
   restrictTo(session, ["admin"]);
 
-  console.log(params);
-
   return <DashboardPage panel={params.panel} />;
 }

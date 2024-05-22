@@ -1,10 +1,13 @@
-.Lecture {
+a.Lecture,
+a.Lecture:link,
+a.Lecture:visited {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: var(--gap-sm);
   color: var(--txt-text);
   font-size: 1.6rem;
+  padding: 0;
 
   cursor: pointer;
 

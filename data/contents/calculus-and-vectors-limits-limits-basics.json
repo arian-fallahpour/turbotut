@@ -1,0 +1,151 @@
+[
+  {
+    "type": "h1",
+    "content": "What are limits"
+  },
+  {
+    "type": "p",
+    "content": "Although they may seem daunting due to their notation, limits are actually quite an easy concept. They are essentially the value of a function, say $f(x)$, as it gets closer to a specific value of $x$."
+  },
+  {
+    "type": "p",
+    "content": "Limit notation is as follows:"
+  },
+  {
+    "type": "latex",
+    "content": "$\\lim_{x\\to a}f(x)$"
+  },
+  {
+    "type": "p",
+    "content": "Where $a$ is the value at which $x$ is approaching, $f(x)$ is the function at which the limit is being applied to, and ($\\lim_{x\\to a}f(x)$) is \"the value of the limit of $f(x)$ when $x$ is approaching $a$\"."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "Moving on, take a look at the following animation:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/approaching-zero.mp4"
+  },
+  {
+    "type": "p",
+    "content": "Notice that as the value of $x$ approaches $0$ (or $x \\to 0$) from the left and right, both y values become equal to $1$. This is obvious, since the value of $y = cos(x)$ is equal to $1$ when $x=0$, however, it is important to consider that a limit is not the value of a function at some $x$ in every case."
+  },
+  {
+    "type": "p",
+    "content": "Therefore, the limit of $f(x) = cos(x)$ (or $\\lim_{x\\to0} cos(x) = 1$) when x approaches $0$ is equal to $1$."
+  },
+  {
+    "type": "h2",
+    "content": "question"
+  },
+  {
+    "type": "p",
+    "content": "Determine $\\lim_{x\\to 2}f(x)$ from the following image:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/basic-limit-problem-1.png"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "The limit of the function $f(x)$ as it approaches $x=2$ is equal to $3$, since, from both sides, the function approaches the value $3$."
+  },
+  {
+    "type": "h1",
+    "content": "Left and right limits"
+  },
+  {
+    "type": "p",
+    "content": "There are primarily two types of limits: left and right. A left limit is the limit of a function when $x$ approaches a value from the left. A right limit is the limit of a function when $x$ approaches a value from a right."
+  },
+  {
+    "type": "p",
+    "content": "This is important to know, because not all the functions you deal with are, what we call, *continuous*. We will discuss more about this in the next lecture, however, take a look at the following example to understand this."
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Take the following function: $f(x) = \\left\\{\\begin{matrix} 2-x \\quad \\textrm{for}\\ x<1 \\quad (1) \\newline x+1 \\quad \\textrm{for}\\ x\\geq 1 \\quad (2) \\end{matrix}\\right.$"
+  },
+  {
+    "type": "p",
+    "content": "This type of function is called a *piecewise function* and they are made up of several other functions based on the indicated domains."
+  },
+  {
+    "type": "p",
+    "content": "The image below depicts what the function above looks like:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/piecewise-example-1.png"
+  },
+  {
+    "type": "p",
+    "content": "For all values $x<1$, the function $f(x)=2-x \\ (1)$ is used to calculate the $y$ values, while for all values $x \\geq 1$, the function $f(x)=2-x \\ (2)$ is used to calculate the values of $y$."
+  },
+  {
+    "type": "p",
+    "content": "Notice that, for $(1)$, there is an open point at $x=1$. This means the function is not defined at that point, since, it is only defined for $x<1$. On the other hand, for $(2)$, the function is defined at $x=1$, indicated by a closed point since it is defined for $x \\geq 1$ (greater than or equal to 1)."
+  },
+  {
+    "type": "p",
+    "content": "The left limit of $f(x)$ is indicated by a $(^-)$ superscript. Its value for this example is:"
+  },
+  {
+    "type": "latex",
+    "content": "$\\lim_{x\\to 1^{-}}f(x)=\\lim_{x\\to1}(2-x)=1$"
+  },
+  {
+    "type": "p",
+    "content": "Note that, even though $(1)$ is not defined at $x=1$, its limit is!"
+  },
+  {
+    "type": "p",
+    "content": "The right limit $f(x)$ is indicated by a $(^+)$ superscript. For this case, its value is:"
+  },
+  {
+    "type": "latex",
+    "content": "$\\lim_{x\\to 1^{+}}f(x)=\\lim_{x\\to1}(x+1)=2$"
+  },
+  {
+    "type": "p",
+    "content": "In this example, $\\lim_{x\\to 1^{-}}f(x) \\neq \\lim_{x\\to 1^{+}}f(x)$, however, there may be cases where they are equal."
+  },
+  {
+    "type": "h1",
+    "content": "Key things to remember"
+  },
+  {
+    "type": "p",
+    "content": "Now, that's all of the basics down, before you go to the next lecture, here are some key tips to remember:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$\\lim_{x \\to a} f(x)$ may be defined even though $f(a)$ is not"
+      },
+      {
+        "type": "p",
+        "content": "$\\lim_{x \\to a} f(x)$ can be equal to $f(a)$, but not always"
+      },
+      {
+        "type": "p",
+        "content": "If $L=\\lim_{x \\to a^{-}} f(x)$ and $L=\\lim_{x \\to a^{+}} f(x)$, then $L=lim_{x \\to a} f(x)$"
+      }
+    ]
+  }
+]

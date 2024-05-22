@@ -15,6 +15,7 @@ const Button = forwardRef(
       children,
       styleName,
       variantName,
+      size = "normal",
       className,
       activeClassName,
       ...otherProps
@@ -31,10 +32,12 @@ const Button = forwardRef(
     const styleClassName = classes["Button" + toCap(styleName || "")];
     const variantClassName =
       classes["Button" + toCap(styleName || "") + "--" + variantName];
+
     const buttonClassName = join(
       classes.Button,
       styleName ? styleClassName : null,
       variantName ? variantClassName : null,
+      classes[`size-${size}`],
       className ? className : null,
       isLoading ? classes.loading : null,
       isDisabled ? classes.disabled : null,
