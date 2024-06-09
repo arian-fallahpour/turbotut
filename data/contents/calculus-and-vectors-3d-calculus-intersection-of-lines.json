@@ -1,0 +1,561 @@
+[
+  {
+    "type": "h1",
+    "content": "Types Of Intersections"
+  },
+  {
+    "type": "p",
+    "content": "There are three types of intersections between two lines that you should consider:"
+  },
+  {
+    "type": "cols",
+    "style": { "maxWidth": "40em", "justifySelf": "center" },
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/line-line-intersection-1.png",
+        "content": "1. Parallel lines"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/line-line-intersection-2.png",
+        "content": "2. Skew lines"
+      }
+    ]
+  },
+  {
+    "type": "cols",
+    "style": { "maxWidth": "40em", "justifySelf": "center" },
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/line-line-intersection-3.png",
+        "content": "3. Lines intersect at a point"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/line-line-intersection-4.png",
+        "content": "4. Line contains the other line"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "1. Parallel lines"
+  },
+  {
+    "type": "p",
+    "content": "Two lines that are parallel never intersect, meaning they do not share a point anywhere. You can tell a line is parallel to the other, if its direction vector is a multiple of the direction vector of the other line."
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/line-line-intersection-1.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Determine whether the line $ \\vec {l_1} = (3, \\ 7, \\ 2) + t(1, \\ 1, \\ 4) $ is parallel to $ \\vec {l_1} = (3, \\ 7, \\ 3) + t(2, \\ 2, \\ 8) $."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "First, let's determine whether one line is a multiple of the other:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {m_1} = (1, \\ 1, \\ 4) $ and $ \\vec {m_2} = (2, \\ 2, \\ 8) $, \\ and clearly $ (2, \\ 2, \\ 8) = 2(1, \\ 1, \\ 4) $"
+  },
+  {
+    "type": "p",
+    "content": "So $ \\vec {m_2} = 2 \\vec {m_1} $, meaning they go in the same direction."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we need to check if they never share a point, and this can be quite hard since we only have their parametric equations."
+  },
+  {
+    "type": "p",
+    "content": "Luckily, we can see that both lines have a point at the same $x$ and $y$ coordinate at $ (3, \\ 7, \\ 2) $ and $ (3, \\ 7, \\ 3) $, however, their $z$ coordinates differ. This means that one line is above the other, and that they never intersect."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The lines are parallel to each other, and never intersect."
+  },
+  {
+    "type": "h2",
+    "content": "2. Skew lines"
+  },
+  {
+    "type": "p",
+    "content": "Lines that are in skew with one another are not parallel, but they do not intersect each other."
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/line-line-intersection-2.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Determine the points of intersection of the two lines $ \\vec {l_1} = (4, \\ 6, \\ 1) + s(3, \\ 4, \\ 6) $ and $ \\vec {l_2} = (8, \\ 1, \\ 3) + t(6, \\ 1, \\ 5) $ if any exist."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "By converting the vector equation into its parametric equations, we get:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(2, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "style": { "textAlign": "center" },
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ \\vec {l_1} $"
+          },
+          {
+            "type": "p",
+            "content": "$ \\vec {l_2} $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x = 4 + 3s $"
+          },
+          {
+            "type": "p",
+            "content": "$ x = 8 + 6t $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ y = 6 + 4s $"
+          },
+          {
+            "type": "p",
+            "content": "$ y = 1 + t $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ z = 1 + 6s $"
+          },
+          {
+            "type": "p",
+            "content": "$ z = 3 + 5t $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "If we set the equations equal to each other, we get:"
+  },
+  {
+    "type": "p",
+    "content": "$x: \\quad 4 + 3s = 8 + 6t \\quad \\Rightarrow \\quad 6t - 3s + 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$y: \\quad 6 + 4s = 1 + t \\quad \\Rightarrow \\quad t - 4s + 5 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$z: \\quad 1 + 6s = 3 + 5t \\quad \\Rightarrow \\quad 5t - 6s + 2 = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "By subtracting the third equation by two times the first one, we get:"
+  },
+  {
+    "type": "p",
+    "content": "$ (5t - 6s + 2) - 2(6t - 3s + 4) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\, 5t - 6s + 2 - 12t + 6s - 8 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, \\, -7t - 6 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, t = - \\frac {6} {7} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "We can get the value of $s$ by substituting $ t = - \\frac {6} {7} $ in the first equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ 6(- \\frac {6} {7}) - 3s + 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\ \\, - \\frac {36} {7} - 3 s + 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\ \\ \\, 3s = - \\frac {8} {7} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\, s = - \\frac {8} {21} $"
+  },
+  {
+    "type": "p",
+    "content": "Last, but certainly not least, we need to check if our values of $s$ and $t$ result in the same point for both lines:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(2, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "style": { "textAlign": "center" },
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ \\vec {l_1} $"
+          },
+          {
+            "type": "p",
+            "content": "$ \\vec {l_2} $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x = 4 + 3(- \\frac {8} {21}) = \\frac {20} {7} $"
+          },
+          {
+            "type": "p",
+            "content": "$ x = 8 + 6(\\frac {6} {7}) = \\frac {92} {7} $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ y = 6 + 4(- \\frac {8} {21}) = \\frac {94} {21} $"
+          },
+          {
+            "type": "p",
+            "content": "$ y = 1 + (\\frac {6} {7}) = \\frac {13} {7} $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ z = 1 + 6(- \\frac {8} {21}) = \\frac {9} {7} $"
+          },
+          {
+            "type": "p",
+            "content": "$ z = 3 + 5(\\frac {6} {7}) = \\frac {51} {7} $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "Evidently, none of the $x$, $y$ and $z$ values match, so the lines do not intersect."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The lines do not intersect each other, and are thus skew."
+  },
+  {
+    "type": "h2",
+    "content": "3. Lines intersect at a point"
+  },
+  {
+    "type": "p",
+    "content": "In this scenario, the two lines are not parallel, but they intersect each other at a point."
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/line-line-intersection-3.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Determine the point of intersection of the lines $ \\vec {l_1} = (-3, \\ 4, \\ 4) + s(1, \\ -5, \\ 7) $ and $ \\vec {l_2} = (3, \\ 5, \\ 0) + t(6, \\ 1, \\ -4) $ if it exists."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Let's see if the lines are parallel:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {m_1} = (1, \\ -5, \\ 7) $ and $ \\vec {m_2} = (6, \\ 1, \\ -4) $"
+  },
+  {
+    "type": "p",
+    "content": "Clearly $ \\vec {m_1} \\ne k \\vec {m_2} $, so the lines are not parallel"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now let's see if both lines share a point:"
+  },
+  {
+    "type": "p",
+    "content": "We can convert the vector equations of both lines into parametric equations."
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(2, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "style": { "textAlign": "center" },
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ \\vec {l_1} $"
+          },
+          {
+            "type": "p",
+            "content": "$ \\vec {l_2} $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x = -3 + s $"
+          },
+          {
+            "type": "p",
+            "content": "$ x = 3 + 6t $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ y = 4 - 5s $"
+          },
+          {
+            "type": "p",
+            "content": "$ y = 5 + t $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ z = 4 + 7s $"
+          },
+          {
+            "type": "p",
+            "content": "$ z = -4t $"
+          }
+        ]
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "When we equate these equations, we get:"
+  },
+  {
+    "type": "p",
+    "content": "$ -3 + s = 3 + 6t \\ \\Rightarrow \\ 6t - s + 6 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 4 - 5s = 5 + t \\ \\Rightarrow \\ t + 5s + 1 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 4 + 7s = -4t \\ \\Rightarrow \\ 4t + 7s + 4 = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "By subtracting the third equation by four times the second, we get:"
+  },
+  {
+    "type": "p",
+    "content": "$ (4t + 7s + 4) - 4(t + 5s + 1) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\, 4t + 7s + 4 - 4t - 20s - 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, \\, \\, -13s = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, \\, s = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, substitute $ s = 0 $ into the second equation to get $t$:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, \\, t + 5s + 1 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ t + 5(0) + 1 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\, \\, \\, t = -1 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, we need to check whether the parametric equations give the same point when $ s = 0 $ and $ t = -1 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {p_1} = (-3 + s, \\ 4 - 5s, \\ 4 + 7s) = (-3 + (0), \\ 4 - 5(0), \\ 4 + 7(0)) = (-3, \\ 4, \\ 4) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {p_2} = (3 + 6t, \\ 5 + t, \\ -4t) = (3 + 6(-1), \\ 5 + (-1), \\ -4(-1)) = (-3, \\ 4, \\ 4) $"
+  },
+  {
+    "type": "p",
+    "content": "Since $ \\vec {p_1} = \\vec {p_2} $, the lines intersect at $ (-3, \\ 4, \\ 4) $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The lines intersect at the point $ (-3, \\ 4, \\ 4) $."
+  },
+  {
+    "type": "h2",
+    "content": "4. Line contains the other line"
+  },
+  {
+    "type": "p",
+    "content": "When a line contains another line, both lines are parallel to each other, and they share an infinite number of points."
+  },
+  {
+    "type": "p",
+    "content": "If you have two lines that are parallel to each other, you can prove that they contain each other if you can determine at least one valid point that is shared between them."
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/line-line-intersection-4.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Determine the point of intersection of the lines $ \\vec {l_1} = (2, \\ -5, \\ -3) + s(-1, \\ 5, \\ 6) $ and $ \\vec {l_2} = (0, \\ 5, \\ 9) + t(-3, \\ 15, \\ 18) $ if it exists."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Let's see if the lines are parallel:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {m_1} = (-1, \\ 5, \\ 6) $ and $ \\vec {m_2} = (-3, \\ 15, \\ 18) $."
+  },
+  {
+    "type": "p",
+    "content": "Clearly, $ \\vec {m_2} = 3 \\vec {m_1} $, so the lines are parallel."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we need to check if they share a point:"
+  },
+  {
+    "type": "p",
+    "content": "We can do what we've already done, however, there is a nice technique that you can use in order to speed up the process of finding a common point."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "It is already known that $ \\vec {p_1} = (2, \\ -5, \\ -3) $ is a point on $ \\vec {l_1} $ since it is in its vector equation. "
+  },
+  {
+    "type": "p",
+    "content": "We can keep adding or subtracting the direction vector to this point to possibly get the same point as $ \\vec {p_2} = (0, \\ 5, \\ 9) $ from $ \\vec {l_2} $."
+  },
+  {
+    "type": "p",
+    "content": "$ (2, \\ -5, \\ -3) + (-1, \\ 5, \\ 6) = (1, \\ 0, \\ 3) $"
+  },
+  {
+    "type": "p",
+    "content": "$ (1, \\ 0, \\ 3) + (-1, \\ 5, \\ 6) = (0, \\ 5, \\ 9) = \\vec {p_2} $"
+  },
+  {
+    "type": "p",
+    "content": "Since we were able to get the same vector as $ \\vec {p_2} $, we can confirm that both lines $ \\vec {l_1} $ and $ \\vec {l_2} $ share a point."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Although this method worked in this question, it may not work in all of them. You must be able to determine whether this method is effective by looking at both of the points provided in the vector equations of both lines."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The lines are coincide each other since they are parallel, and share a point."
+  }
+]

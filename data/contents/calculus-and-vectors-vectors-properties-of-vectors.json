@@ -1,0 +1,472 @@
+[
+  {
+    "type": "h1",
+    "content": "Basic operations"
+  },
+  {
+    "type": "p",
+    "content": "Here are the operations that you will learn once you finish this lecture:"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Vector addition"
+      },
+      {
+        "type": "p",
+        "content": "Vector subtraction"
+      },
+      {
+        "type": "p",
+        "content": "Scalar multiplication"
+      },
+      {
+        "type": "p",
+        "content": "Dot product"
+      },
+      {
+        "type": "p",
+        "content": "Cross product"
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "Most of the operations shown below are applied to vectors in $ \\mathbb {R}^2 $, but they can be also applied to vectors in $ \\mathbb {R}^3 $ and any $ \\mathbb {R}^n $."
+  },
+  {
+    "type": "h2",
+    "content": "Vector addition"
+  },
+  {
+    "type": "p",
+    "content": "You can add two vectors quite easily by simply adding their $x$ coordinates together, and adding their $y$ coordinates together."
+  },
+  {
+    "type": "p",
+    "content": "To add the vectors $ \\vec {v_1} = (x_1, \\ y_1) $ and $ \\vec {v_2} = (x_2, \\ y_2) $, use the following formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {v_1} + \\vec {v_2} = (x_1 + x_2, \\ y_1 + y_2) $"
+  },
+  {
+    "type": "p",
+    "content": "Vector addition may look different depending on the type of vector."
+  },
+  {
+    "type": "p",
+    "content": "Both graphs display the two vectors being added together: $ \\vec {v_1} + \\vec {v_2} = (2 + 2, \\ 3 + 2) = (4, \\ 5) $"
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "video",
+        "url": "/lectures/videos/vector-operations-1.mp4",
+        "content": "Two algebraic vectors being added to one another"
+      },
+      {
+        "type": "video",
+        "url": "/lectures/videos/vector-operations-2.mp4",
+        "content": "Two geometric vectors being added to one another"
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "Note that $ \\vec {v_1} + \\vec {v_2} $ starts at $ (0, \\ 0) $ for the algebraic representation, contrary to the geometrically represented one, which starts at the start of $ \\vec {v_1} $ and ends at the end of $ \\vec {v_2} $."
+  },
+  {
+    "type": "h3",
+    "content": "Notation"
+  },
+  {
+    "type": "p",
+    "content": "There is a special notation that you might see when two geometric vectors are added with a similar point. When adding them, the sum vector has the \"inner\" point removed ($B$ in this case):"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {AB} + \\vec {BC} = \\vec{A \\cancel {B}} + \\vec{\\cancel {B} C}  = \\vec {AC} $"
+  },
+  {
+    "type": "p",
+    "content": "Again, this only occurs if the \"inner\" points are the same."
+  },
+  {
+    "type": "h2",
+    "content": "Vector subtraction"
+  },
+  {
+    "type": "p",
+    "content": "Just as you can add two vectors, you can also subtract them! Vector subtraction follows the same formula"
+  },
+  {
+    "type": "p",
+    "content": "To subtract the vectors $ \\vec {v_1} = (x_1, \\ y_1) $ and $ \\vec {v_2} = (x_2, \\ y_2) $, use the formula below:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {v_1} - \\vec {v_2} = (x_1 - x_2, \\ y_1 - y_2) $"
+  },
+
+  {
+    "type": "p",
+    "content": "Here's a comparison of what vector subtraction looks like with algebraic and geometric vectors:"
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "video",
+        "url": "/lectures/videos/vector-operations-3.mp4",
+        "content": "Two algebraic vectors being subtracted from one another"
+      },
+      {
+        "type": "video",
+        "url": "/lectures/videos/vector-operations-4.mp4",
+        "content": "Two geometric vectors being subtracted from one another"
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "A good way to think of vector subtraction, is that you add both vectors, except all the vectors with a negative infront of them have the start and end points flipped."
+  },
+  {
+    "type": "h2",
+    "content": "Scalar multiplication"
+  },
+  {
+    "type": "p",
+    "content": "You can multiply a scalar value $k$ to a vector. This is done by multiplying $k$ by both the $x$ and $y$ values."
+  },
+  {
+    "type": "p",
+    "content": "Here is the formula for such operation with the vector $ \\vec {v} = (x, \\ y) $:"
+  },
+  {
+    "type": "latex",
+    "content": "$ k \\vec {v} = (kx, \\ ky) $"
+  },
+  {
+    "type": "p",
+    "content": "Visually, this looks like you are multiplying the magnitude (length) of the vector:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/vector-operations-5.mp4",
+    "content": "The elongation of the vector is the same for both geometric and algebraic vectors"
+  },
+  {
+    "type": "h2",
+    "content": "Dot product"
+  },
+  {
+    "type": "p",
+    "content": "The dot product of two vectors is the length of the projection of one vector onto the other. Now this sound a bit complicated, but once you see what it really looks like it makes total sense!"
+  },
+  {
+    "type": "p",
+    "content": "However, before doing so, let's look at the formula to obtain the dot product of two vectors $ \\vec {v_1} = (x_1, \\ y_1) $ and $ \\vec {v_2} = (x_2, \\ y_2) $ :"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {v_1} \\ \\cdot \\ \\vec {v_2} = x_1 x_2 + y_1 y_2 $"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/vector-operations-6.mp4",
+    "content": "The visualization of the dot product is the same for geometric and algebraic vectors"
+  },
+  {
+    "type": "p",
+    "content": "Please note that the dot product is a scalar. It is the included in the magnitude of the vector, NOT the vector itself!"
+  },
+  {
+    "type": "h3",
+    "content": "Alternate formula"
+  },
+  {
+    "type": "p",
+    "content": "There is another way to calculate the dot product, and it involves the magnitudes of both vectors, as well as the angle between them:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {v_1} \\ \\cdot \\ \\vec {v_2} = \\left \\| \\vec {v_1} \\right \\| \\left \\| \\vec {v_2} \\right \\| \\cos \\theta $"
+  },
+  {
+    "type": "h3",
+    "content": "Dot product of orthogonal vectors"
+  },
+  {
+    "type": "p",
+    "content": "The dot product of two orthogonal (perpendicular) vectors is equal to $0$."
+  },
+  {
+    "type": "p",
+    "content": "For two orthogonal vectors $ \\vec {n} $ and $ \\vec {m} $:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {n} \\ \\cdot \\ \\vec {m} = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "This is because the angle between both vectors is $ 90^o $, and the value of $ \\cos \\theta $ when $ \\theta = 90^o $ in $ \\vec {n} \\ \\cdot \\ \\vec {m} = \\left \\| \\vec {v_1} \\right \\| \\left \\| \\vec {v_2} \\right \\| \\cos \\theta $ equals $0$."
+  },
+  {
+    "type": "h2",
+    "content": "Cross product"
+  },
+  {
+    "type": "p",
+    "content": "The cross product is used in $ \\mathbb {R}^3 $, and it produces a new vector that is orthogonal (or perpendicular) to the two vectors used."
+  },
+  {
+    "type": "p",
+    "content": "Calculating the cross product can be complicated, so we will try to simplify it for you."
+  },
+  {
+    "type": "h3",
+    "content": "Visualization"
+  },
+  {
+    "type": "p",
+    "content": "Here is what the cross product $ \\vec {c} $ of the two vectors $ \\vec {a} $ and $ \\vec {b} $ looks like:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/cross-product-1.mp4",
+    "content": "Note that the vectors being used in the cross product don't need to be orthogonal"
+  },
+  {
+    "type": "h3",
+    "content": "Calculation"
+  },
+  {
+    "type": "p",
+    "content": "Follow the steps in this video to find the cross product of two vectors:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/cross-product-2.mp4"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "The calculation of the cross product is done by first drawing the grid shown in the video."
+      },
+      {
+        "type": "p",
+        "content": "Then, by drawing lines, you can determine which product of terms you subtract with one another."
+      },
+      {
+        "type": "p",
+        "content": "Finally, once you have the equation seen in the end (with appropriate values), all you need to do is solve!."
+      },
+      {
+        "type": "p",
+        "content": "Since the vector is expressed as a sum of unit vectors, you can easily determine the vector's value in cartesian form by looking at the coefficients."
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "Scalar cross product"
+  },
+  {
+    "type": "p",
+    "content": "You can calculate the magnitude of the cross product vector by using the following formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {a} \\times \\vec {b} = | \\ \\vec {a} \\ | | \\ \\vec {b} \\ | \\sin \\theta $"
+  },
+  {
+    "type": "h1",
+    "content": "The angle between two vectors"
+  },
+  {
+    "type": "p",
+    "content": "You can determine the angle between two vectors by using the two formulas for the dot product that we just learned:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {\\vec {v_1} \\ \\cdot \\ \\vec {v_2}} {\\left \\| \\vec {v_1} \\right \\| \\left \\| \\vec {v_2} \\right \\|} = \\cos \\theta $"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/vector-operations-7.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the angle between the vectors $ \\vec {v_1} = (2, \\ 3) $ and $ \\vec {v_2} = (3, 4) $:"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Find the dot product of both vectors:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v_1} \\ \\cdot \\ \\vec {v_2} = (2)(3) + (3)(4) = 6 + 12 = 18 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Find the magnitudes of both vectors:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\left \\| \\vec {v_1} \\right \\| = \\sqrt { (2)^2 + (3)^2 } = \\sqrt {13} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\left \\| \\vec {v_2} \\right \\| = \\sqrt { (3)^2 + (4)^2 } = \\sqrt {25} = 5 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, just plug in the values into the equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\frac {\\vec {v_1} \\ \\cdot \\ \\vec {v_2}} {\\left \\| \\vec {v_1} \\right \\| \\left \\| \\vec {v_2} \\right \\|} = \\cos \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\frac { (18) } { (\\sqrt {13})(5) } = \\cos \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\theta = \\cos^{-1} (\\frac { 18 } { 5 \\sqrt {13} }) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\theta \\approx 3.18^o $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The angle between both vectors is approximated $ 3.18 $ degrees"
+  },
+  {
+    "type": "h1",
+    "content": "The projection of one vector onto another"
+  },
+  {
+    "type": "p",
+    "content": "The vector projection of $ \\vec {v_1} $ onto $ \\vec {v_2} $ is a vector that is in the same direction as $ \\vec {v_2} $, but same magnitude as the dot product of $ \\vec {a} $ and $ \\vec {b} $."
+  },
+  {
+    "type": "p",
+    "content": "It has its own special notation $ \\text {proj}_{\\vec {v_2}} {\\vec {v_1}} $ indicated a projection of $ \\vec {v_1} $ onto $ \\vec {v_2} $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "To calculate the projection of some vector $ \\vec {a} $ onto $ \\vec {b} $, use the following formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\text {proj}_{\\vec {b}} {\\vec {a}} = (\\frac { \\vec {a} \\ \\cdot \\ \\vec {b} } {\\vec {b} \\ \\cdot \\ \\vec {b}}) \\vec {b} $"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/vector-operations-8.png"
+  },
+  {
+    "type": "h2",
+    "content": "scalar projection"
+  },
+  {
+    "type": "p",
+    "content": "The scalar projection is the magnitude of the projection vector and it is obtained from the following formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ | \\ \\text {proj}_{\\vec {b}} \\vec {a} \\ | = \\frac {| \\ \\vec {a} \\ \\cdot \\ \\vec {b} \\ |} {| \\ \\vec {b} \\ |} $"
+  },
+  {
+    "type": "h1",
+    "content": "vector properties"
+  },
+  {
+    "type": "h2",
+    "content": "Vector addition properties"
+  },
+  {
+    "type": "p",
+    "content": "The following properties are true for all vectors being added:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Commutative: $ \\vec {u} + \\vec {v} = \\vec {v} + \\vec {u} $"
+      },
+      {
+        "type": "p",
+        "content": "Associative: $ (\\vec {u} + \\vec {v}) + \\vec {w} = \\vec {v} + (\\vec {u} + \\vec {w}) $"
+      },
+      {
+        "type": "p",
+        "content": "Distributive: $ m (\\vec {u} + \\vec {v}) = m\\vec {u} + m\\vec {v} $"
+      },
+      {
+        "type": "p",
+        "content": "Identity properties: $ \\vec {v} + \\vec {0} = \\vec {v} $ and $ 1\\vec {v} = \\vec {v} $"
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "To clarify, $ \\vec {0} $ is a vector with only zeros."
+  },
+  {
+    "type": "h2",
+    "content": "Dot product properties"
+  },
+  {
+    "type": "p",
+    "content": "The following properties are true for all vectors in a dot product:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Commutative: $ \\vec {u} \\ \\cdot \\ \\vec {v} = \\vec {v} \\ \\cdot \\ \\vec {u} $"
+      },
+      {
+        "type": "p",
+        "content": "*Not* Associated: $ (\\vec {u} \\ \\cdot \\ \\vec {v}) \\ \\cdot \\ \\vec {w} \\neq \\vec {v} \\ \\cdot \\ (\\vec {u} \\ \\cdot \\ \\vec {w}) $"
+      },
+      {
+        "type": "p",
+        "content": "Dot product with a vector and itself: $ \\vec {v} \\ \\cdot \\ \\vec {v} = \\left \\| \\vec {v} \\right \\|^2 = x^2 + y^2 $"
+      },
+      {
+        "type": "p",
+        "content": "Dot product of two orthogonal: $  \\vec {u} \\ \\cdot \\ \\vec {v} = 0 \\ $ where $u$ and $v$ are orthongal"
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "Two non-zero vectors are orthogonal to one another when they have angle of $ 90^o $ with one another."
+  }
+]

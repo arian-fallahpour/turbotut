@@ -1,0 +1,465 @@
+[
+  {
+    "type": "h1",
+    "content": "Lines and vectors"
+  },
+  {
+    "type": "p",
+    "content": "Before delving deep into the relationship of lines and vectors, there are key differences that you should know when comparing the two:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(2, 30rem)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "style": { "justifyItems": "center" },
+            "type": "p",
+            "content": "Line $ \\ \\leftrightarrow $"
+          },
+          {
+            "style": { "justifyItems": "center" },
+            "type": "p",
+            "content": "Vector $ \\ \\rightarrow $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "Lines are *bi-directional*"
+          },
+          {
+            "type": "p",
+            "content": "Vectors are *uni-directional*"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "A line is *infinite* and extends in both direections"
+          },
+          {
+            "type": "p",
+            "content": "Vectors are *finite* in magnitude"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "Lines have a *definite location*"
+          },
+          {
+            "type": "p",
+            "content": "Vectors have no *fixed location*"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "Two ines are the *equal* if they have the same *direction* and same *location*"
+          },
+          {
+            "type": "p",
+            "content": "Vectors are the *equal* if they have the same *direction* and *magnitude*"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "You can describe a line using vectors, and that is what we will explore in some of the equations below."
+  },
+  {
+    "type": "h2",
+    "content": "Vector equation of a line"
+  },
+  {
+    "type": "p",
+    "content": "In a 2D setting (or $ \\mathbb {R} $), to describe a line in terms of vectors, we need one vector that represents a point on the line and another vector used to describe the direction of the line instead of the slope."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {r} = \\vec {r_0} + t \\vec{m} \\quad \\text {or} \\quad (x, \\ y) = (x_0, \\ y_0) + t(m_1, \\ m_2) $"
+  },
+  {
+    "type": "p",
+    "content": "Where:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ t \\in \\mathbb {R} $"
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {r} = (x, \\ y) $ is a position vector at any point on the line."
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {r_0} = (x_0, \\ y_0) $ is a position vector at some point on the line."
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {m} = (m_1, \\ m_2) $ is a direction vector parallel to the line."
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For a line in $ \\mathbb {R}^3 $, the vector equation would be in the form $ (x, \\ y, \\ z) = (x_0, \\ y_0, \\ z_0) + t(m_1, \\ m_2, \\ m_3) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here is what the vector equation $ (x, \\ y) = (-1, \\ 1) + t(1, \\ 1) $ looks like compared to the line $ y = x + 2 $:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/vector-equations-1.png"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "The vector $ \\vec {r_0} $ represents a point on $ y = x + 2 $"
+      },
+      {
+        "type": "p",
+        "content": "The vector $ \\vec {m} $ represents the slope $ m = \\frac {m_2} {m_1} = \\frac {1} {1} = 1 $"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "Parametric equations of a line"
+  },
+  {
+    "type": "p",
+    "content": "The parametric equations of a line are equations formed from the individual coordinates of the vectors of the vector equation of a line."
+  },
+  {
+    "type": "p",
+    "content": "From the vector equation $ (x, \\ y) = (x_0, \\ y_0) + t(m_1, \\ m_2) $, we get:"
+  },
+  {
+    "type": "latex",
+    "content": "$ x = x_0 + t m_1 \\quad \\text {and} \\quad y = y_0 + t m_2 $"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/vector-equations-2.png"
+  },
+  {
+    "type": "p",
+    "content": "If the line is in $ \\mathbb{R}^3 $, you also have $ z = z_0 + t m_3 $."
+  },
+
+  {
+    "type": "h2",
+    "content": "Cartesian equation of a line"
+  },
+  {
+    "type": "p",
+    "content": "The cartesian (or scalar) equation of a line is what you already know: $ y = mx + b $, but with a twist!"
+  },
+  {
+    "type": "p",
+    "content": "You must rearrange the equation and multiply it by the common denominators to get an equation of the form:"
+  },
+  {
+    "type": "latex",
+    "content": "$ Ax + By + C = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$A$, $B$ and $C$ must be whole numbers, and $ \\vec {n} = (A, \\ B, \\ C) $ is the normal vector to the line. The normal vector is a vector that is perpendicular to another."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's the graph of the cartesian equation $ -3x + 4y - 8 = 0 $ looks like compared to its graph $ y = \\frac {3} {4} x + 2 $:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/vector-equations-3.png",
+    "content": "The vector $ \\vec {n} = (A, \\ B) = (-3, \\ 4) $ is the normal vector to the line"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Again, if the line is in $ \\mathbb {R}^3 $, the equation would be in the form $ Ax + By + Cz + D = 0 $"
+  },
+  {
+    "type": "h2",
+    "content": "Example: Vector to cartesian"
+  },
+  {
+    "type": "p",
+    "content": "Convert the vector equation of the line $ \\vec {r} = (3, \\ -5) + t(-1, \\ -4) $ to its cartesian form by:"
+  },
+  {
+    "type": "ol",
+    "style": { "listStyle": "lower-alpha" },
+    "contents": [
+      {
+        "type": "p",
+        "content": "Using the vector equation"
+      },
+      {
+        "type": "p",
+        "content": "Using the parametric equations"
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "a) We can use the point $ \\vec {r_0} = (3, \\ -5) $, as well as calculate the slope using $ \\vec {m} = (-1, \\ -4) $"
+  },
+  {
+    "type": "p",
+    "content": "$ m = \\frac {m_2} {m_1} = \\frac {-4} {-1} = 4 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, substitute these values into the equation of a line:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\, y - y_0 = m(x - x_0) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad y - (-5) = (4)(x - 3) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\, \\, y + 5 = 4x - 12 $"
+  },
+  {
+    "type": "p",
+    "content": "$ -4x + y + 17 = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The cartesian equation of the line is $ -4x + y + 17 = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) We can use the vector equation $ \\vec {r} = (3, \\ -5) + t(-1, \\ -4) $ to form the following parametric equations:"
+  },
+  {
+    "type": "p",
+    "content": "$ x = 3 - t $"
+  },
+  {
+    "type": "p",
+    "content": "$ y = -5 - 4t $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, rearrange for $t$:"
+  },
+  {
+    "type": "p",
+    "content": "$ t = 3 - x $"
+  },
+  {
+    "type": "p",
+    "content": "$ t = \\frac {-5 \\ - \\ y} {4} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, plug the equations into each other to get the cartesian equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\, \\frac {-5 \\ - \\ y} {4} = 3 - x $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\ -5 - y = 12 - 4x $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\ 4x - y - 17 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ -4x + y + 17 = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The cartesian equation of the line is $ -4x + y + 17 = 0 $"
+  },
+  {
+    "type": "h2",
+    "content": "Example: cartesian to vector form"
+  },
+  {
+    "type": "p",
+    "content": "Convert the cartesian equation of the plane $ x + 2y - z + 6 = 0 $ to:"
+  },
+  {
+    "type": "ol",
+    "style": { "listStyle": "lower-alpha" },
+    "contents": [
+      {
+        "type": "p",
+        "content": "Its vector form"
+      },
+      {
+        "type": "p",
+        "content": "Its parametric equations"
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "a) To convert to vector form, we need one point, and two direction vectors."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "We can get a point by selecting a value for two variables, and solving for the other."
+  },
+  {
+    "type": "p",
+    "content": "Say $ x = 0 $ and $ y = 0 $, then:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\, x + 2y - z + 6 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (0) + 2(0) - z + 6 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, \\, z = 6 $"
+  },
+  {
+    "type": "p",
+    "content": "So, the point $ (0, \\ 0, \\ 6) $ is on the plane."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "To get the two direction vectors, we need to use the plane's normal vector:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n} = (1, \\ 2, \\ -1) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "We can use the dot product to generate vectors that are perpendicular to the normal. These vectors are the direction vectors of the plane."
+  },
+  {
+    "type": "p",
+    "content": "$ a(1) + b(2) + c(-1) = 0 $ where $ (a, \\ b, \\ c) $ is a direction vector for the plane."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "If $ a = 1 $, $ b = 0 $ and $ c = 1 $: $ (1)(1) + (0)(2) + (1)(-1) = 1 - 1 = 0 \\ \\Rightarrow \\ $ So $ \\vec {d_1} = (1, \\ 0, \\ 1) $"
+  },
+  {
+    "type": "p",
+    "content": "If $ a = 0 $, $ b = 1 $ and $ c = 2 $: $ (0)(1) + (1)(2) + (2)(-1) = 2 - 2 = 0 \\ \\Rightarrow \\ $ So $ \\vec {d_2} = (0, \\ 1, \\ 2) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Combining the information we just calculated, we get the vector equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec { \\pi } = (0, \\ 0, \\ 6) + s(1, \\ 0, \\ 1) + t(0, \\ 1, \\ 2) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The plane's vector equation is $ \\vec { \\pi } = (0, \\ 0, \\ 6) + s(1, \\ 0, \\ 1) + t(0, \\ 1, \\ 2) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) The parametric equations can be derived from the vector equation we just obtained:"
+  },
+  {
+    "type": "p",
+    "content": "$ x = s $"
+  },
+  {
+    "type": "p",
+    "content": "$ y = t $"
+  },
+  {
+    "type": "p",
+    "content": "$ y = 6 + s + 2t $"
+  },
+  {
+    "type": "h2",
+    "content": "Symmetric equation of a line in 3D"
+  },
+  {
+    "type": "p",
+    "content": "Note that the vector equation of a line in $ \\mathbb {R}^3 $ is $ (x, \\ y, \\ z) = (x_0, \\ y_0, \\ z_0) + t(m_1, \\ m_2, \\ m_3) $"
+  },
+  {
+    "type": "p",
+    "content": "Well, we can rearrange the parametric equations for $t$:"
+  },
+  {
+    "type": "p",
+    "content": "$ x = x_0 + t m_1 \\ \\Rightarrow \\ t = \\frac { x \\ - \\ x_0 } { m_1 }, m_1 \\ne 0$"
+  },
+  {
+    "type": "p",
+    "content": "$ y = y_0 + t m_2 \\ \\Rightarrow \\ t = \\frac { y \\ - \\ y_0 } { m_2 }, m_2 \\ne 0$"
+  },
+  {
+    "type": "p",
+    "content": "$ z = z_0 + t m_3 \\ \\Rightarrow \\ t = \\frac { z \\ - \\ z_0 } { m_3 }, m_3 \\ne 0$"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we just equate them to get the symmetric equation:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac { x \\ - \\ x_0 } { m_1 } = \\frac { y \\ - \\ y_0 } { m_2 } = \\frac { z \\ - \\ z_0 } { m_3 } \\quad \\text {where} \\quad m_1 \\ne 0, m_2 \\ne 0, m_3 \\ne 0 $"
+  }
+]

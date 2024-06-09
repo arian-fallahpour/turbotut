@@ -1,0 +1,80 @@
+[
+  {
+    "type": "h1",
+    "content": "Chapter introduction"
+  },
+  {
+    "type": "p",
+    "content": "In this section, we will dive into 3D objects such as lines and planes."
+  },
+  {
+    "type": "p",
+    "content": "We decided to excusively have an intro lecture, because this will most likely be the hardest chapter of this course, and in your school course as well. We also put more questions in the chapter than usual so that you can get familiar with the complex topics more quickly!"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Feel free skim through this right now, then refer back to find helpful tips that can clarify and ease the problem solving in this chapter."
+  },
+  {
+    "type": "h1",
+    "content": "Tips"
+  },
+  {
+    "type": "h2",
+    "content": "Finding intersections"
+  },
+  {
+    "type": "p",
+    "content": "Finding the answer to intersection problems is not as simple as they may seem. You won't always be able to plug one equation and expect an answer."
+  },
+  {
+    "type": "p",
+    "content": "You must think critically about the types of equations given to you, and their unique properties in order to determine the answer."
+  },
+  {
+    "type": "h2",
+    "content": "Intersections between a line and plane or plane and plane"
+  },
+  {
+    "type": "p",
+    "content": "As you will learn, the interactions between a line and a plane, or two planes will follow the same pattern of having three similar types:"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Coincidence"
+      },
+      {
+        "type": "p",
+        "content": "Parallel"
+      },
+      {
+        "type": "p",
+        "content": "Intersecting"
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "For these types of object pairs, you can use the following strategy:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/3d-calculus-intro.png"
+  },
+  {
+    "type": "p",
+    "content": "First determine whether the objects are parallel or not."
+  },
+  {
+    "type": "p",
+    "content": "If the objects are not parallel, the objects are guaranteed to intersect either at a point or a line (depending on the objects)."
+  },
+  {
+    "type": "p",
+    "content": "Otherwise, the objects either share a point or line, in which case they coincide, or are parallel if they don't."
+  }
+]

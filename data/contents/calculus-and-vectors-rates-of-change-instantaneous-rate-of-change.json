@@ -1,0 +1,140 @@
+[
+  {
+    "type": "h1",
+    "content": "the basic idea"
+  },
+  {
+    "type": "p",
+    "content": "Instantaneous rate of change is essentially the rate of change of a function at a single point, or the \"slope\" of a function at a single point."
+  },
+  {
+    "type": "p",
+    "content": "It may be easy to determine the instantaneous rate of change for a function like $ y = mx + b $, since the slope is given to you as $m$, however, it may be harder to determine for more complex functions."
+  },
+  {
+    "type": "h1",
+    "content": "Approximating instantaneous rate of change"
+  },
+  {
+    "type": "p",
+    "content": "One way to calculate the instanuous rate of change at some point $ (a, f(a)) $ is to use the average rate of change formula such that $ x_1 = a $ and $ y_1 = f(a) $, but then $ x_2 = a + h $ and $ y_2 = f(a + h) $ for some small value of $h$."
+  },
+  {
+    "type": "p",
+    "content": "From this information, we can come up with a formula for the approximate instantaneous rate of change:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\mathrm{ instantaneous \\ rate \\ of \\ change } \\approx \\frac { f(a + h) \\ - \\ f(a) } { (x + h) \\ - \\ (x) }  = \\frac { f(a + h) \\ - \\ f(a) } { h } $"
+  },
+  {
+    "type": "p",
+    "content": "Where $h$ is a small value. The smaller the value of $h$, the more accurate the value obtained from the equation."
+  },
+  {
+    "type": "h2",
+    "content": "visualization"
+  },
+  {
+    "type": "p",
+    "content": "The following animation illustrates how the instantaneous rate of change, as well as its formula works:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/instant-rate-of-change-graph-1.mp4",
+    "content": "Slope $m$ becomes more accurate as $h$ gets smaller"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "blah blah blah"
+  },
+  {
+    "type": "h1",
+    "content": "Calculating instantaneous rate of change"
+  },
+  {
+    "type": "p",
+    "content": "Although our current method of finding the instantaneous rate of change is somewhat accurate at small values of $h$, there is a much better method that removes the inaccuracies."
+  },
+  {
+    "type": "p",
+    "content": "If we combine the previous formula with a limit for $h$ as it gets closer to $0$, we can get the exact value of the instantaneous rate of change at any point!"
+  },
+  {
+    "type": "p",
+    "content": "Here's the formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\mathrm{ instantaneous \\ rate \\ of \\ change } = \\ ^{\\lim}_{h \\to 0} \\frac {f(a+h) - f(a)} {h} $"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the instantaneous rate of change of the function $ f(x) = x^2 + 4x $ at $ x = 2 $"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Use the formula from above:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ ^{\\lim}_{h \\to 0} \\frac {f(a + h) - f(a)} {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ \\ ^{\\lim}_{h \\to 0} \\frac { [(a + h)^2 + 4(a + h)] - [a^2 + 4a] } {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ \\ ^{\\lim}_{h \\to 0} \\frac { a^2+2ah+h^2+4a+4h - a^2+4a} {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ \\ ^{\\lim}_{h \\to 0} \\frac { \\cancel{a^2} + 2ah + h^2 + \\cancel{4a} + 4h - \\cancel{a^2} + \\cancel{4a} } {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ \\ ^{\\lim}_{h \\to 0} \\frac { 2ah + h^2 + 4h } {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ \\ ^{\\lim}_{h \\to 0} \\frac { h(2a + h + 4) } {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ \\ ^{\\lim}_{h \\to 0} \\frac { \\cancel{h} (2a + h + 4) } { \\cancel{h} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ \\ ^{\\lim}_{h \\to 0} (2a + h + 4) $"
+  },
+  {
+    "type": "p",
+    "content": "$ = 2a + 4 $"
+  },
+  {
+    "type": "p",
+    "content": "$ = 2(2) + 4 \\quad $ (since $ x = a = 2 $)"
+  },
+  {
+    "type": "p",
+    "content": "$ = 8 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The instantaneous rate of change of $ f(x) $ at $ x = 2 $ is $8$"
+  }
+]

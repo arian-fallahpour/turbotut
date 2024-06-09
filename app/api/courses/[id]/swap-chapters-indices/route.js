@@ -17,9 +17,17 @@ export const PATCH = routeHandler(
 
     // Make changes and save
     req.data.body.swaps.forEach(([i, j]) => {
-      const b = course.chapters[j];
-      course.chapters[j] = course.chapters[i];
-      course.chapters[i] = b;
+      console.log(i, j);
+      if (
+        i >= 0 &&
+        j >= 0 &&
+        i < course.chapters.length &&
+        j < course.chapters.length
+      ) {
+        const b = course.chapters[j];
+        course.chapters[j] = course.chapters[i];
+        course.chapters[i] = b;
+      }
     });
     await course.save();
 

@@ -107,10 +107,7 @@ export const updateOne = (Model) =>
     const documentUpdated = await Model.findByIdAndUpdate(
       params.id,
       req.data.body,
-      {
-        runValidators: true,
-        new: true,
-      }
+      { runValidators: true, new: true }
     );
 
     // Send response

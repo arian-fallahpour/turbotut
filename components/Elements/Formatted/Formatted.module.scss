@@ -17,7 +17,7 @@
     color: var(--txt-title);
     font-weight: var(--font-weight-bold);
     text-transform: capitalize;
-    margin-top: 1.37em;
+    margin-top: 2em;
   }
 
   h1 {
@@ -39,31 +39,50 @@
 
   ul,
   ol,
-  p {
+  p,
+  figure,
+  :global(.video) {
     font-weight: var(--font-weight-thin);
   }
 
-  *:not(:first-child):not(span) {
+  *:not(:first-child):not(
+      h1,
+      h2,
+      h3,
+      span,
+      figure,
+      :global(.video),
+      :global(.cols),
+      :global(.latex),
+      :global(.table),
+      :global(.table-row),
+      :global(.table-cell)
+    ) {
     margin-top: 0.75em;
   }
 
   p:global(.latex) {
-    font-size: 1.5em;
     text-align: center;
+    font-size: 1.5em;
     justify-self: center;
+    margin: 1.5em 0;
+  }
+
+  figure,
+  :global(.video),
+  :global(.table) {
+    margin: 1em 0;
   }
 
   figure {
     position: relative;
     font-size: var(--font-size-text);
-    justify-self: center;
-    margin: 2em 0 !important;
 
     display: grid;
     justify-items: center;
 
     & > img {
-      max-width: 40em;
+      // max-width: 50em;
       width: 100%;
       height: auto;
       border-radius: var(--bd-radius);
@@ -80,19 +99,82 @@
   }
 
   :global(.video) {
-    justify-self: center;
     display: grid;
     justify-items: center;
-    margin: 2em 0 !important;
 
     video {
       display: block;
-      max-width: 40em;
+      // max-width: 50em;
       width: 100%;
       height: auto;
       border-radius: var(--bd-radius);
       overflow: hidden;
       border: 0.1rem solid var(--c-panel-bd);
+    }
+
+    & > figcaption {
+      text-align: center;
+      font-style: italic;
+      font-size: inherit;
+      margin-top: 0.37em;
+    }
+  }
+
+  :global(.cols) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1em;
+    margin: 1em 0;
+
+    :global(.col) {
+      display: grid;
+      justify-content: center;
+
+      &,
+      & > * {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  :global(.table) {
+    display: block;
+    overflow-x: auto;
+    position: relative;
+    max-width: 100%;
+
+    :global(.table-content) {
+      display: inline-block;
+      overflow: hidden;
+
+      border: 0.1rem solid var(--c-panel-bd);
+      border-radius: var(--bd-radius);
+    }
+
+    :global(.table-header) {
+      background-color: var(--c-panel-bg);
+      color: var(--txt-title);
+    }
+
+    :global(.table-row) {
+      display: grid;
+
+      &:not(:last-child) {
+        border-bottom: 0.1rem solid var(--c-panel-bd);
+      }
+    }
+
+    :global(.table-cell) {
+      padding: var(--gap-sm) var(--gap-md);
+
+      display: grid;
+      align-items: center;
+      grid-row: 1 / span 1;
+
+      &:not(:last-child) {
+        border-right: 0.1rem solid var(--c-panel-bd);
+      }
     }
   }
 }

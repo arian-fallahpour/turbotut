@@ -1,0 +1,134 @@
+[
+  {
+    "type": "h1",
+    "content": "What are planes"
+  },
+  {
+    "type": "p",
+    "content": "In math, planes are not flying objects. They are flat surfaces on a 3D graph."
+  },
+  {
+    "type": "p",
+    "content": "Most planes, as well as other 3D objects are described by a equation for $z$ in terms of $x$ and $y$:"
+  },
+  {
+    "type": "latex",
+    "content": "$ z = cx + ky + n $"
+  },
+  {
+    "type": "p",
+    "content": "Where $c$, $k$ and $n$ are constants."
+  },
+  {
+    "type": "p",
+    "content": "However, they can also be described in other ways too."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's an example of a plane in three space:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/planes-1.mp4"
+  },
+  {
+    "type": "p",
+    "content": "Notice how there is two independent variables $x$ and $y$ instead of only $x$ to obtain $z$."
+  },
+  {
+    "type": "h2",
+    "content": "Vector equation of a plane"
+  },
+  {
+    "type": "p",
+    "content": "The vector equation of a plane is similar to that of a line, however, since it is a plane, we need two vectors instead of one to describe it."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {r} = \\vec {r_0} + s \\vec {a} + t \\vec {b} \\quad \\newline {or} \\newline (x, \\ y, \\ z) = (x_0, \\ y_0, \\ z_0) + s(a_1, \\ a_2, \\ a_3) + t(b_1, \\ b_2, \\ b_3) $"
+  },
+  {
+    "type": "p",
+    "content": "Where:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ s, t \\in \\mathbb {R} $"
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {r} = (x, \\ y, \\ z) $ is a position vector at any point on the plane."
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {r_0} = (x_0, \\ y_0, \\ z_0) $ is a position vector at some point on the plane."
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {a} = (a_1, \\ a_2, \\ a_3) $ is a direction vector parallel to the plane."
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {b} = (b_1, \\ b_2, \\ b_3) $ is another direction vector parallel to the plane."
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's what all the vectors look like compared to the plane:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/planes-2.mp4"
+  },
+  {
+    "type": "h2",
+    "content": "Parametric equation of a plane"
+  },
+  {
+    "type": "p",
+    "content": "Similar to the parametric equations of a line, you can also obtain the parametric equations of a plane:"
+  },
+  {
+    "type": "latex",
+    "content": "$ x = x_0 + s a_1 + t b_1 \\newline y = y_0 + s a_2 + t b_2 \\newline z = z_0 + s a_3 + t b_3 $"
+  },
+  {
+    "type": "p",
+    "content": "Again, these equations are used to determine the separate coordinate values:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/planes-3.mp4"
+  },
+  {
+    "type": "h2",
+    "content": "Cartesian equation of a plane"
+  },
+  {
+    "type": "p",
+    "content": "Planes also have a cartesion (or scalar) equation form. The coefficients on the variables also denote a normal (or orthogonal) vector to the plane."
+  },
+  {
+    "type": "latex",
+    "content": "$ Ax + By + Cz + D = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "So, its non-zero normal vector would be $ \\vec {n} = (A, \\ B, \\ C) $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Again, here's a video to demonstrate what it looks like:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/planes-4.mp4"
+  }
+]

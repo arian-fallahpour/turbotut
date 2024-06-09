@@ -1,0 +1,391 @@
+[
+  {
+    "type": "h1",
+    "content": "Types of intersections"
+  },
+  {
+    "type": "p",
+    "content": "There are three types of intersections between a line and a plane that you should know:"
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/line-plane-intersection-1.png",
+        "content": "1. Plane contains the line"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/line-plane-intersection-2.png",
+        "content": "2. Line intersects the plane at a point"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/line-plane-intersection-3.png",
+        "content": "3. Line does not intersect plane"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "1. Plane contains the line"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/line-plane-intersection-1.png"
+  },
+  {
+    "type": "p",
+    "content": "In this scenario, the line directly on the plane. This means there is exists an infinite number of points such that if they are on the line, they are also points on the plane it intersects."
+  },
+  {
+    "type": "p",
+    "content": "This type of intersection also means that the line is parallel to the plane."
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Show that the line $ \\vec {r} = (3, \\ -2, \\ 1) + t(14, \\ -5, \\ -3) $, $ t \\in \\mathbb {R} $ and the plane $ x + y + 3z - 4 = 0 $ share an infinite number of points by:"
+  },
+  {
+    "type": "ol",
+    "style": { "listStyle": "lower-alpha" },
+    "contents": [
+      {
+        "type": "p",
+        "content": "Substituting the parametric equations of the line into the plane"
+      },
+      {
+        "type": "p",
+        "content": "Using the dot product"
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "a) By substituting the parametric equations into the plane, we get:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ x + y + 3z - 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (3 + 14t) + (-2 - 5t) + 3(1 - 3t) - 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\, \\, 3 + 14t -2 - 5t + 3 - 9t - 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, (0)t = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "Since there is an infinite number of values of $t$ that we can plug in to satisfy the equation, there are an infinite number of points that are on both the line and the plane."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The line intersects the plane at an infinite number of points"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) To use the dot product to solve this problem, we must first find the direction vector of the line, and the normal of the plane:"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The direction vector of the line is equation to $ \\vec {m} $, which is made up of the vector being multiplied to $t$."
+  },
+  {
+    "type": "p",
+    "content": "So, the direction vector of the line is $ \\vec {d}_{line} = (14, \\ -5, \\ -3) $."
+  },
+  {
+    "type": "p",
+    "content": "The normal vector of the plane is denoted by the coefficients of the variables: $ \\vec {n}_{plane} = (1, \\ 1, \\ 3) $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we must determine whether or not the vectors are perpendicular by calculating their dot product."
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {d}_{line} \\ \\cdot \\ \\vec {n}_{plane} = (14, \\ -5, \\ -3) \\ \\cdot \\ (1, \\ 1, \\ 3) = (14)(1) + (-5)(1) + (-3)(3) = 14 - 5 - 9 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "So, the line is parallel to the plane, since its direction vector is orthogonal to the plane's normal."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we must show that at least one point on the line is also on the plane, to prove there is an infinite number of points that are intersect the line and the plane:"
+  },
+  {
+    "type": "p",
+    "content": "We know that the point $ (3, \\ -2, \\ 1) $ is on the line from its vector equation."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, just substitute it into the plane's scalar equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\, x + y + 3z - 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (3) + (-2) + 3(1) - 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 3 + -2 + 3 - 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 6 - 6 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 0 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "Since the point satisfies the equation above, it is also on the plane, which means that the line intersects the plane at an infinite number of points."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The line intersects the plane at an infinite numebr of points"
+  },
+  {
+    "type": "h2",
+    "content": "2. Line intersects the plane at a point"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/line-plane-intersection-2.png"
+  },
+  {
+    "type": "p",
+    "content": "When a line intersects the plane at a point, it is never parallel to the plane."
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the point of intersection between the line $ \\vec {r} = (3, \\ 1, \\ 2) + t(1, \\ -4, \\ -8) $, $ s \\in \\mathbb {R} $ and the plane $ 4x + 2y - z - 8 = 0 $."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Since we are given the vector equation of the line, and the scalar equation of the plane, we should obtain the parametric equations of the line, and plug them into the equation, and get a value for $t$."
+  },
+  {
+    "type": "p",
+    "content": "Once we have the value of $t$, we can determine the point at which the intersection occurs by substituting it into the line's vector equation, and solving."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "So, the parametric equations of the line are:"
+  },
+  {
+    "type": "p",
+    "content": "$ x = 3 + t $"
+  },
+  {
+    "type": "p",
+    "content": "$ y = 1 - 4t $"
+  },
+  {
+    "type": "p",
+    "content": "$ z = 2 - 8t $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, plug those parametric equations into the plane's scalar equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, 4x + 2y - z - 8 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 4(3 + t) + 2(1 - 4t) - (2 - 8t) - 8 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\, \\, 12 + 4t + 2 - 8t - 2 + 8t - 8 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, 4t = -4 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, t = -1 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, find the point of intersection"
+  },
+  {
+    "type": "p",
+    "content": "$ (3, \\ 1, \\ 2) + t(1, \\ -4, \\ -8) $"
+  },
+  {
+    "type": "p",
+    "content": "$ = (3, \\ 1, \\ 2) + (-1)(1, \\ -4, \\ -8) $"
+  },
+  {
+    "type": "p",
+    "content": "$ = (3, \\ 1, \\ 2) + (-1, \\ 4, \\ 8) $"
+  },
+  {
+    "type": "p",
+    "content": "$ = (1, \\ 5, \\ 10) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The point at which the line and plane intersect is $ (1, \\ 5, \\ 10) $"
+  },
+  {
+    "type": "h2",
+    "content": "3. Line is parallel, but never intersects the plane"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/line-plane-intersection-3.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Show that the line with parametric equations $ x = 2 + t $, $ y = 2 + 2t $ and $ z = 9 + 8t $ where $ t \\in \\mathbb {R} $ does not intersect the plane $ 2x - 5y + z - 6 = 0 $ by:"
+  },
+  {
+    "type": "ul",
+    "style": { "listStyle": "lower-alpha" },
+    "contents": [
+      {
+        "type": "p",
+        "content": "Substituting the parametric equations of the line into the plane"
+      },
+      {
+        "type": "p",
+        "content": "Using the dot product"
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "a) When we substitute the equations into line, we get:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, 2x - 5y + z - 6 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 2(2 + t) - 5(2 + 2t) + (9 + 8t) - 6 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\, \\, 4 + 2t - 10 - 10t + 9 + 8t - 6 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, (0)t = -3 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Sinc there is no value of $t$ for which the equation is true, there is no intersection."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) To use the dot product to solve this problem, we must first find the direction vector of the line, and the normal of the plane:"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The direction vector of the line is equation to $ \\vec {m} $, which is made up of the coefficients beside $t$ for each coordinate."
+  },
+  {
+    "type": "p",
+    "content": "For the line in this question, the direction vector is $ \\vec {d}_{ \\text{ line } } = (1, \\ 2, \\ 8) $."
+  },
+  {
+    "type": "p",
+    "content": "Since we have the scalar equation of the plane, the normal vector of the plane is $ \\vec {n}_{ \\text {plane} } = (2, \\ -5, \\ 1) $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "If the dot product of these two vectors is equal to zero, it means that the line and the plane are parallel to each other (since the direction vector of the line is orthogonal to the plane's normal)."
+  },
+  {
+    "type": "p",
+    "content": "So, $ (1, \\ 2, \\ 8) \\ \\cdot \\ (2, \\ -5, \\ 1) = (1)(2) + (2)(-5) + (8)(1) = 2 - 10 + 8 = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we must prove that no point on the line exists on the plane."
+  },
+  {
+    "type": "p",
+    "content": "Since we know that $ (2, \\ 2, \\ 9) $ is a point on the line, we can just it into the plane's scalar equation to check:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, \\, \\, 2x - 5y + z - 6 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 2(2) - 5(2) + (9) - 6 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\, \\, 4 - 10 + 9 - 6 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ -3 \\ne 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The line does not intersect the plane."
+  }
+]

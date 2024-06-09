@@ -1,4 +1,6 @@
+import { doesObjectIdExist } from "@/utils/database";
 import mongoose from "mongoose";
+import Lecture from "./lectureModel";
 
 const contentSchema = new mongoose.Schema({
   lecture: {
@@ -12,6 +14,10 @@ const contentSchema = new mongoose.Schema({
     required: [true, "Content requires the url of the file"],
   },
 });
+
+contentSchema
+  .path("lecture")
+  .validate(doesObjectIdExist(Lecture), "Lecture does not exist");
 
 const Content =
   mongoose.models.Content || mongoose.model("Content", contentSchema);

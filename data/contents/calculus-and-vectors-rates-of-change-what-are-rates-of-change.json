@@ -1,0 +1,80 @@
+[
+  {
+    "type": "h1",
+    "content": "Put simply"
+  },
+  {
+    "type": "p",
+    "content": "A rate of change is essentially the measure of how fast a value changes."
+  },
+  {
+    "type": "p",
+    "content": "A good example of this would be the relationship between the position of an object, and its speed. In this case the object's position is the value of interest, and its rate of change is its speed. The speed of the object determines how fast it moves."
+  },
+  {
+    "type": "h1",
+    "content": "Average rate of change in a graph"
+  },
+  {
+    "type": "p",
+    "content": "In a graph, the average rate of change is the difference in $y$ ($ \\bigtriangleup y $) over the difference in $x$ ($ \\bigtriangleup x $). Think of it as the average amount that $y$ changes in a given $x$ region."
+  },
+  {
+    "type": "p",
+    "content": "The equation to determine the average rate of change is:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\mathrm{ average \\ rate \\ of \\ change } = \\frac { \\bigtriangleup y} {\\bigtriangleup x} = \\frac { y_2 \\ - \\ y_1 } { x_2 \\ - \\ x_1 } $"
+  },
+  {
+    "type": "p",
+    "content": "As you may know, this is the same equation as the slope at two given points on a graph, and in fact, the slope is a measure of the rate of change at two points on a graph!"
+  },
+  {
+    "type": "p",
+    "content": "Here is a demonstration of how to obtain the slope (or average rate of change) of a region of some graph:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/rate-of-change-graph-1.mp4",
+    "content": "This uses the same equation as above!"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the average rate of change of the function $ f(x) = x^3 + 4x^2 + 4x + 2 $ on the region $ [0, 2] $"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "This is quite simple. First, find the values of $ f(x) $ at $ x = 0 $ and $ x = 2 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f(0) = (0)^3 + 4(0)^2 + 4(0) + 2 = 2 = y_1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ f(2) = (2)^3 + 4(2)^2 + 4(2) + 2 = 8 + 16 + 8 + 2 = 34 = y_2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, just plug these values into the average rate of change equation from above:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\frac { y_2 \\ - \\ y_1 } { x_2 \\ - \\ x_1 } = \\frac { 34 \\ - \\ 2 } { 2 \\ - \\ 0 } = \\frac { 32 } { 2 } = 16 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The average rate of change of $ f(x) $ in the region $ [0, 2] $ is $ 16 $"
+  }
+]

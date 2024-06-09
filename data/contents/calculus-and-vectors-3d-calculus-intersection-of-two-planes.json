@@ -1,0 +1,238 @@
+[
+  {
+    "type": "h1",
+    "content": "Types of intersections"
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/plane-plane-intersection-1.png",
+        "content": "1. Planes are parallel"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/plane-plane-intersection-2.png",
+        "content": "2. Planes intersect at a line"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/plane-plane-intersection-3.png",
+        "content": "3. Plane contains plane"
+      }
+    ]
+  },
+  {
+    "type": "h1",
+    "content": "1. Planes are parallel"
+  },
+  {
+    "type": "p",
+    "content": "When two planes have the same normal, and do not share a common point, they are called parallel."
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/plane-plane-intersection-1.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the points of intersection of the planes $ x + 2y + z = 4 $ and $ x + 2y + z = 5 $ if any exist."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "We can see if the planes are parallel by looking their normals:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} = \\vec {n_2} = (1, \\ 2, \\ 1) \\ \\Rightarrow \\ $ Both planes are parallel to one another"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's rearrange the equations:"
+  },
+  {
+    "type": "p",
+    "content": "$ x + 2y + z = 4 \\ \\Rightarrow \\ x + 2y + z - 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ x + 2y + z = 5 \\ \\Rightarrow \\ x + 2y + z - 5 = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Equating the equations, we get:"
+  },
+  {
+    "type": "p",
+    "content": "$ (x + 2y + z - 4) = (x + 2y + z - 5) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\, -4 = - 5 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\, \\, - 4 + 5 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, \\, 1 \\ne 0 $"
+  },
+  {
+    "type": "p",
+    "content": "Obviously $ 1 \\ne 0 $, so there is no line that the planes intersect."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The two planes are parallel."
+  },
+  {
+    "type": "h1",
+    "content": "2. Planes intersect at a line"
+  },
+  {
+    "type": "p",
+    "content": "When two planes are not parallel, they will share a line of intersection that contains an infinite number of points."
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/plane-plane-intersection-2.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the points of intersection of the planes $ 3x + 2y - z = 1 $ and $ -x + 2y + 2z = 2 $ if any exist."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "We can tell the planes are not parallel since their normals are not equal:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} = (3, \\ 2, \\ -1) \\ne (-1, \\ 2, \\ 2) = \\vec {n_2} $"
+  },
+  {
+    "type": "p",
+    "content": "This means they must intersect at a line"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "If we rearrange the values for z, we get:"
+  },
+  {
+    "type": "p",
+    "content": "$ 3x + 2y - z = 1 \\ \\Rightarrow \\ z = 3x + 2y - 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ -x + 2y + 2z = 2 \\ \\Rightarrow \\ z = \\frac {1} {2} x - y + 1 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "If we equate them to each other, we get the equation of a line:"
+  },
+  {
+    "type": "p",
+    "content": "$ 3x + 2y - 1 = \\frac {1} {2} x - y + 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 6x + 4y - 2 = x - 2y + 2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 5x + 6y - 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\, \\, y = - \\frac {5} {6} x + \\frac {2} {3} $"
+  },
+  {
+    "type": "p",
+    "content": "This is in fact the line of intersection of the planes!"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The planes intersect at the line $ y = - \\frac {5} {6} x + \\frac {2} {3} $."
+  },
+  {
+    "type": "h1",
+    "content": "3. Plane contains plane"
+  },
+  {
+    "type": "p",
+    "content": "If one plane has the same or a multiple of the normal vector of another plane while also sharing a point, they contain each other."
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/plane-plane-intersection-3.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the points of intersection of the planes $ 3x + 3y + 3z = 12 $ and $ x + y + z = 4 $ if any exist."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "As usual, we should first check if they are parallel:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} = (3, \\ 3, \\ 3) $ and $ \\vec {n_2} = (1, \\ 1, \\ 1)  \\ \\Rightarrow \\ \\vec {n_1} = 3 \\vec {n_2} $ "
+  },
+  {
+    "type": "p",
+    "content": "So, they are parallel."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, let's see if they share a line:"
+  },
+  {
+    "type": "p",
+    "content": "$ 3x + 3y + 3z = 12 \\ \\Rightarrow \\ z = 4 - x - y $ for the first plane"
+  },
+  {
+    "type": "p",
+    "content": "$ x + y + z = 4 \\ \\Rightarrow \\ z = 4 - x - y $ for the second plane"
+  },
+  {
+    "type": "p",
+    "content": "As you can see, both planes are the same, which means they coincide."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The planes are coincident."
+  }
+]

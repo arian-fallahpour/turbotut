@@ -1,0 +1,87 @@
+[
+  {
+    "type": "h1",
+    "content": "Work"
+  },
+  {
+    "type": "p",
+    "content": "Work is the force applied onto an object over a distance."
+  },
+  {
+    "type": "p",
+    "content": "You can calculate the work done on an object by using the dot product:"
+  },
+  {
+    "type": "p",
+    "content": "Work $ = $ magnitude of a force $ \\vec {F} $ along $ \\vec {d} \\ \\times $ magnitude of displacement"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ = | \\ \\text {proj}_{ \\vec {d} } \\vec {F} \\ | \\times | \\ \\vec {d} \\ | $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ = \\frac {| \\ \\vec {F} \\ \\cdot \\ \\vec {d} \\ |} {| \\ \\vec {d} \\ |} \\times | \\ \\vec {d} \\ | $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ = | \\ \\vec {F} \\ \\cdot \\ \\vec {d} \\ | $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "So, the work for a force $ \\vec {F} $ along a distance $ \\vec {d} $ is:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\text {Work} = | \\ \\vec {F} \\ \\cdot \\ \\vec {d} \\ | $"
+  },
+  {
+    "type": "h1",
+    "content": "Torque"
+  },
+  {
+    "type": "p",
+    "content": "Torque is a vector quantity, denoted as $ \\vec { \\tau } $, is the measure of force applied about an axis in order to rotate an object."
+  },
+  {
+    "type": "p",
+    "content": "Torque can be calculated using the cross product of the radius $ \\vec {r} $ from the object, and the force $ \\vec {F} $ applied:"
+  },
+  {
+    "type": "latex",
+    "content": "$ | \\ \\vec {\\tau} \\ | = | \\ \\vec {r} \\times \\vec {F} \\ | = | \\ \\vec {r} \\ | | \\ \\vec {F} \\ | \\sin \\theta$"
+  },
+  {
+    "type": "h1",
+    "content": "Area of a parallelogram"
+  },
+  {
+    "type": "p",
+    "content": "The area of a parallelogram formed by an upper vector $ \\vec {a} $ and a lower vector $ \\vec {b} $ is given by the magnitude of the cross product of both vectors:"
+  },
+  {
+    "type": "latex",
+    "content": "$ A = | \\  \\vec {a} \\times \\vec {b} \\ | = | \\ \\vec {a} \\ | | \\ \\vec {b} \\ | \\sin \\theta $"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/cross-product-applications-1.png"
+  },
+  {
+    "type": "h1",
+    "content": "Volume of a parallelepiped"
+  },
+  {
+    "type": "p",
+    "content": "The volume of a parallelepiped formed by a vector $ \\vec {c} $ and two lower vectors $ \\vec {a} $ and $ \\vec {b} $ is given by the magnitude of the cross product of both vectors:"
+  },
+  {
+    "type": "latex",
+    "content": "$ V = | \\ \\vec {a}\\ \\cdot \\ (\\vec {b} \\times \\vec {c}) \\ | $"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/cross-product-applications-2.mp4"
+  }
+]

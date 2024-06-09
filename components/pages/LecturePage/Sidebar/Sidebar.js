@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+
 import classes from "./Sidebar.module.scss";
 import Chapter from "../Chapter/Chapter";
 import Button from "@/components/Elements/Button/Button";
@@ -7,8 +10,11 @@ import Lecture from "../Lecture/Lecture";
 import WestRoundedIcon from "@mui/icons-material/WestRounded";
 import EastRoundedIcon from "@mui/icons-material/EastRounded";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
+import { useParams } from "next/navigation";
 
-const Sidebar = ({ course, lectureSlug }) => {
+const Sidebar = ({ course }) => {
+  const { lectureSlug } = useParams();
+
   const { prevUrl, nextUrl } = findAdjacentLectures(course, lectureSlug);
 
   return (
@@ -26,7 +32,7 @@ const Sidebar = ({ course, lectureSlug }) => {
               <Lecture
                 name="overview"
                 href={`/courses/${course.slug}`}
-                isActive={!lectureSlug ? true : false}
+                isActive={!lectureSlug}
               />
             </li>
           </ul>
@@ -57,6 +63,7 @@ const Sidebar = ({ course, lectureSlug }) => {
       </div>
       <nav className={classes.SidebarNav}>
         <Button
+          className={classes.SidebarNavButton}
           styleName="Border"
           variantName="orange"
           href={prevUrl ? prevUrl : null}
@@ -66,6 +73,7 @@ const Sidebar = ({ course, lectureSlug }) => {
           <WestRoundedIcon fontSize="inherit" />
         </Button>
         <Button
+          className={classes.SidebarNavButton}
           styleName="Border"
           variantName="orange"
           href={nextUrl ? nextUrl : null}

@@ -1,0 +1,97 @@
+[
+  {
+    "type": "h1",
+    "content": "What is differentiability?"
+  },
+  {
+    "type": "p",
+    "content": "Differentiability is when a function has a defined derivative. If a function's derivative is undefined at a certain point, it is called non-differentiable, or indifferentiable at that point."
+  },
+  {
+    "type": "h1",
+    "content": "Types of indifferenciable points"
+  },
+  {
+    "type": "p",
+    "content": "There are 3 types of indifferenciable points:"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "cusp"
+      },
+      {
+        "type": "p",
+        "content": "vertical tangent"
+      },
+      {
+        "type": "p",
+        "content": "discontinuity"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "1. indifferentiable by cusp"
+  },
+  {
+    "type": "p",
+    "content": "You can think of a cusp as a sharp point, or a \"corner\" on a graph. Such points do not have a tangent that can be drawn on them, and thus are not differenciable."
+  },
+  {
+    "type": "p",
+    "content": "Here are two examples of graphs with an indifferenciable cusp:"
+  },
+  {
+    "type": "cols",
+    "contents": [
+      { "type": "image", "url": "/lectures/images/cusp-graph-1.png" },
+      { "type": "image", "url": "/lectures/images/cusp-graph-2.png" }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "2. indifferentiable by vertical tangent"
+  },
+  {
+    "type": "p",
+    "content": "A vertical tangent does not exist. This is because the slope of a vertical tangent is $ \\infty $, which is not a real number."
+  },
+  {
+    "type": "p",
+    "content": "Here is an example:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/vertical-tangent.png"
+  },
+  {
+    "type": "h2",
+    "content": "3. indifferentiable by discontinuity"
+  },
+  {
+    "type": "p",
+    "content": "This is fairly obvious, if the function is discontinuous, it cannot be differentiable."
+  },
+  {
+    "type": "p",
+    "content": "By looking at the previous discontinuous examples, you can see that that the function $ f(x) $ is not differentiable when $ x = 2 $ in the first graph, and when $ x \\leq 2 $ in the second graph."
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/discontinuous-graph-2.png",
+        "content": "$ f(x) $ is discontinuous and non-differentiable when $ x = 2 $"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/discontinuous-graph-5.png",
+        "content": "$ f(x) $ is discontinuous and non-differentiable when $ x \\leq 2 $"
+      }
+    ]
+  }
+]

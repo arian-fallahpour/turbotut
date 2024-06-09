@@ -1,61 +1,22 @@
 import React from "react";
-import classes from "./LecturePage.module.scss";
 
-import Page from "@/components/Elements/Page/Page";
-import Section from "@/components/Elements/Section/Section";
-import Sidebar from "./Sidebar/Sidebar";
 import LectureContent from "./LectureContent/LectureContent";
 import Overview from "./Overview/Overview";
-import { connectDB } from "@/utils/database";
-
-// Added to prevent error
-import Course from "@/models/courseModel";
-import Chapter from "@/models/chapterModel";
-import Lecture from "@/models/lectureModel";
-import Latex from "react-latex-next";
+import { fetchCourse } from "@/utils/dataFetch";
 import { redirect } from "next/navigation";
 
-const getData = async (courseSlug) => {
-  await connectDB();
-
-  // Query course data for sidebar
-  const course = await Course.findOne({ slug: courseSlug }).populate({
-    path: "chapters",
-    select: { name: 1, lectures: 1 },
-    populate: {
-      path: "lectures",
-      select: { name: 1, slug: 1 },
-    },
-  });
-  if (!course) throw new Error("Course not found");
-
-  const data = JSON.parse(JSON.stringify(course));
-
-  return data;
-};
-
 const LecturePage = async ({ params, isOverview }) => {
-  const course = await getData(params.courseSlug);
-  const lecture = findLecture(course, params.lectureSlug);
+  const { courseSlug, lectureSlug } = params;
 
-  // TODO: If lecture is not found, error is thrown, fix
+  const course = await fetchCourse(courseSlug);
+  const lecture = findLecture(course, lectureSlug);
+  if (!isOverview && !lecture) redirect(`/courses/${course.slug}`);
 
-  return (
-    <Page background="flat">
-      <Section limit={null} className={classes.LectureSection}>
-        <div className={classes.LectureSectionSidebar}>
-          <Sidebar course={course} lectureSlug={params.lectureSlug} />
-        </div>
-        <div className={classes.LectureSectionContent}>
-          {isOverview ? (
-            <Overview course={course} />
-          ) : (
-            <LectureContent lecture={lecture} />
-          )}
-        </div>
-      </Section>
-    </Page>
-  );
+  if (isOverview) {
+    return <Overview course={course} />;
+  } else {
+    return <LectureContent lecture={lecture} />;
+  }
 };
 
 function findLecture(course, lectureSlug) {

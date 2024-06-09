@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 import AppError from "@/utils/AppError";
 import { routeHandler } from "@/utils/authentication";
 
-import Purchase from "@/models/purchaseModel";
 import Course from "@/models/courseModel";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);

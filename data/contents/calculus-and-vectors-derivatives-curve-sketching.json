@@ -1,0 +1,513 @@
+[
+  {
+    "type": "h1",
+    "content": "Curve sketching basics"
+  },
+  {
+    "type": "p",
+    "content": "You must know how to properly sketch a curve (or graph) of a function. This means identifying and drawing its roots, critical points, and asymptotes. You also need to correctly draw the curve's shape, by using what you know from the function's first and second derivatives to draw a correctly oriented slope and proper concavity."
+  },
+  {
+    "type": "p",
+    "content": "In this chapter, we will provide you with a detailed step-by-step *Curve Sketching Algorithm* to easily draw any graph!"
+  },
+  {
+    "type": "h1",
+    "content": "Curve sketching algorithm"
+  },
+  {
+    "type": "h3",
+    "content": "1. Determine discontinuities and their behaviour"
+  },
+  {
+    "type": "p",
+    "content": "This includes point, infinite and jump discontinuities"
+  },
+  {
+    "type": "p",
+    "content": "For asymptotes, test their behaviours using limits"
+  },
+  {
+    "type": "h3",
+    "content": "2. Determine critical points"
+  },
+  {
+    "type": "p",
+    "content": "Set the first derivative to zero and find roots and points that are undefined"
+  },
+  {
+    "type": "h3",
+    "content": "3. Determine intervals of increase/decrease/neither"
+  },
+  {
+    "type": "p",
+    "content": "Calculate the sign of the first derivative on each interval"
+  },
+  {
+    "type": "h3",
+    "content": "4. Test critical points for maximum/minimum/neither"
+  },
+  {
+    "type": "h3",
+    "content": "5. Determine points of inflection"
+  },
+  {
+    "type": "h3",
+    "content": "6. Determine intervals of concave up/down/neither"
+  },
+  {
+    "type": "p",
+    "content": "Calculate the sign of the second derivative on each interval"
+  },
+  {
+    "type": "h3",
+    "content": "7. Sketch the graph"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Graph the function $ f(x) = \\frac {x^2 + 2x - 3} {x^2 - 4} $ using the curve sketching algorithm"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "This video will show you how to properly sketch a graph, just so that you can get a feel for how it is done:"
+  },
+  {
+    "type": "video",
+    "style": { "maxWidth": "none" },
+    "url": "/lectures/videos/curve-sketching-1.mp4"
+  },
+  {
+    "type": "h1",
+    "content": "Questions"
+  },
+  {
+    "type": "h2",
+    "content": "question 1"
+  },
+  {
+    "type": "p",
+    "content": "Use the curve sketching algorithm to sketch $ f(x) = \\frac {2(x^2 - 9)} {x^2 - 4} $."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "To sketch the graph properly, we need to know its first and second derivatives:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\frac {20x} {(x^2 - 4)^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(x) = \\frac {-20(3x^2 + 4)} {(x^2 - 4)^3} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "1) Firstly, we need to determine the discontinuities for $ f(x) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f(x) $ is discontinuous at $ x = -2 $ and $ x = 2 $ since it has asymptotes there."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's determine the behaviours of the function at these asymptotes:"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to -2^-} (\\frac {2(x + 3)(x - 3)} {(x - 2)(x + 2)}) = \\frac {2(1)(-5)} {(-4)(0^-)} = - \\infty \\quad $ (note that $ -2^- + 2 = 0^- $)"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to -2^+} (\\frac {2(x + 3)(x - 3)} {(x - 2)(x + 2)}) = \\frac {2(1)(-5)} {(-4)(0^+)} = + \\infty \\quad $ (note that $ -2^+ + 2 = 0^+ $)"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to 2^-} (\\frac {2(x + 3)(x - 3)} {(x - 2)(x + 2)}) = \\frac {2(5)(-1)} {(0^+)(4)} = + \\infty \\quad $ (note that $ 2^- - 2 = 0^- $)"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to 2^+} (\\frac {2(x + 3)(x - 3)} {(x - 2)(x + 2)}) = \\frac {2(5)(-1)} {(0^-)(4)} = - \\infty \\quad $ (note that $ 2^+ - 2 = 0^+ $)"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "We should also take a look at the end behaviours for any horizontal asymptotes:"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to + \\infty} \\frac {2(x^2 - 9)} {x^2 - 4} = \\ ^{\\lim}_{x \\to + \\infty} \\frac {2x^2 - 18} {x^2 - 4} = \\ ^{\\lim}_{x \\to + \\infty} \\frac {2 - \\frac {18} {x^2} } {1 - \\frac {4} {x^2} } = \\frac {2 - 0^+} {1 - 0^+s} = 2 \\ $ from below"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to - \\infty} \\frac {2(x^2 - 9)} {x^2 - 4} = \\ ^{\\lim}_{x \\to + \\infty} \\frac {2x^2 - 18} {x^2 - 4} = \\ ^{\\lim}_{x \\to + \\infty} \\frac {2 - \\frac {18} {x^2} } {1 - \\frac {4} {x^2} } = \\frac {2 - 0^+} {1 - 0^+s} = 2 \\ $ from below"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "2) Now we need to determine the critical points of $ f(x) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) $ has one root at $ x = 0 $, and is also undefined at the asymptotes."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Then, $ f(0) = \\frac {2(0 - 9)} {0 - 4} = \\frac {-18} {-4} = 4.5 $."
+  },
+  {
+    "type": "p",
+    "content": "So, $ (0, 4.5) $ is a critical point, as well as $ x = -2 $ and $ x = 2 $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "3) Now we must find the intervals of increase/decrease/neither:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(4, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x < -2 $"
+          },
+          {
+            "type": "p",
+            "content": "$ -2 < x < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ 0 < x < 2 $"
+          },
+          {
+            "type": "p",
+            "content": "$ x > 2 $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ f'(x) < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f'(x) < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f'(x) > 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f'(x) > 0 $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "So, f(x) is decreasing when $ x < 0 $ and increasing when $ x > 0 $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "4) Based on the calculations we already made, the critical point$ (9, 4.5) $ is a minimum since it decreases then increases."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "5) Using the second derivative, we will now determine if there are any points of inflection:"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(x) = \\frac {-20(3x^2 + 4)} {(x^2 - 4)^3} $"
+  },
+  {
+    "type": "p",
+    "content": "$ 3x^2 + 4 = 0 \\Rightarrow x^2 \\ne - \\frac {4} {3} \\Rightarrow f(x) $ does not have any POIs"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "6) Using the second derivative, we need to determine the concavity for every interval of $ f(x) $:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(4, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x < -2 $"
+          },
+          {
+            "type": "p",
+            "content": "$ -2 < x < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ 0 < x < 2 $"
+          },
+          {
+            "type": "p",
+            "content": "$ x > 2 $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ f''(x) < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f''(x) > 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f''(x) > 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f''(x) < 0 $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "So, $ f(x) $ is concave down when $ x < -2 $ and $ x > 2 $, but concave up when $ -2 < x < 0 $ and $ 0 < x < 2 $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "7) Finally, use all the information to properly sketch the graph:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/curve-sketching-2.png"
+  },
+  {
+    "type": "h2",
+    "content": "question 2"
+  },
+  {
+    "type": "p",
+    "content": "Sketch the graph of $ f(x) = (\\ln x)^2 + 1 $"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Before starting, let's find $ f'(x) $ and $ f''(x) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = 2(\\ln x)(\\frac {1} {x}) = \\frac {2 \\ln x} {x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(x) = \\frac {2(\\frac {1}{x})(x) - (2 \\ln x)(1)} {x^2} = \\frac {2 - 2 \\ln x} {x^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "1) Find the discontinuities and their behaviours:"
+  },
+  {
+    "type": "p",
+    "content": "$ (\\ln x)^2 $ is undefined when $ x \\le 0 \\Rightarrow \\ x = 0 $ is a vertical asumptote"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to 0^+} (\\ln x)^2 + 1 = (\\ln 0^+)^2 + 1 = + \\infty + 1 = + \\infty $"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to 0^-} (\\ln x)^2 + 1 \\ $ does not exist"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For the horizontal asymptotes:"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to + \\infty} (\\ln x)^2 + 1 = (+ \\infty)^2 + 1 = + \\infty \\Rightarrow \\ $ No horizontal asymptote"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to - \\infty} (\\ln x)^2 + 1 \\ $ does not exist"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "2) Now we need to determine the critical points:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\frac {2 \\ln x} {x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = 0 \\ $ when $ 2 \\ln x = 0 \\Rightarrow \\ $ There is a critical point at $ x = 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ f(1) = (\\ln (1))^2 + 1 = 0 + 1 = 1 \\Rightarrow \\ $ The critical point is at $ (1, 1) $"
+  },
+  {
+    "type": "p",
+    "content": "There is also a critical point at $ x = 0 $, since it is undefined for $ f'(x) $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "3), 4) Find the intervals of increase/decrease/neither and determine if the critical point is a minimum/maximum/neither:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(3, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ 0 < x < 1 $"
+          },
+          {
+            "type": "p",
+            "content": "$ x > 1 $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ f'(x) $ DNE"
+          },
+          {
+            "type": "p",
+            "content": "$ f'(x) < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f'(x) > 0 $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "So, $ f(x) $ is decreasing when $ 0 < x < 1 $ and increasing when $ x > 1 $."
+  },
+  {
+    "type": "p",
+    "content": "There is also a local minimum at $ (1, 1) $ since the function goes from decreasing to increasing."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "5), 6) Now we must find the points of inflection and the intervals of concavity for $ f(x) $:"
+  },
+  {
+    "type": "p",
+    "content": "$f''(x) = \\frac {2 - 2 \\ln x} {x^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(x) = 0 $ when $ 2 - 2 \\ln x = 0 \\Rightarrow \\ln x = 1 \\Rightarrow x = e $"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(x) $ is also undefined at $ x = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(3, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ 0 < x < e $"
+          },
+          {
+            "type": "p",
+            "content": "$ x > e $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ f''(x) $ DNE"
+          },
+          {
+            "type": "p",
+            "content": "$ f''(x) > 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f''(x) < 0 $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "So, $ f(x) $ is concave up when $ 0 < x < e $ and concave down when $ x > e $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "7) Now we can draw the graph:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/curve-sketching-3.png"
+  }
+]

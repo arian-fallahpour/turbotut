@@ -1,6 +1,393 @@
 [
   {
     "type": "h1",
-    "content": "Terminology"
+    "content": "Properties"
+  },
+  {
+    "type": "p",
+    "content": "Limits have a number of properties that you can use to your advantage:"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ ^{\\lim}_{x \\to a} k = k$, for any constant $k$"
+      },
+      {
+        "type": "p",
+        "content": "$ ^{\\lim}_{x \\to a} x = x$"
+      },
+      {
+        "type": "p",
+        "content": "$ ^{\\lim}_{x \\to a} [ f(x) \\ \\pm \\ h(x) ] = \\ ^{\\lim}_{x \\to a} f(x) \\ \\pm \\ ^{\\lim}_{x \\to a} h(x)$"
+      },
+      {
+        "type": "p",
+        "content": "$ ^{\\lim}_{x \\to a} [ kf(x)] = k [ ^{\\lim}_{x \\to a} f(x) ]$, for any constant $k$"
+      },
+      {
+        "type": "p",
+        "content": "$ ^{\\lim}_{x \\to a} [ f(x)g(x)] = [  ^{\\lim}_{x \\to a} f(x) ][  ^{\\lim}_{x \\to a} g(x) ]$"
+      },
+      {
+        "type": "p",
+        "content": "$ ^{\\lim}_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{ ^{\\lim}_{x \\to a} f(x)}{ ^{\\lim}_{x \\to a} g(x)}$, as long as $ ^{\\lim}_{x \\to a} g(x) \\ne 0$"
+      },
+      {
+        "type": "p",
+        "content": "$ ^{\\lim}_{x \\to a} [ f(x)]^{n} = [ ^{\\lim}_{x \\to a} f(x)]^{n}$, for any rational number $n$"
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "Most of these are pretty easy to remember, however, the best way to become familiar with them is to practice using them."
+  },
+  {
+    "type": "h2",
+    "content": "question"
+  },
+  {
+    "type": "p",
+    "content": "Solve the following limit: $ ^{\\lim}_{x \\to 2} (2x^{3} + x - 6)$"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Using the properties we learned above, this is quite easy:"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to 2} (2x^{3} + x - 6)$"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ ^{\\lim}_{x \\to 2} (2x^{3}) + ^{\\lim}_{x \\to 2} (x) - ^{\\lim}_{x \\to 2} (6)$ using rule 3"
+  },
+  {
+    "type": "p",
+    "content": "$ = 2[ ^{\\lim}_{x \\to 2} (x)]^{3} + ^{\\lim}_{x \\to 2} (x) - ^{\\lim}_{x \\to 2} (6)$ using rules 4 and 7"
+  },
+  {
+    "type": "p",
+    "content": "$ = 2[2]^{3} + 2 - (6)$ using rules 1 and 2"
+  },
+  {
+    "type": "p",
+    "content": "$ = 16 + 2 - 6$ by evaluating"
+  },
+  {
+    "type": "p",
+    "content": "$ = 12 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$\\therefore \\ ^{\\lim}_{x \\to 2} (2x^{3} + x - 6) = 12 $"
+  },
+  {
+    "type": "h1",
+    "content": "Indeterminate limits"
+  },
+  {
+    "type": "p",
+    "content": "Some limits may not be directly solvable, as they may have a value of $\\frac{0}{0}$. Limits with this type of value are *indeterminate*. $\\frac{0}{0}$ is not a valid answer, and you will need to use some clever strategies to solve them."
+  },
+  {
+    "type": "h2",
+    "content": "Solving a limit using factoring"
+  },
+  {
+    "type": "p",
+    "content": "Solve the following limit: $ ^{\\lim}_{x \\to 3} \\frac {x^2 - 2x - 3}{x - 3}$"
+  },
+  {
+    "type": "p",
+    "content": "Evaluating using our current understanding of limits, you end up with $\\frac {0} {0}$ (try it yourself!), which is indeterminate."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "To evaluate the limit, you need to somehow make it so that the denominator is not equal to $0$."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Luckily, we can factor out the $ (x - 3) $ from the numerator and denominator:"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to 3} \\frac {x^2 - 2x - 3}{x - 3}$"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ ^{\\lim}_{x \\to 3} \\frac {(x + 1)(x - 3)}{x - 3}$"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ ^{\\lim}_{x \\to 3} \\frac {(x + 1) \\cancel{(x - 3)} }{ \\cancel{x - 3} }$"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ ^{\\lim}_{x \\to 3} (x + 1)$"
+  },
+  {
+    "type": "p",
+    "content": "$ = (3) + 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ = 4 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore \\ ^{\\lim}_{x \\to 3} \\frac {x^2 - 2x - 3}{x - 3} = 4 $"
+  },
+  {
+    "type": "h2",
+    "content": "Solving a limit by rationalizing"
+  },
+  {
+    "type": "p",
+    "content": "Solve the following limit: $ _{x \\to 0}^{\\lim} \\frac {\\sqrt{x+1}-1}{x} $"
+  },
+  {
+    "type": "p",
+    "content": "Again, using what we learned earlier, this is not possible since we end up getting the indeterminate value $\\frac{0}{0} $."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Another powerful method to solve limits is to rationalize either the numerator or denominator."
+  },
+  {
+    "type": "p",
+    "content": "$ _{x \\to 0}^{\\lim} \\frac {\\sqrt{x+1}-1}{x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ _{x \\to 0}^{\\lim} \\frac {\\sqrt{x+1}-1}{x} \\times \\frac{\\sqrt{x+1}+1}{\\sqrt{x+1}+1}$"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ _{x \\to 0}^{\\lim} \\frac {x+1-1}{x(\\sqrt{x+1}+1)} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ _{x \\to 0}^{\\lim} \\frac {x}{x(\\sqrt{x+1}+1)} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ _{x \\to 0}^{\\lim} \\frac {1}{\\sqrt{x+1}+1} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\frac {1}{\\sqrt{0+1}+1} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\frac {1}{2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore \\ _{x \\to 0}^{\\lim} \\frac {\\sqrt{x+1}-1}{x} = \\frac {1}{2} $"
+  },
+  {
+    "type": "h2",
+    "content": "Solving a limit by substitution"
+  },
+  {
+    "type": "p",
+    "content": "Solve the following limit: $ ^{\\lim}_{x \\to 64} \\frac{\\sqrt[3]{x} - 4}{\\sqrt{x} - 8} $"
+  },
+  {
+    "type": "p",
+    "content": "Yet again, trying to solve this limit results in an indeterminate $\\frac{0}{0}$ value."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "You can substitute certain values for another variable in order to rewrite the equation."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Take $u = x^{\\frac{1}{6}}$, since it is a multiple of both $\\sqrt[3]{x}$ and $\\sqrt{x}$."
+  },
+  {
+    "type": "p",
+    "content": "Calculate the value that $u$ should go to for the limit:"
+  },
+  {
+    "type": "p",
+    "content": "$ u = x^{\\frac{1}{6}} = (64)^{\\frac{1}{6}} = 2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, substitute all the values into the limit and solve it:"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to 64} \\frac{\\sqrt[3]{x} - 4}{\\sqrt{x} - 8} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ ^{\\lim}_{u \\to 2} \\frac{u^2 - 4}{u^3 - 8} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ ^{\\lim}_{u \\to 2} \\frac{(u-2)(u+2)}{(u-2)(u^2+2u+4)} \\quad $ by difference of square and difference of cubes"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ ^{\\lim}_{u \\to 2} \\frac{ \\cancel{(u-2)} (u+2)}{ \\cancel{(u-2)} (u^2+2u+4)} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ ^{\\lim}_{u \\to 2} \\frac{u+2}{u^2+2u+4} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\frac{(2)+2}{(2)^2+2(2)+4} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\frac{4}{12} $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\frac{1}{3} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore \\ ^{\\lim}_{x \\to 64} \\frac{\\sqrt[3]{x} - 4}{\\sqrt{x} - 8} = \\frac{1}{3} $"
+  },
+  {
+    "type": "h1",
+    "content": "Infinite limits"
+  },
+  {
+    "type": "p",
+    "content": "Take a look at the following graph of the function $ f(x) = \\frac {1} {x} $"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/graph-of-1-over-x.png"
+  },
+  {
+    "type": "p",
+    "content": "As you know, $ f(x) = \\frac {1} {x} $ has an asymptote at $ x = 0 $, meaning the function is not defined there."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The limit for this function at $ x = 0 $ is not defined. Let's take a look at the left and right limits:"
+  },
+  {
+    "type": "p",
+    "content": "As $ x \\to 0 $ from the left, it nears negative infinity ($-\\infty$). so, $ ^{\\lim}_{x \\to 0^{-}} (\\frac {1} {x}) = -\\infty$"
+  },
+  {
+    "type": "p",
+    "content": "As $ x \\to 0 $ from the right, it nears positive infinity ($+\\infty$). so, $ ^{\\lim}_{x \\to 0^{+}} (\\frac {1} {x}) = +\\infty$"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's also take a look at the limit of this function as $ x \\to \\pm \\infty $:"
+  },
+  {
+    "type": "p",
+    "content": "As $ x \\to - \\infty $, $ f(x) \\to 0 $ from the bottom"
+  },
+  {
+    "type": "p",
+    "content": "As $ x \\to + \\infty $, $ f(x) \\to 0 $ from the top"
+  },
+
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Since both $+\\infty$ and $-\\infty$ are not real numbers, the left and right limits of $f(x)$ are not defined, which also makes the limit of $f(x)$ as $x$ approach $0$ undefined as well. However, this is useful for graphing the function near these asymptotes, since we can determine how they behave as $x$ gets closer to them. The same applies for horizontal asymptotes as well."
+  },
+  {
+    "type": "h2",
+    "content": "Solving infinite limits"
+  },
+  {
+    "type": "p",
+    "content": "When solving an infinite limit for certain functions, you may end up with an indeterminate $ \\pm \\frac {\\infty} {\\infty} $ answer."
+  },
+  {
+    "type": "p",
+    "content": "Take $ ^{\\lim}_{x \\to \\infty} \\frac {2(x^2 - 9)} {x^2 - 4} $."
+  },
+  {
+    "type": "p",
+    "content": "Using current methods, it is not possible to solve this limit."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "A handy trick to solving these limits is to divide the numerator and denominator by $x$ of the highest power."
+  },
+  {
+    "type": "p",
+    "content": "If we expand the function $ f(x) = \\frac {2(x^2 - 9)} {x^2 - 4} $, we get $ f(x) = \\frac {2x^2 - 18} {x^2 - 4} $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, divide the numerator by $ x^2 $:"
+  },
+  {
+    "type": "latex",
+    "content": "$ f(x) = \\frac {2x^2 - 18} {x^2 - 4} \\times \\frac {\\frac {1} {x^2}} {\\frac {1} {x^2}} = \\frac {2 - \\frac {18} {x^2} } {1 - \\frac {4} {x^2} } $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "You can easily solve the limit of this function by plugging in $ x = \\infty $:"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to \\infty} \\frac {2(x^2 - 9)} {x^2 - 4} = \\ ^{\\lim}_{x \\to \\infty} \\frac {2 - \\frac {18} {x^2} } {1 - \\frac {4} {x^2} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\ \\, = \\frac {2 - \\frac {18} {(\\infty)^2} } {1 - \\frac {4} {(\\infty)^2} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\ \\, = \\frac {2 - 0} {1 - 0} \\quad $ because $ \\frac {1} {\\infty} = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\ \\, = 2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore \\ ^{\\lim}_{x \\to \\infty} \\frac {2(x^2 - 9)} {x^2 - 4} = 2 $"
   }
 ]

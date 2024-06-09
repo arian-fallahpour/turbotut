@@ -1,0 +1,279 @@
+[
+  {
+    "type": "h1",
+    "content": "Problems with first principle"
+  },
+  {
+    "type": "p",
+    "content": "Although we already know how to find the derivative of a function, we require more powerful tools in order to derive some more complex ones."
+  },
+  {
+    "type": "p",
+    "content": "For example, take $ f(x) = x^{25} $. Deriving this using first principle would be incredibly time consuming and difficult. However, this lecture will teach you all the rules so that you can differentiate any function with ease!"
+  },
+  {
+    "type": "h1",
+    "content": "Derivation rules"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Constant rule"
+      },
+      {
+        "type": "p",
+        "content": "Constant multiple rule"
+      },
+      {
+        "type": "p",
+        "content": "Sum rule"
+      },
+      {
+        "type": "p",
+        "content": "Power rule"
+      },
+      {
+        "type": "p",
+        "content": "Product rule"
+      },
+      {
+        "type": "p",
+        "content": "Quotient rule"
+      },
+      {
+        "type": "p",
+        "content": "Chain rule"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "1. Constant Rule"
+  },
+  {
+    "type": "p",
+    "content": "The constant rule is quite straight forward: Any constant's derivative is equal to $0$."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} (c) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "For example, take $ y = 5 $. It's derivative is $ y' = \\frac {d} {dx} (5) = 0 $."
+  },
+  {
+    "type": "h2",
+    "content": "2. Constant multiple Rule"
+  },
+  {
+    "type": "p",
+    "content": "The constant multiple rule is another simple rule which states that the derivative of the coefficient attached to any function is that same coefficient with the derivative of the function it is attached to."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} [cf(x)] = cf'(x) $"
+  },
+  {
+    "type": "p",
+    "content": "For example, take $ y = 5x $. Let's assume that we know that the derivative of $ y = x $ is $ y' = \\frac {d} {dx} (x) = 1$."
+  },
+  {
+    "type": "p",
+    "content": "Then the derivative of $ y = 5x $ is $ y' = \\frac {d} {dx} (5x) = 5(\\frac {d} {dx} (x)) = 5(1) = 5 $."
+  },
+  {
+    "type": "h2",
+    "content": "3. Sum Rule"
+  },
+  {
+    "type": "p",
+    "content": "Another easy rule. The sum rule states that the derivative of the sum or difference of two functions can be evaluated as two separate derivatives added together."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} [f(x) \\pm g(x)] = f'(x) \\pm g'(x) $"
+  },
+  {
+    "type": "p",
+    "content": "As an example, take $ f(x) = 5x^2 + 2x $. Assume that we already know that $ \\frac {d} {dx} [5x^2] = 10x $ and $ \\frac {d} {dx} [2x] = 2 $."
+  },
+  {
+    "type": "p",
+    "content": "Then, its derivative is:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\frac {d} {dx} [ 5x^2 + 2x ] $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\frac {d} {dx} [5x^2] + \\frac {d} {dx} [2x] $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = 10x + 2 $"
+  },
+  {
+    "type": "p",
+    "content": "This rule also applies to subtraction, so if $ f(x) = 5x^2 - 2x $, then  $f'(x) = 10x - 2 $."
+  },
+  {
+    "type": "h2",
+    "content": "4. Power Rule"
+  },
+  {
+    "type": "p",
+    "content": "This rule may be one of the most useful rules out all of the ones you will learn! It works for any function that has a power attached to it. It applies to functions of the form $ x^n $ where $n$ is a constant."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} [x^n] = nx^{n - 1} $"
+  },
+  {
+    "type": "p",
+    "content": "Let's go back to that horrendous function $ y = x^{25} $. Well, with this new rule, it's not so hard."
+  },
+  {
+    "type": "p",
+    "content": "The derivative is simply:"
+  },
+  {
+    "type": "p",
+    "content": "$ y' = \\frac {d} {dx} (x^{25}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\; \\; \\; \\ = 25x^{25 - 1} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\; \\; \\; \\ = 25x^{24} $"
+  },
+  {
+    "type": "p",
+    "content": "Not so difficult after all!"
+  },
+  {
+    "type": "h2",
+    "content": "5. Product Rule"
+  },
+  {
+    "type": "p",
+    "content": "This rule is used when you want to find the derivative of a product of two functions. The derivative of a product of two functions is the first function times the second funtion's derivative added to the first function's derivative times the second function."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} [f(x)g(x)] = f(x)g'(x) - f'(x)g(x) $"
+  },
+  {
+    "type": "p",
+    "content": "Let's look at the function $ h(x) = (5x^2 + x)(2x + 1) $. It is made up of two \"sub-functions\", $ f(x) = 5x^2 + x $ and $ g(x) = 2x + 1 $."
+  },
+  {
+    "type": "p",
+    "content": "To find $ h'(x) $, simply use the formula above:"
+  },
+  {
+    "type": "p",
+    "content": "$ h'(x) =  \\frac {d} {dx} [ (5x^2 + x)(2x + 1) ] $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = (5x^2 + x) \\frac {d} {dx}[ (2x + 1) ] + \\frac {d} {dx} [5x^2 + x] (2x + 1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = (5x^2 + x)(2) + (10x + 1)(2x + 1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = 10x^2 + 2x + 20x^2 + 12x + 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = 30x^2 + 14x + 1 $"
+  },
+  {
+    "type": "h2",
+    "content": "6. Quotient Rule"
+  },
+  {
+    "type": "p",
+    "content": "The quotient rule is the hardest one to remember out of all of the other rule."
+  },
+  {
+    "type": "p",
+    "content": "One trick to remember it is to remember the following: low d'high minus high d'low over low-low. Low refers to the lower function, high refers to the upper function and d'refers to the derivative."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} [ \\frac {f(x)} {g(x)} ] = \\frac {g(x)f'(x) - f(x)g'(x)} {[g(x)]^2} $"
+  },
+  {
+    "type": "p",
+    "content": "Consider the function $ h(x) = \\frac {5x^2} {2x} $."
+  },
+  {
+    "type": "p",
+    "content": "Its derivative is:"
+  },
+  {
+    "type": "p",
+    "content": "$ h'(x) = \\frac {d} {dx} (\\frac {5x^2} {2x}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\frac {(5x^2) \\frac {d} {dx} (2x) \\ - \\ \\frac {d} {dx} (5x^2) (2x)} {(2x)^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\frac {(5x^2)(2) \\ - \\ (10x)(2x)} {4x^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\frac {10x^2 \\ - \\ 20x^2} {4x^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = - \\frac {5} {2} $"
+  },
+  {
+    "type": "p",
+    "content": "Obviously, it would be easier to determine the derivative by first simplifying, but we did it this way to show you how the quotient rule works."
+  },
+  {
+    "type": "h2",
+    "content": "7. Chain Rule"
+  },
+  {
+    "type": "p",
+    "content": "Another one of the favourites! You use this rule when there are functions inside other functions. You find the derivative of the outer function, while keeping the function inside of it, then multiple the outer function by the derivative of the inner one."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} f(g(x)) = f'(g(x)) \\ g'(x) $"
+  },
+  {
+    "type": "p",
+    "content": "Let's find the derivative of $ f(x) = \\sqrt {5x^2} $:"
+  },
+  {
+    "type": "p",
+    "content": "Remember, $ \\sqrt{x} = x^{\\frac{1}{2}} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\frac{1}{2} \\sqrt {5x^2} \\ (10x) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = 5x \\sqrt {5x^2} $:"
+  },
+  {
+    "type": "p",
+    "content": "Again, we could have simplified, but the aim was to demonstrate the rule for future use cases."
+  }
+]

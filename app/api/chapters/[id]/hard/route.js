@@ -1,6 +1,7 @@
 import Chapter from "@/models/chapterModel";
 import Course from "@/models/courseModel";
 import Lecture from "@/models/lectureModel";
+import AppError from "@/utils/AppError";
 import { routeHandler } from "@/utils/authentication";
 import { connectDB } from "@/utils/database";
 
@@ -16,11 +17,13 @@ export const DELETE = routeHandler(
 
     // Delete chapter's lectures (Query is ok in this case)
     await Lecture.deleteMany({ chapter: chapter.id });
+    // NOTE: We will not delete lecture's content so that we can keep track of it
 
     // Update course
     const course = await Course.findOne({ chapters: chapter._id });
     course.chaptersCount -= 1;
     course.chapters.pull(chapter._id);
+    await course.save();
 
     // Delete chapter
     await chapter.deleteOne();

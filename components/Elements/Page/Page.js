@@ -10,9 +10,12 @@ import {
 } from "@/utils/authentication";
 import Modal from "../Modal/Modal";
 import GlobalError from "../GlobalError/GlobalError";
+import Head from "next/head";
+import business from "@/data/business";
 
 const Page = async ({
   children,
+  title,
   background = "main",
   absoluteNav = false,
   hideNav = false,
@@ -33,8 +36,14 @@ const Page = async ({
     restrictToRoles(session, restrictTo);
   }
 
+  let pageTitle = business.name;
+  if (title) pageTitle += ` - ${title}`;
+
   return (
     <Fragment>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
       <GlobalError />
       {!hideNav && <Nav user={session?.user} isAbsolute={absoluteNav} />}
       <main className="main">{children}</main>

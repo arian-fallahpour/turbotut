@@ -6,6 +6,7 @@ const courseSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
+    lowercase: true,
     unique: [true, "Name is taken, choose another one"],
     minLength: [3, "Name must be at least 3 characters long"],
     maxLength: [100, "Name cannot exceed 100 characters"],

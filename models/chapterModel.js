@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
 import Course from "./courseModel";
-import AppError from "@/utils/AppError";
+import { doesObjectIdExist } from "@/utils/database";
 
 const chapterSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
+    lowercase: true,
     minLength: [3, "Name must be at least 3 characters long"],
     maxLength: [100, "Name cannot exceed 100 characters"],
     required: [true, "Please provide a valid name"],
@@ -29,6 +30,10 @@ const chapterSchema = new mongoose.Schema({
   isArchived: { type: Boolean, default: false },
 });
 
+chapterSchema
+  .path("course")
+  .validate(doesObjectIdExist(Course), "Course does not exist");
+
 // Prevent duplicate values for index/name in each course
 chapterSchema.index({ course: 1, name: 1 }, { unique: true });
 
@@ -49,23 +54,6 @@ chapterSchema.post("save", { document: true }, async function (doc, next) {
   // Add chapter to course and update chaptersCount
   course.chapters.push(doc._id);
   course.chaptersCount += 1;
-  await course.save();
-
-  next();
-});
-
-// Removes chapter from its course when deleted, and deletes all of its lectures
-chapterSchema.post("deleteOne", { document: true }, async function (doc, next) {
-  console.log("Removing chapter from its course");
-
-  // Find course
-  const course = await Course.findById(doc.course);
-  if (!course) return next();
-
-  // Find and remove chapter from course, and update chaptersCount
-  const index = course.chapters.findIndex((ch) => ch._id === doc._id);
-  course.chapters.splice(index, 1);
-  course.chaptersCount -= 1;
   await course.save();
 
   next();

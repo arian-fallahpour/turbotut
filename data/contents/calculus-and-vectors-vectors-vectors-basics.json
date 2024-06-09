@@ -1,0 +1,387 @@
+[
+  {
+    "type": "h1",
+    "content": "Introduction to vectors"
+  },
+  {
+    "type": "p",
+    "content": "There are two types of quantities that you should know of: Scalars and Vectors"
+  },
+  {
+    "type": "h2",
+    "content": "scalars"
+  },
+  {
+    "type": "p",
+    "content": "A scalar only has magnitude and is specified by a real number. Examples of such scalars are mass, speed, distance, volume and time. They have one value \"attaced\" to them and thats it."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\text{ Temperature: } \\ 273K $"
+  },
+  {
+    "type": "p",
+    "content": "In the example above, $ \\text{ Temperature } $ is the quantity, $273$ is the magnitude, and $K$ is the unit."
+  },
+  {
+    "type": "h2",
+    "content": "vectors"
+  },
+  {
+    "type": "p",
+    "content": "A vector has both magnitude and direction. They are specified by a real number and a direction. Examples of vectors are forces, displacement, velocity and acceleration."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\text{ Force: } \\ 10N \\ [ \\mathrm{ NW } ] $"
+  },
+  {
+    "type": "p",
+    "content": "In the example above, $ \\text{ Force } $ is the quantity, $10$ is the magnitude, $N$ is the unit and $ [ \\mathrm{ NW } ] $ is the direction."
+  },
+  {
+    "type": "h2",
+    "content": "notation"
+  },
+  {
+    "type": "p",
+    "content": "Vectors can be written in two ways."
+  },
+  {
+    "type": "p",
+    "content": "Typically in physics and other subjects, vectors are written as a variable with an arrow above them: $ \\vec {a} $, $ \\vec{F} $, $ \\vec {d} $"
+  },
+  {
+    "type": "p",
+    "content": "They are also written as two points $ \\overrightarrow {AB} $ where the vector points from points $A$ to $B$."
+  },
+  {
+    "type": "h2",
+    "content": "Formation of vectors using points"
+  },
+  {
+    "type": "p",
+    "content": "You can form a vector that goes from one point to another by subtracting them."
+  },
+  {
+    "type": "p",
+    "content": "For two points $A$ and $B$, the vector pointing from $A$ to $B$ is determined by:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {AB} = B - A $"
+  },
+  {
+    "type": "p",
+    "content": "Say, we have two points $ A(1, \\ 2, \\ 3) $ and $ B(4, \\ 5, \\ 6) $. Then $ \\vec {AB} $ would be:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {AB} = B - A = (4, \\ 5, \\ 6) - (1, \\ 2, \\ 3) = (3, \\ 3, \\ 3) $"
+  },
+  {
+    "type": "h1",
+    "content": "Representation of vectors"
+  },
+  {
+    "type": "h2",
+    "content": "Cartesian representation"
+  },
+  {
+    "type": "p",
+    "content": "You may be most familiar with cartesian representation, since it resembles points on a graph."
+  },
+  {
+    "type": "p",
+    "content": "The cartesian representation of vectors consists of a ordered pair of coordinates as follows:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {a} = (x, \\ y) $"
+  },
+  {
+    "type": "p",
+    "content": "In this representation, you draw an arrow from the origin $ (0, \\ 0) $ to the coordinates $ (x, \\ y) $. The arrow's \"head\" points at the ordered coordinate pair."
+  },
+  {
+    "type": "p",
+    "content": "Here is a visualization of cartesian vectors:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/vectors-basics-1.mp4"
+  },
+  {
+    "type": "h2",
+    "content": "Polar representation"
+  },
+  {
+    "type": "p",
+    "content": "The polar representation of a vector consists of a magnitude (length) denoted as $n$ as well as an angle that it makes with the positive x-axis denoted as $ \\theta $."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {a} = (n, \\ \\theta) $"
+  },
+  {
+    "type": "p",
+    "content": "The magnitude is always positive, and the angle is positive in the clockwise direction."
+  },
+  {
+    "type": "p",
+    "content": "Here is what it looks like on a graph:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/vectors-basics-2.mp4"
+  },
+  {
+    "type": "h1",
+    "content": "Converting representations"
+  },
+  {
+    "type": "p",
+    "content": "Both cartesian and polar coordinates can easily be converted from one to the other."
+  },
+  {
+    "type": "h2",
+    "content": "Cartesian to polar"
+  },
+  {
+    "type": "p",
+    "content": "As stated previously, cartesian coordinates are a pair of $x$ and $y$ coordinates. You can actually use trigonometry to calculate the magnitude and angle of the vector!"
+  },
+  {
+    "type": "p",
+    "content": "Think of the vector as a right angle triangle. For the magnitude, you need to get the hypotenus. For the angle, you need to get the angle between the vector's arrow and the positive x-axis."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "To calculate the magnitude of the vector, use the Pythagorean Theorem. Note that $ \\left \\| \\vec {v} \\right \\| $ is notation for the magnitude of a vector. The angle of the vector is calculated by using inverse the tan function ($ \\tan^- $):"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\left \\| \\vec {v} \\right \\| = \\sqrt { x^2 + y^2 } \\newline \\theta = \\tan^- (\\frac {y} {x}) $"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Convert the following vector $ \\vec {v} = (3, \\ 4) $ to polar coordinates:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/vectors-basics-3.png"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "$ \\left \\| \\vec {v} \\right \\| = \\sqrt { x^2 + y^2 } = \\sqrt { (3)^2 + (4)^2 } = \\sqrt { 9 + 16 } = \\sqrt {25} = 5 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\theta = \\tan^- (\\frac {y} {x}) = \\tan^- (\\frac {4} {3}) = 0.927 \\ \\mathrm{rad} = 53.1^o $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore \\ \\vec{v} = (\\left \\| \\vec {v} \\right \\|, \\ \\theta) = (5, \\ 53.1^o) $"
+  },
+  {
+    "type": "h2",
+    "content": "Polar to cartesian"
+  },
+  {
+    "type": "p",
+    "content": "You can also convert polar coordinates to cartesian. Just like before, if  you think of the vector as a right angle triangle, you can use trigonometry to determine the $x$ and $y$ coordinates."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "To get the $x$ coordinate, you multiply the magnitude of the vector by the cosine of the angle. For the $y$ coordinate, use the sine of the angle:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {v}_x = \\left \\| \\vec {v} \\right \\| \\cos \\theta \\newline \\vec {v}_y = \\left \\| \\vec {v} \\right \\| \\sin \\theta $"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the $x$ and $y$ coordinates of the following vector:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/vectors-basics-4.png"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_x = \\left \\| \\vec {v} \\right \\| \\cos \\theta = (5) \\cos 53.1 = 3 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_y = \\left \\| \\vec {v} \\right \\| \\sin \\theta = (5) \\sin 53.1 = 4 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore \\ \\vec {v} = (x, \\ y) = (3, \\ 4) $"
+  },
+  {
+    "type": "h1",
+    "content": "Types of vectors"
+  },
+  {
+    "type": "p",
+    "content": "There are two type vectors that you should know when solving problems involving them."
+  },
+  {
+    "type": "h2",
+    "content": "Algebraic vectors"
+  },
+  {
+    "type": "p",
+    "content": "Algebraic vectors are the vectors that we have seen up to now. They are vectors that have a reference to some coordinate axes/plane."
+  },
+  {
+    "type": "p",
+    "content": "Here are a couple examples of algebraic vectors:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/vectors-basics-5.png"
+  },
+  {
+    "type": "h2",
+    "content": "Geometric vectors"
+  },
+  {
+    "type": "p",
+    "content": "Geometric vectors are vectors without a reference frame. Their magnitude is identified by the length of the vector itself, and their direction is indicated by the orientation of the vector."
+  },
+  {
+    "type": "p",
+    "content": "Here is a parallelogram formed by four geometric vectors:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/vectors-basics-6.png",
+    "content": "Notice that there is not a coordinate axes"
+  },
+  {
+    "type": "h1",
+    "content": "Vectors in the 3rd dimension"
+  },
+  {
+    "type": "p",
+    "content": "As of now, we have only dealt with vectors in second dimension, or $ \\mathbb{R}^2 $. Vectors in the 3rd dimension, or $ \\mathbb{R}^3 $ are very similar."
+  },
+  {
+    "type": "p",
+    "content": "Instead of two coordinates, they have three:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {v} = (x, \\ y, \\ z) $"
+  },
+  {
+    "type": "p",
+    "content": "In fact, vectors are not only limited to $ \\mathbb{R}^2 $ or $ \\mathbb{R}^3 $. They be in any dimension $ \\mathbb{R}^n $ where $n$ is any real number, however, it may be difficult for you to visualize it, since you live only in the 3rd dimension!"
+  },
+  {
+    "type": "h1",
+    "content": "The unit vector"
+  },
+  {
+    "type": "p",
+    "content": "The unit vector is vector that points in a certain direction, and has a magnitude equal to $1$."
+  },
+  {
+    "type": "p",
+    "content": "You can think of the unit vector as a \"direction\" vector. Whatever constant you multiply to it, its magnitude will be equal to that constant."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For example, the vector $ \\vec {v} = (\\frac {1} {\\sqrt{2}}, \\ \\frac {1} {\\sqrt{2}}) $ is a unit vector."
+  },
+  {
+    "type": "p",
+    "content": "Its magnitude is $ \\left \\| \\vec {v} \\right \\| = \\sqrt { (\\frac {1} {\\sqrt{2}})^2 + (\\frac {1} {\\sqrt{2}})^2 } = \\sqrt { \\frac {1} {2} + \\frac {1} {2} } = \\sqrt {1} = 1 $"
+  },
+  {
+    "type": "h2",
+    "content": "notation"
+  },
+  {
+    "type": "p",
+    "content": "Vectors can be written as a combination of the unity vectors $ \\hat {i} $, $ \\hat {j} $ and $ \\hat {k} $, where $ \\hat {i} = (1, \\ 0 , \\ 0) $, $ \\hat {j} = (0, \\ 1 , \\ 0) $ and $ \\hat {k} = (0, \\ 0 , \\ 1) $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For example, the vector $ \\vec {v} = (2, \\ -3, \\ 4) $ can be written as $ \\vec {v} = 2 \\hat {i} - 3 \\hat {j} + 4 \\hat {k} $. This is because the sum of the unit vectors times their coefficents equals $ \\vec {v} $."
+  },
+  {
+    "type": "h2",
+    "content": "Converting vectors to a unit vector"
+  },
+  {
+    "type": "p",
+    "content": "You can convert any vector to a unit vector by dividing it by its magnitude:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {u} = \\frac { \\vec {v} } { \\left \\| \\vec {v} \\right \\| } $"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Convert $ \\vec {v} = (2, \\ -3, \\ 4) $ to a unit vector."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "The magnitude of $ \\vec {v} $ is $ \\left \\| \\vec {v} \\right \\| = \\sqrt { (2)^2 + (-3)^2 + (4)^2 } = \\sqrt { 4 + 9 + 16 } = \\sqrt {29} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now plug it into the formula:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {u} = \\frac {\\vec{v}} {\\left \\| \\vec {v} \\right \\|} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {u} = \\frac {1} { \\sqrt {29} } (2, \\ -3, \\ 4) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {u} =  (\\frac {2} { \\sqrt {29} }, \\ \\frac {-3} { \\sqrt {29} }, \\ \\frac {4} { \\sqrt {29} }) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The unit vector of $ \\vec {v} $ is $ \\vec {u} = (\\frac {2} { \\sqrt {29} }, \\ \\frac {-3} { \\sqrt {29} }, \\ \\frac {4} { \\sqrt {29} }) $"
+  }
+]

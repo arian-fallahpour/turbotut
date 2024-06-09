@@ -1,0 +1,187 @@
+[
+  {
+    "type": "h1",
+    "content": "What is continuity?"
+  },
+  {
+    "type": "p",
+    "content": "Think of it as being able to draw a graph with a pencil without taking your pencil off the paper. If you can do so, then the graph is continous, otherwise it is discontinuous."
+  },
+  {
+    "type": "h2",
+    "content": "Example of a continuous graph"
+  },
+  {
+    "type": "p",
+    "content": "Following the cursor, it smoothly traces over the function $f(x) = \\sin(x)$, indicating that it is continuous over the domain $ [0,\\ 2\\pi] $."
+  },
+  {
+    "type": "p",
+    "content": "In fact, $ \\sin(x) $ is continuous for all $ [-\\infty, \\ +\\infty] $."
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/continuous-graph-1.mp4"
+  },
+  {
+    "type": "h2",
+    "content": "Example of a discontinuous graph"
+  },
+  {
+    "type": "p",
+    "content": "In this animation, you can see how the cursor must \"jump\" from on part of the function to another, which makes it discontinuous."
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/discontinuous-graph-1.mp4"
+  },
+  {
+    "type": "p",
+    "content": "However, do note that the function is continuous from $0$ to $2$ non-inclusive, or $[0, \\ 2)$, and from $2$ inclusive to $+\\infty$, or $[2,\\ +\\infty)$."
+  },
+  {
+    "type": "h1",
+    "content": "Types of discontinuities"
+  },
+  {
+    "type": "p",
+    "content": "There are 3 types of discontinuities that you should be aware of:"
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/discontinuous-graph-2.png",
+        "content": "1. Point discontinuity at $x=2$"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/discontinuous-graph-3.png",
+        "content": "2. Jump discontinuity at $x=2$"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/discontinuous-graph-4.png",
+        "content": "3. Infinite discontinuity at $x=2$"
+      }
+    ]
+  },
+  {
+    "type": "h1",
+    "content": "Determining continuity at a point"
+  },
+  {
+    "type": "p",
+    "content": "To determine whether or not a point on a is continuous at some $x=a$, the following must be true:"
+  },
+  {
+    "type": "latex",
+    "content": "$L = \\ _{x \\to a^{+}}^{\\lim}f(x) = \\ _{x \\to a^{-}}^{\\lim}f(x) = f(a) \\quad $ or $ \\quad \\ _{x \\to a}^{\\lim}f(x) = f(a) $"
+  },
+  {
+    "type": "p",
+    "content": "That is, the limit of the function at $x=a$ is equal to $f(a)$"
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "Determine whether the function $f(x) = \\left\\{\\begin{matrix} 3(x-2)^{2}+1 \\quad \\textrm{for}\\ x<2 \\quad (1) \\newline 3(x-2)+1 \\quad \\textrm{for}\\ x\\geq 2 \\quad (2) \\end{matrix}\\right.$ is continuous or not at $x = 2$"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "To prove that $f(2)$ is continuous, we must show that $ \\ _{x \\to 2}^{\\lim}f(x) = f(2)$"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "1. Obtain the value of $f(2)$. The sub-function $(2)$ will be used to calculate this value:"
+  },
+  {
+    "type": "p",
+    "content": "$ f(2) = 3((2) - 2) + 1 = 3(0) + 1 = 1 $"
+  },
+  { "type": "br" },
+
+  {
+    "type": "p",
+    "content": "2. Find the left limit of $f(x)$ at $x=2$:"
+  },
+  {
+    "type": "p",
+    "content": "$ _{x \\to 2^{-}}^{\\lim}f(x) $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ _{x \\to 2}^{\\lim} (3(x-2)^{2}+1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ _{x \\to 2}^{\\lim} (3x^2 - 12x + 13) $"
+  },
+  {
+    "type": "p",
+    "content": "$ = 3(2)^2 - 12(2) + 13 $"
+  },
+  {
+    "type": "p",
+    "content": "$ = 12 - 24 + 13 $"
+  },
+  {
+    "type": "p",
+    "content": "$ = 1 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "3. Find the right limit of $f(x)$ at $x=2$:"
+  },
+  {
+    "type": "p",
+    "content": "$ _{x \\to 2^{+}}^{\\lim}f(x) $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ _{x \\to 2}^{\\lim} (3(x-2)+1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ = \\ _{x \\to 2}^{\\lim} (3x-5) $"
+  },
+  {
+    "type": "p",
+    "content": "$ = 3(2)-5 $"
+  },
+  {
+    "type": "p",
+    "content": "$ = 6-5 $"
+  },
+  {
+    "type": "p",
+    "content": "$ = 1 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Since $ \\ _{x \\to 2^{+}}^{\\lim}f(x) = \\ _{x \\to 2^{-}}^{\\lim}f(x) = f(2) = 1$, $f(x)$ is continuous at $x=2$."
+  },
+  {
+    "type": "h3",
+    "content": "Confirmation"
+  },
+  {
+    "type": "p",
+    "content": "Just to confirm, you can see that in fact, $f(x)$ is continuous at $x=2$ from the image below:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/continuous-graph-2.png"
+  }
+]

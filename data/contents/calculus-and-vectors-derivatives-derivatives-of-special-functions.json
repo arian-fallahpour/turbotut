@@ -1,0 +1,528 @@
+[
+  {
+    "type": "h1",
+    "content": "Euler's number"
+  },
+  {
+    "type": "p",
+    "content": "Before getting into the derivatives of other special functions, we must first learn about Euler's number."
+  },
+  {
+    "type": "p",
+    "content": "Euler's number is a mathematical constant that has special properties when regarding the derivative of functions involving it."
+  },
+  {
+    "type": "p",
+    "content": "Take a look at the following graphs of $ y = 2^x $ and $ y = 4^x $:"
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/power-derivative-1.png",
+        "content": "Graph of $ y = 2^x $ and its derivative"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/power-derivative-2.png",
+        "content": "Graph of $ y = 4^x $ and its derivative"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "observation"
+  },
+  {
+    "type": "p",
+    "content": "As you can see, the derivative of $ y = 2^x $ is below the original function, while the derivative of $ y = 4^x $ is above the original function."
+  },
+  {
+    "type": "p",
+    "content": "This means that there must be a value for the base of the exponent such that its derivative is the exact same function as itself!"
+  },
+  {
+    "type": "p",
+    "content": "This base has the symbol $e$ and it is known as *Euler's Number* and it is special because its derivative is the exact same function."
+  },
+  {
+    "type": "p",
+    "content": "The approximate value for Euler's Number is $ e \\approx 2.718281... $"
+  },
+
+  {
+    "type": "h2",
+    "content": "The natural exponential function"
+  },
+  {
+    "type": "p",
+    "content": "The function has the following form:"
+  },
+  {
+    "type": "latex",
+    "content": "$ f(x) = e^x $"
+  },
+  {
+    "type": "p",
+    "content": "Take a look at the following graph of the function $ y = 2^x $ and its derivative:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/power-derivative-3.png",
+    "content": "Graph of $ y = e^x $ and its derivative"
+  },
+  {
+    "type": "p",
+    "content": "This illustrates that the graph of $ f(x) = e^x $ is the same as its derivative $ f'(x) $. In fact,"
+  },
+  {
+    "type": "latex",
+    "content": "$ f(x) = e^x = f'(x) = f''(x) = f'''(x) = ... = f^{(\\infty)}(x) $"
+  },
+  {
+    "type": "p",
+    "content": "No matter how many times you differentiate the natural exponential function, it will always be the same!"
+  },
+  {
+    "type": "h2",
+    "content": "The natural logarithm function"
+  },
+  {
+    "type": "p",
+    "content": "The natural logarithm is the inverse of the natural exponential function. It's base is Euler's Number, however, since it is such a common function used in math, it has a special notation shown below along with its derivative:"
+  },
+  {
+    "type": "latex",
+    "content": "$ f(x) = log_{e} x = \\ln x $"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} [ \\ln x ] = \\frac {1} {x} $"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/function-derivative-ln.png",
+    "content": "Graph of $ f(x) = \\ln x $ and $ f'(x) = \\frac{1}{x} $"
+  },
+  {
+    "type": "h1",
+    "content": "Special functions and their derivatives"
+  },
+  {
+    "type": "p",
+    "content": "We will now explore the derivatives of the following functions: "
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Exponential functions of the form $ y = a^x $"
+      },
+      {
+        "type": "p",
+        "content": "Logarithmic functions of the form $ y = log_{n} x $"
+      },
+      {
+        "type": "p",
+        "content": "Trigonometric functions: $ y = \\sin x $, $ y = \\cos x $ and $ y = \\tan x $"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "Derivative of exponential functions"
+  },
+  {
+    "type": "p",
+    "content": "The derivative of any exponential function follows this formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} [ a^x ] = a^x \\ln a $"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/function-derivative-power.png",
+    "content": "Graph of $ f(x) = 2^x $ and $ f'(x) = 2^x \\ln 2 $"
+  },
+  {
+    "type": "p",
+    "content": "For example, the derivative of $ f(x) = 5^x $ is $  f'(x) = 5^x \\ln 5 $"
+  },
+  {
+    "type": "h2",
+    "content": "Derivative of logarithmic functions"
+  },
+  {
+    "type": "p",
+    "content": "The derivative of any logarithmic function follows this formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} [ \\log_{a} x ] = \\frac {1} {x \\ln a } $"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/function-derivative-log.png",
+    "content": "Graph of $ f(x) = \\log_{10} x $ and $ f'(x) = \\frac {1} {x \\ln x} $"
+  },
+  {
+    "type": "p",
+    "content": "For example, the derivative of $ f(x) = \\log_{10} x $ is $ f'(x) = \\frac {1} {x \\ln 10} $"
+  },
+  {
+    "type": "h2",
+    "content": "Derivatives of sinosoidal functions"
+  },
+  {
+    "type": "p",
+    "content": "The derivatives of $ \\sin x $ and $ \\cos x $ are as follows:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} [ \\sin x ] = \\cos x $"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/function-derivative-sin.png",
+    "content": "Graph of $ f(x) = \\sin x $ and $ f'(x) = \\cos x $"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} [ \\cos x ] = -\\sin x $"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/function-derivative-cos.png",
+    "content": "Graph of $ f(x) = \\cos x $ and $ f'(x) = -\\sin x $"
+  },
+  {
+    "type": "p",
+    "content": "So, for $ f(x) = \\sin x $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\cos x $"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(x) = -\\sin x $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'''(x) = -\\cos x $"
+  },
+  {
+    "type": "p",
+    "content": "$ f^{(4)}(x) = -(-\\sin x) = \\sin x $"
+  },
+  {
+    "type": "p",
+    "content": "Note that $ f(x) = f^{(4)}(x) $. This applies to both $ \\sin x $ and $ \\cos x $."
+  },
+  {
+    "type": "h2",
+    "content": "Derivative of the tangent function"
+  },
+  {
+    "type": "p",
+    "content": "We can use the fact that $ \\tan x = \\frac {\\sin x} {\\cos x} $, as well as the derivatives of $ \\sin x $ and $ \\cos x $ to find the derivative of $ \\tan x $."
+  },
+  {
+    "type": "p",
+    "content": "$ \\frac {d} {dx} [ \\tan x ] = \\frac {d} {dx} [ \\frac {\\sin x} {\\cos x} ] $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad = \\frac {(\\cos x) \\frac {d} {dx}(\\sin x) \\ - \\ (\\sin x) \\frac {d} {dx} (\\cos x)} {(\\cos x)^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad = \\frac {(\\cos x)(\\cos x) \\ - \\ (\\sin x)(-\\sin x)} {\\cos^2 x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad = \\frac {\\cos^2 x \\ + \\ \\sin^2 x} {\\cos^2 x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad = \\frac {1} {\\cos^2 x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad = \\sec^2 x $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "So, the derivative of $ \\tan x $ is:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {d} {dx} [\\tan x] = \\sec^2 x $"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/function-derivative-tan.png",
+    "content": "Graph of $ f(x) = \\tan x $ and $ f'(x) = \\sec^2 x $"
+  },
+  {
+    "type": "h1",
+    "content": "Tough questions"
+  },
+  {
+    "type": "h2",
+    "content": "Question 1"
+  },
+  {
+    "type": "p",
+    "content": "Find the derivative of $ \\cot x $ (remember,  $ \\cot x = \\frac {\\cos x} {\\sin x} $)."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "We can solve this derivative by using the quotient rule:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\frac {d} {dx} [ \\cot x ] = \\frac {(\\sin x) \\frac {d} {dx} (\\cos x) - (\\cos x) \\frac {d} {dx} (\\sin x) } {(\\sin x)^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\ = \\frac {(\\sin x)(-\\sin x) - (\\cos x)(\\cos x) } {\\sin^2 x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\ = \\frac {-\\sin^2 x - \\cos^2 x } {\\sin^2 x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\ = \\frac {-(\\sin^2 x + \\cos^2 x) } {\\sin^2 x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\ = - \\frac {1} {\\sin^2 x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\ = - \\csc^2 x $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\therefore \\frac {d} {dx} [ \\cot x ] = - \\csc^2 x $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 2"
+  },
+  {
+    "type": "p",
+    "content": "Find the derivatives of the following functions:"
+  },
+  {
+    "type": "ol",
+    "style": { "listStyle": "lower-alpha" },
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ y = \\log_{5} (3x^2 - \\pi x) $"
+      },
+      {
+        "type": "p",
+        "content": "$ y = e^{\\ln \\sqrt{\\sin 2x} } $"
+      },
+      {
+        "type": "p",
+        "content": "$ y = e^{x^2+5x} \\ln (3x+1) $"
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "a) Differentiating this function requires the use of the chain rule, since it takes the form $ f(g(x)) $. The outer function is $ f(x) = \\log_{5} x $ and the inner function is $ g(x) = 3x^2 - \\pi x $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "First, find the derivatives of both functions:"
+  },
+  {
+    "type": "p",
+    "content": "The derivative of the outer function is $ f'(x) = (\\frac {1} {x}) (\\frac {1} {ln5}) $."
+  },
+  {
+    "type": "p",
+    "content": "The derivative of the inner function is $ g'(x) = 6x \\ - \\ \\pi $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, substitute $ g(x) $ for $x$ the derivative of the outer function, and multiply everything by $ g'(x) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ y' = f'(g(x)) \\ g'(x) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = (\\frac {1} {3x^2 \\ - \\ \\pi x})(\\frac {1} {\\ln 5})(6x \\ - \\ \\pi) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = \\frac {6x \\ - \\ \\pi} {(3x^2 \\ - \\ \\pi x)( \\ln 5)}$"
+  },
+  {
+    "type": "p",
+    "content": "$ \\therefore y' = \\frac {6x \\ - \\ \\pi} {(3x^2 \\ - \\ \\pi x)( \\ln 5)}$"
+  },
+  {
+    "type": "p",
+    "content": "b) First, simplify the function to make it a bit easier: "
+  },
+  {
+    "type": "p",
+    "content": "$ y = e^{\\ln \\sqrt{\\sin 2x} } = e^{\\frac{1}{2} \\ln (\\sin 2x) } $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Then, notice that we have three major functions \"chained\" in the form $ f(g(h(x))) $:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ f(x) = e^x $"
+      },
+      {
+        "type": "p",
+        "content": "$ g(x) = \\frac{1}{2} \\ln x $"
+      },
+      {
+        "type": "p",
+        "content": "$ h(x) = \\sin 2x $"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Find their derivatives:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ f'(x) = e^x $"
+      },
+      {
+        "type": "p",
+        "content": "$ g'(x) = \\frac{1}{2x} $"
+      },
+      {
+        "type": "p",
+        "content": "$ h'(x) = 2 \\cos 2x $"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, apply the chain rule to get the derivative of the entire function:"
+  },
+  {
+    "type": "p",
+    "content": "$ y' = f'(g(h(x))) \\ g'(h(x)) \\ h'(x) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = (e^{\\frac{1}{2} \\ln (\\sin 2x) })(\\frac{1}{2\\sin 2x})(2\\cos 2x) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = (e^{\\frac{1}{2} \\ln (\\sin 2x) })(\\cot 2x)$"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore y' = (e^{\\frac{1}{2} \\ln (\\sin 2x) })(\\cot 2x)$"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "This question was quite tough, however, with enough practice you can eventually to this all in your head!"
+  },
+  {
+    "type": "p",
+    "content": "c) This function requires the use of product rule and chain rule."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "First find the two functions being multiplied by each other:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ f(x) = e^{x^2+5x} $"
+      },
+      {
+        "type": "p",
+        "content": "$ g(x) = \\ln (3x+1) $"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Then, find their derivatives using chain rule:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ f'(x) = e^{x^2+5x} (2x+5) $"
+      },
+      {
+        "type": "p",
+        "content": "$ g'(x) = \\frac {1} {3x+1} (3) $"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, use product rule to find the derivative of the entire function:"
+  },
+  {
+    "type": "p",
+    "content": "$ y' = f(x)g'(x) + f'(x)g(x) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = (e^{x^2+5x})(\\frac {1} {3x+1})(3) + (e^{x^2+5x})(2x+5)(\\ln (3x+1)) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = \\frac {3e^{x^2+5x}} {3x+1} + (2x+5) e^{x^2+5x} \\ln (3x+1) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore y' = \\frac {3e^{x^2+5x}} {3x+1} + (2x+5) e^{x^2+5x} \\ln (3x+1) $"
+  }
+]

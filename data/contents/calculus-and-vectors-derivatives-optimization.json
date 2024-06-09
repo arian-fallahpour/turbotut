@@ -1,0 +1,615 @@
+[
+  {
+    "type": "h1",
+    "content": "overview"
+  },
+  {
+    "type": "p",
+    "content": "Throughout your studies of calculus in highschool, you may encounter optimization problems. These problems involve finding certain values that \"optimize\" a certain outcome. You will most likely be tested on this through word problems, so we will help you understand how to tackle these types of problems."
+  },
+  {
+    "type": "h2",
+    "content": "Key tips for word problems"
+  },
+  {
+    "type": "p",
+    "content": "Here are some key tips to make it easier for you to solve word problems:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Work backwards: Identify what you need, and what it translates to in mathematical terms"
+      },
+      {
+        "type": "p",
+        "content": "Remember what you learned: derivative rules, derivatives of special functions, and other techniques"
+      },
+      {
+        "type": "p",
+        "content": "Create a plan: Figure out a step by step process on how to get that information"
+      }
+    ]
+  },
+  {
+    "type": "h1",
+    "content": "What you may encounter"
+  },
+  {
+    "type": "h2",
+    "content": "Typical questions"
+  },
+  {
+    "type": "p",
+    "content": "The most common type of questions are the ones that ask you for a certain value, whether it is from the function itself, its first derivative or its second derivative."
+  },
+  {
+    "type": "p",
+    "content": "The example below demonstrates one of such questions."
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "The position in meters of a car on a road with respect to time is modelled by the function $ d(t) = t^4 - 5t^3 + 5t^2 + 5t $ for all $ t \\in [0, 3] $. Its speed is modelled by the function $ v(t) = d'(t) $ and its acceleration is modelled by the function $ a(t) = v'(t). Find: $"
+  },
+  {
+    "type": "ol",
+    "style": { "listStyle": "lower-alpha" },
+    "contents": [
+      {
+        "type": "p",
+        "content": "The car's position at $ t = 2s $"
+      },
+      {
+        "type": "p",
+        "content": "The car's speed at $ t = 3s $"
+      },
+      {
+        "type": "p",
+        "content": "The car's acceleration at $ t = 1s $"
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "a) This is fairly simply, just plug in $ t = 2 $ into the car's position function $ d(t) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ d(2) = (2)^4 - 5(2)^3 + 5(2)^2 + 5(2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, \\, = (2)^4 - 5(2)^3 + 5(2)^2 + 5(2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, \\, = 16 - 45 + 20 + 10 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, \\, = 16 - 45 + 20 + 10 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, \\, = 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The position of the car on the road at $ t = 2s $ is $ 1m $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) For this question, we need the speed function $ v(t) $, which is the derivative of the position function ($ d'(t) $). Once we have the speed function, we plug in $ t = 3s $ to find the car's speed at that time."
+  },
+  {
+    "type": "p",
+    "content": "$ v(t) = (4)(t^{4 - 1}) - (3)(5t^{3 - 1}) + (2)(5t^{2 - 1}) + (1)(5t^{1 - 1})$"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad = 4t^3 - 15t^2 + 10t + 5 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we just plug in $ t = 3s $ into $ v(t) $ to get the car's speed at that time:"
+  },
+  {
+    "type": "p",
+    "content": "$ v(3) = 4(3)^3 - 15(3)^2 + 10(3) + 5 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, \\, = 4(3)^3 - 15(3)^2 + 10(3) + 5 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, \\, = 108 - 135 + 30 + 5 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, \\, = 8 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The car's speed at $ t = 3s $ is $ 8 \\frac {m} {s} $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "c) The acceleration being the derivative of speed means it is the second derivative of the car's position function $ d''(t) $."
+  },
+  {
+    "type": "p",
+    "content": "We must now find the second derivative function:"
+  },
+  {
+    "type": "p",
+    "content": "$ a(t) = (3)(4t^{3 - 1}) - (2)(15t^{2 - 1}) + (1)(10t^{1 - 1}) + 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad = 12t^2 - 30t + 10 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, just plug in $ t = 1s $ into $ a(t) $ to get the car's acceleration:"
+  },
+  {
+    "type": "p",
+    "content": "$ a(1) = 12(1)^2 - 30(1) + 10 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, \\, = 12 - 30 + 10 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, \\, = -8 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The car's acceleration at $ t = 1s $ is $ -8 \\frac {m} {s^2} $."
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "The spread of a rumor in a certain school is modelled by the equation $ P(t) = \\frac {300} {1 + e^{3-t}} $, where $ P(t) $ is the total number of students who have heard the rumour $t$ days after the rumour forst started tp spread."
+  },
+  {
+    "type": "ol",
+    "style": { "listStyle": "lower-alpha" },
+    "contents": [
+      {
+        "type": "p",
+        "content": "How many students heard the rumour after $1$ day?"
+      },
+      {
+        "type": "p",
+        "content": "How fast is the rumour spread after $4$ days?"
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "a) To calculate the number of students that heard the rumour after $1$ day, simply plug into $ P(t) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ P(1) = \\frac { 300 } { 1 + e^{4 - (1)} } = \\frac { 300 } { 1 + e^3 } \\approx 14.23 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ After $1$ day around $ 14.23 \\ students $ have heard the rumour."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) We must find the derivative $ P'(t) $ in order to determine how fast the rumour is spreading after $4$ days:"
+  },
+  {
+    "type": "p",
+    "content": "$ P(t) = 300(1 + e^{4 - t})^{-1} \\quad $ (re-arranged to use product rule)"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ P'(t) = (-1)(300)(1 + e^{4 - t})^{-2}(e^{4 - t})(-1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\frac {300(e^{4 - t})} {(1 + e^{4 - t})^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ P'(4) = \\frac {300(e^{4 - (4)})} {(1 + e^{4 - (4)})^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\, \\, = \\frac {300(e^0)} {(1 + e^0)^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\, \\, = \\frac {300(1)} {(2)^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\, \\, = \\frac {300} {4} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\, \\, = 75 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The rumour is spreading at a rate of $ 75 \\ \\frac {students} {day} $"
+  },
+  {
+    "type": "h2",
+    "content": "Questions about maximizing/minimizing a certain value"
+  },
+  {
+    "type": "p",
+    "content": "These sort of questions require you to obtain the maximum/minimum of a function. As you have learned, you can obtain this by looking at the function's derivative and finding its roots."
+  },
+  {
+    "type": "p",
+    "content": "There may also be restrictions in these questions that are crucial in helping you determine the right answer."
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "The perimeter of a right-angled triangle with hypotenus 8cm is given by the function $ P(x) = 8(1 + \\sin x + \\cos x) $, where $x$ is the angle between the base and the hypotenuse. Calculate the measure of the angle in the triangle that will maximize the perimeter."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "First, let's simplify the equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ P(x) = 8(1 + \\sin x + \\cos x) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = 8 + 8\\sin x + 8\\cos x) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Calculate the derivative of $ P(x) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ P'(x) = 8\\cos x - 8\\sin x $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we must determine the critical points in order to find the maximum perimeter:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\ \\, 0 = 8\\cos x - 8\\sin x $"
+  },
+  {
+    "type": "p",
+    "content": "$ 8\\sin x = 8\\cos x $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\tan x = 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, \\, x = \\tan^{-1} (1) $"
+  },
+  {
+    "type": "p",
+    "content": "So, $ x = 0.785 $ or $ \\cancel{ x = 3.927 } $ (invalid because $ 0 < x < \\frac {\\pi} {2} $ since it is a right angle triangle)"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, verify whether the critical point occurs at a maximum and find the value of the perimeter:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(2, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x < 0.785 $"
+          },
+          {
+            "type": "p",
+            "content": "$ x > 0.785 $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ f'(x) > 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f'(x) < 0  $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "Increasing to decreasing indicates a maximum."
+  },
+  {
+    "type": "p",
+    "content": "$ P(0.785) = 8(1 + \\sin(0.785) + \\cos(0.785)) = 19.31 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here are the graphs of $ P(x)$ and $ P'(x) $ for your benefit:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/optimization-2.png"
+  },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The triangle has a maximum perimeter of $ 19.31 cm $ at $ x = 0.785 $ radians."
+  },
+  {
+    "type": "h2",
+    "content": "Questions about maximizing/minimizing rate of change"
+  },
+  {
+    "type": "p",
+    "content": "Some questions may ask at what point the rate of change itself changes the fastest. In these cases, you would want to look at the second derivative. You could treat the first derivative as a \"normal\" function, and the second derivative as the derivative of that \"normal\" function."
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "A certain stock fluctuates over the course of $3$ months. It's price in $ dollars $ is determined by $ p(t) = -t^3 + 4t^2 - 3t + 2 $ where t is time in $ months $ and $ t \\in [0, 3] $."
+  },
+  {
+    "type": "ol",
+    "style": { "listStyle": "lower-alpha" },
+    "contents": [
+      {
+        "type": "p",
+        "content": "If you were to buy one stock at its lowest price, and sell at its highest, how much would you profit off of it?"
+      },
+      {
+        "type": "p",
+        "content": "Find the point in time when the stock is most volatile (changes the fastest)"
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "To answer both questions, we will need the first and second derivative of $ p(t) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ p'(t) = (3)(-t^{3 - 1}) + (2)(4t^{2 - 1}) - (1)(3t^{1 - 1}) + (0)(2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ = -3t^2 + 8t - 3 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ p''(t) = (2)(-3t^{2 - 1}) + (1)(8t^{1 - 1}) - (0)(3) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, = (2)(-3t^{2 - 1}) + (1)(8t^{1 - 1}) - (0)(3) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, = -6t + 8 $"
+  },
+  {
+    "type": "p",
+    "content": "a) To calculate the most profit, we need to find where the local minimum occurs (buy) and when the local maximum occurs (sell):"
+  },
+  {
+    "type": "p",
+    "content": "The roots of $ p'(t) $ are $ x = 0.451 $ and $ x = 2.215 $ (quadratic formula) which are also the critical points of $ p(t) $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, determine which critical points are the minimums and maximums of $ p(t) $:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(3, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ t < 0.451 $"
+          },
+          {
+            "type": "p",
+            "content": "$ 0.451 < t < 2.215 $"
+          },
+          {
+            "type": "p",
+            "content": "$ t > 2.215 $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ p'(t) < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ p'(t) > 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ p'(t) < 0 $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ p(t) $ is decreasing then increasing at $ t = 0.451 \\ - \\ $ Local minimum"
+      },
+      {
+        "type": "p",
+        "content": "$ p(t) $ is increasing then decreasing at $ t = 2.215 \\ - \\ $ Local maximum"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we must get the stock's price at its minimum and maximum value in order to calculate the maximum profits:"
+  },
+  {
+    "type": "p",
+    "content": "$ p(0.451) = ... = 1.369 $"
+  },
+  {
+    "type": "p",
+    "content": "$ p(2.215) = ... = 4.113 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\mathrm { Max \\ Profit } = \\mathrm { max \\ price} - \\mathrm { min \\ price } = 4.113 - 1.369 = 2.744 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The maximum profit you can earn from one stock is $ 2.744 \\ dollars $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) To find the point at which the stock is most volatile (or changes the fastest), we need to find the critical points of $ p'(t) $ (not to be confused with $ p(t) $) and find the largest absolute maximum/minimum, since the absolute rate of change of the price is greatest at that point."
+  },
+  {
+    "type": "p",
+    "content": "$ p''(t) = -6t + 8 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\, \\, 0 = -6t + 8 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\, \\, \\, t = \\frac {4} {3} \\approx 1.333 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's just verify that this is in fact a maximum/minimum, and not a point of inflection for the first derivative:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(2, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ t < 1.333 $"
+          },
+          {
+            "type": "p",
+            "content": "$ t > 1.333 $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ p''(t) > 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ p''(t) < 0 $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "The sign of $ p''(t) $ changes, so it is not a point of inflection, but a local maximum."
+  },
+  {
+    "type": "p",
+    "content": "This means the stock is not only changing the fastest, but it is also increasing."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Just to confirm for yourself, here are the graphs of $ p(t) $, $ p'(t) $ and $ p''(t) $:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/optimization-3.png"
+  },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The stock changes the most rapidly at $ t = 1.333 \\ months $"
+  }
+]

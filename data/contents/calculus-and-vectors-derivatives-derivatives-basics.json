@@ -1,0 +1,130 @@
+[
+  {
+    "type": "h1",
+    "content": "what are derivatives?"
+  },
+  {
+    "type": "p",
+    "content": "A derivative of a function at any given point is its instantaneous rate of change at that point. You can also think of the derivative of a function as the graph of the slopes of that function."
+  },
+  {
+    "type": "h3",
+    "content": "notations"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "prime notation: $ f'(x) $ (or $ y' $) is the derivative of $ f(x) $ (or $ y $)."
+      },
+      {
+        "type": "p",
+        "content": "delta notation: $ \\frac {d} {dx} f(x) $ (or $ \\frac {dy} {dx} $) is the derivative of $ f(x) $ (or $ y $)."
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "visualization"
+  },
+  {
+    "type": "p",
+    "content": "The following video demonstrates how the derivative of a function is determined, by first calculating the slope at a given point and then plotting it onto the graph:"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/determine-derivative-1.mp4",
+    "content": "The blue graph is the derivative of $ f(x) $"
+  },
+  {
+    "type": "p",
+    "content": "Note that the straight line on the $ f(x) $ curve is the *tangent* of that curve."
+  },
+  {
+    "type": "p",
+    "content": "Also, notice that when the value of the derivative gets closer to zero, the tangent becomes more flat. This makes sense, since the deriviative of a function is the value of the slope at a particular point."
+  },
+  {
+    "type": "h1",
+    "content": "Determining the derivative of a function"
+  },
+  {
+    "type": "p",
+    "content": "As of now, we can only find the derivative of a function at a given point, but what if we want the actual function that represents the derivative of a function?"
+  },
+  {
+    "type": "p",
+    "content": "We can do this by using the formula for the instantaneous rate of change at a point, but instead of treating $a$ as a point, we use $x$ instead:"
+  },
+  {
+    "type": "h2",
+    "content": "Derivative by first principle"
+  },
+  {
+    "type": "latex",
+    "content": "$ f'(x) = \\frac {dy} {dx} = \\ ^{\\lim}_{h \\to 0} \\frac {f(x + h) - f(x)} {h} $"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Determine the derivative of the following function: $ f(x) = x^2 + x $"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Using the first principle method, we can calculate the derivative:"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\ ^{\\lim}_{h \\to 0} \\frac {f(x + h) - f(x)} {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\ ^{\\lim}_{h \\to 0} \\frac { [(x + h)^2 + (x + h)] - [x^2 + x]} {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\ ^{\\lim}_{h \\to 0} \\frac { x^2 + 2hx + h^2 + x + h - x^2 - x} {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\ ^{\\lim}_{h \\to 0} \\frac { \\cancel{x^2} + 2hx + h^2 \\cancel{ + x} + h \\cancel{ - x^2} \\cancel{ - x}} {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\ ^{\\lim}_{h \\to 0} \\frac { 2hx + h^2 + h } {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\ ^{\\lim}_{h \\to 0} \\frac { h (2x + h + 1) } {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\ ^{\\lim}_{h \\to 0} \\frac { \\cancel{h} (2x + h + 1) } {\\cancel{h}} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = \\ ^{\\lim}_{h \\to 0} (2x + h + 1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = 2x + (0) + 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = 2x + 1 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore f'(x) = 2x + 1 $"
+  }
+]

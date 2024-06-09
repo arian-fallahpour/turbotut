@@ -2,11 +2,14 @@ import mongoose from "mongoose";
 import Chapter from "./chapterModel";
 import slugify from "slugify";
 import Course from "./courseModel";
+import AppError from "@/utils/AppError";
+import { doesObjectIdExist } from "@/utils/database";
 
 const lectureSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
+    lowercase: true,
     minLength: [3, "Name must be at least 3 characters long"],
     maxLength: [100, "Name cannot exceed 100 characters"],
     required: [true, "Please provide a valid name"],
@@ -33,6 +36,10 @@ const lectureSchema = new mongoose.Schema({
   },
 });
 
+lectureSchema
+  .path("chapter")
+  .validate(doesObjectIdExist(Chapter), "Chapter does not exist");
+
 // Prevent duplicate values for index/name in each chapter
 lectureSchema.index({ chapter: 1, name: 1 }, { unique: true });
 
@@ -58,8 +65,6 @@ lectureSchema.pre("save", async function (next) {
 
 // Adds lecture to chapter when created and updates course's lectureCount
 lectureSchema.post("save", { document: true }, async function (doc, next) {
-  console.log("Adding lecture to chapter");
-
   // Check if document was just created
   if (!doc.wasNew) return;
 
@@ -82,32 +87,6 @@ lectureSchema.post("save", { document: true }, async function (doc, next) {
 
   // Update course's lecture
   course.lecturesCount += 1;
-  await course.save();
-
-  next();
-});
-
-// Removes lecture from its chapter
-lectureSchema.post("deleteOne", { document: true }, async function (doc, next) {
-  console.log("Remove lecture from its chapter");
-
-  // Find chapter
-  const chapter = await Chapter.findById(doc.chapter);
-  if (!chapter) return next();
-
-  // Remove lecture from chapter
-  const index = chapter.lectures.findIndex((lctr) => lctr._id === doc._id);
-  chapter.lectures.splice(index, 1);
-
-  // Save chapter
-  await chapter.save();
-
-  // Find course
-  const course = await Course.findById(doc.course).select({ lecturesCount: 1 });
-  if (!course) return next();
-
-  // Update course's lecture
-  course.lecturesCount -= 1;
   await course.save();
 
   next();

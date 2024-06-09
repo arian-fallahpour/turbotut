@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import User from "./userModel";
+import Order from "./orderModel";
+import { doesObjectIdExist } from "@/utils/database";
 
 const subscriptionSchema = new mongoose.Schema({
   user: {
@@ -30,6 +33,13 @@ const subscriptionSchema = new mongoose.Schema({
     required: [true, "Please provide a stripe subscription id"],
   },
 });
+
+subscriptionSchema
+  .path("user")
+  .validate(doesObjectIdExist(User), "User does not exist");
+subscriptionSchema
+  .path("order")
+  .validate(doesObjectIdExist(Order), "Order does not exist");
 
 subscriptionSchema.statics.findActive = async function (userId) {
   return await mongoose.model("Subscription").findOne({

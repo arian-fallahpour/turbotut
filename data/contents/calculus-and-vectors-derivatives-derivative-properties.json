@@ -1,0 +1,631 @@
+[
+  {
+    "type": "h1",
+    "content": "Important terms"
+  },
+  {
+    "type": "h2",
+    "content": "Critical points"
+  },
+  {
+    "type": "p",
+    "content": "Critical points are the points on a function at which its derivative is undefined or equal to zero."
+  },
+  {
+    "type": "h2",
+    "content": "Local maximums and minimums"
+  },
+  {
+    "type": "p",
+    "content": "*Local maximum* and *local minimum values* values refer to the peaks and dips of a function. A maximum refers to the peaks, while a minimum refers to the dips."
+  },
+  {
+    "type": "p",
+    "content": "Take a look at the following image of a function and its first derivative, and identify the maximum and minimum values:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/derivative-properties-1.png"
+  },
+  {
+    "type": "p",
+    "content": "The function has a local maximum at $ x = \\ \\sim 2.5 $ and a local minimum at $ x = \\ \\sim 4.2 $."
+  },
+  {
+    "type": "p",
+    "content": "In this case, the maximum at $ x = \\ \\sim 2.5 $ is said to be an *absolute maximum*, since there is no other point on the entire graph that has a greater $y$ value. Although this graph does not having any absolute minimums, they also exist."
+  },
+  {
+    "type": "h2",
+    "content": "Concavity"
+  },
+  {
+    "type": "p",
+    "content": "Concavity describes whether a function has curve shape that faces either up or down. You can think of the curve in a region of the graph as a \"spoon\" that either faces up or down."
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Concave up means the spoon is facing up."
+      },
+      {
+        "type": "p",
+        "content": "Concave down means the spoon is facing down."
+      },
+      {
+        "type": "p",
+        "content": "A *point of inflection* (POI) is the point at which the concavity of a function changes."
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "Look at the graph below to get a better idea:"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/derivative-properties-2.png"
+  },
+  {
+    "type": "p",
+    "content": "You can see that the graph is concave down (spoon facing down) when $ x < \\ \\sim 3.3 $ and concave up (spoon facing up) when $ x > \\ \\sim 3.3 $. You can also see a point of inflection (labelled POI) at $ x = \\ \\sim 3.3 $, which indicates the point at which the concavity switches."
+  },
+  {
+    "type": "h1",
+    "content": "Higher order derivatives"
+  },
+  {
+    "type": "p",
+    "content": "As you have already encountered, you can differentiate a function more than once. These are called higher order derivatives, and some possess interesting properties that can be used to understand the original function."
+  },
+  {
+    "type": "h2",
+    "content": "First and second derivatives"
+  },
+  {
+    "type": "p",
+    "content": "A good way to think of a function and its first and second derivatives is to think of them as position, velocity and acceleration."
+  },
+  {
+    "type": "p",
+    "content": "The position is determined by the function itself, and its velocity is modelled by its first derivative. The rate at which the velocity changes, or the acceleration, is modelled by the second derivative."
+  },
+  {
+    "type": "h1",
+    "content": "Properties of first derivatives"
+  },
+  {
+    "type": "p",
+    "content": "As you already know, the first derivative of a function gives us the slope. However, there is more information that can be obtained by analyzing the first derivative."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here is a summary of what the different values of the slope mean for the function:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "When $ f'(x) > 0 - f(x) $ is rising"
+      },
+      {
+        "type": "p",
+        "content": "When $ f'(x) < 0 - f(x) $ is falling"
+      },
+      {
+        "type": "p",
+        "content": "When $ f'(x) = 0 - f(x) $ is flat"
+      },
+      {
+        "type": "p",
+        "content": "When $ | f'(x) | >> 0 - f(x) $ is very steep"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "First derivative roots"
+  },
+  {
+    "type": "p",
+    "content": "When the value of the first derivative is equal to $0$, this could mean one of three things. Either the function has hit a local maximum, local minimum or it has hit a point of inflection."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "You can determine which one it is based on the sign of the first derivative before and after hitting $0$:"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Positive going to negative $ - $ Local minimum "
+      },
+      {
+        "type": "p",
+        "content": "Negative going to positive $ - $ Local maximum "
+      },
+      {
+        "type": "p",
+        "content": "Negative going to negative $ - $ Decreasing point of inflection "
+      },
+      {
+        "type": "p",
+        "content": "Positive going to positive $ - $ Increasing point of inflection "
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "A *point of inflection* is when the *concavity* of the function switches. We will talk about this more with the properties of second derivatives."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The four graphs below demonstrate these properties visually:"
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/derivative-properties-3.png",
+        "content": "1. Decreasing to increasing slope"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/derivative-properties-4.png",
+        "content": "2. Increasing to decreasing slope"
+      }
+    ]
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/derivative-properties-5.png",
+        "content": "3. Increasing to increasing slope"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/derivative-properties-6.png",
+        "content": "4. Decreasing to decreasing slope"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the local extremas (minimums and maximums) of the function $ f(x) = \\frac {1} {4} x^4 - x^3 - 2x^2 + 12x + 1 $. Also state on which intervals the function has a positive/negative slope."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "To find the local minimums and maximums of $ f(x) $, we must find its critical points, which means we need to determine its derivative $ f'(x) $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Use the derivative rules to find the derivative:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = (4)(\\frac {1}{4} x^3) - (3)(x^2) - (2)(2x) + (1)(12) + (0)(1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = x^3 - 3x^2 - 4x + 12 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = x^2(x - 3) - 4(x - 3) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = (x^2 - 4)(x - 3) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ = (x - 2)(x + 2)(x - 3) $"
+  },
+  {
+    "type": "p",
+    "content": "So, the critical points for $ f(x) $ are at $ x = -2, 2, 3 $"
+  },
+  {
+    "type": "p",
+    "content": "Now we need to determine the sign of $ f'(x) $ to distinguish between extrema types."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "To do so, we will substitute values into $ f'(x) $ to determine its sign in the regions before, between and after the critical points:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(4, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x < -2 $"
+          },
+          {
+            "type": "p",
+            "content": "$ -2 < x < 2 $"
+          },
+          {
+            "type": "p",
+            "content": "$ 2 < x < 3 $"
+          },
+          {
+            "type": "p",
+            "content": "$ x > 3 $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ f'(x) < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f'(x) > 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f'(x) < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f'(x) > 0 $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Decreasing then increasing at $ x = -2 $ $ - $ local minumum"
+      },
+      {
+        "type": "p",
+        "content": "Increasing then decreasing at $ x = 2 $ $ - $ local maximum"
+      },
+      {
+        "type": "p",
+        "content": "Decreasing then increasing at $ x = 3 $ $ - $ local minimum"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The function has a positive slope when $ -2 < x < 2 $, $ x > 3 $, and a negative slope when $ x < -2 $, $ 2 < x < 3 $."
+  },
+  {
+    "type": "h1",
+    "content": "Properties of second derivatives"
+  },
+  {
+    "type": "p",
+    "content": "Interestingly, second derivatives also provide valuable information that can help determine the shape and form of a function."
+  },
+  {
+    "type": "p",
+    "content": "They allow you to determine whether the line on a function is going straight, is concave up, or concave down."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Perhaps this list could make it easy for you to determine concavity:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ f''(x) > 0 - f(x) $ is concave up"
+      },
+      {
+        "type": "p",
+        "content": "$ f''(x) < 0 - f(x) $ is concave down"
+      },
+      {
+        "type": "p",
+        "content": "$ f''(x) = 0 - f(x) $ has no curve"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "Second derivative roots"
+  },
+  {
+    "type": "p",
+    "content": "Points of inflection occur when the concavity of the function switches. These occur at local maximums/minimums in the first derivative, or at the roots of the second derivatives."
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/derivative-properties-7.png",
+    "content": "Point of inflection at $ x = 3 $"
+  },
+  {
+    "type": "p",
+    "content": "The graph above shows that there is a point of inflection at $ x = 3 $. The curve is concave up when $ x < 3 $ and concave down when $ x > 3 $."
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the intervals at which the function $ f(x) = \\frac {1} {4} x^4 - x^3 - 2x^2 + 12x + 1 $ is concave up, down or neither. State the points of inflection as well."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "We already know that $ f'(x) = x^3 - 3x^2 - 4x + 12 $ from the previous example. We now need to find the second derivative in order to determine on which intervals $ f(x) $ is concave up, concave down or neither."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ f''(x) = (3)(x^2) - (2)(3x) - (1)(4) + (0)(12) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\, = 3x^2 - 6x - 4 $"
+  },
+  {
+    "type": "p",
+    "content": "Using the quadratic formula, the roots for $ f''(x) $ are at $ x = -0.528 $ and $ x = 2.528 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we must plug in values for $ f''(x) $ in the corresponding regions to determine their concavity:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(3, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x < -0.528 $"
+          },
+          {
+            "type": "p",
+            "content": "$ -0.528 < x < 2.528 $"
+          },
+          {
+            "type": "p",
+            "content": "$ x > 2.528 $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ f''(x) > 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f''(x) < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f''(x) > 0 $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ f''(x) > 0 $ when $ x < -0.528 $ $-$ $ f(x) $ is concave up"
+      },
+      {
+        "type": "p",
+        "content": "$ f''(x) < 0 $ when $ -0.528 < x < 2.528 $ $-$ $ f(x) $ is concave down"
+      },
+      {
+        "type": "p",
+        "content": "$ f''(x) > 0 $ when $ x > 2.528 $ $-$ $ f(x) $ is concave up"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Since the concavity of $ f(x) $ changes at both $ x = -0.528 $ and $ x = 2.528 $, they are both points of inflection."
+  },
+  {
+    "type": "h1",
+    "content": "Questions"
+  },
+  {
+    "type": "h2",
+    "content": "question 1"
+  },
+  {
+    "type": "p",
+    "content": "Suppose that $ f(x) = ax^3 + bx^2 + cx $ has a local maximum at $ (-1, 7) $ and an inflection point at $ x = \\frac {1} {2} $, find the values of $a$, $b$, $c$."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Let's begin by listing the function and its first and second derivatives:"
+  },
+  {
+    "type": "p",
+    "content": "$ f(x) = ax^3 + bx^2 + cx $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = 3ax^2 + 2bx + c $"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(x) = 6ax + 2b $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The question gives us the local maximum as a point $ (-1, 7) $ on the graph. We can use this to create one equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ f(-1) = 7$"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ 7 = a(-1)^3 + b(-1)^2 + c(-1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ 7 = -a + b - c $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ c = -a + b - 7 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "There is also a local maximum at point at $ x = -1 $, meaning $ f'(-1) = 0 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(-1) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, 0 = 3a(-1)^2 + 2b(-1) + c $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, 0 = 3a - 2b + c $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "There is an inflection point at $ x = \\frac {1} {2} $, meaning $ f''(\\frac {1} {2}) = 0 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(\\frac {1} {2}) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, 0 = 6a(\\frac {1} {2}) + 2b $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, 0 = 3a + 2b $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\, \\, \\, b = - \\frac {3} {2} a $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we just plug in the equations into each others so that we obtain the values for $a$, $b$ and $c$:"
+  },
+  {
+    "type": "p",
+    "content": "$ 0 = 3a - 2b + c $"
+  },
+  {
+    "type": "p",
+    "content": "$ 0 = 2a - b - 7 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, b = 2a - 7 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\ \\, \\,  b = - \\frac {3} {2} a $"
+  },
+  {
+    "type": "p",
+    "content": "$ (2a - 7) = - \\frac {3} {2} a $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, \\, 4a - 14 = - 3a $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, \\, 7a = 14 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad a = 2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ b = - \\frac {3} {2} a $"
+  },
+  {
+    "type": "p",
+    "content": "$ b = - \\frac {3} {2} (2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ b = -3 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ c = b - a - 7 $"
+  },
+  {
+    "type": "p",
+    "content": "$ c = (-3) - (2) - 7 $"
+  },
+  {
+    "type": "p",
+    "content": "$ c = -12 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore a = 2 $, $ b = -3 $ and $ c = -12 $"
+  }
+]

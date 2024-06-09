@@ -19,6 +19,7 @@ export const DELETE = routeHandler(
 
     // Delete course's lectures (Query is ok in this case)
     await Lecture.deleteMany({ chapter: { $in: chapters } });
+    // NOTE: We will not delete lecture's content so that we can keep track of it
 
     // Delete course's chapters (Query is ok in this case)
     await Chapter.deleteMany({ _id: { $in: chapters } });

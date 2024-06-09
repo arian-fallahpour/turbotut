@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import catchAsync from "./catchAsync";
 import User from "@/models/userModel";
 
 let isConnected = false;
@@ -62,7 +61,7 @@ export const signupUpdateUser = async ({
   return user;
 };
 
-export const isValidObjectId = (Model) =>
+export const doesObjectIdExist = (Model) =>
   async function (val) {
     const doc = await Model.findById(val).select({ id: 1 });
     return !!doc; // Converts to truth value

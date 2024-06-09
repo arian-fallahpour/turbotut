@@ -43,6 +43,13 @@
     display: flex;
     justify-content: space-between;
   }
+
+  &NavButton {
+    & > svg {
+      height: 1.75rem;
+      width: 1.75rem;
+    }
+  }
 }
 
 .Intro {
