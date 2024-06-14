@@ -11,7 +11,7 @@ export const GET = routeHandler(
   async function (req, { params }) {
     const { user } = req.data;
     if (!user)
-      return new AppError("Login session invalid, please login again", 400);
+      return new AppError("Login session is invalid, please login again", 400);
 
     await connectDB();
 
@@ -55,8 +55,6 @@ export const GET = routeHandler(
     //   );
     //   contents = JSON.parse(contents);
     // }
-
-    console.log(`/data/contents/${lecture.slug}.json`);
 
     let contents;
     try {

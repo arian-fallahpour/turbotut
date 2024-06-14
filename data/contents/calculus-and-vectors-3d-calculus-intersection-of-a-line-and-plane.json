@@ -52,18 +52,12 @@
     "content": "Show that the line $ \\vec {r} = (3, \\ -2, \\ 1) + t(14, \\ -5, \\ -3) $, $ t \\in \\mathbb {R} $ and the plane $ x + y + 3z - 4 = 0 $ share an infinite number of points by:"
   },
   {
-    "type": "ol",
-    "style": { "listStyle": "lower-alpha" },
-    "contents": [
-      {
-        "type": "p",
-        "content": "Substituting the parametric equations of the line into the plane"
-      },
-      {
-        "type": "p",
-        "content": "Using the dot product"
-      }
-    ]
+    "type": "p",
+    "content": "a) Substituting the parametric equations of the line into the plane"
+  },
+  {
+    "type": "p",
+    "content": "b) Using the dot product"
   },
   {
     "type": "h3",
@@ -289,18 +283,12 @@
     "content": "Show that the line with parametric equations $ x = 2 + t $, $ y = 2 + 2t $ and $ z = 9 + 8t $ where $ t \\in \\mathbb {R} $ does not intersect the plane $ 2x - 5y + z - 6 = 0 $ by:"
   },
   {
-    "type": "ul",
-    "style": { "listStyle": "lower-alpha" },
-    "contents": [
-      {
-        "type": "p",
-        "content": "Substituting the parametric equations of the line into the plane"
-      },
-      {
-        "type": "p",
-        "content": "Using the dot product"
-      }
-    ]
+    "type": "p",
+    "content": "a) Substituting the parametric equations of the line into the plane"
+  },
+  {
+    "type": "p",
+    "content": "b) Using the dot product"
   },
   {
     "type": "h3",

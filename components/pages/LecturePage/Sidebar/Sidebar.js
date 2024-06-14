@@ -9,7 +9,6 @@ import Lecture from "../Lecture/Lecture";
 
 import WestRoundedIcon from "@mui/icons-material/WestRounded";
 import EastRoundedIcon from "@mui/icons-material/EastRounded";
-import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import { useParams } from "next/navigation";
 
 const Sidebar = ({ course }) => {
@@ -49,15 +48,6 @@ const Sidebar = ({ course }) => {
                   lectureSlug={lectureSlug}
                 />
               ))}
-
-            {course.chapters.length === 0 && (
-              <ErrorBlock
-                message="No lectures so far!"
-                type="info"
-                layout="col"
-                hideGradient
-              />
-            )}
           </div>
         </div>
       </div>

@@ -3,10 +3,10 @@
 import React from "react";
 import More from "../More/More";
 
-const CourseMore = ({ course }) => {
+const ChaptersMore = ({ chapter }) => {
   const actions = [
     {
-      key: "add chapter",
+      key: "add lecture",
       onClick: () => {
         console.log("hi");
       },
@@ -29,4 +29,4 @@ const CourseMore = ({ course }) => {
   return <More actions={actions} />;
 };
 
-export default CourseMore;
+export default ChaptersMore;

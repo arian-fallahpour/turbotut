@@ -4,6 +4,7 @@ import KeyRoundedIcon from "@mui/icons-material/KeyRounded";
 
 const business = {
   name: "TurboTut",
+  description: "Learn high school subjects at incredible speeds!",
   plans: [
     {
       name: "premium",

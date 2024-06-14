@@ -1,6 +1,8 @@
+"use client";
+
 import "katex/dist/katex.min.css";
 
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./Formatted.module.scss";
 import Latex from "react-latex-next";
 import Image from "next/image";
@@ -43,7 +45,7 @@ const Formatted = ({
         />
         {content && (
           <figcaption>
-            <Latex>{content}</Latex>
+            <Latex>{format(content)}</Latex>
           </figcaption>
         )}
       </figure>
@@ -64,7 +66,7 @@ const Formatted = ({
         </video>
         {content && (
           <figcaption>
-            <Latex>{content}</Latex>
+            <Latex>{format(content)}</Latex>
           </figcaption>
         )}
       </div>
@@ -72,7 +74,7 @@ const Formatted = ({
   } else if (type === "latex") {
     return (
       <p className="latex" style={style}>
-        <Latex>{content}</Latex>
+        <Latex>{format(content)}</Latex>
       </p>
     );
   } else if (type === "cols") {
@@ -112,7 +114,7 @@ const Formatted = ({
             <tr>
               <td>
                 <p>
-                  <Latex>{content}</Latex>
+                  <Latex>{format(content)}</Latex>
                 </p>
               </td>
             </tr>
@@ -125,7 +127,7 @@ const Formatted = ({
   } else {
     return (
       <Tag style={style}>
-        <Latex>{content}</Latex>
+        <Latex>{format(content)}</Latex>
       </Tag>
     );
   }
@@ -136,6 +138,13 @@ export default Formatted;
 // TODO: add edit mode
 
 export const FormattedContent = ({ children, ...otherProps }) => {
+  useEffect(() => {
+    // const content = document.getElementById("lecture-section");
+    // window.scrollTo({
+    //   top: content.getBoundingClientRect().top + window.scrollY,
+    //   behavior: "instant",
+    // });
+  });
   return (
     <div className={classes.Formatted} {...otherProps}>
       {children}
@@ -143,4 +152,7 @@ export const FormattedContent = ({ children, ...otherProps }) => {
   );
 };
 
-function format(string) {}
+function format(string) {
+  const html = string.replace(/\*\*(.+?)\*\*(?!\*)/g, "<b>$1</b>");
+  return html;
+}

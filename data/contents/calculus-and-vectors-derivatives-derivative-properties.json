@@ -17,7 +17,7 @@
   },
   {
     "type": "p",
-    "content": "*Local maximum* and *local minimum values* values refer to the peaks and dips of a function. A maximum refers to the peaks, while a minimum refers to the dips."
+    "content": "**Local maximum** and **local minimum** values refer to the peaks and dips of a function. A maximum refers to the peaks, while a minimum refers to the dips."
   },
   {
     "type": "p",
@@ -33,7 +33,7 @@
   },
   {
     "type": "p",
-    "content": "In this case, the maximum at $ x = \\ \\sim 2.5 $ is said to be an *absolute maximum*, since there is no other point on the entire graph that has a greater $y$ value. Although this graph does not having any absolute minimums, they also exist."
+    "content": "In this case, the maximum at $ x = \\ \\sim 2.5 $ is said to be an **absolute maximum**, since there is no other point on the entire graph that has a greater $y$ value. Although this graph does not having any absolute minimums, they also exist."
   },
   {
     "type": "h2",
@@ -56,7 +56,7 @@
       },
       {
         "type": "p",
-        "content": "A *point of inflection* (POI) is the point at which the concavity of a function changes."
+        "content": "A **point of inflection** (POI) is the point at which the concavity of a function changes."
       }
     ]
   },
@@ -152,17 +152,17 @@
       },
       {
         "type": "p",
-        "content": "Negative going to negative $ - $ Decreasing point of inflection "
+        "content": "Negative going to negative $ - $ Decreasing point of inflection (Depending on the circumstances)"
       },
       {
         "type": "p",
-        "content": "Positive going to positive $ - $ Increasing point of inflection "
+        "content": "Positive going to positive $ - $ Increasing point of inflection (Depending on the circumstances)"
       }
     ]
   },
   {
     "type": "p",
-    "content": "A *point of inflection* is when the *concavity* of the function switches. We will talk about this more with the properties of second derivatives."
+    "content": "A **point of inflection** is when the **concavity** of the function switches. We will talk about this more with the properties of second derivatives."
   },
   { "type": "br" },
   {
@@ -352,7 +352,7 @@
       },
       {
         "type": "p",
-        "content": "$ f''(x) = 0 - f(x) $ has no curve"
+        "content": "$ f''(x) = 0 - f(x) $ has an inflection point"
       }
     ]
   },
@@ -470,7 +470,7 @@
   },
   {
     "type": "h1",
-    "content": "Questions"
+    "content": "Practice Questions"
   },
   {
     "type": "h2",
@@ -627,5 +627,133 @@
   {
     "type": "p",
     "content": "$ \\therefore a = 2 $, $ b = -3 $ and $ c = -12 $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 2"
+  },
+  {
+    "type": "p",
+    "content": "The following graph shows that there are two tangent lines to both of the parabolas $ f(x) = -x^2 $ and $ g(x) = 4 + x^2 $. Find the coordinates of the four points at which the tangents touch the parabolas."
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/derivative-properties-8.png"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Let's begin by calculating the derivatives of the functions:"
+  },
+  {
+    "type": "p",
+    "content": "$ f(x) = -x^2 \\ \\Rightarrow \\ f'(x) = -2x $"
+  },
+  {
+    "type": "p",
+    "content": "$ g(x) = 4 + x^2 \\ \\Rightarrow \\ g'(x) = 2x $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Say that the $x$ coordinate of the point we are looking for is $a$."
+  },
+  {
+    "type": "p",
+    "content": "Note that the slope at $ x = a $ is the same as the slope at $ x = -a $ on different parabolas."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For the tangent that goes from the top left to the bottom right, we can derive its tangent equation from both $ f(x) $ and $ g(x) $, then solve for $a$."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For $ f(x) $, the tangent intersects at $ x = a $:"
+  },
+  {
+    "type": "p",
+    "content": "$ m_{T_a} = f'(a) = -2(a) = -2a $"
+  },
+  {
+    "type": "p",
+    "content": "$ f(a) = -(a)^2 = -a^2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ y_T - y_1 = m_{T_a}(x - x_1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ y_T - (-a^2) = (-2a)(x - (a)) $"
+  },
+  {
+    "type": "p",
+    "content": "$ y_T = -2ax + a^2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For $ g(x) $, the tangent intersects at $ x = -a $:"
+  },
+  {
+    "type": "p",
+    "content": "$ m_{T_b} = g'(a) = 2(-a) = -2a $"
+  },
+  {
+    "type": "p",
+    "content": "$ g(a) = 4 + (a)^2 = 4 + a^2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ y_T - y_1 = m_{T_b}(x - x_1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ y_T - (4 + a^2) = (-2a)(x - (-a)) $"
+  },
+  {
+    "type": "p",
+    "content": "$ y_T = -2ax - a^2 + 4 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, plug the equations into each other and solve for $a$:"
+  },
+  {
+    "type": "a",
+    "content": "$ -2ax + a^2 = -2ax - a^2 + 4 $"
+  },
+  {
+    "type": "a",
+    "content": "$  2a^2 = 4 \\ \\Rightarrow \\ a = \\pm \\sqrt {2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, find the points on both functions at $ a = \\pm \\sqrt {2} $:"
+  },
+  {
+    "type": "p",
+    "content": "$ (+ \\sqrt{2}, \\ f(+ \\sqrt{2})) = (+ \\sqrt{2}, \\ -2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ (+ \\sqrt{2}, \\ g(+ \\sqrt{2})) = (+ \\sqrt{2}, \\ 6) $"
+  },
+  {
+    "type": "p",
+    "content": "$ (- \\sqrt{2}, \\ f(- \\sqrt{2})) = (- \\sqrt{2}, \\ -2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ (- \\sqrt{2}, \\ g(- \\sqrt{2})) = (- \\sqrt{2}, \\ 6) $"
   }
 ]

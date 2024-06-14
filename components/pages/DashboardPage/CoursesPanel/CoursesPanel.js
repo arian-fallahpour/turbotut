@@ -1,26 +1,26 @@
 import React from "react";
 import classes from "./CoursesPanel.module.scss";
-import dataTableClasses from "../DataTable.module.scss";
-import { join } from "@/utils/helper";
+import classesDataTable from "../DataTable.module.scss";
 
 import Course from "@/models/courseModel";
+import CourseMore from "./CourseMore";
 import Button from "@/components/Elements/Button/Button";
 import Table, {
   TableCell,
   TableHeader,
   TableRow,
 } from "@/components/Elements/Table/Table";
-
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
+
 import { connectDB } from "@/utils/database";
-import CourseMore from "./CourseMore";
+import { join } from "@/utils/helper";
 
 async function getData() {
   await connectDB();
 
   const courses = await Course.find();
 
-  return courses;
+  return JSON.parse(JSON.stringify(courses));
 }
 
 const Courses = async () => {
@@ -28,18 +28,16 @@ const Courses = async () => {
 
   return (
     <div className={classes.CoursesPanel}>
-      <div className={dataTableClasses.Container}>
-        <div className={dataTableClasses.Header}>
+      <div className={classesDataTable.Container}>
+        <div className={classesDataTable.Header}>
           <h2 className="header header-section">Courses</h2>
-          <Button className={dataTableClasses.HeaderAdd}>
-            <AddRoundedIcon fontSize="inherit" />
-          </Button>
         </div>
-        <Table className={dataTableClasses.Table}>
+
+        <Table className={classesDataTable.Table}>
           <TableRow
             className={join(
-              dataTableClasses.TableRow,
-              dataTableClasses.TableRowHeader,
+              classesDataTable.TableRow,
+              classesDataTable.TableRowHeader,
               classes.TableRow
             )}
           >
@@ -53,14 +51,14 @@ const Courses = async () => {
           {courses.map((course) => (
             <TableRow
               key={course.slug}
-              className={join(dataTableClasses.TableRow, classes.TableRow)}
+              className={join(classesDataTable.TableRow, classes.TableRow)}
             >
               <TableCell>{course.name}</TableCell>
               <TableCell>{course.subject}</TableCell>
               <TableCell>{course.lecturesCount}</TableCell>
               <TableCell>{course.chaptersCount}</TableCell>
-              <TableCell className={dataTableClasses.TableEnd}>
-                {/* <CourseMore course={course} /> */}
+              <TableCell className={classesDataTable.TableEnd}>
+                <CourseMore course={course} />
               </TableCell>
             </TableRow>
           ))}

@@ -60,6 +60,8 @@ $padding-left: var(--gap-lg);
 
     & > svg {
       transition: rotate 0.5s ease, color 0.5s ease;
+      width: 1.5em;
+      height: 1.5em;
     }
   }
 

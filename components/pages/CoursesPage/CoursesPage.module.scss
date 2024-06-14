@@ -11,3 +11,10 @@ section.CoursesSection {
   display: grid;
   gap: var(--gap-lg);
 }
+
+.Courses {
+  display: grid;
+  gap: var(--gap-lg);
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, auto));
+}

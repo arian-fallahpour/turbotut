@@ -10,6 +10,11 @@ async function getData() {
   return { courses };
 }
 
+export const metadata = {
+  title: "Courses",
+  descriptions: "View all of the courses we offer.",
+};
+
 export default async function Page() {
   const { courses } = await getData();
 

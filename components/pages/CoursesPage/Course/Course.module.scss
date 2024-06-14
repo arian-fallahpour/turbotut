@@ -5,8 +5,19 @@
   padding: 0;
   width: 30rem;
   height: 30rem;
+  border-radius: var(--bd-radius);
+  border: 0.1rem solid rgba(var(--c-orange-rgb), 0.4);
+  overflow: hidden;
 
   display: grid;
+
+  transition: box-shadow 0.5s ease;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: 0 2rem 4.5rem -4rem var(--c-orange),
+      0 -2rem 4.5rem -4rem var(--c-orange);
+  }
 
   &.unreleased {
     opacity: 0.5;
@@ -26,8 +37,6 @@
     display: grid;
     align-items: end;
 
-    border-radius: var(--bd-radius) var(--bd-radius) 0 0;
-    overflow: hidden;
     position: relative;
     padding: var(--gap-md);
 
@@ -44,30 +53,9 @@
     border-radius: 22rem;
     font-size: 1.25rem;
     opacity: 0.75;
-  }
 
-  &--orange &Unreleased {
     @include shiny("orange", 22rem);
     position: absolute;
-  }
-
-  &--green &Unreleased {
-    @include shiny("green", 22rem);
-    position: absolute;
-  }
-
-  &--red &Unreleased {
-    @include shiny("red", 22rem);
-    position: absolute;
-  }
-
-  &--blue &Unreleased {
-    @include shiny("blue", 22rem);
-    position: absolute;
-  }
-
-  &Name {
-    position: relative;
   }
 
   &Image {
@@ -79,39 +67,13 @@
       left: 0;
       width: 100%;
       height: 100%;
+
+      background-image: linear-gradient(
+        to top,
+        rgba(var(--c-orange-rgb), 0.5),
+        transparent
+      );
     }
-  }
-
-  &--orange &Image::after {
-    background-image: linear-gradient(
-      to top,
-      rgba(var(--c-orange-rgb), 0.5),
-      transparent
-    );
-  }
-
-  &--green &Image::after {
-    background-image: linear-gradient(
-      to top,
-      rgba(var(--c-green-rgb), 0.5),
-      transparent
-    );
-  }
-
-  &--red &Image::after {
-    background-image: linear-gradient(
-      to top,
-      rgba(var(--c-red-rgb), 0.5),
-      transparent
-    );
-  }
-
-  &--blue &Image::after {
-    background-image: linear-gradient(
-      to top,
-      rgba(var(--c-blue-rgb), 0.5),
-      transparent
-    );
   }
 
   &Content {
@@ -124,10 +86,7 @@
     gap: var(--gap-md);
     overflow: hidden;
     position: relative;
-    border: 0.1rem solid transparent;
     border-top: none;
-    border-radius: 0 0 var(--bd-radius) var(--bd-radius);
-    overflow: hidden;
 
     &::before {
       content: "";
@@ -138,52 +97,10 @@
       width: 100%;
       top: 0;
       left: 0;
-    }
-  }
 
-  &--orange &Content {
-    border-color: rgba(var(--c-orange-rgb), 0.5);
-
-    &::before {
       background-image: radial-gradient(
         circle at 30% -7rem,
         rgba(var(--c-orange-rgb), 0.25) 25%,
-        transparent 75%
-      );
-    }
-  }
-
-  &--green &Content {
-    border-color: rgba(var(--c-green-rgb), 0.5);
-
-    &::before {
-      background-image: radial-gradient(
-        circle at 30% -7rem,
-        rgba(var(--c-green-rgb), 0.25) 25%,
-        transparent 75%
-      );
-    }
-  }
-
-  &--red &Content {
-    border-color: rgba(var(--c-red-rgb), 0.5);
-
-    &::before {
-      background-image: radial-gradient(
-        circle at 30% -7rem,
-        rgba(var(--c-red-rgb), 0.25) 25%,
-        transparent 75%
-      );
-    }
-  }
-
-  &--blue &Content {
-    border-color: rgba(var(--c-blue-light-rgb), 0.5);
-
-    &::before {
-      background-image: radial-gradient(
-        circle at 30% -7rem,
-        rgba(var(--c-blue-light-rgb), 0.25) 25%,
         transparent 75%
       );
     }
@@ -207,5 +124,19 @@
     & > * {
       font-size: 3rem;
     }
+  }
+}
+
+.Title {
+  position: relative;
+
+  &Name {
+    text-transform: capitalize;
+  }
+
+  &Subject {
+    display: grid;
+    grid-template-rows: 0fr;
+    color: var(--txt-text);
   }
 }

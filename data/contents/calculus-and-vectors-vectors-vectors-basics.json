@@ -33,11 +33,11 @@
   },
   {
     "type": "latex",
-    "content": "$ \\text{ Force: } \\ 10N \\ [ \\mathrm{ NW } ] $"
+    "content": "$ \\text{ Force: } \\ 10N \\ [ \\text{ NW } ] $"
   },
   {
     "type": "p",
-    "content": "In the example above, $ \\text{ Force } $ is the quantity, $10$ is the magnitude, $N$ is the unit and $ [ \\mathrm{ NW } ] $ is the direction."
+    "content": "In the example above, $ \\text{ Force } $ is the quantity, $10$ is the magnitude, $N$ is the unit and $ [ \\text{ NW } ] $ is the direction."
   },
   {
     "type": "h2",
@@ -186,7 +186,7 @@
   },
   {
     "type": "p",
-    "content": "$ \\theta = \\tan^- (\\frac {y} {x}) = \\tan^- (\\frac {4} {3}) = 0.927 \\ \\mathrm{rad} = 53.1^o $"
+    "content": "$ \\theta = \\tan^- (\\frac {y} {x}) = \\tan^- (\\frac {4} {3}) = 0.927 \\ \\text{rad} = 53.1^o $"
   },
   { "type": "br" },
   {

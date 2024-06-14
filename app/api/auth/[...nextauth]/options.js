@@ -67,7 +67,8 @@ export const options = {
     async jwt({ token, user }) {
       if (user) {
         token._id = user._id;
-        token.name = user.name;
+        token.firstName = user.firstName;
+        token.lastName = user.lastName;
         token.image = user.picture;
         token.role = user.role;
         token.subscription = user.subscription;
@@ -78,7 +79,8 @@ export const options = {
     async session({ session, token, user }) {
       if (token) {
         session.user._id = token._id;
-        session.user.name = token.name;
+        session.user.firstName = token.firstName;
+        session.user.lastName = token.lastName;
         session.user.role = token.role;
         session.user.image = token.image;
         session.user.subscription = token.subscription;

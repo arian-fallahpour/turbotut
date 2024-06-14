@@ -18,6 +18,7 @@ const Sidebar = () => {
               styleName="text"
               href="/dashboard/courses"
               isLink
+              replace
             >
               courses
             </Button>
@@ -28,6 +29,7 @@ const Sidebar = () => {
               styleName="text"
               href="/dashboard/chapters"
               isLink
+              replace
             >
               chapters
             </Button>
@@ -38,6 +40,7 @@ const Sidebar = () => {
               styleName="text"
               href="/dashboard/lectures"
               isLink
+              replace
             >
               lectures
             </Button>

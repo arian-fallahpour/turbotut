@@ -57,22 +57,16 @@
     "content": "The position in meters of a car on a road with respect to time is modelled by the function $ d(t) = t^4 - 5t^3 + 5t^2 + 5t $ for all $ t \\in [0, 3] $. Its speed is modelled by the function $ v(t) = d'(t) $ and its acceleration is modelled by the function $ a(t) = v'(t). Find: $"
   },
   {
-    "type": "ol",
-    "style": { "listStyle": "lower-alpha" },
-    "contents": [
-      {
-        "type": "p",
-        "content": "The car's position at $ t = 2s $"
-      },
-      {
-        "type": "p",
-        "content": "The car's speed at $ t = 3s $"
-      },
-      {
-        "type": "p",
-        "content": "The car's acceleration at $ t = 1s $"
-      }
-    ]
+    "type": "p",
+    "content": "a) The car's position at $ t = 2s $"
+  },
+  {
+    "type": "p",
+    "content": "b) The car's speed at $ t = 3s $"
+  },
+  {
+    "type": "p",
+    "content": "c) The car's acceleration at $ t = 1s $"
   },
   {
     "type": "h3",
@@ -88,23 +82,16 @@
   },
   {
     "type": "p",
-    "content": "$ \\quad \\ \\ \\ \\, \\, = (2)^4 - 5(2)^3 + 5(2)^2 + 5(2) $"
+    "content": "$ \\quad \\ \\ \\ \\, \\, = 16 - 40 + 20 + 10 $"
   },
   {
     "type": "p",
-    "content": "$ \\quad \\ \\ \\ \\, \\, = 16 - 45 + 20 + 10 $"
+    "content": "$ \\quad \\ \\ \\ \\, \\, = 6 $"
   },
+  { "type": "br" },
   {
     "type": "p",
-    "content": "$ \\quad \\ \\ \\ \\, \\, = 16 - 45 + 20 + 10 $"
-  },
-  {
-    "type": "p",
-    "content": "$ \\quad \\ \\ \\ \\, \\, = 1 $"
-  },
-  {
-    "type": "p",
-    "content": "$ \\therefore $ The position of the car on the road at $ t = 2s $ is $ 1m $."
+    "content": "$ \\therefore $ The position of the car on the road at $ t = 2s $ is $ 6m $."
   },
   { "type": "br" },
   {
@@ -127,10 +114,6 @@
   {
     "type": "p",
     "content": "$ v(3) = 4(3)^3 - 15(3)^2 + 10(3) + 5 $"
-  },
-  {
-    "type": "p",
-    "content": "$ \\quad \\ \\ \\ \\, \\, = 4(3)^3 - 15(3)^2 + 10(3) + 5 $"
   },
   {
     "type": "p",
@@ -179,6 +162,7 @@
     "type": "p",
     "content": "$ \\quad \\ \\ \\ \\, \\, = -8 $"
   },
+  { "type": "br" },
   {
     "type": "p",
     "content": "$ \\therefore $ The car's acceleration at $ t = 1s $ is $ -8 \\frac {m} {s^2} $."
@@ -192,18 +176,12 @@
     "content": "The spread of a rumor in a certain school is modelled by the equation $ P(t) = \\frac {300} {1 + e^{3-t}} $, where $ P(t) $ is the total number of students who have heard the rumour $t$ days after the rumour forst started tp spread."
   },
   {
-    "type": "ol",
-    "style": { "listStyle": "lower-alpha" },
-    "contents": [
-      {
-        "type": "p",
-        "content": "How many students heard the rumour after $1$ day?"
-      },
-      {
-        "type": "p",
-        "content": "How fast is the rumour spread after $4$ days?"
-      }
-    ]
+    "type": "p",
+    "content": "a) How many students heard the rumour after $1$ day?"
+  },
+  {
+    "type": "p",
+    "content": "b) How fast is the rumour spread after $4$ days?"
   },
   {
     "type": "h3",
@@ -219,7 +197,7 @@
   },
   {
     "type": "p",
-    "content": "$ \\therefore $ After $1$ day around $ 14.23 \\ students $ have heard the rumour."
+    "content": "$ \\therefore $ After $1$ day around $ 14.23 $ students have heard the rumour."
   },
   { "type": "br" },
   {
@@ -228,16 +206,16 @@
   },
   {
     "type": "p",
-    "content": "$ P(t) = 300(1 + e^{4 - t})^{-1} \\quad $ (re-arranged to use product rule)"
+    "content": "$ P(t) = 300(1 + e^{4 \\ - \\ t})^{-1} \\quad $ (re-arranged to use chain rule)"
   },
   { "type": "br" },
   {
     "type": "p",
-    "content": "$ P'(t) = (-1)(300)(1 + e^{4 - t})^{-2}(e^{4 - t})(-1) $"
+    "content": "$ P'(t) = (-1)(300)(1 + e^{4 \\ - \\ t})^{-2}(e^{4 \\ - \\ t})(-1) $"
   },
   {
     "type": "p",
-    "content": "$ \\quad \\quad \\ \\ = \\frac {300(e^{4 - t})} {(1 + e^{4 - t})^2} $"
+    "content": "$ \\quad \\quad \\ \\ = \\frac {300(e^{4 \\ - \\ t})} {(1 + e^{4 \\ - \\ t})^2} $"
   },
   { "type": "br" },
   {
@@ -263,7 +241,7 @@
   { "type": "br" },
   {
     "type": "p",
-    "content": "$ \\therefore $ The rumour is spreading at a rate of $ 75 \\ \\frac {students} {day} $"
+    "content": "$ \\therefore $ The rumour is spreading at a rate of $ 75 \\ \\frac {\\text{students}} {\\text{day}} $."
   },
   {
     "type": "h2",
@@ -283,7 +261,7 @@
   },
   {
     "type": "p",
-    "content": "The perimeter of a right-angled triangle with hypotenus 8cm is given by the function $ P(x) = 8(1 + \\sin x + \\cos x) $, where $x$ is the angle between the base and the hypotenuse. Calculate the measure of the angle in the triangle that will maximize the perimeter."
+    "content": "The perimeter of a right-angled triangle with hypotenus $ 8cm $ is given by the function $ P(x) = 8(1 + \\sin x + \\cos x) $, where $x$ is the angle between the base and the hypotenuse. Calculate the measure of the angle in the triangle that will maximize the perimeter."
   },
   {
     "type": "h3",
@@ -299,7 +277,7 @@
   },
   {
     "type": "p",
-    "content": "$ \\quad \\quad \\ \\ = 8 + 8\\sin x + 8\\cos x) $"
+    "content": "$ \\quad \\quad \\ \\ = 8 + 8\\sin x + 8\\cos x $"
   },
   { "type": "br" },
   {
@@ -406,21 +384,15 @@
   },
   {
     "type": "p",
-    "content": "A certain stock fluctuates over the course of $3$ months. It's price in $ dollars $ is determined by $ p(t) = -t^3 + 4t^2 - 3t + 2 $ where t is time in $ months $ and $ t \\in [0, 3] $."
+    "content": "A certain stock fluctuates over the course of $3$ months. It's price in dollars is determined by $ p(t) = -t^3 + 4t^2 - 3t + 2 $ where t is time in months and $ t \\in [0, 3] $."
   },
   {
-    "type": "ol",
-    "style": { "listStyle": "lower-alpha" },
-    "contents": [
-      {
-        "type": "p",
-        "content": "If you were to buy one stock at its lowest price, and sell at its highest, how much would you profit off of it?"
-      },
-      {
-        "type": "p",
-        "content": "Find the point in time when the stock is most volatile (changes the fastest)"
-      }
-    ]
+    "type": "p",
+    "content": "a) If you were to buy one stock at its lowest price, and sell at its highest, how much would you profit off of it?"
+  },
+  {
+    "type": "p",
+    "content": "b) Find the point in time when the stock is most volatile (changes the fastest)"
   },
   {
     "type": "h3",
@@ -442,10 +414,6 @@
   {
     "type": "p",
     "content": "$ p''(t) = (2)(-3t^{2 - 1}) + (1)(8t^{1 - 1}) - (0)(3) $"
-  },
-  {
-    "type": "p",
-    "content": "$ \\quad \\quad \\ \\, = (2)(-3t^{2 - 1}) + (1)(8t^{1 - 1}) - (0)(3) $"
   },
   {
     "type": "p",
@@ -523,20 +491,20 @@
   },
   {
     "type": "p",
-    "content": "$ p(0.451) = ... = 1.369 $"
+    "content": "$ p(0.451) = 1.369 $"
   },
   {
     "type": "p",
-    "content": "$ p(2.215) = ... = 4.113 $"
+    "content": "$ p(2.215) = 4.113 $"
   },
   {
     "type": "p",
-    "content": "$ \\mathrm { Max \\ Profit } = \\mathrm { max \\ price} - \\mathrm { min \\ price } = 4.113 - 1.369 = 2.744 $"
+    "content": "$ \\text { Max \\ Profit } = \\text { max \\ price} - \\text { min \\ price } = 4.113 - 1.369 = 2.744 $"
   },
   { "type": "br" },
   {
     "type": "p",
-    "content": "$ \\therefore $ The maximum profit you can earn from one stock is $ 2.744 \\ dollars $"
+    "content": "$ \\therefore $ The maximum profit you can earn from one stock is $ 2.744 $ dollars."
   },
   { "type": "br" },
   {
@@ -610,6 +578,348 @@
   },
   {
     "type": "p",
-    "content": "$ \\therefore $ The stock changes the most rapidly at $ t = 1.333 \\ months $"
+    "content": "$ \\therefore $ The stock changes the most rapidly at $ t = 1.333 $ months."
+  },
+  {
+    "type": "h1",
+    "content": "Practice Questions"
+  },
+  {
+    "type": "h2",
+    "content": "Question 1"
+  },
+  {
+    "type": "p",
+    "content": "A garden is in the shape of a semi-circle with a radius of $ 2m $. The grey region is to be covered with landscaping rocks at a cost of $ \\$ 50/m^2 $, while the green triangular region is to be covered with flowers at a cost of $ \\$ 25/m^2 $."
+  },
+  {
+    "type": "p",
+    "content": "a) Find a function for the cost of the garden as a function of the angle $ \\theta $."
+  },
+  {
+    "type": "p",
+    "content": "b) Determine angle $ \\theta $ to minimize the cost of the garden. How much will the orcks and flowers for the garden cost?"
+  },
+  {
+    "type": "video",
+    "url": "/lectures/videos/optimization-4.mp4"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "a) We can model the cost function as:"
+  },
+  {
+    "type": "p",
+    "content": "$ C = 50(A_{ \\text{rocks} }) + 25(A_{ \\text{flowers} }) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The area of the flowers triangle can be calculated as follows:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\text {base} = 2 \\times 2 = 4 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\sin \\theta = \\frac { \\text{height} } {2} \\ \\Rightarrow \\ \\text{height} = 2 \\sin \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ A_{flowers} = \\frac {1} {2} \\cdot \\text{base} \\cdot \\text{height} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ = \\frac {1} {2} \\cdot (4) \\cdot (2 \\sin \\theta) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ = 4 \\sin \\theta $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The area of the landscaping area can be calculated as follows:"
+  },
+  {
+    "type": "p",
+    "content": "$ A_{ \\text{semi-circle} } = \\frac {1} {2} \\pi r^2 = \\frac {1} {2} \\pi (2)^2 = 2 \\pi $"
+  },
+  {
+    "type": "p",
+    "content": "$ A_{ \\text{rocks} } = A_{ \\text{semi-circle} } - A_{ \\text{flowers} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\, = (2 \\pi) - (4 \\sin \\theta) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\, = 2 \\pi - 4 \\sin \\theta $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, let's form the final cost equation as a function of $ \\theta $:"
+  },
+  {
+    "type": "p",
+    "content": "$ C(\\theta) = 50(A_{ \\text{rocks} }) + 25(A_{ \\text{flowers} }) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, = 50(2 \\pi - 4 \\sin \\theta) + 25(4 \\sin \\theta) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, = 100 \\pi - 200 \\sin \\theta + 100 \\sin \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, = 100 \\pi - 100 \\sin \\theta $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The equation for the cost of the garden is $ C(\\theta) = 100 \\pi - 100 \\sin \\theta $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) We can determine the angle that will minimize the cost of the garden by looking at the derivative of the cost function:"
+  },
+  {
+    "type": "p",
+    "content": "$ C(\\theta) = 100 \\pi - 100 \\sin \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ C'(\\theta) = -100 \\cos \\theta $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we need to find the critical points of $ C'(\\theta) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ C'(\\theta) = 0 $ when $ \\theta = \\frac {\\pi} {2} $ or $ \\cancel{ \\frac {3 \\pi} {2} } \\ $ (invalid b/c $ 0 < \\theta < \\pi $)"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we have to confirm that this is a minimum:"
+  },
+  {
+    "type": "p",
+    "content": "when $ \\theta < \\frac {\\pi} {2} $, $ C'(\\theta) < 0 $"
+  },
+  {
+    "type": "p",
+    "content": "when $ \\theta > \\frac {\\pi} {2} $, $ C'(\\theta) > 0 $"
+  },
+  {
+    "type": "p",
+    "content": "So, the minimum cost of the garden occurs at an angle of $ \\theta = \\frac {\\pi} {2} $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The actual cost of the garden at its minimum is:"
+  },
+  {
+    "type": "p",
+    "content": "$ C(\\frac {\\pi} {2}) = 100 \\pi - 100 \\sin (\\frac {\\pi} {2}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, \\, = 100 \\pi - 100(1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, \\, \\approx 214 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The minimum price of the garden is approximately 214 dollars and occurs at an angle of $ \\theta = \\frac {\\pi} {2} $."
+  },
+  {
+    "type": "h2",
+    "content": "Question 2"
+  },
+  {
+    "type": "p",
+    "content": "A fuel tank is being designed to contain $ 200m^3 $ of gasoline. The design of the tank calls of a cylindrical part in the middle with a hemisphere (semi-sphere) at each end to make a \"pill\" shape. If the hemispheres are twice as expensive per unit area as the cylindrical wall, then find the radius and height of the cylindrical part so that the cost of manufacturing the tank will be minimal."
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "First of all, we need to know the formulas for the volume of a semi-sphere and a cylinder:"
+  },
+  {
+    "type": "p",
+    "content": "$ 2(V_{ \\text{semi-sphere} }) = V_{ \\text{sphere} } = \\frac {4} {3} \\pi r^3 $"
+  },
+  {
+    "type": "p",
+    "content": "$ V_{ \\text{cylinder} } = \\pi r^2 h $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "If we want to optimize this problem, we need the cost of the fuel tank in terms of one variable. In this case we have two."
+  },
+  {
+    "type": "p",
+    "content": "Luckily, we can get get $h$ in terms of $r$ by using the fact that the fuel tank must have a volume of $ 200m^3 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, 200 = \\frac {4} {3} \\pi r^3 + \\pi r^2 h $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\pi r^2 h = 200 - \\frac {4} {3} \\pi r^3 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\, \\, h = \\frac {200 - \\frac {4} {3} \\pi r^3} {\\pi r^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we can get the areas of the semi-spheres and the outer part of the cylinder in terms of $r$ only:"
+  },
+  {
+    "type": "p",
+    "content": "$ 2(A_{ \\text{semi-sphere} }) = A_{ \\text{sphere} } = 4 \\pi r^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ A_{ \\text{outer cylinder} } = 2 \\pi rh $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, = 2 \\pi r (\\frac {200 - \\frac {4} {3} \\pi r^3} {\\pi r^2}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, = 2 \\cancel{\\pi r} (\\frac {200 - \\frac {4} {3} \\pi r^3} {\\cancel {\\pi} r^{\\cancel {2}^1}}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, = \\frac {400 - \\frac {8} {3} \\pi r^3} {r} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, = 400r^{-1} - \\frac {8} {3} \\pi r^2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we need to maximize the cost. Not the area! Many people get that wrong."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Since the cost for the semi-sphere material is twice as expensive, we will multiply it my two:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\text {Cost} (r) = 2(A_{ \\text{sphere} }) + A_{ \\text{outer cylinder} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\, \\, = 2(4 \\pi r^2) + 400r^{-1} - \\frac {8} {3} \\pi r^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\, \\, = 8 \\pi r^2 + 400r^{-1} - \\frac {8} {3} \\pi r^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\, \\, = \\frac {16} {3} \\pi r^2 + 400r^{-1} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The derivative of the cost function is:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\text {Cost}'(r) = (2)(\\frac {16} {3} \\pi r) + (-1)(400r^{-2}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\, \\, = \\frac {32} {3} \\pi r - 400r^{-2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\, \\, = \\frac {32} {3} \\pi r \\frac {r^2} {r^2} - \\frac {400} {r^2} \\times \\frac {3} {3} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\, \\, = \\frac {32 \\pi r^3 - 1200} {3r^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The critical points are:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\cancel{r = 0} $ because $ r > 0 $, and,"
+  },
+  {
+    "type": "p",
+    "content": "$ 32 \\pi r^3 - 1200 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\ \\, r^3 = \\frac {75} {2 \\pi} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, r = \\sqrt [3] {\\frac {75} {2 \\pi}} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, r \\approx 2.285 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "When $ 0 < r < 2.285 $, $ \\text {Cost}'(r) < 0 $"
+  },
+  {
+    "type": "p",
+    "content": "When $ r > 2.285 $, $ \\text {Cost}'(r) > 0 $"
+  },
+  {
+    "type": "p",
+    "content": "So, there is a minimum at $ r \\approx 2.285 $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, the height of the cylinder is:"
+  },
+  {
+    "type": "p",
+    "content": "$ h = \\frac {200 - \\frac {4} {3} \\pi (2.285)^3} {\\pi (2.285)^2} \\approx 9.146 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ A radius of approximately $ 2.285m $ and a height of $ 9.146m $ would result in the least expensive cost to make the fuel tank."
   }
 ]

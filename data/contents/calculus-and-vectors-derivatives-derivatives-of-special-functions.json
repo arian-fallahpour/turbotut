@@ -44,7 +44,7 @@
   },
   {
     "type": "p",
-    "content": "This base has the symbol $e$ and it is known as *Euler's Number* and it is special because its derivative is the exact same function."
+    "content": "This base has the symbol $e$ and it is known as **Euler's Number** and it is special because its derivative is the exact same function."
   },
   {
     "type": "p",
@@ -65,7 +65,7 @@
   },
   {
     "type": "p",
-    "content": "Take a look at the following graph of the function $ y = 2^x $ and its derivative:"
+    "content": "Take a look at the following graph of the function $ y = e^x $ and its derivative:"
   },
   {
     "type": "image",
@@ -270,7 +270,7 @@
   },
   {
     "type": "h1",
-    "content": "Tough questions"
+    "content": "Practice questions"
   },
   {
     "type": "h2",
@@ -325,22 +325,16 @@
     "content": "Find the derivatives of the following functions:"
   },
   {
-    "type": "ol",
-    "style": { "listStyle": "lower-alpha" },
-    "contents": [
-      {
-        "type": "p",
-        "content": "$ y = \\log_{5} (3x^2 - \\pi x) $"
-      },
-      {
-        "type": "p",
-        "content": "$ y = e^{\\ln \\sqrt{\\sin 2x} } $"
-      },
-      {
-        "type": "p",
-        "content": "$ y = e^{x^2+5x} \\ln (3x+1) $"
-      }
-    ]
+    "type": "p",
+    "content": "a) $ y = \\log_{5} (3x^2 - \\pi x) $"
+  },
+  {
+    "type": "p",
+    "content": "b) $ y = e^{\\ln \\sqrt{\\sin 2x} } $"
+  },
+  {
+    "type": "p",
+    "content": "c) $ y = e^{x^2+5x} \\ln (3x+1) $"
   },
   {
     "type": "h3",

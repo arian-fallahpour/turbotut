@@ -12,7 +12,6 @@ import ChaptersPanel from "./ChaptersPanel/ChaptersPanel";
 
 const DashboardPage = async ({ panel }) => {
   const session = await getServerSession(options);
-  console.log(panel);
 
   let panelElement;
   if (panel === "courses") {

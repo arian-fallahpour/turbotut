@@ -9,7 +9,7 @@ import InfoSection from "./InfoSection/InfoSection";
 
 const HomePage = () => {
   return (
-    <Page>
+    <Page title="Home">
       <Header />
       <ProblemSection />
       <SolutionSection />

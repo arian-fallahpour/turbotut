@@ -11,55 +11,46 @@ import Button from "@/components/Elements/Button/Button";
 import { join } from "@/utils/helper";
 import { signOut } from "next-auth/react";
 import { startProgress } from "next-nprogress-bar";
+import Image from "next/image";
 
-const AccountSection = ({ className, limit }) => {
+const AccountSection = ({ className, limit, user }) => {
   return (
     <Section className={join(className, classes.AccountSection)} limit={limit}>
-      {/* Removing for now since not needed */}
-      {/* <Form className={classes.Form}>
-        <FormRow className={classes.FormContent}>
-          <FormCol className={classes.FormSidebar}>
-            <div className={classes.Picture}>
-              <Image
-                className={classes.PictureImage}
-                alt="change profile picture"
-                src={`/images/courses/default.png`}
-                fill
-              />
-              <input
-                type="file"
-                id="input-image"
-                name="image"
-                className={classes.PictureInput}
-              />
-              <label htmlFor="input-image" className={classes.PictureLabel}>
-                Change
-              </label>
-            </div>
-          </FormCol>
-          <FormCol className={classes.FormMain}>
-            <h2 className="header header-section">edit profile</h2>
-            <Input type="text" name="firstName" label="first name" />
-            <Input type="text" name="lastName" label="last name" />
-          </FormCol>
-        </FormRow>
-        <FormRow className={classes.FormActions}>
-          <Button className={classes.FormSubmit} styleName="shiny">
-            update
+      <div className={classes.Account}>
+        <div className={classes.AccountSidebar}>
+          <div className={classes.AccountImage}>
+            <Image alt="change profile picture" src={user.image} fill />
+          </div>
+        </div>
+        <div className={classes.AccountContent}>
+          <h2 className="header header-section">Profile</h2>
+          <div className={classes.AccountData}>
+            <span className={classes.AccountDataLeft}>email:</span>
+            <span className={classes.AccountDataRight}>{user.email}</span>
+          </div>
+          <div className={classes.AccountData}>
+            <span className={classes.AccountDataLeft}>first name:</span>
+            <span className={classes.AccountDataRight}>{user.firstName}</span>
+          </div>
+          <div className={classes.AccountData}>
+            <span className={classes.AccountDataLeft}>last name:</span>
+            <span className={classes.AccountDataRight}>{user.lastName}</span>
+          </div>
+          <p className="paragraph text-center">
+            Your account data is linked to your login provider
+          </p>
+          <Button
+            className={classes.AccountSignout}
+            styleName="shiny"
+            variantName="orange"
+            onClick={() => {
+              startProgress();
+              signOut();
+            }}
+          >
+            Sign out
           </Button>
-        </FormRow>
-      </Form> */}
-      <h2 className="header header-section">profile</h2>
-      <div className={classes.Signout}>
-        <Button
-          variantName="orange"
-          onClick={() => {
-            startProgress();
-            signOut();
-          }}
-        >
-          Sign out
-        </Button>
+        </div>
       </div>
     </Section>
   );

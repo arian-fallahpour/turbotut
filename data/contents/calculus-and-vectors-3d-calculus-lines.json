@@ -30,11 +30,11 @@
         "cells": [
           {
             "type": "p",
-            "content": "Lines are *bi-directional*"
+            "content": "Lines are **bi-directional**"
           },
           {
             "type": "p",
-            "content": "Vectors are *uni-directional*"
+            "content": "Vectors are **uni-directional**"
           }
         ]
       },
@@ -42,11 +42,11 @@
         "cells": [
           {
             "type": "p",
-            "content": "A line is *infinite* and extends in both direections"
+            "content": "A line is **infinite** and extends in both direections"
           },
           {
             "type": "p",
-            "content": "Vectors are *finite* in magnitude"
+            "content": "Vectors are **finite** in magnitude"
           }
         ]
       },
@@ -54,11 +54,11 @@
         "cells": [
           {
             "type": "p",
-            "content": "Lines have a *definite location*"
+            "content": "Lines have a **definite location**"
           },
           {
             "type": "p",
-            "content": "Vectors have no *fixed location*"
+            "content": "Vectors have no **fixed location**"
           }
         ]
       },
@@ -66,11 +66,11 @@
         "cells": [
           {
             "type": "p",
-            "content": "Two ines are the *equal* if they have the same *direction* and same *location*"
+            "content": "Two ines are the **equal** if they have the same **direction** and same **location**"
           },
           {
             "type": "p",
-            "content": "Vectors are the *equal* if they have the same *direction* and *magnitude*"
+            "content": "Vectors are the **equal** if they have the same **direction** and **magnitude**"
           }
         ]
       }
@@ -213,18 +213,12 @@
     "content": "Convert the vector equation of the line $ \\vec {r} = (3, \\ -5) + t(-1, \\ -4) $ to its cartesian form by:"
   },
   {
-    "type": "ol",
-    "style": { "listStyle": "lower-alpha" },
-    "contents": [
-      {
-        "type": "p",
-        "content": "Using the vector equation"
-      },
-      {
-        "type": "p",
-        "content": "Using the parametric equations"
-      }
-    ]
+    "type": "p",
+    "content": "a) Using the vector equation"
+  },
+  {
+    "type": "p",
+    "content": "b) Using the parametric equations"
   },
   {
     "type": "h3",
@@ -325,18 +319,12 @@
     "content": "Convert the cartesian equation of the plane $ x + 2y - z + 6 = 0 $ to:"
   },
   {
-    "type": "ol",
-    "style": { "listStyle": "lower-alpha" },
-    "contents": [
-      {
-        "type": "p",
-        "content": "Its vector form"
-      },
-      {
-        "type": "p",
-        "content": "Its parametric equations"
-      }
-    ]
+    "type": "p",
+    "content": "a) Its vector form"
+  },
+  {
+    "type": "p",
+    "content": "b) Its parametric equations"
   },
   {
     "type": "h3",

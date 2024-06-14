@@ -1,6 +1,860 @@
 [
   {
     "type": "h1",
-    "content": "test"
+    "content": "Types Of Consistent Intersections"
+  },
+  {
+    "type": "p",
+    "content": "Consistent systems are when all three planes intersect at either the same point, line, or are coincident."
+  },
+  {
+    "type": "p",
+    "content": "The four types of consistent intersections are:"
+  },
+  {
+    "type": "cols",
+    "style": { "maxWidth": "40em", "justifySelf": "center" },
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/three-planes-intersection-1.png",
+        "content": "1. Planes intersect at a point"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/three-planes-intersection-2.png",
+        "content": "2a. Planes intersect at the same line, but with different angles"
+      }
+    ]
+  },
+  {
+    "type": "cols",
+    "style": { "maxWidth": "40em", "justifySelf": "center" },
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/three-planes-intersection-3.png",
+        "content": "2b. Planes intersect at the same line, but two of them are coincident"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/three-planes-intersection-4.png",
+        "content": "3. Planes are coincident"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "1. Planes intersect at a point"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/three-planes-intersection-1.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the intersection of the following planes, if any exist:"
+  },
+  {
+    "type": "p",
+    "content": "$ x + 2y - z + 2 = 0 \\quad (1) \\newline 2x + y - z + 1 = 0 \\quad (2) \\newline x - 3y + z = 0 \\quad (3) $"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "First, let's create two new equations by subtracting the equations we already have:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\, 2 \\times (1) - (2) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (2x + 4y - 2z + 4) - (2x + y - z + 1) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, 3y - z + 3 = 0 \\quad (4) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\, (1) - (3) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (x + 2y - z + 2) - (x - 3y + z) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, 5y -2z + 2 = 0 \\quad (5) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, let's subtract the equations to get a value for $y$:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, 2 \\times (4) - (5) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (6y - 2z + 6) - (5y - 2z + 2) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, \\, y + 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, \\, y = -4 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's find a value for $x$ and $z$ using equations $ (4) $ and $ (1) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ 3y - z + 3 = 0 \\ \\Rightarrow \\ 3(-4) - z + 3 = 0 \\ \\Rightarrow \\ z = -9 $"
+  },
+  {
+    "type": "p",
+    "content": "$ x + 2y - z + 2 = 0 \\ \\Rightarrow \\ x + 2(-4) - (-9) + 2 = 0 \\ \\Rightarrow \\ x = -3 $"
+  },
+  {
+    "type": "p",
+    "content": "So, all three planes intersect at the point $ (-3, \\ -4, \\ -9) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The planes intersect at the point $ (-3, \\ -4, \\ -9) $."
+  },
+  {
+    "type": "h2",
+    "content": "2a. Planes intersect at the same line, but with different angles"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/three-planes-intersection-2.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the intersection of the following planes, if any exist:"
+  },
+  {
+    "type": "p",
+    "content": "$ 2x - y + z - 1 = 0 \\quad (1) \\newline 3x - 5y + 4z - 3 = 0 \\quad (2) \\newline 3x + 2y - z = 0 \\quad (3) $"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Let's find the intersection between planes 1 and 2:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, \\, 3 \\times (1) - 2 \\times (2) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (6x - 3y + 3z - 3) - (6x - 10y + 8z - 6) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, 7y - 5z + 3 = 0 \\quad (4) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now let's do the same for planes 2 and 3:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, \\, (2) - (3) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (3x - 5y + 4z - 3) - (3x + 2y - z) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, -7y + 5z - 3 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\ \\, 7y - 5z + 3 = 0 \\quad (4) $"
+  },
+  {
+    "type": "p",
+    "content": "So we actually end up getting the same line. "
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's just check to see if planes 1 and 3 also intersect at the same line:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, 3 \\times (1) - 2 \\times (3) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (6x - 3y + 3z - 3) - (6x + 4y - 2z) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, -7y + 5z - 3 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, 7y - 5z + 3 = 0 \\quad (4) $"
+  },
+  {
+    "type": "p",
+    "content": "Again we get the same line."
+  },
+  {
+    "type": "p",
+    "content": "This means that all the planes intersect at the same line $ 7y - 5z + 3 = 0 $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "However, we can tell that they all intersect at different angles since their normals are different:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} = (2, \\ -1, \\ 1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_2} = (3, \\ -5, \\ 4) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_3} = (3, \\ 2, \\ -1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} \\ne \\vec {n_2} \\ne \\vec {n_3} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The planes intersect at the same line, but with different angles."
+  },
+  {
+    "type": "h2",
+    "content": "2b. Planes intersect at the same line, but two of them are coincident"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/three-planes-intersection-3.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "$ x + 3y - 2z + 1 = 0 \\quad (1) \\newline 2x + 6y - 4z + 2 = 0 \\quad (2) \\newline 2x - y - z = 0 \\quad (3) $"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Before doing anything, we can see that equations $ (1) $ and $ (2) $ are parallel:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} = (1, \\ 3, \\ -2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_2} = (2, \\ 6, \\ -4) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_2} = 2 \\vec {n_1} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's check if they share a point by plugging in $ x = 0 $ and $ y = 0 $ in both equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ x + 3y - 2z + 1 = 0 \\ \\Rightarrow \\ (0) + 3(0) - 2z + 1 = 0 \\ \\Rightarrow \\ z = \\frac {1} {2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ 2x + 6y - 4z + 2 = 0 \\ \\Rightarrow \\ 2(0) + 6(0) - 4z + 2 = 0 \\ \\Rightarrow \\ z = \\frac {1} {2} $"
+  },
+  {
+    "type": "p",
+    "content": "Both planes share the point $ (0, \\ 0, \\ \\frac {1} {2}) $, and therefore they coincide"
+  },
+  {
+    "type": "p",
+    "content": "This means the three planes intersect at a line, and two of those planes coincide."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we must find the line at which they intersect:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\, (2) - (3) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (2x + 6y - 4z + 2) - (2x - y - z) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, 7y - 3z + 2 = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The planes intersect at the line $ 7y - 3z + 2 = 0 $, and two of them are coincident."
+  },
+  {
+    "type": "h2",
+    "content": "3. Planes are coincident"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/three-planes-intersection-4.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the intersection of the following planes, if any exist:"
+  },
+  {
+    "type": "p",
+    "content": "$ x + y + z - 1 = 0 \\quad (1) \\newline 2x + 2y + 2z - 2 = 0 \\quad (2) \\newline 3x + 3y + 3z - 3 = 0 \\quad (3) $"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Obviously, these planes appear to be parallel since all of their normals are scalar multiples of one another:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} = (1, \\ 1, \\ 1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_2} = (2, \\ 2, \\ 2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_3} = (3, \\ 3, \\ 3) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_2} = 2 \\vec {n_1} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_3} = 3 \\vec {n_1} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's check if planes $ (1) $, $ (2) $ and $ (3) $ all share a point by plugging in $ x = 0 $ and $ y = 0 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ x + y + z - 1 = 0 \\ \\Rightarrow \\ (0) + (0) + z - 1 = 0 \\ \\Rightarrow \\ z = 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 2x + 2y + 2z - 2 = 0 \\ \\Rightarrow \\ 2(0) + 2(0) + 2z - 2 = 0 \\ \\Rightarrow \\ z = 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 3x + 3y + 3z - 3 = 0 \\ \\Rightarrow \\ 3(0) + 3(0) + 3z - 3 = 0 \\ \\Rightarrow \\ z = 1 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ Since all planes are parallel and share the point $ (0, \\ 0, \\ 1) $, they coincide each other."
+  },
+  {
+    "type": "h1",
+    "content": "Types Of Inconsistent Intersections"
+  },
+  {
+    "type": "p",
+    "content": "There are four inconsistent systems, at which not all of the planes intersect at the same point, line or plane."
+  },
+  {
+    "type": "p",
+    "content": "Here is what they look like:"
+  },
+  {
+    "type": "cols",
+    "style": { "maxWidth": "40em", "justifySelf": "center" },
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/three-planes-intersection-5.png",
+        "content": "1. planes form a triangular prism"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/three-planes-intersection-6.png",
+        "content": "2. Two parallel planes intersect a third plane"
+      }
+    ]
+  },
+  {
+    "type": "cols",
+    "style": { "maxWidth": "40em", "justifySelf": "center" },
+    "contents": [
+      {
+        "type": "image",
+        "url": "/lectures/images/three-planes-intersection-7.png",
+        "content": "3. Three parallel planes"
+      },
+      {
+        "type": "image",
+        "url": "/lectures/images/three-planes-intersection-8.png",
+        "content": "4. Three parallel planes with two coinciding each other"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "1. planes form a triangular prism"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/three-planes-intersection-5.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the solution to the following system:"
+  },
+  {
+    "type": "p",
+    "content": "$ 3x + 2y + z = 0 \\quad (1) \\newline x + 2y + 3z - 4 = 0 \\quad (2) \\newline x + y + z - 16 = 0 \\quad (3) $"
+  },
+  {
+    "type": "h1",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Before starting, we know that these planes are not parallel since none of them have scalar multiples of each other's normals."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's find the intersection between planes $ (1) $ and $ (2) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, \\, 3 \\times (1) - (2) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (9x + 6y + 3z) - (x + 2y + 3z - 4) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, \\, 8x + 4y + 4 = 0 \\quad (4) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now let's find the intersection between $ (2) $ and $ (3) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\, (2) - 3 \\times (3) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (x + 2y + 3z - 4) - (3x + 3y + 3z - 48) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, \\, -2x - y + 44 = 0 \\quad (5) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, let's calculate the intersection between $ (1) $ and $ (3) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, \\, (1) - (3) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (3x + 2y + z) - (x + y + z - 16) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, 2x + y + 16 = 0 \\quad (6) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "So all of these lines are different, but we don't know if they will intersect or not."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's check if the lines $ (4) $ and $ (5) $ intersection:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, (4) + 4 \\times (5) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (8x + 4y + 4) + (-8x - 4y + 176) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, 180 \\ne 0 $"
+  },
+  {
+    "type": "p",
+    "content": "Since we can't find a valid solution, lines $ (4) $ and $ (5) $ don't intersect."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now let's check if the lines $ (5) $ and $ (6) $ intersect:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\, (5) + (6) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (-2x - y + 44) + (2x + y + 16) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, 60 \\ne 0 $"
+  },
+  {
+    "type": "p",
+    "content": "So it looks like lines $ (5) $ and $ (6) $ don't intersect either."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, let's check if lines $ (4) $ and $ (6) $ intersect:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\, (4) - 4 \\times (6) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (8x + 4y + 4) - (8x + 4y + 64) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, -60 \\ne 0 $"
+  },
+  {
+    "type": "p",
+    "content": "Again, we see that lines $ (4) $ and $ (6) $ don't intersect."
+  },
+  {
+    "type": "p",
+    "content": "Since none of the lines of intersection intersect, then the solution to the three planes is a triangular prism."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The planes intersect in a triangular prism."
+  },
+  {
+    "type": "h2",
+    "content": "2. Two parallel planes intersect a third plane"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/three-planes-intersection-6.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the solution to the following system:"
+  },
+  {
+    "type": "p",
+    "content": "$ 2x + 4y - 2z - 4 = 0 \\quad (1) \\newline x + 2y - z - 6 = 0 \\quad (2) \\newline x + y - 2z = 0 \\quad (3) $"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Right off the bat, we can see that the planes $ (1) $ and $ (2) $ are parallel, since they have normals that are scalar multiples of one another:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} = (2, \\ 4, \\ -2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_2} = (1, \\ 2, \\ -1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} = 2 \\vec {n_2} $"
+  },
+  {
+    "type": "p",
+    "content": "Plane $ (3) $ does not seem to be parallel, so we may be dealing with two parallel planes and another that intersects through both of them."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's find the intersection between planes $ (1) $ and $ (3) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, \\, (1) - 2 \\times (3) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (2x + 4y - 2z - 4) - (x + y - 2z) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, \\, x + 3y - 4 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "So planes $ (1) $ and $ (2) $ intersect in a line."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now let's find the intersection for planes $ (2) $ and $ (3) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, \\, 2 \\times (2) - (3) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 2 \\times (2x + 4y - 2z - 12) - (x + y - 2z) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\, x + 3y - 12 = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "By simply looking at the normals of both of the lines, we can see that they are parallel:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} = (1, \\ 3, \\ 0) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_2} = (1, \\ 3, \\ 0) $"
+  },
+  {
+    "type": "p",
+    "content": "However, they seem to be shifted from each other since they have a different value for their term not attached to a variable."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Since we have two planes that are paralled to each other, that also intersect another plane at parallel lines, we have solved the system."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ Two planes are parallel and they both intersect the third plane. "
+  },
+  {
+    "type": "h2",
+    "content": "3. Three parallel planes"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/three-planes-intersection-7.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the solution to the following system:"
+  },
+  {
+    "type": "p",
+    "content": "$ x + y + z - 1 = 0 \\quad (1) \\newline 2x + 2y + 2z - 5 = 0 \\quad (2) \\newline 4x + 4y + 4z - 1 = 0 \\quad (3) $"
+  },
+  {
+    "type": "h1",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Starting off, we can see that all the planes are parallel, since their normals are scalar multiples of each other:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} = (1, \\ 1, \\ 1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_2} = (2, \\ 2, \\ 2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_3} = (4, \\ 4, \\ 4) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_3} = 2 \\vec {n_2} = 4 \\vec {n_1} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Let's check if they coincide, by testing if they share a point at $ x = 0 $ and $ y = 0 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ x + y + z - 1 = 0 \\ \\Rightarrow \\ (0) + (0) + z - 1 = 0 \\ \\Rightarrow \\ z = 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 2x + 2y + 2z - 5 = 0 \\ \\Rightarrow \\ 2(0) + 2(0) + 2z - 5 = 0 \\ \\Rightarrow \\ z = \\frac {5} {2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ 4x + 4y + 4z - 1 = 0 \\ \\Rightarrow \\ 4(0) + 4(0) + 4z - 1 = 0 \\ \\Rightarrow \\ z = \\frac {1} {4} $"
+  },
+  {
+    "type": "p",
+    "content": "We can see that none of the planes share a point, so they are all parallel."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The planes are parallel."
+  },
+  {
+    "type": "h2",
+    "content": "4. Three parallel planes with two coinciding each other"
+  },
+  {
+    "type": "image",
+    "url": "/lectures/images/three-planes-intersection-8.png"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Find the solution to the following system:"
+  },
+  {
+    "type": "p",
+    "content": "$ x + y + z - 1 = 0 \\quad (1) \\newline 2x + 2y + 2z - 2 = 0 \\quad (2) \\newline 4x + 4y + 4z - 1 = 0 \\quad (3) $"
+  },
+  {
+    "type": "h1",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Again, we can see that all the planes are parallel by looking at their normals:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_1} = (1, \\ 1, \\ 1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_2} = (2, \\ 2, \\ 2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_3} = (4, \\ 4, \\ 4) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {n_3} = 2 \\vec {n_2} = 4 \\vec {n_1} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now let's check whether or not the planes share a point at $ x = 0 $ and $ y = 0 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ x + y + z - 1 = 0 \\ \\Rightarrow \\ (0) + (0) + z - 1 = 0 \\ \\Rightarrow \\ z = 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 2x + 2y + 2z - 2 = 0 \\ \\Rightarrow \\ 2(0) + 2(0) + 2z - 2 = 0 \\ \\Rightarrow \\ z = 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 4x + 4y + 4z - 1 = 0 \\ \\Rightarrow \\ 4(0) + 4(0) + 4z - 1 = 0 \\ \\Rightarrow \\ z = \\frac {1} {4} $"
+  },
+  {
+    "type": "p",
+    "content": "So it appears that two of them coincide."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The planes are all paralle, and two of them coincide each other."
   }
 ]

@@ -76,5 +76,21 @@
   {
     "type": "p",
     "content": "Otherwise, the objects either share a point or line, in which case they coincide, or are parallel if they don't."
+  },
+  {
+    "type": "h2",
+    "content": "Intersections between other objects"
+  },
+  {
+    "type": "p",
+    "content": "Although we can provide you with a flow chart for every type of object pairing, its best to be able to reason how a system of objects may be solved."
+  },
+  {
+    "type": "p",
+    "content": "For example, if you can spot that the normals are multiples of one another, you can deduce the fact that they are parallel or coincident."
+  },
+  {
+    "type": "p",
+    "content": "The best way to learn this is by doing. The more problems you solve, and the more scenarios you encounter, you can more easily be able to distinguish between them."
   }
 ]

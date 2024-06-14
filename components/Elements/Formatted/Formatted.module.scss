@@ -80,6 +80,7 @@
 
     display: grid;
     justify-items: center;
+    align-content: start;
 
     & > img {
       // max-width: 50em;
@@ -101,6 +102,7 @@
   :global(.video) {
     display: grid;
     justify-items: center;
+    align-content: start;
 
     video {
       display: block;
@@ -150,6 +152,7 @@
 
       border: 0.1rem solid var(--c-panel-bd);
       border-radius: var(--bd-radius);
+      text-align: center;
     }
 
     :global(.table-header) {

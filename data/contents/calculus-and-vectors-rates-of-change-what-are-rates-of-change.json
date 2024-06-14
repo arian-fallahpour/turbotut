@@ -1,7 +1,7 @@
 [
   {
     "type": "h1",
-    "content": "Put simply"
+    "content": "Overview"
   },
   {
     "type": "p",
@@ -13,11 +13,11 @@
   },
   {
     "type": "h1",
-    "content": "Average rate of change in a graph"
+    "content": "Average rate of change on a graph"
   },
   {
     "type": "p",
-    "content": "In a graph, the average rate of change is the difference in $y$ ($ \\bigtriangleup y $) over the difference in $x$ ($ \\bigtriangleup x $). Think of it as the average amount that $y$ changes in a given $x$ region."
+    "content": "On a graph, the average rate of change is the difference in $y$ ($ \\bigtriangleup y $) over the difference in $x$ ($ \\bigtriangleup x $). Think of it as the average amount that $y$ changes in a given $x$ region."
   },
   {
     "type": "p",
@@ -25,7 +25,7 @@
   },
   {
     "type": "latex",
-    "content": "$ \\mathrm{ average \\ rate \\ of \\ change } = \\frac { \\bigtriangleup y} {\\bigtriangleup x} = \\frac { y_2 \\ - \\ y_1 } { x_2 \\ - \\ x_1 } $"
+    "content": "$ \\text { average rate of change } = \\frac { \\bigtriangleup y} {\\bigtriangleup x} = \\frac { y_2 \\ - \\ y_1 } { x_2 \\ - \\ x_1 } $"
   },
   {
     "type": "p",

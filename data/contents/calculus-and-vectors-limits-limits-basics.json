@@ -13,16 +13,13 @@
   },
   {
     "type": "latex",
-    "content": "$ ^{\\lim}_{x\\to a} f(x)$"
+    "content": "$ ^{\\lim}_{x\\to a} f(x) $"
   },
   {
     "type": "p",
-    "content": "Where $a$ is the value at which $x$ is approaching, $f(x)$ is the function at which the limit is being applied to, and ($ ^{\\lim}_{x\\to a}f(x)$) is \"the value of the limit of $f(x)$ when $x$ is approaching $a$\"."
+    "content": "Where $a$ is the value at which $x$ is approaching, $ f(x) $ is the function at which the limit is being applied to, and ($ ^{\\lim}_{x \\to a} f(x) $) is \"the value of the limit of $f(x)$ when $x$ is approaching $a$\"."
   },
-  {
-    "type": "h2",
-    "content": "Example"
-  },
+  { "type": "br" },
   {
     "type": "p",
     "content": "Moving on, take a look at the following animation:"
@@ -41,11 +38,11 @@
   },
   {
     "type": "h2",
-    "content": "question"
+    "content": "example"
   },
   {
     "type": "p",
-    "content": "Determine $\\lim_{x\\to 2}f(x)$ from the following image:"
+    "content": "Determine $ \\lim_{x \\to 2} f(x) $ from the following image:"
   },
   {
     "type": "image",
@@ -65,11 +62,15 @@
   },
   {
     "type": "p",
-    "content": "There are primarily two types of limits: left and right. A left limit is the limit of a function when $x$ approaches a value from the left. A right limit is the limit of a function when $x$ approaches a value from a right."
+    "content": "There are primarily two types of limits: left and right."
   },
   {
     "type": "p",
-    "content": "This is important to know, because not all the functions you deal with are, what we call, *continuous*. We will discuss more about this in the next lecture, however, take a look at the following example to understand this."
+    "content": "A left limit is the limit of a function when $x$ approaches a value from the left. A right limit is the limit of a function when $x$ approaches a value from a right."
+  },
+  {
+    "type": "p",
+    "content": "This is important to know, because not all the functions you deal with are **continuous**. We will discuss more about this in the next lectures, however, take a look at the following example to understand this."
   },
   {
     "type": "h2",
@@ -77,12 +78,13 @@
   },
   {
     "type": "p",
-    "content": "Take the following function: $f(x) = \\left\\{\\begin{matrix} 2-x \\quad \\textrm{for}\\ x<1 \\quad (1) \\newline x+1 \\quad \\textrm{for}\\ x\\geq 1 \\quad (2) \\end{matrix}\\right.$"
+    "content": "Take the following function: $ f(x) = \\left \\{ \\begin {matrix} 2 - x \\quad \\text {for} \\ x < 1 \\quad (1) \\newline x + 1 \\quad \\text {for} \\ x \\geq 1 \\quad (2) \\end{matrix} \\right. $"
   },
   {
     "type": "p",
-    "content": "This type of function is called a *piecewise function* and they are made up of several other functions based on the indicated domains."
+    "content": "This type of function is called a **piecewise function** and they are made up of several other functions based on the indicated domains."
   },
+  { "type": "br" },
   {
     "type": "p",
     "content": "The image below depicts what the function above looks like:"
@@ -93,26 +95,32 @@
   },
   {
     "type": "p",
-    "content": "For all values $x<1$, the function $f(x)=2-x \\ (1)$ is used to calculate the $y$ values, while for all values $x \\geq 1$, the function $f(x)=2-x \\ (2)$ is used to calculate the values of $y$."
+    "content": "For all values $x<1$, the function $ (1): \\ f(x) = 2 - x $ is used to calculate the $y$ values, while for all values $x \\geq 1$, the function $f(x)=2-x \\ (2)$ is used to calculate the values of $y$."
   },
   {
     "type": "p",
-    "content": "Notice that, for $(1)$, there is an open point at $x=1$. This means the function is not defined at that point, since, it is only defined for $x<1$. On the other hand, for $(2)$, the function is defined at $x=1$, indicated by a closed point since it is defined for $x \\geq 1$ (greater than or equal to 1)."
+    "content": "Notice that, for $(1)$, there is an open point at $x=1$. This means the function is not defined at that point, since, it is only defined for $x<1$. On the other hand, for $ (2) $, the function is defined at $ x = 1 $, indicated by a closed point since it is defined for $x \\geq 1$ (greater than or equal to 1)."
   },
-  { "type": "h2", "content": "Left limit" },
+  {
+    "type": "h2",
+    "content": "Left limit"
+  },
   {
     "type": "p",
     "content": "The left limit of $f(x)$ is indicated by a $(^-)$ superscript. Its value for this example is:"
   },
   {
     "type": "latex",
-    "content": "$ ^{\\lim}_{x \\to 1^{-}} f(x) = \\ ^{\\lim}_{x \\to 1} (2-x) = 1 $"
+    "content": "$ ^{\\lim}_{x \\to 1^{-}} f(x) = \\ ^{\\lim}_{x \\to 1} (2 - x) = 1 $"
   },
   {
     "type": "p",
     "content": "Note that, even though $(1)$ is not defined at $x=1$, its limit is!"
   },
-  { "type": "h2", "content": "Right limit" },
+  {
+    "type": "h2",
+    "content": "Right limit"
+  },
   {
     "type": "p",
     "content": "The right limit $f(x)$ is indicated by a $(^+)$ superscript. For this case, its value is:"
@@ -142,11 +150,11 @@
       },
       {
         "type": "p",
-        "content": "$ ^{\\lim}_{x \\to a} f(x) $ can be equal to $f(a)$, but not always"
+        "content": "$ ^{\\lim}_{x \\to a} f(x) $ can be equal to $ f(a) $, but not always"
       },
       {
         "type": "p",
-        "content": "If $ L = \\ ^{\\lim}_{x \\to a^{-}} f(x)$ and $ L = \\ ^{\\lim}_{x \\to a^{+}} f(x) $, then $ L = \\ ^{\\lim}_{x \\to a} f(x)$"
+        "content": "If $ L = \\ ^{\\lim}_{x \\to a^{-}} f(x) $ and $ L = \\ ^{\\lim}_{x \\to a^{+}} f(x) $, then $ L = \\ ^{\\lim}_{x \\to a} f(x)$"
       }
     ]
   }

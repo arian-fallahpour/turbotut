@@ -3,38 +3,67 @@ $padding: var(--gap-lg);
 section.AccountSection {
 }
 
-form.Form {
+.Account {
   display: grid;
+  grid-template-columns: 17.5rem 1fr;
   gap: 0;
 
   background: var(--c-panel-bg);
   border: 0.1rem solid var(--c-panel-bd);
   border-radius: var(--bd-radius);
 
-  & > *:not(:last-child) {
-    border-bottom: inherit;
+  &Sidebar,
+  &Content {
+    padding: var(--gap-lg);
   }
 
-  .FormContent {
+  &Sidebar {
+    display: grid;
+    align-content: start;
+    border-right: inherit;
+  }
+
+  &Image {
+    position: relative;
+    height: auto;
+    width: auto;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    overflow: hidden;
+
+    outline: 0.2rem solid var(--c-orange);
+    outline-offset: 0.5rem;
+
+    & > img {
+      object-fit: cover;
+    }
+  }
+
+  &Content {
     display: grid;
     gap: var(--gap-lg);
-    grid-template-columns: 12.5rem 1fr;
     padding: $padding;
   }
 
-  .FormSidebar,
-  .FormMain {
-    display: grid;
-    align-content: start;
+  &Data {
+    border: 0.1rem solid var(--c-panel-bd);
+    border-radius: 22rem;
+    padding: 0.5rem var(--gap-md);
+
+    display: flex;
+    justify-content: space-between;
+
+    &Left {
+      font-weight: var(--font-weight-bold);
+      color: var(--txt-title);
+    }
+
+    &Right {
+    }
   }
 
-  .FormActions {
-    padding: var(--gap-md) $padding;
-    display: grid;
-  }
-
-  .FormSubmit {
-    justify-self: start;
+  &Signout {
+    justify-self: left;
   }
 }
 

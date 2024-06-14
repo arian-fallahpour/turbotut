@@ -1,13 +1,22 @@
 .More {
   position: relative;
+
+  & > button.Expand {
+    padding: 0;
+  }
 }
 
 button.Expand {
-  width: 3rem;
-  height: 3rem;
-  padding: 0;
+  $padding-over: 0.5rem;
+  $padding-inner: 0.25rem;
+  width: calc(1em + 2 *#{$padding-inner} + 2 *#{$padding-over});
+  height: calc(1em + 2 *#{$padding-inner} + 2 *#{$padding-over});
+  margin: calc(-2 * #{$padding-over}) 0;
   position: relative;
   z-index: 2;
+
+  background: transparent;
+  border-color: transparent;
 }
 
 .Hover {

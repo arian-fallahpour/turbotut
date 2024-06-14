@@ -6,6 +6,7 @@ import Page from "@/components/Elements/Page/Page";
 import Section from "@/components/Elements/Section/Section";
 import { join } from "@/utils/helper";
 import Subject from "./Subject/Subject";
+import Course from "./Course/Course";
 
 // Organizes courses into an array of subjects
 const organize = (courses) => {
@@ -45,9 +46,14 @@ const CoursesPage = ({ courses }) => {
         <h1 className={join("header", "header-title", "text-center")}>
           Courses
         </h1>
+        <div className={classes.Courses}>
+          {courses.map((course) => (
+            <Course key={"course-" + course.name} data={course} />
+          ))}
+        </div>
 
         {/* Math */}
-        <div className={classes.Subjects}>
+        {/* <div className={classes.Subjects}>
           {Object.keys(subjects).map((subject) => (
             <Subject
               key={"subject-" + subject}
@@ -55,7 +61,7 @@ const CoursesPage = ({ courses }) => {
               subject={subject}
             />
           ))}
-        </div>
+        </div> */}
       </Section>
     </Page>
   );

@@ -6,10 +6,13 @@ import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import SubscriptionSection from "./SubscriptionSection/SubscriptionSection";
 import PaymentMethodsSection from "./PaymentMethodsSection/PaymentMethodsSection";
+import { requiresSession } from "@/utils/authentication";
 
 const ProfilePage = async () => {
   const session = await getServerSession(options);
+  requiresSession(session);
 
+  console.log(session);
   const sectionLimit = "70rem";
 
   return (
@@ -19,7 +22,11 @@ const ProfilePage = async () => {
           profile
         </h1>
       </header>
-      <AccountSection className={classes.ProfileSection} limit={sectionLimit} />
+      <AccountSection
+        className={classes.ProfileSection}
+        limit={sectionLimit}
+        user={session.user}
+      />
       <SubscriptionSection
         className={classes.ProfileSection}
         limit={sectionLimit}

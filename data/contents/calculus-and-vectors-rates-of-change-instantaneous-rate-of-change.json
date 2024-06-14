@@ -25,7 +25,7 @@
   },
   {
     "type": "latex",
-    "content": "$ \\mathrm{ instantaneous \\ rate \\ of \\ change } \\approx \\frac { f(a + h) \\ - \\ f(a) } { (x + h) \\ - \\ (x) }  = \\frac { f(a + h) \\ - \\ f(a) } { h } $"
+    "content": "$ \\text { instantaneous rate of change } \\approx \\frac { f(a + h) \\ - \\ f(a) } { (x + h) \\ - \\ (x) }  = \\frac { f(a + h) \\ - \\ f(a) } { h } $"
   },
   {
     "type": "p",
@@ -45,14 +45,6 @@
     "content": "Slope $m$ becomes more accurate as $h$ gets smaller"
   },
   {
-    "type": "h2",
-    "content": "example"
-  },
-  {
-    "type": "p",
-    "content": "blah blah blah"
-  },
-  {
     "type": "h1",
     "content": "Calculating instantaneous rate of change"
   },
@@ -70,7 +62,7 @@
   },
   {
     "type": "latex",
-    "content": "$ \\mathrm{ instantaneous \\ rate \\ of \\ change } = \\ ^{\\lim}_{h \\to 0} \\frac {f(a+h) - f(a)} {h} $"
+    "content": "$ \\text { instantaneous rate of change } = \\ ^{\\lim}_{h \\to 0} \\frac {f(a+h) - f(a)} {h} $"
   },
   {
     "type": "h2",

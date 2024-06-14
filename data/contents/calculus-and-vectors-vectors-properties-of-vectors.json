@@ -453,7 +453,7 @@
       },
       {
         "type": "p",
-        "content": "*Not* Associated: $ (\\vec {u} \\ \\cdot \\ \\vec {v}) \\ \\cdot \\ \\vec {w} \\neq \\vec {v} \\ \\cdot \\ (\\vec {u} \\ \\cdot \\ \\vec {w}) $"
+        "content": "**Not** Associated: $ (\\vec {u} \\ \\cdot \\ \\vec {v}) \\ \\cdot \\ \\vec {w} \\neq \\vec {v} \\ \\cdot \\ (\\vec {u} \\ \\cdot \\ \\vec {w}) $"
       },
       {
         "type": "p",

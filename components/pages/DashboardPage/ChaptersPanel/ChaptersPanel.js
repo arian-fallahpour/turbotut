@@ -1,20 +1,19 @@
 import React from "react";
 import classes from "./ChaptersPanel.module.scss";
-import dataTableClasses from "../DataTable.module.scss";
+import classesDataTable from "../DataTable.module.scss";
 
+import ChaptersMore from "./ChaptersMore";
 import Button from "@/components/Elements/Button/Button";
 import Table, {
   TableCell,
   TableHeader,
   TableRow,
 } from "@/components/Elements/Table/Table";
-
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
-import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
-import { join } from "@/utils/helper";
 
 import Chapter from "@/models/chapterModel";
 import { connectDB } from "@/utils/database";
+import { join } from "@/utils/helper";
 
 async function getData() {
   await connectDB();
@@ -24,7 +23,7 @@ async function getData() {
     select: { name: 1 },
   });
 
-  return chapters;
+  return JSON.parse(JSON.stringify(chapters));
 }
 
 const ChaptersPanel = async () => {
@@ -32,18 +31,15 @@ const ChaptersPanel = async () => {
 
   return (
     <div className={classes.ChaptersPanel}>
-      <div className={dataTableClasses.Container}>
-        <div className={dataTableClasses.Header}>
+      <div className={classesDataTable.Container}>
+        <div className={classesDataTable.Header}>
           <h2 className="header header-section">chapters</h2>
-          <Button className={dataTableClasses.HeaderAdd}>
-            <AddRoundedIcon fontSize="inherit" />
-          </Button>
         </div>
-        <Table className={dataTableClasses.Table}>
+        <Table className={classesDataTable.Table}>
           <TableRow
             className={join(
-              dataTableClasses.TableRow,
-              dataTableClasses.TableRowHeader,
+              classesDataTable.TableRow,
+              classesDataTable.TableRowHeader,
               classes.TableRow
             )}
           >
@@ -56,19 +52,13 @@ const ChaptersPanel = async () => {
           {chapters.map((chapter) => (
             <TableRow
               key={chapter.slug}
-              className={join(dataTableClasses.TableRow, classes.TableRow)}
+              className={join(classesDataTable.TableRow, classes.TableRow)}
             >
               <TableCell>{chapter.name}</TableCell>
               <TableCell>{chapter.course.name}</TableCell>
               <TableCell>{chapter.lectures.length}</TableCell>
-              <TableCell className={dataTableClasses.TableEnd}>
-                {/* <Button
-                  className={dataTableClasses.TableMore}
-                  styleName="glass"
-                  variantName="white"
-                >
-                  <MoreVertRoundedIcon fontSize="inherit" />
-                </Button> */}
+              <TableCell className={classesDataTable.TableEnd}>
+                <ChaptersMore chapter={chapter} />
               </TableCell>
             </TableRow>
           ))}

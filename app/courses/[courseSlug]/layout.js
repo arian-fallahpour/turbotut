@@ -6,12 +6,16 @@ import classes from "@/components/pages/LecturePage/LecturePage.module.scss";
 import { fetchCourse } from "@/utils/dataFetch";
 import { Suspense } from "react";
 
-export default async function Layout({ children }) {
-  const course = await fetchCourse("calculus-and-vectors");
+export default async function Layout({ children, params }) {
+  const course = await fetchCourse(params.courseSlug);
 
   return (
     <Page background="flat">
-      <Section limit={null} className={classes.LectureSection}>
+      <Section
+        limit={null}
+        className={classes.LectureSection}
+        id="lecture-section"
+      >
         <div className={classes.LectureSectionSidebar}>
           <Sidebar course={course} />
         </div>
