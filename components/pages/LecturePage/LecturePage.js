@@ -8,7 +8,6 @@ import { redirect } from "next/navigation";
 const LecturePage = async ({ params, isOverview }) => {
   const { courseSlug, lectureSlug } = params;
 
-  console.log(courseSlug);
   const course = await fetchCourse(courseSlug);
   const lecture = findLecture(course, lectureSlug);
   if (!isOverview && !lecture) redirect(`/courses/${course.slug}`);

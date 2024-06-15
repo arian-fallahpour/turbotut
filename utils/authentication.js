@@ -23,13 +23,15 @@ export const routeHandler = (fn, options = {}) =>
     const [req, { params }] = args;
     args[0].data = {};
 
+    // PARAMETER POLLUTION PROTECTION
+    // TODO
+    args[0].data.query = parseQuery(req);
+
     // DATA SANITATION: NoSQL query injection
     if (options.parseBody) {
       const body = await req.json().catch((err) => null);
       args[0].data.body = sanitizeFilter(body);
     }
-
-    // PARAMETER POLLUTION PROTECTION
 
     // RATE LIMITING
     const rateLimitError = rateLimit(req);
@@ -79,3 +81,16 @@ export const restrictTo = (session, roles) => {
     redirect("/?login=true");
   }
 };
+
+function parseQuery(req) {
+  const query = req.url.split("?")[1];
+  if (!query) return {};
+  return JSON.parse(
+    '{"' +
+      decodeURI(query)
+        .replace(/"/g, '\\"')
+        .replace(/&/g, '","')
+        .replace(/=/g, '":"') +
+      '"}'
+  );
+}

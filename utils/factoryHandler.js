@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import catchAsync from "./catchAsync";
 import { connectDB } from "./database";
 import AppError from "./AppError";
+import APIQuery from "./APIQuery";
 
 const getName = (Model, plural = false) => {
   if (plural) {
@@ -20,15 +21,24 @@ export const getAll = (Model) =>
     await connectDB();
 
     // Find documents
-    const documents = await Model.find();
+    const apiQuery = new APIQuery(Model.find(), req.data.query)
+      .filter()
+      .sort()
+      .limitFields()
+      .paginate();
+
+    const totalCount = await apiQuery.getTotalCount();
+
+    const documents = await apiQuery.execute();
     const name = getName(Model, true);
 
     // Send response
     return NextResponse.json(
       {
         status: "success",
-        results: documents.length,
         data: {
+          results: documents.length,
+          totalResults: totalCount,
           [name]: documents,
         },
       },

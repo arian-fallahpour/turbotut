@@ -1,28 +1,70 @@
 .Table {
   display: grid;
+  border-radius: var(--bd-radius);
+  border: 0.1rem solid var(--c-panel-bd);
 
+  & > *:not(:last-child) {
+    border-bottom: inherit;
+  }
+
+  &Header {
+    background-color: var(--c-panel-bg);
+    overflow: hidden;
+    border-radius: var(--bd-radius) var(--bd-radius) 0 0;
+  }
+
+  &Header,
   &Row {
     display: grid;
     align-items: center;
     gap: var(--gap-md);
-    padding: var(--gap-sm) var(--gap-md);
 
     & > * {
       grid-row: 1 / span 1;
     }
   }
 
-  &Header,
+  &Row {
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:last-child {
+      border-radius: 0 0 var(--bd-radius) var(--bd-radius);
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: rgba(white, 0.025);
+      color: var(--c-orange);
+    }
+  }
+
   &Cell {
     display: grid;
+    padding: var(--gap-sm) var(--gap-md);
+
+    white-space: nowrap;
+    overflow: scroll;
+  }
+
+  &Link {
   }
 
   &Header {
     color: var(--txt-title);
   }
 
-  &Cell {
-    white-space: nowrap;
-    overflow: scroll;
+  &End {
+    overflow: visible;
   }
+}
+
+.Controls {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+.Controls > button.ControlsButton {
+  padding: 0;
+  width: 2.75rem;
+  height: 2.75rem;
 }

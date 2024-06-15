@@ -1,0 +1,79 @@
+.Actions {
+  position: relative;
+  display: grid;
+  justify-content: end;
+
+  margin: -1rem 0;
+
+  & > button.ActionsButton:hover + &List,
+  & > button.ActionsButton:focus-visible + &List,
+  &List:hover,
+  &List:focus-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  & > button.ActionsButton {
+    padding: 0;
+    background: transparent;
+    border-color: transparent;
+
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 100%;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--c-panel-bg);
+    }
+  }
+
+  &List {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    list-style: none;
+    background: var(--c-panel-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 0.1rem solid var(--c-panel-bd);
+    z-index: 1;
+
+    display: grid;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+
+    &::before {
+      content: "";
+      width: calc(100% + 5rem);
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &ListItem {
+    justify-self: unset;
+    display: grid;
+
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid var(--c-panel-bd);
+    }
+  }
+}
+
+.Actions > .ActionsList > .ActionsListItem > button {
+  border: none;
+  border-radius: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  &:not(:hover) {
+    background: transparent;
+  }
+}

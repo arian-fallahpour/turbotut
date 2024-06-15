@@ -30,7 +30,7 @@
   },
   {
     "type": "video",
-    "url": "/lectures/videos/planes-1.mp4"
+    "url": "/videos/lectures/planes-1.mp4"
   },
   {
     "type": "p",
@@ -84,7 +84,7 @@
   },
   {
     "type": "video",
-    "url": "/lectures/videos/planes-2.mp4"
+    "url": "/videos/lectures/planes-2.mp4"
   },
   {
     "type": "h2",
@@ -104,7 +104,7 @@
   },
   {
     "type": "video",
-    "url": "/lectures/videos/planes-3.mp4"
+    "url": "/videos/lectures/planes-3.mp4"
   },
   {
     "type": "h2",
@@ -129,6 +129,6 @@
   },
   {
     "type": "video",
-    "url": "/lectures/videos/planes-4.mp4"
+    "url": "/videos/lectures/planes-4.mp4"
   }
 ]

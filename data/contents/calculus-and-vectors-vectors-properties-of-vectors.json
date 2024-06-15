@@ -65,12 +65,12 @@
     "contents": [
       {
         "type": "video",
-        "url": "/lectures/videos/vector-operations-1.mp4",
+        "url": "/videos/lectures/vector-operations-1.mp4",
         "content": "Two algebraic vectors being added to one another"
       },
       {
         "type": "video",
-        "url": "/lectures/videos/vector-operations-2.mp4",
+        "url": "/videos/lectures/vector-operations-2.mp4",
         "content": "Two geometric vectors being added to one another"
       }
     ]
@@ -121,12 +121,12 @@
     "contents": [
       {
         "type": "video",
-        "url": "/lectures/videos/vector-operations-3.mp4",
+        "url": "/videos/lectures/vector-operations-3.mp4",
         "content": "Two algebraic vectors being subtracted from one another"
       },
       {
         "type": "video",
-        "url": "/lectures/videos/vector-operations-4.mp4",
+        "url": "/videos/lectures/vector-operations-4.mp4",
         "content": "Two geometric vectors being subtracted from one another"
       }
     ]
@@ -157,7 +157,7 @@
   },
   {
     "type": "video",
-    "url": "/lectures/videos/vector-operations-5.mp4",
+    "url": "/videos/lectures/vector-operations-5.mp4",
     "content": "The elongation of the vector is the same for both geometric and algebraic vectors"
   },
   {
@@ -178,7 +178,7 @@
   },
   {
     "type": "video",
-    "url": "/lectures/videos/vector-operations-6.mp4",
+    "url": "/videos/lectures/vector-operations-6.mp4",
     "content": "The visualization of the dot product is the same for geometric and algebraic vectors"
   },
   {
@@ -239,7 +239,7 @@
   },
   {
     "type": "video",
-    "url": "/lectures/videos/cross-product-1.mp4",
+    "url": "/videos/lectures/cross-product-1.mp4",
     "content": "Note that the vectors being used in the cross product don't need to be orthogonal"
   },
   {
@@ -252,7 +252,7 @@
   },
   {
     "type": "video",
-    "url": "/lectures/videos/cross-product-2.mp4"
+    "url": "/videos/lectures/cross-product-2.mp4"
   },
   {
     "type": "ol",

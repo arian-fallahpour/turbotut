@@ -1,4 +1,4 @@
-import DashboardPage from "@/components/pages/DashboardPage/DashboardPage";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Dashboard",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default async function Page() {
-  return <DashboardPage />;
+  return redirect("/dashboard/courses");
 }

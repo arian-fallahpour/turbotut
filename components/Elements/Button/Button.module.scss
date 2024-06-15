@@ -151,19 +151,19 @@
     &,
     &:link,
     &:visited {
-      @include glass(orange, 100%, true);
+      @include glass(orange, var(--bd-radius), true);
     }
 
     &--white,
     &--white:link,
     &--white:visited {
-      @include glass(white, 100%, true);
+      @include glass(white, var(--bd-radius), true);
     }
 
     &--red,
     &--red:link,
     &--red:visited {
-      @include glass(red, 100%, true);
+      @include glass(red, var(--bd-radius), true);
     }
   }
 
@@ -305,6 +305,28 @@
         border-color: $color;
         background: $color;
         color: var(--bg-flat);
+      }
+    }
+  }
+
+  &Icon {
+    &,
+    &:link,
+    &:visited {
+      display: flex;
+      padding: 0;
+      color: var(--txt-text);
+      background: transparent;
+      font-weight: var(--font-weight-normal);
+      font-size: var(--font-size-text);
+      gap: 0.5rem;
+
+      transition: color 0.2s ease, gap 0.2s ease;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--c-orange);
+        gap: var(--gap-sm);
       }
     }
   }

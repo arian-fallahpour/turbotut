@@ -1,8 +1,11 @@
+"use client";
+
 import { forwardRef } from "react";
 import classes from "./Button.module.scss";
 
 import { join, toCap } from "@/utils/helper";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Button = forwardRef(
   (
@@ -18,10 +21,13 @@ const Button = forwardRef(
       size = "normal",
       className,
       activeClassName,
+      isBackButton,
       ...otherProps
     },
     ref
   ) => {
+    const router = useRouter();
+
     // Add onFocus/onBlur if it doesn't exist mouseEnter/mouseLeave does
     if (otherProps.onMouseEnter && !otherProps.onFocus)
       otherProps.onFocus = otherProps.onMouseEnter;
@@ -47,12 +53,18 @@ const Button = forwardRef(
     // Determine tag
     const Tag = isLink || isHashLink ? Link : "button";
 
+    const onClickHandler = () => {
+      if (otherProps.onClick) otherProps.onClick();
+      if (isBackButton) router.back();
+    };
+
     return (
       <Tag
         className={buttonClassName}
         href={otherProps.href}
         disabled={isDisabled}
         replace={isHashLink ? true : otherProps.replace}
+        onClick={onClickHandler}
         {...otherProps}
         ref={ref}
       >

@@ -4,7 +4,6 @@ import React, { useContext, useState } from "react";
 import classes from "./PaymentMethodsSection.module.scss";
 import { join } from "@/utils/helper";
 import { ModalContext } from "@/store/modal-context";
-import { STRIPE_PUBLIC_KEY } from "@/utils/config";
 
 import Card from "./Card";
 import Modal from "./Modal";
@@ -18,7 +17,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { startProgress, stopProgress } from "next-nprogress-bar";
 import { GlobalErrorContext } from "@/store/error-context";
 
-const stripePromise = loadStripe(STRIPE_PUBLIC_KEY);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 const PaymentMethodsSection = ({ className, limit }) => {
   const [revealed, setRevealed] = useState(false);

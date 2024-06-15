@@ -37,6 +37,8 @@
 }
 
 @mixin glass($color: orange, $border-radius: var(--bd-radius), $hover: false) {
+  border-radius: $border-radius;
+
   transition: background 0.2s ease, border 0.2s ease;
 
   @if $color == white {

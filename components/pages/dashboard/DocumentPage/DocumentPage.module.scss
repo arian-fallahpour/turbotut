@@ -1,0 +1,117 @@
+.Main {
+  display: grid;
+  gap: inherit;
+  align-content: start;
+}
+
+.Main > button.Back {
+  padding: 0;
+  justify-self: start;
+  align-items: center;
+  display: flex;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+
+  &Icon {
+    font-size: 5rem;
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 1rem;
+    background-color: var(--c-panel-bg);
+    border: 0.1rem solid var(--c-panel-bd);
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    & > svg {
+      transition: scale 0.2s ease;
+    }
+
+    &:hover,
+    &:focus-visible {
+      & > svg {
+        scale: 1.05;
+      }
+    }
+  }
+
+  &Title {
+    display: grid;
+    justify-content: start;
+    flex: 1;
+  }
+
+  &Actions {
+    display: flex;
+    gap: var(--gap-sm);
+  }
+}
+
+button.HeaderButton {
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0;
+}
+
+.Content {
+  display: grid;
+  grid-template-columns: 1fr 35rem;
+  gap: inherit;
+}
+
+.Sections {
+  display: grid;
+  align-content: start;
+  gap: inherit;
+}
+
+.Section {
+  padding: 0;
+  gap: var(--gap-sm);
+}
+
+.Details {
+  display: grid;
+  align-content: start;
+  align-self: start;
+  gap: var(--gap-md);
+
+  border-radius: var(--bd-radius);
+  border: 0.1rem solid var(--c-panel-bd);
+  background: var(--c-panel-bg);
+  padding-bottom: var(--gap-lg);
+
+  & > * {
+    padding: var(--gap-md) var(--gap-lg);
+
+    &:not(:last-child) {
+      border-bottom: inherit;
+    }
+  }
+
+  &List {
+    list-style: none;
+    display: grid;
+    gap: var(--gap-md);
+    max-height: 50rem;
+    overflow-y: auto;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  &ListItem {
+    display: grid;
+    gap: 0.25rem;
+
+    & > :global(.paragraph) {
+      max-height: 7.5rem;
+      overflow-y: scroll;
+      font-size: 1.35rem;
+    }
+  }
+}

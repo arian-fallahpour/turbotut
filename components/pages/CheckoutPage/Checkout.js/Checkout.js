@@ -9,10 +9,9 @@ import {
   EmbeddedCheckoutProvider,
   EmbeddedCheckout,
 } from "@stripe/react-stripe-js";
-import { STRIPE_PUBLIC_KEY } from "@/utils/config";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 
-const stripePromise = loadStripe(STRIPE_PUBLIC_KEY);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 const Checkout = () => {
   const [error, setError] = useState(null);

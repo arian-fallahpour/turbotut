@@ -2,32 +2,42 @@ import mongoose from "mongoose";
 import Course from "./courseModel";
 import { doesObjectIdExist } from "@/utils/database";
 
-const chapterSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    trim: true,
-    lowercase: true,
-    minLength: [3, "Name must be at least 3 characters long"],
-    maxLength: [100, "Name cannot exceed 100 characters"],
-    required: [true, "Please provide a valid name"],
-  },
-  course: {
-    required: [true, "Chapter must belong to a course"],
-    type: mongoose.Schema.ObjectId,
-    ref: "Course",
-  },
-  lectures: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: "Lecture",
+const chapterSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      trim: true,
+      lowercase: true,
+      minLength: [3, "Name must be at least 3 characters long"],
+      maxLength: [100, "Name cannot exceed 100 characters"],
+      required: [true, "Please provide a valid name"],
     },
-  ],
-  createdAt: {
-    type: Date,
-    default: new Date(Date.now()),
-    immutable: [true, "Cannot change when chapter was created"],
+    course: {
+      required: [true, "Chapter must belong to a course"],
+      type: mongoose.Schema.ObjectId,
+      ref: "Course",
+    },
+    lectures: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "Lecture",
+      },
+    ],
+    createdAt: {
+      type: Date,
+      default: new Date(Date.now()),
+      immutable: [true, "Cannot change when chapter was created"],
+    },
+    isArchived: { type: Boolean, default: false },
   },
-  isArchived: { type: Boolean, default: false },
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
+);
+
+chapterSchema.virtual("lecturesCount").get(function () {
+  return this.lectures.length;
 });
 
 chapterSchema
@@ -51,9 +61,8 @@ chapterSchema.post("save", { document: true }, async function (doc, next) {
   const course = await Course.findById(doc.course);
   if (!course) return next();
 
-  // Add chapter to course and update chaptersCount
+  // Add chapter to course
   course.chapters.push(doc._id);
-  course.chaptersCount += 1;
   await course.save();
 
   next();

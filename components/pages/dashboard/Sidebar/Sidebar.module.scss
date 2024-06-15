@@ -1,0 +1,99 @@
+@import "@/sass/abstracts/mixins";
+
+.Sidebar {
+  background-color: var(--c-panel-bg);
+  border: 0.1rem solid var(--c-panel-bd);
+  border-radius: var(--bd-radius);
+  height: calc(100vh - 2 * var(--gap-lg));
+
+  position: sticky;
+  top: var(--gap-lg);
+
+  display: grid;
+  align-content: start;
+
+  & > *:not(:last-child) {
+    border-bottom: inherit;
+  }
+
+  &Header {
+    padding: var(--gap-md) var(--gap-lg);
+  }
+
+  &Content {
+    padding: var(--gap-md) 0;
+  }
+}
+
+.List {
+  display: grid;
+  list-style: none;
+}
+
+.Item {
+  display: grid;
+}
+
+a.Link,
+a.Link:link,
+a.Link:visited {
+  padding: var(--gap-sm) var(--gap-md);
+}
+
+.Link {
+  &,
+  &:link,
+  &:visited {
+    border-radius: 0;
+    text-align: start;
+
+    display: flex;
+    gap: var(--gap-md);
+    justify-content: start;
+
+    transition: background 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(white, 0.05);
+    }
+  }
+
+  &:hover &Icon > svg,
+  &:focus-visible &Icon > svg {
+    color: var(--c-orange);
+  }
+
+  &.active {
+    color: var(--c-orange);
+  }
+
+  &.active &Icon {
+    background-color: var(--c-orange);
+    border-color: var(--c-orange);
+  }
+
+  &.active &Icon > svg {
+    color: var(--txt-title);
+  }
+
+  &Icon {
+    width: 4rem;
+    height: 4rem;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    transition: background 0.2s ease, border 0.2s ease;
+
+    @include glass(white, 100%);
+  }
+
+  &Icon > svg {
+    height: 1.25em;
+    width: 1.25em;
+
+    transition: color 0.2s ease;
+  }
+}

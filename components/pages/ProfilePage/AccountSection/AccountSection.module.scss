@@ -76,12 +76,12 @@ section.AccountSection {
   overflow: hidden;
 
   &:hover > &Image,
-  &:focus-within > &Image {
+  &:focus-visible > &Image {
     scale: 1.05;
   }
 
   &:hover > &Label,
-  &:focus-within > &Label {
+  &:focus-visible > &Label {
     opacity: 1;
   }
 

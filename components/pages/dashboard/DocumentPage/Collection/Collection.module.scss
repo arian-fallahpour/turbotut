@@ -1,0 +1,9 @@
+section.CollectionSection {
+}
+
+.Collection {
+  &Header {
+    display: flex;
+    justify-content: space-between;
+  }
+}

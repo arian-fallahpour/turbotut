@@ -3,11 +3,3 @@ section.DashboardSection {
   grid-template-columns: var(--length-sidebar-max) 1fr;
   padding: var(--gap-lg);
 }
-
-.Dashboard {
-  &Sidebar {
-  }
-
-  &Main {
-  }
-}

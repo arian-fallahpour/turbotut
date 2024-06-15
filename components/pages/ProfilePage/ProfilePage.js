@@ -12,7 +12,6 @@ const ProfilePage = async () => {
   const session = await getServerSession(options);
   requiresSession(session);
 
-  console.log(session);
   const sectionLimit = "70rem";
 
   return (

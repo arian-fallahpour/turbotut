@@ -17,7 +17,6 @@ export const PATCH = routeHandler(
 
     // Make changes and save
     req.data.body.swaps.forEach(([i, j]) => {
-      console.log(i, j);
       if (
         i >= 0 &&
         j >= 0 &&

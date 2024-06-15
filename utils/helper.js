@@ -10,3 +10,24 @@ export const capitalize = (string) => {
   string = string.join(" ");
   return string;
 };
+
+export const toSingular = (string) => {
+  return string.substring(0, string.length - 1);
+};
+
+export const createQueryString = (queryObject) => {
+  const str = Object.keys(queryObject).map(
+    (key) => `${key}=${queryObject[key]}`
+  );
+  if (str.length > 0) return `${str.join("&")}`;
+  else return "";
+};
+
+export function createGridTemplateColumns(dataCollection) {
+  let gridTemplateColumns = dataCollection.tableFields.map(
+    (field) => field.spacing
+  );
+  gridTemplateColumns.push("8rem");
+  gridTemplateColumns = gridTemplateColumns.join(" ");
+  return gridTemplateColumns;
+}

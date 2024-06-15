@@ -1,13 +1,10 @@
 import React, { Fragment } from "react";
-import Head from "next/head";
 
 import Background from "../Background/Background";
 import Nav from "@/components/layout/Nav/Nav";
 import Footer from "@/components/layout/Footer/Footer";
 import Modal from "../Modal/Modal";
 import GlobalError from "../GlobalError/GlobalError";
-
-import business from "@/data/business";
 
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";

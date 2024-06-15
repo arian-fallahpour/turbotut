@@ -11,12 +11,12 @@
   $padding-top: 0.75rem;
   $padding-left: 1.5rem;
 
-  &:focus-within > input {
+  &:focus-visible > input {
     outline: 0;
     border-color: rgba(white, 0.25);
   }
 
-  &:focus-within > label {
+  &:focus-visible > label {
     outline: 0;
   }
 

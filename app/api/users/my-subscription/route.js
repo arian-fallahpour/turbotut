@@ -55,8 +55,6 @@ export const PATCH = routeHandler(
         user.stripeCustomerId
       );
 
-      console.log(stripePaymentMethods.data);
-
       if (stripePaymentMethods.data.length === 0)
         return new AppError(
           "Please add a payment method before allowing renewals for your subscription"

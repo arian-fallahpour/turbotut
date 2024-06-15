@@ -1,0 +1,9 @@
+section.CollectionSection {
+  padding: 0;
+  gap: var(--gap-sm);
+}
+
+.CollectionHeader {
+  display: flex;
+  justify-content: space-between;
+}
