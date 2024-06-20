@@ -14,10 +14,15 @@ import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import CollectionHeader from "./CollectionHeader";
 
 const getData = async function (collectionData, queryObject) {
-  console.log(queryObject);
   queryObject.select = collectionData.tableFields
     .map((tableField) => `${tableField.name}`)
     .join(",");
+
+  console.log(
+    `${getDomain()}/api/${collectionData.name}?${createQueryString(
+      queryObject
+    )}`
+  );
 
   const res = await fetchAuth(
     `${getDomain()}/api/${collectionData.name}?${createQueryString(
@@ -69,27 +74,21 @@ const CollectionSection = async ({ collectionData, searchParams }) => {
 
         {!error &&
           documents?.length > 0 &&
-          documents.map((doc) => {
-            console.log(doc);
-            return (
-              <TableRow key={doc._id} style={{ gridTemplateColumns }}>
-                {collectionData.tableFields.map((field, i) => {
-                  console.log(doc[field.name]);
-                  return (
-                    <TableCell
-                      key={field.label}
-                      href={`/dashboard/${collectionData.name}/${doc._id}`}
-                    >
-                      {doc[field.name]}
-                    </TableCell>
-                  );
-                })}
-                <TableCell end>
-                  <Actions name={collectionData.name} />
+          documents.map((doc) => (
+            <TableRow key={doc._id} style={{ gridTemplateColumns }}>
+              {collectionData.tableFields.map((field, i) => (
+                <TableCell
+                  key={field.label}
+                  href={`/dashboard/${collectionData.name}/${doc._id}`}
+                >
+                  {doc[field.name]}
                 </TableCell>
-              </TableRow>
-            );
-          })}
+              ))}
+              <TableCell end>
+                <Actions name={collectionData.name} />
+              </TableCell>
+            </TableRow>
+          ))}
 
         {/* No documents */}
         {!error && documents?.length === 0 && (
