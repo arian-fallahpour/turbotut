@@ -11,6 +11,7 @@ import { options as authOptions } from "@/app/api/auth/[...nextauth]/options";
 import { sanitizeFilter } from "mongoose";
 import { rateLimit } from "./security";
 import { setDefault } from "./helper";
+import queryString from "query-string";
 
 export const routeHandler = (fn, options = {}) =>
   catchAsync(async (...args) => {
@@ -26,8 +27,7 @@ export const routeHandler = (fn, options = {}) =>
 
     // PARAMETER POLLUTION PROTECTION
     // TODO
-    args[0].data.query = parseQuery(req);
-    console.log(args[0].data.query);
+    args[0].data.query = queryString.parse(req.url.split("?")[1]);
 
     // DATA SANITATION: NoSQL query injection
     if (options.parseBody) {

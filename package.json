@@ -24,6 +24,7 @@
     "next": "^14.2.3",
     "next-auth": "^4.24.7",
     "next-nprogress-bar": "^2.3.12",
+    "query-string": "^9.0.0",
     "react": "^18",
     "react-dom": "^18",
     "react-jsx-parser": "^1.29.0",
