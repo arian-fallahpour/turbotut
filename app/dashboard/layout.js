@@ -8,7 +8,6 @@ import { options } from "../api/auth/[...nextauth]/options";
 
 export default async function Layout({ children, params }) {
   const session = await getServerSession(options);
-  console.log(params);
 
   return (
     <Page

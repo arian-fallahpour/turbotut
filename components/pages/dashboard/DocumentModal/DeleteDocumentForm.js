@@ -30,8 +30,6 @@ const DeleteDocumentForm = ({
     e.preventDefault();
 
     const fetchDeleteRequest = async () => {
-      console.log("deleting");
-
       startProgress();
       setDisabled(true);
 

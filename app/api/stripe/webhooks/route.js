@@ -25,8 +25,6 @@ export const POST = async function (req, {}) {
     return NextResponse.json(`Webhook Error: ${err.message}`, { status: 400 });
   }
 
-  console.log(event.type);
-
   // Check if subscription invoice has been paid
   if (event.type === "invoice.paid") {
     const invoice = event.data.object;

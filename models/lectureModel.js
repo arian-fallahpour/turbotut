@@ -83,7 +83,6 @@ lectureSchema.post("save", { document: true }, async function (doc, next) {
   // Add lecture to chapter
   chapter.lectures.push(doc._id);
   chapter.lecturesCount += 1;
-  console.log("NEW", chapter);
   await chapter.save();
 
   // Find course
