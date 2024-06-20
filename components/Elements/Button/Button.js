@@ -10,18 +10,19 @@ import { useRouter } from "next/navigation";
 const Button = forwardRef(
   (
     {
+      isBackButton,
       isLink,
       isHashLink,
       isActive,
       isDisabled,
       isLoading,
+      openNewTab,
       children,
       styleName,
       variantName,
       size = "normal",
       className,
       activeClassName,
-      isBackButton,
       ...otherProps
     },
     ref
@@ -66,6 +67,7 @@ const Button = forwardRef(
         replace={isHashLink ? true : otherProps.replace}
         onClick={onClickHandler}
         {...otherProps}
+        target={openNewTab ? "_blank" : undefined}
         ref={ref}
       >
         {["shiny", "circle"].includes(styleName) ? (

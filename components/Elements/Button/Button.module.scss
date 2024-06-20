@@ -167,17 +167,11 @@
     }
   }
 
-  &Tint {
-    &,
-    &:link,
-    &:visited {
-      @include glass(orange, 100%, true);
-    }
-    background: transparent;
-  }
-
   &Text {
     &,
+    &.size-small,
+    &.size-normal,
+    &.size-large,
     &Text:link,
     &Text:visited {
       display: inline-block;
@@ -224,50 +218,6 @@
     }
   }
 
-  &Login {
-    &,
-    &:link,
-    &:visited {
-      transition: border-color 0.2s ease;
-
-      border-radius: 22rem;
-      overflow: hidden;
-      background: transparent;
-      border: 0.1rem solid rgba(var(--c-orange-rgb), 0.5);
-      color: var(--c-orange);
-
-      &:hover,
-      &:focus-visible {
-        border-color: rgba(var(--c-orange-rgb), 0.7);
-
-        &::before {
-          background-size: 120%;
-        }
-      }
-
-      & > * {
-        position: relative;
-      }
-
-      &::before {
-        transition: background 0.2s ease;
-
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-image: radial-gradient(
-          circle at 50% -20rem,
-          rgba(var(--c-orange-rgb), 0.5),
-          transparent
-        );
-      }
-    }
-  }
-
   &Border {
     &,
     &:link,
@@ -302,6 +252,23 @@
       &:hover,
       &:focus-visible {
         $color: rgba(var(--c-orange-rgb), 0.8);
+        border-color: $color;
+        background: $color;
+        color: var(--bg-flat);
+      }
+    }
+
+    &--red,
+    &--red:link,
+    &--red:visited {
+      $color: rgba(var(--c-red-rgb), 0.6);
+      border: 0.1rem solid $color;
+      color: $color;
+      background: transparent;
+
+      &:hover,
+      &:focus-visible {
+        $color: rgba(var(--c-red-rgb), 0.8);
         border-color: $color;
         background: $color;
         color: var(--bg-flat);

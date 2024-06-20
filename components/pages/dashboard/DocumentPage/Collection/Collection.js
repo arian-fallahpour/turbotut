@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import classes from "./Collection.module.scss";
 import {
   createGridTemplateColumns,
@@ -13,74 +13,89 @@ import Table, {
   TableRow,
   TableCell,
 } from "@/components/Elements/Table/Table";
-import TableControls from "@/components/Elements/Table/TableControls";
 import Actions from "../../Actions/Actions";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import Section from "@/components/Elements/Section/Section";
+import CollectionHeader from "./CollectionHeader";
+import LoaderBlock from "@/components/Elements/Loader/LoaderBlock";
+import { DocumentPageContext } from "@/store/document-page-context";
 
 const Collection = ({ className, collectionData, queryObject = {} }) => {
-  const limit = 5;
   const gridTemplateColumns = createGridTemplateColumns(collectionData);
 
   const [page, setPage] = useState(1);
-  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const isFirstPage = (page) => page <= 1;
-  const isLastPage = (page) => !(data && page * limit < data.totalResults);
-
-  const nextPageHandler = () => {
-    setPage((p) => (isLastPage(p) ? p : p + 1));
-  };
+  const { collections, setCollection } = useContext(DocumentPageContext);
+  const collection = collections[collectionData.name];
 
   const prevPageHandler = () => {
-    setPage((p) => (isFirstPage(p) ? p : p - 1));
+    setPage((p) => (page > 1 ? p - 1 : p));
   };
 
+  const nextPageHandler = () => {
+    setPage((p) =>
+      collection && page * queryObject.limit < collection.totalResults
+        ? p + 1
+        : p
+    );
+  };
+
+  const fetchCollectionHandler = useCallback(async () => {
+    setLoading(true);
+
+    let url = `/api/${collectionData.name}`;
+    const queryStr = createQueryString({ ...queryObject, page });
+    if (queryStr) url += `?${queryStr}`;
+
+    const res = await fetch(url, {
+      method: "GET",
+      cache: "force-cache",
+      next: { revalidate: 10 },
+    });
+    const resData = await res.json();
+
+    setLoading(false);
+
+    if (!res.ok) {
+      setError(resData.message);
+    } else {
+      setCollection(
+        {
+          results: resData.data.results,
+          totalResults: resData.data.totalResults,
+          docs: resData.data[collectionData.name],
+        },
+        collectionData.name
+      );
+    }
+  }, [collectionData.name, page, queryObject, setCollection]);
+
   useEffect(() => {
-    const fetchData = async () => {
-      let url = `/api/${collectionData.name}?limit=${limit}&page=${page}`;
-
-      const queryStr = createQueryString(queryObject);
-      if (queryStr) url += `&${queryStr}`;
-      console.log(url);
-
-      const res = await fetch(url, {
-        method: "GET",
-        cache: "force-cache",
-        next: { revalidate: 60 },
-      });
-      const resData = await res.json();
-
-      if (!res.ok) {
-        console.log(resData);
-        setError(resData.message);
-        return;
-      }
-
-      setData(resData.data);
-    };
-
-    fetchData();
-  }, [collectionData.name, queryObject, page]);
-
-  if (data) console.log(data[collectionData.name]);
+    fetchCollectionHandler();
+  }, [fetchCollectionHandler]);
 
   return (
     <Section className={join(className, classes.CollectionSection)}>
-      <div className={classes.CollectionHeader}>
-        <h3 className="header header-section">{collectionData.name}</h3>
-        <TableControls
-          page={page}
-          isNextDisabled={isLastPage(page)}
-          isPrevDisabled={isFirstPage(page)}
-          onNextPage={nextPageHandler}
-          onPrevPage={prevPageHandler}
-        />
-      </div>
+      {/* Header */}
+      <CollectionHeader
+        collectionData={collectionData}
+        limit={queryObject.limit}
+        page={page}
+        onNextPage={nextPageHandler}
+        onPrevPage={prevPageHandler}
+        fetchCollection={fetchCollectionHandler}
+      />
+
+      {loading && <LoaderBlock />}
+      {error && <ErrorBlock message={error} />}
+      {!error && collection && collection.docs.length === 0 && (
+        <ErrorBlock type="info" message={`No ${collectionData.name} found`} />
+      )}
 
       {/* Table */}
-      {data && data[collectionData.name]?.length > 0 && (
+      {!loading && collection && collection.docs.length > 0 && (
         <Table>
           <TableHeader style={{ gridTemplateColumns }}>
             {collectionData.tableFields.map((field) => (
@@ -88,15 +103,14 @@ const Collection = ({ className, collectionData, queryObject = {} }) => {
             ))}
             <TableCell></TableCell>
           </TableHeader>
-
-          {data[collectionData.name].map((doc) => (
+          {collection.docs.map((doc) => (
             <TableRow key={doc._id} style={{ gridTemplateColumns }}>
               {collectionData.tableFields.map((field, i) => (
                 <TableCell
                   key={field.label}
                   href={`/dashboard/${collectionData.name}/${doc._id}`}
                 >
-                  {doc[field.field]}
+                  {doc[field.name]}
                 </TableCell>
               ))}
               <TableCell end>
@@ -106,14 +120,6 @@ const Collection = ({ className, collectionData, queryObject = {} }) => {
           ))}
         </Table>
       )}
-
-      {/* No documents found */}
-      {!error && data && data[collectionData.name].length === 0 && (
-        <ErrorBlock type="info" message={`No ${collectionData.name} found`} />
-      )}
-
-      {/* error */}
-      {error && <ErrorBlock message={error} />}
     </Section>
   );
 };

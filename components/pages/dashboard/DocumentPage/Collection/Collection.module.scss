@@ -6,4 +6,9 @@ section.CollectionSection {
     display: flex;
     justify-content: space-between;
   }
+
+  &Actions {
+    display: flex;
+    gap: var(--gap-sm);
+  }
 }

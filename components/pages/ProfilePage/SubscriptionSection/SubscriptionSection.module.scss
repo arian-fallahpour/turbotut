@@ -73,6 +73,7 @@ $padding-left: var(--gap-lg);
     gap: inherit;
     align-items: center;
     border-top: 0.1rem solid var(--c-panel-bd);
+    justify-content: flex-end;
   }
 }
 

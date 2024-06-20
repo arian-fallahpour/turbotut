@@ -13,6 +13,7 @@ export const DELETE = routeHandler(deleteOne(User), {
 });
 
 export const PATCH = routeHandler(updateOne(User), {
+  parseBody: true,
   requiresSession: true,
   restrictTo: ["admin"],
 });

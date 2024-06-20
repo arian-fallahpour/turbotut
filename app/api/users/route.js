@@ -7,6 +7,7 @@ export const GET = routeHandler(getAll(User), {
   restrictTo: ["admin"],
 });
 export const POST = routeHandler(createOne(User), {
+  parseBody: true,
   requiresSession: true,
   restrictTo: ["admin"],
 });

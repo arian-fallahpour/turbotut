@@ -81,8 +81,9 @@ section.PaymentMethodsSection {
   }
 
   &Actions {
+    display: flex;
     margin: $padding-top $padding-left 0 $padding-left;
-    justify-self: start;
+    justify-content: end;
   }
 }
 

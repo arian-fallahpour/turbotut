@@ -5,9 +5,9 @@ import { connectDB } from "@/utils/database";
 async function getData() {
   await connectDB();
 
-  const courses = await Course.find();
+  const courses = await Course.find({ isArchived: false });
 
-  return { courses };
+  return { courses: JSON.parse(JSON.stringify(courses)) };
 }
 
 export const metadata = {

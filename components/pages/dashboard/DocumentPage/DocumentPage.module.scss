@@ -27,23 +27,13 @@
     display: grid;
     justify-items: center;
     align-items: center;
-
-    & > svg {
-      transition: scale 0.2s ease;
-    }
-
-    &:hover,
-    &:focus-visible {
-      & > svg {
-        scale: 1.05;
-      }
-    }
   }
 
   &Title {
     display: grid;
     justify-content: start;
     flex: 1;
+    line-height: 1;
   }
 
   &Actions {
@@ -109,9 +99,21 @@ button.HeaderButton {
     gap: 0.25rem;
 
     & > :global(.paragraph) {
-      max-height: 7.5rem;
+      // max-height: 7.5rem;
       overflow-y: scroll;
       font-size: 1.35rem;
+    }
+
+    & .image {
+      margin-top: 0.5rem;
+      position: relative;
+      max-width: 20rem;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      border-radius: var(--bd-radius);
+      border: 0.2rem solid rgba(var(--c-orange-rgb), 0.5);
+      overflow: hidden;
     }
   }
 }

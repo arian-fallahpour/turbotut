@@ -50,6 +50,8 @@ a.Link:visited {
     display: flex;
     gap: var(--gap-md);
     justify-content: start;
+    background: transparent;
+    color: var(--txt-text);
 
     transition: background 0.2s ease;
 

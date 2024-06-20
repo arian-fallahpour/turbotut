@@ -4,6 +4,7 @@ import classes from "./Table.module.scss";
 import { join } from "@/utils/helper";
 
 import Link from "next/link";
+import Button from "../Button/Button";
 
 const Table = ({ className, children, ...otherProps }) => {
   return (
@@ -60,6 +61,21 @@ export const TableCell = ({
     >
       {children}
     </Tag>
+  );
+};
+
+export const TableButtonRounded = ({ children, ...otherProps }) => {
+  return (
+    <Button className={classes.ButtonRounded} size="small" {...otherProps}>
+      {children}
+    </Button>
+  );
+};
+export const TableButton = ({ children, ...otherProps }) => {
+  return (
+    <Button className={classes.Button} size="small" {...otherProps}>
+      {children}
+    </Button>
   );
 };
 

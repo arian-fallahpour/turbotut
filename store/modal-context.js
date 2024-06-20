@@ -18,8 +18,11 @@ export const ModalProvider = ({ children }) => {
   };
 
   const hideModalHandler = () => {
-    setVisible(false);
     document.body.style.overflow = "auto";
+    setVisible(false);
+    window.setTimeout(() => {
+      setContent(null);
+    }, 500);
   };
 
   const loginContext = {

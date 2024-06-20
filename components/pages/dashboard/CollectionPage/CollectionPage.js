@@ -14,7 +14,6 @@ const CollectionPage = ({ collectionName, searchParams }) => {
     <main className={classes.Main}>
       {/* Table */}
       <CollectionSection
-        collectionName={collectionName}
         collectionData={collectionData}
         searchParams={searchParams}
       />

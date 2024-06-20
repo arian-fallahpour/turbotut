@@ -54,8 +54,7 @@ const Sidebar = ({ course }) => {
       <nav className={classes.SidebarNav}>
         <Button
           className={classes.SidebarNavButton}
-          styleName="Border"
-          variantName="orange"
+          styleName="glass"
           href={prevUrl ? prevUrl : null}
           isLink={!!prevUrl}
           disabled={!prevUrl}
@@ -64,8 +63,7 @@ const Sidebar = ({ course }) => {
         </Button>
         <Button
           className={classes.SidebarNavButton}
-          styleName="Border"
-          variantName="orange"
+          styleName="glass"
           href={nextUrl ? nextUrl : null}
           isLink={!!nextUrl}
           disabled={!nextUrl}

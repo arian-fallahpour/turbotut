@@ -10,14 +10,15 @@ import { getServerSession } from "next-auth";
 import { options as authOptions } from "@/app/api/auth/[...nextauth]/options";
 import { sanitizeFilter } from "mongoose";
 import { rateLimit } from "./security";
+import { setDefault } from "./helper";
 
 export const routeHandler = (fn, options = {}) =>
   catchAsync(async (...args) => {
     options = {
-      requiresSession:
-        options.requiresSession === undefined ? false : options.requiresSession,
-      restrictTo: options.restrictTo || null,
-      parseBody: options.parseBody === undefined ? true : options.parseBody,
+      requiresSession: setDefault(options.requiresSession, false),
+      restrictTo: setDefault(options.restrictTo, null),
+      parseBody: setDefault(options.parseBody, false),
+      parseForm: setDefault(options.parseForm, false),
     };
 
     const [req, { params }] = args;
@@ -31,6 +32,10 @@ export const routeHandler = (fn, options = {}) =>
     if (options.parseBody) {
       const body = await req.json().catch((err) => null);
       args[0].data.body = sanitizeFilter(body);
+    } else if (options.parseForm) {
+      const formData = await req.formData();
+      args[0].data.formData = {};
+      formData.forEach((value, key) => (args[0].data.formData[key] = value));
     }
 
     // RATE LIMITING

@@ -1,8 +1,8 @@
 import Lecture from "@/models/lectureModel";
 import { routeHandler } from "@/utils/authentication";
-import { archiveDocument } from "@/utils/factoryHandler";
+import { archiveOne } from "@/utils/factoryHandler";
 
-export const PATCH = routeHandler(archiveDocument(Lecture), {
+export const PATCH = routeHandler(archiveOne(Lecture), {
   requiresSession: true,
   restrictTo: ["admin"],
 });

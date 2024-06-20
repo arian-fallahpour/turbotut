@@ -8,7 +8,7 @@ const Overview = ({ course }) => {
       <div className={classes.OverviewImage}>
         <Image
           alt={course.name + " cover page"}
-          src={`/images/courses/${course.image}`}
+          src={course.image || `/images/courses/default.png`}
           fill
         />
       </div>

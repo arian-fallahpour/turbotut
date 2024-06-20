@@ -11,6 +11,7 @@ export const DELETE = routeHandler(deleteOne(Lecture), {
   restrictTo: ["admin"],
 });
 export const PATCH = routeHandler(updateOne(Lecture), {
+  parseBody: true,
   requiresSession: true,
   restrictTo: ["admin"],
 });

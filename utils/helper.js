@@ -31,3 +31,17 @@ export function createGridTemplateColumns(dataCollection) {
   gridTemplateColumns = gridTemplateColumns.join(" ");
   return gridTemplateColumns;
 }
+
+export const setDefault = (value, defaultValue) => {
+  return value === undefined ? defaultValue : value;
+};
+
+export const debounce = (callback, delay) => {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      callback(...args);
+    }, delay);
+  };
+};

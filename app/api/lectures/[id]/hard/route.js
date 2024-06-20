@@ -17,6 +17,7 @@ export const DELETE = routeHandler(
     // Update chapter
     const chapter = await Chapter.findOne({ lectures: lecture._id });
     chapter.lectures.pull(lecture._id);
+    chapter.lecturesCount -= 1;
     await chapter.save();
 
     // Update course

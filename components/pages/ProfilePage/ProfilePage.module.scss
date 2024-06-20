@@ -1,7 +1,13 @@
 .Header {
 }
 
+.ProfileSections {
+  display: grid;
+  gap: var(--gap-lg);
+  padding: 0 var(--gap-lg);
+}
+
 section.ProfileSection {
-  padding: var(--gap-lg);
+  padding: 0;
   gap: var(--gap-md);
 }

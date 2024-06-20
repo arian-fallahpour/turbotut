@@ -2,6 +2,7 @@ import Chapter from "@/models/chapterModel";
 import Course from "@/models/courseModel";
 import Lecture from "@/models/lectureModel";
 import AppError from "@/utils/AppError";
+import S3Object from "@/utils/S3Object";
 import { routeHandler } from "@/utils/authentication";
 import { connectDB } from "@/utils/database";
 
@@ -24,8 +25,15 @@ export const DELETE = routeHandler(
     // Delete course's chapters (Query is ok in this case)
     await Chapter.deleteMany({ _id: { $in: chapters } });
 
+    // Delete course's image from storage
+    if (course.image) {
+      await S3Object.deleteS3Object(course.getImageKey());
+    }
+
     // Delete course
     await course.deleteOne();
+
+    return new Response(null, { status: 204 });
   },
   {
     requiresSession: true,

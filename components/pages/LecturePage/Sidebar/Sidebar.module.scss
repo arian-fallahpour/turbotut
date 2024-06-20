@@ -52,6 +52,15 @@
   }
 }
 
+.Sidebar > .SidebarNav > .SidebarNavButton,
+.Sidebar > .SidebarNav > .SidebarNavButton:link,
+.Sidebar > .SidebarNav > .SidebarNavButton:visited {
+  padding: 0;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+
 .Intro {
   display: grid;
   gap: var(--gap-sm);

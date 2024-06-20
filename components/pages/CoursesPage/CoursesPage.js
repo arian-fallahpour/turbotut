@@ -1,44 +1,44 @@
-import React, { useMemo } from "react";
+import React from "react";
 
 import classes from "./CoursesPage.module.scss";
 
 import Page from "@/components/Elements/Page/Page";
 import Section from "@/components/Elements/Section/Section";
 import { join } from "@/utils/helper";
-import Subject from "./Subject/Subject";
+// import Subject from "./Subject/Subject";
 import Course from "./Course/Course";
 
 // Organizes courses into an array of subjects
-const organize = (courses) => {
-  const subjects = {};
+// const organize = (courses) => {
+//   const subjects = {};
 
-  for (let i = 0; i < courses.length; i++) {
-    const course = courses[i];
+//   for (let i = 0; i < courses.length; i++) {
+//     const course = courses[i];
 
-    // Push course to end if comingSoon
-    if (course.comingSoon && !course.moved) {
-      course.moved = true;
-      courses.splice(i, 1);
-      courses.push(course);
-      i -= 1;
-    }
+//     // Push course to end if comingSoon
+//     if (course.comingSoon && !course.moved) {
+//       course.moved = true;
+//       courses.splice(i, 1);
+//       courses.push(course);
+//       i -= 1;
+//     }
 
-    // Create new subject and add course to it
-    else if (!subjects[course.subject]) {
-      subjects[course.subject] = [course];
-    }
+//     // Create new subject and add course to it
+//     else if (!subjects[course.subject]) {
+//       subjects[course.subject] = [course];
+//     }
 
-    // Add course to the subject
-    else {
-      subjects[course.subject].push(course);
-    }
-  }
+//     // Add course to the subject
+//     else {
+//       subjects[course.subject].push(course);
+//     }
+//   }
 
-  return subjects;
-};
+//   return subjects;
+// };
 
 const CoursesPage = ({ courses }) => {
-  const subjects = useMemo(() => organize(courses), [courses]);
+  // const subjects = useMemo(() => organize(courses), [courses]);
 
   return (
     <Page>

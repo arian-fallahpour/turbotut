@@ -4,6 +4,8 @@ import slugify from "slugify";
 import Course from "./courseModel";
 import AppError from "@/utils/AppError";
 import { doesObjectIdExist } from "@/utils/database";
+import enumValues from "@/data/enum-values";
+import mongooseFuzzySearching from "mongoose-fuzzy-searching";
 
 const lectureSchema = new mongoose.Schema({
   name: {
@@ -22,7 +24,7 @@ const lectureSchema = new mongoose.Schema({
   type: {
     type: String,
     enum: {
-      values: ["free", "paid"],
+      values: enumValues.lecture.type,
       message: "Lecture type must either be free or paid",
     },
     default: "paid",
@@ -42,6 +44,9 @@ lectureSchema
 
 // Prevent duplicate values for index/name in each chapter
 lectureSchema.index({ chapter: 1, name: 1 }, { unique: true });
+lectureSchema.plugin(mongooseFuzzySearching, {
+  fields: [{ name: "name", minSize: 3, prefixOnly: true }],
+});
 
 lectureSchema.pre("save", function (next) {
   this.wasNew = this.isNew;
@@ -77,6 +82,8 @@ lectureSchema.post("save", { document: true }, async function (doc, next) {
 
   // Add lecture to chapter
   chapter.lectures.push(doc._id);
+  chapter.lecturesCount += 1;
+  console.log("NEW", chapter);
   await chapter.save();
 
   // Find course
@@ -85,7 +92,7 @@ lectureSchema.post("save", { document: true }, async function (doc, next) {
   });
   if (!course) return next();
 
-  // Update course's lecture
+  // Update course's lecturesCount
   course.lecturesCount += 1;
   await course.save();
 

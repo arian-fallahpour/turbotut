@@ -55,7 +55,7 @@ function handleValidationError(error) {
 
   Object.values(error.errors).forEach((err) => {
     if (err.name === "CastError") {
-      error.errors[err.path] = `Please provide a valid ${err.path}`;
+      error.errors[err.path] = `Please provide a valid value`;
     } else {
       error.errors[err.path] = err.message;
     }

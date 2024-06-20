@@ -1,0 +1,97 @@
+$padding-left: 1.5rem;
+$padding-top: 0.75rem;
+
+.Select {
+  color: var(--txt-text);
+  display: grid;
+
+  & > label {
+    grid-row: 1 / span 1;
+    padding-left: $padding-left;
+  }
+
+  & > .error {
+    padding-left: $padding-left;
+    color: var(--c-red);
+  }
+}
+
+.Select :global {
+  .react-select__control {
+    background-color: transparent;
+    border-radius: 22rem;
+    border: 0.2rem solid var(--c-panel-bd);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: none;
+
+    &--is-focused {
+      border-color: rgba(var(--c-orange-rgb), 0.75);
+    }
+
+    &--is-selected {
+      border-color: rgba(var(--c-orange-rgb), 0.75);
+    }
+  }
+
+  .react-select__value-container {
+    padding: $padding-top $padding-left;
+  }
+  .react-select__input-container {
+    padding: 0;
+    border: none;
+  }
+
+  & .react-select__indicators {
+  }
+
+  & .react-select__indicator-separator {
+    background-color: var(--c-panel-bd);
+    width: 0.1rem;
+  }
+
+  & .react-select__indicator {
+    color: var(--txt-text);
+  }
+
+  & .react-select__input-container {
+    color: inherit;
+  }
+
+  & .react-select__single-value {
+    color: inherit;
+  }
+
+  & .react-select__menu {
+    background-color: var(--bg-flat-l);
+    backdrop-filter: blur(10px);
+    border-radius: var(--bd-radius);
+    border: 0.2rem solid var(--c-panel-bd);
+    color: var(--txt-text);
+    overflow: hidden;
+  }
+
+  & .react-select__menu-list {
+    padding: 0;
+  }
+
+  & .react-select__option {
+    cursor: pointer;
+
+    &:active,
+    &:hover {
+      background-color: var(--c-panel-bg);
+      color: var(--txt-title);
+    }
+
+    &--is-focused {
+      background-color: transparent;
+      color: var(--txt-text);
+    }
+
+    &--is-selected {
+      background-color: var(--c-panel-bg);
+      color: var(--c-orange);
+    }
+  }
+}

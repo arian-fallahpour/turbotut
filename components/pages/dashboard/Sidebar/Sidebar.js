@@ -30,7 +30,6 @@ const Sidebar = () => {
                     ? classes.active
                     : null
                 )}
-                styleName="text"
                 href={`/dashboard/${item.name}`}
                 isLink
                 replace

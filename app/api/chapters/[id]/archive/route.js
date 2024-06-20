@@ -1,9 +1,9 @@
 import Chapter from "@/models/chapterModel";
 import { routeHandler } from "@/utils/authentication";
 
-import { archiveDocument } from "@/utils/factoryHandler";
+import { archiveOne } from "@/utils/factoryHandler";
 
-export const PATCH = routeHandler(archiveDocument(Chapter), {
+export const PATCH = routeHandler(archiveOne(Chapter), {
   requiresSession: true,
   restrictTo: ["admin"],
 });

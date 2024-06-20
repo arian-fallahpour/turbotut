@@ -7,6 +7,7 @@ export const GET = routeHandler(getAll(Subscription), {
   restrictTo: ["admin"],
 });
 export const POST = routeHandler(createOne(Subscription), {
+  parseBody: true,
   requiresSession: true,
   restrictTo: ["admin"],
 });

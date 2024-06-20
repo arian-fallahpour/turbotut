@@ -1,68 +1,85 @@
 .Input {
-  position: relative;
-  outline: none;
+  $padding-left: 1.5rem;
+  $padding-top: 0.75rem;
 
-  overflow: hidden;
-  border-radius: 22rem;
   display: grid;
+
+  position: relative;
 
   transition: 0.2s ease box-shadow;
 
-  $padding-top: 0.75rem;
-  $padding-left: 1.5rem;
-
-  &:focus-visible > input {
-    outline: 0;
-    border-color: rgba(white, 0.25);
-  }
-
-  &:focus-visible > label {
-    outline: 0;
-  }
-
-  & > input {
-    transition: border 0.2s ease;
-
+  & > input,
+  & > select {
+    background: transparent;
+    border: none;
     padding: $padding-top $padding-left;
+    outline: none;
     border-radius: 22rem;
-    border: 0.1rem solid var(--c-panel-bd);
-
-    &:not(:placeholder-shown) {
-      border-color: rgba(white, 0.25);
-    }
-
-    &:not(:placeholder-shown) + label {
-      opacity: 0;
-    }
 
     &::placeholder {
       color: transparent;
     }
   }
 
-  & > label {
-    transition: opacity 0.2s ease;
+  &Outline {
+    & > label {
+      position: absolute;
+      left: $padding-left;
+      top: $padding-top;
+      pointer-events: none;
+      opacity: 1;
 
-    opacity: 1;
-    position: absolute;
-    left: $padding-left;
-    top: 50%;
-    translate: 0 -50%;
-    pointer-events: none;
-  }
+      // transition: opacity 0.2s ease;
+    }
 
-  &.invalid {
-  }
-
-  &Transparent {
     & > input {
-      background: transparent;
+      border: 0.2rem solid var(--c-panel-bd);
+
+      transition: border 0.2s ease;
+
+      &:focus-visible,
+      &:focus-visible:not(:placeholder-shown) {
+        border-color: rgba(var(--c-orange-rgb), 0.75);
+      }
+
+      &:not(:placeholder-shown) {
+        border-color: rgba(white, 0.25);
+      }
+    }
+
+    & > input:not(:placeholder-shown) + label {
+      opacity: 0;
+    }
+
+    &.invalid > input {
+      border-color: rgba(var(--c-red-rgb), 0.75);
     }
   }
 
-  &Panel {
+  &Stack {
+    & > label {
+      padding-left: $padding-left;
+      grid-row: 1 / span 1;
+    }
+
     & > input {
-      background: var(--c-panel-bg);
+      border: 0.2rem solid var(--c-panel-bd);
+
+      transition: border 0.2s ease;
+
+      &:focus-visible,
+      &:focus-visible:not(:placeholder-shown) {
+        border-color: rgba(var(--c-orange-rgb), 0.75);
+      }
+
+      &:not(:placeholder-shown) {
+        border-color: rgba(white, 0.25);
+      }
+    }
+
+    & > .error {
+      padding-left: $padding-left;
+      color: var(--c-red);
     }
   }
 }

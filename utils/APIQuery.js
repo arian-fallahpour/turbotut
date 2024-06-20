@@ -1,4 +1,4 @@
-const excludedFields = ["page", "sort", "limit", "fields"];
+const excludedFields = ["page", "sort", "limit", "select", "search"];
 
 class APIQuery {
   queryClone;
@@ -41,10 +41,18 @@ class APIQuery {
     return this;
   }
 
-  limitFields() {
+  search() {
+    if (this.queryString.search) {
+      this.query = this.query.fuzzySearch(this.queryString.search);
+    }
+
+    return this;
+  }
+
+  select() {
     // Limit by query
-    if (this.queryString.fields) {
-      const fields = this.queryString.fields.split(",").join(" ");
+    if (this.queryString.select) {
+      const fields = this.queryString.select.split(",").join(" ");
       this.query = this.query.select(fields);
     }
 
@@ -56,9 +64,14 @@ class APIQuery {
     return this;
   }
 
+  populate() {
+    if (this.queryString.populate) {
+    }
+  }
+
   paginate() {
     const page = this.queryString.page * 1 || 1;
-    const limit = this.queryString.limit * 1 || 10;
+    const limit = Math.min(this.queryString.limit * 1 || 10, 50);
     const skip = (page - 1) * limit;
 
     this.query = this.query.skip(skip).limit(limit);

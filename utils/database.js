@@ -22,6 +22,7 @@ export const connectDB = async () => {
     await mongoose.connect(uri, {
       autoIndex: true,
     });
+
     isConnected = true;
     console.log("<< Database connected >>");
   } catch (err) {

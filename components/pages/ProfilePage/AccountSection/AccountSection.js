@@ -4,9 +4,6 @@ import React from "react";
 import classes from "./AccountSection.module.scss";
 
 import Section from "@/components/Elements/Section/Section";
-// import Image from "next/image";
-// import Form, { FormCol, FormRow } from "@/components/Elements/Form/Form";
-// import Input from "@/components/Elements/Input/Input";
 import Button from "@/components/Elements/Button/Button";
 import { join } from "@/utils/helper";
 import { signOut } from "next-auth/react";

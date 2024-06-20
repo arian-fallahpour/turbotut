@@ -3,6 +3,9 @@ import catchAsync from "./catchAsync";
 import { connectDB } from "./database";
 import AppError from "./AppError";
 import APIQuery from "./APIQuery";
+import { toCap } from "./helper";
+
+import collections from "@/data/dashboard/collections";
 
 const getName = (Model, plural = false) => {
   if (plural) {
@@ -24,11 +27,11 @@ export const getAll = (Model) =>
     const apiQuery = new APIQuery(Model.find(), req.data.query)
       .filter()
       .sort()
-      .limitFields()
+      .search()
+      .select()
       .paginate();
 
     const totalCount = await apiQuery.getTotalCount();
-
     const documents = await apiQuery.execute();
     const name = getName(Model, true);
 
@@ -153,7 +156,7 @@ export const deleteOne = (Model) =>
     return new Response(null, { status: 204 });
   });
 
-export const archiveDocument = (Model) =>
+export const archiveOne = (Model) =>
   catchAsync(async function (req, { params }) {
     // Check if id is provided
     const name = getName(Model);
@@ -182,3 +185,75 @@ export const archiveDocument = (Model) =>
       { status: 200 }
     );
   });
+
+export const editOneByForm = (Model, sendResponse = true) =>
+  async function (req, { params }) {
+    const name = getName(Model);
+    if (!params.id)
+      return new AppError(`Please provide the id of the ${name}`, 400);
+
+    // Connect to database
+    await connectDB();
+
+    // Find document
+    const document = await Model.findById(params.id);
+    if (!document)
+      return new AppError(`${toCap(name)} not found with provided id`, 404);
+
+    // Update document
+    const collectionData = collections.find(
+      (c) => c.name === getName(Model, true)
+    );
+    collectionData.editableFields.forEach((field) => {
+      const value = req.data.formData[field.name];
+      if (field.type !== "image" && value !== undefined) {
+        document[field.name] = value;
+      }
+    });
+    await document.save();
+
+    if (sendResponse) {
+      return NextResponse.json(
+        {
+          status: "success",
+          data: { [name]: document },
+        },
+        { status: 200 }
+      );
+    } else {
+      req.data[name] = document;
+    }
+  };
+
+export const createOneByForm = (Model, sendResponse = true) =>
+  async function (req, { params }) {
+    const name = getName(Model, true);
+    const collectionData = collections.find((c) => c.name === name);
+
+    // Filter fields by editable fields
+    const filteredData = {};
+    collectionData.editableFields.forEach((field) => {
+      const value = req.data.formData[field.name];
+      if (field.type !== "image" && value !== undefined) {
+        filteredData[field.name] = value;
+      }
+    });
+
+    // Connect to database
+    await connectDB();
+
+    // Create new document with all data besides image
+    const document = await Model.create(filteredData);
+
+    if (sendResponse) {
+      return NextResponse.json(
+        {
+          status: "success",
+          data: { [getName(Model)]: document },
+        },
+        { status: 200 }
+      );
+    } else {
+      req.data[getName(Model)] = document;
+    }
+  };

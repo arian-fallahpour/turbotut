@@ -3,7 +3,14 @@ section.CollectionSection {
   gap: var(--gap-sm);
 }
 
-.CollectionHeader {
-  display: flex;
-  justify-content: space-between;
+.Collection {
+  &Header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &Actions {
+    display: flex;
+    gap: var(--gap-sm);
+  }
 }

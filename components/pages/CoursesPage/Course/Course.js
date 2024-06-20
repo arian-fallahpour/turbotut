@@ -19,7 +19,7 @@ const Course = ({ data }) => {
       href={`/courses/${data.slug}`}
       className={join(
         classes.Course,
-        data.unreleased ? classes.unreleased : null
+        data.comingSoon ? classes.unreleased : null
       )}
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
@@ -28,12 +28,12 @@ const Course = ({ data }) => {
         <div className={classes.CourseHeader}>
           <div className={classes.CourseImage}>
             <Image
-              src={`/images/courses/${data.image}`}
+              src={data.image || `/images/courses/default.png`}
               alt="calculations"
               fill
             />
           </div>
-          {data.unreleased && (
+          {data.comingSoon && (
             <div className={classes.CourseUnreleased}>
               <span>Coming soon!</span>
             </div>

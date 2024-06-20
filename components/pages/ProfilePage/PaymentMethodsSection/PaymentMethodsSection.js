@@ -191,13 +191,11 @@ const PaymentMethodsSection = ({ className, limit }) => {
                 ))}
             </ul>
 
-            <Button
-              className={classes.PaymentMethodsActions}
-              styleName="shiny"
-              onClick={attachCardHandler}
-            >
-              add card
-            </Button>
+            <div className={classes.PaymentMethodsActions}>
+              <Button styleName="shiny" onClick={attachCardHandler}>
+                add card
+              </Button>
+            </div>
           </div>
         </Reveal>
       </div>
