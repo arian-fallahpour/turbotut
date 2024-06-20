@@ -17,8 +17,6 @@ const Content = ({ className, document }) => {
     const fetchData = async () => {
       setLoading(true);
 
-      console.log(document);
-
       const res = await fetch(`/api/contents?lecture=${document._id}`);
       const resData = await res.json();
 

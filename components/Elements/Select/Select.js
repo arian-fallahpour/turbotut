@@ -25,7 +25,7 @@ const Select = ({
 
   useEffect(() => {
     if (defaultValue) setFormValue(label, defaultValue.value);
-  }, []);
+  }, [defaultValue, label, setFormValue]);
 
   const Tag = isAsync ? AsyncSelect : ReactSelect;
 
