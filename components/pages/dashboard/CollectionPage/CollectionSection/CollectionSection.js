@@ -14,6 +14,7 @@ import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import CollectionHeader from "./CollectionHeader";
 
 const getData = async function (collectionData, queryObject) {
+  console.log(queryObject);
   queryObject.select = collectionData.tableFields
     .map((tableField) => `${tableField.name}`)
     .join(",");
