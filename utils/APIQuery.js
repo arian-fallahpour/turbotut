@@ -53,6 +53,7 @@ class APIQuery {
     // Limit by query
     if (this.queryString.select) {
       const fields = this.queryString.select.split(",").join(" ");
+      console.log(fields);
       this.query = this.query.select(fields);
     }
 

@@ -18,10 +18,9 @@ const getData = async function (collectionData, queryObject) {
     .map((tableField) => `${tableField.name}`)
     .join(",");
 
-  const url = `${getDomain()}/api/${collectionData.name}?${createQueryString(
-    queryObject
-  )}`;
-  console.log(url);
+  const domain = getDomain();
+  const queryString = createQueryString(queryObject);
+  const url = `${domain}/api/${collectionData.name}?${queryString}`;
   const res = await fetchAuth(url, {
     cache: "force-cache",
     next: { revalidate: 60 },
