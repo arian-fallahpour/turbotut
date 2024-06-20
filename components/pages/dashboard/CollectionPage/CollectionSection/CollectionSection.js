@@ -18,21 +18,14 @@ const getData = async function (collectionData, queryObject) {
     .map((tableField) => `${tableField.name}`)
     .join(",");
 
-  console.log(
-    `${getDomain()}/api/${collectionData.name}?${createQueryString(
-      queryObject
-    )}`
-  );
-
-  const res = await fetchAuth(
-    `${getDomain()}/api/${collectionData.name}?${createQueryString(
-      queryObject
-    )}`,
-    {
-      cache: "force-cache",
-      next: { revalidate: 60 },
-    }
-  );
+  const url = `${getDomain()}/api/${collectionData.name}?${createQueryString(
+    queryObject
+  )}`;
+  console.log(url);
+  const res = await fetchAuth(url, {
+    cache: "force-cache",
+    next: { revalidate: 60 },
+  });
 
   const data = await res.json();
 
@@ -51,6 +44,7 @@ const CollectionSection = async ({ collectionData, searchParams }) => {
   searchParams.limit = 10;
   const { data, error } = await getData(collectionData, searchParams);
   const documents = data[collectionData.name];
+  console.log(documents);
 
   const gridTemplateColumns = createGridTemplateColumns(collectionData);
 
