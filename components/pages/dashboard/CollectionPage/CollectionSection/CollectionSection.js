@@ -68,21 +68,27 @@ const CollectionSection = async ({ collectionData, searchParams }) => {
 
         {!error &&
           documents?.length > 0 &&
-          documents.map((doc) => (
-            <TableRow key={doc._id} style={{ gridTemplateColumns }}>
-              {collectionData.tableFields.map((field, i) => (
-                <TableCell
-                  key={field.label}
-                  href={`/dashboard/${collectionData.name}/${doc._id}`}
-                >
-                  {doc[field.name]}
+          documents.map((doc) => {
+            console.log(doc);
+            return (
+              <TableRow key={doc._id} style={{ gridTemplateColumns }}>
+                {collectionData.tableFields.map((field, i) => {
+                  console.log(doc[field.name]);
+                  return (
+                    <TableCell
+                      key={field.label}
+                      href={`/dashboard/${collectionData.name}/${doc._id}`}
+                    >
+                      {doc[field.name]}
+                    </TableCell>
+                  );
+                })}
+                <TableCell end>
+                  <Actions name={collectionData.name} />
                 </TableCell>
-              ))}
-              <TableCell end>
-                <Actions name={collectionData.name} />
-              </TableCell>
-            </TableRow>
-          ))}
+              </TableRow>
+            );
+          })}
 
         {/* No documents */}
         {!error && documents?.length === 0 && (
