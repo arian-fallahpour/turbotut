@@ -35,8 +35,7 @@ const getData = async function (collectionData, queryObject) {
 
   return {
     error,
-    data: {},
-    // data: JSON.parse(JSON.stringify(data.data)),
+    data: JSON.parse(JSON.stringify(data.data)),
   };
 };
 
