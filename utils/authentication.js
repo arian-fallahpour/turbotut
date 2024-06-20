@@ -27,6 +27,7 @@ export const routeHandler = (fn, options = {}) =>
     // PARAMETER POLLUTION PROTECTION
     // TODO
     args[0].data.query = parseQuery(req);
+    console.log(args[0].data.query);
 
     // DATA SANITATION: NoSQL query injection
     if (options.parseBody) {

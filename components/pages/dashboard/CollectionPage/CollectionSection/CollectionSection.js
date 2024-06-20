@@ -43,7 +43,6 @@ const CollectionSection = async ({ collectionData, searchParams }) => {
   searchParams.limit = 10;
   const { data, error } = await getData(collectionData, searchParams);
   const documents = data[collectionData.name];
-  console.log(documents);
 
   const gridTemplateColumns = createGridTemplateColumns(collectionData);
 
