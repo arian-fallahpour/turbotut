@@ -1,6 +1,8 @@
 import SchoolIcon from "@mui/icons-material/SchoolRounded";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibraryRounded";
 import BookIcon from "@mui/icons-material/BookRounded";
+import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
+
 import enumValues from "../enum-values";
 
 const data = [
@@ -82,7 +84,25 @@ const data = [
       { type: "enum", name: "type", values: enumValues.lecture.type },
     ],
     collectionSections: [],
-    documentSections: [{ type: "content" }],
+    documentSections: [{ type: "collection", collection: "contents" }],
+  },
+  {
+    name: "contents",
+    icon: <ArticleRoundedIcon fontSize="inherit" />,
+    tableFields: [
+      { label: "lecture", name: "lecture", spacing: "25rem" },
+      { label: "url", name: "url", spacing: "1fr" },
+    ],
+    viewableFields: [
+      { type: "id", name: "lecture", collection: "lectures", isParentId: true },
+      { type: "string", name: "url" },
+    ],
+    editableFields: [
+      { type: "id", name: "lecture", collection: "lectures", isParentId: true },
+      { type: "string", name: "url" },
+    ],
+    collectionSections: [],
+    documentSections: [],
   },
 ];
 

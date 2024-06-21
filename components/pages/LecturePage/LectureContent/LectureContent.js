@@ -36,6 +36,9 @@ const LectureContent = async ({ lecture }) => {
         <h1 className="header header-title text-center">{lecture.name}</h1>
       </header>
       <FormattedContent>
+        {!error &&
+          contents?.length &&
+          contents.map((data, i) => <Formatted key={i} {...data} />)}
         {error && (
           <ErrorBlock
             className={classes.LectureContentError}
@@ -43,9 +46,6 @@ const LectureContent = async ({ lecture }) => {
             type="info"
           />
         )}
-        {!error &&
-          contents?.length &&
-          contents.map((data, i) => <Formatted key={i} {...data} />)}
       </FormattedContent>
     </article>
   );

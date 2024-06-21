@@ -50,6 +50,8 @@ const CreateDocumentForm = ({
       stopProgress();
 
       if (!res.ok) {
+        console.log(resData.errors);
+
         if (resData.errors) {
           Object.keys(resData.errors).forEach((key, i) =>
             setError(key, resData.errors[key])

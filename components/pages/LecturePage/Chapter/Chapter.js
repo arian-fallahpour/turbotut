@@ -20,6 +20,8 @@ const Chapter = ({ course, chapter, lectureSlug, color }) => {
                 href={`/courses/${course.slug}/lecture/${lecture.slug}`}
                 isActive={lecture.slug === lectureSlug}
                 color={color}
+                isLocked={lecture.type === "paid"}
+                isViewable={lecture.type === "free"}
               />
             </li>
           ))}
