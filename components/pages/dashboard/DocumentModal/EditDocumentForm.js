@@ -69,7 +69,11 @@ const EditDocumentForm = ({
       {collectionData.editableFields.map((field) => (
         <DocumentModalInput
           key={field.name}
-          document={document}
+          document={
+            field.type === "id"
+              ? { _id: document.course, name: document.course }
+              : document
+          }
           field={field}
           error={errors[field.name] ? errors[field.name] : null}
           collectionData={collectionData}
