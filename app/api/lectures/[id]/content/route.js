@@ -10,6 +10,7 @@ import { routeHandler } from "@/utils/authentication";
 import { connectDB } from "@/utils/database";
 
 import { NextResponse } from "next/server";
+import path from "path";
 
 export const GET = routeHandler(
   async function (req, { params }) {
@@ -51,16 +52,20 @@ export const GET = routeHandler(
     const course = await Course.findOne({ chapters: lecture.chapter }).select({
       slug: 1,
     });
+    if (!course)
+      return new AppError(
+        "Could not find the course associated with this lecture",
+        404
+      );
 
     let contents;
     try {
-      contents = await fs.readFile(
-        process.cwd() +
-          `/app/data/contents/${course.slug}/${lecture.slug}.json`,
-        "utf8"
+      const directory = path.join(
+        process.cwd(),
+        `app/data/contents/${course.slug}/${lecture.slug}.json`
       );
+      contents = await fs.readFile(directory, "utf8");
       contents = JSON.parse(contents);
-      console.log(contents);
     } catch (err) {
       console.error(err);
       return new AppError(
