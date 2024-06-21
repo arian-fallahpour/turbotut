@@ -92,3 +92,5 @@ const CollectionSection = async ({ collectionData, searchParams }) => {
 };
 
 export default CollectionSection;
+
+// NOTE: Use Collection instead of doing it all over again here
