@@ -18,7 +18,7 @@ const getData = async function (collectionData, id) {
   const res = await fetchAuth(
     `${getDomain()}/api/${collectionData.name}/${id}`,
     {
-      cache: "force-cache",
+      cache: "no-store",
       next: { revalidate: 60 },
     }
   );

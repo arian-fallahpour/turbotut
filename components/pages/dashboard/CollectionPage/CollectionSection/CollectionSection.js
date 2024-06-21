@@ -22,8 +22,7 @@ const getData = async function (collectionData, queryObject) {
   const queryString = createQueryString(queryObject);
   const url = `${domain}/api/${collectionData.name}?${queryString}`;
   const res = await fetchAuth(url, {
-    cache: "force-cache",
-    next: { revalidate: 60 },
+    cache: "no-store",
   });
 
   const data = await res.json();
