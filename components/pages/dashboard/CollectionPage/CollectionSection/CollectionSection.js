@@ -55,18 +55,22 @@ const CollectionSection = async ({ collectionData, searchParams }) => {
         searchParams={searchParams}
       />
 
-      {/* TABLE */}
-      <Table>
-        <TableHeader style={{ gridTemplateColumns }}>
-          {collectionData.tableFields.map((field) => (
-            <TableCell key={field.label}>{field.label}</TableCell>
-          ))}
-          <TableCell></TableCell>
-        </TableHeader>
+      {!error && documents?.length === 0 && (
+        <ErrorBlock type="info" message={`No ${collectionData.name} found`} />
+      )}
+      {error && <ErrorBlock message={error.message} />}
 
-        {!error &&
-          documents?.length > 0 &&
-          documents.map((doc) => (
+      {/* TABLE */}
+
+      {!error && documents?.length > 0 && (
+        <Table>
+          <TableHeader style={{ gridTemplateColumns }}>
+            {collectionData.tableFields.map((field) => (
+              <TableCell key={field.label}>{field.label}</TableCell>
+            ))}
+            <TableCell></TableCell>
+          </TableHeader>
+          {documents.map((doc) => (
             <TableRow key={doc._id} style={{ gridTemplateColumns }}>
               {collectionData.tableFields.map((field, i) => (
                 <TableCell
@@ -81,15 +85,8 @@ const CollectionSection = async ({ collectionData, searchParams }) => {
               </TableCell>
             </TableRow>
           ))}
-
-        {/* No documents */}
-        {!error && documents?.length === 0 && (
-          <ErrorBlock type="info" message={`No ${collectionData.name} found`} />
-        )}
-
-        {/* error */}
-        {error && <ErrorBlock message={error.message} />}
-      </Table>
+        </Table>
+      )}
     </Section>
   );
 };
