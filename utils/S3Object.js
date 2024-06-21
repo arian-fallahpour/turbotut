@@ -43,6 +43,8 @@ class S3Object {
   async getSignedURL({ key, metadata }) {
     const checksum = await this.computeSHA256();
 
+    console.log("KEY:", key);
+
     const putObjectCommand = new PutObjectCommand({
       Bucket: process.env.AWS_BUCKET_NAME,
       Key: key, // Create unique file-name

@@ -55,13 +55,12 @@ const CollectionSection = async ({ collectionData, searchParams }) => {
         searchParams={searchParams}
       />
 
+      {error && <ErrorBlock message={error.message} />}
       {!error && documents?.length === 0 && (
         <ErrorBlock type="info" message={`No ${collectionData.name} found`} />
       )}
-      {error && <ErrorBlock message={error.message} />}
 
       {/* TABLE */}
-
       {!error && documents?.length > 0 && (
         <Table>
           <TableHeader style={{ gridTemplateColumns }}>
@@ -70,6 +69,7 @@ const CollectionSection = async ({ collectionData, searchParams }) => {
             ))}
             <TableCell></TableCell>
           </TableHeader>
+
           {documents.map((doc) => (
             <TableRow key={doc._id} style={{ gridTemplateColumns }}>
               {collectionData.tableFields.map((field, i) => (
