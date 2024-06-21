@@ -12,17 +12,17 @@
     "contents": [
       {
         "type": "image",
-        "url": "/lectures/images/line-plane-intersection-1.png",
+        "url": "/images/lectures/line-plane-intersection-1.png",
         "content": "1. Plane contains the line"
       },
       {
         "type": "image",
-        "url": "/lectures/images/line-plane-intersection-2.png",
+        "url": "/images/lectures/line-plane-intersection-2.png",
         "content": "2. Line intersects the plane at a point"
       },
       {
         "type": "image",
-        "url": "/lectures/images/line-plane-intersection-3.png",
+        "url": "/images/lectures/line-plane-intersection-3.png",
         "content": "3. Line does not intersect plane"
       }
     ]
@@ -33,7 +33,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/line-plane-intersection-1.png"
+    "url": "/images/lectures/line-plane-intersection-1.png"
   },
   {
     "type": "p",
@@ -172,7 +172,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/line-plane-intersection-2.png"
+    "url": "/images/lectures/line-plane-intersection-2.png"
   },
   {
     "type": "p",
@@ -272,7 +272,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/line-plane-intersection-3.png"
+    "url": "/images/lectures/line-plane-intersection-3.png"
   },
   {
     "type": "h2",

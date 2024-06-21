@@ -25,7 +25,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/derivative-properties-1.png"
+    "url": "/images/lectures/derivative-properties-1.png"
   },
   {
     "type": "p",
@@ -66,7 +66,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/derivative-properties-2.png"
+    "url": "/images/lectures/derivative-properties-2.png"
   },
   {
     "type": "p",
@@ -174,12 +174,12 @@
     "contents": [
       {
         "type": "image",
-        "url": "/lectures/images/derivative-properties-3.png",
+        "url": "/images/lectures/derivative-properties-3.png",
         "content": "1. Decreasing to increasing slope"
       },
       {
         "type": "image",
-        "url": "/lectures/images/derivative-properties-4.png",
+        "url": "/images/lectures/derivative-properties-4.png",
         "content": "2. Increasing to decreasing slope"
       }
     ]
@@ -189,12 +189,12 @@
     "contents": [
       {
         "type": "image",
-        "url": "/lectures/images/derivative-properties-5.png",
+        "url": "/images/lectures/derivative-properties-5.png",
         "content": "3. Increasing to increasing slope"
       },
       {
         "type": "image",
-        "url": "/lectures/images/derivative-properties-6.png",
+        "url": "/images/lectures/derivative-properties-6.png",
         "content": "4. Decreasing to decreasing slope"
       }
     ]
@@ -366,7 +366,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/derivative-properties-7.png",
+    "url": "/images/lectures/derivative-properties-7.png",
     "content": "Point of inflection at $ x = 3 $"
   },
   {
@@ -638,7 +638,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/derivative-properties-8.png"
+    "url": "/images/lectures/derivative-properties-8.png"
   },
   {
     "type": "h3",

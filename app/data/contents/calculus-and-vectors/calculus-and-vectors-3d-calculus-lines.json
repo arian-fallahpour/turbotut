@@ -129,7 +129,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/vector-equations-1.png"
+    "url": "/images/lectures/vector-equations-1.png"
   },
   {
     "type": "ul",
@@ -162,7 +162,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/vector-equations-2.png"
+    "url": "/images/lectures/vector-equations-2.png"
   },
   {
     "type": "p",
@@ -196,7 +196,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/vector-equations-3.png",
+    "url": "/images/lectures/vector-equations-3.png",
     "content": "The vector $ \\vec {n} = (A, \\ B) = (-3, \\ 4) $ is the normal vector to the line"
   },
   { "type": "br" },

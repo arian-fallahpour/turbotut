@@ -8,17 +8,17 @@
     "contents": [
       {
         "type": "image",
-        "url": "/lectures/images/plane-plane-intersection-1.png",
+        "url": "/images/lectures/plane-plane-intersection-1.png",
         "content": "1. Planes are parallel"
       },
       {
         "type": "image",
-        "url": "/lectures/images/plane-plane-intersection-2.png",
+        "url": "/images/lectures/plane-plane-intersection-2.png",
         "content": "2. Planes intersect at a line"
       },
       {
         "type": "image",
-        "url": "/lectures/images/plane-plane-intersection-3.png",
+        "url": "/images/lectures/plane-plane-intersection-3.png",
         "content": "3. Plane contains plane"
       }
     ]
@@ -33,7 +33,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/plane-plane-intersection-1.png"
+    "url": "/images/lectures/plane-plane-intersection-1.png"
   },
   {
     "type": "h2",
@@ -108,7 +108,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/plane-plane-intersection-2.png"
+    "url": "/images/lectures/plane-plane-intersection-2.png"
   },
   {
     "type": "h2",
@@ -187,7 +187,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/plane-plane-intersection-3.png"
+    "url": "/images/lectures/plane-plane-intersection-3.png"
   },
   {
     "type": "h2",

@@ -67,7 +67,7 @@ export const GET = routeHandler(
       contents = await fs.readFile(directory, "utf8");
       contents = JSON.parse(contents);
     } catch (err) {
-      console.error(err);
+      console.error("CONTENT READFILE ERROR: ", err);
       return new AppError(
         "Something went wrong when reading lecture's contents",
         400

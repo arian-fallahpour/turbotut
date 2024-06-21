@@ -20,12 +20,12 @@
     "contents": [
       {
         "type": "image",
-        "url": "/lectures/images/power-derivative-1.png",
+        "url": "/images/lectures/power-derivative-1.png",
         "content": "Graph of $ y = 2^x $ and its derivative"
       },
       {
         "type": "image",
-        "url": "/lectures/images/power-derivative-2.png",
+        "url": "/images/lectures/power-derivative-2.png",
         "content": "Graph of $ y = 4^x $ and its derivative"
       }
     ]
@@ -69,7 +69,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/power-derivative-3.png",
+    "url": "/images/lectures/power-derivative-3.png",
     "content": "Graph of $ y = e^x $ and its derivative"
   },
   {
@@ -102,7 +102,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/function-derivative-ln.png",
+    "url": "/images/lectures/function-derivative-ln.png",
     "content": "Graph of $ f(x) = \\ln x $ and $ f'(x) = \\frac{1}{x} $"
   },
   {
@@ -144,7 +144,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/function-derivative-power.png",
+    "url": "/images/lectures/function-derivative-power.png",
     "content": "Graph of $ f(x) = 2^x $ and $ f'(x) = 2^x \\ln 2 $"
   },
   {
@@ -165,7 +165,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/function-derivative-log.png",
+    "url": "/images/lectures/function-derivative-log.png",
     "content": "Graph of $ f(x) = \\log_{10} x $ and $ f'(x) = \\frac {1} {x \\ln x} $"
   },
   {
@@ -186,7 +186,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/function-derivative-sin.png",
+    "url": "/images/lectures/function-derivative-sin.png",
     "content": "Graph of $ f(x) = \\sin x $ and $ f'(x) = \\cos x $"
   },
   {
@@ -195,7 +195,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/function-derivative-cos.png",
+    "url": "/images/lectures/function-derivative-cos.png",
     "content": "Graph of $ f(x) = \\cos x $ and $ f'(x) = -\\sin x $"
   },
   {
@@ -265,7 +265,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/function-derivative-tan.png",
+    "url": "/images/lectures/function-derivative-tan.png",
     "content": "Graph of $ f(x) = \\tan x $ and $ f'(x) = \\sec^2 x $"
   },
   {

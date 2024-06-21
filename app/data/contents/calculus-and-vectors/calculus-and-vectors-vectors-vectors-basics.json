@@ -174,7 +174,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/vectors-basics-3.png"
+    "url": "/images/lectures/vectors-basics-3.png"
   },
   {
     "type": "h3",
@@ -220,7 +220,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/vectors-basics-4.png"
+    "url": "/images/lectures/vectors-basics-4.png"
   },
   {
     "type": "h3",
@@ -261,7 +261,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/vectors-basics-5.png"
+    "url": "/images/lectures/vectors-basics-5.png"
   },
   {
     "type": "h2",
@@ -277,7 +277,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/vectors-basics-6.png",
+    "url": "/images/lectures/vectors-basics-6.png",
     "content": "Notice that there is not a coordinate axes"
   },
   {

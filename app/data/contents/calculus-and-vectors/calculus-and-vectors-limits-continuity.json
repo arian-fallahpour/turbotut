@@ -52,17 +52,17 @@
     "contents": [
       {
         "type": "image",
-        "url": "/lectures/images/discontinuous-graph-2.png",
+        "url": "/images/lectures/discontinuous-graph-2.png",
         "content": "1. Point discontinuity at $x=2$"
       },
       {
         "type": "image",
-        "url": "/lectures/images/discontinuous-graph-3.png",
+        "url": "/images/lectures/discontinuous-graph-3.png",
         "content": "2. Jump discontinuity at $x=2$"
       },
       {
         "type": "image",
-        "url": "/lectures/images/discontinuous-graph-4.png",
+        "url": "/images/lectures/discontinuous-graph-4.png",
         "content": "3. Infinite discontinuity at $x=2$"
       }
     ]
@@ -182,7 +182,7 @@
   },
   {
     "type": "image",
-    "url": "/lectures/images/continuous-graph-2.png"
+    "url": "/images/lectures/continuous-graph-2.png"
   },
   {
     "type": "h1",
