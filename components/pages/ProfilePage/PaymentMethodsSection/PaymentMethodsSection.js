@@ -40,12 +40,13 @@ const PaymentMethodsSection = ({ className, limit }) => {
 
         // Check for any errors
         if (!res.ok) {
-          setGlobalError(new Error(resData.message));
-          return;
+          setGlobalError(resData.message);
         }
 
-        // Set state data
-        setData(resData.data);
+        // Set state data if no errors
+        else {
+          setData(resData.data);
+        }
       }
 
       setRevealed((p) => !p);
@@ -67,14 +68,11 @@ const PaymentMethodsSection = ({ className, limit }) => {
       stopProgress();
       hideModal();
 
-      // Check for any errors
       if (!res.ok) {
-        setGlobalError(new Error(resData.message));
-        return;
+        setGlobalError(resData.message);
+      } else {
+        setData(resData.data);
       }
-
-      // Update data
-      setData(resData.data);
     };
 
     detachCard();
@@ -104,14 +102,12 @@ const PaymentMethodsSection = ({ className, limit }) => {
 
       stopProgress();
 
-      // Check for any errors
       if (!res.ok) {
-        setGlobalError(new Error(resData.message));
+        setGlobalError(resData.message);
         return;
+      } else {
+        setData(resData.data);
       }
-
-      // Update data
-      setData(resData.data);
     };
 
     setDefault();
@@ -132,7 +128,7 @@ const PaymentMethodsSection = ({ className, limit }) => {
 
       // Check for any errors
       if (!res.ok) {
-        setGlobalError(new Error(resData.message));
+        resData.message;
         return;
       }
 
@@ -142,7 +138,7 @@ const PaymentMethodsSection = ({ className, limit }) => {
         sessionId: resData.sessionId,
       });
 
-      if (error) setGlobalError(error);
+      if (error) setGlobalError(error.message);
     };
 
     addCard();

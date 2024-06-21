@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 export const GlobalErrorContext = createContext({
   visible: false,
   globalError: null,
-  setGlobalError: (globalError) => {},
+  setGlobalError: (message) => {},
 });
 
 export const GlobalErrorProvider = ({ children }) => {
@@ -23,8 +23,8 @@ export const GlobalErrorProvider = ({ children }) => {
     };
   }, [visible]);
 
-  const setGlobalErrorHandler = (error) => {
-    setGlobalError(error);
+  const setGlobalErrorHandler = (message) => {
+    setGlobalError(message);
     setVisible(true);
   };
 

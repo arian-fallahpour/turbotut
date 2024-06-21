@@ -15,14 +15,6 @@ export const toSingular = (string) => {
   return string.substring(0, string.length - 1);
 };
 
-export const createQueryString = (queryObject) => {
-  const str = Object.keys(queryObject).map(
-    (key) => `${key}=${queryObject[key]}`
-  );
-  if (str.length > 0) return `${str.join("&")}`;
-  else return "";
-};
-
 export function createGridTemplateColumns(dataCollection) {
   let gridTemplateColumns = dataCollection.tableFields.map(
     (field) => field.spacing

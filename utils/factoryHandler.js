@@ -192,6 +192,8 @@ export const editOneByForm = (Model, sendResponse = true) =>
     if (!params.id)
       return new AppError(`Please provide the id of the ${name}`, 400);
 
+    return new AppError("test", 401);
+
     // Connect to database
     await connectDB();
 

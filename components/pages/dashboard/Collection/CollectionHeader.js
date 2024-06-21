@@ -9,8 +9,8 @@ import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import { toSingular } from "@/utils/helper";
 import { TableButtonRounded } from "@/components/Elements/Table/Table";
 import { ModalContext } from "@/store/modal-context";
-import DocumentModal from "../../DocumentModal/DocumentModal";
-import CreateDocumentForm from "../../DocumentModal/CreateDocumentForm";
+import DocumentModal from "../DocumentModal/DocumentModal";
+import CreateDocumentForm from "../DocumentModal/CreateDocumentForm";
 import { DocumentPageContext } from "@/store/document-page-context";
 
 const CollectionHeader = ({

@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./DocumentModal.module.scss";
 import Form, { FormRow } from "@/components/Elements/Form/Form";
 import Button from "@/components/Elements/Button/Button";
 import { startProgress, stopProgress } from "next-nprogress-bar";
 import DocumentModalInput from "./DocumentModalInput";
+import { GlobalErrorContext } from "@/store/error-context";
 
 const CreateDocumentForm = ({
   disabled,
@@ -16,6 +17,7 @@ const CreateDocumentForm = ({
   collectionData,
   fetchCollection,
 }) => {
+  const { setGlobalError } = useContext(GlobalErrorContext);
   const [otherFields, setOtherFields] = useState({});
   const [errors, setErrors] = useState({});
 
@@ -48,9 +50,14 @@ const CreateDocumentForm = ({
       stopProgress();
 
       if (!res.ok) {
-        Object.keys(resData.errors).forEach((key, i) =>
-          setError(key, resData.errors[key])
-        );
+        if (resData.errors) {
+          Object.keys(resData.errors).forEach((key, i) =>
+            setError(key, resData.errors[key])
+          );
+        } else {
+          setGlobalError(resData.message);
+        }
+
         setDisabled(false);
       } else {
         hideModal();

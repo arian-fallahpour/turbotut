@@ -62,7 +62,6 @@ const DocumentModalInput = ({
 
   // ID FIELD
   if (field.type === "id") {
-    // TODO: Label and value do not work (look at create, then look at edit)
     const defaultValue =
       setDefault && document
         ? { value: document._id, label: document.name }

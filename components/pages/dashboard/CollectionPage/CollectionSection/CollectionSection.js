@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./CollectionSection.module.scss";
 import { fetchAuth, getDomain } from "@/utils/dataFetch";
-import { createGridTemplateColumns, createQueryString } from "@/utils/helper";
+import { createGridTemplateColumns } from "@/utils/helper";
 
 import Section from "@/components/Elements/Section/Section";
 import Table, {
@@ -12,15 +12,20 @@ import Table, {
 import Actions from "../../Actions/Actions";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import CollectionHeader from "./CollectionHeader";
+import queryString from "query-string";
 
 const getData = async function (collectionData, queryObject) {
   queryObject.select = collectionData.tableFields
     .map((tableField) => `${tableField.name}`)
     .join(",");
 
-  const domain = getDomain();
-  const queryString = createQueryString(queryObject);
-  const url = `${domain}/api/${collectionData.name}?${queryString}`;
+  // Create url
+  const url = queryString.stringifyUrl({
+    url: `${getDomain()}/api/${collectionData.name}`,
+    query: queryObject,
+  });
+
+  // Make request
   const res = await fetchAuth(url, {
     cache: "no-store",
   });

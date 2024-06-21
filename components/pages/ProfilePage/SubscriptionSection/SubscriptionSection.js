@@ -69,25 +69,17 @@ const SubscriptionSection = ({ className, limit }) => {
 
       const resData = await res.json();
 
-      // Check for any errors
-      if (!res.ok) {
-        setGlobalError(new Error(resData.message));
-        stopProgress();
-        hideModal();
-        return;
-      }
-
-      // Remove loading state
+      hideModal();
       stopProgress();
 
-      // Hide modal
-      hideModal();
-
-      // update state with new data
-      setData((p) => ({
-        ...p,
-        subscription: { ...p.subscription, ...resData.data.subscription },
-      }));
+      if (!res.ok) {
+        setGlobalError(resData.message);
+      } else {
+        setData((p) => ({
+          ...p,
+          subscription: { ...p.subscription, ...resData.data.subscription },
+        }));
+      }
     };
 
     changeSubscription(cancelsAtPeriodEnd);

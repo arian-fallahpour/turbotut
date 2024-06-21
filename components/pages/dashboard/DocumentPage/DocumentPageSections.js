@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./DocumentPage.module.scss";
 import { toSingular } from "@/utils/helper";
 
-import Collection from "./Collection/Collection";
+import Collection from "../Collection/Collection";
 
 import collectionsData from "@/app/data/dashboard/collections";
 import Content from "./Content/Content";

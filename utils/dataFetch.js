@@ -38,7 +38,7 @@ export async function fetchCourse(courseSlug) {
     select: { name: 1, lectures: 1 },
     populate: {
       path: "lectures",
-      select: { name: 1, slug: 1 },
+      select: { name: 1, slug: 1, type: 1 },
     },
   });
   if (!course) redirect("/courses");

@@ -17,9 +17,7 @@ const GlobalError = () => {
       <div className={classes.GlobalErrorIcon}>
         <ErrorRoundedIcon fontSize="inherit" />
       </div>
-      <div className={classes.GlobalErrorMessage}>
-        {globalError && globalError.message}
-      </div>
+      <div className={classes.GlobalErrorMessage}>{globalError}</div>
     </div>
   );
 };

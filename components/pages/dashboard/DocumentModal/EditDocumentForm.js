@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./DocumentModal.module.scss";
 import Form, { FormRow } from "@/components/Elements/Form/Form";
 import Button from "@/components/Elements/Button/Button";
 import { startProgress, stopProgress } from "next-nprogress-bar";
 import { toSingular } from "@/utils/helper";
 import DocumentModalInput from "./DocumentModalInput";
+import { GlobalErrorContext } from "@/store/error-context";
 
 const EditDocumentForm = ({
   disabled,
@@ -17,6 +18,7 @@ const EditDocumentForm = ({
   setDocument,
   collectionData,
 }) => {
+  const { setGlobalError } = useContext(GlobalErrorContext);
   const [otherFields, setOtherFields] = useState({});
   const [errors, setErrors] = useState({});
 
@@ -36,6 +38,7 @@ const EditDocumentForm = ({
       Object.keys(otherFields).forEach((key) =>
         formData.append(key, otherFields[key])
       );
+      formData.forEach((v) => console.log(v));
 
       startProgress();
       setDisabled(true);
@@ -52,9 +55,15 @@ const EditDocumentForm = ({
       stopProgress();
 
       if (!res.ok) {
-        Object.keys(resData.errors).forEach((key, i) =>
-          setError(key, resData.errors[key])
-        );
+        if (resData.errors) {
+          Object.keys(resData.errors).forEach((key, i) =>
+            setError(key, resData.errors[key])
+          );
+        } else {
+          setGlobalError(resData.message);
+        }
+
+        setDisabled(false);
       } else {
         setDocument(resData.data[toSingular(collectionData.name)]);
         hideModal();
@@ -71,7 +80,10 @@ const EditDocumentForm = ({
           key={field.name}
           document={
             field.type === "id"
-              ? { _id: document.course, name: document.course }
+              ? {
+                  _id: document[toSingular(field.collection)],
+                  name: document[toSingular(field.collection)],
+                }
               : document
           }
           field={field}
