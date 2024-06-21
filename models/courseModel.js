@@ -115,22 +115,17 @@ courseSchema.methods.uploadImageToS3 = async function (imageFile) {
   );
 
   // If image does not exist, create key
-  console.log("!this.image: ", !this.image);
   let key;
   if (!this.image) {
     const filename = imageS3Object.getUniqueFilename(this.slug);
     const fileExtension = imageS3Object.getFileExtension();
-    console.log(filename, fileExtension);
     key = `courses/images/${filename}.${fileExtension}`;
   }
 
   // If image exists, use existing key
   else {
-    console.log(this);
     key = this.getImageKey();
   }
-
-  console.log(key);
 
   // Create signed url
   const metadata = { course: JSON.stringify(this._id) };
