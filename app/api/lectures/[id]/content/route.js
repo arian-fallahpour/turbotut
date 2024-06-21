@@ -1,13 +1,15 @@
-import fsp from "fs/promises";
+import { promises as fs } from "fs";
+
 import Content from "@/models/contentModel";
-import AppError from "@/utils/AppError";
-import { NextResponse } from "next/server";
-import { routeHandler } from "@/utils/authentication";
-import Lecture from "@/models/lectureModel";
 import Subscription from "@/models/subscriptionModel";
-import { connectDB } from "@/utils/database";
-import Chapter from "@/models/chapterModel";
+import Lecture from "@/models/lectureModel";
 import Course from "@/models/courseModel";
+
+import AppError from "@/utils/AppError";
+import { routeHandler } from "@/utils/authentication";
+import { connectDB } from "@/utils/database";
+
+import { NextResponse } from "next/server";
 
 export const GET = routeHandler(
   async function (req, { params }) {
@@ -46,14 +48,13 @@ export const GET = routeHandler(
         404
       );
 
-    const chapter = await Chapter.findById(lecture.chapter).select({
-      course: 1,
+    const course = await Course.findOne({ chapters: lecture.chapter }).select({
+      slug: 1,
     });
-    const course = await Course.findById(chapter.course).select({ slug: 1 });
 
     let contents;
     try {
-      contents = await fsp.readFile(
+      contents = await fs.readFile(
         process.cwd() +
           `/app/data/contents/${course.slug}/${lecture.slug}.json`,
         "utf8"
