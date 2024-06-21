@@ -62,7 +62,7 @@ export const GET = routeHandler(
       contents = JSON.parse(contents);
       console.log(contents);
     } catch (err) {
-      console.log(err);
+      console.error(err);
       return new AppError(
         "Something went wrong when reading lecture's contents",
         400
