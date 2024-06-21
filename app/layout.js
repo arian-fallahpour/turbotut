@@ -2,7 +2,7 @@ import "@/sass/globals.scss";
 
 import { Open_Sans } from "next/font/google";
 import { Providers } from "./providers";
-import business from "@/data/business";
+import business from "@/app/data/business";
 
 const openSans = Open_Sans({
   subsets: ["latin"],

@@ -6,7 +6,7 @@ import { GlobalErrorContext } from "@/store/error-context";
 import classes from "./SubscriptionSection.module.scss";
 
 import { join } from "@/utils/helper";
-import business from "@/data/business";
+import business from "@/app/data/business";
 import { startProgress, stopProgress } from "next-nprogress-bar";
 
 import Section from "@/components/Elements/Section/Section";

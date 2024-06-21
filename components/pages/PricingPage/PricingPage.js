@@ -5,7 +5,7 @@ import Page from "@/components/Elements/Page/Page";
 import Section from "@/components/Elements/Section/Section";
 import Price from "./Price/Price";
 
-import business from "@/data/business";
+import business from "@/app/data/business";
 
 const PricingPage = () => {
   return (

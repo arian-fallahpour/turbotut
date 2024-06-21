@@ -5,7 +5,7 @@ import AppError from "./AppError";
 import APIQuery from "./APIQuery";
 import { toCap } from "./helper";
 
-import collections from "@/data/dashboard/collections";
+import collections from "@/app/data/dashboard/collections";
 
 const getName = (Model, plural = false) => {
   if (plural) {

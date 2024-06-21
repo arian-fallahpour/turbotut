@@ -3,7 +3,7 @@ import slugify from "slugify";
 import S3Object from "@/utils/S3Object";
 import AppError from "@/utils/AppError";
 import sharp from "sharp";
-import enumValues from "@/data/enum-values";
+import enumValues from "@/app/data/enum-values";
 import mongooseFuzzySearching from "mongoose-fuzzy-searching";
 
 const courseSchema = new mongoose.Schema({

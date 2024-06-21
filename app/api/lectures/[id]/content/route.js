@@ -54,7 +54,8 @@ export const GET = routeHandler(
     let contents;
     try {
       contents = await fsp.readFile(
-        process.cwd() + `/data/contents/${course.slug}/${lecture.slug}.json`,
+        process.cwd() +
+          `/app/data/contents/${course.slug}/${lecture.slug}.json`,
         "utf8"
       );
       contents = JSON.parse(contents);

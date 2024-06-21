@@ -3,7 +3,7 @@ import classes from "./CollectionPage.module.scss";
 
 import CollectionSection from "./CollectionSection/CollectionSection";
 
-import collectionsData from "@/data/dashboard/collections";
+import collectionsData from "@/app/data/dashboard/collections";
 
 const CollectionPage = ({ collectionName, searchParams }) => {
   const collectionData = collectionsData.find(

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 
-import business from "@/data/business";
+import business from "@/app/data/business";
 
 import { loadStripe } from "@stripe/stripe-js";
 import {

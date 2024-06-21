@@ -5,7 +5,7 @@ import classes from "./Actions.module.scss";
 import Button from "@/components/Elements/Button/Button";
 import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
 
-import actions from "@/data/dashboard/actions";
+import actions from "@/app/data/dashboard/actions";
 
 const Actions = ({ name }) => {
   const data = actions[name];

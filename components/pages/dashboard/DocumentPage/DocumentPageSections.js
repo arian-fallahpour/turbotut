@@ -4,7 +4,7 @@ import { toSingular } from "@/utils/helper";
 
 import Collection from "./Collection/Collection";
 
-import collectionsData from "@/data/dashboard/collections";
+import collectionsData from "@/app/data/dashboard/collections";
 import Content from "./Content/Content";
 
 const DocumentPageSections = ({ document, collectionData }) => {

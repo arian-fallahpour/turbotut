@@ -8,7 +8,7 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import Button from "@/components/Elements/Button/Button";
 import DocumentPageHeader from "./DocumentPageHeader";
 
-import collectionsData from "@/data/dashboard/collections";
+import collectionsData from "@/app/data/dashboard/collections";
 import DocumentPageSections from "./DocumentPageSections";
 import DocumentPageDetails from "./DocumentPageDetails";
 import DocumentPageProvider from "./DocumentPageProvider";

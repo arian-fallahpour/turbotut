@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Footer.module.scss";
 import Button from "@/components/Elements/Button/Button";
 
-import business from "@/data/business";
+import business from "@/app/data/business";
 
 const Footer = () => {
   return (

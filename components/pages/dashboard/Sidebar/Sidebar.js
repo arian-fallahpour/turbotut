@@ -6,7 +6,7 @@ import Button from "@/components/Elements/Button/Button";
 
 import { join } from "@/utils/helper";
 
-import collectionsData from "@/data/dashboard/collections";
+import collectionsData from "@/app/data/dashboard/collections";
 import { useParams } from "next/navigation";
 
 const Sidebar = () => {

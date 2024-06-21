@@ -1,7 +1,7 @@
 import Section from "@/components/Elements/Section/Section";
 import Accordion from "@/components/Elements/Accordion/Accordion";
 import React from "react";
-import business from "@/data/business";
+import business from "@/app/data/business";
 
 const InfoSection = () => {
   return (

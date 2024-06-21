@@ -4,7 +4,7 @@ import classes from "./Subject.module.scss";
 import { join } from "@/utils/helper";
 import Course from "../Course/Course";
 
-import subjects from "@/data/subjects.json";
+import subjects from "@/app/data/subjects.json";
 
 const Subject = ({ subject, courses }) => {
   const { emoji, color } = subjects[subject];

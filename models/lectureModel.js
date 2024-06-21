@@ -4,7 +4,7 @@ import slugify from "slugify";
 import Course from "./courseModel";
 import AppError from "@/utils/AppError";
 import { doesObjectIdExist } from "@/utils/database";
-import enumValues from "@/data/enum-values";
+import enumValues from "@/app/data/enum-values";
 import mongooseFuzzySearching from "mongoose-fuzzy-searching";
 
 const lectureSchema = new mongoose.Schema({
