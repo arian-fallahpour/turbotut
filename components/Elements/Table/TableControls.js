@@ -29,7 +29,10 @@ const TableControls = ({
       >
         <ArrowBackRoundedIcon fontSize="inherit" />
       </Button>
-      <div className={classes.ControlsPage}>{`Page ${page}/${totalPages}`}</div>
+      <div className={classes.ControlsPage}>{`Page ${page}/${Math.min(
+        totalPages,
+        1
+      )}`}</div>
       <Button
         className={classes.ControlsButton}
         styleName="glass"
