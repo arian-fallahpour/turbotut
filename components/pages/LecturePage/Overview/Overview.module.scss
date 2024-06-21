@@ -24,6 +24,7 @@
     position: relative;
     border-radius: var(--bd-radius);
     overflow: hidden;
+    border: 0.1rem solid var(--c-panel-bd);
 
     & > img {
       object-fit: cover;
