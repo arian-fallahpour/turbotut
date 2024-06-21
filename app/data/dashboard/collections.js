@@ -69,7 +69,10 @@ const data = [
   {
     name: "lectures",
     icon: <BookIcon fontSize="inherit" />,
-    tableFields: [{ label: "name", name: "name", spacing: "1fr" }],
+    tableFields: [
+      { label: "name", name: "name", spacing: "25rem" },
+      { label: "type", name: "type", spacing: "1fr" },
+    ],
     viewableFields: [
       { type: "id", name: "chapter", collection: "chapters", isParentId: true },
       { type: "string", name: "name" },
