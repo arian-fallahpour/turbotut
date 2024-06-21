@@ -115,6 +115,7 @@ courseSchema.methods.uploadImageToS3 = async function (imageFile) {
   );
 
   // If image does not exist, create key
+  console.log("this.image: ", this.image);
   let key;
   if (!this.image) {
     const filename = imageS3Object.getUniqueFilename(this.slug);
