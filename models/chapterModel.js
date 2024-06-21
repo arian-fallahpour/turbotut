@@ -46,21 +46,10 @@ chapterSchema.plugin(mongooseFuzzySearching, {
   fields: [{ name: "name", minSize: 3, prefixOnly: true }],
 });
 
-// Create a new slug every time name is modified
-chapterSchema.pre("save", function (next) {
-  if (this.isNew) {
-    this.slug = slugify(this.name);
-  }
-
-  next();
-});
-
 chapterSchema.pre("save", function (next) {
   this.wasNew = this.isNew;
   next();
 });
-
-// TODO: update slug
 
 // Adds chapter to course
 chapterSchema.post("save", { document: true }, async function (doc, next) {

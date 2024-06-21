@@ -48,15 +48,6 @@ lectureSchema.plugin(mongooseFuzzySearching, {
   fields: [{ name: "name", minSize: 3, prefixOnly: true }],
 });
 
-// Create a new slug every time name is modified
-lectureSchema.pre("save", function (next) {
-  if (this.isNew) {
-    this.slug = slugify(this.name);
-  }
-
-  next();
-});
-
 lectureSchema.pre("save", function (next) {
   this.wasNew = this.isNew;
   next();
@@ -83,10 +74,7 @@ lectureSchema.post("save", { document: true }, async function (doc, next) {
   if (!doc.wasNew) return;
 
   // Check if chapter exists
-  const chapter = await Chapter.findById(doc.chapter).select({
-    lectures: 1,
-    course: 1,
-  });
+  const chapter = await Chapter.findById(doc.chapter);
   if (!chapter) return next(new AppError("Chapter was not found", 404));
 
   // Add lecture to chapter
@@ -95,10 +83,8 @@ lectureSchema.post("save", { document: true }, async function (doc, next) {
   await chapter.save();
 
   // Find course
-  const course = await Course.findById(chapter.course).select({
-    lecturesCount: 1,
-  });
-  if (!course) return next();
+  const course = await Course.findById(chapter.course);
+  if (!course) return next(new AppError("Course was not found", 404));
 
   // Update course's lecturesCount
   course.lecturesCount += 1;
