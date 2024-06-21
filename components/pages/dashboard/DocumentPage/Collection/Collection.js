@@ -51,7 +51,8 @@ const Collection = ({ className, collectionData, queryObject = {} }) => {
 
     const res = await fetch(url, {
       method: "GET",
-      next: { revalidate: 10 },
+      cache: "force-cache",
+      next: { revalidate: 60 },
     });
     const resData = await res.json();
 
