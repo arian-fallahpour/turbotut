@@ -48,6 +48,15 @@ lectureSchema.plugin(mongooseFuzzySearching, {
   fields: [{ name: "name", minSize: 3, prefixOnly: true }],
 });
 
+// Create a new slug every time name is modified
+lectureSchema.pre("save", function (next) {
+  if (this.isNew) {
+    this.slug = slugify(this.name);
+  }
+
+  next();
+});
+
 lectureSchema.pre("save", function (next) {
   this.wasNew = this.isNew;
   next();

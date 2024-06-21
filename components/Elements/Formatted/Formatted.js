@@ -135,8 +135,6 @@ const Formatted = ({
 
 export default Formatted;
 
-// TODO: add edit mode
-
 export const FormattedContent = ({ children, ...otherProps }) => {
   useEffect(() => {
     // const content = document.getElementById("lecture-section");
