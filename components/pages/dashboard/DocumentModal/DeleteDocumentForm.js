@@ -43,8 +43,8 @@ const DeleteDocumentForm = ({
       if (!res.ok) {
         const resData = await res.json();
         setGlobalError(new Error(resData.message));
+        setDisabled(false);
       } else {
-        hideModal();
         router.back();
       }
     };

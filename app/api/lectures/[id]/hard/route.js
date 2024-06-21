@@ -27,9 +27,10 @@ export const DELETE = routeHandler(
 
     // Delete lecture
     await lecture.deleteOne();
-    // NOTE: We will not delete lecture's content so that we can keep track of it
 
     return new Response(null, { status: 204 });
   },
   { requiresSession: true, restrictTo: ["admin"] }
 );
+
+// NOTE: We will not delete lecture's content so that we can keep track of it

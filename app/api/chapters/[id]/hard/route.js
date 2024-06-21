@@ -17,7 +17,6 @@ export const DELETE = routeHandler(
 
     // Delete chapter's lectures (Query is ok in this case)
     await Lecture.deleteMany({ chapter: chapter.id });
-    // NOTE: We will not delete lecture's content so that we can keep track of it
 
     // Update course
     const course = await Course.findOne({ chapters: chapter._id });
@@ -32,3 +31,5 @@ export const DELETE = routeHandler(
   },
   { requiresSession: true, restrictTo: ["admin"] }
 );
+
+// NOTE: We will not delete lecture's content so that we can keep track of it

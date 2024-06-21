@@ -51,9 +51,9 @@ const CreateDocumentForm = ({
         Object.keys(resData.errors).forEach((key, i) =>
           setError(key, resData.errors[key])
         );
+        setDisabled(false);
       } else {
         hideModal();
-
         fetchCollection();
       }
     };
