@@ -13,7 +13,6 @@ export const PATCH = routeHandler(
 
     // If image was provided, upload replacement image
     const imageFile = req.data.formData.image;
-    console.log(imageFile && imageFile.size > 0);
     if (imageFile && imageFile.size > 0) {
       const appError = await course.uploadImageToS3(imageFile);
       if (appError) return appError;
