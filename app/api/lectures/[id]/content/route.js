@@ -58,8 +58,13 @@ export const GET = routeHandler(
         "utf8"
       );
       contents = JSON.parse(contents);
+      console.log(contents);
     } catch (err) {
-      return new AppError("This lecture currently does not have any content");
+      console.log(err);
+      return new AppError(
+        "Something went wrong when reading lecture's contents",
+        400
+      );
     }
 
     // Send response
