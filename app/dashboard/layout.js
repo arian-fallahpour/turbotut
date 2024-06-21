@@ -5,6 +5,7 @@ import Section from "@/components/Elements/Section/Section";
 import Sidebar from "@/components/pages/dashboard/Sidebar/Sidebar";
 import { getServerSession } from "next-auth";
 import { options } from "../api/auth/[...nextauth]/options";
+import { Suspense } from "react";
 
 export default async function Layout({ children, params }) {
   const session = await getServerSession(options);
@@ -20,7 +21,7 @@ export default async function Layout({ children, params }) {
     >
       <Section limit={null} className={classes.DashboardSection}>
         <Sidebar />
-        {children}
+        <Suspense>{children}</Suspense>
       </Section>
     </Page>
   );
