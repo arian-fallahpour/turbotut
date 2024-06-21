@@ -78,7 +78,6 @@ const data = [
     editableFields: [
       { type: "id", name: "chapter", collection: "chapters", isParentId: true },
       { type: "string", name: "name" },
-      { type: "date", name: "createdAt" },
       { type: "boolean", name: "isArchived" },
       { type: "enum", name: "type", values: enumValues.lecture.type },
     ],
