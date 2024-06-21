@@ -38,7 +38,6 @@ const EditDocumentForm = ({
       Object.keys(otherFields).forEach((key) =>
         formData.append(key, otherFields[key])
       );
-      formData.forEach((v) => console.log(v));
 
       startProgress();
       setDisabled(true);
