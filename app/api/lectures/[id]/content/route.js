@@ -20,8 +20,16 @@ export const GET = routeHandler(
 
     await connectDB();
 
+    // Find lecture
+    const lecture = await Lecture.findById(params.id).select({
+      type: 1,
+      chapter: 1,
+      slug: 1,
+    });
+    if (!lecture) return new AppError("Lecture does not exist", 404);
+
     // Check if user has a premium subscription if not admin
-    if (user.role !== "admin") {
+    if (lecture.type === "paid" && user.role !== "admin") {
       const subscription = await Subscription.findOne({
         user: user._id,
         startsAt: { $lt: new Date(Date.now()) },
@@ -30,14 +38,6 @@ export const GET = routeHandler(
       if (!subscription)
         return new AppError("Buy premium to gain access to this lecture", 401);
     }
-
-    // Find lecture
-    const lecture = await Lecture.findById(params.id).select({
-      type: 1,
-      chapter: 1,
-      slug: 1,
-    });
-    if (!lecture) return new AppError("Lecture does not exist", 404);
 
     // Find content associated with lecture
     const content = await Content.findOne({ lecture: params.id }).select({
