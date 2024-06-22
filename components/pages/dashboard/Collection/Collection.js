@@ -24,6 +24,7 @@ const Collection = ({ className, collectionData, queryObject = {} }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const searchParams = useSearchParams();
+  const page = searchParams.get("page") || 1;
 
   const { collections, setCollection } = useContext(DocumentPageContext);
   const collection = collections[collectionData.name];
@@ -33,7 +34,7 @@ const Collection = ({ className, collectionData, queryObject = {} }) => {
 
     const url = queryString.stringifyUrl({
       url: `/api/${collectionData.name}`,
-      query: { ...queryObject, page: searchParams.get("page") },
+      query: { ...queryObject, page },
     });
 
     const res = await fetch(url, {
@@ -68,7 +69,7 @@ const Collection = ({ className, collectionData, queryObject = {} }) => {
       <CollectionHeader
         collectionData={collectionData}
         limit={queryObject.limit}
-        page={searchParams.get("page")}
+        page={page}
         fetchCollection={fetchCollectionHandler}
       />
 
