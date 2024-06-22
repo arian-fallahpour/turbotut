@@ -1,5 +1,10 @@
 import { headers } from "next/headers";
 
+// PREVENTS ERROR
+import Chapter from "@/models/chapterModel";
+import Course from "@/models/courseModel";
+import Lecture from "@/models/lectureModel";
+
 /** Fetches data with next-auth session in headers */
 export async function fetchAuth(url, options = {}) {
   options = {
@@ -27,5 +32,5 @@ export async function fetchCourse(courseSlug) {
   const res = await fetchAuth(`${getDomain()}/api/courses/info/${courseSlug}`);
   const resData = await res.json();
 
-  return resData.data.course;
+  return JSON.parse(JSON.stringify(resData.data.course));
 }
