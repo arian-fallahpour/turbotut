@@ -32,5 +32,9 @@ export async function fetchCourse(courseSlug) {
   const res = await fetchAuth(`${getDomain()}/api/courses/info/${courseSlug}`);
   const resData = await res.json();
 
+  if (!res.ok) {
+    console.error("EE", res);
+  }
+
   return JSON.parse(JSON.stringify(resData.data.course));
 }
