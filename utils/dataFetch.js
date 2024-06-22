@@ -1,9 +1,6 @@
 import { headers } from "next/headers";
 
-// PREVENTS ERROR
-import Chapter from "@/models/chapterModel";
-import Course from "@/models/courseModel";
-import Lecture from "@/models/lectureModel";
+import { redirect } from "next/navigation";
 
 /** Fetches data with next-auth session in headers */
 export async function fetchAuth(url, options = {}) {
@@ -32,9 +29,9 @@ export async function fetchCourse(courseSlug) {
   const res = await fetchAuth(`${getDomain()}/api/courses/info/${courseSlug}`);
   const resData = await res.json();
 
-  if (!res.ok) {
-    console.error("EE", res);
+  if (resData && resData.data && resData.data.course) {
+    return JSON.parse(JSON.stringify(resData.data.course));
+  } else {
+    redirect("/courses");
   }
-
-  return JSON.parse(JSON.stringify(resData.data.course));
 }
