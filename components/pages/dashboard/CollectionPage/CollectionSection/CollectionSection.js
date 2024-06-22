@@ -45,6 +45,7 @@ const getData = async function (collectionData, queryObject) {
 
 const CollectionSection = async ({ collectionData, searchParams }) => {
   searchParams.limit = 10;
+
   const { data, error } = await getData(collectionData, searchParams);
   const documents = data[collectionData.name];
 

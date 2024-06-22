@@ -16,35 +16,24 @@ import CollectionHeader from "./CollectionHeader";
 import LoaderBlock from "@/components/Elements/Loader/LoaderBlock";
 import { DocumentPageContext } from "@/store/document-page-context";
 import queryString from "query-string";
+import { useSearchParams } from "next/navigation";
 
 const Collection = ({ className, collectionData, queryObject = {} }) => {
   const gridTemplateColumns = createGridTemplateColumns(collectionData);
 
-  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const searchParams = useSearchParams();
 
   const { collections, setCollection } = useContext(DocumentPageContext);
   const collection = collections[collectionData.name];
-
-  const prevPageHandler = () => {
-    setPage((p) => (page > 1 ? p - 1 : p));
-  };
-
-  const nextPageHandler = () => {
-    setPage((p) =>
-      collection && page * queryObject.limit < collection.totalResults
-        ? p + 1
-        : p
-    );
-  };
 
   const fetchCollectionHandler = useCallback(async () => {
     setLoading(true);
 
     const url = queryString.stringifyUrl({
       url: `/api/${collectionData.name}`,
-      query: { ...queryObject, page },
+      query: { ...queryObject, page: searchParams.get("page") },
     });
 
     const res = await fetch(url, {
@@ -67,7 +56,7 @@ const Collection = ({ className, collectionData, queryObject = {} }) => {
         collectionData.name
       );
     }
-  }, [collectionData.name, page, queryObject, setCollection]);
+  }, [collectionData.name, searchParams, queryObject, setCollection]);
 
   useEffect(() => {
     fetchCollectionHandler();
@@ -79,9 +68,7 @@ const Collection = ({ className, collectionData, queryObject = {} }) => {
       <CollectionHeader
         collectionData={collectionData}
         limit={queryObject.limit}
-        page={page}
-        onNextPage={nextPageHandler}
-        onPrevPage={prevPageHandler}
+        page={searchParams.get("page")}
         fetchCollection={fetchCollectionHandler}
       />
 

@@ -51,6 +51,7 @@ const CollectionHeader = ({
             isNextDisabled={!notLastPage}
             onPrevPage={onPrevPage}
             onNextPage={onNextPage}
+            useParams
           />
         )}
 
