@@ -29,7 +29,7 @@ const TableControls = ({
       >
         <ArrowBackRoundedIcon fontSize="inherit" />
       </Button>
-      <div className={classes.ControlsPage}>{`Page ${page}/${Math.min(
+      <div className={classes.ControlsPage}>{`Page ${page}/${Math.max(
         totalPages,
         1
       )}`}</div>
