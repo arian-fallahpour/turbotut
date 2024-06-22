@@ -7,24 +7,24 @@ import Formatted, {
 } from "@/components/Elements/Formatted/Formatted";
 import { fetchAuth, getDomain } from "@/utils/dataFetch";
 
-// Should be revalidated every 1-6 hours or so
+// Should be revalidated every 60 seconds
 const getData = async (lectureId) => {
   const res = await fetchAuth(
     `${getDomain()}/api/lectures/${lectureId}/content`,
     {
       cache: "force-cache",
-      next: { revalidate: 60 * 60 * 4 },
+      next: { revalidate: 60 },
     }
   );
 
-  const data = await res.json();
+  const resData = await res.json();
 
   let error;
   if (!res.ok) {
-    error = new Error(data.message);
+    error = new Error(resData.message);
   }
 
-  return { contents: data.data?.contents, error };
+  return { contents: resData.data?.contents, error };
 };
 
 const LectureContent = async ({ lecture }) => {

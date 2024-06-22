@@ -28,6 +28,11 @@ export const GET = routeHandler(
     });
     if (!lecture) return new AppError("Lecture does not exist", 404);
 
+    // Check if lecture is archived
+    if (lecture.isArchived) {
+      return new AppError("Lecture no longer exists", 400);
+    }
+
     // Check if user has a premium subscription if not admin
     if (lecture.type === "paid" && user.role !== "admin") {
       const subscription = await Subscription.findOne({
