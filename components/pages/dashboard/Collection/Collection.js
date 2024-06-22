@@ -57,7 +57,7 @@ const Collection = ({ className, collectionData, queryObject = {} }) => {
         collectionData.name
       );
     }
-  }, [collectionData.name, searchParams, queryObject, setCollection]);
+  }, [collectionData.name, page, queryObject, setCollection]);
 
   useEffect(() => {
     fetchCollectionHandler();
