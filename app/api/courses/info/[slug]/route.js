@@ -1,8 +1,12 @@
-import Course from "@/models/courseModel";
 import AppError from "@/utils/AppError";
 import { routeHandler } from "@/utils/authentication";
 import { connectDB } from "@/utils/database";
 import { NextResponse } from "next/server";
+
+// PREVENTS ERROR
+import Chapter from "@/models/chapterModel";
+import Course from "@/models/courseModel";
+import Lecture from "@/models/lectureModel";
 
 export const GET = routeHandler(
   async function (req, { params }) {

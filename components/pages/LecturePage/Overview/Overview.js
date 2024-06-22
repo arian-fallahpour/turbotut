@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Overview.module.scss";
 import Image from "next/image";
 import Button from "@/components/Elements/Button/Button";
+
 const Overview = ({ course }) => {
   return (
     <div className={classes.Overview}>
