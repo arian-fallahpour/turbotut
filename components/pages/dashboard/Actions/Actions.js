@@ -3,7 +3,8 @@
 import React from "react";
 import classes from "./Actions.module.scss";
 import Button from "@/components/Elements/Button/Button";
-import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
+
+import MoreIcon from "@/components/Elements/Icons/MoreIcon";
 
 import actions from "@/app/data/dashboard/actions";
 
@@ -17,7 +18,7 @@ const Actions = ({ name }) => {
         styleName="glass"
         variantName="white"
       >
-        <MoreVertRoundedIcon fontSize="inherit" />
+        <MoreIcon />
       </Button>
       <div className={classes.ActionsList}>
         {data?.length > 0 &&

@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
+import { usePathname, useRouter } from "next/navigation";
 import classes from "./Table.module.scss";
 
 import Button from "../Button/Button";
 
-import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
-import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
-import { usePathname, useRouter } from "next/navigation";
+import WestIcon from "../Icons/WestIcon";
+import EastIcon from "../Icons/EastIcon";
 
 const TableControls = ({
   page,
@@ -48,7 +48,7 @@ const TableControls = ({
         isDisabled={isPrevDisabled}
         onClick={onPrevPageHandler}
       >
-        <ArrowBackRoundedIcon fontSize="inherit" />
+        <WestIcon />
       </Button>
       <div className={classes.ControlsPage}>{`Page ${page}/${Math.max(
         totalPages,
@@ -62,7 +62,7 @@ const TableControls = ({
         isDisabled={isNextDisabled}
         onClick={onNextPageHandler}
       >
-        <ArrowForwardRoundedIcon fontSize="inherit" />
+        <EastIcon />
       </Button>
     </div>
   );

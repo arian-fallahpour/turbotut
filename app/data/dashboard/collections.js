@@ -1,14 +1,13 @@
-import SchoolIcon from "@mui/icons-material/SchoolRounded";
-import LocalLibraryIcon from "@mui/icons-material/LocalLibraryRounded";
-import BookIcon from "@mui/icons-material/BookRounded";
-import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
-
 import enumValues from "../enum-values";
+import SchoolIcon from "@/components/Elements/Icons/SchoolIcon";
+import LibraryIcon from "@/components/Elements/Icons/LibraryIcon";
+import BookIcon from "@/components/Elements/Icons/BookIcon";
+import ArticleIcon from "@/components/Elements/Icons/ArticleIcon";
 
 const data = [
   {
     name: "courses",
-    icon: <SchoolIcon fontSize="inherit" />,
+    icon: <SchoolIcon />,
     tableFields: [
       { label: "name", name: "name", spacing: "25rem" },
       { label: "subject", name: "subject", spacing: "1fr" },
@@ -46,7 +45,7 @@ const data = [
   },
   {
     name: "chapters",
-    icon: <LocalLibraryIcon fontSize="inherit" />,
+    icon: <LibraryIcon />,
     tableFields: [
       { label: "name", name: "name", spacing: "25rem" },
       { label: "lectures", name: "lecturesCount", spacing: "1fr" },
@@ -68,7 +67,7 @@ const data = [
   },
   {
     name: "lectures",
-    icon: <BookIcon fontSize="inherit" />,
+    icon: <BookIcon />,
     tableFields: [
       { label: "name", name: "name", spacing: "25rem" },
       { label: "type", name: "type", spacing: "1fr" },
@@ -91,7 +90,7 @@ const data = [
   },
   {
     name: "contents",
-    icon: <ArticleRoundedIcon fontSize="inherit" />,
+    icon: <ArticleIcon fontSize="inherit" />,
     tableFields: [
       { label: "lecture", name: "lecture", spacing: "25rem" },
       { label: "url", name: "url", spacing: "1fr" },

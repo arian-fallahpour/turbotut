@@ -8,11 +8,10 @@ import { toSingular } from "@/utils/helper";
 
 import DocumentModal from "../DocumentModal/DocumentModal";
 import EditDocumentForm from "../DocumentModal/EditDocumentForm";
-
-import EditRoundedIcon from "@mui/icons-material/EditRounded";
-import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
-import Button from "@/components/Elements/Button/Button";
 import DeleteDocumentForm from "../DocumentModal/DeleteDocumentForm";
+import Button from "@/components/Elements/Button/Button";
+import EditIcon from "@/components/Elements/Icons/EditIcon";
+import DeleteIcon from "@/components/Elements/Icons/DeleteIcon";
 
 const Header = ({ collectionData }) => {
   const { showModal } = useContext(ModalContext);
@@ -60,7 +59,7 @@ const Header = ({ collectionData }) => {
           variantName="white"
           onClick={editDocumentHandler}
         >
-          <EditRoundedIcon fontSize="inherit" />
+          <EditIcon />
         </Button>
         <Button
           className={classes.HeaderButton}
@@ -68,7 +67,7 @@ const Header = ({ collectionData }) => {
           variantName="red"
           onClick={deleteDocumentHandler}
         >
-          <DeleteRoundedIcon fontSize="inherit" />
+          <DeleteIcon />
         </Button>
       </div>
     </div>

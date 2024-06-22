@@ -1,6 +1,6 @@
-import FlashOnRoundedIcon from "@mui/icons-material/FlashOnRounded";
-import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
-import KeyRoundedIcon from "@mui/icons-material/KeyRounded";
+import LightningIcon from "@/components/Elements/Icons/LightningIcon";
+import KeyIcon from "@/components/Elements/Icons/KeyIcon";
+import SchoolIcon from "@/components/Elements/Icons/SchoolIcon";
 
 const business = {
   name: "TurboTut",
@@ -13,15 +13,15 @@ const business = {
       duration: "monthly",
       benefits: [
         {
-          IconTag: FlashOnRoundedIcon,
+          IconTag: LightningIcon,
           description: "Understand all your subjects quickly and effectively",
         },
         {
-          IconTag: SchoolRoundedIcon,
+          IconTag: SchoolIcon,
           description: "In depth coverage of each subject",
         },
         {
-          IconTag: KeyRoundedIcon,
+          IconTag: KeyIcon,
           description:
             "Access to secret study tricks and critical thinking questions",
         },

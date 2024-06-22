@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useContext } from "react";
-import classes from "./GlobalError.module.scss";
 import { GlobalErrorContext } from "@/store/error-context";
-
-import ErrorRoundedIcon from "@mui/icons-material/ErrorRounded";
+import classes from "./GlobalError.module.scss";
 import { join } from "@/utils/helper";
+
+import ErrorIcon from "../Icons/ErrorIcon";
 
 const GlobalError = () => {
   const { visible, globalError } = useContext(GlobalErrorContext);
@@ -15,7 +15,7 @@ const GlobalError = () => {
       className={join(classes.GlobalError, visible ? classes.visible : null)}
     >
       <div className={classes.GlobalErrorIcon}>
-        <ErrorRoundedIcon fontSize="inherit" />
+        <ErrorIcon />
       </div>
       <div className={classes.GlobalErrorMessage}>{globalError}</div>
     </div>

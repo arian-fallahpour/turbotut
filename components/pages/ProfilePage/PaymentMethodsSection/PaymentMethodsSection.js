@@ -9,13 +9,14 @@ import Card from "./Card";
 import Modal from "./Modal";
 import Section from "@/components/Elements/Section/Section";
 import Button from "@/components/Elements/Button/Button";
-import AddRoundedIcon from "@mui/icons-material/AddRounded";
+
 import Reveal from "@/components/Elements/Reveal/Reveal";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 
 import { loadStripe } from "@stripe/stripe-js";
 import { startProgress, stopProgress } from "next-nprogress-bar";
 import { GlobalErrorContext } from "@/store/error-context";
+import AddIcon from "@/components/Elements/Icons/AddIcon";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
@@ -161,7 +162,7 @@ const PaymentMethodsSection = ({ className, limit }) => {
             className={classes.PaymentMethodsExpand}
             onClick={toggleRevealedHandler}
           >
-            <AddRoundedIcon fontSize="inherit" />
+            <AddIcon />
           </Button>
         </div>
         <Reveal revealed={revealed}>

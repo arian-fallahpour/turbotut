@@ -2,14 +2,14 @@
 
 import React, { useState } from "react";
 import classes from "./Course.module.scss";
+import { join } from "@/utils/helper";
 
 import Image from "next/image";
-import { join } from "@/utils/helper";
 import Link from "next/link";
 import Button from "@/components/Elements/Button/Button";
-
-import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
 import Reveal from "@/components/Elements/Reveal/Reveal";
+
+import PlayIcon from "@/components/Elements/Icons/PlayIcon";
 
 const Course = ({ data }) => {
   const [visible, setVisible] = useState(false);
@@ -67,7 +67,7 @@ const Course = ({ data }) => {
           </div>
 
           <Button className={classes.CourseButton} styleName="shiny">
-            <PlayArrowRoundedIcon fontSize="inherit" />
+            <PlayIcon />
           </Button>
         </div>
       </article>

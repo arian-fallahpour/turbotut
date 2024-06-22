@@ -1,11 +1,9 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import classes from "./ErrorBlock.module.scss";
 import { join } from "@/utils/helper";
 
-import ErrorRoundedIcon from "@mui/icons-material/ErrorRounded";
-import InfoRoundedIcon from "@mui/icons-material/InfoRounded";
+import ErrorIcon from "../Icons/ErrorIcon";
+import InfoIcon from "../Icons/InfoIcon";
 
 const ErrorBlock = ({
   className,
@@ -15,10 +13,6 @@ const ErrorBlock = ({
   hideGradient,
   ...otherProps
 }) => {
-  const [showIcon, setShowIcon] = useState(false);
-
-  useEffect(() => setShowIcon(true), []); // prevents weird hydration error
-
   return (
     <div className={join(className, classes.ErrorBlock)} {...otherProps}>
       <div
@@ -29,12 +23,10 @@ const ErrorBlock = ({
         )}
       >
         {!hideGradient && <span className={classes.ErrorBlockGradient} />}
-        {showIcon && (
-          <div className={classes.ErrorBlockIcon}>
-            {type === "error" && <ErrorRoundedIcon fontSize="inherit" />}
-            {type === "info" && <InfoRoundedIcon fontSize="inherit" />}
-          </div>
-        )}
+        <div className={classes.ErrorBlockIcon}>
+          {type === "error" && <ErrorIcon fontSize="inherit" />}
+          {type === "info" && <InfoIcon fontSize="inherit" />}
+        </div>
         <p
           className={join(
             "paragraph",

@@ -5,13 +5,13 @@ import classes from "./Collection.module.scss";
 
 import TableControls from "@/components/Elements/Table/TableControls";
 
-import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import { toSingular } from "@/utils/helper";
 import { TableButtonRounded } from "@/components/Elements/Table/Table";
 import { ModalContext } from "@/store/modal-context";
 import DocumentModal from "../DocumentModal/DocumentModal";
 import CreateDocumentForm from "../DocumentModal/CreateDocumentForm";
 import { DocumentPageContext } from "@/store/document-page-context";
+import AddIcon from "@/components/Elements/Icons/AddIcon";
 
 const CollectionHeader = ({
   collectionData,
@@ -56,7 +56,7 @@ const CollectionHeader = ({
         )}
 
         <TableButtonRounded styleName="glass" onClick={handleCreateDocument}>
-          <AddRoundedIcon fontSize="inherit" />
+          <AddIcon />
         </TableButtonRounded>
       </div>
     </div>

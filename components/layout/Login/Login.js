@@ -2,15 +2,14 @@
 
 import React from "react";
 import classes from "./Login.module.scss";
+import { signIn } from "next-auth/react";
+import { startProgress } from "next-nprogress-bar";
 
 import Button from "@/components/Elements/Button/Button";
-
-import { signIn } from "next-auth/react";
 import LogoGoogle from "@/public/images/logos/LogoGoogle";
 import LogoGithub from "@/public/images/logos/LogoGithub";
 
-import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import { startProgress } from "next-nprogress-bar";
+import CloseIcon from "@/components/Elements/Icons/CloseIcon";
 
 const Login = ({ onExit }) => {
   return (
@@ -23,7 +22,7 @@ const Login = ({ onExit }) => {
           variantName="orange"
           onClick={onExit}
         >
-          <CloseRoundedIcon fontSize="inherit" />
+          <CloseIcon />
         </Button>
       </div>
 

@@ -38,7 +38,7 @@ const NavProfile = ({ user }) => {
     <div className={classes.NavProfile}>
       {user ? (
         <Link className={classes.NavProfileButton} href="/profile">
-          <Image alt={user.name} src={user.image} fill />
+          <Image alt={user.firstName} src={user.image} fill />
         </Link>
       ) : (
         <Button onClick={loginHandler}>login</Button>

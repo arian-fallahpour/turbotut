@@ -7,11 +7,11 @@ import TableControls from "@/components/Elements/Table/TableControls";
 import { useRouter } from "next/navigation";
 import { startProgress } from "next-nprogress-bar";
 import { TableButtonRounded } from "@/components/Elements/Table/Table";
-import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import { toSingular } from "@/utils/helper";
 import { ModalContext } from "@/store/modal-context";
 import DocumentModal from "../../DocumentModal/DocumentModal";
 import CreateDocumentForm from "../../DocumentModal/CreateDocumentForm";
+import AddIcon from "@/components/Elements/Icons/AddIcon";
 
 const CollectionHeader = ({ totalResults, collectionData, searchParams }) => {
   const { showModal } = useContext(ModalContext);
@@ -61,7 +61,7 @@ const CollectionHeader = ({ totalResults, collectionData, searchParams }) => {
         />
 
         <TableButtonRounded styleName="glass" onClick={handleCreateDocument}>
-          <AddRoundedIcon fontSize="inherit" />
+          <AddIcon />
         </TableButtonRounded>
       </div>
     </div>

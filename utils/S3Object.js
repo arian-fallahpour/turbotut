@@ -7,7 +7,6 @@ import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
 import crypto from "crypto";
 import AppError from "./AppError";
-import { KeyboardReturn } from "@mui/icons-material";
 
 const s3 = new S3Client({
   region: process.env.AWS_BUCKET_REGION,

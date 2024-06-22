@@ -7,9 +7,9 @@ import Chapter from "../Chapter/Chapter";
 import Button from "@/components/Elements/Button/Button";
 import Lecture from "../Lecture/Lecture";
 
-import WestRoundedIcon from "@mui/icons-material/WestRounded";
-import EastRoundedIcon from "@mui/icons-material/EastRounded";
 import { useParams } from "next/navigation";
+import WestIcon from "@/components/Elements/Icons/WestIcon";
+import EastIcon from "@/components/Elements/Icons/EastIcon";
 
 const Sidebar = ({ course }) => {
   const { lectureSlug } = useParams();
@@ -59,7 +59,7 @@ const Sidebar = ({ course }) => {
           isLink={!!prevUrl}
           disabled={!prevUrl}
         >
-          <WestRoundedIcon fontSize="inherit" />
+          <WestIcon />
         </Button>
         <Button
           className={classes.SidebarNavButton}
@@ -68,7 +68,7 @@ const Sidebar = ({ course }) => {
           isLink={!!nextUrl}
           disabled={!nextUrl}
         >
-          <EastRoundedIcon fontSize="inherit" />
+          <EastIcon />
         </Button>
       </nav>
     </aside>

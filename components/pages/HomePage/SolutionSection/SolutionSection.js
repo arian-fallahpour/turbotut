@@ -1,12 +1,11 @@
 import React from "react";
 import classes from "./SolutionSection.module.scss";
 
-import KeyRoundedIcon from "@mui/icons-material/KeyRounded";
-import FlashOnRoundedIcon from "@mui/icons-material/FlashOnRounded";
-
 import Section from "@/components/Elements/Section/Section";
 import Button from "@/components/Elements/Button/Button";
 import Image from "next/image";
+import KeyIcon from "@/components/Elements/Icons/KeyIcon";
+import LightningIcon from "@/components/Elements/Icons/LightningIcon";
 
 const SolutionSection = () => {
   return (
@@ -25,7 +24,7 @@ const SolutionSection = () => {
               <div className={classes.Reason}>
                 <div className={classes.ReasonContainer}>
                   <div className={classes.ReasonIcon}>
-                    <KeyRoundedIcon fontSize="inherit" />
+                    <KeyIcon />
                   </div>
                   <div className={classes.ReasonContent}>
                     <h3 className="header header-card">Captivating lectures</h3>
@@ -44,7 +43,7 @@ const SolutionSection = () => {
               <div className={classes.Reason}>
                 <div className={classes.ReasonContainer}>
                   <div className={classes.ReasonIcon}>
-                    <FlashOnRoundedIcon fontSize="inherit" />
+                    <LightningIcon />
                   </div>
                   <div className={classes.ReasonContent}>
                     <h3 className="header header-card">Special benefits</h3>

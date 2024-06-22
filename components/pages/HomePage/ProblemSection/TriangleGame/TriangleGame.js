@@ -5,9 +5,9 @@ import classes from "./TriangleGame.module.scss";
 import Button from "@/components/Elements/Button/Button";
 import { join } from "@/utils/helper";
 
-import BedtimeRoundedIcon from "@mui/icons-material/BedtimeRounded";
-import GradeRoundedIcon from "@mui/icons-material/GradeRounded";
-import ChatBubbleRoundedIcon from "@mui/icons-material/ChatBubbleRounded";
+import MoonIcon from "@/components/Elements/Icons/MoonIcon";
+import StarIcon from "@/components/Elements/Icons/StarIcon";
+import ChatIcon from "@/components/Elements/Icons/ChatIcon";
 
 const TriangleGame = () => {
   const [selected, setSelected] = useState([]);
@@ -44,7 +44,7 @@ const TriangleGame = () => {
           variantName="orange"
           onClick={() => onClickHandler(0)}
         >
-          <BedtimeRoundedIcon fontSize="inherit" />
+          <MoonIcon />
           <span>Sleep</span>
         </Button>
         <Button
@@ -57,7 +57,7 @@ const TriangleGame = () => {
           variantName="blue"
           onClick={() => onClickHandler(1)}
         >
-          <GradeRoundedIcon fontSize="inherit" />
+          <StarIcon fontSize="inherit" />
           <span>Good Grades</span>
         </Button>
         <Button
@@ -70,7 +70,7 @@ const TriangleGame = () => {
           variantName="green"
           onClick={() => onClickHandler(2)}
         >
-          <ChatBubbleRoundedIcon fontSize="inherit" />
+          <ChatIcon fontSize="inherit" />
           <span>Social Life</span>
         </Button>
       </div>

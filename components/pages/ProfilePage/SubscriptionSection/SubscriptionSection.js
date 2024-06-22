@@ -13,8 +13,9 @@ import Section from "@/components/Elements/Section/Section";
 import Button from "@/components/Elements/Button/Button";
 import Reveal from "@/components/Elements/Reveal/Reveal";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
-import AddRoundedIcon from "@mui/icons-material/AddRounded";
+
 import Modal from "./Modal";
+import AddIcon from "@/components/Elements/Icons/AddIcon";
 
 const SubscriptionSection = ({ className, limit }) => {
   const [revealed, setRevealed] = useState(false);
@@ -129,7 +130,7 @@ const SubscriptionSection = ({ className, limit }) => {
             className={classes.SubscriptionExpand}
             onClick={toggleRevealedHandler}
           >
-            <AddRoundedIcon fontSize="inherit" />
+            <AddIcon />
           </Button>
         </header>
 

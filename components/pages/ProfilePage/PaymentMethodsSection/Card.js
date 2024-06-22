@@ -1,8 +1,9 @@
 import React from "react";
 import classes from "./PaymentMethodsSection.module.scss";
+
 import Button from "@/components/Elements/Button/Button";
-import DeleteIcon from "@mui/icons-material/Delete";
 import Image from "next/image";
+import DeleteIcon from "@/components/Elements/Icons/DeleteIcon";
 
 const Card = ({
   id,
@@ -56,7 +57,7 @@ const Card = ({
         variantName="red"
         onClick={() => onDetachCard(id)}
       >
-        <DeleteIcon fontSize="inherit" />
+        <DeleteIcon />
       </Button>
     </li>
   );

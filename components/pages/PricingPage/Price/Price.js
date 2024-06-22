@@ -2,12 +2,6 @@ import React from "react";
 import classes from "./Price.module.scss";
 import Button from "@/components/Elements/Button/Button";
 
-import FlashOnRoundedIcon from "@mui/icons-material/FlashOnRounded";
-import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
-import KeyRoundedIcon from "@mui/icons-material/KeyRounded";
-
-const icons = { FlashOnRoundedIcon, SchoolRoundedIcon, KeyRoundedIcon };
-
 const Price = ({ name, price, duration, benefits }) => {
   return (
     <div className={classes.Price}>

@@ -3,8 +3,6 @@ import classes from "./DocumentPage.module.scss";
 import { fetchAuth, getDomain } from "@/utils/dataFetch";
 import { toSingular } from "@/utils/helper";
 
-import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
-
 import Button from "@/components/Elements/Button/Button";
 import DocumentPageHeader from "./DocumentPageHeader";
 
@@ -13,6 +11,7 @@ import DocumentPageSections from "./DocumentPageSections";
 import DocumentPageDetails from "./DocumentPageDetails";
 import DocumentPageProvider from "./DocumentPageProvider";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
+import WestIcon from "@/components/Elements/Icons/WestIcon";
 
 const getData = async function (collectionData, id) {
   const res = await fetchAuth(
@@ -41,7 +40,7 @@ const DocumentPage = async ({ collectionName, id }) => {
     <DocumentPageProvider documentDefault={document}>
       <main className={classes.Main}>
         <Button className={classes.Back} styleName="icon" isBackButton>
-          <ArrowBackRoundedIcon fontSize="inherit" />
+          <WestIcon />
           Back
         </Button>
 
