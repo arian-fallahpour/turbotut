@@ -1,5 +1,13 @@
 import mongoose from "mongoose";
+
+// Prevents schema undefined error
 import User from "@/models/userModel";
+import Course from "@/models/courseModel";
+import Chapter from "@/models/chapterModel";
+import Lecture from "@/models/lectureModel";
+import Subscription from "@/models/subscriptionModel";
+import Order from "@/models/orderModel";
+import Content from "@/models/contentModel";
 
 let isConnected = false;
 
