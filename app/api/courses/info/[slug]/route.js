@@ -5,7 +5,6 @@ import { NextResponse } from "next/server";
 
 export const GET = routeHandler(
   async function (req, { params }) {
-    console.log(req.data);
     if (!params.slug)
       return new AppError("Please provide the slug of a course", 400);
 
