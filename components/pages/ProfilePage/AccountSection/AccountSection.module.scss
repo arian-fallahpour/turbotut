@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 $padding: var(--gap-lg);
 
 section.AccountSection {
@@ -65,71 +67,29 @@ section.AccountSection {
   &Signout {
     justify-self: flex-end;
   }
-}
 
-.Picture {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1;
-  border-radius: 100%;
-  position: relative;
-  overflow: hidden;
+  @include respond(500px) {
+    grid-template-columns: 1fr;
 
-  &:hover > &Image,
-  &:focus-visible > &Image {
-    scale: 1.05;
+    &Sidebar {
+      border: none;
+      border-bottom: inherit;
+
+      justify-content: center;
+    }
+
+    &Image {
+      width: 20rem;
+    }
+
+    &Content {
+      & > :global(.header) {
+        text-align: center;
+      }
+    }
+
+    &Signout {
+      width: 100%;
+    }
   }
-
-  &:hover > &Label,
-  &:focus-visible > &Label {
-    opacity: 1;
-  }
-
-  &Image {
-    object-fit: cover;
-
-    transition: scale 0.2s ease;
-  }
-
-  &Input {
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    position: absolute;
-    display: block;
-    opacity: 0;
-    z-index: 3;
-    scale: 1;
-  }
-
-  &Label {
-    transition: opacity 0.2s ease;
-
-    scale: 1;
-    opacity: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    border-radius: 22rem;
-    background-color: rgba(black, 0.15);
-
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    font-size: 1.75rem;
-  }
-}
-
-.Signout {
-  // max-width: 30rem;
-  // width: 100%;
-
-  display: grid;
-  // justify-self: center;
-  justify-self: start;
 }

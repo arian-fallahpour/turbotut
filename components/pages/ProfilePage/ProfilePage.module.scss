@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 .Header {
 }
 
@@ -5,6 +7,10 @@
   display: grid;
   gap: var(--gap-lg);
   padding: 0 var(--gap-lg);
+
+  @include respond(500px) {
+    padding: 10rem var(--gap-lg);
+  }
 }
 
 section.ProfileSection {

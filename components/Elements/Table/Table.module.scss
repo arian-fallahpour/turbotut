@@ -69,12 +69,17 @@
   height: 2.75rem;
 }
 
-button.ButtonRounded {
+button.ButtonRounded:global(button) {
   width: 2.75rem;
   height: 2.75rem;
   padding: 0;
   align-items: center;
   justify-items: center;
+
+  & > svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 button.Button {

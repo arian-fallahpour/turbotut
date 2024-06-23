@@ -13,7 +13,7 @@
 
   color: var(--txt-title);
   background: var(--c-orange);
-  border-radius: 22rem;
+  border-radius: var(--bd-radius);
   text-transform: lowercase;
 
   transition: filter 0.2s ease;

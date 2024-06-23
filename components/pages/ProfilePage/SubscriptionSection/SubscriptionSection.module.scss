@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 $padding-top: var(--gap-md);
 $padding-left: var(--gap-lg);
 
@@ -21,7 +23,7 @@ $padding-left: var(--gap-lg);
   }
 
   &Error {
-    padding-top: $padding-top;
+    padding: $padding-top $padding-top 0 $padding-top;
   }
 
   &Header {
@@ -75,34 +77,18 @@ $padding-left: var(--gap-lg);
     border-top: 0.1rem solid var(--c-panel-bd);
     justify-content: flex-end;
   }
-}
 
-.Card {
-  background-color: transparent;
-
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: var(--gap-md);
-  align-items: center;
-
-  &Image {
-    & img {
-      object-fit: contain;
+  @include respond(450px) {
+    &Content {
+      text-align: center;
     }
-  }
 
-  &Change {
-    background: transparent;
-    border-radius: 22rem;
-    color: var(--c-orange);
-    background: rgba(var(--c-orange-rgb), 0.05);
-    border-top: inherit;
+    &Actions {
+      justify-content: unset;
 
-    transition: background 0.2s ease;
-
-    &:hover,
-    &:focus {
-      background: rgba(var(--c-orange-rgb), 0.1);
+      & > * {
+        width: 100%;
+      }
     }
   }
 }
@@ -130,6 +116,26 @@ $padding-left: var(--gap-lg);
 
   &Actions {
     display: flex;
+    gap: var(--gap-lg);
     justify-content: space-between;
+  }
+
+  @include respond(450px) {
+    width: calc(100vw - 2 * var(--gap-lg));
+
+    &Header,
+    &Content {
+      text-align: center;
+    }
+
+    &Actions {
+      justify-content: unset;
+      gap: var(--gap-md);
+      display: grid;
+
+      & > * {
+        width: 100%;
+      }
+    }
   }
 }

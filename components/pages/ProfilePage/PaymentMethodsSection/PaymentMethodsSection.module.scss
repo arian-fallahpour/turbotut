@@ -85,6 +85,16 @@ section.PaymentMethodsSection {
     margin: $padding-top $padding-left 0 $padding-left;
     justify-content: end;
   }
+
+  @include respond(450px) {
+    &Actions {
+      justify-content: unset;
+
+      & > * {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .Cards {
@@ -115,6 +125,12 @@ section.PaymentMethodsSection {
     flex: 1;
   }
 
+  &Controls {
+    display: flex;
+    gap: inherit;
+    align-items: center;
+  }
+
   &Default {
   }
 
@@ -129,9 +145,25 @@ section.PaymentMethodsSection {
   }
 
   &Remove {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
   }
+
+  @include respond(450px) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, auto);
+    gap: 0 var(--gap-lg);
+
+    &Controls {
+      grid-column: 2 / span 1;
+      gap: var(--gap-md);
+    }
+  }
+}
+
+.Card > .CardControls > button.CardRemove {
+  padding: 0;
 }
 
 .Modal {
@@ -139,6 +171,7 @@ section.PaymentMethodsSection {
   border: 0.1rem solid var(--c-panel-bd);
   border-radius: var(--bd-radius);
   backdrop-filter: blur(20px);
+  width: 50rem;
 
   & > * {
     padding: var(--gap-md) var(--gap-lg);
@@ -150,7 +183,6 @@ section.PaymentMethodsSection {
 
   &Content {
     border-bottom: inherit;
-    max-width: 50rem;
     display: grid;
     gap: var(--gap-sm);
   }
@@ -158,5 +190,26 @@ section.PaymentMethodsSection {
   &Actions {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: var(--gap-lg);
+  }
+
+  @include respond(450px) {
+    width: calc(100vw - 2 * var(--gap-lg));
+
+    &Header,
+    &Content {
+      text-align: center;
+    }
+
+    &Actions {
+      justify-content: unset;
+      gap: var(--gap-md);
+      display: grid;
+
+      & > * {
+        width: 100%;
+      }
+    }
   }
 }

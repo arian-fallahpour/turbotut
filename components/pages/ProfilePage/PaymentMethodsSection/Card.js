@@ -31,34 +31,36 @@ const Card = ({
           {("0" + expiryMonth).slice(-2)}/{expiryYear.toString().substring(2)}
         </div>
       </div>
-      {isDefault && (
+      <div className={classes.CardControls}>
+        {isDefault && (
+          <Button
+            className={classes.CardSetDefault}
+            styleName="glass"
+            size="small"
+            disabled
+          >
+            default
+          </Button>
+        )}
+        {!isDefault && (
+          <Button
+            className={classes.CardSetDefault}
+            styleName="glass"
+            onClick={() => onSetDefault(id)}
+            size="small"
+          >
+            set default
+          </Button>
+        )}
         <Button
-          className={classes.CardSetDefault}
+          className={classes.CardRemove}
           styleName="glass"
-          size="small"
-          disabled
+          variantName="red"
+          onClick={() => onDetachCard(id)}
         >
-          default
+          <DeleteIcon />
         </Button>
-      )}
-      {!isDefault && (
-        <Button
-          className={classes.CardSetDefault}
-          styleName="glass"
-          onClick={() => onSetDefault(id)}
-          size="small"
-        >
-          set default
-        </Button>
-      )}
-      <Button
-        className={classes.CardRemove}
-        styleName="glass"
-        variantName="red"
-        onClick={() => onDetachCard(id)}
-      >
-        <DeleteIcon />
-      </Button>
+      </div>
     </li>
   );
 };
