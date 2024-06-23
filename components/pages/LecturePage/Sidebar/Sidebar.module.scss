@@ -9,18 +9,26 @@
   background: var(--c-panel-bg);
   border: 0.1rem solid var(--c-panel-bd);
   border-radius: var(--bd-radius);
-  backdrop-filter: blur(10px);
-  z-index: 2;
+  z-index: 3;
+
+  &Controls {
+    display: grid;
+    justify-content: end;
+    position: fixed;
+    bottom: var(--gap-lg);
+    right: var(--gap-lg);
+  }
 
   &Header {
     padding: var(--gap-md) var(--gap-lg);
     border-bottom: 0.1rem solid var(--c-panel-bd);
 
+    display: flex;
+    gap: var(--gap-lg);
+    justify-content: space-between;
+
     & > :global(.header) {
       text-align: center;
-
-      @include respond(900px) {
-      }
     }
   }
 
@@ -28,10 +36,6 @@
     display: grid;
     grid-template-rows: auto 1fr;
     overflow: hidden;
-
-    @include respond(900px) {
-      display: none;
-    }
 
     & > * {
       padding: var(--gap-md) var(--gap-lg);
@@ -78,35 +82,57 @@
     border-radius: 100%;
   }
 
-  @include respond(900px) {
-    max-width: 50rem;
-    justify-self: center;
-
-    &.expanded &Header {
-      border-bottom: 0.1rem solid var(--c-panel-bd);
-    }
+  @include respond(700px) {
+    position: static;
+    background-color: transparent;
+    border: none;
 
     &.expanded &Container {
       display: grid;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--c-panel-bg);
+      backdrop-filter: blur(10px);
+    }
+
+    &Container {
+      display: none;
     }
 
     &Header {
-      display: flex;
-      gap: var(--gap-lg);
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: none;
-
       & > :global(.header) {
-        text-align: unset;
+        text-align: left;
       }
     }
   }
 
-  @include respond(900px, false) {
-    & > .SidebarHeader > button.SidebarExpand {
+  @include respond(700px, false) {
+    &Controls {
       display: none;
     }
+  }
+}
+
+.Sidebar > .SidebarControls > button {
+  padding: var(--gap-md);
+  background: var(--c-panel-bg);
+  border: 0.1rem solid var(--c-panel-bd);
+  border-radius: 100%;
+  backdrop-filter: blur(10px);
+
+  @include respond(500px) {
+    padding: var(--gap-sm);
+  }
+}
+
+.Sidebar > .SidebarContainer > .SidebarHeader > button {
+  display: none;
+
+  @include respond(700px) {
+    display: flex;
   }
 }
 

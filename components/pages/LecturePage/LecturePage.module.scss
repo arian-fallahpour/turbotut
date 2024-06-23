@@ -13,8 +13,9 @@ section.LectureSection {
   padding: var(--gap-lg);
   position: relative;
 
-  @include respond(900px) {
+  @include respond(700px) {
     grid-template-columns: 1fr;
+    position: static;
   }
 }
 

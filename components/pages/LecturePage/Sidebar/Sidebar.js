@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import classes from "./Sidebar.module.scss";
 import Chapter from "../Chapter/Chapter";
@@ -8,45 +8,46 @@ import Button from "@/components/Elements/Button/Button";
 import Lecture from "../Lecture/Lecture";
 import { join } from "@/utils/helper";
 
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 
 import MenuIcon from "@/components/Elements/Icons/MenuIcon";
 import WestIcon from "@/components/Elements/Icons/WestIcon";
 import EastIcon from "@/components/Elements/Icons/EastIcon";
+import CloseIcon from "@/components/Elements/Icons/CloseIcon";
 
 const Sidebar = ({ course }) => {
   const { lectureSlug } = useParams();
   const [expanded, setExpanded] = useState(false);
+  const pathname = usePathname();
 
   const { prevUrl, nextUrl } = findAdjacentLectures(course, lectureSlug);
 
   const onExpandHandler = () => setExpanded((p) => !p);
 
+  useEffect(() => {
+    setExpanded(false);
+  }, [pathname]);
+
   return (
-    <aside
-      className={join(classes.Sidebar, expanded ? classes.expanded : null)}
-    >
-      <div className={classes.SidebarHeader}>
-        <h1 className={"header header-section color-orange"}>{course.name}</h1>
-        <Button
-          styleName="transparent"
-          className={classes.SidebarExpand}
-          onClick={onExpandHandler}
-        >
+    <aside className={join(classes.Sidebar, expanded ? classes.expanded : null)}>
+      <div className={classes.SidebarControls}>
+        <Button className={classes.SidebarClose} styleName="transparent" size="large" onClick={onExpandHandler}>
           <MenuIcon />
         </Button>
       </div>
 
       <div className={classes.SidebarContainer}>
+        <div className={classes.SidebarHeader}>
+          <h1 className={"header header-section color-orange"}>{course.name}</h1>
+          <Button styleName="transparent" onClick={onExpandHandler}>
+            <CloseIcon />
+          </Button>
+        </div>
         <div className={classes.SidebarContent}>
           <div className={classes.SidebarIntro}>
             <ul className={classes.Intro}>
               <li className={classes.IntroItem}>
-                <Lecture
-                  name="overview"
-                  href={`/courses/${course.slug}`}
-                  isActive={!lectureSlug}
-                />
+                <Lecture name="overview" href={`/courses/${course.slug}`} isActive={!lectureSlug} />
               </li>
             </ul>
           </div>
