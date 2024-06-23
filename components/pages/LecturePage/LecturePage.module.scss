@@ -15,16 +15,8 @@ section.LectureSection {
 
   @include respond(700px) {
     grid-template-columns: 1fr;
-    position: static;
-  }
-}
-
-.LectureSection {
-  &Sidebar {
-    display: grid;
-  }
-
-  &Content {
-    position: relative;
+    grid-template-rows: auto;
+    position: absolute;
+    padding: 10rem var(--gap-lg);
   }
 }

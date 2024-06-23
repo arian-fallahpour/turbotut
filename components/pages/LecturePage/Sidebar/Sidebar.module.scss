@@ -88,7 +88,12 @@
     border: none;
 
     &.expanded &Container {
-      display: grid;
+      backdrop-filter: blur(10px);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &Container {
       position: fixed;
       top: 0;
       left: 0;
@@ -96,10 +101,10 @@
       height: 100vh;
       background-color: var(--c-panel-bg);
       backdrop-filter: blur(10px);
-    }
+      opacity: 0;
+      visibility: hidden;
 
-    &Container {
-      display: none;
+      transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, backdrop-filter 0.4s ease-in-out;
     }
 
     &Header {
