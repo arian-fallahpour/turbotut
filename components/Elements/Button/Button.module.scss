@@ -297,4 +297,38 @@
       }
     }
   }
+
+  &Transparent {
+    &.size-small,
+    &.size-normal,
+    &.size-large {
+      padding: 0;
+    }
+
+    &.size-small {
+      font-size: 2rem;
+    }
+
+    &.size-normal {
+      font-size: 3rem;
+    }
+
+    &.size-large {
+      font-size: 4.5rem;
+    }
+
+    &,
+    &:link,
+    &:visited {
+      color: var(--txt-text);
+      background: transparent;
+
+      transition: color 0.2s ease;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--txt-title);
+      }
+    }
+  }
 }

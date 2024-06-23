@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 *,
 *::after,
 *::before {
@@ -19,7 +21,7 @@ html {
     font-size: 56.25%;
   }
 
-  @include respond(900) {
+  @include respond(900px) {
     // 8px
     font-size: 50%;
   }

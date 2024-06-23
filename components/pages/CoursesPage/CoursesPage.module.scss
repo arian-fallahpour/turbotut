@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 section.CoursesSection {
   align-content: start;
   padding: var(--gap-lg);
@@ -17,4 +19,8 @@ section.CoursesSection {
   gap: var(--gap-lg);
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(30rem, auto));
+
+  @include respond(350px) {
+    grid-template-columns: 1fr;
+  }
 }

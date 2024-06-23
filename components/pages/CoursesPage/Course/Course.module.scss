@@ -3,8 +3,7 @@
 .Course {
   background: transparent;
   padding: 0;
-  width: 30rem;
-  height: 30rem;
+  aspect-ratio: 1;
   border-radius: var(--bd-radius);
   border: 0.1rem solid rgba(var(--c-orange-rgb), 0.4);
   overflow: hidden;
@@ -124,6 +123,11 @@
     & > * {
       font-size: 3rem;
     }
+  }
+
+  @include respond(350px) {
+    width: 100%;
+    height: auto;
   }
 }
 

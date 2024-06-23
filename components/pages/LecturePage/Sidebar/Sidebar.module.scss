@@ -2,8 +2,6 @@
 
 .Sidebar {
   display: grid;
-  grid-template-rows: auto 1fr;
-  overflow: hidden;
 
   max-height: calc(100vh - 2 * var(--gap-lg));
   position: sticky;
@@ -11,13 +9,33 @@
   background: var(--c-panel-bg);
   border: 0.1rem solid var(--c-panel-bd);
   border-radius: var(--bd-radius);
-
-  & > * {
-    padding: var(--gap-md) var(--gap-lg);
-  }
+  backdrop-filter: blur(10px);
+  z-index: 2;
 
   &Header {
-    border-bottom: inherit;
+    padding: var(--gap-md) var(--gap-lg);
+    border-bottom: 0.1rem solid var(--c-panel-bd);
+
+    & > :global(.header) {
+      text-align: center;
+
+      @include respond(900px) {
+      }
+    }
+  }
+
+  &Container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow: hidden;
+
+    @include respond(900px) {
+      display: none;
+    }
+
+    & > * {
+      padding: var(--gap-md) var(--gap-lg);
+    }
   }
 
   &Content {
@@ -38,7 +56,7 @@
   }
 
   &Nav {
-    border-top: inherit;
+    border-top: 0.1rem solid var(--c-panel-bd);
 
     display: flex;
     justify-content: space-between;
@@ -46,19 +64,50 @@
 
   &NavButton {
     & > svg {
-      height: 1.75rem;
       width: 1.75rem;
+      height: 1.75rem;
     }
   }
-}
 
-.Sidebar > .SidebarNav > .SidebarNavButton,
-.Sidebar > .SidebarNav > .SidebarNavButton:link,
-.Sidebar > .SidebarNav > .SidebarNavButton:visited {
-  padding: 0;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 100%;
+  & > .SidebarContainer > .SidebarNav > .SidebarNavButton,
+  & > .SidebarContainer > .SidebarNav > .SidebarNavButton:link,
+  & > .SidebarContainer > .SidebarNav > .SidebarNavButton:visited {
+    padding: 0;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+  }
+
+  @include respond(900px) {
+    max-width: 50rem;
+    justify-self: center;
+
+    &.expanded &Header {
+      border-bottom: 0.1rem solid var(--c-panel-bd);
+    }
+
+    &.expanded &Container {
+      display: grid;
+    }
+
+    &Header {
+      display: flex;
+      gap: var(--gap-lg);
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: none;
+
+      & > :global(.header) {
+        text-align: unset;
+      }
+    }
+  }
+
+  @include respond(900px, false) {
+    & > .SidebarHeader > button.SidebarExpand {
+      display: none;
+    }
+  }
 }
 
 .Intro {

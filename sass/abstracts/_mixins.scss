@@ -66,94 +66,13 @@
 }
 
 // MEDIA QUERY MANAGER
-@mixin respond($breakpoint) {
-  @if $breakpoint == 300 {
-    @media only screen and (max-width: 18.75em) {
-      // 300 px
+@mixin respond($breakpoint, $less: true) {
+  @if $less == true {
+    @media only screen and (max-width: $breakpoint) {
       @content;
     }
-  }
-  @if $breakpoint == 400 {
-    @media only screen and (max-width: 25em) {
-      // 400 px
-      @content;
-    }
-  }
-  @if $breakpoint == 500 {
-    @media only screen and (max-width: 31.25em) {
-      // 500 px
-      @content;
-    }
-  }
-  @if $breakpoint == 600 {
-    @media only screen and (max-width: 37.5em) {
-      // 600 px
-      @content;
-    }
-  }
-  @if $breakpoint == 700 {
-    @media only screen and (max-width: 43.75em) {
-      // 700 px
-      @content;
-    }
-  }
-  @if $breakpoint == 800 {
-    @media only screen and (max-width: 50em) {
-      // 800 px
-      @content;
-    }
-  }
-  @if $breakpoint == 900 {
-    @media only screen and (max-width: 56.25em) {
-      // 900 px
-      @content;
-    }
-  }
-  @if $breakpoint == 1000 {
-    @media only screen and (max-width: 62.5em) {
-      // 1000 px
-      @content;
-    }
-  }
-  @if $breakpoint == 1100 {
-    @media only screen and (max-width: 68.75em) {
-      // 1100 px
-      @content;
-    }
-  }
-  @if $breakpoint == 1200 {
-    @media only screen and (max-width: 75em) {
-      // 1200 px
-      @content;
-    }
-  }
-  @if $breakpoint == 1300 {
-    @media only screen and (max-width: 81.25em) {
-      // 1300 px
-      @content;
-    }
-  }
-  @if $breakpoint == 1400 {
-    @media only screen and (max-width: 87.5em) {
-      // 1400 px
-      @content;
-    }
-  }
-  @if $breakpoint == 1500 {
-    @media only screen and (max-width: 93.75em) {
-      // 1500 px
-      @content;
-    }
-  }
-  @if $breakpoint == 1920 {
-    @media only screen and (min-width: 120em) {
-      // 1920 px
-      @content;
-    }
-  }
-
-  @if $breakpoint == mobile {
-    @media (hover: none) {
+  } @else {
+    @media only screen and (min-width: $breakpoint) {
       @content;
     }
   }

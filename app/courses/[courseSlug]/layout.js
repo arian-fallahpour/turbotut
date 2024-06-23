@@ -5,6 +5,7 @@ import Sidebar from "@/components/pages/LecturePage/Sidebar/Sidebar";
 import classes from "@/components/pages/LecturePage/LecturePage.module.scss";
 import { fetchCourse } from "@/utils/dataFetch";
 import { Suspense } from "react";
+import LoaderBlock from "@/components/Elements/Loader/LoaderBlock";
 
 export default async function Layout({ children, params }) {
   const course = await fetchCourse(params.courseSlug);
@@ -16,12 +17,8 @@ export default async function Layout({ children, params }) {
         className={classes.LectureSection}
         id="lecture-section"
       >
-        <div className={classes.LectureSectionSidebar}>
-          <Sidebar course={course} />
-        </div>
-        <div className={classes.LectureSectionContent}>
-          <Suspense>{children}</Suspense>
-        </div>
+        <Sidebar course={course} />
+        <Suspense fallback={<LoaderBlock />}>{children}</Suspense>
       </Section>
     </Page>
   );

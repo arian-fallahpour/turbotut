@@ -1,8 +1,6 @@
-"use client";
-
 import "katex/dist/katex.min.css";
 
-import React, { useEffect } from "react";
+import React from "react";
 import classes from "./Formatted.module.scss";
 import Latex from "react-latex-next";
 import Image from "next/image";
@@ -136,13 +134,6 @@ const Formatted = ({
 export default Formatted;
 
 export const FormattedContent = ({ children, ...otherProps }) => {
-  useEffect(() => {
-    // const content = document.getElementById("lecture-section");
-    // window.scrollTo({
-    //   top: content.getBoundingClientRect().top + window.scrollY,
-    //   behavior: "instant",
-    // });
-  });
   return (
     <div className={classes.Formatted} {...otherProps}>
       {children}

@@ -1,18 +1,33 @@
+@import "@/sass/abstracts/mixins";
+
 .Nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  position: relative;
+
   gap: var(--gap-lg);
   padding: var(--gap-md) var(--gap-lg);
+  z-index: 3;
 
   &.absolute {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2;
+  }
+
+  &Header {
+    display: flex;
+    gap: inherit;
+    align-items: center;
   }
 
   &Logo {
+    justify-self: flex-start;
+  }
+
+  &LogoImage {
     height: 6.5rem;
     width: 6.5rem;
     position: relative;
@@ -30,6 +45,14 @@
     color: var(--txt-title);
   }
 
+  &Links {
+    display: flex;
+    gap: var(--gap-lg);
+    align-items: center;
+
+    background: transparent;
+  }
+
   &List {
     display: flex;
     gap: var(--gap-lg);
@@ -40,5 +63,99 @@
   }
 
   &Profile {
+  }
+
+  &Expand {
+    & > svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  @include respond(700px) {
+    &Logo {
+      flex: 1;
+    }
+
+    &Title {
+      display: none;
+    }
+  }
+
+  @include respond(500px) {
+    display: grid;
+    justify-content: unset;
+    gap: 0;
+
+    position: relative;
+    top: 0;
+    width: 100%;
+    background-color: var(--c-panel-bg);
+    padding: 0;
+
+    &.expanded &Links {
+      display: grid;
+    }
+
+    &Header {
+      gap: var(--gap-lg);
+      border-bottom: 0.1rem solid var(--c-panel-bd);
+      padding: var(--gap-md) var(--gap-lg);
+    }
+
+    &Logo {
+      flex: unset;
+    }
+
+    &Title {
+      display: unset;
+    }
+
+    &Links {
+      display: none;
+      top: 100%;
+      position: absolute;
+      width: 100%;
+      background-color: var(--c-panel-bg);
+      border-top: 0.1rem solid var(--c-panel-bd);
+      border-bottom: 0.1rem solid var(--c-panel-bd);
+      backdrop-filter: blur(10px);
+    }
+
+    &List {
+      display: grid;
+      gap: 0;
+    }
+
+    &Profile {
+      grid-row: 1 / span 1;
+
+      padding: var(--gap-md) var(--gap-lg);
+      border-bottom: 0.1rem solid var(--c-panel-bd);
+      width: 100%;
+
+      display: grid;
+      justify-content: center;
+    }
+
+    & > .NavLinks > .NavList > .NavListItem > a {
+      padding: 1.5rem;
+    }
+  }
+
+  @include respond(500px, false) {
+    &Expand {
+      display: none;
+    }
+  }
+
+  @include respond(350px) {
+    &Logo {
+      flex: 1;
+    }
+
+    &Title {
+      display: none;
+    }
   }
 }
