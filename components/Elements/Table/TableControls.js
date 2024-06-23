@@ -8,6 +8,7 @@ import Button from "../Button/Button";
 
 import WestIcon from "../Icons/WestIcon";
 import EastIcon from "../Icons/EastIcon";
+import { TableButtonRounded } from "./Table";
 
 const TableControls = ({
   page,
@@ -54,16 +55,14 @@ const TableControls = ({
         totalPages,
         1
       )}`}</div>
-      <Button
-        className={classes.ControlsButton}
+      <TableButtonRounded
         styleName="glass"
         variantName="white"
-        size="small"
         isDisabled={isNextDisabled}
         onClick={onNextPageHandler}
       >
         <EastIcon />
-      </Button>
+      </TableButtonRounded>
     </div>
   );
 };
