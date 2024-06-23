@@ -34,23 +34,20 @@ const subscriptionSchema = new mongoose.Schema({
   },
 });
 
-subscriptionSchema
-  .path("user")
-  .validate(doesObjectIdExist(User), "User does not exist");
-subscriptionSchema
-  .path("order")
-  .validate(doesObjectIdExist(Order), "Order does not exist");
+subscriptionSchema.path("user").validate(doesObjectIdExist(User), "User does not exist");
+subscriptionSchema.path("order").validate(doesObjectIdExist(Order), "Order does not exist");
 
-subscriptionSchema.statics.findActive = async function (userId) {
-  return await mongoose.model("Subscription").findOne({
-    user: userId,
-    startsAt: { $lt: new Date(Date.now()) },
-    endsAt: { $gt: new Date(Date.now()) },
-  });
+subscriptionSchema.statics.findActive = async function (userId, options) {
+  return await mongoose.model("Subscription").findOne(
+    {
+      user: userId,
+      startsAt: { $lt: new Date(Date.now()) },
+      endsAt: { $gt: new Date(Date.now()) },
+    },
+    options
+  );
 };
 
-const Subscription =
-  mongoose.models.Subscription ||
-  mongoose.model("Subscription", subscriptionSchema);
+const Subscription = mongoose.models.Subscription || mongoose.model("Subscription", subscriptionSchema);
 
 export default Subscription;

@@ -16,6 +16,7 @@ import queryString from "query-string";
 export const routeHandler = (fn, options = {}) =>
   catchAsync(async (...args) => {
     options = {
+      getSession: setDefault(options.getSession, false),
       requiresSession: setDefault(options.requiresSession, false),
       restrictTo: setDefault(options.restrictTo, null),
       parseBody: setDefault(options.parseBody, false),
@@ -32,9 +33,11 @@ export const routeHandler = (fn, options = {}) =>
     // DATA SANITATION: NoSQL query injection
     if (options.parseBody) {
       const body = await req.json().catch((err) => null);
+
       args[0].data.body = sanitizeFilter(body);
     } else if (options.parseForm) {
       const formData = await req.formData();
+
       args[0].data.formData = {};
       formData.forEach((value, key) => (args[0].data.formData[key] = value));
     }
@@ -45,32 +48,33 @@ export const routeHandler = (fn, options = {}) =>
 
     // Retrieve session
     const session = await getServerSession(authOptions);
+    args[0].data.session = session;
+
+    // Get user if needed or required
+    if (session && session.user && (options.getSession || options.requiresSession || options.restrictTo)) {
+      await connectDB();
+
+      // Find user if session exists with user
+      const user = await User.findById(session.user._id);
+
+      // Add user to request data if exists
+      if (user) args[0].data.user = user;
+    }
 
     // AUTH: Session requirement
     let user;
     if (options.requiresSession || options.restrictTo) {
-      await connectDB();
-
       // Check if a session, and a user on that session exists
-      if (!session || !session.user)
-        return new AppError("Please login to perform this action", 401);
+      if (!session || !session.user) return new AppError("Please login to perform this action", 401);
 
       // Check if user exists
-      user = await User.findById(session.user._id);
-      if (!user)
-        return new AppError(
-          "Login session is invalid, please login again",
-          404
-        );
+      if (!user) return new AppError("Login session is invalid, please login again", 404);
     }
 
     // AUTH: Role restriction
     if (options.restrictTo && !options.restrictTo.includes(user.role)) {
       return new AppError("You do not have access to this action", 401);
     }
-
-    // add user to a data object in request
-    args[0].data.user = user;
 
     // Continue with function if authorized
     return fn(...args);
@@ -91,12 +95,5 @@ export const restrictTo = (session, roles) => {
 function parseQuery(req) {
   const query = req.url.split("?")[1];
   if (!query) return {};
-  return JSON.parse(
-    '{"' +
-      decodeURI(query)
-        .replace(/"/g, '\\"')
-        .replace(/&/g, '","')
-        .replace(/=/g, '":"') +
-      '"}'
-  );
+  return JSON.parse('{"' + decodeURI(query).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
 }
