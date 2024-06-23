@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./Nav.module.scss";
 import { join } from "@/utils/helper";
 
@@ -10,20 +10,20 @@ import Image from "next/image";
 import MenuIcon from "@/components/Elements/Icons/MenuIcon";
 
 import business from "@/app/data/business";
+import { usePathname } from "next/navigation";
 
 const Nav = ({ user, isAbsolute }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const pathname = usePathname();
 
   const onExpandHandler = () => setIsExpanded((p) => !p);
 
+  useEffect(() => {
+    setIsExpanded(false);
+  }, [pathname]);
+
   return (
-    <nav
-      className={join(
-        classes.Nav,
-        isAbsolute ? classes.absolute : null,
-        isExpanded ? classes.expanded : null
-      )}
-    >
+    <nav className={join(classes.Nav, isAbsolute ? classes.absolute : null, isExpanded ? classes.expanded : null)}>
       <div className={classes.NavHeader}>
         <div className={classes.NavLogo}>
           <div className={classes.NavLogoImage}>
@@ -32,12 +32,7 @@ const Nav = ({ user, isAbsolute }) => {
         </div>
         <div className={classes.NavTitle}>{business.name}</div>
         <div className={classes.NavExpand}>
-          <Button
-            styleName="transparent"
-            variantName="white"
-            size="large"
-            onClick={onExpandHandler}
-          >
+          <Button styleName="transparent" variantName="white" size="large" onClick={onExpandHandler}>
             <MenuIcon />
           </Button>
         </div>
