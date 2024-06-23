@@ -15,9 +15,7 @@ const Sidebar = () => {
   return (
     <aside className={classes.Sidebar}>
       <div className={classes.SidebarHeader}>
-        <h1 className="header header-section text-center color-orange">
-          dashboard
-        </h1>
+        <h1 className="header header-section text-center color-orange">dashboard</h1>
       </div>
       <div className={classes.SidebarContent}>
         <ul className={classes.List}>
@@ -26,9 +24,7 @@ const Sidebar = () => {
               <Button
                 className={join(
                   classes.Link,
-                  params.collection && params.collection === item.name
-                    ? classes.active
-                    : null
+                  params.collection && params.collection === item.name ? classes.active : null
                 )}
                 href={`/dashboard/${item.name}`}
                 isLink
