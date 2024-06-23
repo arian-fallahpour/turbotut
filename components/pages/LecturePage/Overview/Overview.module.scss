@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 .Overview {
   $max-width: 50rem;
 
@@ -19,8 +21,10 @@
   }
 
   &Image {
-    height: $max-width;
-    width: $max-width;
+    max-width: $max-width;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
     position: relative;
     border-radius: var(--bd-radius);
     overflow: hidden;
@@ -35,7 +39,9 @@
   .Content {
     $padding: var(--gap-md) var(--gap-lg);
     $border: 0.1rem solid var(--c-panel-bd);
-    width: $max-width;
+
+    max-width: $max-width;
+    width: 100%;
 
     display: grid;
 
@@ -88,5 +94,9 @@
         padding: 0;
       }
     }
+  }
+
+  @include respond(900px) {
+    padding: 0;
   }
 }

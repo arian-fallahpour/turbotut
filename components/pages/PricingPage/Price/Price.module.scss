@@ -1,7 +1,9 @@
+@import "@/sass/abstracts/mixins";
+
 .Price {
   display: grid;
   gap: var(--gap-lg);
-  grid-template-columns: 25rem 45rem;
+  grid-template-columns: 25rem minmax(auto, 45rem);
 
   &Header {
     display: grid;
@@ -52,6 +54,16 @@
       line-height: 1;
       color: var(--c-orange);
       filter: drop-shadow(0 0 2rem rgba(var(--c-orange-rgb), 0.8));
+    }
+  }
+
+  @include respond(600px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    &Header {
+      max-width: 30rem;
+      width: 100%;
     }
   }
 }

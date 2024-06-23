@@ -97,6 +97,10 @@
       display: grid;
     }
 
+    &.expanded &Header {
+      border-bottom: none;
+    }
+
     &Header {
       gap: var(--gap-lg);
       border-bottom: 0.1rem solid var(--c-panel-bd);

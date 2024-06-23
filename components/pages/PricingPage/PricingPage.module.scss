@@ -1,5 +1,6 @@
 .Prices {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(1fr, 50rem);
   justify-content: center;
   gap: var(--gap-xl);
 }
