@@ -1,17 +1,15 @@
+@import "@/sass/abstracts/mixins";
+
 .Login {
   transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
-  height: 50rem;
   width: 50rem;
-  background-image: radial-gradient(
-    circle at 25% -25%,
-    #0c0b0e 50%,
-    #0b0031 85%
-  );
+  height: auto;
+  aspect-ratio: 1;
+  background-image: radial-gradient(circle at 25% -25%, #0c0b0e 50%, #0b0031 85%);
   border-radius: var(--bd-radius);
   border: 0.1rem solid rgba(var(--c-orange-rgb), 0.5);
-  box-shadow: 0 -3rem 7rem -6rem var(--c-orange),
-    0 3rem 7rem -6rem var(--c-orange);
+  box-shadow: 0 -3rem 7rem -6rem var(--c-orange), 0 3rem 7rem -6rem var(--c-orange);
   padding: var(--gap-xl);
 
   display: grid;
@@ -21,8 +19,7 @@
 
   &:hover,
   &:focus {
-    box-shadow: 0 -3.5rem 7rem -6rem var(--c-orange),
-      0 3.5rem 7rem -6rem var(--c-orange);
+    box-shadow: 0 -3.5rem 7rem -6rem var(--c-orange), 0 3.5rem 7rem -6rem var(--c-orange);
     border-color: rgba(var(--c-orange-rgb), 0.6);
   }
 
@@ -49,5 +46,10 @@
       top: 50%;
       translate: 0 -50%;
     }
+  }
+
+  @include respond(450px) {
+    width: calc(100vw - 2 * var(--gap-lg));
+    padding: var(--gap-lg);
   }
 }
