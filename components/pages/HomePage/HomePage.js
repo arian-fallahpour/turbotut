@@ -15,6 +15,15 @@ const HomePage = () => {
       <SolutionSection />
       <CtaSection />
       <InfoSection />
+
+      {/* 
+        header
+        Problem section
+        solution section
+        courses slider?
+        cta section
+        info section
+      */}
     </Page>
   );
 };

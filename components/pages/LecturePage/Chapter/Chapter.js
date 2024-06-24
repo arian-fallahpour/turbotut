@@ -7,9 +7,7 @@ import Lecture from "../Lecture/Lecture";
 const Chapter = ({ course, chapter, lectureSlug, color }) => {
   return (
     <div className={classes.Chapter}>
-      <h2 className={join("header", "header-card", classes.ChapterHeader)}>
-        {chapter.name}
-      </h2>
+      <h2 className={join("header", "header-card", classes.ChapterHeader)}>{chapter.name}</h2>
 
       <ul className={classes.Lectures}>
         {chapter.lectures?.length > 0 &&
@@ -17,7 +15,7 @@ const Chapter = ({ course, chapter, lectureSlug, color }) => {
             <li key={"lecture-" + lecture.name} className={classes.Lecture}>
               <Lecture
                 name={lecture.name}
-                href={`/courses/${course.slug}/lecture/${lecture.slug}`}
+                href={`/courses/${course.slug}/lecture/${lecture.slug}#lecture-content`}
                 isActive={lecture.slug === lectureSlug}
                 color={color}
                 isLocked={lecture.type === "paid"}
