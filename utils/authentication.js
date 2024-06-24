@@ -51,18 +51,18 @@ export const routeHandler = (fn, options = {}) =>
     args[0].data.session = session;
 
     // Get user if needed or required
+    let user;
     if (session && session.user && (options.getSession || options.requiresSession || options.restrictTo)) {
       await connectDB();
 
       // Find user if session exists with user
-      const user = await User.findById(session.user._id);
+      user = await User.findById(session.user._id);
 
       // Add user to request data if exists
       if (user) args[0].data.user = user;
     }
 
     // AUTH: Session requirement
-    let user;
     if (options.requiresSession || options.restrictTo) {
       // Check if a session, and a user on that session exists
       if (!session || !session.user) return new AppError("Please login to perform this action", 401);

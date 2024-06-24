@@ -4,20 +4,14 @@ import { fetchAuth, getDomain } from "@/utils/dataFetch";
 import { createGridTemplateColumns } from "@/utils/helper";
 
 import Section from "@/components/Elements/Section/Section";
-import Table, {
-  TableCell,
-  TableHeader,
-  TableRow,
-} from "@/components/Elements/Table/Table";
+import Table, { TableCell, TableHeader, TableRow } from "@/components/Elements/Table/Table";
 import Actions from "../../Actions/Actions";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import CollectionHeader from "./CollectionHeader";
 import queryString from "query-string";
 
 const getData = async function (collectionData, queryObject) {
-  queryObject.select = collectionData.tableFields
-    .map((tableField) => `${tableField.name}`)
-    .join(",");
+  queryObject.select = collectionData.tableFields.map((tableField) => `${tableField.name}`).join(",");
 
   // Create url
   const url = queryString.stringifyUrl({
@@ -30,24 +24,19 @@ const getData = async function (collectionData, queryObject) {
     cache: "no-store",
   });
 
-  const data = await res.json();
+  const resData = await res.json();
 
-  let error;
   if (!res.ok) {
-    error = new Error(data.message);
+    return { error: new Error(resData.message) };
+  } else {
+    return { data: JSON.parse(JSON.stringify(resData.data)) };
   }
-
-  return {
-    error,
-    data: JSON.parse(JSON.stringify(data.data)),
-  };
 };
 
 const CollectionSection = async ({ collectionData, searchParams }) => {
   searchParams.limit = 10;
 
   const { data, error } = await getData(collectionData, searchParams);
-  const documents = data[collectionData.name];
 
   const gridTemplateColumns = createGridTemplateColumns(collectionData);
 
@@ -55,18 +44,18 @@ const CollectionSection = async ({ collectionData, searchParams }) => {
     <Section className={classes.CollectionSection}>
       {/* HEADER */}
       <CollectionHeader
-        totalResults={data.totalResults}
+        totalResults={error ? 0 : data.totalResults}
         collectionData={collectionData}
         searchParams={searchParams}
       />
 
       {error && <ErrorBlock message={error.message} />}
-      {!error && documents?.length === 0 && (
+      {!error && data[collectionData.name] && data[collectionData.name].length === 0 && (
         <ErrorBlock type="info" message={`No ${collectionData.name} found`} />
       )}
 
       {/* TABLE */}
-      {!error && documents?.length > 0 && (
+      {!error && data[collectionData.name] && data[collectionData.name].length > 0 && (
         <Table>
           <TableHeader style={{ gridTemplateColumns }}>
             {collectionData.tableFields.map((field) => (
@@ -75,21 +64,19 @@ const CollectionSection = async ({ collectionData, searchParams }) => {
             <TableCell></TableCell>
           </TableHeader>
 
-          {documents.map((doc) => (
-            <TableRow key={doc._id} style={{ gridTemplateColumns }}>
-              {collectionData.tableFields.map((field, i) => (
-                <TableCell
-                  key={field.label}
-                  href={`/dashboard/${collectionData.name}/${doc._id}`}
-                >
-                  {doc[field.name]}
+          {data[collectionData.name] &&
+            data[collectionData.name].map((doc) => (
+              <TableRow key={doc._id} style={{ gridTemplateColumns }}>
+                {collectionData.tableFields.map((field, i) => (
+                  <TableCell key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
+                    {doc[field.name]}
+                  </TableCell>
+                ))}
+                <TableCell end>
+                  <Actions name={collectionData.name} />
                 </TableCell>
-              ))}
-              <TableCell end>
-                <Actions name={collectionData.name} />
-              </TableCell>
-            </TableRow>
-          ))}
+              </TableRow>
+            ))}
         </Table>
       )}
     </Section>
