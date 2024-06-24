@@ -6,22 +6,16 @@ import Sidebar from "@/components/pages/dashboard/Sidebar/Sidebar";
 import { getServerSession } from "next-auth";
 import { options } from "../api/auth/[...nextauth]/options";
 import { Suspense } from "react";
+import LoaderBlock from "@/components/Elements/Loader/LoaderBlock";
 
 export default async function Layout({ children, params }) {
   const session = await getServerSession(options);
 
   return (
-    <Page
-      background="flat"
-      hideNav
-      hideFooter
-      session={session}
-      requiresSession
-      restrictTo={["admin"]}
-    >
+    <Page background="flat" hideNav hideFooter session={session} requiresSession restrictTo={["admin"]}>
       <Section limit={null} className={classes.DashboardSection}>
         <Sidebar />
-        <Suspense>{children}</Suspense>
+        <Suspense fallback={<LoaderBlock />}>{children}</Suspense>
       </Section>
     </Page>
   );
