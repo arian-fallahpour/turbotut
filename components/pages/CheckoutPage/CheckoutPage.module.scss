@@ -1,4 +1,10 @@
+@import "@/sass/abstracts/mixins";
+
 section.CheckoutSection {
   padding-left: 0;
   padding-right: 0;
+
+  @include respond(500px) {
+    padding: 10rem var(--gap-lg);
+  }
 }

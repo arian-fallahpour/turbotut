@@ -9,8 +9,7 @@ const errorHandler = (error) => {
   // Refactor errors
   if (error.name === "ValidationError") error = handleValidationError(error);
   if (error.code === 11000) error = handleDuplicateFieldError(error);
-  if (error.type === "StripeInvalidRequestError")
-    error = handleStripeError(error);
+  if (error.type === "StripeInvalidRequestError") error = handleStripeError(error);
 
   // Log error if not operational
   if (!error.isOperational) {
@@ -19,9 +18,7 @@ const errorHandler = (error) => {
 
   // Send prod error if in production
   if (process.env.NODE_ENV === "production") {
-    const message = error.statusCode.toString().startsWith("4")
-      ? error.message
-      : "Internal server error";
+    const message = error.statusCode.toString().startsWith("4") ? error.message : "Internal server error";
 
     return NextResponse.json(
       {
@@ -73,9 +70,9 @@ function handleDuplicateFieldError(error) {
   if (keys.length === 1) {
     error.message = `Provided ${keys[0]} is taken`;
   } else {
-    error.message = `Choose a different combination of values for ${keys
-      .slice(0, keys.length - 1)
-      .join(", ")} and ${keys[keys.length - 1]}`;
+    error.message = `Choose a different combination of values for ${keys.slice(0, keys.length - 1).join(", ")} and ${
+      keys[keys.length - 1]
+    }`;
   }
 
   error.errors = {};
@@ -87,6 +84,7 @@ function handleDuplicateFieldError(error) {
 }
 
 function handleStripeError(error) {
+  console.error(error.raw);
   if (error.raw.code === "resource_missing") {
     return new AppError("Please provide a valid and existing id", 400);
   }

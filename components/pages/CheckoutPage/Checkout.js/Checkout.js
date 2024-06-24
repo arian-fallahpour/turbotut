@@ -5,10 +5,7 @@ import React, { useEffect, useState } from "react";
 import business from "@/app/data/business";
 
 import { loadStripe } from "@stripe/stripe-js";
-import {
-  EmbeddedCheckoutProvider,
-  EmbeddedCheckout,
-} from "@stripe/react-stripe-js";
+import { EmbeddedCheckoutProvider, EmbeddedCheckout } from "@stripe/react-stripe-js";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
@@ -25,6 +22,7 @@ const Checkout = () => {
         cache: "no-store",
       });
       const resData = await res.json();
+      console.log(resData);
 
       if (!res.ok) {
         setError(new Error(resData.message));
