@@ -84,7 +84,6 @@ function handleDuplicateFieldError(error) {
 }
 
 function handleStripeError(error) {
-  console.error(error.raw);
   if (error.raw.code === "resource_missing") {
     return new AppError("Please provide a valid and existing id", 400);
   }
