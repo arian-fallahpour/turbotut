@@ -8,7 +8,7 @@
 
   gap: var(--gap-lg);
   padding: var(--gap-md) var(--gap-lg);
-  z-index: 3;
+  z-index: 2;
 
   &.absolute {
     position: absolute;
@@ -21,6 +21,7 @@
     display: flex;
     gap: inherit;
     align-items: center;
+    z-index: 2;
   }
 
   &Logo {
@@ -43,6 +44,10 @@
     text-transform: uppercase;
     flex: 1;
     color: var(--txt-title);
+  }
+
+  &Backdrop {
+    display: none;
   }
 
   &Links {
@@ -94,17 +99,21 @@
     padding: 0;
 
     &.expanded &Links {
-      display: grid;
+      opacity: 1;
+      visibility: visible;
+      backdrop-filter: blur(10px);
     }
 
     &.expanded &Header {
-      border-bottom: none;
+      border-bottom-color: transparent;
     }
 
     &Header {
       gap: var(--gap-lg);
       border-bottom: 0.1rem solid var(--c-panel-bd);
       padding: var(--gap-md) var(--gap-lg);
+
+      transition: border-bottom 0.3s ease-in-out;
     }
 
     &Logo {
@@ -115,15 +124,28 @@
       display: unset;
     }
 
+    &Backdrop {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+    }
+
     &Links {
-      display: none;
+      display: grid;
       top: 100%;
       position: absolute;
       width: 100%;
       background-color: var(--c-panel-bg);
       border-top: 0.1rem solid var(--c-panel-bd);
       border-bottom: 0.1rem solid var(--c-panel-bd);
-      backdrop-filter: blur(10px);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
     }
 
     &List {

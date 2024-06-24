@@ -22,6 +22,10 @@ const Nav = ({ user, isAbsolute }) => {
     setIsExpanded(false);
   }, [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = isExpanded ? "hidden" : "auto";
+  }, [isExpanded]);
+
   return (
     <nav className={join(classes.Nav, isAbsolute ? classes.absolute : null, isExpanded ? classes.expanded : null)}>
       <div className={classes.NavHeader}>
@@ -37,6 +41,8 @@ const Nav = ({ user, isAbsolute }) => {
           </Button>
         </div>
       </div>
+
+      <span className={classes.NavBackdrop} onClick={() => setIsExpanded(false)} />
 
       <div className={classes.NavLinks}>
         <ul className={classes.NavList}>
