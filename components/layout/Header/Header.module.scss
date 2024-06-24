@@ -1,22 +1,67 @@
 .Header {
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  padding: 5rem;
-  gap: var(--gap-lg);
-  height: 70vh;
+  $margin-bottom: 50vh;
 
-  & > :global(.header) {
+  display: grid;
+  align-items: center;
+  height: 120vh;
+  position: relative;
+  margin-bottom: -$margin-bottom;
+
+  &Grid,
+  &Gradient {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &Gradient {
+    background-image: radial-gradient(ellipse at 0% 50%, rgba(var(--c-orange-dark-rgb), 0.1) 0%, transparent 60%),
+      radial-gradient(ellipse at 100% 50%, rgba(var(--c-orange-dark-rgb), 0.15) 0%, transparent 60%);
+    background-size: 100% 150%;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
+  }
+
+  &Grid {
+    background-image: url("/images/app/grid-background.svg");
+    background-size: 40rem;
+    opacity: 0.09;
+    mask-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 1) 0%, transparent 90%);
+  }
+
+  &Content {
     display: grid;
     justify-items: center;
+    align-content: center;
+    padding: var(--gap-lg);
+    gap: var(--gap-lg);
+    margin-bottom: $margin-bottom;
+
+    & > :global(.paragraph) {
+      max-width: 40rem;
+      text-align: center;
+    }
+  }
+
+  &Title {
+    display: grid;
+    justify-items: center;
+    position: relative;
+
+    & > *:first-child {
+      -webkit-text-stroke: 0.1rem var(--c-orange);
+    }
+
+    & > *:last-child {
+      -webkit-text-stroke: 0.1rem white;
+    }
 
     & > * {
       display: block;
     }
-  }
-
-  & > :global(.paragraph) {
-    max-width: 40rem;
-    text-align: center;
   }
 }

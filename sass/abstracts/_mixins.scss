@@ -1,10 +1,6 @@
 @mixin shiny($color: orange, $border-radius: var(--bd-radius)) {
   color: var(--txt-title);
-  background-image: linear-gradient(
-    to top right,
-    var(--c-#{$color}-light),
-    var(--c-#{$color}-dark)
-  );
+  background-image: linear-gradient(to top right, var(--c-#{$color}-light), var(--c-#{$color}-dark));
   font-weight: var(--font-weight-bold);
   position: relative;
 
@@ -21,11 +17,7 @@
     translate: -50% -50%;
     width: calc(100% - 2 * var(--bd-width));
     height: calc(100% - 2 * var(--bd-width));
-    background-image: linear-gradient(
-      to bottom left,
-      var(--c-#{$color}-light),
-      var(--c-#{$color}-dark)
-    );
+    background-image: linear-gradient(to bottom left, var(--c-#{$color}-light), var(--c-#{$color}-dark));
     pointer-events: none;
 
     @if $border-radius == 100% {

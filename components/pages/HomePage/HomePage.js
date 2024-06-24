@@ -9,7 +9,7 @@ import InfoSection from "./InfoSection/InfoSection";
 
 const HomePage = () => {
   return (
-    <Page title="Home">
+    <Page title="Home" absoluteNav>
       <Header />
       <ProblemSection />
       <SolutionSection />
