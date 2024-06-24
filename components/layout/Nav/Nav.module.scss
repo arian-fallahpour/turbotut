@@ -108,6 +108,10 @@
       border-bottom-color: transparent;
     }
 
+    &.expanded &Backdrop {
+      display: block;
+    }
+
     &Header {
       gap: var(--gap-lg);
       border-bottom: 0.1rem solid var(--c-panel-bd);
@@ -125,7 +129,6 @@
     }
 
     &Backdrop {
-      display: block;
       position: absolute;
       top: 0;
       left: 0;

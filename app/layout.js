@@ -26,3 +26,5 @@ export default async function RootLayout({ children }) {
     </html>
   );
 }
+
+// TODO: Add billing limits for AWS and vercel

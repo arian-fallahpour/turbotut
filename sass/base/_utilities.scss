@@ -42,11 +42,7 @@
 }
 
 .color-orange {
-  background-image: linear-gradient(
-    to top right,
-    var(--c-orange-dark),
-    var(--c-orange-light)
-  );
+  background-image: linear-gradient(to bottom, var(--c-orange-dark), var(--c-orange-light));
   background-clip: text;
   color: transparent;
   text-shadow: 0 2rem 5rem rgba(var(--c-orange-rgb), 0.4);
@@ -54,11 +50,7 @@
 }
 
 .color-green {
-  background-image: linear-gradient(
-    to top right,
-    var(--c-green-dark),
-    var(--c-green-light)
-  );
+  background-image: linear-gradient(to top right, var(--c-green-dark), var(--c-green-light));
   background-clip: text;
   color: transparent;
   text-shadow: 0 1rem 2rem rgba(var(--c-green-rgb), 0.5);
@@ -66,11 +58,7 @@
 }
 
 .color-red {
-  background-image: linear-gradient(
-    to top right,
-    var(--c-red-dark),
-    var(--c-red-light)
-  );
+  background-image: linear-gradient(to top right, var(--c-red-dark), var(--c-red-light));
   background-clip: text;
   color: transparent;
   text-shadow: 0 1rem 2rem rgba(var(--c-red-rgb), 0.5);
@@ -78,14 +66,18 @@
 }
 
 .color-blue {
-  background-image: linear-gradient(
-    to top right,
-    var(--c-blue-dark),
-    var(--c-blue-light)
-  );
+  background-image: linear-gradient(to top right, var(--c-blue-dark), var(--c-blue-light));
   background-clip: text;
   color: transparent;
   text-shadow: 0 1rem 2rem rgba(var(--c-blue-rgb), 0.5);
+  font-weight: var(--font-weight-bold);
+}
+
+.color-metal {
+  background-image: linear-gradient(to bottom, white, #3b3b3b);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1rem 2rem rgba(white, 0.1);
   font-weight: var(--font-weight-bold);
 }
 
