@@ -22,8 +22,6 @@ const Checkout = () => {
         cache: "no-store",
       });
       const resData = await res.json();
-      console.log(resData);
-
       if (!res.ok) {
         setError(new Error(resData.message));
       }
