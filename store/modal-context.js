@@ -12,9 +12,9 @@ export const ModalProvider = ({ children }) => {
   const [content, setContent] = useState(null);
 
   const showModalHandler = (content) => {
+    document.body.style.overflow = "hidden";
     setContent(content);
     setVisible(true);
-    document.body.style.overflow = "hidden";
   };
 
   const hideModalHandler = () => {
@@ -32,9 +32,5 @@ export const ModalProvider = ({ children }) => {
     hideModal: hideModalHandler,
   };
 
-  return (
-    <ModalContext.Provider value={loginContext}>
-      {children}
-    </ModalContext.Provider>
-  );
+  return <ModalContext.Provider value={loginContext}>{children}</ModalContext.Provider>;
 };
