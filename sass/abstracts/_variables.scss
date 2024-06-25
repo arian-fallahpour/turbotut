@@ -36,6 +36,13 @@
   --c-panel-bg: rgba(255, 255, 255, 0.05);
   --c-panel-bd: rgba(255, 255, 255, 0.15);
 
+  --c-bg-dark: #0c0b0e;
+  --c-bg-dark-rgb: 12, 11, 14;
+  --c-bg: #0b0031;
+  --c-bg-rgb: 11, 0, 49;
+  --c-bg-light: #170046;
+  --c-bg-light-rgb: 18, 0, 55;
+
   --gap-sm: 1rem;
   --gap-md: 2rem;
   --gap-lg: 3rem;
@@ -49,7 +56,7 @@
   --bd-radius: 2rem;
   --bd-width: 0.1rem;
 
-  --bg-main: radial-gradient(circle at 25% -25%, #0c0b0e 15%, #0b0031);
+  --bg-main: radial-gradient(circle at 25% -25%, rgba(var(--c-bg-dark-rgb), 1) 15%, rgba(var(--c-bg-light-rgb), 1));
   --bg-flat: #150826;
   --bg-flat-rgb: 21, 8, 38;
   --bg-flat-l: #211631;

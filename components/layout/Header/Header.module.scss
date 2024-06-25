@@ -1,5 +1,5 @@
 .Header {
-  $margin-bottom: 50vh;
+  $margin-bottom: 40vh;
 
   display: grid;
   align-items: center;
@@ -53,11 +53,11 @@
     position: relative;
 
     & > *:first-child {
-      -webkit-text-stroke: 0.1rem var(--c-orange);
+      -webkit-text-stroke: 0.05rem var(--c-orange);
     }
 
     & > *:last-child {
-      -webkit-text-stroke: 0.1rem white;
+      -webkit-text-stroke: 0.05rem white;
     }
 
     & > * {
