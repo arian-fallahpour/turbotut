@@ -2,84 +2,122 @@
 
 section.SolutionSection {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+
+  background-color: var(--bg-flat-l);
+  position: relative;
+  margin: 10rem 0;
+  border-top: 0.1rem solid var(--c-panel-bd);
+  border-bottom: 0.1rem solid var(--c-panel-bd);
 }
 
-.SolutionSection {
-  // background-color: var(--bg-flat-l);
-  &Content {
-  }
+.Container {
+  position: relative;
+  max-width: 90rem;
+  width: 100%;
 
-  &Image {
-    justify-self: center;
-    align-self: center;
-    width: 80%;
-    height: auto;
-    aspect-ratio: 1;
-    position: relative;
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-lg);
 }
 
 .Content {
-  display: grid;
-  gap: var(--gap-lg);
+  $border: 1px;
+  $padding: 0.5rem;
+
+  position: relative;
+  z-index: 2;
+
+  &Shadow {
+    background-color: var(--c-green);
+    width: 40%;
+    height: auto;
+    aspect-ratio: 2;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: calc(100% - 5rem);
+    translate: -50% -50%;
+    filter: blur(50px);
+  }
+
+  &Outer {
+    border-radius: var(--bd-radius);
+    background-color: var(--c-panel-bd);
+    padding: $border;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &Gradient1,
+  &Gradient2 {
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1;
+    left: 50%;
+    background-color: var(--c-green);
+    display: block;
+    position: absolute;
+    filter: blur(30px);
+  }
+
+  &Gradient1 {
+    translate: -50% -50%;
+    top: 0;
+  }
+
+  &Gradient2 {
+    translate: -50% 50%;
+    bottom: 0;
+  }
+
+  &Middle {
+    background: var(--bg-flat-l);
+    border-radius: calc(var(--bd-radius));
+    padding: $padding;
+    display: grid;
+    position: relative;
+  }
+
+  &Inner {
+    border-radius: calc(var(--bd-radius) - #{$padding});
+    padding: var(--gap-lg);
+    overflow: hidden;
+    position: relative;
+    background-image: radial-gradient(circle at 50% 75%, rgba(white, 0.1), transparent);
+    height: 50rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    align-content: start;
+  }
 
   &List {
-    list-style: none;
-
     display: grid;
     gap: var(--gap-md);
+    align-content: start;
+    flex: 1;
   }
 
   &ListItem {
-  }
-
-  &Button {
-    justify-self: start;
-  }
-}
-
-.Image {
-}
-
-.Reason {
-  position: relative;
-
-  &Container {
-    backdrop-filter: blur(100px);
-    border-radius: var(--bd-radius);
-    border: 0.1rem solid var(--c-panel-bd);
-    background: var(--c-panel-bg);
-
-    position: relative;
-    z-index: 2;
-
     display: grid;
     grid-template-columns: auto 1fr;
-    align-items: center;
-  }
-
-  &Content {
-    display: grid;
     gap: var(--gap-sm);
-    padding: var(--gap-md);
 
-    & > :global(.ul) {
-      list-style: disc;
+    & svg {
+      width: 3rem;
+      height: 3rem;
     }
   }
+}
 
-  &Icon {
-    font-size: 3.5rem;
-    color: var(--c-green);
-    line-height: 1;
-    filter: drop-shadow(0 0.5rem 1rem var(--c-green));
+.Figure {
+  &Image {
+    position: absolute;
     height: 100%;
-
-    display: grid;
-    align-items: center;
-
-    padding: var(--gap-md);
-    border-right: inherit;
+    width: auto;
+    aspect-ratio: 1;
+    right: 0;
   }
 }

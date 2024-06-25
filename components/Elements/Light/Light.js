@@ -2,9 +2,16 @@ import React from "react";
 import classes from "./Light.module.scss";
 import { join } from "@/utils/helper";
 
-const Light = ({ color = "var(--c-orange)", width = "10rem", height = ".5rem", position = "up" }) => {
+const Light = ({
+  className,
+  color = "var(--c-orange)",
+  width = "15rem",
+  height = ".5rem",
+  position = "up",
+  ...otherProps
+}) => {
   return (
-    <div className={join(classes.Light, classes[`Light--${position}`])} style={{ color, margin: `0 ${height}` }}>
+    <div className={join(classes.Light, classes[`Light--${position}`], className)} style={{ color }} {...otherProps}>
       <span
         className={classes.Light1}
         style={{ width: `calc(2 * ${height})`, borderBottomRightRadius: height, borderTopLeftRadius: height }}

@@ -17,19 +17,10 @@
     left: 0;
   }
 
-  &Gradient {
-    background-image: radial-gradient(ellipse at 0% 50%, rgba(var(--c-orange-dark-rgb), 0.1) 0%, transparent 60%),
-      radial-gradient(ellipse at 100% 50%, rgba(var(--c-orange-dark-rgb), 0.15) 0%, transparent 60%);
-    background-size: 100% 150%;
-    background-position: 0 50%;
-    background-repeat: no-repeat;
-    mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
-  }
-
   &Grid {
     background-image: url("/images/app/grid-background.svg");
     background-size: 40rem;
-    opacity: 0.09;
+    opacity: 0.05;
     mask-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 1) 0%, transparent 90%);
   }
 

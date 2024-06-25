@@ -1,14 +1,32 @@
 .Outer {
   display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.5s ease;
+  transition: grid-template-rows 0.5s ease, grid-template-columns 0.5s ease;
 
-  &.revealed {
-    grid-template-rows: 1fr;
+  &--vertical {
+    grid-template-rows: 0fr;
+
+    &.revealed {
+      grid-template-rows: 1fr;
+    }
+
+    & > .Inner {
+      grid-row: 1 / span 2;
+    }
+  }
+
+  &--horizontal {
+    grid-template-columns: 0fr;
+
+    &.revealed {
+      grid-template-columns: 1fr;
+    }
+
+    & > .Inner {
+      grid-column: 1 / span 2;
+    }
   }
 }
 
 .Inner {
   overflow: hidden;
-  grid-row: 1 / span 2;
 }

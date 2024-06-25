@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./ProblemSection.module.scss";
 import MoonIcon from "@/components/Elements/Icons/MoonIcon";
 import Button from "@/components/Elements/Button/Button";
@@ -10,6 +10,7 @@ import { join } from "@/utils/helper";
 
 const Game = () => {
   const [activeButtons, setActiveButtons] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const buttonClickHandler = (index) => {
     setActiveButtons((p) => {
@@ -22,6 +23,10 @@ const Game = () => {
     });
   };
 
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
     <div className={join(classes.Game, classes.Content)}>
       <h2 className="header header-section text-center">Visualization</h2>
@@ -31,7 +36,8 @@ const Game = () => {
           className={join(
             classes.GameButton,
             classes[`GameButton--1`],
-            activeButtons.includes(0) ? classes.active : null
+            activeButtons.includes(0) ? classes.active : null,
+            !isLoaded ? classes.preload : null
           )}
           onClick={() => buttonClickHandler(0)}
         >
@@ -42,7 +48,8 @@ const Game = () => {
           className={join(
             classes.GameButton,
             classes[`GameButton--2`],
-            activeButtons.includes(1) ? classes.active : null
+            activeButtons.includes(1) ? classes.active : null,
+            !isLoaded ? classes.preload : null
           )}
           onClick={() => buttonClickHandler(1)}
         >
@@ -53,7 +60,8 @@ const Game = () => {
           className={join(
             classes.GameButton,
             classes[`GameButton--3`],
-            activeButtons.includes(2) ? classes.active : null
+            activeButtons.includes(2) ? classes.active : null,
+            !isLoaded ? classes.preload : null
           )}
           onClick={() => buttonClickHandler(2)}
         >

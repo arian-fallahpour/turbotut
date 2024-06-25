@@ -1,7 +1,7 @@
 "use client";
 
 import { SessionProvider } from "next-auth/react";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 import { ModalProvider } from "@/store/modal-context";
 import { GlobalErrorProvider } from "@/store/error-context";

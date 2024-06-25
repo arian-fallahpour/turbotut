@@ -3,6 +3,7 @@ import "@/sass/globals.scss";
 import { Open_Sans } from "next/font/google";
 import { Providers } from "./providers";
 import business from "@/app/data/business";
+import { join } from "@/utils/helper";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={openSans.className}>
+      <body className={join(openSans.className, "preload")}>
         <Providers>{children}</Providers>
       </body>
     </html>
