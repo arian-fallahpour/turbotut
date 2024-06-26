@@ -7,11 +7,12 @@ import CourseModel from "@/models/courseModel";
 import { connectDB } from "@/utils/database";
 import Courses from "./Courses";
 import APIQuery from "@/utils/APIQuery";
+import queryString from "query-string";
 
 async function getData() {
   await connectDB();
 
-  const query = new APIQuery(CourseModel.find(), "").sort();
+  const query = new APIQuery(CourseModel.find(), queryString.stringify({ isArchived: false })).sort().filter();
   const courses = await query.execute();
 
   return JSON.parse(JSON.stringify(courses));

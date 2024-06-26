@@ -1,4 +1,5 @@
 const excludedFields = ["page", "sort", "limit", "select", "search"];
+import queryStr from "query-string";
 
 class APIQuery {
   queryClone;
@@ -9,15 +10,12 @@ class APIQuery {
   }
 
   filter() {
-    const queryObj = { ...this.queryString };
+    const queryObj = queryStr.parse(this.queryString);
     excludedFields.forEach((el) => delete queryObj[el]);
 
     // Add $gt, $gte, $lt, $lte operators
     let queryString = JSON.stringify(queryObj);
-    queryString = queryString.replace(
-      /\b(gte|gt|lte|lt)\b/g,
-      (match) => `$${match}`
-    );
+    queryString = queryString.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
 
     // Update mongoose query
     this.query = this.query.find(JSON.parse(queryString));
