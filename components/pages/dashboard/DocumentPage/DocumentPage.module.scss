@@ -22,7 +22,7 @@
     height: 7.5rem;
     border-radius: 1rem;
     background-color: var(--c-panel-bg);
-    border: 0.1rem solid var(--c-panel-bd);
+    border: 01px solid var(--c-panel-bd);
 
     display: grid;
     justify-items: center;
@@ -72,7 +72,7 @@ button.HeaderButton.HeaderButton {
   gap: var(--gap-md);
 
   border-radius: var(--bd-radius);
-  border: 0.1rem solid var(--c-panel-bd);
+  border: 01px solid var(--c-panel-bd);
   background: var(--c-panel-bg);
   padding-bottom: var(--gap-lg);
 

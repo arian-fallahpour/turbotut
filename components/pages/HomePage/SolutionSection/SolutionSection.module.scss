@@ -7,8 +7,26 @@ section.SolutionSection {
   background-color: var(--bg-flat-l);
   position: relative;
   margin: 10rem 0;
-  border-top: 0.1rem solid var(--c-panel-bd);
-  border-bottom: 0.1rem solid var(--c-panel-bd);
+  border-top: 1px solid var(--c-panel-bd);
+  border-bottom: 1px solid var(--c-panel-bd);
+}
+
+.Divider {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+
+  &--top {
+    bottom: 100%;
+  }
+
+  &--bottom {
+    top: 100%;
+    rotate: 180deg;
+  }
+}
+
+.Background {
 }
 
 .Container {

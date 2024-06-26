@@ -6,7 +6,7 @@
   &Container {
     position: relative;
     border-radius: var(--bd-radius);
-    border: 0.1rem solid transparent;
+    border: 01px solid transparent;
     overflow: hidden;
 
     display: grid;
@@ -26,11 +26,7 @@
   }
 
   &Container.col &Gradient {
-    background-image: radial-gradient(
-      circle at 50% -50%,
-      rgba(var(--c-red-rgb), 0.2),
-      transparent
-    );
+    background-image: radial-gradient(circle at 50% -50%, rgba(var(--c-red-rgb), 0.2), transparent);
   }
 
   // TYPES
@@ -39,11 +35,7 @@
     border-color: rgba(var(--c-red-rgb), 0.3);
   }
   &Container.error &Gradient {
-    background-image: radial-gradient(
-      circle at 50% 25%,
-      rgba(var(--c-red-rgb), 0.2),
-      transparent
-    );
+    background-image: radial-gradient(circle at 50% 25%, rgba(var(--c-red-rgb), 0.2), transparent);
   }
 
   &Container.info {
@@ -52,11 +44,7 @@
   }
 
   &Container.info &Gradient {
-    background-image: radial-gradient(
-      circle at 50% -50%,
-      rgba(white, 0.1),
-      transparent
-    );
+    background-image: radial-gradient(circle at 50% -50%, rgba(white, 0.1), transparent);
   }
 
   &Gradient {

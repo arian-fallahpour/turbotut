@@ -1,5 +1,77 @@
 section.CoursesSection {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.Courses {
+  overflow: hidden;
+  display: grid;
+  justify-items: start;
+  overflow-x: scroll;
+
+  &Inner {
+    padding-left: var(--gap-lg);
+    padding-right: var(--gap-lg);
+    display: flex;
+    gap: var(--gap-lg);
+  }
 }
 
 .Course {
+  $width-normal: 30rem;
+  $width-active: 60rem;
+
+  position: relative;
+  width: $width-normal;
+  height: 40rem;
+  border-radius: var(--bd-radius);
+  overflow: hidden;
+  border: 1px solid var(--c-panel-bd);
+  display: inline-block;
+
+  display: grid;
+  align-content: end;
+
+  transition: width 0.5s ease;
+
+  &.active {
+    width: $width-active;
+  }
+
+  &Image {
+    object-fit: cover;
+  }
+
+  &Content {
+    position: relative;
+    padding: var(--gap-lg);
+  }
+
+  &Name {
+    max-width: 100%;
+    width: calc(#{$width-normal} - 2 * var(--gap-lg));
+  }
+
+  &Info {
+  }
+
+  &InfoOuter {
+  }
+
+  &InfoInner {
+    padding-top: var(--gap-sm);
+    padding-right: 2px;
+
+    width: calc(#{$width-active} - 2 * var(--gap-lg));
+    display: grid;
+    gap: var(--gap-sm);
+  }
+
+  &Subject {
+    color: var(--txt-text);
+  }
+
+  &Button {
+    justify-self: end;
+  }
 }

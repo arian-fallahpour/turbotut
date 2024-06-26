@@ -37,7 +37,7 @@
     backdrop-filter: blur(10px);
     border-radius: 1rem;
     overflow: hidden;
-    border: 0.1rem solid var(--c-panel-bd);
+    border: 01px solid var(--c-panel-bd);
     z-index: 1;
 
     display: grid;
@@ -62,7 +62,7 @@
     display: grid;
 
     &:not(:last-child) {
-      border-bottom: 0.1rem solid var(--c-panel-bd);
+      border-bottom: 01px solid var(--c-panel-bd);
     }
   }
 }

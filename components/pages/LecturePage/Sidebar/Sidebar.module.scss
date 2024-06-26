@@ -7,7 +7,7 @@
   position: sticky;
   top: var(--gap-lg);
   background: var(--c-panel-bg);
-  border: 0.1rem solid var(--c-panel-bd);
+  border: 01px solid var(--c-panel-bd);
   border-radius: var(--bd-radius);
   z-index: 2;
 
@@ -21,7 +21,7 @@
 
   &Header {
     padding: var(--gap-md) var(--gap-lg);
-    border-bottom: 0.1rem solid var(--c-panel-bd);
+    border-bottom: 01px solid var(--c-panel-bd);
 
     display: flex;
     gap: var(--gap-lg);
@@ -60,7 +60,7 @@
   }
 
   &Nav {
-    border-top: 0.1rem solid var(--c-panel-bd);
+    border-top: 01px solid var(--c-panel-bd);
 
     display: flex;
     justify-content: space-between;
@@ -124,7 +124,7 @@
 .Sidebar > .SidebarControls > button {
   padding: var(--gap-md);
   background: var(--c-panel-bg);
-  border: 0.1rem solid var(--c-panel-bd);
+  border: 01px solid var(--c-panel-bd);
   border-radius: 100%;
   backdrop-filter: blur(10px);
 

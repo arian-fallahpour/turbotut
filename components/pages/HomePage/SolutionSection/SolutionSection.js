@@ -1,6 +1,8 @@
 import React from "react";
 import classes from "./SolutionSection.module.scss";
 
+import imageDivider from "@/public/images/app/test.svg";
+
 import Section from "@/components/Elements/Section/Section";
 import Light from "@/components/Elements/Light/Light";
 import Image from "next/image";
@@ -8,10 +10,13 @@ import KeyIcon from "@/components/Elements/Icons/KeyIcon";
 import LightningIcon from "@/components/Elements/Icons/LightningIcon";
 import SearchIcon from "@/components/Elements/Icons/SearchIcon";
 import Button from "@/components/Elements/Button/Button";
+import { join } from "@/utils/helper";
 
 const SolutionSection = () => {
   return (
     <Section className={classes.SolutionSection} limit={null}>
+      <Image className={join(classes.Divider, classes["Divider--top"])} alt="top divider" src={imageDivider} />
+      <Image className={join(classes.Divider, classes["Divider--bottom"])} alt="bottom divider" src={imageDivider} />
       <div className={classes.Container}>
         <div className={classes.Content}>
           <span className={classes.ContentShadow} />

@@ -3,10 +3,25 @@ import classes from "./CoursesSection.module.scss";
 
 import Section from "@/components/Elements/Section/Section";
 
-const CoursesSection = () => {
+import CourseModel from "@/models/courseModel";
+import { connectDB } from "@/utils/database";
+import Courses from "./Courses";
+
+async function getData() {
+  await connectDB();
+
+  const courses = await CourseModel.find();
+
+  return JSON.parse(JSON.stringify(courses));
+}
+
+const CoursesSection = async () => {
+  const courses = await getData();
+
   return (
-    <Section className={classes.CourseSection}>
-      <div className={classes.Courses}></div>
+    <Section className={classes.CoursesSection} limit={null}>
+      <h2 className="header header-title text-center color-orange">Courses</h2>
+      <Courses courses={courses} />
     </Section>
   );
 };
