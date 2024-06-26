@@ -6,11 +6,13 @@ import Section from "@/components/Elements/Section/Section";
 import CourseModel from "@/models/courseModel";
 import { connectDB } from "@/utils/database";
 import Courses from "./Courses";
+import APIQuery from "@/utils/APIQuery";
 
 async function getData() {
   await connectDB();
 
-  const courses = await CourseModel.find();
+  const query = new APIQuery(CourseModel.find(), "").sort();
+  const courses = await query.execute();
 
   return JSON.parse(JSON.stringify(courses));
 }

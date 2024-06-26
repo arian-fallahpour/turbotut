@@ -14,8 +14,8 @@ const CtaSection = () => {
           <p className="paragraph">
             Don&apos;t wait! Get learning as fast as possible and ace all your tests and exams.
           </p>
-          <Button variantName="white" href="/courses" isLink>
-            view courses
+          <Button variantName="white" href="/pricing" isLink>
+            Get started
           </Button>
         </div>
         <div className={classes.CtaImage}>

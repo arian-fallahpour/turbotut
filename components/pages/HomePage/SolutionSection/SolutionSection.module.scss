@@ -16,6 +16,10 @@ section.SolutionSection {
   left: 50%;
   translate: -50% 0;
 
+  & > img {
+    display: block;
+  }
+
   &--top {
     bottom: 100%;
   }

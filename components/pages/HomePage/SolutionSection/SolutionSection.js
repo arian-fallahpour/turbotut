@@ -15,14 +15,20 @@ import { join } from "@/utils/helper";
 const SolutionSection = () => {
   return (
     <Section className={classes.SolutionSection} limit={null}>
-      <Image className={join(classes.Divider, classes["Divider--top"])} alt="top divider" src={imageDivider} />
-      <Image className={join(classes.Divider, classes["Divider--bottom"])} alt="bottom divider" src={imageDivider} />
+      <div className={join(classes.Divider, classes["Divider--top"])}>
+        <Image alt="top divider" src={imageDivider} />
+      </div>
+      <div className={join(classes.Divider, classes["Divider--bottom"])}>
+        <Image alt="bottom divider" src={imageDivider} />
+      </div>
       <div className={classes.Container}>
         <div className={classes.Content}>
           <span className={classes.ContentShadow} />
+
           <div className={classes.ContentOuter}>
             <span className={classes.ContentGradient1} />
             <span className={classes.ContentGradient2} />
+
             <div className={classes.ContentMiddle}>
               <div className={classes.ContentInner}>
                 <Light color="var(--c-green)" position="up" />

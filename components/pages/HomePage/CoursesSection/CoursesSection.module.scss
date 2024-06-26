@@ -4,7 +4,6 @@ section.CoursesSection {
 }
 
 .Courses {
-  overflow: hidden;
   display: grid;
   justify-items: start;
   overflow-x: scroll;
@@ -17,61 +16,70 @@ section.CoursesSection {
   }
 }
 
-.Course {
+.Course.Course.Course {
   $width-normal: 30rem;
   $width-active: 60rem;
 
   position: relative;
-  width: $width-normal;
-  height: 40rem;
+  width: 35rem;
+  height: 45rem;
   border-radius: var(--bd-radius);
-  overflow: hidden;
   border: 1px solid var(--c-panel-bd);
+  overflow: hidden;
   display: inline-block;
+  padding: var(--gap-lg);
+
+  background: transparent;
 
   display: grid;
-  align-content: end;
+  align-content: start;
+  justify-content: start;
 
-  transition: width 0.5s ease;
+  transition: border 0.2s ease;
 
-  &.active {
-    width: $width-active;
+  &:hover,
+  &:focus-visible {
+    filter: unset;
+    border-color: rgba(var(--c-orange-rgb), 0.5);
+  }
+}
+
+.Course {
+  &:hover > &Image,
+  :focus-visible > &Image {
+    scale: 1.05;
   }
 
   &Image {
     object-fit: cover;
+    transition: scale 0.2s ease;
   }
 
   &Content {
     position: relative;
-    padding: var(--gap-lg);
-  }
+    line-height: 1;
 
-  &Name {
-    max-width: 100%;
-    width: calc(#{$width-normal} - 2 * var(--gap-lg));
-  }
-
-  &Info {
-  }
-
-  &InfoOuter {
-  }
-
-  &InfoInner {
-    padding-top: var(--gap-sm);
-    padding-right: 2px;
-
-    width: calc(#{$width-active} - 2 * var(--gap-lg));
     display: grid;
+    gap: 0.5rem;
+  }
+
+  &Content > :global(.header) {
+    font-size: 2.5rem;
+  }
+
+  &List {
+    display: flex;
     gap: var(--gap-sm);
+    list-style: none;
   }
 
-  &Subject {
+  &ListItem {
+    background-color: var(--c-panel-bg);
+    border: 1px solid var(--c-panel-bd);
+    font-size: 1.25rem;
     color: var(--txt-text);
-  }
-
-  &Button {
-    justify-self: end;
+    padding: 0.5rem 1rem;
+    border-radius: 22rem;
+    backdrop-filter: blur(10px);
   }
 }
