@@ -35,12 +35,9 @@ section.CoursesSection {
   align-content: start;
   justify-content: start;
 
-  transition: border 0.2s ease;
-
   &:hover,
   &:focus-visible {
     filter: unset;
-    border-color: rgba(var(--c-orange-rgb), 0.5);
   }
 }
 
