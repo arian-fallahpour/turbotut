@@ -23,13 +23,13 @@ export const metadata = {
     apple: "/logo.png",
   },
   twitter: {
-    title: "Exotify Digital Marketing",
-    description: "A reliable web development and digital marketing agency that increases your conversions.",
+    title: `${business.name} learning`,
+    description: "Learn any high school subjects at blazing speeds!.",
     images: ["/preview.png"],
   },
   openGraph: {
-    title: "Exotify Digital Marketing",
-    description: "A reliable web development and digital marketing agency that increases your conversions.",
+    title: `${business.name} learning`,
+    description: "Learn any high school subjects at blazing speeds!.",
     images: ["/preview.png"],
   },
 };
