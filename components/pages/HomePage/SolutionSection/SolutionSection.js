@@ -33,6 +33,7 @@ const SolutionSection = () => {
               <div className={classes.ContentInner}>
                 <Light color="var(--c-green)" position="up" />
                 <Light color="var(--c-green)" position="down" />
+
                 <h2 className="header header-section text-center color-green">Our Solution</h2>
                 <p className="paragraph">
                   We provide a number of ways that will guarantee your success in school, and as long as you take
@@ -61,7 +62,12 @@ const SolutionSection = () => {
         </div>
         <div className={classes.Figure}>
           <div className={classes.FigureImage}>
-            <Image src="/images/app/image-1.png" alt="test" fill />
+            <Image
+              src="/images/app/image-1.png"
+              alt="test"
+              sizes="(max-width: 700px) 75vw, (max-width: 1000px) 50vw, (max-width: 1440px) 35vw, 30vw"
+              fill
+            />
           </div>
         </div>
       </div>

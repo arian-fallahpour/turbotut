@@ -19,7 +19,12 @@ const CtaSection = () => {
           </Button>
         </div>
         <div className={classes.CtaImage}>
-          <Image alt="People using a chalk board" src="/images/app/image-2.png" fill sizes="100vw" />
+          <Image
+            alt="People using a chalk board"
+            src="/images/app/image-2.png"
+            sizes="(max-width: 450px) 90vw, (max-width: 750px) 60vw, (max-width: 450px) 90vw, 33vw"
+            fill
+          />
         </div>
       </div>
     </Section>

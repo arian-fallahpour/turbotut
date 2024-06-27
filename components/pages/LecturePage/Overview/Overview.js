@@ -10,20 +10,17 @@ const Overview = ({ course }) => {
         <Image
           alt={course.name + " cover page"}
           src={course.image || `/images/courses/default.png`}
+          sizes="(max-width: 450px) 90vw, (max-width: 900px) 50vw, 33vw"
           fill
         />
       </div>
 
       <div className={classes.OverviewTitle}>
-        <h2 className="header header-title text-center color-orange">
-          {course.name}
-        </h2>
+        <h2 className="header header-title text-center color-orange">{course.name}</h2>
         <h3 className="header header-card text-center">{course.subject}</h3>
       </div>
 
-      <p className="paragraph text-center">
-        {course.description || "No description"}
-      </p>
+      <p className="paragraph text-center">{course.description || "No description"}</p>
 
       <div className={classes.Content}>
         <div className={classes.ContentHeader}>
@@ -44,11 +41,7 @@ const Overview = ({ course }) => {
                 <ul className={classes.ContentLectures}>
                   {chp.lectures.map((lec) => (
                     <li key={lec.name} className={classes.ContentLecture}>
-                      <Button
-                        styleName="text"
-                        href={`/courses/${course.slug}/lecture/${lec.slug}`}
-                        isLink
-                      >
+                      <Button styleName="text" href={`/courses/${course.slug}/lecture/${lec.slug}`} isLink>
                         {lec.name}
                       </Button>
                     </li>
@@ -60,11 +53,7 @@ const Overview = ({ course }) => {
         )}
       </div>
 
-      <Button
-        className={classes.OverviewCta}
-        href="/checkout?pricing=premium"
-        isLink
-      >
+      <Button className={classes.OverviewCta} href="/checkout?pricing=premium" isLink>
         $14.99 per month
       </Button>
     </div>
