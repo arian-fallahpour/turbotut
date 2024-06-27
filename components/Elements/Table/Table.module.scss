@@ -1,7 +1,7 @@
 .Table {
   display: grid;
   border-radius: var(--bd-radius);
-  border: 01px solid var(--c-panel-bd);
+  border: 1px solid var(--c-panel-bd);
 
   & > *:not(:last-child) {
     border-bottom: inherit;

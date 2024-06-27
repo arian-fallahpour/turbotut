@@ -230,7 +230,7 @@
       border-radius: 100%;
 
       $color: rgba(white, 0.3);
-      border: 01px solid $color;
+      border: 1px solid $color;
       color: $color;
       background: transparent;
 
@@ -245,7 +245,7 @@
     &--orange:link,
     &--orange:visited {
       $color: rgba(var(--c-orange-rgb), 0.6);
-      border: 01px solid $color;
+      border: 1px solid $color;
       color: $color;
       background: transparent;
 
@@ -262,7 +262,7 @@
     &--red:link,
     &--red:visited {
       $color: rgba(var(--c-red-rgb), 0.6);
-      border: 01px solid $color;
+      border: 1px solid $color;
       color: $color;
       background: transparent;
 

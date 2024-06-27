@@ -61,7 +61,7 @@ section.ProblemSection {
   align-content: start;
 
   &:not(:last-child) {
-    border-right: 01px solid var(--c-panel-bd);
+    border-right: 1px solid var(--c-panel-bd);
   }
 }
 
@@ -120,7 +120,7 @@ section.ProblemSection {
 
   background-color: transparent;
   gap: 0;
-  border: 01px solid var(--c-panel-bd);
+  border: 1px solid var(--c-panel-bd);
   background: var(--c-panel-bg);
   padding: 0;
   width: 7.5rem;

@@ -13,6 +13,7 @@ const Course = ({ course }) => {
         alt={`${course.name} cover`}
         fill
       />
+      <span className={classes.CourseGradient} />
       <div className={classes.CourseContent}>
         <p className="paragraph">{course.subject}</p>
         <h3 className="header header-section">{course.name}</h3>

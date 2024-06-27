@@ -22,8 +22,7 @@ const business = {
         },
         {
           IconTag: KeyIcon,
-          description:
-            "Access to secret study tricks and critical thinking questions",
+          description: "Access to secret study tricks and critical thinking questions",
         },
       ],
     },
@@ -38,6 +37,15 @@ const business = {
       title: "How long are the courses on average?",
       description:
         "The courses are around 1-2 hours of length on average. They cover only the most necessary materials and do not waste any time.",
+    },
+    {
+      title: "Will we be getting new courses?",
+      description: "Yes, we are constantly working on delivering new courses that retain the qualities we advertise.",
+    },
+    {
+      title: "Is it safe to make a payment on this platform?",
+      description:
+        "We utilize the widely known Stripe payments infrastructure to enable payments on our website. Stripe is used by many large companies such as Amazon, Google and more, and it is the backbone for payments on the web.",
     },
   ],
 };

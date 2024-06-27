@@ -35,11 +35,11 @@
 
   @if $color == white {
     background: rgba(white, 0.05);
-    border: 01px solid rgba(white, 0.2);
+    border: 1px solid rgba(white, 0.2);
     color: var(--txt-text);
   } @else {
     background: rgba(var(--c-#{$color}-rgb), 0.1);
-    border: 01px solid rgba(var(--c-#{$color}-rgb), 0.4);
+    border: 1px solid rgba(var(--c-#{$color}-rgb), 0.4);
     color: var(--c-#{$color});
   }
   @if $hover == true {
@@ -48,9 +48,9 @@
       filter: unset;
       @if $color == white {
         background: rgba(white, 0.1);
-        border: 01px solid rgba(white, 0.3);
+        border: 1px solid rgba(white, 0.3);
       } @else {
-        border: 01px solid rgba(var(--c-#{$color}-rgb), 0.5);
+        border: 1px solid rgba(var(--c-#{$color}-rgb), 0.5);
         background: rgba(var(--c-#{$color}-rgb), 0.15);
       }
     }

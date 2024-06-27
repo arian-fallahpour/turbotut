@@ -6,9 +6,10 @@ $padding: var(--gap-md);
   transition: max-height 0.5s ease;
   border-collapse: collapse;
 
-  border: 01px solid var(--c-panel-bd);
+  border: 1px solid var(--c-panel-bd);
   border-radius: var(--bd-radius);
   overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 .Item {
@@ -27,6 +28,10 @@ $padding: var(--gap-md);
     &Overflow {
       opacity: 1;
     }
+
+    &Button > svg {
+      rotate: 90deg;
+    }
   }
 
   &Button {
@@ -36,6 +41,18 @@ $padding: var(--gap-md);
     text-align: start;
     border: none;
     background: transparent;
+
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap-lg);
+    align-items: center;
+
+    & > svg {
+      width: 2.5rem;
+      height: 2.5rem;
+
+      transition: rotate 0.5s ease;
+    }
   }
 
   &Title {

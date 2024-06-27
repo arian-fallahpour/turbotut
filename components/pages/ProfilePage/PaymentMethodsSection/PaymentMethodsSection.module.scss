@@ -9,7 +9,7 @@ section.PaymentMethodsSection {
 .PaymentMethods {
   padding: $padding-top 0;
   border-radius: var(--bd-radius);
-  border: 01px solid var(--c-panel-bd);
+  border: 1px solid var(--c-panel-bd);
   background: var(--c-panel-bg);
   padding: $padding-top 0;
 
@@ -74,7 +74,7 @@ section.PaymentMethodsSection {
 
   &Content {
     display: grid;
-    border-top: 01px solid transparent;
+    border-top: 1px solid transparent;
     margin-top: $padding-top;
 
     transition: border 0.5s ease;
@@ -103,7 +103,7 @@ section.PaymentMethodsSection {
   &Error {
     margin-top: $padding-top;
     padding-bottom: $padding-top;
-    border-bottom: 01px solid var(--c-panel-bd);
+    border-bottom: 1px solid var(--c-panel-bd);
   }
 }
 
@@ -113,7 +113,7 @@ section.PaymentMethodsSection {
   align-items: center;
   padding: var(--gap-sm) $padding-left;
 
-  border-bottom: 01px solid var(--c-panel-bd);
+  border-bottom: 1px solid var(--c-panel-bd);
 
   &Brand {
     & img {
@@ -168,7 +168,7 @@ section.PaymentMethodsSection {
 
 .Modal {
   background-color: var(--bg-flat-l);
-  border: 01px solid var(--c-panel-bd);
+  border: 1px solid var(--c-panel-bd);
   border-radius: var(--bd-radius);
   backdrop-filter: blur(20px);
   width: 50rem;

@@ -86,7 +86,7 @@
       width: 100%;
       height: auto;
       border-radius: var(--bd-radius);
-      border: 01px solid var(--c-panel-bd);
+      border: 1px solid var(--c-panel-bd);
       display: block;
     }
 
@@ -110,7 +110,7 @@
       height: auto;
       border-radius: var(--bd-radius);
       overflow: hidden;
-      border: 01px solid var(--c-panel-bd);
+      border: 1px solid var(--c-panel-bd);
     }
 
     & > figcaption {
@@ -151,7 +151,7 @@
       display: inline-block;
       overflow: hidden;
 
-      border: 01px solid var(--c-panel-bd);
+      border: 1px solid var(--c-panel-bd);
       border-radius: var(--bd-radius);
       text-align: center;
     }
@@ -165,7 +165,7 @@
       display: grid;
 
       &:not(:last-child) {
-        border-bottom: 01px solid var(--c-panel-bd);
+        border-bottom: 1px solid var(--c-panel-bd);
       }
     }
 
@@ -177,7 +177,7 @@
       grid-row: 1 / span 1;
 
       &:not(:last-child) {
-        border-right: 01px solid var(--c-panel-bd);
+        border-right: 1px solid var(--c-panel-bd);
       }
     }
   }

@@ -43,13 +43,32 @@ section.CoursesSection {
 
 .Course {
   &:hover > &Image,
-  :focus-visible > &Image {
+  &:focus-visible > &Image {
     scale: 1.05;
+  }
+  &:hover > &Gradient,
+  &:focus-visible > &Gradient {
+    translate: calc(-50% + 60rem) -50%;
+
+    transition: translate 0.75s 0.35s ease;
   }
 
   &Image {
     object-fit: cover;
     transition: scale 0.2s ease;
+  }
+
+  &Gradient {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100rem;
+    height: 20rem;
+    background-color: rgba(white, 0.075);
+    filter: blur(40px);
+    rotate: -45deg;
+    translate: calc(-50% - 60rem) -50%;
   }
 
   &Content {

@@ -28,7 +28,7 @@
     position: relative;
     border-radius: var(--bd-radius);
     overflow: hidden;
-    border: 01px solid var(--c-panel-bd);
+    border: 1px solid var(--c-panel-bd);
 
     & > img {
       object-fit: cover;
@@ -38,7 +38,7 @@
 
   .Content {
     $padding: var(--gap-md) var(--gap-lg);
-    $border: 01px solid var(--c-panel-bd);
+    $border: 1px solid var(--c-panel-bd);
 
     max-width: $max-width;
     width: 100%;
