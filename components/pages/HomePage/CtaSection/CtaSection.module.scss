@@ -63,7 +63,8 @@ section.CtaSection {
       top: 22.5rem;
       left: 50%;
       translate: -50% 0;
-      width: 65rem;
+      width: 55rem;
+      max-width: unset;
     }
   }
 }

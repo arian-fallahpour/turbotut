@@ -65,6 +65,12 @@ section.ProblemSection {
   }
 
   @include respond(600px) {
+    &Gradient {
+      left: calc(100% / 2);
+      width: 75%;
+      filter: blur(10px);
+    }
+
     &Content {
       grid-template-columns: minmax(auto, 40rem);
     }
@@ -90,6 +96,16 @@ section.ProblemSection {
 
     &:first-child {
       border-right: 1px solid var(--c-panel-bd);
+    }
+  }
+
+  @include respond(600px) {
+    &:first-child {
+      border-right: unset;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--c-panel-bd);
     }
   }
 }
