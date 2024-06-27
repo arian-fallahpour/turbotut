@@ -31,7 +31,7 @@ export const options = {
           user.subscription = "premium";
         }
 
-        return user;
+        return JSON.parse(JSON.stringify(user));
       },
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
@@ -56,7 +56,7 @@ export const options = {
           user.subscription = "premium";
         }
 
-        return user;
+        return JSON.parse(JSON.stringify(user));
       },
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,

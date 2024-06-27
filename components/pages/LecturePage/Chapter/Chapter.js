@@ -4,7 +4,9 @@ import { join } from "@/utils/helper";
 
 import Lecture from "../Lecture/Lecture";
 
-const Chapter = ({ course, chapter, lectureSlug, color }) => {
+const Chapter = async ({ course, session, chapter, lectureSlug, color }) => {
+  const hasPremium = session && session.user && session.user.subscription === "premium";
+
   return (
     <div className={classes.Chapter}>
       <h2 className={join("header", "header-card", classes.ChapterHeader)}>{chapter.name}</h2>
@@ -18,8 +20,8 @@ const Chapter = ({ course, chapter, lectureSlug, color }) => {
                 href={`/courses/${course.slug}/lecture/${lecture.slug}#lecture-content`}
                 isActive={lecture.slug === lectureSlug}
                 color={color}
-                isLocked={lecture.type === "paid"}
-                isViewable={lecture.type === "free"}
+                isLocked={!hasPremium && lecture.type === "paid"}
+                isViewable={!hasPremium && lecture.type === "free"}
               />
             </li>
           ))}

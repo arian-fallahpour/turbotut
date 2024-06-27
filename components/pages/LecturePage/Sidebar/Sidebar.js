@@ -14,7 +14,7 @@ import WestIcon from "@/components/Elements/Icons/WestIcon";
 import EastIcon from "@/components/Elements/Icons/EastIcon";
 import CloseIcon from "@/components/Elements/Icons/CloseIcon";
 
-const Sidebar = ({ course }) => {
+const Sidebar = ({ course, session }) => {
   const { lectureSlug } = useParams();
   const [expanded, setExpanded] = useState(false);
   const pathname = usePathname();
@@ -58,6 +58,7 @@ const Sidebar = ({ course }) => {
                   <Chapter
                     key={"chapter-" + chapter.name}
                     course={course}
+                    session={session}
                     chapter={chapter}
                     lectureSlug={lectureSlug}
                   />

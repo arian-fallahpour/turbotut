@@ -47,6 +47,10 @@ $padding: var(--gap-md);
     gap: var(--gap-lg);
     align-items: center;
 
+    &:focus-visible {
+      outline-offset: -0.75rem !important;
+    }
+
     & > svg {
       width: 2.5rem;
       height: 2.5rem;
