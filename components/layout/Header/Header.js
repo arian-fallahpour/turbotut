@@ -7,7 +7,9 @@ import EastIcon from "@/components/Elements/Icons/EastIcon";
 const Header = () => {
   return (
     <header className={classes.Header}>
+      <span className={classes.HeaderGradient} />
       <span className={classes.HeaderGrid} />
+
       <div className={classes.HeaderContent}>
         <h1 className={join("header", "header-title", classes.HeaderTitle)}>
           <span className="color-orange effect-speed">Accelerate</span>

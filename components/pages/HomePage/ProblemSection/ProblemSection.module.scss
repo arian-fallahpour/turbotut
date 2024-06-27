@@ -2,6 +2,7 @@
 
 section.ProblemSection {
   padding-top: 0;
+  justify-content: center;
 }
 
 .ContainerShadow {
@@ -27,14 +28,13 @@ section.ProblemSection {
   &Gradient {
     display: block;
     position: absolute;
+    left: calc(100% / 6);
     top: 0;
-    width: 30rem;
-    height: 10rem;
     translate: -50% -50%;
-    border-radius: 100%;
-    filter: blur(30px);
-    left: calc(100% * (1 / 6));
-    background: rgba(var(--c-orange-rgb), 1);
+    width: calc(100% / 4);
+    height: 2rem;
+    background-color: var(--c-orange);
+    filter: blur(10px);
   }
 
   &Content {
@@ -50,6 +50,25 @@ section.ProblemSection {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
+
+  @include respond(800px) {
+    max-width: 80rem;
+
+    &Gradient {
+      left: calc(100% / 4);
+      width: calc(100% / 2 - 4rem);
+    }
+
+    &Content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include respond(600px) {
+    &Content {
+      grid-template-columns: minmax(auto, 40rem);
+    }
+  }
 }
 
 .Content {
@@ -62,6 +81,16 @@ section.ProblemSection {
 
   &:not(:last-child) {
     border-right: 1px solid var(--c-panel-bd);
+  }
+
+  @include respond(800px) {
+    &:not(:last-child) {
+      border-right: unset;
+    }
+
+    &:first-child {
+      border-right: 1px solid var(--c-panel-bd);
+    }
   }
 }
 
@@ -78,6 +107,10 @@ section.ProblemSection {
     width: 75%;
     height: 15rem;
     filter: blur(50px);
+  }
+
+  @include respond(800px) {
+    border-bottom: 1px solid var(--c-panel-bd);
   }
 }
 
@@ -100,7 +133,7 @@ section.ProblemSection {
   &Buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--gap-md);
+    gap: var(--gap-sm) var(--gap-md);
     justify-self: center;
     align-content: center;
   }
@@ -110,6 +143,11 @@ section.ProblemSection {
 
   &::before {
     background: rgba(var(--c-red-rgb), 0.4);
+  }
+
+  @include respond(800px) {
+    border-right: unset;
+    border-bottom: 1px solid var(--c-panel-bd);
   }
 }
 
@@ -170,6 +208,19 @@ section.ProblemSection {
   & > span {
     font-size: 1.25rem;
   }
+
+  @include respond(800px) {
+    width: 6rem;
+
+    & > svg {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    & > span {
+      font-size: 1rem;
+    }
+  }
 }
 
 .Reality {
@@ -182,6 +233,22 @@ section.ProblemSection {
     display: grid;
     gap: var(--gap-sm);
     grid-template-columns: auto 1fr;
+  }
+
+  @include respond(800px) {
+    grid-column: 1 / span 2;
+
+    &List {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include respond(600px) {
+    grid-column: unset;
+
+    &List {
+      grid-template-columns: 1fr;
+    }
   }
 }
 

@@ -1,15 +1,18 @@
+@import "@/sass/abstracts/mixins";
+
 section.CtaSection {
+  overflow: hidden;
+
+  @include respond(750px) {
+    justify-content: center;
+  }
 }
 
 .CtaSection {
 }
 
 .Cta {
-  background-image: radial-gradient(
-    circle at 65% 125%,
-    rgba(var(--c-orange-rgb), 1),
-    rgba(var(--c-blue-rgb), 1)
-  );
+  background-image: radial-gradient(circle at 65% 125%, rgba(var(--c-orange-rgb), 1), rgba(var(--c-blue-rgb), 1));
   height: 30rem;
   border-radius: var(--bd-radius);
   overflow: hidden;
@@ -31,11 +34,36 @@ section.CtaSection {
     position: absolute;
     bottom: 0;
     right: 10rem;
-    height: 50rem;
     width: 50rem;
+    height: auto;
+    aspect-ratio: 1;
 
     & > img {
       object-fit: contain;
+    }
+  }
+
+  @include respond(900px) {
+    &Image {
+      right: 0;
+    }
+  }
+
+  @include respond(750px) {
+    height: 60rem;
+    max-width: 45rem;
+
+    &Content > a {
+      width: 100%;
+      z-index: 2;
+    }
+
+    &Image {
+      right: unset;
+      top: 22.5rem;
+      left: 50%;
+      translate: -50% 0;
+      width: 65rem;
     }
   }
 }

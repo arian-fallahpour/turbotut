@@ -116,6 +116,7 @@
       gap: var(--gap-lg);
       border-bottom: 1px solid var(--c-panel-bd);
       padding: var(--gap-md) var(--gap-lg);
+      backdrop-filter: blur(10px);
 
       transition: border-bottom 0.3s ease-in-out;
     }
