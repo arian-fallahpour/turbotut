@@ -14,25 +14,23 @@ const Footer = () => {
           </Button>
         </li>
         <li className={classes.Link}>
-          <Button styleName="nav" href="/" isLink>
+          <Button styleName="nav" href="/courses" isLink>
             courses
           </Button>
         </li>
         <li className={classes.Link}>
-          <Button styleName="nav" href="/" isLink>
+          <Button styleName="nav" href="/#section-faq" isLink>
             faq
           </Button>
         </li>
-        <li className={classes.Link}>
-          <Button styleName="nav" href="/" isLink>
+        {/* <li className={classes.Link}>
+          <Button styleName="nav" href="/legal" isLink>
             legal
           </Button>
-        </li>
+        </li> */}
       </ul>
       <p className="paragraph">Support: email@example.com</p>
-      <p className="paragraph">
-        ©2024-present {business.name}. All rights reserved.
-      </p>
+      <p className="paragraph">©2024-present {business.name}. All rights reserved.</p>
     </footer>
   );
 };
