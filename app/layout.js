@@ -16,6 +16,22 @@ export const metadata = {
     default: business.name,
   },
   description: business.description,
+
+  metadataBase: new URL("https://turbotut.com"),
+  icons: {
+    icon: "/logo.ico",
+    apple: "/logo.png",
+  },
+  twitter: {
+    title: "Exotify Digital Marketing",
+    description: "A reliable web development and digital marketing agency that increases your conversions.",
+    images: ["/preview.png"],
+  },
+  openGraph: {
+    title: "Exotify Digital Marketing",
+    description: "A reliable web development and digital marketing agency that increases your conversions.",
+    images: ["/preview.png"],
+  },
 };
 
 export default async function RootLayout({ children }) {

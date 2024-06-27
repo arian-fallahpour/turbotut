@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./SolutionSection.module.scss";
 
-import imageDivider from "@/public/images/app/test.svg";
+import imageDivider from "@/public/images/app/divider.svg";
 
 import Section from "@/components/Elements/Section/Section";
 import Light from "@/components/Elements/Light/Light";
