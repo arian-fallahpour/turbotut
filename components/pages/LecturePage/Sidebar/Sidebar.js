@@ -1,14 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-
+import { useParams, usePathname } from "next/navigation";
 import classes from "./Sidebar.module.scss";
+import { join } from "@/utils/helper";
+
 import Chapter from "../Chapter/Chapter";
 import Button from "@/components/Elements/Button/Button";
 import Lecture from "../Lecture/Lecture";
-import { join } from "@/utils/helper";
-
-import { useParams, usePathname } from "next/navigation";
 
 import MenuIcon from "@/components/Elements/Icons/MenuIcon";
 import WestIcon from "@/components/Elements/Icons/WestIcon";
