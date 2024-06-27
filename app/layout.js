@@ -16,7 +16,6 @@ export const metadata = {
     default: business.name,
   },
   description: business.description,
-
   metadataBase: new URL("https://turbotut.com"),
   icons: {
     icon: "/logo.ico",
@@ -24,12 +23,12 @@ export const metadata = {
   },
   twitter: {
     title: `${business.name} learning`,
-    description: "Learn any high school subjects at blazing speeds!.",
+    description: "Learn any high school subject at blazing speeds!.",
     images: ["/preview.png"],
   },
   openGraph: {
     title: `${business.name} learning`,
-    description: "Learn any high school subjects at blazing speeds!.",
+    description: "Learn any high school subject at blazing speeds!.",
     images: ["/preview.png"],
   },
 };
