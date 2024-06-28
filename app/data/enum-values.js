@@ -1,6 +1,7 @@
 const enumValues = {
   course: {
-    subject: ["math", "physics", "chemistry", "biology"],
+    subject: ["math", "physics", "chemistry", "biology", "none"],
+    default: "none",
   },
   lecture: {
     type: ["free", "paid"],

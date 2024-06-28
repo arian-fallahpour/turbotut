@@ -23,6 +23,7 @@ const courseSchema = new mongoose.Schema({
       values: enumValues.course.subject,
       message: "Subject is not valid",
     },
+    default: enumValues.course.default,
   },
   summary: {
     type: String,
@@ -101,18 +102,10 @@ courseSchema.methods.uploadImageToS3 = async function (imageFile) {
 
   // Edit photo to fit sizes
   const imageBuffer = await imageFile.arrayBuffer();
-  const formattedBuffer = await sharp(imageBuffer)
-    .resize(1500, 1500)
-    .toFormat("webp")
-    .webp({ quality: 90 })
-    .toBuffer();
+  const formattedBuffer = await sharp(imageBuffer).resize(1500, 1500).toFormat("webp").webp({ quality: 90 }).toBuffer();
 
   // Create signed url to upload file
-  const imageS3Object = new S3Object(
-    formattedBuffer,
-    "image/webp",
-    Buffer.byteLength(formattedBuffer)
-  );
+  const imageS3Object = new S3Object(formattedBuffer, "image/webp", Buffer.byteLength(formattedBuffer));
 
   // If image does not exist, create key
   let key;
