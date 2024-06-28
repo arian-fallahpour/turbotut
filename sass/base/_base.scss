@@ -15,7 +15,7 @@ html {
   overscroll-behavior: none;
   font-size: calc(25% + 0.4vw);
   scroll-behavior: smooth;
-  background-image: var(--bg-main);
+  // background-image: var(--bg-main);
 
   @include respond(1200) {
     font-size: 56.25%;

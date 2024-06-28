@@ -7,6 +7,6 @@ export function generateMetadata({ params, searchParams }) {
   };
 }
 
-export default async function Page({ ...args }) {
+export default function Page({ ...args }) {
   return <LecturePage {...args} isOverview />;
 }

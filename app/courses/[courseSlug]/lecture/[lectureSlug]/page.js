@@ -3,6 +3,6 @@ import { generateMetadata as parentGenerateMetadata } from "../../page";
 
 export const generateMetadata = parentGenerateMetadata;
 
-export default async function Page({ ...args }) {
+export default function Page({ ...args }) {
   return <LecturePage {...args} />;
 }
