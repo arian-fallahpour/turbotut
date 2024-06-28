@@ -12,7 +12,12 @@ import queryString from "query-string";
 async function getData() {
   await connectDB();
 
-  const query = new APIQuery(CourseModel.find(), queryString.parse({ isArchived: false })).sort().filter();
+  const query = new APIQuery(
+    CourseModel.find(),
+    queryString.parse({ isArchived: false, sort: "comingSoon,-createdAt" })
+  )
+    .sort()
+    .filter();
   const courses = await query.execute();
 
   return JSON.parse(JSON.stringify(courses));
