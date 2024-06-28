@@ -82,13 +82,13 @@ export const routeHandler = (fn, options = {}) =>
 
 export const requiresSession = (session) => {
   if (!session || !session.user) {
-    redirect("/?login=true");
+    redirect("/");
   }
 };
 
 export const restrictTo = (session, roles) => {
   if (!session || !session.user || !roles.includes(session.user.role)) {
-    redirect("/?login=true");
+    redirect("/");
   }
 };
 

@@ -22,6 +22,7 @@ const Login = ({ onExit }) => {
       </div>
 
       <p className="paragraph">Log in instantly with:</p>
+
       <Button
         className={classes.LoginButton}
         styleName="glass"
