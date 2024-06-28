@@ -17,7 +17,10 @@ section.CoursesSection {
   }
 }
 
-.Course.Course.Course {
+a.Course,
+a.Course:link,
+a.Course:visited,
+.CourseSkeleton {
   $width-normal: 30rem;
   $width-active: 60rem;
 
@@ -40,6 +43,10 @@ section.CoursesSection {
   &:focus-visible {
     filter: unset;
   }
+}
+
+.CourseSkeleton {
+  background-color: var(--c-panel-bg);
 }
 
 .Course {

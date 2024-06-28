@@ -19,6 +19,8 @@ async function getData() {
     .filter();
   const courses = await query.execute();
 
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   return JSON.parse(JSON.stringify(courses));
 }
 
