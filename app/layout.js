@@ -12,7 +12,7 @@ const openSans = Open_Sans({
 
 export const metadata = {
   title: {
-    template: `${business.name} | %s`,
+    template: `${business.name}${process.env.NODE_ENV === "development" ? " (DEV)" : ""} | %s`,
     default: business.name,
   },
   description: business.description,
