@@ -4,10 +4,5 @@ import { metadata as parentMetaData } from "../page";
 export const metadata = parentMetaData;
 
 export default async function Page({ params, searchParams }) {
-  return (
-    <CollectionPage
-      collectionName={params.collection}
-      searchParams={searchParams}
-    />
-  );
+  return <CollectionPage collectionName={params.collection} searchParams={searchParams} />;
 }
