@@ -120,7 +120,16 @@ const SubscriptionSection = ({ className, limit }) => {
         {/* REVEAL */}
         <Reveal revealed={revealed}>
           <div className={classes.SubscriptionContent}>
-            {error && <ErrorBlock className={classes.SubscriptionError} type="info" message={error.message} />}
+            {error && (
+              <Fragment>
+                <ErrorBlock className={classes.SubscriptionError} type="info" message={error.message} />
+                <div className={classes.SubscriptionActions}>
+                  <Button styleName="shiny" href="/pricing" isLink>
+                    buy subscriptions
+                  </Button>
+                </div>
+              </Fragment>
+            )}
             {!error && (
               <Fragment>
                 <ul className={classes.SubscriptionList}>
