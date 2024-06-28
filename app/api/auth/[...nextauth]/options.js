@@ -27,11 +27,9 @@ export const options = {
 
         // Check if user has premium
         const subscription = await Subscription.findActive(user._id);
-        if (subscription) {
-          user.subscription = "premium";
-        }
+        if (subscription) user.subscription = "premium";
 
-        return JSON.parse(JSON.stringify(user));
+        return user;
       },
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
@@ -52,11 +50,9 @@ export const options = {
 
         // Check if user has premium
         const subscription = await Subscription.findActive(user._id);
-        if (subscription) {
-          user.subscription = "premium";
-        }
+        if (subscription) user.subscription = "premium";
 
-        return JSON.parse(JSON.stringify(user));
+        return user;
       },
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
@@ -76,7 +72,7 @@ export const options = {
 
       return token;
     },
-    async session({ session, token, user }) {
+    async session({ session, token }) {
       if (token) {
         session.user._id = token._id;
         session.user.firstName = token.firstName;
@@ -86,7 +82,9 @@ export const options = {
         session.user.subscription = token.subscription;
       }
 
-      if (session) return session;
+      if (session) {
+        return session;
+      }
     },
   },
 };
