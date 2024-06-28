@@ -6,7 +6,7 @@ import GoogleProvider from "next-auth/providers/google";
 export const options = {
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/?login=true",
+    signIn: "/",
     signOut: "/",
     newUser: "/courses",
   },
