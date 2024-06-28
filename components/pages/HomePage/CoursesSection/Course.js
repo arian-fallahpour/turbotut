@@ -16,7 +16,7 @@ const Course = ({ course }) => {
       />
       <span className={classes.CourseGradient} />
       <div className={classes.CourseContent}>
-        <p className="paragraph">{course.subject}</p>
+        {course.subject !== "none" && <p className="paragraph">{course.subject}</p>}
         <h3 className="header header-section">{course.name}</h3>
         <ul className={classes.CourseList}>
           <li className={classes.CourseListItem}>{course.chaptersCount} chapters</li>
