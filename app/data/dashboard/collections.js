@@ -16,6 +16,7 @@ const data = [
     ],
     viewableFields: [
       { type: "string", name: "name" },
+      { type: "string", name: "slug" },
       { type: "enum", name: "subject", values: enumValues.course.subject },
       { type: "date", name: "createdAt" },
       { type: "image", name: "image" },
@@ -28,6 +29,7 @@ const data = [
     ],
     editableFields: [
       { type: "string", name: "name" },
+      { type: "string", name: "slug" },
       { type: "enum", name: "subject", values: enumValues.course.subject },
       { type: "image", name: "image" },
       { type: "boolean", name: "comingSoon" },
@@ -75,6 +77,7 @@ const data = [
     viewableFields: [
       { type: "id", name: "chapter", collection: "chapters", isParentId: true },
       { type: "string", name: "name" },
+      { type: "string", name: "slug" },
       { type: "date", name: "createdAt" },
       { type: "boolean", name: "isArchived" },
       { type: "enum", name: "type", values: enumValues.lecture.type },
@@ -82,6 +85,7 @@ const data = [
     editableFields: [
       { type: "id", name: "chapter", collection: "chapters", isParentId: true },
       { type: "string", name: "name" },
+      { type: "string", name: "slug" },
       { type: "boolean", name: "isArchived" },
       { type: "enum", name: "type", values: enumValues.lecture.type },
     ],

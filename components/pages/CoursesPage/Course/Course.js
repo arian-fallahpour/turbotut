@@ -10,6 +10,7 @@ import Button from "@/components/Elements/Button/Button";
 import Reveal from "@/components/Elements/Reveal/Reveal";
 
 import PlayIcon from "@/components/Elements/Icons/PlayIcon";
+import { startProgress } from "next-nprogress-bar";
 
 const Course = ({ data }) => {
   const [visible, setVisible] = useState(false);
@@ -20,6 +21,7 @@ const Course = ({ data }) => {
       className={join(classes.Course, data.comingSoon ? classes.unreleased : null)}
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
+      onClick={() => startProgress()}
     >
       <article className={classes.CourseContainer}>
         <div className={classes.CourseHeader}>
