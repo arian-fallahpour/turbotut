@@ -35,29 +35,23 @@ const EditDocumentForm = ({
 
     const fetchEditRequest = async () => {
       const formData = new FormData(e.target);
-      Object.keys(otherFields).forEach((key) =>
-        formData.append(key, otherFields[key])
-      );
+      Object.keys(otherFields).forEach((key) => formData.append(key, otherFields[key]));
 
       startProgress();
       setDisabled(true);
 
-      const res = await fetch(
-        `/api/${collectionData.name}/${document._id}/edit-by-form`,
-        {
-          method: "PATCH",
-          body: formData,
-        }
-      );
+      const res = await fetch(`/api/${collectionData.name}/${document._id}/edit-by-form`, {
+        method: "PATCH",
+        body: formData,
+      });
       const resData = await res.json();
 
       stopProgress();
 
       if (!res.ok) {
+        console.log(resData);
         if (resData.errors) {
-          Object.keys(resData.errors).forEach((key, i) =>
-            setError(key, resData.errors[key])
-          );
+          Object.keys(resData.errors).forEach((key, i) => setError(key, resData.errors[key]));
         } else {
           setGlobalError(resData.message);
         }
@@ -94,12 +88,7 @@ const EditDocumentForm = ({
       ))}
 
       <FormRow className={classes.DocumentModalActions}>
-        <Button
-          styleName="glass"
-          variantName="red"
-          type="button"
-          onClick={cancelHandler}
-        >
+        <Button styleName="glass" variantName="red" type="button" onClick={cancelHandler}>
           cancel
         </Button>
         <Button isDisabled={disabled}>confirm</Button>

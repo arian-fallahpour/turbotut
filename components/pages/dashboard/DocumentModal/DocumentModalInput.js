@@ -4,22 +4,14 @@ import Select from "@/components/Elements/Select/Select";
 import { debounce } from "@/utils/helper";
 import React from "react";
 
-const DocumentModalInput = ({
-  document,
-  field,
-  error,
-  setOtherField,
-  setDefault,
-}) => {
+const DocumentModalInput = ({ document, field, error, setOtherField, setDefault }) => {
   const stringValidator = (v) => v.length > 0;
 
   // ENUM FIELD
   if (field.type === "enum") {
     const options = field.values.map((v) => ({ value: v, label: v }));
     const defaultValue =
-      setDefault && document
-        ? { value: document[field.name], label: document[field.name] }
-        : undefined;
+      setDefault && document ? { value: document[field.name], label: document[field.name] } : undefined;
 
     return (
       <FormRow key={field.name}>
@@ -28,6 +20,7 @@ const DocumentModalInput = ({
           options={options}
           label={field.name}
           setFormValue={setOtherField}
+          error={error}
         />
       </FormRow>
     );
@@ -62,10 +55,7 @@ const DocumentModalInput = ({
 
   // ID FIELD
   if (field.type === "id") {
-    const defaultValue =
-      setDefault && document
-        ? { value: document._id, label: document.name }
-        : undefined;
+    const defaultValue = setDefault && document ? { value: document._id, label: document.name } : undefined;
 
     let documents;
     const loadOptions = debounce((val, callback) => {
@@ -93,6 +83,7 @@ const DocumentModalInput = ({
           loadOptions={loadOptions}
           label={field.name}
           setFormValue={setOtherField}
+          error={error}
         />
       </FormRow>
     );

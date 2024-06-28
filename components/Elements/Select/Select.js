@@ -6,16 +6,7 @@ import ReactSelect from "react-select";
 import AsyncSelect from "react-select/async";
 import Reveal from "../Reveal/Reveal";
 
-const Select = ({
-  defaultValue,
-  options,
-  loadOptions,
-  label,
-  error,
-  setFormValue,
-  isAsync,
-  ...otherProps
-}) => {
+const Select = ({ defaultValue, options, loadOptions, label, error, setFormValue, isAsync, ...otherProps }) => {
   const [selectedOption, setSelectedOption] = useState(defaultValue);
 
   const handleOnChange = (option) => {
