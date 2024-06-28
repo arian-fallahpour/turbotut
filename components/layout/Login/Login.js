@@ -16,7 +16,13 @@ const Login = ({ onExit }) => {
     <div className={classes.Login}>
       <div className={classes.LoginHeader}>
         <h2 className="header header-section text-center">login</h2>
-        <Button className={classes.LoginExit} styleName="transparent" variantName="orange" onClick={onExit}>
+        <Button
+          className={classes.LoginExit}
+          styleName="transparent"
+          variantName="orange"
+          onClick={onExit}
+          aria-label="close login"
+        >
           <CloseIcon />
         </Button>
       </div>

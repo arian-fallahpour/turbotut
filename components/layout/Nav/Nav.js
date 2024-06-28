@@ -36,7 +36,13 @@ const Nav = ({ user, isAbsolute }) => {
         </div>
         <div className={classes.NavTitle}>{business.name}</div>
         <div className={classes.NavExpand}>
-          <Button styleName="transparent" variantName="white" size="large" onClick={onExpandHandler}>
+          <Button
+            styleName="transparent"
+            variantName="white"
+            size="large"
+            onClick={onExpandHandler}
+            aria-label="open nav menu"
+          >
             <MenuIcon />
           </Button>
         </div>

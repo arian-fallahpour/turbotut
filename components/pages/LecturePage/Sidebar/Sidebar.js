@@ -30,7 +30,13 @@ const Sidebar = ({ course, session }) => {
   return (
     <aside className={join(classes.Sidebar, expanded ? classes.expanded : null)}>
       <div className={classes.SidebarControls}>
-        <Button className={classes.SidebarClose} styleName="transparent" size="large" onClick={onExpandHandler}>
+        <Button
+          className={classes.SidebarClose}
+          styleName="transparent"
+          size="large"
+          onClick={onExpandHandler}
+          aria-label="menu"
+        >
           <MenuIcon />
         </Button>
       </div>
