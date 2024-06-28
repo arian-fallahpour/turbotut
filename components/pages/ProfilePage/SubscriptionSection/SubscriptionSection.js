@@ -88,12 +88,7 @@ const SubscriptionSection = ({ className, limit }) => {
 
   const changeSubscriptionModalHandler = (cancelsAtPeriodEnd) => {
     if (cancelsAtPeriodEnd) {
-      showModal(
-        <Modal
-          onCancel={hideModal}
-          onConfirm={() => changeSubscriptionConfirmHandler(cancelsAtPeriodEnd)}
-        />
-      );
+      showModal(<Modal onCancel={hideModal} onConfirm={() => changeSubscriptionConfirmHandler(cancelsAtPeriodEnd)} />);
     } else {
       changeSubscriptionConfirmHandler(cancelsAtPeriodEnd);
     }
@@ -101,35 +96,23 @@ const SubscriptionSection = ({ className, limit }) => {
 
   const dataSubscriptionStartEndText =
     data?.subscription &&
-    `current period: ${new Date(
-      data.subscription.startsAt
-    ).toLocaleDateString()} to ${new Date(
+    `current period: ${new Date(data.subscription.startsAt).toLocaleDateString()} to ${new Date(
       data.subscription.endsAt
     ).toLocaleDateString()}`;
 
   const dataSubscriptionCancelledText =
     data?.subscription &&
-    `You ${
-      data.subscription.cancelsAtPeriodEnd ? "will not" : "will continue to"
-    } be billed at the end of this period${
+    `You ${data.subscription.cancelsAtPeriodEnd ? "will not" : "will continue to"} be billed at the end of this period${
       data.subscription.cancelsAtPeriodEnd ? " since you cancelled" : ""
     }`;
 
   return (
     <Section className={className} limit={limit}>
-      <div
-        className={join(
-          classes.Subscription,
-          revealed ? classes.revealed : null
-        )}
-      >
+      <div className={join(classes.Subscription, revealed ? classes.revealed : null)}>
         {/* HEADER */}
         <header className={classes.SubscriptionHeader}>
           <h2 className="header header-section">Subscription</h2>
-          <Button
-            className={classes.SubscriptionExpand}
-            onClick={toggleRevealedHandler}
-          >
+          <Button className={classes.SubscriptionExpand} onClick={toggleRevealedHandler}>
             <AddIcon />
           </Button>
         </header>
@@ -137,41 +120,22 @@ const SubscriptionSection = ({ className, limit }) => {
         {/* REVEAL */}
         <Reveal revealed={revealed}>
           <div className={classes.SubscriptionContent}>
-            {error && (
-              <ErrorBlock
-                className={classes.SubscriptionError}
-                message={error.message}
-              />
-            )}
+            {error && <ErrorBlock className={classes.SubscriptionError} type="info" message={error.message} />}
             {!error && (
               <Fragment>
                 <ul className={classes.SubscriptionList}>
-                  <li className={classes.SubscriptionListItem}>
-                    {dataSubscriptionStartEndText}
-                  </li>
-                  <li className={classes.SubscriptionListItem}>
-                    {dataSubscriptionCancelledText}
-                  </li>
-                  <li className={classes.SubscriptionListItem}>
-                    Monthly rate: ${business.plans[0].price} per month
-                  </li>
+                  <li className={classes.SubscriptionListItem}>{dataSubscriptionStartEndText}</li>
+                  <li className={classes.SubscriptionListItem}>{dataSubscriptionCancelledText}</li>
+                  <li className={classes.SubscriptionListItem}>Monthly rate: ${business.plans[0].price} per month</li>
                 </ul>
                 <div className={classes.SubscriptionActions}>
                   {data?.subscription.cancelsAtPeriodEnd && (
-                    <Button
-                      styleName="shiny"
-                      variantName="green"
-                      onClick={() => changeSubscriptionModalHandler(false)}
-                    >
+                    <Button styleName="shiny" variantName="green" onClick={() => changeSubscriptionModalHandler(false)}>
                       continue subscription
                     </Button>
                   )}
                   {!data?.subscription.cancelsAtPeriodEnd && (
-                    <Button
-                      styleName="shiny"
-                      variantName="red"
-                      onClick={() => changeSubscriptionModalHandler(true)}
-                    >
+                    <Button styleName="shiny" variantName="red" onClick={() => changeSubscriptionModalHandler(true)}>
                       cancel subscription
                     </Button>
                   )}
