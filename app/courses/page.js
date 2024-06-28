@@ -1,11 +1,13 @@
 import CoursesPage from "@/components/pages/CoursesPage/CoursesPage";
 import Course from "@/models/courseModel";
+import APIQuery from "@/utils/APIQuery";
 import { connectDB } from "@/utils/database";
 
 async function getData() {
   await connectDB();
 
-  const courses = await Course.find({ isArchived: false });
+  const query = new APIQuery(Course.find(), { isArchived: false }).sort();
+  const courses = await query.execute();
 
   return { courses: JSON.parse(JSON.stringify(courses)) };
 }
