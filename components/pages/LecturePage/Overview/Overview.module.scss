@@ -15,6 +15,9 @@
   }
 
   &Title {
+    display: grid;
+    gap: 0.5rem;
+
     & > :global(.header-card) {
       color: var(--txt-text);
     }

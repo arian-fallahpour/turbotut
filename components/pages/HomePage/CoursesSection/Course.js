@@ -15,6 +15,7 @@ const Course = ({ course }) => {
         fill
       />
       <span className={classes.CourseGradient} />
+      <span className={classes.CourseShine} />
       <div className={classes.CourseContent}>
         {course.subject !== "none" && <p className="paragraph">{course.subject}</p>}
         <h3 className="header header-section">{course.name}</h3>

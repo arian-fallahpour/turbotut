@@ -17,7 +17,7 @@ const Overview = ({ course }) => {
 
       <div className={classes.OverviewTitle}>
         <h2 className="header header-title text-center color-orange">{course.name}</h2>
-        <h3 className="header header-card text-center">{course.subject}</h3>
+        {course.subject !== "none" && <h3 className="header header-card text-center">{course.subject}</h3>}
       </div>
 
       <p className="paragraph text-center">{course.description || "No description"}</p>
