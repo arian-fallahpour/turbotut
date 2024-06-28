@@ -12,8 +12,7 @@ export const DELETE = routeHandler(
 
     // Check if chapter exists
     const chapter = await Chapter.findById(params.id);
-    if (!chapter)
-      return new AppError("No chapter found with the provided id", 404);
+    if (!chapter) return new AppError("No chapter found with the provided id", 404);
 
     // Delete chapter's lectures (Query is ok in this case)
     await Lecture.deleteMany({ chapter: chapter.id });
@@ -21,6 +20,7 @@ export const DELETE = routeHandler(
     // Update course
     const course = await Course.findOne({ chapters: chapter._id });
     course.chaptersCount -= 1;
+    course.lecturesCount -= chapter.lecturesCount;
     course.chapters.pull(chapter._id);
     await course.save();
 
