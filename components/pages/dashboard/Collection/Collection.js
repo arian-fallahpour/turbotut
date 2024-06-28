@@ -4,11 +4,7 @@ import React, { useState, useEffect, useContext, useCallback } from "react";
 import classes from "./Collection.module.scss";
 import { createGridTemplateColumns, join } from "@/utils/helper";
 
-import Table, {
-  TableHeader,
-  TableRow,
-  TableCell,
-} from "@/components/Elements/Table/Table";
+import Table, { TableHeader, TableRow, TableCell } from "@/components/Elements/Table/Table";
 import Actions from "../Actions/Actions";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import Section from "@/components/Elements/Section/Section";
@@ -36,6 +32,7 @@ const Collection = ({ className, collectionData, queryObject = {} }) => {
       url: `/api/${collectionData.name}`,
       query: { ...queryObject, page },
     });
+    console.log(url);
 
     const res = await fetch(url, {
       method: "GET",
@@ -91,10 +88,7 @@ const Collection = ({ className, collectionData, queryObject = {} }) => {
           {collection.docs.map((doc) => (
             <TableRow key={doc._id} style={{ gridTemplateColumns }}>
               {collectionData.tableFields.map((field, i) => (
-                <TableCell
-                  key={field.label}
-                  href={`/dashboard/${collectionData.name}/${doc._id}`}
-                >
+                <TableCell key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
                   {doc[field.name]}
                 </TableCell>
               ))}

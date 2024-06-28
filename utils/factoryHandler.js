@@ -12,10 +12,7 @@ const getName = (Model, plural = false) => {
     return Model.collection.collectionName;
   }
 
-  return Model.collection.collectionName.substring(
-    0,
-    Model.collection.collectionName.length - 1
-  );
+  return Model.collection.collectionName.substring(0, Model.collection.collectionName.length - 1);
 };
 
 export const getAll = (Model) =>
@@ -24,12 +21,8 @@ export const getAll = (Model) =>
     await connectDB();
 
     // Find documents
-    const apiQuery = new APIQuery(Model.find(), req.data.query)
-      .filter()
-      .sort()
-      .search()
-      .select()
-      .paginate();
+
+    const apiQuery = new APIQuery(Model.find(), req.data.query).filter().sort().search().select().paginate();
 
     const totalCount = await apiQuery.getTotalCount();
     const documents = await apiQuery.execute();
@@ -53,8 +46,7 @@ export const getOne = (Model) =>
   catchAsync(async function (req, { params }) {
     // Check if id is provided
     const name = getName(Model);
-    if (!params.id)
-      return new AppError(`Please provide the id of a ${name} to get`, 400);
+    if (!params.id) return new AppError(`Please provide the id of a ${name} to get`, 400);
 
     // Connect to database
     await connectDB();
@@ -80,8 +72,7 @@ export const getOne = (Model) =>
 export const createOne = (Model) =>
   catchAsync(async function (req, {}) {
     // Check if body exists
-    if (!req.data.body)
-      return new AppError("Please provide JSON data in the body", 400);
+    if (!req.data.body) return new AppError("Please provide JSON data in the body", 400);
 
     // Connect to database
     await connectDB();
@@ -105,23 +96,17 @@ export const createOne = (Model) =>
 export const updateOne = (Model) =>
   catchAsync(async function (req, { params }) {
     // Check if body exists
-    if (!req.data.body)
-      return new AppError("Please provide JSON data in the body", 400);
+    if (!req.data.body) return new AppError("Please provide JSON data in the body", 400);
 
     // Check if id is provided
     const name = getName(Model);
-    if (!params.id)
-      return new AppError(`Please provide the id of a ${name} to delete`, 400);
+    if (!params.id) return new AppError(`Please provide the id of a ${name} to delete`, 400);
 
     // Connect to database
     await connectDB();
 
     // Find and update document
-    const documentUpdated = await Model.findByIdAndUpdate(
-      params.id,
-      req.data.body,
-      { runValidators: true, new: true }
-    );
+    const documentUpdated = await Model.findByIdAndUpdate(params.id, req.data.body, { runValidators: true, new: true });
 
     // Send response
     return NextResponse.json(
@@ -139,8 +124,7 @@ export const deleteOne = (Model) =>
   catchAsync(async function (req, { params }) {
     // Check if id is provided
     const name = getName(Model);
-    if (!params.id)
-      return new AppError(`Please provide the id of a ${name} to delete`, 400);
+    if (!params.id) return new AppError(`Please provide the id of a ${name} to delete`, 400);
 
     // Connect to database
     await connectDB();
@@ -160,15 +144,13 @@ export const archiveOne = (Model) =>
   catchAsync(async function (req, { params }) {
     // Check if id is provided
     const name = getName(Model);
-    if (!params.id)
-      return new AppError(`Please provide the id of a ${name} to delete`, 400);
+    if (!params.id) return new AppError(`Please provide the id of a ${name} to delete`, 400);
 
     await connectDB();
 
     // Check if document exists
     const document = await Model.findById(params.id);
-    if (!document)
-      return new AppError(`Could not find ${name} to archive`, 400);
+    if (!document) return new AppError(`Could not find ${name} to archive`, 400);
 
     // Archive document
     document.isArchived = true;
@@ -189,21 +171,17 @@ export const archiveOne = (Model) =>
 export const editOneByForm = (Model, sendResponse = true) =>
   async function (req, { params }) {
     const name = getName(Model);
-    if (!params.id)
-      return new AppError(`Please provide the id of the ${name}`, 400);
+    if (!params.id) return new AppError(`Please provide the id of the ${name}`, 400);
 
     // Connect to database
     await connectDB();
 
     // Find document
     const document = await Model.findById(params.id);
-    if (!document)
-      return new AppError(`${toCap(name)} not found with provided id`, 404);
+    if (!document) return new AppError(`${toCap(name)} not found with provided id`, 404);
 
     // Update document
-    const collectionData = collections.find(
-      (c) => c.name === getName(Model, true)
-    );
+    const collectionData = collections.find((c) => c.name === getName(Model, true));
     collectionData.editableFields.forEach((field) => {
       const value = req.data.formData[field.name];
       if (field.type !== "image" && value !== undefined) {

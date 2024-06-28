@@ -4,17 +4,17 @@ import queryStr from "query-string";
 class APIQuery {
   queryClone;
 
-  constructor(query, queryString) {
+  constructor(query, queryObject) {
     this.query = query;
-    this.queryString = queryString;
+    this.queryObject = queryObject;
   }
 
   filter() {
-    const queryObj = queryStr.parse(this.queryString);
-    excludedFields.forEach((el) => delete queryObj[el]);
+    const filteredQueryObject = { ...this.queryObject };
+    excludedFields.forEach((el) => delete filteredQueryObject[el]);
 
     // Add $gt, $gte, $lt, $lte operators
-    let queryString = JSON.stringify(queryObj);
+    let queryString = JSON.stringify(filteredQueryObject);
     queryString = queryString.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
 
     // Update mongoose query
@@ -26,9 +26,12 @@ class APIQuery {
 
   sort() {
     // Sort by the query
-    if (this.queryString.sort) {
-      const sortBy = this.queryString.sort.split(",").join(" ");
-      this.query = this.query.sort(sortBy);
+    if (this.queryObject.sort) {
+      let sortString = this.queryObject.sort.split(",");
+      sortString = sortString.map((str) => str.trim()); // Remove extra spaces
+      sortString = sortString.join(" ");
+
+      this.query = this.query.sort(sortString);
     }
 
     // Otherwise sort by creation date
@@ -40,8 +43,8 @@ class APIQuery {
   }
 
   search() {
-    if (this.queryString.search) {
-      this.query = this.query.fuzzySearch(this.queryString.search);
+    if (this.queryObject.search) {
+      this.query = this.query.fuzzySearch(this.queryObject.search);
     }
 
     return this;
@@ -49,8 +52,8 @@ class APIQuery {
 
   select() {
     // Limit by query
-    if (this.queryString.select) {
-      const fields = this.queryString.select.split(",").join(" ");
+    if (this.queryObject.select) {
+      const fields = this.queryObject.select.split(",").join(" ");
       this.query = this.query.select(fields);
     }
 
@@ -63,13 +66,13 @@ class APIQuery {
   }
 
   populate() {
-    if (this.queryString.populate) {
+    if (this.queryObject.populate) {
     }
   }
 
   paginate() {
-    const page = this.queryString.page * 1 || 1;
-    const limit = Math.min(this.queryString.limit * 1 || 10, 50);
+    const page = this.queryObject.page * 1 || 1;
+    const limit = Math.min(this.queryObject.limit * 1 || 10, 50);
     const skip = (page - 1) * limit;
 
     this.query = this.query.skip(skip).limit(limit);
