@@ -4,7 +4,8 @@ import { join } from "@/utils/helper";
 
 import Lecture from "../Lecture/Lecture";
 
-const Chapter = async ({ course, session, chapter, lectureSlug, color }) => {
+// DO NOT ADD ASYNC HERE (results in weird client component error)
+const Chapter = ({ course, session, chapter, lectureSlug, color }) => {
   const hasPremium = session && session.user && session.user.subscription === "premium";
 
   return (

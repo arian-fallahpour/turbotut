@@ -17,7 +17,9 @@ export default async function Layout({ children, params }) {
     <Page background="flat" session={session}>
       <Section limit={null} className={classes.LectureSection} id="lecture-section">
         <Sidebar course={course} session={session} />
-        <Suspense fallback={<LoaderBlock />}>{children}</Suspense>
+        {/* <Suspense fallback={<LoaderBlock />}> */}
+        {children}
+        {/* </Suspense> */}
       </Section>
     </Page>
   );

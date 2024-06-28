@@ -9,7 +9,6 @@ import GlobalError from "../GlobalError/GlobalError";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import { requiresSession as enforeSessionOnly, restrictTo as restrictToRoles } from "@/utils/authentication";
-import LoaderBlock from "../Loader/LoaderBlock";
 
 const Page = async ({
   children,
