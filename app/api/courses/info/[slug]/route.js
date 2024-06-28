@@ -10,13 +10,12 @@ import Lecture from "@/models/lectureModel";
 
 export const GET = routeHandler(
   async function (req, { params }) {
-    if (!params.slug)
-      return new AppError("Please provide the slug of a course", 400);
+    if (!params.slug) return new AppError("Please provide the slug of a course", 400);
 
     await connectDB();
 
     // Find course and all of its unarchived chapters/lectures
-    const course = await Course.findOne({ slug: params.slug }).populate({
+    const course = await Course.findOne({ slug: params.slug, isArchived: false }).populate({
       path: "chapters",
       select: { name: 1, lectures: 1 },
       match: { isArchived: false },
@@ -26,6 +25,9 @@ export const GET = routeHandler(
         match: { isArchived: false },
       },
     });
+
+    // Remove chapters if course is coming soon
+    if (course.comingSoon) course.chapters = [];
 
     return NextResponse.json(
       {
