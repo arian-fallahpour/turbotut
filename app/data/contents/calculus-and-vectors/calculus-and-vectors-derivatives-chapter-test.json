@@ -1,0 +1,1295 @@
+[
+  {
+    "type": "h2",
+    "content": "Question 1"
+  },
+  {
+    "type": "p",
+    "content": "For the function $ f(x) = \\frac {x} {2x - 1} $:"
+  },
+  {
+    "type": "p",
+    "content": "a) Determine its derivative $ f'(x) $."
+  },
+  {
+    "type": "p",
+    "content": "b) Determine the equation of the tangent line to $ f(x) $ at $ x = 1 $."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "a) To find the derivative, we will use the first principles formula:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\ ^{\\lim}_{h \\to 0} \\frac {f(x + h) - f(x)} {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\ ^{\\lim}_{h \\to 0} \\frac {\\frac {x + h} {2(x + h) - 1} - \\frac {x} {2x - 1}} {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\ ^{\\lim}_{h \\to 0} \\frac {\\frac {x + h} {2x + 2h - 1} - \\frac {x} {2x - 1}} {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\ ^{\\lim}_{h \\to 0} \\frac {\\frac {(x + h)(2x - 1)} {(2x - 1)(2x + 2h - 1)} - \\frac {x(2x + 2h - 1)} {(2x - 1)(2x + 2h - 1)}} {h} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\ ^{\\lim}_{h \\to 0} \\frac {(x + h)(2x - 1) - x(2x + 2h - 1)} {h(2x - 1)(2x + 2h - 1)} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\ ^{\\lim}_{h \\to 0} \\frac {2x^2 - x + 2hx - h - 2x^2 - 2xh + x} {h(2x - 1)(2x + 2h - 1)} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\ ^{\\lim}_{h \\to 0} \\frac {\\cancel{2x^2} \\cancel{-x} \\cancel{+2hx} - h \\cancel{-2x^2} \\cancel{-2xh} + \\cancel{x}} {h(2x - 1)(2x + 2h - 1)} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\ ^{\\lim}_{h \\to 0} \\frac {-h} {h(2x - 1)(2x + 2h - 1)} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\ ^{\\lim}_{h \\to 0} \\frac {-\\cancel{h}} { \\cancel{h} (2x - 1)(2x + 2h - 1)} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\ ^{\\lim}_{h \\to 0} \\frac {-1} {(2x - 1)(2x + 2h - 1)} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\frac {-1} {(2x - 1)(2x + 2(0) - 1)} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\frac {-1} {(2x - 1)(2x - 1)} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\frac {-1} {(2x - 1)^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) To find the tangent equation at for $ f(x) $ at $ x = 1 $, we need $ f(1) $ and $ f'(1) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f(1) = \\frac {1} {2(1) - 1} = \\frac {1} {2 - 1} = 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(1) = \\frac {-1} {(2(1) - 1)^2} = \\frac {1} {1^2} = 1 = m_T $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we just need to plug in the values into the following equation of a tangent line:"
+  },
+  {
+    "type": "p",
+    "content": "$ y - y_1 = m_T(x - x_1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ y - (1) = (1)(x - (1)) $"
+  },
+  {
+    "type": "p",
+    "content": "$ y = (x - 1) + 1 $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 2"
+  },
+  {
+    "type": "p",
+    "content": "The tangent to the graph of $ f(x) = \\frac {1} {(x - 1)^2} $ at the point $ (2, \\ 1) $ forms a triangle with and $x$ and $y$ axis. Determine the area of that triangle."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "If we get the equation of the tangent line at $ (2, \\ 1) $, we can get the height of the triangle when $ x = 0 $ (intersects $y$-axis) and the width of the triangle when $ y = 0 $ (intersects $x$-axis)."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "First let's work on finding the derivative $ f'(x) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f(x) = \\frac {1} {(x - 1)^2} = (x - 1)^{-2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = -2(x - 1)^{-3} (1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\frac {-2} {(x - 1)^3} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now let's find the values for needed for the tangent line:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(2) = \\frac {-2} {((2) - 1)^3} = \\frac {-2} {1^3} = -2 = m_T $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\, \\, y - y_1 = m_T(x - x_1) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ y - (1) = (-2)(x - (2)) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, \\, y = -2x + 4 - 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, \\, y = -2x + 3 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "So, the dimensions of the triangle are:"
+  },
+  {
+    "type": "p",
+    "content": "$ y = -2(0) + 5 = 5 \\ \\Rightarrow \\ \\text{Height} = 5 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 0 = -2x + 5 \\ \\Rightarrow \\ x = \\frac {5} {2} \\ \\Rightarrow \\ \\text{Width} = \\frac {5} {2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, the area of the triangle is:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\text {Area} = \\frac { \\text {height} \\times \\text {width} } {2} = \\frac {5 \\times \\frac {5} {2}} {2} = 6.25 =$"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The area of the triangle is $ 6.25 $ units squared."
+  },
+  {
+    "type": "h2",
+    "content": "Question 3"
+  },
+  {
+    "type": "p",
+    "content": "If $ h(x) = f[g(x)] + f(x)g(x) $, $ f(2) = 4 $, $ g(2) = -1 $, $ f'(-1) = 3 $, $ f'(2) = 0 $ and $ g'(2) = 2 $, then find $ h'(2) $."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "$ h'(x) = f'(g(x))g'(x) + f'(x)g(x) + f(x)g'(x) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ h'(2) = f'(g(2))g'(2) + f'(2)g(2) + f(2)g'(2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ h'(2) = f'(-1)(2) + (0)(-1) + (4)(2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ h'(2) = (3)(2) + (4)(2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ h'(2) = 6 + 8 = 14 $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 4"
+  },
+  {
+    "type": "p",
+    "content": "Find the derivative of $ \\cot x $ (remember,  $ \\cot x = \\frac {\\cos x} {\\sin x} $)."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "We can solve this derivative by using the quotient rule:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\frac {d} {dx} [ \\cot x ] = \\frac {(\\sin x) \\frac {d} {dx} (\\cos x) - (\\cos x) \\frac {d} {dx} (\\sin x) } {(\\sin x)^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\ = \\frac {(\\sin x)(-\\sin x) - (\\cos x)(\\cos x) } {\\sin^2 x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\ = \\frac {-\\sin^2 x - \\cos^2 x } {\\sin^2 x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\ = \\frac {-(\\sin^2 x + \\cos^2 x) } {\\sin^2 x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\ = - \\frac {1} {\\sin^2 x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\ = - \\csc^2 x $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\therefore \\frac {d} {dx} [ \\cot x ] = - \\csc^2 x $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 5"
+  },
+  {
+    "type": "p",
+    "content": "Find the derivatives of the following functions:"
+  },
+  {
+    "type": "p",
+    "content": "a) $ y = \\log_{5} (3x^2 - \\pi x) $"
+  },
+  {
+    "type": "p",
+    "content": "b) $ y = e^{\\ln \\sqrt{\\sin 2x} } $"
+  },
+  {
+    "type": "p",
+    "content": "c) $ y = e^{x^2+5x} \\ln (3x+1) $"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "a) Differentiating this function requires the use of the chain rule, since it takes the form $ f(g(x)) $. The outer function is $ f(x) = \\log_{5} x $ and the inner function is $ g(x) = 3x^2 - \\pi x $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "First, find the derivatives of both functions:"
+  },
+  {
+    "type": "p",
+    "content": "The derivative of the outer function is $ f'(x) = (\\frac {1} {x}) (\\frac {1} {ln5}) $."
+  },
+  {
+    "type": "p",
+    "content": "The derivative of the inner function is $ g'(x) = 6x \\ - \\ \\pi $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, substitute $ g(x) $ for $x$ the derivative of the outer function, and multiply everything by $ g'(x) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ y' = f'(g(x)) \\ g'(x) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = (\\frac {1} {3x^2 \\ - \\ \\pi x})(\\frac {1} {\\ln 5})(6x \\ - \\ \\pi) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = \\frac {6x \\ - \\ \\pi} {(3x^2 \\ - \\ \\pi x)( \\ln 5)}$"
+  },
+  {
+    "type": "p",
+    "content": "$ \\therefore y' = \\frac {6x \\ - \\ \\pi} {(3x^2 \\ - \\ \\pi x)( \\ln 5)}$"
+  },
+  {
+    "type": "p",
+    "content": "b) First, simplify the function to make it a bit easier: "
+  },
+  {
+    "type": "p",
+    "content": "$ y = e^{\\ln \\sqrt{\\sin 2x} } = e^{\\frac{1}{2} \\ln (\\sin 2x) } $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Then, notice that we have three major functions \"chained\" in the form $ f(g(h(x))) $:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ f(x) = e^x $"
+      },
+      {
+        "type": "p",
+        "content": "$ g(x) = \\frac{1}{2} \\ln x $"
+      },
+      {
+        "type": "p",
+        "content": "$ h(x) = \\sin 2x $"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Find their derivatives:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ f'(x) = e^x $"
+      },
+      {
+        "type": "p",
+        "content": "$ g'(x) = \\frac{1}{2x} $"
+      },
+      {
+        "type": "p",
+        "content": "$ h'(x) = 2 \\cos 2x $"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, apply the chain rule to get the derivative of the entire function:"
+  },
+  {
+    "type": "p",
+    "content": "$ y' = f'(g(h(x))) \\ g'(h(x)) \\ h'(x) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = (e^{\\frac{1}{2} \\ln (\\sin 2x) })(\\frac{1}{2\\sin 2x})(2\\cos 2x) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = (e^{\\frac{1}{2} \\ln (\\sin 2x) })(\\cot 2x)$"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore y' = (e^{\\frac{1}{2} \\ln (\\sin 2x) })(\\cot 2x)$"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "This question was quite tough, however, with enough practice you can eventually to this all in your head!"
+  },
+  {
+    "type": "p",
+    "content": "c) This function requires the use of product rule and chain rule."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "First find the two functions being multiplied by each other:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ f(x) = e^{x^2+5x} $"
+      },
+      {
+        "type": "p",
+        "content": "$ g(x) = \\ln (3x+1) $"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Then, find their derivatives using chain rule:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ f'(x) = e^{x^2+5x} (2x+5) $"
+      },
+      {
+        "type": "p",
+        "content": "$ g'(x) = \\frac {1} {3x+1} (3) $"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, use product rule to find the derivative of the entire function:"
+  },
+  {
+    "type": "p",
+    "content": "$ y' = f(x)g'(x) + f'(x)g(x) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = (e^{x^2+5x})(\\frac {1} {3x+1})(3) + (e^{x^2+5x})(2x+5)(\\ln (3x+1)) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad = \\frac {3e^{x^2+5x}} {3x+1} + (2x+5) e^{x^2+5x} \\ln (3x+1) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore y' = \\frac {3e^{x^2+5x}} {3x+1} + (2x+5) e^{x^2+5x} \\ln (3x+1) $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 6"
+  },
+  {
+    "type": "p",
+    "content": "Suppose that $ f(x) = ax^3 + bx^2 + cx $ has a local maximum at $ (-1, 7) $ and an inflection point at $ x = \\frac {1} {2} $, find the values of $a$, $b$, $c$."
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Let's begin by listing the function and its first and second derivatives:"
+  },
+  {
+    "type": "p",
+    "content": "$ f(x) = ax^3 + bx^2 + cx $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = 3ax^2 + 2bx + c $"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(x) = 6ax + 2b $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The question gives us the local maximum as a point $ (-1, 7) $ on the graph. We can use this to create one equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ f(-1) = 7$"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ 7 = a(-1)^3 + b(-1)^2 + c(-1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ 7 = -a + b - c $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ c = -a + b - 7 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "There is also a local maximum at point at $ x = -1 $, meaning $ f'(-1) = 0 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(-1) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, 0 = 3a(-1)^2 + 2b(-1) + c $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, 0 = 3a - 2b + c $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "There is an inflection point at $ x = \\frac {1} {2} $, meaning $ f''(\\frac {1} {2}) = 0 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(\\frac {1} {2}) = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, 0 = 6a(\\frac {1} {2}) + 2b $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, 0 = 3a + 2b $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\, \\, \\, b = - \\frac {3} {2} a $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we just plug in the equations into each others so that we obtain the values for $a$, $b$ and $c$:"
+  },
+  {
+    "type": "p",
+    "content": "$ 0 = 3a - 2b + c $"
+  },
+  {
+    "type": "p",
+    "content": "$ 0 = 2a - b - 7 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, b = 2a - 7 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\ \\, \\,  b = - \\frac {3} {2} a $"
+  },
+  {
+    "type": "p",
+    "content": "$ (2a - 7) = - \\frac {3} {2} a $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, \\, 4a - 14 = - 3a $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, \\, 7a = 14 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad a = 2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ b = - \\frac {3} {2} a $"
+  },
+  {
+    "type": "p",
+    "content": "$ b = - \\frac {3} {2} (2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ b = -3 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ c = b - a - 7 $"
+  },
+  {
+    "type": "p",
+    "content": "$ c = (-3) - (2) - 7 $"
+  },
+  {
+    "type": "p",
+    "content": "$ c = -12 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore a = 2 $, $ b = -3 $ and $ c = -12 $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 7"
+  },
+  {
+    "type": "p",
+    "content": "The following graph shows that there are two tangent lines to both of the parabolas $ f(x) = -x^2 $ and $ g(x) = 4 + x^2 $. Find the coordinates of the four points at which the tangents touch the parabolas."
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/derivative-properties-8.png"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Let's begin by calculating the derivatives of the functions:"
+  },
+  {
+    "type": "p",
+    "content": "$ f(x) = -x^2 \\ \\Rightarrow \\ f'(x) = -2x $"
+  },
+  {
+    "type": "p",
+    "content": "$ g(x) = 4 + x^2 \\ \\Rightarrow \\ g'(x) = 2x $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Say that the $x$ coordinate of the point we are looking for is $a$."
+  },
+  {
+    "type": "p",
+    "content": "Note that the slope at $ x = a $ is the same as the slope at $ x = -a $ on different parabolas."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For the tangent that goes from the top left to the bottom right, we can derive its tangent equation from both $ f(x) $ and $ g(x) $, then solve for $a$."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For $ f(x) $, the tangent intersects at $ x = a $:"
+  },
+  {
+    "type": "p",
+    "content": "$ m_{T_a} = f'(a) = -2(a) = -2a $"
+  },
+  {
+    "type": "p",
+    "content": "$ f(a) = -(a)^2 = -a^2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ y_T - y_1 = m_{T_a}(x - x_1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ y_T - (-a^2) = (-2a)(x - (a)) $"
+  },
+  {
+    "type": "p",
+    "content": "$ y_T = -2ax + a^2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For $ g(x) $, the tangent intersects at $ x = -a $:"
+  },
+  {
+    "type": "p",
+    "content": "$ m_{T_b} = g'(a) = 2(-a) = -2a $"
+  },
+  {
+    "type": "p",
+    "content": "$ g(a) = 4 + (a)^2 = 4 + a^2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ y_T - y_1 = m_{T_b}(x - x_1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ y_T - (4 + a^2) = (-2a)(x - (-a)) $"
+  },
+  {
+    "type": "p",
+    "content": "$ y_T = -2ax - a^2 + 4 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, plug the equations into each other and solve for $a$:"
+  },
+  {
+    "type": "p",
+    "content": "$ -2ax + a^2 = -2ax - a^2 + 4 $"
+  },
+  {
+    "type": "p",
+    "content": "$  2a^2 = 4 \\ \\Rightarrow \\ a = \\pm \\sqrt {2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, find the points on both functions at $ a = \\pm \\sqrt {2} $:"
+  },
+  {
+    "type": "p",
+    "content": "$ (+ \\sqrt{2}, \\ f(+ \\sqrt{2})) = (+ \\sqrt{2}, \\ -2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ (+ \\sqrt{2}, \\ g(+ \\sqrt{2})) = (+ \\sqrt{2}, \\ 6) $"
+  },
+  {
+    "type": "p",
+    "content": "$ (- \\sqrt{2}, \\ f(- \\sqrt{2})) = (- \\sqrt{2}, \\ -2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ (- \\sqrt{2}, \\ g(- \\sqrt{2})) = (- \\sqrt{2}, \\ 6) $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 8"
+  },
+  {
+    "type": "p",
+    "content": "A garden is in the shape of a semi-circle with a radius of $ 2m $. The grey region is to be covered with landscaping rocks at a cost of $ \\$ 50/m^2 $, while the green triangular region is to be covered with flowers at a cost of $ \\$ 25/m^2 $."
+  },
+  {
+    "type": "p",
+    "content": "a) Find a function for the cost of the garden as a function of the angle $ \\theta $."
+  },
+  {
+    "type": "p",
+    "content": "b) Determine angle $ \\theta $ to minimize the cost of the garden. How much will the orcks and flowers for the garden cost?"
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/optimization-4.mp4"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "a) We can model the cost function as:"
+  },
+  {
+    "type": "p",
+    "content": "$ C = 50(A_{ \\text{rocks} }) + 25(A_{ \\text{flowers} }) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The area of the flowers triangle can be calculated as follows:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\text {base} = 2 \\times 2 = 4 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\sin \\theta = \\frac { \\text{height} } {2} \\ \\Rightarrow \\ \\text{height} = 2 \\sin \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ A_{flowers} = \\frac {1} {2} \\cdot \\text{base} \\cdot \\text{height} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ = \\frac {1} {2} \\cdot (4) \\cdot (2 \\sin \\theta) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ = 4 \\sin \\theta $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The area of the landscaping area can be calculated as follows:"
+  },
+  {
+    "type": "p",
+    "content": "$ A_{ \\text{semi-circle} } = \\frac {1} {2} \\pi r^2 = \\frac {1} {2} \\pi (2)^2 = 2 \\pi $"
+  },
+  {
+    "type": "p",
+    "content": "$ A_{ \\text{rocks} } = A_{ \\text{semi-circle} } - A_{ \\text{flowers} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\, = (2 \\pi) - (4 \\sin \\theta) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\, = 2 \\pi - 4 \\sin \\theta $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, let's form the final cost equation as a function of $ \\theta $:"
+  },
+  {
+    "type": "p",
+    "content": "$ C(\\theta) = 50(A_{ \\text{rocks} }) + 25(A_{ \\text{flowers} }) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, = 50(2 \\pi - 4 \\sin \\theta) + 25(4 \\sin \\theta) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, = 100 \\pi - 200 \\sin \\theta + 100 \\sin \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, = 100 \\pi - 100 \\sin \\theta $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The equation for the cost of the garden is $ C(\\theta) = 100 \\pi - 100 \\sin \\theta $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) We can determine the angle that will minimize the cost of the garden by looking at the derivative of the cost function:"
+  },
+  {
+    "type": "p",
+    "content": "$ C(\\theta) = 100 \\pi - 100 \\sin \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ C'(\\theta) = -100 \\cos \\theta $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we need to find the critical points of $ C'(\\theta) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ C'(\\theta) = 0 $ when $ \\theta = \\frac {\\pi} {2} $ or $ \\cancel{ \\frac {3 \\pi} {2} } \\ $ (invalid b/c $ 0 < \\theta < \\pi $)"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we have to confirm that this is a minimum:"
+  },
+  {
+    "type": "p",
+    "content": "when $ \\theta < \\frac {\\pi} {2} $, $ C'(\\theta) < 0 $"
+  },
+  {
+    "type": "p",
+    "content": "when $ \\theta > \\frac {\\pi} {2} $, $ C'(\\theta) > 0 $"
+  },
+  {
+    "type": "p",
+    "content": "So, the minimum cost of the garden occurs at an angle of $ \\theta = \\frac {\\pi} {2} $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The actual cost of the garden at its minimum is:"
+  },
+  {
+    "type": "p",
+    "content": "$ C(\\frac {\\pi} {2}) = 100 \\pi - 100 \\sin (\\frac {\\pi} {2}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, \\, = 100 \\pi - 100(1) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, \\, \\approx 214 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The minimum price of the garden is approximately 214 dollars and occurs at an angle of $ \\theta = \\frac {\\pi} {2} $."
+  },
+  {
+    "type": "h2",
+    "content": "Question 9"
+  },
+  {
+    "type": "p",
+    "content": "A fuel tank is being designed to contain $ 200m^3 $ of gasoline. The design of the tank calls of a cylindrical part in the middle with a hemisphere (semi-sphere) at each end to make a \"pill\" shape. If the hemispheres are twice as expensive per unit area as the cylindrical wall, then find the radius and height of the cylindrical part so that the cost of manufacturing the tank will be minimal."
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "First of all, we need to know the formulas for the volume of a semi-sphere and a cylinder:"
+  },
+  {
+    "type": "p",
+    "content": "$ 2(V_{ \\text{semi-sphere} }) = V_{ \\text{sphere} } = \\frac {4} {3} \\pi r^3 $"
+  },
+  {
+    "type": "p",
+    "content": "$ V_{ \\text{cylinder} } = \\pi r^2 h $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "If we want to optimize this problem, we need the cost of the fuel tank in terms of one variable. In this case we have two."
+  },
+  {
+    "type": "p",
+    "content": "Luckily, we can get get $h$ in terms of $r$ by using the fact that the fuel tank must have a volume of $ 200m^3 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, 200 = \\frac {4} {3} \\pi r^3 + \\pi r^2 h $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\pi r^2 h = 200 - \\frac {4} {3} \\pi r^3 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\, \\, h = \\frac {200 - \\frac {4} {3} \\pi r^3} {\\pi r^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we can get the areas of the semi-spheres and the outer part of the cylinder in terms of $r$ only:"
+  },
+  {
+    "type": "p",
+    "content": "$ 2(A_{ \\text{semi-sphere} }) = A_{ \\text{sphere} } = 4 \\pi r^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ A_{ \\text{outer cylinder} } = 2 \\pi rh $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, = 2 \\pi r (\\frac {200 - \\frac {4} {3} \\pi r^3} {\\pi r^2}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, = 2 \\cancel{\\pi r} (\\frac {200 - \\frac {4} {3} \\pi r^3} {\\cancel {\\pi} r^{\\cancel {2}^1}}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, = \\frac {400 - \\frac {8} {3} \\pi r^3} {r} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, = 400r^{-1} - \\frac {8} {3} \\pi r^2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we need to maximize the cost. Not the area! Many people get that wrong."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Since the cost for the semi-sphere material is twice as expensive, we will multiply it my two:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\text {Cost} (r) = 2(A_{ \\text{sphere} }) + A_{ \\text{outer cylinder} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\, \\, = 2(4 \\pi r^2) + 400r^{-1} - \\frac {8} {3} \\pi r^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\, \\, = 8 \\pi r^2 + 400r^{-1} - \\frac {8} {3} \\pi r^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\, \\, = \\frac {16} {3} \\pi r^2 + 400r^{-1} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The derivative of the cost function is:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\text {Cost}'(r) = (2)(\\frac {16} {3} \\pi r) + (-1)(400r^{-2}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\, \\, = \\frac {32} {3} \\pi r - 400r^{-2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\, \\, = \\frac {32} {3} \\pi r \\frac {r^2} {r^2} - \\frac {400} {r^2} \\times \\frac {3} {3} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\, \\, = \\frac {32 \\pi r^3 - 1200} {3r^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The critical points are:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\cancel{r = 0} $ because $ r > 0 $, and,"
+  },
+  {
+    "type": "p",
+    "content": "$ 32 \\pi r^3 - 1200 = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\ \\, r^3 = \\frac {75} {2 \\pi} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, r = \\sqrt [3] {\\frac {75} {2 \\pi}} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, r \\approx 2.285 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "When $ 0 < r < 2.285 $, $ \\text {Cost}'(r) < 0 $"
+  },
+  {
+    "type": "p",
+    "content": "When $ r > 2.285 $, $ \\text {Cost}'(r) > 0 $"
+  },
+  {
+    "type": "p",
+    "content": "So, there is a minimum at $ r \\approx 2.285 $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, the height of the cylinder is:"
+  },
+  {
+    "type": "p",
+    "content": "$ h = \\frac {200 - \\frac {4} {3} \\pi (2.285)^3} {\\pi (2.285)^2} \\approx 9.146 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ A radius of approximately $ 2.285m $ and a height of $ 9.146m $ would result in the least expensive cost to make the fuel tank."
+  },
+  {
+    "type": "h2",
+    "content": "Question 10"
+  },
+  {
+    "type": "p",
+    "content": "Sketch the graph of $ f(x) = (\\ln x)^2 + 1 $"
+  },
+  {
+    "type": "h3",
+    "content": "answer"
+  },
+  {
+    "type": "p",
+    "content": "Before starting, let's find $ f'(x) $ and $ f''(x) $:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = 2(\\ln x)(\\frac {1} {x}) = \\frac {2 \\ln x} {x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(x) = \\frac {2(\\frac {1}{x})(x) - (2 \\ln x)(1)} {x^2} = \\frac {2 - 2 \\ln x} {x^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "1) Find the discontinuities and their behaviours:"
+  },
+  {
+    "type": "p",
+    "content": "$ (\\ln x)^2 $ is undefined when $ x \\le 0 \\Rightarrow \\ x = 0 $ is a vertical asumptote"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to 0^+} (\\ln x)^2 + 1 = (\\ln 0^+)^2 + 1 = + \\infty + 1 = + \\infty $"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to 0^-} (\\ln x)^2 + 1 \\ $ does not exist"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For the horizontal asymptotes:"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to + \\infty} (\\ln x)^2 + 1 = (+ \\infty)^2 + 1 = + \\infty \\Rightarrow \\ $ No horizontal asymptote"
+  },
+  {
+    "type": "p",
+    "content": "$ ^{\\lim}_{x \\to - \\infty} (\\ln x)^2 + 1 \\ $ does not exist"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "2) Now we need to determine the critical points:"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = \\frac {2 \\ln x} {x} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f'(x) = 0 \\ $ when $ 2 \\ln x = 0 \\Rightarrow \\ $ There is a critical point at $ x = 1 $"
+  },
+  {
+    "type": "p",
+    "content": "$ f(1) = (\\ln (1))^2 + 1 = 0 + 1 = 1 \\Rightarrow \\ $ The critical point is at $ (1, 1) $"
+  },
+  {
+    "type": "p",
+    "content": "There is also a critical point at $ x = 0 $, since it is undefined for $ f'(x) $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "3), 4) Find the intervals of increase/decrease/neither and determine if the critical point is a minimum/maximum/neither:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(3, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ 0 < x < 1 $"
+          },
+          {
+            "type": "p",
+            "content": "$ x > 1 $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ f'(x) $ DNE"
+          },
+          {
+            "type": "p",
+            "content": "$ f'(x) < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f'(x) > 0 $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "So, $ f(x) $ is decreasing when $ 0 < x < 1 $ and increasing when $ x > 1 $."
+  },
+  {
+    "type": "p",
+    "content": "There is also a local minimum at $ (1, 1) $ since the function goes from decreasing to increasing."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "5), 6) Now we must find the points of inflection and the intervals of concavity for $ f(x) $:"
+  },
+  {
+    "type": "p",
+    "content": "$f''(x) = \\frac {2 - 2 \\ln x} {x^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(x) = 0 $ when $ 2 - 2 \\ln x = 0 \\Rightarrow \\ln x = 1 \\Rightarrow x = e $"
+  },
+  {
+    "type": "p",
+    "content": "$ f''(x) $ is also undefined at $ x = 0 $"
+  },
+  { "type": "br" },
+  {
+    "type": "table",
+    "gridTemplateColumns": "repeat(3, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ x < 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ 0 < x < e $"
+          },
+          {
+            "type": "p",
+            "content": "$ x > e $"
+          }
+        ]
+      },
+      {
+        "cells": [
+          {
+            "type": "p",
+            "content": "$ f''(x) $ DNE"
+          },
+          {
+            "type": "p",
+            "content": "$ f''(x) > 0 $"
+          },
+          {
+            "type": "p",
+            "content": "$ f''(x) < 0 $"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "So, $ f(x) $ is concave up when $ 0 < x < e $ and concave down when $ x > e $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "7) Now we can draw the graph:"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/curve-sketching-3.png"
+  }
+]

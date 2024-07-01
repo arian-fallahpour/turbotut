@@ -18,7 +18,9 @@ const Chapter = ({ course, session, chapter, lectureSlug, color }) => {
             <li key={"lecture-" + lecture.name} className={classes.Lecture}>
               <Lecture
                 name={lecture.name}
-                href={`/courses/${course.slug}/lecture/${lecture.slug}#lecture-content`}
+                href={`/courses/${course.slug}/lecture/${lecture.slug}${
+                  process.env.NODE_ENV === "production" ? "#lecture-content" : ""
+                }`}
                 isActive={lecture.slug === lectureSlug}
                 color={color}
                 isLocked={!hasPremium && lecture.type === "paid"}

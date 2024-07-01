@@ -1,0 +1,22 @@
+[
+  {
+    "type": "h1",
+    "content": "Question 1 (Thinking)"
+  },
+  {
+    "type": "p",
+    "content": "(Forces + motion)"
+  },
+  {
+    "type": "p",
+    "content": "A helicopter initially at rest, rises. At $ 4.00s $, its velocity is $ 10.0 \\frac {m} {s} $ [up]. Find the lifting force of the helicopter's propeller. (Note: $ g = 9.81 \\frac {m} {s^2} $ [down])."
+  },
+  {
+    "type": "h2",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Lift force = total accel - gravity"
+  }
+]

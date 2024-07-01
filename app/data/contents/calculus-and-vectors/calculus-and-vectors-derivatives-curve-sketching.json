@@ -85,12 +85,8 @@
     "url": "/videos/lectures/curve-sketching-1.mp4"
   },
   {
-    "type": "h1",
-    "content": "Practice Questions"
-  },
-  {
     "type": "h2",
-    "content": "question 1"
+    "content": "Example"
   },
   {
     "type": "p",
@@ -98,7 +94,7 @@
   },
   {
     "type": "h3",
-    "content": "answer"
+    "content": "Answer"
   },
   {
     "type": "p",
@@ -311,203 +307,5 @@
   {
     "type": "image",
     "url": "/images/lectures/curve-sketching-2.png"
-  },
-  {
-    "type": "h2",
-    "content": "question 2"
-  },
-  {
-    "type": "p",
-    "content": "Sketch the graph of $ f(x) = (\\ln x)^2 + 1 $"
-  },
-  {
-    "type": "h3",
-    "content": "answer"
-  },
-  {
-    "type": "p",
-    "content": "Before starting, let's find $ f'(x) $ and $ f''(x) $:"
-  },
-  {
-    "type": "p",
-    "content": "$ f'(x) = 2(\\ln x)(\\frac {1} {x}) = \\frac {2 \\ln x} {x} $"
-  },
-  {
-    "type": "p",
-    "content": "$ f''(x) = \\frac {2(\\frac {1}{x})(x) - (2 \\ln x)(1)} {x^2} = \\frac {2 - 2 \\ln x} {x^2} $"
-  },
-  { "type": "br" },
-  {
-    "type": "p",
-    "content": "1) Find the discontinuities and their behaviours:"
-  },
-  {
-    "type": "p",
-    "content": "$ (\\ln x)^2 $ is undefined when $ x \\le 0 \\Rightarrow \\ x = 0 $ is a vertical asumptote"
-  },
-  { "type": "br" },
-  {
-    "type": "p",
-    "content": "$ ^{\\lim}_{x \\to 0^+} (\\ln x)^2 + 1 = (\\ln 0^+)^2 + 1 = + \\infty + 1 = + \\infty $"
-  },
-  {
-    "type": "p",
-    "content": "$ ^{\\lim}_{x \\to 0^-} (\\ln x)^2 + 1 \\ $ does not exist"
-  },
-  { "type": "br" },
-  {
-    "type": "p",
-    "content": "For the horizontal asymptotes:"
-  },
-  {
-    "type": "p",
-    "content": "$ ^{\\lim}_{x \\to + \\infty} (\\ln x)^2 + 1 = (+ \\infty)^2 + 1 = + \\infty \\Rightarrow \\ $ No horizontal asymptote"
-  },
-  {
-    "type": "p",
-    "content": "$ ^{\\lim}_{x \\to - \\infty} (\\ln x)^2 + 1 \\ $ does not exist"
-  },
-  { "type": "br" },
-  {
-    "type": "p",
-    "content": "2) Now we need to determine the critical points:"
-  },
-  {
-    "type": "p",
-    "content": "$ f'(x) = \\frac {2 \\ln x} {x} $"
-  },
-  {
-    "type": "p",
-    "content": "$ f'(x) = 0 \\ $ when $ 2 \\ln x = 0 \\Rightarrow \\ $ There is a critical point at $ x = 1 $"
-  },
-  {
-    "type": "p",
-    "content": "$ f(1) = (\\ln (1))^2 + 1 = 0 + 1 = 1 \\Rightarrow \\ $ The critical point is at $ (1, 1) $"
-  },
-  {
-    "type": "p",
-    "content": "There is also a critical point at $ x = 0 $, since it is undefined for $ f'(x) $."
-  },
-  { "type": "br" },
-  {
-    "type": "p",
-    "content": "3), 4) Find the intervals of increase/decrease/neither and determine if the critical point is a minimum/maximum/neither:"
-  },
-  {
-    "type": "table",
-    "gridTemplateColumns": "repeat(3, 1fr)",
-    "rows": [
-      {
-        "header": true,
-        "cells": [
-          {
-            "type": "p",
-            "content": "$ x < 0 $"
-          },
-          {
-            "type": "p",
-            "content": "$ 0 < x < 1 $"
-          },
-          {
-            "type": "p",
-            "content": "$ x > 1 $"
-          }
-        ]
-      },
-      {
-        "cells": [
-          {
-            "type": "p",
-            "content": "$ f'(x) $ DNE"
-          },
-          {
-            "type": "p",
-            "content": "$ f'(x) < 0 $"
-          },
-          {
-            "type": "p",
-            "content": "$ f'(x) > 0 $"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "p",
-    "content": "So, $ f(x) $ is decreasing when $ 0 < x < 1 $ and increasing when $ x > 1 $."
-  },
-  {
-    "type": "p",
-    "content": "There is also a local minimum at $ (1, 1) $ since the function goes from decreasing to increasing."
-  },
-  { "type": "br" },
-  {
-    "type": "p",
-    "content": "5), 6) Now we must find the points of inflection and the intervals of concavity for $ f(x) $:"
-  },
-  {
-    "type": "p",
-    "content": "$f''(x) = \\frac {2 - 2 \\ln x} {x^2} $"
-  },
-  {
-    "type": "p",
-    "content": "$ f''(x) = 0 $ when $ 2 - 2 \\ln x = 0 \\Rightarrow \\ln x = 1 \\Rightarrow x = e $"
-  },
-  {
-    "type": "p",
-    "content": "$ f''(x) $ is also undefined at $ x = 0 $"
-  },
-  { "type": "br" },
-  {
-    "type": "table",
-    "gridTemplateColumns": "repeat(3, 1fr)",
-    "rows": [
-      {
-        "header": true,
-        "cells": [
-          {
-            "type": "p",
-            "content": "$ x < 0 $"
-          },
-          {
-            "type": "p",
-            "content": "$ 0 < x < e $"
-          },
-          {
-            "type": "p",
-            "content": "$ x > e $"
-          }
-        ]
-      },
-      {
-        "cells": [
-          {
-            "type": "p",
-            "content": "$ f''(x) $ DNE"
-          },
-          {
-            "type": "p",
-            "content": "$ f''(x) > 0 $"
-          },
-          {
-            "type": "p",
-            "content": "$ f''(x) < 0 $"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "p",
-    "content": "So, $ f(x) $ is concave up when $ 0 < x < e $ and concave down when $ x > e $."
-  },
-  { "type": "br" },
-  {
-    "type": "p",
-    "content": "7) Now we can draw the graph:"
-  },
-  {
-    "type": "image",
-    "url": "/images/lectures/curve-sketching-3.png"
   }
 ]

@@ -1,6 +1,639 @@
 [
   {
     "type": "h1",
-    "content": "test"
+    "content": "Quantities in motion"
+  },
+  {
+    "type": "p",
+    "content": "There are three vector quantites that you should know of when studying motion in physics:"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Displacement"
+      },
+      {
+        "type": "p",
+        "content": "Velocity"
+      },
+      {
+        "type": "p",
+        "content": "Acceleration"
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "Think of velocity as the quantity that affects displacement, and acceleration as the quantity that affects velocity (and thus displacement)."
+  },
+  {
+    "type": "h1",
+    "content": "Uniform motion"
+  },
+  {
+    "type": "p",
+    "content": "Uniform motion is motion in which the velocity remains constant."
+  },
+  {
+    "type": "p",
+    "content": "Visually on a graph, the displacement increases at a constant rate, while the velocity is flat:"
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "image",
+        "url": "/images/lectures/uniform-motion-1.png",
+        "content": "Displacement vs time"
+      },
+      {
+        "type": "image",
+        "url": "/images/lectures/uniform-motion-2.png",
+        "content": "Velocity vs time"
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "One should note that the area between the horizontal axis and the velocity graph from $ t = 0 $ to some time is equal to the value of the displacement at that point in time."
+  },
+  {
+    "type": "h2",
+    "content": "Uniform velocity and displacement"
+  },
+  {
+    "type": "p",
+    "content": "The relationship between uniform velocity and displacement can be modelled by the following equation:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {v} = \\frac { \\Delta \\vec {d} } { \\Delta \\vec {t} } = \\frac { \\vec {d_f} - \\vec {d_i} } { \\Delta t } $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {d_f} $ is the final displacement, and $ \\vec {d_i} $ is the initial displacement."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "An object travels $ 64.0m $ east with a constant velocity. If it travels for $ 15.0s $, what is its velocity?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "We can use the equation above to solve this problem:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v} = \\frac { \\Delta \\vec {d} } { \\Delta \\vec {t} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, \\, = \\frac { (64.0m) } { (15.0s) } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, \\, = 4.27 \\frac {m} {s} $"
+  },
+  {
+    "type": "h2",
+    "content": "example"
+  },
+  {
+    "type": "p",
+    "content": "Someone is running at an average velocity of $ 1.15 \\frac {m} {s} $ east for $ 5.00 \\ \\text {min} $, and then turns and runs at an average velocity of $ 1.45 \\frac {m} {s} $ west for $ 7.50 \\ \\text {min} $."
+  },
+  {
+    "type": "p",
+    "content": "a) What is the average speed in $ \\frac {m} {s} $ of the person during the total time of travel?"
+  },
+  {
+    "type": "p",
+    "content": "b) What is the average velocity in $ \\frac {m} {s} $ of the person during the total time of travel?"
+  },
+  {
+    "type": "h2",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "a) First we need to find out the total distance travelled in each period of time in $m$:"
+  },
+  {
+    "type": "p",
+    "content": "$ d_1 = v_1 \\Delta t = (1.15 \\frac {m} {s})(5.00 \\ \\text{min})(60.0 \\frac {s} {\\text{min}}) = 345m $"
+  },
+  {
+    "type": "p",
+    "content": "$ d_2 = v_2 \\Delta t = (1.45 \\frac {m} {s})(7.50 \\ \\text{min})(60.0 \\frac {s} {\\text{min}}) = 652.5m $"
+  },
+  {
+    "type": "p",
+    "content": "$ d_{\\text{total}} = 345m + 652.5m = 997.5m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we need to determine the total time of travel in $s$:"
+  },
+  {
+    "type": "p",
+    "content": "$ t_{\\text{total}} = (5.00 \\ \\text{min} \\ + \\ 7.50 \\ \\text{min})(60 \\frac {s} {\\text {min}}) = 750 s $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, plug these values into the equation from above to find the answer:"
+  },
+  {
+    "type": "p",
+    "content": "$ v_{ \\text{avg} } = \\frac { d_{\\text{total}} } { t_{\\text{total}} } = \\frac {(997.5m)} {(750s)} = 1.33 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) To find the average velocity, we must remember that it is a vector quantity with a direction."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "First, let's calculate the total displacement with west being negative:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec{d_1} =  (+1.15 \\frac {m} {s})(5.00 \\ \\text{min})(60 \\frac {s} {\\text{min}}) = +345m $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec{d_1} =  (-1.45 \\frac {m} {s})(7.50 \\ \\text{min})(60 \\frac {s} {\\text{min}}) = -652.5m $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {d}_{\\text{total}} = (+345m) + (-652.5m) = -307.5m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we must find the total time:"
+  },
+  {
+    "type": "p",
+    "content": "We can use the same total value for time as in a), being $ \\Delta t =  750s $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we just plug the values we obtained into the equations to get the answer:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_{avg} = \\frac { \\vec {d}_{\\text{total}} } {\\Delta t} = \\frac {-307.5m} {750s} = -0.41 \\frac {m} {s} $"
+  },
+  {
+    "type": "h1",
+    "content": "Uniformly accelerated motion"
+  },
+  {
+    "type": "p",
+    "content": "Uniformly accelerated motion meants the acceleration remains constant, while the velocity and displacement are affected by it."
+  },
+  {
+    "type": "p",
+    "content": "Similar to the velocity displacement equation, acceleration and velocity follow a similar relation:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {a} = \\frac { \\Delta \\vec {v} } { \\Delta t } = \\frac { \\vec {v_f} - \\vec {v_i} } { \\Delta t } $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {v_f} $ is the final velocity, and $ \\vec {v_i} $ is the initial velocity."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's what constant acceleration looks like on a graph, as well as the velocity and displacement of the object affected by that same acceleration:"
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "image",
+        "url": "/images/lectures/uniform-motion-3.png",
+        "content": "Displacement vs Time"
+      },
+      {
+        "type": "image",
+        "url": "/images/lectures/uniform-motion-4.png",
+        "content": "Velocity vs Time"
+      },
+      {
+        "type": "image",
+        "url": "/images/lectures/uniform-motion-5.png",
+        "content": "Acceleration vs Time"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "Algebraic analysis"
+  },
+  {
+    "type": "p",
+    "content": "By combining the velocity/displacement and acceleration/velocity equations, we can obtain other useful equations."
+  },
+  {
+    "type": "p",
+    "content": "From $ \\vec {a} = \\frac { \\vec {v_f} - \\vec {v_i} } {t} $ and $ \\vec {v} = \\frac { \\Delta \\vec {d} } { \\Delta t } $, we get:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {d} = ( \\frac { \\vec{v_f} \\ + \\ \\vec {v_i} } {2} ) t \\newline \\vec {d} = \\vec {v_i} t + \\frac {1} {2} \\vec {a} t^2 \\newline \\vec {v_f}^2 = \\vec {v_i}^2 + 2 \\vec {a} \\vec {d} $"
+  },
+  {
+    "type": "p",
+    "content": "Here's a table of all the supported variables for each equation:"
+  },
+  {
+    "type": "table",
+    "gridTemplateColumns": "20rem repeat(5, 1fr)",
+    "rows": [
+      {
+        "header": true,
+        "cells": [
+          { "type": "p", "content": "Equations" },
+          { "type": "p", "content": "$ \\vec {v_i} $" },
+          { "type": "p", "content": "$ \\vec {v_f} $" },
+          { "type": "p", "content": "$ \\vec {a} $" },
+          { "type": "p", "content": "$ \\vec {d} $" },
+          { "type": "p", "content": "$ t $" }
+        ]
+      },
+      {
+        "cells": [
+          { "type": "p", "content": "$ \\vec {a} = \\frac { \\vec {v_f} \\ - \\ \\vec {v_i} } {t} $" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "" },
+          { "type": "p", "content": "$ \\checkmark $" }
+        ]
+      },
+      {
+        "cells": [
+          { "type": "p", "content": "$ \\vec {d} = ( \\frac { \\vec {v_f} \\ + \\ \\vec {v_i} } {2} ) t $" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "$ \\checkmark $" }
+        ]
+      },
+      {
+        "cells": [
+          { "type": "p", "content": "$ \\vec {d} = \\vec{v_i} t + \\frac {1} {2} \\vec {a} t^2 $" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "$ \\checkmark $" }
+        ]
+      },
+      {
+        "cells": [
+          { "type": "p", "content": "$ \\vec {v_f}^2 = \\vec {v_i}^2 + 2 \\vec {a} \\vec {d} $" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "$ \\checkmark $" },
+          { "type": "p", "content": "" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A car slows down from a velocity of $ 10.0 \\frac {m} {s} $ [forwards] to $ 5.00 \\frac {m} {s} $ [forwards] in a span of $ 3.00s $. Find its displacemnt during that time."
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "We can use the equation $ \\vec {d} = ( \\frac { \\vec {v_f} \\ + \\ \\vec {v_i} } {2} ) t $, since there would only be one missing variable ($d$) that we need to solve for:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {d} = ( \\frac { \\vec {v_f} \\ + \\ \\vec {v_i} } {2} ) t $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, \\, = ( \\frac { (+5 \\frac {m} {s}) \\ + \\ (+10.0 \\frac {m} {s}) } {2} ) (3.00s) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, \\, = 22.5 \\frac {m} {s} $"
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "An arrow is shot upwards at an initial velocity of $ 3.0 \\frac {m} {s} $. Determine the air time as the arrow rises, then falls onto the same point at which it was shot at. Note that the acceleration due to gravity is $ 9.81 \\frac {m} {s^2} $ [down]"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "The equation $ \\vec {a} = \\frac { \\vec {v_f} \\ - \\ \\vec {v_i} } {t} $ will be used. In this problem $ a = \\vec {g} = - 9.81 \\frac {m} {s^2} $, $ \\vec {v_i} = +3.0 \\frac {m} {s} $ and $ \\vec {v_f} = -3.0 \\frac {m} {s} $ since the starting point is the same as the final point."
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {g} = \\frac {\\vec {v_f} \\ - \\ \\vec{v_i} } {t} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, t = \\frac {\\vec {v_f} \\ - \\ \\vec{v_i} } { \\vec {g} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, t = \\frac {(-3.0 \\frac {m} {s}) \\ - \\ (+3.0 \\frac {m} {s}) } { -9.81 \\frac {m} {s^2} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, t = 0.61s $"
+  },
+  {
+    "type": "h1",
+    "content": "Two dimensional motion"
+  },
+  {
+    "type": "p",
+    "content": "Two dimensional motion works similarly to one dimensional motion, however, you will need to know how to conduct addition/subtraction of two vectors."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "We already have an entire chapter on vectors [here](http://localhost:3000/courses/calculus-and-vectors/lecture/calculus-and-vectors-vectors-properties-of-vectors#lecture-content), so check that out. You don't need to review the entire chapter, however, it would be helpful for you to know how to add and subtract vectors, as well as know the dot product and cross product in the future."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "In the case that you don't want to review all of that, here's a review of some ways you can add and subtract two-dimensional vectors. When two vectors are added, they form a **resultant vector**. There are three main methods that you can use to calculate the resultant vector."
+  },
+  {
+    "type": "h2",
+    "content": "1. Tail to tip method"
+  },
+  {
+    "type": "p",
+    "content": "This method is effective in calculating the resultant vector if both vectors are perpendicular to one another by using the Pythagorean theorem:"
+  },
+  {
+    "type": "latex",
+    "content": "$ c^2 = a^2 + b^2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Say, a car travels $ 12.0m $ east, then $ 15.0m $ south. Calculate its total displacement."
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/uniform-motion-6.mp4"
+  },
+  {
+    "type": "p",
+    "content": "You can use the Pythagorean theorem to calculate $ \\vec {R} $ knowing $ \\vec {R}_x = +12.0m $ and $ \\vec {R}_y = -15.0m $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {R}^2 = \\vec {R}_x^2 + \\vec {R}_y^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\vec {R} = \\sqrt { \\vec {R}_x^2 + \\vec {R}_y^2 } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\vec {R} = \\sqrt { (+12.0m)^2 + (-15.0m)^2 } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\vec {R} = \\sqrt { 369m^2 } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\vec {R} = 19.2m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Notice how we included the units in the calculation. You don't need to do this, however, it can help you determine whether or not your calculations are correct. Sometimes you should not do this though, since it can be somewhat time consuming."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we need to determine the angle $ \\theta $ by using trigonometry:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\theta = \\tan^{-1} \\frac { \\text {opposite} } { \\text {hypotenus} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\theta = \\tan^{-1} \\frac { 15.0 \\cancel {m} } { 12.0 \\cancel {m} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\theta = \\tan^{-1} (1.25) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\theta = 51.3^{\\circ} $"
+  },
+  {
+    "type": "p",
+    "content": "This theta value points from east to south, so the direction of the car's displacement is [east $ 51.3^{\\circ} $ south]."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The car travelled $ 19.2m $ [east $ 51.3^{\\circ} $ south]."
+  },
+  {
+    "type": "h2",
+    "content": "2. Cosine and sine law method"
+  },
+  {
+    "type": "p",
+    "content": "You can use a combination of both sine law (left equation) and cosine law (right equation) to find the resultant vector in certain situations."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac { \\sin A } { a } = \\frac { \\sin B } { b } = \\frac { \\sin C } { c } \\ \\text{and} \\ c = \\sqrt { a^2 + b^2 - 2ab \\cos C } $"
+  },
+  {
+    "type": "p",
+    "content": "Remember, for sine law, $A$ is the angle opposite to the line $a$, and the same goes for $B$ with $b$ and for $C$ with $c$."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For instance, suppose you walk $ 7.00m $ east, then you walk $ 5.00m $ north of east, as shown in the animation below. Calculate your total displacement."
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/uniform-motion-7.mp4"
+  },
+  {
+    "type": "p",
+    "content": "In this case, $c$ is the resultant vector and $B$ is the angle makes with the horizontal."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Using the fact that angle $ C + 40^{\\circ} = 180 $, we get $ C = 140^{\\circ} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we have everything we need to calculate the length $c$ using cosine law:"
+  },
+  {
+    "type": "p",
+    "content": "$ c = \\sqrt { a^2 + b^2 - 2ab \\cos C } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, \\, = \\sqrt { (7.00m)^2 + (5.00m)^2 - 2(7.00m)(5.00m) \\cos (140^{\\circ}) } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, \\, = \\sqrt { 127.62m^2 } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, \\, = 11.3m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, just find the angle of the resulting vector, or $B$ using sine law:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\, \\frac {\\sin C} {c} = \\frac {\\sin B} {b} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\frac {\\sin (140^{\\circ})} {11.3m} = \\frac {\\sin B} {7.00m} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\ \\, B = 23.5^{\\circ} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ You displaced a total of $ 11.3m $ north $ 23.5^{\\circ} $ of east."
+  },
+  {
+    "type": "h2",
+    "content": "3. Rectangular components method"
+  },
+  {
+    "type": "p",
+    "content": "This is another fast method, and it involves adding up the components of both vectors by using their magnitudes, and the angle they make with the horizontal."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {R} = (| \\vec {R} | \\cos \\theta, \\ | \\vec {R} | \\sin \\theta) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For example, let there be a car that goes $ 10.0m $ east, then $ 12.0m $ north $ 30^{\\circ} $ of east. Find the car's total displacement."
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/uniform-motion-8.mp4"
+  },
+  {
+    "type": "p",
+    "content": "In the animation above, $ \\vec {R}_1 $ is when the car moves $ 10.0m $ east, and $ \\vec {R}_2 $ is when the car moves $ 12.0m $ north $ 30^{\\circ} $ east."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "We can split both vectors into their $x$ and $y$ coordinates:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {R}_1 = ((10.0m) \\cos 0^{\\circ}, \\ (10.0m) \\sin 0^{\\circ}) = (10.0m, \\ 0.00m) $"
+  },
+  {
+    "type": "p",
+    "content": "So, $ \\vec {R}_{1_x} = 10.0m $ and $ \\vec {R}_{1_y} = 0.00m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\vec {R}_1 = ((12.0m) \\cos 30^{\\circ}, \\ (12.0m) \\sin 30^{\\circ}) = (10.4m, \\ 6.00m) $"
+  },
+  {
+    "type": "p",
+    "content": "So, $ \\vec {R}_{2_x} = 10.4m $ and $ \\vec {R}_{2_y} = 6.00m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Then, all you need to do is add the two components"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {R} = (\\vec {R}_{1_x} \\ + \\ \\vec {R}_{2_x}, \\ \\vec {R}_{1_y} \\ + \\ \\vec {R}_{2_y}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\ \\, \\, = (10.0m \\ + \\ 10.4m, \\ 0.00m \\ + \\ 6.00m) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\ \\, \\, = (20.4m, \\ 6.00m) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, we need to determine the magnitude and direction:"
+  },
+  {
+    "type": "p",
+    "content": "$ | \\vec {R} | = \\sqrt { (20.4m)^2 + (6.00m)^2 } = 21.3m $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\theta = \\tan^{-1} \\frac {6.00m} {20.4m} = 16.4^{\\circ} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The car was displaced $ 21.3m [N \\ 16.4^{\\circ} \\ E] $."
   }
 ]

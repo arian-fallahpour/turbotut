@@ -5,17 +5,9 @@ import classes from "./Formatted.module.scss";
 import Latex from "react-latex-next";
 import Image from "next/image";
 import { join } from "@/utils/helper";
+import FormattedLink from "./FormattedLink";
 
-const Formatted = ({
-  type,
-  content,
-  contents,
-  rows,
-  style,
-  url,
-  isChild,
-  gridTemplateColumns,
-}) => {
+const Formatted = ({ type, content, contents, rows, style, url, isChild, gridTemplateColumns }) => {
   const Tag = type;
 
   const loopTypes = ["ul", "ol"];
@@ -35,12 +27,7 @@ const Formatted = ({
   } else if (type === "image") {
     return (
       <figure style={style}>
-        <Image
-          src={url}
-          width={1280}
-          height={720}
-          alt={content ? content : "No description"}
-        />
+        <Image src={url} width={1280} height={720} alt={content ? content : "No description"} />
         {content && (
           <figcaption>
             <Latex>{format(content)}</Latex>
@@ -51,15 +38,7 @@ const Formatted = ({
   } else if (type === "video") {
     return (
       <div className="video">
-        <video
-          width={1280}
-          height={720}
-          style={style}
-          autoPlay
-          muted
-          loop
-          controls
-        >
+        <video width={1280} height={720} style={style} autoPlay muted loop controls>
           <source src={url} type="video/mp4" />
         </video>
         {content && (
@@ -92,10 +71,7 @@ const Formatted = ({
           {rows.map((row, i) => (
             <tr
               key={i}
-              className={join(
-                "table-row",
-                !!row.header ? "table-header" : null
-              )}
+              className={join("table-row", !!row.header ? "table-header" : null)}
               style={{ ...row.style, gridTemplateColumns }}
             >
               {row.cells.map((col, j) => (
@@ -142,6 +118,16 @@ export const FormattedContent = ({ children, ...otherProps }) => {
 };
 
 function format(string) {
-  const html = string.replace(/\*\*(.+?)\*\*(?!\*)/g, "<b>$1</b>");
-  return html;
+  string = replaceBold(string);
+  string = replaceLink(string);
+
+  return string;
+}
+
+function replaceBold(string) {
+  return string.replace(/\*\*(.+?)\*\*(?!\*)/g, "<b>$1</b>");
+}
+
+function replaceLink(inputString) {
+  return inputString.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, `<a href="$2">$1</a>`);
 }

@@ -15,7 +15,7 @@ const cspHeader = `
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: { serverComponentsExternalPackages: ["mongoose"] },
+  experimental: { serverComponentsExternalPackages: ["mongoose", "react-dom/server"] },
   // api: { bodyParser: { sizeLimit: "1mb" } },
   images: {
     remotePatterns: [

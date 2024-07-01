@@ -1,0 +1,43 @@
+[
+  {
+    "type": "h1",
+    "content": "What is projectile motion"
+  },
+  {
+    "type": "p",
+    "content": "Projectiles are objects thrown into the air, and in this chapter, we will study how they travel."
+  },
+  {
+    "type": "p",
+    "content": "Projects can either be thrown in many ways. You can throw an object horiontally above a cliff, at an angle, or even vertically. We will study all of these scenarios."
+  },
+  {
+    "type": "h2",
+    "content": "Horizontal motion"
+  },
+  {
+    "type": "p",
+    "content": "Horizontal motion is quite simple. In this course, and in your high school course, we will ignore factors that may affect the horizontal motion of a projectile in the air, such as friction, and treat it as if there are no external factors affecting it."
+  },
+  {
+    "type": "p",
+    "content": "A a result, the horizontal speed of the projectile remains constant throughout the ball's motion. So, $ \\vec {v}_{x_i} = \\vec {v}_{x_f} $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Therefore, the only equation we need that describes the horizontal motion of a ball is:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {v}_x  = \\frac { \\vec {d}_x } { t }$"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {v}_x $ is the horizontal velocity of the ball, $ \\vec {d}_x $ is the horizontal displacement of the ball, and $t$ is time."
+  },
+  {
+    "type": "h2",
+    "content": "Vertical motion"
+  }
+]
