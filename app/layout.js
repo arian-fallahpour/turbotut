@@ -19,7 +19,7 @@ export const metadata = {
   metadataBase: new URL("https://turbotut.com"),
   icons: {
     icon: "/logo.ico",
-    apple: "/logo.png",
+    apple: "/logo-apple.png",
   },
   twitter: {
     title: `${business.name} learning`,
