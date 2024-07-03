@@ -11,15 +11,12 @@ const contentSchema = new mongoose.Schema({
   },
   url: {
     type: String,
-    required: [true, "Content requires the url of the file"],
+    default: "none",
   },
 });
 
-contentSchema
-  .path("lecture")
-  .validate(doesObjectIdExist(Lecture), "Lecture does not exist");
+contentSchema.path("lecture").validate(doesObjectIdExist(Lecture), "Lecture does not exist");
 
-const Content =
-  mongoose.models.Content || mongoose.model("Content", contentSchema);
+const Content = mongoose.models.Content || mongoose.model("Content", contentSchema);
 
 export default Content;

@@ -39,5 +39,302 @@
   {
     "type": "h2",
     "content": "Vertical motion"
+  },
+  {
+    "type": "p",
+    "content": "When considering the vertical motion of the projectile, the only considerable force being applied onto it would be gravity. It causes an acceleration of approximately $ 9.81 \\frac {m} {s^2} $ downwards."
+  },
+  {
+    "type": "p",
+    "content": "Again, we will not be considering the force of friction caused by air."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here are the equations that you will need to use in order to solve projectile motion problems in regards to vertical motion:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {g} = \\frac { \\vec {v}_{y_f} \\ - \\ \\vec {v}_{y_i} } {t} \\newline \\vec {d}_{y} = ( \\frac { \\vec {v}_{y_f} - \\vec {v}_{y_i} } {2} )t \\newline \\vec {d}_{y} = \\vec {v}_{y_i} t + \\frac {1} {2} \\vec {g} t \\newline \\vec {v}_{y_f}^2 = \\vec {v}_{y_f}^2 + 2 \\vec {g} \\vec {d}_{y} $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {v}_{y_i} $ and $ \\vec {v}_{y_f} $ are the initial and final vertical velocities, $ \\vec {d}_{y} $ is the vertical displacement, $ \\vec {g} $ is the acceleration due to gravity ($ 9.81 \\frac {m} {s^2} $) and $t$ is time."
+  },
+  {
+    "type": "h2",
+    "content": "Visualization"
+  },
+  {
+    "type": "p",
+    "content": "Here is an animation of what those vectors look like on a projectile being thrown on a level field:"
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/projectile-motion-1.mp4"
+  },
+  {
+    "type": "p",
+    "content": "Clearly, you can see that the horizontal velocity does not change, however, the vertical velocity is at a maximum at when the projectile launches, and when it lands. Something else to note, is that the vertical velocity is equal to $0$ when the projectile hits its maximum height."
+  },
+  {
+    "type": "h2",
+    "content": "Tips for dealing with projectile motion"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "If the projectile is thrown on a **level field**, the vertical velocity $ \\vec {v}_y $ is at a maximum at launch ($ t = 0 $), as well as when it lands ($ t = t_f $)."
+      },
+      {
+        "type": "p",
+        "content": "The vertical velocity $ \\vec {v}_y $ is always equal to $0$ when at its maximum achievable height ($ \\vec {d}_{y_{\\text {max} } } $)"
+      },
+      {
+        "type": "p",
+        "content": "If the projectile is thrown on a **level field**, the maximum height ($ \\vec {d}_{y_{\\text {max} } } $) always occurs at the midpoint between the launch and landing of the projectile."
+      }
+    ]
+  },
+  {
+    "type": "h1",
+    "content": "Projectile motion on a level field"
+  },
+  {
+    "type": "p",
+    "content": "Questions like these are quite easy because you can utilize many of the tips previously mentioned."
+  },
+  {
+    "type": "p",
+    "content": "The image below demonstrates what the motion of the projectile looks like:"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/projectile-motion-2.png"
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A ball is thrown at a velocity of $ 7.50 \\frac {m} {s} $ into the air $ 45.0^{\\circ} $. At what time is the ball at its highest point?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "We know that the vertical velocity of the ball will be equal to $0 \\frac {m} {s} $ when it is at its highest point. Knowing this, $ \\vec {g} = \\frac { \\vec {v}_{y_f} \\ - \\ \\vec {v}_{y_i} } {t} $ would be the best equation to use:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\ \\, \\vec {g} = \\frac { \\vec {v}_{y_f} \\ - \\ \\vec {v}_{y_i} } {t} $"
+  },
+  {
+    "type": "p",
+    "content": "$ -9.81 \\frac {m} {s^2} = \\frac { (0) \\ - \\ (7.50m)(\\cos 45.0^{\\circ}) } {t} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\ \\, \\, t = \\frac { -(7.50m)(\\cos 45.0^{\\circ}) } {-9.81 \\frac {m} {s^2}} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\ \\, \\, t = 0.54s $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The ball reaches its maximum height at $ t = 0.54s $."
+  },
+  {
+    "type": "h1",
+    "content": "Projectile motion on a cliff"
+  },
+  {
+    "type": "p",
+    "content": "Projectiles thrown off of a cliff can be somewhat harder to solve, since it may not be as obvious which equation you need to use."
+  },
+  {
+    "type": "p",
+    "content": "It may help to list the equations you already have in a \"given\" list."
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/projectile-motion-3.png"
+  },
+  {
+    "type": "p",
+    "content": "In the figure above, the ball is thrown slightly away from the edge of the cliff. Unless otherwise mentioned on some tougher questions, assume it is thrown at the edge itself. The image was there just to show the trajectory of the ball."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A rock is thrown horizontally at the edge of a cliff $ 30.0m $ tall at a velocity of $ 15.0 \\frac {m} {s} $. How far from the base of the cliff does the ball land?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Let's start with our given:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ \\vec {d}_y = -30.0m $"
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {v}_{x_i} = 15.0 \\frac {m} {s} = \\vec {v}_i $"
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {g} = -9.81 \\frac {m} {s^2} $"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we need to determine at what time the rock hits the ground. Since the rock was thrown horizontally, it's maximum height occurs at $ t = 0 $. This means that $ \\vec {v}_{y_i} = 0 $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "So, the best equation to use would be $ \\vec {d}_y = \\vec {v}_i t + \\frac {1} {2} \\vec {g} t^2 $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\, \\, \\, \\vec {d}_y = \\vec {v}_i t + \\frac {1} {2} \\vec {g} t^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ -30.0m = (0) t + \\frac {1} {2} (-9.81 \\frac {m} {s^2}) t^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ -60.0m = (-9.81 \\frac {m} {s^2}) t^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, \\, \\, t^2 = 6.12s $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\ \\, \\, t = 2.47s $"
+  },
+  {
+    "type": "p",
+    "content": "Notice how $ \\vec {d}_x $ is negative, and this is because the ball was displaced $ 30.0m $ down after it was released. It is also the same sign as $ \\vec {g} $, and as a result, you get a positive value for $t$."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now that we have the time at which the rock hits the ground, we can use the equation $ \\vec {v}_x = \\frac { \\vec {d}_x } {t} $ to calculate how far from the base of the cliff it landed:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_x = \\frac { \\vec {d}_x } {t} \\ \\Rightarrow \\ \\vec {d}_x = \\vec {v}_x t = (15.0 \\frac {m} {s}) (2.47s) = 37.1m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The rock fell $ 37.1m $ from the base of the cliff."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A ball is thrown at an angle of $ 30.0^{\\circ} $ off of a $ 9.00m $ edge at a velocity of $ 5.00 \\frac {m} {s} $. How far does the ball land from the base of the edge."
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Here's our given:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ \\vec {v}_i = 5.00 \\frac {m} {s}  $"
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {d}_y = -9.00m $"
+      },
+      {
+        "type": "p",
+        "content": "$\\vec {g} = -9.81 \\frac {m} {s^s} $"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The best equation to use would be $ \\vec {d}_y = \\vec {v}_{y_i} t + \\frac {1} {2} \\vec {g} t^2 $, since we can easily determine $ \\vec {v}_{y_i} $ by using the $ \\sin $ function:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_{y_i} = \\vec {v}_i \\sin \\theta = (5.00 \\frac {m} {s}) \\sin (30.0^{\\circ}) = 2.5 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\vec {d}_y = \\vec {v}_{y_i} t + \\frac {1} {2} \\vec {g} t^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ -9.00m = (2.5 \\frac {m} {s}) t + \\frac {1} {2} (-9.81 \\frac {m} {s^2}) t^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ 0 = (-4.905 \\frac {m} {s^2}) t^2 + (2.5 \\frac {m} {s}) t + 9.00m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "By using the quadratic formula, we get:"
+  },
+  {
+    "type": "p",
+    "content": "$ t = -1.12s $ or $ t = 1.63s $"
+  },
+  {
+    "type": "p",
+    "content": "Obviously, we can't have negative time, so the ball lands at $ t = 1.63s $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, we can determine the value of $ \\vec {v}_{x_i} $, then plug that into $ \\vec {v}_x = \\frac { \\vec {d}_x } {t} $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_{x_i} = (5.00 \\frac {m} {s}) \\cos (30.0^{\\circ}) = 4.33 \\frac {m} {s} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_x = \\frac { \\vec {d}_x } {t} \\ \\Rightarrow \\ \\vec {d}_x = \\vec {v}_x t = (4.33 \\frac {m} {s}) (1.63s) = 7.06m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The ball landed $ 7.06m $ from the base of the edge."
   }
 ]

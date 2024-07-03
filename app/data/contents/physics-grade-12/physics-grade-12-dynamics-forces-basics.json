@@ -1,0 +1,196 @@
+[
+  {
+    "type": "h1",
+    "content": "What is a force"
+  },
+  {
+    "type": "p",
+    "content": "A force is an action that can push or pull an object and cause it to accelerate. It is a vector quantity, and have the following formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {F} = m \\vec {a} \\quad [N] $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {F} $ represents the force applied onto the object with Newtons as its unit: $ N = kg \\cdot \\frac {m} {s^2} $. Also, $m$ is the mass of the object, and $ \\vec {a} $ is the acceleration applied onto the object."
+  },
+  {
+    "type": "h3",
+    "content": "Net force"
+  },
+  {
+    "type": "p",
+    "content": "All the forces on an object can be added up to what is known as the net force, the sum of the forces applied onto that object."
+  },
+  {
+    "type": "p",
+    "content": "It is denoted by either $ \\vec {F}_{\\text{net}} $ or $ \\Sigma \\vec {F} $:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\Sigma \\vec {F} = \\vec {F}_1 + \\vec {F}_2 + ... + \\vec {F}_n $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\Sigma \\vec {F} $ is the net force."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "Calculate the net force on an object when a force of $ 3N $ is applied to the right, and a force of $ 2N $ is applied to the left."
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "It would help to visualize this interaction:"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/forces-1.png"
+  },
+  {
+    "type": "p",
+    "content": "As you can see, we should expect the box to be forced to the right, since the force on the right has a greater magnitude."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "A simple calculation shows:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{ \\text{net} } = \\vec {F}_1 + \\vec {F}_2 = (3N) + (-2N) = 1N \\ [ \\text{right} ] $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The net force on the object is $ 2N $ to the right."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "Find the net force needed to accelerate an object with a mass of $ 3.0kg $ to $ 10 \\frac {m} {s^2} $"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "We need to use the formula of the force to determine the answer:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{ \\text{net} } = m \\vec {a} = (3.0kg)(10 \\frac {m} {s^2}) = 30 kg \\frac {m} {s^2} = 30N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ A force of $ 30N $ must be applied to accelerate the object."
+  },
+  {
+    "type": "h1",
+    "content": "Newton's laws of motion"
+  },
+  {
+    "type": "p",
+    "content": "Newton's laws of motion bring Kinematics and Dynamics together to help describe where and why an object moves."
+  },
+  {
+    "type": "h2",
+    "content": "Newton's first law of motion"
+  },
+  {
+    "type": "p",
+    "content": "An object will remain in a state of uniform motion unless acted upon by an external force."
+  },
+  {
+    "type": "p",
+    "content": "In other words, an object will retain the same velocity unless acted upon by another force. So if a ball is rolling at $ 3 \\frac {m} {s} $, it will continue to move at that speed given that there are no other forces such as friction, or air resistance acting on it."
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/forces-2.mp4",
+    "content": "The object is moving and stopping because of the yellow force"
+  },
+  {
+    "type": "h2",
+    "content": "Newton's second law of motion"
+  },
+  {
+    "type": "p",
+    "content": "The change in motion of an object is directly proportional to the net force applied onto it."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {a} \\propto \\Sigma \\vec {F} \\quad \\text {or} \\quad m \\vec {a} = \\Sigma \\vec {F} \\newline \\vec {a} \\propto \\frac {1} {m} \\quad \\text {or} \\quad \\vec {a} = \\frac { \\Sigma \\vec {F} } {m} $"
+  },
+  {
+    "type": "p",
+    "content": "The symbol $ \\propto $ means proportional, which indicates that when one value increases, then the other increases two if they are proportional."
+  },
+  {
+    "type": "h2",
+    "content": "Newton's third law of motion"
+  },
+  {
+    "type": "p",
+    "content": "For every action force on another object, there is an opposite but equal reaction force."
+  },
+  {
+    "type": "p",
+    "content": "For example, if you punch a punching bag with $ 9N $ of force, it will also apply of force of $ 9N $ to your arm."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A $ 2kg $ ball is rolling at a velocity of $ 7.25 \\frac {m} {s} $. The force of friction on the ball is $ 4N $ opposite to the balls motions. How far does the ball go before stopping?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "The frictional force $ \\vec {F}_s $ is opposing the ball's motion, meaning it is decelerating the ball. So that means we need to find the acceleration going against the balls motion:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_s = m \\vec {a} \\ \\Rightarrow \\ \\vec {a} = \\frac { \\vec {F}_s } {m} = \\frac { 4N } { 2kg } = 2 \\frac {m} {s^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now that we have the deceleration, we can use the equation $ \\vec {v}_f^2 = \\vec {v}_i^2 + 2 \\vec {a} \\vec {d} $. We know that $ \\vec {v}_i = 7.25 \\frac {m} {s} $, and since the ball comes to a stop, $ \\vec {v}_f = 0 \\frac {m} {s} $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "So, plugging the values in, we get:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\ \\, \\vec {v}_f^2 = \\vec {v}_i^2 + 2 \\vec {a} \\vec {d} $"
+  },
+  {
+    "type": "p",
+    "content": "$ (0.00 \\frac {m} {s})^2 = (7.25 \\frac {m} {s})^2 + 2 (-2 \\frac {m} {s^2}) \\vec {d} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\, \\, \\vec {d} = 12.1 m $"
+  }
+]
