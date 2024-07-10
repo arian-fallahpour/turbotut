@@ -61,7 +61,7 @@
   scrollbar-width: thin;
   scrollbar-color: var(--c-panel-bg) transparent;
   scrollbar-arrow-color: transparent;
-  scrollbar-gutter: auto;
+  scrollbar-gutter: stable both-edges;
 }
 
 // MEDIA QUERY MANAGER
