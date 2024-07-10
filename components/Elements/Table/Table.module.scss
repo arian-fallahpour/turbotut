@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 .Table {
   display: grid;
   border-radius: var(--bd-radius);
@@ -44,6 +46,8 @@
 
     white-space: nowrap;
     overflow: auto;
+
+    @include scrollbar();
   }
 
   &Link {

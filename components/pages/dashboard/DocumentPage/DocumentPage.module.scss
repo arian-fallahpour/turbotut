@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 .Main {
   display: grid;
   gap: inherit;
@@ -92,6 +94,8 @@ button.HeaderButton.HeaderButton {
     overflow-y: auto;
     padding-bottom: 0;
     padding-top: 0;
+
+    @include scrollbar();
   }
 
   &ListItem {
@@ -102,6 +106,8 @@ button.HeaderButton.HeaderButton {
       // max-height: 7.5rem;
       overflow-y: auto;
       font-size: 1.35rem;
+
+      @include scrollbar();
     }
 
     & .image {

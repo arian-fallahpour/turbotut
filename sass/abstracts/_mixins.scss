@@ -57,6 +57,13 @@
   }
 }
 
+@mixin scrollbar() {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-panel-bg) transparent;
+  scrollbar-arrow-color: transparent;
+  scrollbar-gutter: auto;
+}
+
 // MEDIA QUERY MANAGER
 @mixin respond($breakpoint, $less: true) {
   @if $less == true {

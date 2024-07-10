@@ -1,5 +1,9 @@
 [
   {
+    "type": "h1",
+    "content": "Basics"
+  },
+  {
     "type": "h2",
     "content": "Question 1"
   },
@@ -193,6 +197,10 @@
     "content": "$ \\therefore $ The area of the triangle is $ 6.25 $ units squared."
   },
   {
+    "type": "h1",
+    "content": "Derivative Rules"
+  },
+  {
     "type": "h2",
     "content": "Question 3"
   },
@@ -224,6 +232,10 @@
   {
     "type": "p",
     "content": "$ h'(2) = 6 + 8 = 14 $"
+  },
+  {
+    "type": "h1",
+    "content": "Derivative Of Special Function"
   },
   {
     "type": "h2",
@@ -471,6 +483,10 @@
   {
     "type": "p",
     "content": "$ \\therefore y' = \\frac {3e^{x^2+5x}} {3x+1} + (2x+5) e^{x^2+5x} \\ln (3x+1) $"
+  },
+  {
+    "type": "h1",
+    "content": "Derivative Properties"
   },
   {
     "type": "h2",
@@ -755,6 +771,10 @@
   {
     "type": "p",
     "content": "$ (- \\sqrt{2}, \\ g(- \\sqrt{2})) = (- \\sqrt{2}, \\ 6) $"
+  },
+  {
+    "type": "h1",
+    "content": "Optimization"
   },
   {
     "type": "h2",
@@ -1093,6 +1113,10 @@
   {
     "type": "p",
     "content": "$ \\therefore $ A radius of approximately $ 2.285m $ and a height of $ 9.146m $ would result in the least expensive cost to make the fuel tank."
+  },
+  {
+    "type": "h1",
+    "content": "Curve Sketching"
   },
   {
     "type": "h2",

@@ -2,5 +2,530 @@
   {
     "type": "h1",
     "content": "Forces that occur in nature"
+  },
+  {
+    "type": "p",
+    "content": "There are several types forces that you should know:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Force due to gravity ($ \\vec {F}_g $)"
+      },
+      {
+        "type": "p",
+        "content": "The normal force ($ \\vec {F}_N $)"
+      },
+      {
+        "type": "p",
+        "content": "Force due to friction ($ \\vec {F}_f $)"
+      },
+      {
+        "type": "p",
+        "content": "Applied force ($ \\vec {F}_{\\text{app}} $)"
+      },
+      {
+        "type": "p",
+        "content": "Tension force ($ \\vec {F}_T $)"
+      }
+    ]
+  },
+  {
+    "type": "h1",
+    "content": "Force due to gravity"
+  },
+  {
+    "type": "p",
+    "content": "The force exerted by the earth that accelerates objects downwards is called the force of gravity. This value is typically known as weight."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The weight of an object (not to be confused with mass!) is the force of gravity applied onto the object can be calculated using the formula for the force:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {F}_g = m \\vec {g} $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {F}_g $ is the force due to gravity, $m$ is the mass of the object, and $ \\vec {g} $ is earth's gravitational constant (approximately equal to $ 9.81 \\frac {m} {s^2} $)"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's a bit of information you should know about the force of gravity:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "The weight of an object is proportional to its mass: $ \\vec {F}_g \\propto m $"
+      },
+      {
+        "type": "p",
+        "content": "The weight of an object is proportional to the gravitational acceleration constant: $ \\vec {F}_g \\propto \\vec {g} $"
+      },
+      {
+        "type": "p",
+        "content": "The force of gravity always points downwards in 2 dimensional drawings, even when the object is on an incline."
+      }
+    ]
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/forces-advanced-1.png",
+    "content": "Two identical objects side-by-side with one being on an incline"
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "If a dumbbell weighs $ 10.0N $, what is its mass?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "By using the gravitational force formula, we get:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_g = m \\vec {g} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ m = \\frac {\\vec {F}_g} {\\vec {g}} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ m = \\frac {(10.0N)} {(9.81 \\frac {m} {s^2})} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ m = 1.02 kg $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The dumbbell weighs around $ 1.02kg $."
+  },
+  {
+    "type": "h1",
+    "content": "The normal force"
+  },
+  {
+    "type": "p",
+    "content": "When an object rests on a stable surface, there is a force known as the normal force ($ \\vec {F}_N $). This force is equal in magnitude, but opposite in directon to the forces applied perpendicular to the surfaced."
+  },
+  {
+    "type": "p",
+    "content": "As you might remember, this is a direct example of Newton's third law of motion in which the normal force is the reactive force."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "On a horizontal surface, the normal force is equal to the weight of the object, but points vertically upwards. However, when the object is on an incline, the normal force is equal to the component of the weight of the object that is perpendicular to the surface."
+  },
+  {
+    "type": "p",
+    "content": "You can see this in detail with the following image:"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/forces-advanced-2.png"
+  },
+  {
+    "type": "p",
+    "content": "Three things to note:"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "The angle between the force of gravity $ \\vec {F}_g $ and the negative of the normal force $ -\\vec {F}_N $ is the angle of the incline with the horizontal."
+      },
+      {
+        "type": "p",
+        "content": "The magnitude of the normal force on an incline is $ \\vec {F}_N = \\vec {F}_g \\cos \\theta = m \\vec {g} \\cos \\theta $."
+      },
+      {
+        "type": "p",
+        "content": "The normal force is not limited to the force of gravity on the object. If there is another force pushing the object down, that also gets added to the magnitude of the normal force, since the object can't go through the material."
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "There are three boxes placed on top of each other. The box at the top has a mass of $ 3.00kg $, the in the middle has a mass of $ 6.00kg $ and the one at the bottom has a mass of $ 9.00kg $. What is:"
+  },
+  {
+    "type": "p",
+    "content": "a) The weight of all three boxes"
+  },
+  {
+    "type": "p",
+    "content": "b) The normal force for the box at the bottom"
+  },
+  {
+    "type": "p",
+    "content": "c) The normal force for the middle box"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "a) We can treat this system of three boxes as one with a combined mass:"
+  },
+  {
+    "type": "p",
+    "content": "$ m_{\\text{total}} = 3.00kg + 6.00kg + 9.00kg = 18.0kg $ [down]"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{g_{\\text{total}}} = m \\vec {g} = (18.0kg)(9.81 \\frac {m} {s^2}) = 177N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) The normal force for the box at the bottom is equal in magnitude to the downwards force on it."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Although $ \\vec {F}_{g_{\\text{total}}} $ is not the force of gravity on the bottom box itself, it is the total downwards force. This means we should use $  \\vec {F}_{g_{\\text{total}}} $ to calculate the normal force on it:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{N_{\\text{bottom}}} = - \\vec {F}_{g_{\\text{total}}} = -(177N) = 177N $ [down]"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "c) The normal force for the middle box is equal in magnitude to the combined force of gravity of itself and the top box above it, however it is opposite in direction:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{N_{\\text{middle}}} = - (\\vec {F}_{g_{\\text{middle}}}) - (\\vec {F}_{g_{\\text{top}}}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\ \\, \\, = - (6.00kg)(-9.81 \\frac {m} {s^2}) - (3.00kg)(-9.81 \\frac {m} {s^2}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\ \\, \\, = 88.3N $ [up]"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "As a general rule for solving physics questions, you need to be aware of the factors involved in the question. You need to have a good understanding of the objects and how they interact with each other. Not all questions are the same, and you won't be able to \"memorize\", or \"pattern match\" your way into solving all questions."
+  },
+  {
+    "type": "h1",
+    "content": "Force due to friction"
+  },
+  {
+    "type": "p",
+    "content": "Friction is the force that opposes the attempt of movement, or movement itself."
+  },
+  {
+    "type": "p",
+    "content": "It's strength depends on the normal force, as well as the type of surfaces in contact."
+  },
+  {
+    "type": "p",
+    "content": "There are two types of frictional forces that you should know of:"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Static friction"
+      },
+      {
+        "type": "p",
+        "content": "Kinetic friction"
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "Static friction"
+  },
+  {
+    "type": "p",
+    "content": "The type of friction that opposes the **attempt to move** is called the static frictional force."
+  },
+  {
+    "type": "p",
+    "content": "It occurs when an object is stationary, and the applied force is not strong enough to cause the object to move"
+  },
+  {
+    "type": "p",
+    "content": "You can calculate the static frictional force using the following formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {F}_s = \\mu_s \\vec {F}_N = \\mu_s m \\vec {g} \\cos \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {F}_s $ is the force of static friction $ \\mu_s $ is the coefficient of static friction and $ \\vec {F}_N $ is the normal force."
+  },
+  {
+    "type": "h3",
+    "content": "Kinetic friction"
+  },
+  {
+    "type": "p",
+    "content": "Kinetic friction is the force that opposes motion. It occurs while the object is moving."
+  },
+  {
+    "type": "p",
+    "content": "You can calculate the kinetic frictional force using the following formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {F}_k = \\mu_k \\vec {F}_N = \\mu_k m \\vec {g} \\cos \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {F}_k $ is the force of kinetic friction $ \\mu_k $ is the coefficient of kinetic friction and $ \\vec {F}_N $ is the normal force."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's what both forces look like:"
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/forces-advanced-3.mp4"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "In general, $ \\mu_k < \\mu_s $, which means it is typically easier to push an object while it is moving compared to when it is stationary."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "An object is stationary with a mass of $ 15.0kg $. What amount of force is required to get the object moving if the coefficient of static friction between it and the surface is $ 0.64 $?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Let's first write down our given:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ m = 15.0kg $"
+      },
+      {
+        "type": "p",
+        "content": "$ \\mu_s = 0.64 $"
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {g} = -9.81 \\frac {m} {s^2} $"
+      },
+      {
+        "type": "p",
+        "content": "$ \\theta = 0^{\\circ} $ since we are on a horizontal surface"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, use the formula for static friction to find the answer:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_s = \\mu_s m \\vec {g} \\cos \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\, \\, = (0.64)(15.0kg)(9.81 \\frac {m} {s^2}) \\cos 0^{\\circ} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\, \\, = 94.2N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The force required to get the object moving is $ 94.2N $."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "Example"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "h1",
+    "content": "Applied force"
+  },
+  {
+    "type": "p",
+    "content": "A force that pushes or pulls an object is called an applied force with the symbol $ \\vec {F}_{\\text{app}} $."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A $ 2.00kg $ mass is placed on an incline that makes $ 30.0^{\\circ} $ angle with the horizontal. If you apply a force up the incline onto the mass so that it remains still, what is the magnitude of this force?"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/forces-advanced-4.png"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "The applied force going parallel to the incline would be the parallel component of $ \\vec {F}_g $ to the incline:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{g_{\\text {parallel}}} = \\vec {F}_g \\sin \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\, \\, \\, = mg \\sin \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\, \\, \\, = (2.00kg)(9.81 \\frac {m} {s^2}) \\sin 30.0^{\\circ} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\, \\, \\, = 9.81N $ down the incline"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The applied force must be $ 9.81N $ up the incline to keep the object stationary."
+  },
+  {
+    "type": "h1",
+    "content": "Tension force"
+  },
+  {
+    "type": "p",
+    "content": "Forces caused by a tension are denoted by the symbol $ \\vec {F}_T $ can be a form of applied pull force, or they can even be a natural force."
+  },
+  {
+    "type": "p",
+    "content": "In some of the questions you may encounter, you will deal with angled tension forces."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "Two train carts are held together by a chain. The leading train cart has a mass of $ 10.0kg $ and also has a chain pulling it with a force of $ 25.0N $ to the right. The lacking train cart is $ 5.00kg $."
+  },
+  {
+    "type": "p",
+    "content": "a) What is the accerelation of the entire system?"
+  },
+  {
+    "type": "p",
+    "content": "b) What is the tension in the chain holding the two carts together?"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/forces-advanced-5.png"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "a) We can detemine the acceleration by using the equation $ \\vec {F}_{\\text{net}} = m_{\\text{total}} \\vec {a} $. We know that the net force of the system is $ 25.0N $ to the right, and we can treat the entire system as one mass:"
+  },
+  {
+    "type": "p",
+    "content": "$ m_{\\text{total}} = (10.0kg) + (5.00kg) = 15.0kg $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{\\text{net}} = m_{\\text{total}} \\vec {a} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\, \\vec {a} = \\frac { \\vec {F}_{\\text{net}} } {m}  $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\, \\vec {a} = \\frac { 25.0N } { 15.0kg }  $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\, \\vec {a} = 1.67 \\frac {m} {s^2} $ [right]"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The acceleration of the entire system is $ 1.67 \\frac {m} {s^2} $ to the right."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) The tension on the chain pulling the lacking cart is determined by the acceleration of the system, as well as the total mass it is pulling. In this case, the total mass is the mass of the lacking cart:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_T = m \\vec {a} = (5.00kg)(1.67 \\frac {m} {s^2} = 8.35 N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The tension on the chain pulling the carts together is $ 8.35N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "One thing to note in this scenario, is that the tension force holding the carts together points left on the leading cart, and right on the lacking cart."
   }
 ]

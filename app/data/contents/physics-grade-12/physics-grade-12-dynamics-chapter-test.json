@@ -1,15 +1,130 @@
 [
   {
     "type": "h1",
-    "content": "Question 1 (Thinking)"
+    "content": "Motion"
+  },
+  {
+    "type": "h2",
+    "content": "Question"
   },
   {
     "type": "p",
-    "content": "(Forces + motion)"
+    "content": "A soccer ball is kicked with a velocity of $ 25.0 \\frac {m} {s} $ at $ 40.0^{\\circ} $ degrees above the horizontal. If another player is $ 50.0m $ away from ball when it was kicked, how fast must they run towards the ball's landing to be directly on it and catch it?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
   },
   {
     "type": "p",
-    "content": "A helicopter initially at rest, rises. At $ 4.00s $, its velocity is $ 10.0 \\frac {m} {s} $ [up]. Find the lifting force of the helicopter's propeller. (Note: $ g = 9.81 \\frac {m} {s^2} $ [down])."
+    "content": "First let's determine the components of the initial velocity:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_{x_i} = \\vec {v}_x = 25 \\cos 40^{\\circ} = 19.15 \\frac {m} {s} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_{y_i} = - \\vec {v}_{y_f} = 25 \\sin 40^{\\circ} = 16.07 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now let's find the time the ball is in the air:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {g} = \\frac { \\vec {v}_{y_f} - \\vec {v}_{y_i} } { \\Delta t } \\ \\Rightarrow \\ \\Delta t = \\frac { \\vec {v}_{y_f} - \\vec {v}_{y_i} } { \\vec {g} } = \\frac { (-16.07 \\frac {m} {s}) - (16.07 \\frac {m} {s}) } { -9.81 \\frac {m} {s^2} } = 3.276s $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Next, we need to determine where the ball lands:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_x = \\frac { \\vec {d}_{ \\text {end} } } { \\Delta t } \\ \\Rightarrow \\ \\vec {d}_{ \\text {end} } = \\vec {v}_s \\Delta t = (19.15 \\frac {m} {s})(3.276s) = 62.735 m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "So, the distance that the other player needs to run is:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {d}_{ \\text {run} } = \\vec {d}_{ \\text {end} } - \\vec {d}_{ \\text {start} } = (62.735m) - (50m) = 12.735m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, we can determine how fast the other player needs to run:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_{ \\text {run} } = \\frac { \\vec {d}_{ \\text {run} } } { \\Delta t } = \\frac {12.735m} {3.276s} = 3.89 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The other player needs to run $ 3.89 \\frac {m} {s} $ to catch the ball."
+  },
+  {
+    "type": "h1",
+    "content": "Forces"
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "Two weightlifters pull a $ 50.0kg $ mass as shown below. If one of the lifters is pulling with an angle of $ 25.0^{\\circ} $ with a magnitude of $ 20.0N $ and the other is pulling with an angle of $ 30.0^{\\circ} $ with a magnitude of $ 35.0N $, and the force of friction is $ 10.0N $, what is the acceleration of the mass?"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/kinematics-chapter-test-1.png"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "This looks like a net force question:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{ \\text{net} } = (-10.0N) + (25.0N \\cos 25.0^{\\circ}) + (35.0N \\cos 30.0^{\\circ}) = 42.97N $ [right]"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, can use the net force equation to determine its acceleration:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\, \\, \\vec {F}_{ \\text{net} } = m \\vec {a} $"
+  },
+  {
+    "type": "p",
+    "content": "$ (42.97N) = (50.0kg) \\vec {a} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\, \\, \\, \\vec {a} = 0.859 \\frac {m} {s^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The mass is accelerating at a rate of $ 0.859 \\frac {m} {s^2} $."
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "A mass is pulled up a $ 45^{\\circ} $ incline at a constant velocity of $ 4.0 \\frac {m} {s} $. If the coefficient of kinetic friction is $ 0.60 $ and the friction acting on the object is $ 100N $, what is the weight of the object?"
   },
   {
     "type": "h2",
@@ -17,6 +132,378 @@
   },
   {
     "type": "p",
-    "content": "Lift force = total accel - gravity"
+    "content": "Let's write down our given:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ \\theta = 45^{\\circ} $"
+      },
+      {
+        "type": "p",
+        "content": "$ v =  4.0 \\frac {m} {s} $"
+      },
+      {
+        "type": "p",
+        "content": "$ \\vec {F}_{f_k} =  100N $"
+      },
+      {
+        "type": "p",
+        "content": "$ \\mu_k = 0.60 $"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Looks like we'll need to use the equation for friction to determine the normal force on the object:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{f_k} = \\mu_k \\vec {F}_N $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_N = \\frac { \\vec {F}_{f_k} } { \\mu_k } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_N = \\frac { (100N) } { (0.60) } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_N = 166.7N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Since the normal force is equation to the perpendicular force of gravity, we can use trigonometry to determine the full force of gravity on the object:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_N = \\vec {F}_g \\cos \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, \\, \\vec {F}_g = \\frac { \\vec {F}_N } { \\cos \\theta } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, \\, \\vec {F}_g = \\frac { 166.7N } { \\cos (45^{\\circ}) } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, \\, \\vec {F}_g = 235.7N \\approx 240N $ (2 sig figs)"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The weight of the mass is approximately $ 240N $."
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "A sign is hanging still with two ropes attached as seen below. The rope on the left makes a $ 30^{\\circ} $ angle with the horizontal, and the rope of the right makes an angle of $ 45^{\\circ} $ with the horizontal. If the sign has a mass of $ 10.0kg $, what are the magnitudes of the tension in both ropes?"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/kinematics-chapter-test-2.png"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "This question does not leave us with much information, however, if we create two equations using the net $x$ and $y$ forces, we can solve it"
+  },
+  {
+    "type": "p",
+    "content": "For $ \\vec {F}_{ \\text {net}_x } $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{ \\text {net}_x } = 0 = -\\vec {F}_{T_1} \\cos 30^{\\circ} + \\vec {F}_{T_2} \\cos 45^{\\circ} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\, \\, 0 = -0.866 \\vec {F}_{T_1} + 0.707 \\vec {F}_{T_2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\, \\vec {F}_{T_1} = 0.816 \\vec {F}_{T_2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For $ \\vec {F}_{ \\text {net}_y } $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{ \\text {net}_y } = 0 = (10.0kg)(-9.81 \\frac {m} {s^2}) + (\\vec {F}_{T_1}) \\sin 30^{\\circ} + (\\vec {F}_{T_2}) \\sin 45^{\\circ} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\, 98.1N = (-0.816 \\vec {F}_{T_2}) \\sin 30^{\\circ} + (\\vec {F}_{T_2}) \\sin 45^{\\circ} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\, 98.1N = 0.299 \\vec {F}_{T_2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\, \\, \\, \\vec {F}_{T_2} = 328N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we need to find $ \\vec {F}_{T_1} $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{T_1} = 0.816 \\vec {F}_{T_2} = 0.816(328N) = 268N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The magnitude of the rope on the left is $ 328N $ and the magnitude of the rope on the right is $ 268N $."
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "Two objects are tied together with a frictionless pulley on a frictionless surface as shown below. The object on the surface has a mass of $ 2.0kg $ and the object that is hanging has a mass of $ 4.0kg $."
+  },
+  {
+    "type": "p",
+    "content": "a) What is the acceleration of the object on the surface?"
+  },
+  {
+    "type": "p",
+    "content": "b) What is the tension in the string holding the two blocks?"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/kinematics-chapter-test-3.png"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "a) We can determine the acceleration by looking at the net forces applied on both objects"
+  },
+  {
+    "type": "p",
+    "content": "We will assume that going to the right on the surface is the positive direction for the block on the inline, and going downwards is positive for the hanging block. You can make them both negative, however, they must both be the same sign since thats the direction at which the rope is moving."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For the block on the surface:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{ \\text{net} } = \\vec {F}_T = m_{ \\text {surface} } \\vec {a} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\vec {F}_T = (2.0kg) \\vec {a} $"
+  },
+  {
+    "type": "p",
+    "content": "This is because the vertical forces cancel out, leaving only the horizontal tension force."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For the block that is hanging, there is the force of tension lifting it up, and the force of gravity bringing it down:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{ \\text{net} } = (4.0kg) \\vec {a} = - \\vec {F}_T + m_{ \\text {hanging} } \\vec {g} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\ \\ \\ \\, \\, (4.0kg) \\vec {a} = - \\vec {F}_T + (4.0kg)(9.81 \\frac {m} {s^2}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\ \\, \\, \\vec {F}_T = - (4.0kg)\\vec {a} + (4.0kg)(9.81 \\frac {m} {s^2}) $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, combine both equations:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, \\, (2.0kg) \\vec {a} = - (4.0kg)\\vec {a} + (4.0kg)(9.81 \\frac {m} {s^2}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, \\, (6.0kg) \\vec {a} = 38.24N $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\ \\ \\ \\, \\vec {a} = 6.37 \\frac {m} {s^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The block on the surface is accelerating $ 6.37 \\frac {m} {s^2} $ to the right."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) To find the tension, we can use the equation for the net force of the block on the surface:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_T = (2.0kg) \\vec {a} = (2.0kg)(6.37 \\frac {m} {s^2}) = 12.7N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The tension on the rope is $ 12.7N $."
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "Two blocks are on top of each other and connected by a rope across a massless pulley as shown below. The pulley has a frictional force of $ 20.0N $, the block at the top has a mass of $ 20.0kg $, the block at the bottom has a mass of $ 25.0kg $, the coefficient of static friction between the blocks $ \\mu_{s_1} = 0.40 $ and the coefficient of static friction between the block and the floor is $ \\mu_{s_2} = 0.50 $. What is the minimum force required to get this system to move."
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/kinematics-chapter-test-4.png"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Complicated systems like these can be solved much easier if you draw a free body diagram of the forces acting on all the objects:"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/kinematics-chapter-test-5.png"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now that we have a clearer picture, we can determine $ \\vec {F}_T $ from the $ 20.0kg $ block:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_T = \\mu_{s_1} \\vec {F}_{N_1} = \\mu_{s_1} m_1 \\vec {g} = (0.40)(20.0kg)(9.81 \\frac {m} {s^2}) = 78.48N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we can calculate the applied force:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{\\text{net}} = \\vec {F}_f + \\vec {F}_T + \\vec {F}_{s_1} + \\vec {F}_{s_2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, = 98.48N + (0.40)(20.0kg)(9.81 \\frac {m} {s^2}) + (0.50)(20.0kg + 25.0kg)(9.81 \\frac {m} {s^2}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, = 398N $"
+  },
+  {
+    "type": "p",
+    "content": "The hard part was determining the directions and types of forces to include in our equations."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The applied force must be a minimum of $ 398N $ in order to get the system to move."
+  },
+  {
+    "type": "h1",
+    "content": "Circular motion"
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "Two pulleys are connected by a string as shown below. The pulley on the left has a radius of $ r_1 = 0.120m $, while the pulley on the right has a radius of $ r_2 = 0.280m $. If the centripetal acceleration for a point on the right pulley is $ 99.5 \\frac {m} {s} $, what is the centripetal acceleration for a point on the pulley on the left?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Both pullies share the same velocity for any point on the string, since they are connected, so let's determine the velocity from the pulley on the right:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {a}_{c_2} = \\frac {v^2} {r} \\ \\Rightarrow \\ v = \\sqrt { \\vec {a}_{c_2} r_2 } = \\sqrt { (99.5 \\frac {m} {s^2})(0.280m) } = 5.278 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, let's determine the centripetal acceleration for the pulley on the left:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {a}_{c_1} = \\frac {v^2} {r_1} = \\frac {(5.278 \\frac {m} {s})^2} { 0.120m } = 232 \\frac {m} {s^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The centripetal acceleration for a point on the left pulley is $ 232 \\frac {m} {s^2} $ towards its center."
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "An artificial satellite with a mass of $ 500kg $ orbits a planet $ 2.55 \\times 10^6 m $ above its surface. If the planet has a radius of $ 3.00 \\times 10^6 m $ and a mass of $ 3.00 \\times 10^{23} kg $, what is the speed of the satellite?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "When calculating the gravitational force of a planet onto a satellite, we need to use the sum of the radius of the planet, and the distance that the satellite is  from the surface."
+  },
+  {
+    "type": "p",
+    "content": "$ r_{ \\text{total} } = 2.55 \\times 10^6 m + 3.00 \\times 10^6 m = 5.55 \\times 10^6 m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we must use the formula for the speed of a satellite:"
+  },
+  {
+    "type": "p",
+    "content": "$ v = \\sqrt { \\frac { G m_p } { r_{ \\text {total} } } } = \\sqrt { \\frac { (6.67 \\times 10^{-11} \\frac {N \\cdot m^2} {kg^2})(3.00 \\times 10^{23} kg) } { 5.55 \\times 10^6 m } } = 1.90 \\times 10^3 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The speed of the satellite is $ 1.90 \\times 10^3 \\frac {m} {s} $."
   }
 ]

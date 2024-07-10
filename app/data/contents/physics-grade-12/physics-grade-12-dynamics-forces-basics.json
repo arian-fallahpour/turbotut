@@ -53,7 +53,7 @@
   },
   {
     "type": "image",
-    "url": "/images/lectures/forces-1.png"
+    "url": "/images/lectures/forces-basics-1.png"
   },
   {
     "type": "p",
@@ -99,6 +99,18 @@
     "content": "$ \\therefore $ A force of $ 30N $ must be applied to accelerate the object."
   },
   {
+    "type": "h2",
+    "content": "Center of mass"
+  },
+  {
+    "type": "p",
+    "content": "As you have already seen, there is always a dot/point in the illustrations where the forces are applied. These points are the center of masses of the objects involved in the interactions. It is the average position of the object weighed by mass."
+  },
+  {
+    "type": "p",
+    "content": "We use the center of mass of the objects to approximate the effects of the force. Objects that are more symmetrical have a more centered center of mass."
+  },
+  {
     "type": "h1",
     "content": "Newton's laws of motion"
   },
@@ -120,7 +132,7 @@
   },
   {
     "type": "video",
-    "url": "/videos/lectures/forces-2.mp4",
+    "url": "/videos/lectures/forces-basics-2.mp4",
     "content": "The object is moving and stopping because of the yellow force"
   },
   {
@@ -129,7 +141,7 @@
   },
   {
     "type": "p",
-    "content": "The change in motion of an object is directly proportional to the net force applied onto it."
+    "content": "The change in motion of an object is directly **proportional** to the net force applied onto it."
   },
   {
     "type": "latex",
@@ -192,5 +204,49 @@
   {
     "type": "p",
     "content": "$ \\quad \\quad \\quad \\, \\, \\vec {d} = 12.1 m $"
+  },
+  {
+    "type": "h1",
+    "content": "Forces on an inclined plane"
+  },
+  {
+    "type": "p",
+    "content": "Solving problems involving an inclined may seem difficult, but they are actually quite easy."
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/forces-basics-3.png"
+  },
+  {
+    "type": "h3",
+    "content": "Gravity components"
+  },
+  {
+    "type": "p",
+    "content": "The angle of the incline with the horizontal $ \\theta $ is the same angle that $ \\vec {F}_g $ makes with the vertical. This makes it easy to determine its parallel and perpendicular components."
+  },
+  {
+    "type": "p",
+    "content": "You can obtain the values for $ \\vec {F}_{ g_{\\text{parallel}} } $ and $ \\vec {F}_{ g_{\\text{perpendicular}} } $ from the following formulas:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {F}_{ g_{\\text{parallel}} } = \\vec {F}_g \\sin \\theta \\newline \\vec {F}_{ g_{\\text{perpendicular}} } = \\vec {F}_g \\cos \\theta $"
+  },
+  {
+    "type": "h3",
+    "content": "Normal force"
+  },
+  {
+    "type": "p",
+    "content": "There is also a force known as the normal force $ \\vec {F}_N $. We will discuss this in greater detail in the next chapter, however, just know that the normal force balances out the forces perpendicular to the surface at which the object is on."
+  },
+  {
+    "type": "p",
+    "content": "The formula for the normal force on an inclined plane is:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {F}_N = - \\vec {F}_{ g_{\\text{perpendicular}} } = - \\vec {F}_g \\cos \\theta $"
   }
 ]

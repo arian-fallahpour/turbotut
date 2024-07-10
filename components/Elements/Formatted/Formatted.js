@@ -5,7 +5,6 @@ import classes from "./Formatted.module.scss";
 import Latex from "react-latex-next";
 import Image from "next/image";
 import { join } from "@/utils/helper";
-import FormattedLink from "./FormattedLink";
 
 const Formatted = ({ type, content, contents, rows, style, url, isChild, gridTemplateColumns }) => {
   const Tag = type;
