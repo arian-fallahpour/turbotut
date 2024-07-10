@@ -100,7 +100,7 @@ button.HeaderButton.HeaderButton {
 
     & > :global(.paragraph) {
       // max-height: 7.5rem;
-      overflow-y: scroll;
+      overflow-y: auto;
       font-size: 1.35rem;
     }
 
