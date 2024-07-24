@@ -85,9 +85,9 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
           {collection.docs.map((doc) => (
             <TableRow key={doc._id} style={{ gridTemplateColumns }}>
               {collectionData.tableFields.map((field) => (
-                <TableScroll key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
-                  {doc[field.name]}
-                </TableScroll>
+                <TableCell key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
+                  <TableScroll>{doc[field.name]}</TableScroll>
+                </TableCell>
               ))}
               <TableCell end>
                 <Actions document={doc} collectionName={collectionData.name} fetchCollection={fetchCollectionHandler} />

@@ -4,8 +4,6 @@ import classes from "./Table.module.scss";
 import { useEffect, useRef } from "react";
 import { join } from "@/utils/helper";
 
-import { TableCell } from "./Table";
-
 const TableScroll = ({ children, innerProps = {}, ...otherProps }) => {
   const outerRef = useRef();
   const innerRef = useRef();
@@ -50,13 +48,11 @@ const TableScroll = ({ children, innerProps = {}, ...otherProps }) => {
   }, []);
 
   return (
-    <TableCell {...otherProps}>
-      <div className={classes.TableScroll} ref={outerRef}>
-        <div className={join(innerProps.className, classes.TableScrollInner)} {...innerProps} ref={innerRef}>
-          {children}
-        </div>
+    <div className={classes.TableScroll} ref={outerRef} {...otherProps}>
+      <div className={join(innerProps.className, classes.TableScrollInner)} {...innerProps} ref={innerRef}>
+        {children}
       </div>
-    </TableCell>
+    </div>
   );
 };
 
