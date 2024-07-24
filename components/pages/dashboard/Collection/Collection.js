@@ -7,6 +7,7 @@ import queryString from "query-string";
 import { getGridColumns } from "@/app/data/dashboard/collections";
 
 import Table, { TableHeader, TableRow, TableCell } from "@/components/Elements/Table/Table";
+import TableScroll from "@/components/Elements/Table/TableScroll";
 import Actions from "../Actions/Actions";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import Section from "@/components/Elements/Section/Section";
@@ -61,7 +62,7 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
   }, [fetchCollectionHandler]);
 
   return (
-    <Section className={classes.CollectionSection}>
+    <Section className={classes.CollectionSection} limit={null}>
       {/* Header */}
       <CollectionHeader
         collectionData={collectionData}
@@ -84,9 +85,9 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
           {collection.docs.map((doc) => (
             <TableRow key={doc._id} style={{ gridTemplateColumns }}>
               {collectionData.tableFields.map((field) => (
-                <TableCell key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
+                <TableScroll key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
                   {doc[field.name]}
-                </TableCell>
+                </TableScroll>
               ))}
               <TableCell end>
                 <Actions document={doc} collectionName={collectionData.name} fetchCollection={fetchCollectionHandler} />

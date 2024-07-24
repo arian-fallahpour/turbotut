@@ -59,9 +59,28 @@
 
 @mixin scrollbar() {
   scrollbar-width: thin;
-  scrollbar-color: var(--c-panel-bg) transparent;
+  scrollbar-color: var(--c-panel-bd) transparent;
   scrollbar-arrow-color: transparent;
   scrollbar-gutter: stable both-edges;
+
+  &::-webkit-scrollbar-button {
+    display: none;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 22rem;
+    background: var(--c-panel-bd);
+  }
+}
+
+@mixin hideScrollbar() {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 // MEDIA QUERY MANAGER

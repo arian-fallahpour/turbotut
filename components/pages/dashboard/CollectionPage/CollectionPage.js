@@ -6,21 +6,16 @@ import CollectionSection from "./CollectionSection/CollectionSection";
 import collectionsData from "@/app/data/dashboard/collections";
 
 const CollectionPage = ({ collectionName, searchParams }) => {
-  const collectionData = collectionsData.find(
-    (col) => col.name === collectionName
-  );
+  const collectionData = collectionsData.find((col) => col.name === collectionName);
 
   return (
-    <main className={classes.Main}>
+    <div className={classes.CollectionPage}>
       {/* Table */}
-      <CollectionSection
-        collectionData={collectionData}
-        searchParams={searchParams}
-      />
+      <CollectionSection collectionData={collectionData} searchParams={searchParams} />
 
       {/* Other sections */}
       {collectionData.collectionSections}
-    </main>
+    </div>
   );
 };
 

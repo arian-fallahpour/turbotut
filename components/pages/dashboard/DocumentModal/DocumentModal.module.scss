@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 .DocumentModal {
   padding: var(--gap-lg);
   background-color: var(--bg-flat-l);
@@ -29,6 +31,8 @@
     overflow-y: auto;
     padding: 0.6rem;
     margin: -0.6rem;
+
+    @include scrollbar();
   }
 
   & .Documents {

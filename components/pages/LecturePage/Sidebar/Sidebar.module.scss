@@ -48,6 +48,8 @@
     gap: var(--gap-md);
 
     align-content: start;
+
+    @include scrollbar();
   }
 
   &Intro {

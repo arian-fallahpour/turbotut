@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 .Backdrop {
   position: fixed;
   top: 0;
@@ -8,8 +10,7 @@
 
   opacity: 0;
   visibility: hidden;
-  background-color: rgba(black, 0.1);
-  backdrop-filter: blur(5px);
+  background-color: rgba(black, 0.4);
 
   transition: opacity 0.5s ease, visibility 0.5s ease;
 
@@ -34,6 +35,8 @@
   overflow-y: auto;
 
   transition: scale 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+
+  @include hideScrollbar();
 
   &.visible {
     scale: 1;

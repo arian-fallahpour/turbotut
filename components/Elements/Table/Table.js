@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import classes from "./Table.module.scss";
 
 import { join } from "@/utils/helper";
@@ -31,7 +31,7 @@ export const TableHeader = ({ className, children, ...otherProps }) => {
   );
 };
 
-export const TableCell = ({ className, children, href, end = false, ...otherProps }) => {
+export const TableCell = forwardRef(({ className, children, href, end = false, ...otherProps }, ref) => {
   const Tag = href ? Link : "div";
 
   return (
@@ -39,11 +39,13 @@ export const TableCell = ({ className, children, href, end = false, ...otherProp
       className={join(className, classes.TableCell, href ? classes.TableLink : null, end ? classes.TableEnd : null)}
       href={href}
       {...otherProps}
+      ref={ref}
     >
       {children}
     </Tag>
   );
-};
+});
+TableCell.displayName = "TableCell";
 
 export const TableButtonRounded = ({ children, ...otherProps }) => {
   return (

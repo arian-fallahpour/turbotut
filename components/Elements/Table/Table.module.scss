@@ -43,11 +43,19 @@
   &Cell {
     display: grid;
     padding: var(--gap-sm) var(--gap-md);
+  }
 
-    white-space: nowrap;
-    overflow: auto;
+  &Scroll {
+    overflow: hidden;
 
-    @include scrollbar();
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &Inner {
+      white-space: nowrap;
+      display: inline-block;
+    }
   }
 
   &Link {
