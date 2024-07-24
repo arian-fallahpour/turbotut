@@ -31,7 +31,7 @@ export const TableHeader = ({ className, children, ...otherProps }) => {
   );
 };
 
-export const TableCell = forwardRef(({ className, children, href, end = false, ...otherProps }, ref) => {
+export const TableCell = ({ className, children, href, end = false, ...otherProps }) => {
   const Tag = href ? Link : "div";
 
   return (
@@ -39,13 +39,11 @@ export const TableCell = forwardRef(({ className, children, href, end = false, .
       className={join(className, classes.TableCell, href ? classes.TableLink : null, end ? classes.TableEnd : null)}
       href={href}
       {...otherProps}
-      ref={ref}
     >
       {children}
     </Tag>
   );
-});
-TableCell.displayName = "TableCell";
+};
 
 export const TableButtonRounded = ({ children, ...otherProps }) => {
   return (
