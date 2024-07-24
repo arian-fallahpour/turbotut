@@ -8,11 +8,11 @@
 
   display: grid;
   gap: var(--gap-lg);
+}
 
-  &Form {
-    width: 100%;
-    position: relative;
-  }
+.Form {
+  width: 100%;
+  position: relative;
 
   &Actions {
     display: flex;
@@ -20,17 +20,72 @@
   }
 }
 
-.SwapDocumentsForm {
+.SwapForm {
   height: 50rem;
   display: grid;
   grid-template-rows: 1fr auto;
 
-  &Documents {
+  & .SwapFormContainer {
+    overflow-y: auto;
+    padding: 0.6rem;
+    margin: -0.6rem;
+  }
+
+  & .Documents {
     flex: 1;
 
     display: grid;
     align-content: start;
+    gap: 0;
+  }
 
-    overflow-y: auto;
+  & .Document {
+    background: transparent;
+    border-radius: 1rem;
+    border: none;
+    padding: 1rem 2rem;
+    color: var(--txt-text);
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+
+    transition: background 0.2s ease;
+
+    &:nth-child(even) {
+      background-color: rgba(white, 0.02);
+    }
+
+    &:hover,
+    &:focus-visible,
+    &:focus-within {
+      background-color: var(--c-panel-bg);
+
+      & > .DocumentActions {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &Name {
+    }
+
+    &Actions {
+      opacity: 0;
+      visibility: hidden;
+
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    &Button {
+      padding: 0;
+      width: 2rem;
+      height: 2rem;
+
+      &:hover,
+      &:focus-visible {
+        background: var(--c-panel-bg);
+      }
+    }
   }
 }

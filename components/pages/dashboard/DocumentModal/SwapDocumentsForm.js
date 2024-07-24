@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import classes from "./DocumentModal.module.scss";
 
 import Form, { FormCol, FormRow } from "@/components/Elements/Form/Form";
@@ -9,14 +9,26 @@ import queryString from "query-string";
 import { GlobalErrorContext } from "@/store/error-context";
 import LoaderBlock from "@/components/Elements/Loader/LoaderBlock";
 import { join } from "@/utils/helper";
+import UpIcon from "@/components/Elements/Icons/UpIcon";
+import DownIcon from "@/components/Elements/Icons/DownIcon";
+import { startProgress, stopProgress } from "next-nprogress-bar";
 
-const SwapDocumentsForm = ({ hideModal, isDisabled, setIsDisabled, document, collectionData, fetchCollection }) => {
+const SwapDocumentsForm = ({
+  hideModal,
+  isDisabled,
+  setIsDisabled,
+
+  document,
+  setDocument,
+  collectionData,
+  childCollectionData,
+  fetchCollection,
+}) => {
   const { setGlobalError } = useContext(GlobalErrorContext);
+  const swaps = useRef([]);
 
   const [collection, setCollection] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
-  const onSubmitHandler = () => {};
 
   // Fetch documents and sort them
   useEffect(() => {
@@ -26,9 +38,10 @@ const SwapDocumentsForm = ({ hideModal, isDisabled, setIsDisabled, document, col
 
       // Fetch documents
       const url = queryString.stringifyUrl({
-        url: `/api/${collectionData.name}`,
+        url: `/api/${childCollectionData.name}`,
         query: {
-          _id: document[collectionData.name],
+          _id: document[childCollectionData.name],
+          limit: 50,
         },
       });
 
@@ -47,26 +60,110 @@ const SwapDocumentsForm = ({ hideModal, isDisabled, setIsDisabled, document, col
         return setGlobalError(resData.message);
       }
 
-      const orderedCollection = document[collectionData.name].map((id) =>
-        resData.data[collectionData.name].find((doc) => doc._id === id)
+      const orderedCollection = document[childCollectionData.name].map((id) =>
+        resData.data[childCollectionData.name].find((doc) => doc._id === id)
       );
 
       setCollection(orderedCollection);
     };
 
     fetchData();
-  }, [collectionData, document, hideModal, setGlobalError]);
+  }, [childCollectionData, document, setDocument, hideModal, setIsDisabled, setGlobalError]);
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+
+    startProgress();
+    setIsDisabled(true);
+
+    const res = await fetch(`/api/${collectionData.name}/${document._id}/swap-${childCollectionData.name}-indices`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        swaps: swaps.current,
+      }),
+    });
+    const resData = await res.json();
+
+    stopProgress();
+
+    // Handle error
+    if (!res.ok) {
+      setIsDisabled(false);
+      return setGlobalError(resData.message);
+    }
+
+    // Handle success
+    setDocument((p) => {
+      const obj = { ...p };
+      obj[childCollectionData.name] = collection.map((doc) => doc._id);
+      return obj;
+    });
+
+    hideModal();
+    fetchCollection();
+  };
+
+  const onSwapHandler = (index, change) => {
+    if (index + change < 0) return;
+    if (index + change >= collection.length) return;
+
+    const swap = [index, index + change];
+
+    if (
+      swaps.current.length > 0 &&
+      swap[0] === swaps.current[swaps.current.length - 1][1] &&
+      swap[1] === swaps.current[swaps.current.length - 1][0]
+    ) {
+      swaps.current.pop();
+    } else {
+      swaps.current.push(swap);
+    }
+
+    setCollection((p) => {
+      const arr = [...p];
+      const b = arr[index];
+      arr[index] = arr[index + change];
+      arr[index + change] = b;
+      return arr;
+    });
+  };
 
   return (
-    <Form className={join(classes.DocumentModalForm, classes.SwapDocumentsForm)} onSubmit={onSubmitHandler}>
-      <FormRow className={classes.SwapDocumentsFormDocuments}>
-        <FormCol>
+    <Form className={join(classes.Form, classes.SwapForm)} onSubmit={onSubmitHandler}>
+      <FormRow className={classes.SwapFormContainer}>
+        <FormCol className={classes.Documents}>
           {isLoading && !collection && <LoaderBlock />}
-          {collection?.length > 0 && collection.map((doc) => <div key={doc._id}>{doc.name}</div>)}
+
+          {collection?.length > 0 &&
+            collection.map((doc, i) => (
+              <div key={doc._id} className={classes.Document} tabIndex={0}>
+                <div className={classes.DocumentName}>{doc.name}</div>
+                <div className={classes.DocumentActions}>
+                  <Button
+                    className={classes.DocumentButton}
+                    styleName="icon"
+                    size="small"
+                    type="button"
+                    onClick={() => onSwapHandler(i, -1)}
+                  >
+                    <UpIcon />
+                  </Button>
+                  <Button
+                    className={classes.DocumentButton}
+                    styleName="icon"
+                    size="small"
+                    type="button"
+                    onClick={() => onSwapHandler(i, 1)}
+                  >
+                    <DownIcon />
+                  </Button>
+                </div>
+              </div>
+            ))}
         </FormCol>
       </FormRow>
 
-      <FormRow className={classes.DocumentModalActions}>
+      <FormRow className={classes.FormActions}>
         <Button styleName="glass" variantName="red" type="button" onClick={() => hideModal()}>
           cancel
         </Button>

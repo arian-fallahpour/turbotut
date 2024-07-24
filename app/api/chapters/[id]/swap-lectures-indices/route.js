@@ -8,8 +8,9 @@ export const PATCH = routeHandler(
   async function changeIndices(req, { params }) {
     await connectDB();
 
-    if (!req.data.body || !req.data.body.swaps)
-      return new AppError("Please provide index swaps", 400);
+    console.log(req.data.body);
+
+    if (!req.data.body || !req.data.body.swaps) return new AppError("Please provide index swaps", 400);
 
     // Find course
     const chapter = await Chapter.findById(params.id);
@@ -17,12 +18,7 @@ export const PATCH = routeHandler(
 
     // Make changes and save
     req.data.body.swaps.forEach(([i, j]) => {
-      if (
-        i >= 0 &&
-        j >= 0 &&
-        i < chapter.lectures.length &&
-        j < chapter.lectures.length
-      ) {
+      if (i >= 0 && j >= 0 && i < chapter.lectures.length && j < chapter.lectures.length) {
         const b = chapter.lectures[j];
         chapter.lectures[j] = chapter.lectures[i];
         chapter.lectures[i] = b;
@@ -41,5 +37,9 @@ export const PATCH = routeHandler(
       { status: 200 }
     );
   },
-  { requiresSession: true, restrictTo: ["admin"] }
+  {
+    requiresSession: true,
+    restrictTo: ["admin"],
+    parseBody: true,
+  }
 );

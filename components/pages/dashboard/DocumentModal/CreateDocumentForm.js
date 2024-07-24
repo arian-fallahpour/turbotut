@@ -59,7 +59,7 @@ const CreateDocumentForm = ({
   };
 
   return (
-    <Form className={classes.DocumentModalForm} onSubmit={onSubmitHandler}>
+    <Form className={classes.Form} onSubmit={onSubmitHandler}>
       {collectionData.editableFields.map((field) => (
         <DocumentModalInput
           key={field.name}
@@ -70,7 +70,7 @@ const CreateDocumentForm = ({
         />
       ))}
 
-      <FormRow className={classes.DocumentModalActions}>
+      <FormRow className={classes.FormActions}>
         <Button styleName="glass" variantName="red" type="button" onClick={() => hideModal()}>
           cancel
         </Button>

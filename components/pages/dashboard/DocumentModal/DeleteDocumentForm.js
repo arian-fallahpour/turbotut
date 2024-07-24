@@ -56,7 +56,7 @@ const DeleteDocumentForm = ({
   };
 
   return (
-    <Form className={classes.DocumentModalForm} onSubmit={onSubmitHandler}>
+    <Form className={classes.Form} onSubmit={onSubmitHandler}>
       <FormRow>
         <p className="paragraph color-red">
           Warning: This will delete this {toSingular(collectionData.name)} and all of its child documents.
@@ -73,7 +73,7 @@ const DeleteDocumentForm = ({
         <Input label={`name of ${toSingular(collectionData.name)}`} name="" onChange={onChangeHandler} />
       </FormRow>
 
-      <FormRow className={classes.DocumentModalActions}>
+      <FormRow className={classes.FormActions}>
         <Button styleName="glass" variantName="red" type="button" onClick={() => hideModal()}>
           cancel
         </Button>

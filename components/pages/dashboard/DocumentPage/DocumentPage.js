@@ -29,6 +29,7 @@ const getData = async function (collectionData, id) {
 
 const DocumentPage = async ({ collectionName, id }) => {
   const collectionData = getCollectionData(collectionName);
+
   const { document, error } = await getData(collectionData, id);
 
   return (

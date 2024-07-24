@@ -59,6 +59,7 @@ const data = [
     name: "chapters",
     icon: <LibraryIcon />,
     isSwappable: true,
+    parentCollection: "courses",
     tableFields: [
       { label: "name", name: "name", spacing: "25rem" },
       { label: "lectures", name: "lecturesCount", spacing: "1fr" },
@@ -87,6 +88,7 @@ const data = [
     name: "lectures",
     icon: <BookIcon />,
     isSwappable: true,
+    parentCollection: "chapters",
     tableFields: [
       { label: "name", name: "name", spacing: "25rem" },
       { label: "type", name: "type", spacing: "1fr" },
@@ -118,6 +120,7 @@ const data = [
     name: "contents",
     isSwappable: false,
     icon: <ArticleIcon fontSize="inherit" />,
+    parentCollection: "lectures",
     tableFields: [
       { label: "lecture", name: "lecture", spacing: "25rem" },
       { label: "url", name: "url", spacing: "1fr" },

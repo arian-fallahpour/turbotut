@@ -14,6 +14,7 @@ import AddIcon from "@/components/Elements/Icons/AddIcon";
 import SwapIcon from "@/components/Elements/Icons/SwapIcon";
 import { DocumentPageContext } from "@/store/document-page-context";
 import SwapDocumentsForm from "../DocumentModal/SwapDocumentsForm";
+import { getCollectionData } from "@/app/data/dashboard/collections";
 
 const CollectionHeader = ({
   collectionData,
@@ -26,7 +27,7 @@ const CollectionHeader = ({
   isSwappable,
 }) => {
   const { showModal } = useContext(ModalContext);
-  const { document } = useContext(DocumentPageContext);
+  const { document, setDocument } = useContext(DocumentPageContext);
 
   const createDocumentHandler = () => {
     // Only works with one parent field
@@ -49,13 +50,17 @@ const CollectionHeader = ({
   };
 
   const swapDocumentsHandler = () => {
+    const parentCollectionData = getCollectionData(collectionData.parentCollection);
+
     showModal(
       <DocumentModal
         title={`Swap ${collectionData.name}`}
         FormElement={SwapDocumentsForm}
         formProps={{
           document,
-          collectionData,
+          setDocument,
+          collectionData: parentCollectionData,
+          childCollectionData: collectionData,
           fetchCollection,
         }}
       />
