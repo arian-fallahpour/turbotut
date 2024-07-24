@@ -1,0 +1,169 @@
+[
+  {
+    "type": "h1",
+    "content": "Basic Definition"
+  },
+  {
+    "type": "p",
+    "content": "At a basic level, a magnetic field is an invisible field around a magnetic object or a moving electric charge that exerts a force on other magnetic objects or moving electric charges within the field."
+  },
+  {
+    "type": "p",
+    "content": "Similar to electric fields, magnetic objects have something similar to a \"charge\" called polarity. Like poles repel, while opposite poles attract."
+  },
+  {
+    "type": "h2",
+    "content": "Visualization"
+  },
+  {
+    "type": "p",
+    "content": "Here's what the magnetic field looks like on a magnet with a north and south pole:"
+  },
+  {
+    "type": "image",
+    "url": ""
+  },
+  {
+    "type": "h2",
+    "content": "Sources Of Magnetic Fields"
+  },
+  {
+    "type": "p",
+    "content": "There are two sources of magnetic fields:"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Permanent Magnets"
+      },
+      {
+        "type": "p",
+        "content": "Electric Currents"
+      }
+    ]
+  },
+  {
+    "type": "h3",
+    "content": "Permanent Magnets"
+  },
+  {
+    "type": "p",
+    "content": "Imagine a bar magnet. It has a north pole and a south pole. The field lines leave the north pole and loop around to the south pole, forming a closed loop."
+  },
+  {
+    "type": "h3",
+    "content": "Electric Currents"
+  },
+  {
+    "type": "p",
+    "content": "When an electric current flows through a wire, it generates a magnetic field around it. This is described by the Right-Hand Rule: if you point the thumb of your right hand in the direction of the current, your fingers curl around the wire in the direction of the magnetic field lines."
+  },
+  {
+    "type": "h3",
+    "content": "Law of magnetic poles"
+  },
+  {
+    "type": "p",
+    "content": "Here are the laws of magnetic poles:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Every magnet has two poles (north and south)"
+      },
+      {
+        "type": "p",
+        "content": "Like poles repel"
+      },
+      {
+        "type": "p",
+        "content": "Opposite poles attract"
+      }
+    ]
+  },
+  {
+    "type": "h1",
+    "content": "Magnetic Field in a Wire"
+  },
+  {
+    "type": "p",
+    "content": "The magnitude of the magnetic field around a wire can be determined from the following formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ | \\vec {B} | = \\frac { \\mu_0 I } { 2 \\pi r } $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\mu_0 = 4 \\pi \\times 10^{-7} \\frac {T \\ \\cdot \\ m} {A} $ is the permeability of free space, $ I $ is the current in flowing through the wire, and $ r $ is the distance from the wire."
+  },
+  {
+    "type": "h2",
+    "content": "The Right Hand Rule"
+  },
+  {
+    "type": "h1",
+    "content": "Selenoids"
+  },
+  {
+    "type": "h1",
+    "content": "Magnetic Forces"
+  },
+  {
+    "type": "p",
+    "content": "Magnetic forces arise from the interaction between magnetic fields and moving charges or other magnets. These forces can act on individual charged particles, current-carrying wires, or entire magnetic objects."
+  },
+  {
+    "type": "p",
+    "content": "When a charged particle moves through a magnetic field, it experiences a force called the Lorentz force. The direction and magnitude of this force depend on the charge of the particle, its velocity, and the strength and direction of the magnetic field."
+  },
+  {
+    "type": "p",
+    "content": "Here is how you calculate it:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {F}_m = q(\\vec {v} \\times \\vec {B}) \\quad \\text {or} \\quad | \\vec {F}_m | = q | \\vec {v} | | \\vec {B} | \\sin \\theta $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {F}_m $ is the magnetic force, $ q $ is the charge of the particle, $ \\vec {v} $ is the velocity of the particle, $ \\vec {B} $ is the magnetic field and $ \\theta $ is the angle at which the particle passes through the magnetic field."
+  },
+  {
+    "type": "p",
+    "content": "The magnetic force is essentially the cross-product of the velocity of the particle and the magnetic field, multiplied by the charge."
+  },
+  {
+    "type": "h2",
+    "content": "The Right Hand Rule"
+  },
+  {
+    "type": "p",
+    "content": "You can use the right hand rule to remember the directions of the vectors. [add]"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's what it looks like:"
+  },
+  {
+    "type": "image",
+    "url": ""
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {F}_m $ is the magnetic force, $ q $ is the electric charge, $ v $ is the velocity of the charge, and $ B $ is the magnetic field."
+  },
+  {
+    "type": "h1",
+    "content": "Electromagnetic induction"
+  },
+  {
+    "type": "p",
+    "content": "Electromagnetic induction is the process by which a changing magnetic field within a closed loop of wire induces an electromotive force (EMF) and, consequently, an electric current in the wire."
+  }
+]

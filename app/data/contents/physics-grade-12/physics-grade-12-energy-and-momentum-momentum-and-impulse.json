@@ -1,0 +1,460 @@
+[
+  {
+    "type": "h1",
+    "content": "Momentum"
+  },
+  {
+    "type": "p",
+    "content": "Momentum is a measure of the motion of an object and is the product of its mass and velocity. It is a vector quantity, meaning it has both magnitude and direction."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {p} = m \\vec {v} \\quad [kg \\cdot \\frac {m} {s}] $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {p} $ is momentum, $ m $ is mass, and $ \\vec {v} $ is velocity. The units of momentum are $ kg \\cdot \\frac {m} {s} $."
+  },
+  {
+    "type": "h2",
+    "content": "Impulse"
+  },
+  {
+    "type": "p",
+    "content": "Impulse is the change in momentum of an object when a force is applied over a time interval. It is also a vector quantity and is equal to the product of the net force and the time during which it acts."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\Delta \\vec {p} = \\vec {F}_{ \\text {net} } \\Delta t \\quad [kg \\cdot \\frac {m} {s}] $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\Delta \\vec {p} $ is the change in momentum, $ \\vec {F}_{ \\text {net} } $ is the net force, and $ \\Delta t $ is the time interval during which the force acts."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "The impulse of a car crash is $ 24.0 N \\cdot s $. If the maximum force a person can safely handle is $ 8.40N $, what is the minimum amount of time for the collision to be safe?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "$ \\Delta p = F \\Delta t \\ \\Rightarrow \\ \\Delta t = \\frac { \\Delta p } { F } = \\frac { 24.0 N \\cdot s } { 8.40N } = 2.86s $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The collision must take a minimum of $ 2.86s $ in order for it to be safe."
+  },
+  {
+    "type": "h1",
+    "content": "Law of Conservation of Momentum"
+  },
+  {
+    "type": "p",
+    "content": "The law of conservation of momentum states that the total momentum of a closed system is conserved if no external forces are acting on it. This means the total momentum before any interaction is equal to the total momentum after the interaction."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\sum \\vec {p}_{ \\text {i} } = \\sum \\vec {p}_{ \\text {f} } $"
+  },
+  {
+    "type": "p",
+    "content": "This principle is crucial in analyzing collisions and interactions in isolated systems."
+  },
+  {
+    "type": "h1",
+    "content": "Collisions"
+  },
+  {
+    "type": "p",
+    "content": "There are three types of collisions that we will look at:"
+  },
+  {
+    "type": "ol",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Inelastic collisions"
+      },
+      {
+        "type": "p",
+        "content": "Elastic collisions"
+      },
+      {
+        "type": "p",
+        "content": "Perfectly elastics collisions"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "Inelastic Collisions"
+  },
+  {
+    "type": "p",
+    "content": "In an inelastic collision, objects collide and stick together. The total momentum of the system is conserved, and the velocities of both objects become the same."
+  },
+  {
+    "type": "latex",
+    "content": "$ m_1 \\vec {v}_1 + m_2 \\vec {v}_2 = (m_1 + m_2) \\vec {v}_{ \\text {f} } $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ m_1 $ and $ m_2 $ are the masses of the colliding objects, $ \\vec{v}_1 $ and $ \\vec{v}_2 $ are their velocities before the collision, and $ \\vec{v}_{\\text{final}} $ is their common velocity after the collision."
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/momentum-and-impulse-1.mp4"
+  },
+  {
+    "type": "h2",
+    "content": "Elastic Collisions"
+  },
+  {
+    "type": "p",
+    "content": "Elastic collisions involve both objects bouncing off of each other."
+  },
+  {
+    "type": "latex",
+    "content": "$ m_1 \\vec {v}_1 + m_2 \\vec {v}_2 = m_1 \\vec{v}_1' + m_2 \\vec{v}_2' $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec{v}_1' $ and $ \\vec{v}_2' $ are the velocities of the objects after the collision."
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/momentum-and-impulse-2.mp4"
+  },
+  {
+    "type": "h2",
+    "content": "Perfectly Elastic Collisions"
+  },
+  {
+    "type": "p",
+    "content": "In a perfectly elastic collision, both momentum and kinetic energy are conserved. The colliding objects rebound without any loss of kinetic energy."
+  },
+  {
+    "type": "p",
+    "content": "You would still use the equation we just learned for elastic collisions:"
+  },
+  {
+    "type": "latex",
+    "content": "$ m_1 \\vec {v}_1 + m_2 \\vec {v}_2 = m_1 \\vec{v}_1' + m_2 \\vec{v}_2' $"
+  },
+  {
+    "type": "p",
+    "content": "However, since the kinetic energy is conserved, you can also use:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\frac {1}{2} m_1 v_1^2 + \\frac{1}{2} m_2 v_2^2 = \\frac{1}{2} m_1 v_1'^2 + \\frac{1}{2} m_2 v_2'^2 $"
+  },
+  {
+    "type": "p",
+    "content": "Where the kinetic energy before and after the collision remains the same."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A $ 1.00 \\times 10^3 kg $ car travelling east at a velocity of $ 25 \\frac {m} {s} $ [east] collides with another $ 1.5 \\times 10^3 kg $ travelling $ 20 \\frac {m} {s} $ [west]. When they collide, they stick together. What is the velocity of both of the cars after the collision?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Since they stick together after the collision, this is an inelastic collision:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, m_1 \\vec {v}_1 + m_2 \\vec {v}_2 = (m_1 + m_2) \\vec {v}_f $"
+  },
+  {
+    "type": "p",
+    "content": "$ (1.00 \\times 10^3 kg)(25 \\frac {m} {s}) + (1.5 \\times 10^3 kg)(-20 \\frac {m} {s}) = (1.00 \\times 10^3 kg + 1.50 \\times 10^3 kg) \\vec {v}_f $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, \\, \\vec {v}_f = \\frac { 25.0 \\times 10^3 kg \\cdot \\frac {m} {s} \\ - \\ 30 \\times 10^3 kg \\cdot \\frac {m} {s} } { 2.50 \\times 10^3 kg } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, \\, \\vec {v}_f = -2.00 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ Both cars will travel $ 2.00 \\frac {m} {s} $ [west] after the collision."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A $ 0.40kg $ ball is travelling at a velocity of $ 5.0 \\frac {m} {s} $ east and collides with a $ 0.45kg $ ball that is moving at a velocity of $  6.0 \\frac {m} {s} $ west. If the $ 0.40kg $ ball travels at a velocity of $ 3.0 \\frac {m} {s} $ west after the collision, what is the velocity of the $ 0.45kg $ ball?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "This looks like an elastic collision, so let's determine the final velocity of the $ 0.45kg $ ball:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, \\, \\,  m_1 \\vec {v}_1 + m_2 \\vec {v}_2 = m_1 \\vec {v}_1' + m_2 \\vec {v}_2' $"
+  },
+  {
+    "type": "p",
+    "content": "$ (0.40kg)(5.0 \\frac {m} {s}) + (0.45kg)(-6.0 \\frac {m} {s}) = (0.40kg)(-3.0 \\frac {m} {s}) + (0.45kg) \\vec {v}_2' $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, \\vec {v}_2' = \\frac { 2.0 kg \\cdot \\frac {m} {s} - 2.7kg \\cdot \\frac {m} {s} + 1.2 kg \\cdot \\frac {m} {s} } { 0.45kg } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, \\vec {v}_2' = 1.1 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The $ 0.45kg $ ball travels $ 1.1 \\frac {m} {s} $ east after the collision."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "On a pool table, one small $ 0.500kg $ ball is going $ 2.50 \\frac {m} {s} $ east and collides with another bigger $ 1.00kg $ ball going $ 4.00 \\frac {m} {s} $ west. If the collision is super elastic, what are the velocities of the balls after the collision?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Since this is a perfectly elastic collision, we know that both momentum and kinetic energy is conserved, so we can use both equations:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad m_1 \\vec {v}_1 + m_2 \\vec {v}_2 = m_1 \\vec {v}_1' + m_2 \\vec {v}_2' $"
+  },
+  {
+    "type": "p",
+    "content": "$ (0.500kg)(2.50 \\frac {m} {s}) + (1.00kg)(-4.00 \\frac {m} {s}) = (0.500kg) \\vec {v}_1' + (1.00kg) \\vec {v}_2' $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\vec {v}_2' = 2.75 \\frac {m} {s} - 0.500 \\vec {v}_1' $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we can use the kinetic energy of the system to form another equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, \\, \\frac {1} {2} m_1 \\vec {v}_1^2 + \\frac {1} {2} m_2 \\vec {v}_2^2 = \\frac {1} {2} m_1 \\vec {v}_1'^2 + \\frac {1} {2} m_2 \\vec {v}_2'^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, \\, \\, m_1 \\vec {v}_1^2 + m_2 \\vec {v}_2^2 = m_1 \\vec {v}_1'^2 + m_2 \\vec {v}_2'^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (0.500kg)(2.50 \\frac {m} {s})^2 + (1.00kg)(-4.00 \\frac {m} {s})^2 = (0.500kg) \\vec {v}_1'^2 + (1.00kg) \\vec {v}_2'^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, 19.125 kg \\frac {m^2} {s^2} = (0.500kg) \\vec {v}_1'^2 + (1.00kg) \\vec {v}_2'^2 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Plug in the first equation into the second:"
+  },
+  {
+    "type": "p",
+    "content": "$ 19.125 kg \\frac {m^2} {s^2} = (0.500kg) \\vec {v}_1'^2 + (1.00kg)(2.75 \\frac {m} {s} - 0.500 \\vec {v}_1')^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ 0 = (0.500kg) \\vec {v}_1'^2 + 7.563 kg \\frac {m^2} {s^2} - (2.75 kg \\frac {m} {s}) \\vec {v}_1' - (0.250 kg) \\vec {v}_1'^2 - 19.125 kg \\frac {m^2} {s^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ 0 = (0.250kg) \\vec {v}_1'^2 - (2.75 kg \\frac {m} {s}) \\vec {v}_1' - 11.562 kg \\frac {m^2} {s^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_1' = 14.25 \\frac {m} {s} $ or $ \\vec {v}_1' = -3.25 \\frac {m} {s} $"
+  },
+  {
+    "type": "p",
+    "content": "Since the balls bounce off of each other and go in opposite directions after the collision, $ \\vec {v}_1' = -3.25 \\frac {m} {s} $."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, let's find $ \\vec {v}_2' $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_2' = 2.75 \\frac {m} {s} - 0.500 \\vec {v}_1' = 2.75 \\frac {m} {s} - 0.500(-3.25) = 4.38 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The final velocities of the balls are $ -3.25 \\frac {m} {s} $ for the $ 0.500kg $ ball and $ 4.38 \\frac {m} {s} $ for the $ 1.00kg $ ball."
+  },
+  {
+    "type": "h1",
+    "content": "Two Dimensional Collisions"
+  },
+  {
+    "type": "p",
+    "content": "In two-dimensional collisions, the principles of conservation of momentum apply in both the x and y directions. This means the total momentum in each direction is conserved."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\sum \\vec{p}_{x, \\text{initial}} = \\sum \\vec{p}_{x, \\text{final}} $"
+  },
+  {
+    "type": "p",
+    "content": "And,"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\sum \\vec{p}_{y, \\text{initial}} = \\sum \\vec{p}_{y, \\text{final}} $"
+  },
+  {
+    "type": "p",
+    "content": "The analysis of such collisions involves breaking down the velocities into their components and applying conservation of momentum in each direction separately just like we have done before."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A $ 1.50kg $ ball hits a stationary $ 2.75kg $ ball. The collision results in the $ 1.50kg $ moving with a velocity of $ 3.1 \\frac {m} {s} $ [E $ 35^{\\circ} $ N] and the $ 2.75kg $ ball moving with a velocity of $ 4.5 \\frac {m} {s} $ [e $ 41^{\\circ} $ S]. What was the initial velocity of the $ 1.50kg $ ball?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "First, let's write our given:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "$ m_1 = 1.50kg $"
+      },
+      {
+        "type": "p",
+        "content": "$ m_2 = 2.75kg $"
+      },
+      {
+        "type": "p",
+        "content": "$ v_1 = ? $"
+      },
+      {
+        "type": "p",
+        "content": "$ v_2 = 0 \\frac {m} {s} $"
+      },
+      {
+        "type": "p",
+        "content": "$ v_1' = 3.1 \\frac {m} {s} $ [E $ 35^{\\circ} $ N]"
+      },
+      {
+        "type": "p",
+        "content": "$ v_1' = 4.5 \\frac {m} {s} $ [E $ 40^{\\circ} $ S]"
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, let's calculate $ v_{1,x} $ using the conservation of momentum with the x-components:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, m_1 \\vec {v}_{1,x} + m_2 \\vec {v}_{2,x} = m_1 \\vec {v}_{1,x}' + m_2 \\vec {v}_{2,x}' $"
+  },
+  {
+    "type": "p",
+    "content": "$ (1.50kg) \\vec {v}_{1,x} + (2.75kg)(0 \\frac {m} {s}) = (1.50kg)(3.1 \\cos 35^{\\circ}) + (2.75kg)(4.5 \\cos 40^{\\circ}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, \\, \\vec {v}_{1,x} = \\frac { (1.50kg)(3.1 \\cos 35^{\\circ}) + (2.75kg)(4.5 \\cos 40^{\\circ}) } { 1.50kg } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\, \\, \\vec {v}_{1,x} = 8.86 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now for $ v_{1,y} $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\, \\, m_1 \\vec {v}_{1,y} + m_2 \\vec {v}_{2,y} = m_1 \\vec {v}_{1,y}' + m_2 \\vec {v}_{2,y}' $"
+  },
+  {
+    "type": "p",
+    "content": "$ (1.50kg) \\vec {v}_{1,y} + (2.75kg)(0 \\frac {m} {s}) = (1.50kg)(3.1 \\sin 35^{\\circ}) + (2.75kg)(4.5 \\sin 40^{\\circ}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\vec {v}_{1,y} = \\frac { (1.50kg)(3.1 \\sin 35^{\\circ}) + (2.75kg)(-4.5 \\sin 40^{\\circ}) } { 1.50kg } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\vec {v}_{1,y} = -3.52 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "We have the components of $ v_1 $, let's find its magnitude:"
+  },
+  {
+    "type": "p",
+    "content": "$ | \\vec {v_1} | = \\sqrt { (8.86 \\frac {m} {s})^2 + (-3.52 \\frac {m} {s})^2 } = 9.53 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, its direction:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\theta = \\tan^{-1} ( \\frac { -3.52 \\frac {m} {s} } { 8.86 \\frac {m} {s} } ) = -21.7^{\\circ} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The initial velocity of the $ 1.50kg $ ball was $ 9.53 \\frac {m} {s} $ [E $ 21.7^{\\circ} $ S]."
+  }
+]

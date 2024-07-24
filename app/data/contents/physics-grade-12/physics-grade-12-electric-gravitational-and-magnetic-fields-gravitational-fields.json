@@ -1,0 +1,100 @@
+[
+  {
+    "type": "h1",
+    "content": "Basic definition"
+  },
+  {
+    "type": "p",
+    "content": "A gravitational field is a region of space around a mass where another mass experiences a force of attraction. It’s like an invisible web or net that pulls objects towards the source of the gravitational field."
+  },
+  {
+    "type": "p",
+    "content": "Imagine a trampoline with a heavy ball in the center. The trampoline’s surface curves downward around the ball. If you place a smaller ball on the trampoline, it will roll towards the heavy ball because of the curved surface. This curving is analogous to how a gravitational field works in space."
+  },
+  {
+    "type": "h2",
+    "content": "visualization"
+  },
+  {
+    "type": "p",
+    "content": "Here's a visualization of what gravitational fields look like:"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/gravitational-fields-1.png"
+  },
+  {
+    "type": "h1",
+    "content": "Gravitational Field Strength"
+  },
+  {
+    "type": "p",
+    "content": "The strength of a gravitational field at a point in space is defined as the force per unit mass experienced by a small test mass placed at that point. Mathematically, it’s represented as:"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's how you can calculate the gravitational field strength:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {g} = \\frac { \\vec {F}_g } {m} $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {g} $ is the gravitational field strength, $ \\vec {F}_g $ is the gravitational force, and $ m $ is the mass of the object experiencing the force."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "question"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Solution"
+  },
+  {
+    "type": "h1",
+    "content": "Newton's Law of Universal Gravitation"
+  },
+  {
+    "type": "p",
+    "content": "Although we learned about Newton's Law of Universal Gravitation before, let's dive deeper. It states that every point mass attracts every other point mass in the universe with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between them."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's the formula:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {F}_g = G \\frac { m_1 m_2 } { r^2 } $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ G = 6.67 \\times 10^{-11} $ is the gravitational constant, $ m_1 $ is the mass of the object being attracted, $ m_2 $ is the mass of the object attracting, and $ r $ is the distance between them."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "question"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Solution"
+  }
+]

@@ -1,0 +1,542 @@
+[
+  {
+    "type": "h1",
+    "content": "Energy"
+  },
+  {
+    "type": "h2",
+    "content": "Question 1"
+  },
+  {
+    "type": "p",
+    "content": "A $ 90.0kg $ box, initially at rest, slides $ 10.0m $ down an incline that is $ 7.50m $ high. If the force due to friction is $ 15.0N $, then:"
+  },
+  {
+    "type": "p",
+    "content": "a) How much thermal energy is produced?"
+  },
+  {
+    "type": "p",
+    "content": "b) What is the speed of the box at the bottom of the incline?"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/energy-and-momentum-chapter-test-1.png"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "a) The amount of thermal energy is equal to the work done by friction:"
+  },
+  {
+    "type": "p",
+    "content": "$ W_{ \\text {friction} } = E_T = F_f d = (15.0m)(10.0m) = 150J $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) We can determine the velocity at the bottom by first calculating the total energy of the box at the top:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_{ \\text {total} } = mgh = (90.0kg)(9.81 \\frac {m} {s^2})(7.50m) = 6621.75J $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "The energy of the box at the bottom of the incline is:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_{ \\text {bottom} } = E_{ \\text {total} } - E_T = 6621.75J - 150J = 6471.75J $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, we can calculate the speed of the box at the bottom:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_{ \\text {bottom} } = \\frac {1} {2} mv_{ \\text {bottom} }^2 \\ \\Rightarrow \\ v_{ \\text {bottom} } = \\sqrt { \\frac { 2 E_{ \\text {bottom} } } {m} } = \\ v = \\sqrt { \\frac { 2(6471.75J) } { (90.0kg) } } = 12.0 \\frac {m} {s} $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 2"
+  },
+  {
+    "type": "p",
+    "content": "A $ 175kg $ cart is on a frictionless track and starts at position $ (1) $ which is $ 75.0m $ above the ground, and rolls off passing position $ (2) $ and stops abruptly at position $ (3) $."
+  },
+  {
+    "type": "p",
+    "content": "a) What is the cart's potential energy at position $ (1) $?"
+  },
+  {
+    "type": "p",
+    "content": "b) What is the cart's speed at position $ (2) $?"
+  },
+  {
+    "type": "p",
+    "content": "c) If the cart is travelling at a speed of $ 10.0 \\frac {m} {s} $ at position $ (3) $ right before it stops, how high is it?"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/energy-and-momentum-chapter-test-2.png"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "a) Use the equation for potential energy:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_T = mgh_1 = (175kg)(9.81 \\frac {m} {s^2})(75.0m) = 128,756.25J = E_{ \\text {total} } $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) The speed of the cart at position $ (2) $ can be derived from the kinetic energy at that point, which is equal to the total energy because there is no potential energy stored in the cart anymore:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_{ \\text {total} } = \\frac {1} {2} m v_2^2 \\ \\Rightarrow \\ v_2 = \\sqrt { \\frac { 2 E_{ \\text {total} } } { m } } = \\sqrt { \\frac { 2 (128,756.25J) } { (175kg) } } = 38.4 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "c) The height at position $ (3) $ can be determined by subtracting the total energy by the kinetic energy at that point, then using the remaining energy, which is potential, to calculate the height:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\ \\, E_{ \\text {total} } - E_{k_3} = E_{p_3} $"
+  },
+  {
+    "type": "p",
+    "content": "$ E_{ \\text {total} } - \\frac {1} {2} m v_3^2 = mgh_3 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\ \\, h_3 = \\frac { E_{ \\text {total} } - \\frac {1} {2} m v_3^2 } { mg } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\ \\, h_3 = \\frac { (128,756.25J) - \\frac {1} {2} (175kg)(10.0m)^2 } { (175kg)(9.81 \\frac {m} {s^2}) } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\ \\, h_3 = 69.9m $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 3"
+  },
+  {
+    "type": "p",
+    "content": "A frictionless and massless pulley has two masses $ m_1 = 5.00kg $ and $ m_2 = 11.0kg $ hanging on both sides by a rope. If the $ 5.00kg $ mass is on the ground, and the $ 11.0kg $ mass is $ 2.00m $ above the ground, with what speed does the $ 11.0kg $ mass hit the ground?"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/energy-and-momentum-chapter-test-3.png"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "First of all, the let's determine the net force on the system:"
+  },
+  {
+    "type": "p",
+    "content": "$ F_{ \\text {net} } = F_{g_2} - F_{g_1} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, = m_2 g - m_1 g  $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\ \\ \\, = (m_2 - m_1)g $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now that we know the net force, we can use the equations we learned about work, and its relation to the change in kinetic energy:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\ \\, W = F_{ \\text {net} } d = \\frac {1} {2} m_{ \\text {total} } (v_f^2 - v_i^2) $"
+  },
+  {
+    "type": "p",
+    "content": "$ (m_2 - m_1)gd = \\frac {1} {2} (m_1 + m_2) v_f^2 \\quad (v_i = 0)$"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\, v_f = \\sqrt { \\frac { 2(m_2 - m_1)gd } { (m_1 + m_2) } } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\, v_f = \\sqrt { \\frac { 2(11.0kg - 5.00kg)(9.81 \\frac {m} {s^2})(2.00m) } { (5.00kg + 11.0kg) } } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\, v_f = 3.84 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, try it answering this question using the conservation of energy yourself! You should end up with the same equation for $ v_f $."
+  },
+  {
+    "type": "h1",
+    "content": "Momentum"
+  },
+  {
+    "type": "h2",
+    "content": "Question 4"
+  },
+  {
+    "type": "p",
+    "content": "A $ 200kg $ mass is held by a rope $ 50.0m $ above the ground. If the rope snaps, at what height will the mass have a momentum of $ 3.45 \\times 10^3 kg \\cdot \\frac {m} {s} $?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "We have the mass and the momentum of the mass, so we can determine the velocity of the mass at that point:"
+  },
+  {
+    "type": "p",
+    "content": "$ p = mv \\ \\Rightarrow \\ v = \\frac {p} {m} = \\frac { 3.45 \\times 10^3 kg \\cdot \\frac {m} {s} } { 200kg } = 17.25 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we can use the kinematics equation $ v_f^2 = v_i^2 + 2gd $ to determine the vertical distance that the mass has travelled downwards:"
+  },
+  {
+    "type": "p",
+    "content": "$ v_f^2 = v_i^2 + 2gd = 2gd \\quad (v_i = 0) $"
+  },
+  {
+    "type": "p",
+    "content": "$ v_f^2 = 2gd \\quad (v_i = 0) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, d = \\frac { v_f^2 } { 2g } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, d = \\frac { (17.25 \\frac {m} {s})^2 } { 2(9.81 \\frac {m} {s^2} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, d = 15.17m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, we can determine the height at which the mass will have the desired momentum:"
+  },
+  {
+    "type": "p",
+    "content": "$ h = 50.0m - 15.17m = 34.8m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The mass will have a momentum of $ 3.45 \\times 10^3 kg \\cdot \\frac {m} {s} $ at $ 34.8m $."
+  },
+  {
+    "type": "h2",
+    "content": "Question 5"
+  },
+  {
+    "type": "p",
+    "content": "A $ 0.0200kg $ bullet is shot into a pendulum with a wood box that weighs $ 3.44kg $ at the end and gets stuck in it, as shown below. If the bullet was moving at a speed of $ 300 \\frac {m} {s} $ and the radius of the pendulum is $ 0.600m $, what is the angle $ \\theta $ that the pendulum makes with the vertical at the highest point of the box?"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/energy-and-momentum-chapter-test-4.png"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "We should use the conservation of momentum to determine the final velocity of the box and bullet:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\, m_1 v_1 + m_2 v_2 = (m_1 + m_2)v $"
+  },
+  {
+    "type": "p",
+    "content": "$ (0.0200kg)(300 \\frac {m} {s}) + (3.44kg)(0 \\frac {m} {s}) = (0.0200kg + 3.44kg)v $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\, v = \\frac { (0.0200kg)(300 \\frac {m} {s}) } { 0.0200kg + 3.44kg } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\, \\, v = 1.73 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we can use the conservation of energy to determine the height at which the box rises as a result of the impact:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\frac {1} {2} (m_1 + m_2) v = (m_1 + m_2) gh $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\, \\, \\frac {1} {2} v = gh $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\ \\, \\, h = \\frac { v } { 2g } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\ \\, \\, h = \\frac { (1.73 \\frac {m} {s}) } { 2(9.81 \\frac {m} {s^2}) } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\ \\, \\, h = 0.0882m $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, we can use trigonometry to determine the angle using the hypotenus and the adjacent sides:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\theta = \\cos^{-2} ( \\frac { 0.600m - 0.0882m } { 0.600m } ) = 31.5^{\\circ} $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 6"
+  },
+  {
+    "type": "p",
+    "content": "A $ 1500kg $ cannon is loaded with a $ 100kg $ cannon ball. If the ball is shot out of the cannon ball with a velocity of $ 50.0 \\frac {m} {s} $ to the right, how far does the cannon move to the left if the coefficient of friction with the floor is $ 0.610 $?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "We can use the conservation of momentum to determine the initial velocity of the cannon after the cannon ball was shot:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\ \\ \\, (m_1 + m_2)v = m_1 v_1 + m_2 v_2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ (1500kg + 100kg)(0 \\frac {m} {s}) = (1500kg) v_1 + (100kg)(50.0 \\frac {m} {s}) $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, v_1 = \\frac { -(100kg)(50.0 \\frac {m} {s}) } { 1500kg } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, v_1 = -3.33 \\frac {m} {s} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\ \\ \\ \\, v_1 = 3.33 \\frac {m} {s} $ [left] $ = v_i $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we need to find the decceleration caused by friction:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, \\, \\vec {F}_f = \\mu_f mg $"
+  },
+  {
+    "type": "p",
+    "content": "$ m \\vec {a}_f = \\mu_f m \\vec {g} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\ \\, \\vec {a}_f = \\mu_f \\vec {g} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\ \\, \\vec {a}_f = (0.610)(9.81 \\frac {m} {s^2} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\ \\, \\vec {a}_f = 5.984 \\frac {m} {s^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Last but not least, we will use the equation $ v_f^2 = v_i^2 + 2 \\vec {a}_f d $ to determine the distance the cannon travelled:"
+  },
+  {
+    "type": "p",
+    "content": "$ v_f^2 = v_i^2 + 2 \\vec {a}_f d $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, \\, \\, 0 = (-3.33 \\frac {m} {s})^2 + 2(5.984 \\frac {m} {s^2})d $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, \\, \\, d = \\frac { -(-3.33 \\frac {m} {s})^2 } { 2(5.984 \\frac {m} {s^2}) } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, \\, \\, d = -0.927m $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, \\, \\, d = 0.927m $ [left]"
+  },
+  {
+    "type": "h1",
+    "content": "Simple Harmonic Motion"
+  },
+  {
+    "type": "h2",
+    "content": "Question 7"
+  },
+  {
+    "type": "p",
+    "content": "A $ 2.00kg $ object is on the end of a horizontal spring with a spring constant of $ 3.00 \\frac {N} {m} $ along a frictionless surface. If the maximum displacement of the object is $ 0.300m $, what is the speed of the object when its displacement is $ 0.220m $?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "First let's determine the potential energy of the spring at $ 0.220m $:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_p = \\frac {1} {2} kx^2 = \\frac {1} {2} (3.00 \\frac {N} {m})(0.220m)^2 = 0.0726J $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now let's determine the total energy that the spring can hold:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_{ \\text {total} } = \\frac {1} {2} kx_{ \\text {max} }^2 = \\frac {1} {2} (3.00 \\frac {N} {m})(0.300m)^2 = 0.135J $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, we can determine the speed of the object by using the conservation of energy:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_{ \\text {total} } = E_p + E_k \\ \\Rightarrow \\ E_k = E_{ \\text {total} } - E_p = 0.135J - 0.0726J = 0.0624J $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Then, the speed of the object is:"
+  },
+  {
+    "type": "p",
+    "content": "$ v = \\sqrt { \\frac { 2E_k } { m } } = \\sqrt { \\frac { 2(0.0624J) } { (2.00kg) } } = 0.250 \\frac {m} {s} $"
+  },
+  {
+    "type": "h2",
+    "content": "Question 8"
+  },
+  {
+    "type": "p",
+    "content": "A vertical spring with a spring constant of $ 246 \\frac {N} {m} $ and length of $ 20.0cm $ has a $ 2.50kg $ mass hanging from it. When the block is at equilibrium, it is pulled down $ 2.00cm $ then released."
+  },
+  {
+    "type": "p",
+    "content": "a) What is the minimum length of the spring?"
+  },
+  {
+    "type": "p",
+    "content": "b) What is the maximum length of the spring?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "First let's determine the extra length of the spring at equilibrium:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\, \\, F_s = kx $"
+  },
+  {
+    "type": "p",
+    "content": "$ mg = kx $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, \\, x = \\frac { mg } { k } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, \\, x = \\frac { (2.50kg)(9.81 \\frac {m} {s^2} } { (246 \\frac {N} {m}) } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, \\, x = 0.0997m $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, \\, x = 9.97cm $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "So, the length of the spring at equilibrium is:"
+  },
+  {
+    "type": "p",
+    "content": "$ x_{ \\text {equilibrium} } = 20.0cm + 9.97cm = 30.0cm $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "a) The minimum length of the spring is:"
+  },
+  {
+    "type": "p",
+    "content": "$ x_{ \\text {min} } = x_{ \\text {equilibrium} } - 2.00cm = 30.0cm - 2.00cm = 28.0cm $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) The maximum length of the spring is:"
+  },
+  {
+    "type": "p",
+    "content": "$ x_{ \\text {min} } = x_{ \\text {equilibrium} } + 2.00cm = 30.0cm + 2.00cm = 32.0cm $"
+  }
+]

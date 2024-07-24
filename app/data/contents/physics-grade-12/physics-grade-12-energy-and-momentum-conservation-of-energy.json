@@ -1,0 +1,145 @@
+[
+  {
+    "type": "h1",
+    "content": "Law of conservation of energy"
+  },
+  {
+    "type": "p",
+    "content": "As said before, mechanical energy is the energy in a system in the form of position and motion. You can convert kinetic energy into potential energy just as you can convert potential energy to kinetic energy."
+  },
+  {
+    "type": "p",
+    "content": "The law of conservation of energy states that in an isolated system, energy is conserved. This means that if there is a loss in one form of energy, there must be a gain of the same magnitude of energy in some other form or forms. **Energy is neither created nor destroyed, but it can be converted from one form to another**."
+  },
+  {
+    "type": "p",
+    "content": "The following equation describes the law of conservation of energy:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\Delta E_k + \\Delta E_p + \\Delta E_T = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ E_k $ is kinetic energy, $ E_p $ is potential energy and $ E_T $ is thermal energy."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "Say you throw a ball vertically into the air. At the instant it leaves your hand, it is full of kinetic energy. As it gets higher and higher, it loses its kinetic energy, and gains the amount of kinetic energy lost as potential energy. When it reaches the highest point, all of the ball's kinetic energy is converted to potential energy. As it falls down again, it gains kinetic energy. In this isolated system, the energy in the ball is transformed from kinetic, to potential, then back to kinetic again. The energy remains in the system."
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/conservation-of-energy-1.mp4"
+  },
+  {
+    "type": "h1",
+    "content": "Isolated systems"
+  },
+  {
+    "type": "p",
+    "content": "In an isolated system, the change in mechanical energy is zero. No energy enters the system, and no energy leaves. Any increase in either potential/kinetic energy leads to a decrease in the other."
+  },
+  {
+    "type": "p",
+    "content": "Isolated systems are usually not real, since there is always a transfer of usable energy to heat due to friction, or some other phenomenon."
+  },
+  {
+    "type": "p",
+    "content": "The following equation should be used in a system where friction is non-existent, meaning there is no way to convert other forms of energy to thermal energy:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\Delta E_k + \\Delta E_p = 0 $"
+  },
+  {
+    "type": "p",
+    "content": "However, if you know that other forms of energy are converted to thermal energy, you can choose to include thermal energy in the following form:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\Delta E_T = - (\\Delta E_k + \\Delta E_p) = - \\Delta E_{ \\text {mechanical} } $"
+  },
+  {
+    "type": "p",
+    "content": "The equation above describes: \"When there is a loss in mechanical energy, there is a gain in thermal energy\"."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A $ 10.0kg $ mass initally at rest slides from an incline at a height of $ 22.5m $, and has a speed of $ 5.00 \\frac {m} {s} $ when it reaches the bottom. How much energy is \"lost\" due to heat?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "First let's calculate the initial mechanical energy:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_{ \\text {mechanical}_i } = E_{k_i} + E_{p_i} = (0) + mgh = (10.0kg)(9.81 \\frac {m} {s^2})(22.5m) = 2207.25J $"
+  },
+  {
+    "type": "p",
+    "content": "The initial kinetic energy is zero because the mass is initially at rest."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now let's calculate the final mechanical energy:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_{ \\text {mechanical}_f } = E_{k_f} + E_{p_f} = \\frac {1} {2} m v^2 + (0) = \\frac {1} {2} (10.0kg)(5.00 \\frac {m} {s})^2 = 125J $"
+  },
+  {
+    "type": "p",
+    "content": "The final potential energy is zero because the mass is at the bottom of the incline."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ E_T = - \\Delta E_{ \\text {mechanical} } = - (125J - 2207.25J) = 2080J $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The mass lost $ 2080J $ due to friction."
+  },
+  {
+    "type": "h1",
+    "content": "Non-Isolated systems"
+  },
+  {
+    "type": "p",
+    "content": "Non-Isolated systems are more realistic, in the sense that energy in the system gets \"lost\" due to external forces such as friction. Mechanical energy is removed and dissipated in the form of heat."
+  },
+  {
+    "type": "p",
+    "content": "You can use the following formula to determine the work done by an external force, such as friction:"
+  },
+  {
+    "type": "latex",
+    "content": "$ W = f_{ \\text {net} } d = \\Delta E_k + \\Delta E_p + \\Delta E_T $"
+  },
+  {
+    "type": "p",
+    "content": "You can also expand the equation above into the following:"
+  },
+  {
+    "type": "latex",
+    "content": "$ F_{ \\text {net} } d = \\frac {1} {2} m (v_f^2 - v_i^2) + mg(h_f - h_i) + F_f d $"
+  },
+  {
+    "type": "p",
+    "content": "You may not be asked many questions regarding non-isolated systems."
+  }
+]

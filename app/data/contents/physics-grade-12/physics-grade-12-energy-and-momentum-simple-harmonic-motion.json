@@ -1,0 +1,239 @@
+[
+  {
+    "type": "h1",
+    "content": "Periodic Motion"
+  },
+  {
+    "type": "p",
+    "content": "Periodic motion is a type of motion that repeats itself at regular time intervals. Examples include the swinging of a pendulum, the motion of a mass on a spring, and the orbit of planets around the sun."
+  },
+  {
+    "type": "p",
+    "content": "The key characteristics of periodic motion are amplitude, period, and frequency. Amplitude is the maximum displacement from the equilibrium position. Period ($ T $) is the time taken for one complete cycle of the motion. Frequency ($ f $) is the number of cycles per unit time."
+  },
+  {
+    "type": "latex",
+    "content": "$ T = \\frac {1} {f} $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ T $ is the period and $ f $ is the frequency. The units of period are seconds ($ s $), and the units of frequency are in hertz ($ Hz $), where $ 1 Hz = \\frac {1} {s} $."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "What is the freqency of a heart beating every $ 0.75 $ seconds?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "$ T = \\frac {1} {f} \\ \\Rightarrow \\ f = \\frac {1} {T} = \\frac {1} {(0.75)} = 1.3 Hz$"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The heart beats $ 1.3 $ times a second."
+  },
+  {
+    "type": "h1",
+    "content": "Springs"
+  },
+  {
+    "type": "p",
+    "content": "Springs are elastic objects that, when a deforming force is applied, a reaction to get it back to its original state occurs."
+  },
+  {
+    "type": "p",
+    "content": "They have an oscillating behaviour that can be described by simple harmonic motion. Its back and forth movement resembles the graph of $ \\sin $ graph:"
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/simple-harmonic-motion-1.mp4"
+  },
+  {
+    "type": "h2",
+    "content": "Hooke's Law"
+  },
+  {
+    "type": "p",
+    "content": "Hooke's Law describes the behavior of springs and other elastic materials. It states that the force exerted by a spring is directly proportional to the displacement from its equilibrium position."
+  },
+  {
+    "type": "latex",
+    "content": "$ F_s = -kx $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ F_s $ is the restoring force, $ k $ is the spring constant (a measure of the stiffness of the spring), and $ x $ is the displacement from the equilibrium position. The negative sign indicates that the force is in the opposite direction of the displacement."
+  },
+  {
+    "type": "p",
+    "content": "Here what this relation looks like on a graph:"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/simple-harmonic-motion-2.png"
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A spring with a spring constant of $ k = 7.50 \\frac {N} {m} $ is stretched $ 4.30m $. What is the resisting force it applies due to the deformation?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_s = -kx = -(7.50 \\frac {N} {m})(4.30m) = -32.3N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The resistive force is $ 32.3N $."
+  },
+  {
+    "type": "h1",
+    "content": "Simple Harmonic Motion"
+  },
+  {
+    "type": "h2",
+    "content": "Energy of Simple Harmonic Motion"
+  },
+  {
+    "type": "p",
+    "content": "In simple harmonic motion (SHM), the energy of the system oscillates between kinetic energy ($ E_k $) and potential energy ($ E_p $). At maximum displacement (amplitude), the energy is entirely potential, and at the equilibrium position, the energy is entirely kinetic."
+  },
+  {
+    "type": "p",
+    "content": "The total mechanical energy in SHM is constant and is given by:"
+  },
+  {
+    "type": "latex",
+    "content": "$ E_{ \\text {total} } = E_k + E_p $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ E_{ \\text {total} } $ is the total mechanical energy in the system."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For a mass-spring system, the kinetic potential energy formulas are:"
+  },
+  {
+    "type": "latex",
+    "content": "$ E_k = \\frac {1} {2} mv^2 \\quad \\text {and} \\quad E_p = \\frac {1} {2} F_s x = \\frac {1} {2} kx^2 $"
+  },
+  {
+    "type": "h2",
+    "content": "Period and Frequency of Simple Harmonic Motion"
+  },
+  {
+    "type": "p",
+    "content": "The period and frequency of a simple harmonic oscillator depends on the properties of the system. For a mass-spring system, the period and frequency are given by:"
+  },
+  {
+    "type": "latex",
+    "content": "$ T = 2 \\pi \\sqrt{ \\frac {m} {k} } \\quad \\text {and} \\quad f = \\frac {1} {T} = \\frac {1} { 2 \\pi } \\sqrt { \\frac {k} {m} } $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ m $ is the mass and $ k $ is the spring constant."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "If the maximum distance of a spring with a spring constant $ 52.5 \\frac {N} {m} $ is $ 0.500m $, what is the maximum speed at which a $ 2.00kg $ mass on its end can move."
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "First, let's determine the maximum energy that can be stored in the spring:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_{ \\text {max} } = \\frac {1} {2} k x_{ \\text {max} }^2 = \\frac {1} {2} (52.5 \\frac {N} {m})(0.500m) = 13.1J $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we need to determine the maximum speed by using the kinetic energy of a spring equation:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_{ \\text {max} } = \\frac {1} {2} mv_{ \\text {max} }^2 \\ \\Rightarrow \\ v_{ \\text {max} } = \\sqrt { \\frac { E_{ \\text {max} } } { m } } = \\sqrt { \\frac { (13.1J) } { (2.00kg) } } = 2.56 \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The maximum speed the mass will experience is $ 2.56 \\frac {m} {s} $."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A $ 0.64kg $ mass is on a spring with a spring constant of $ k = 30 \\frac {N} {m} $. What is the period of the vibration of the spring?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "$ T = 2 \\pi \\sqrt { \\frac {m} {k} } = 2 \\pi \\sqrt { \\frac { (0.64kg) } { (30 \\frac {N} {m}) } } = 0.918s $"
+  },
+  {
+    "type": "h1",
+    "content": "Pendulums"
+  },
+  {
+    "type": "p",
+    "content": "A pendulum is a weight suspended from a pivot so that it can swing freely. The restoring force that brings the pendulum back to its equilibrium position is gravity."
+  },
+  {
+    "type": "p",
+    "content": "For small angles that are less than $ 15^{\\circ} $, the period and frequency of the pendulum can be approximated by the following equation:"
+  },
+  {
+    "type": "latex",
+    "content": "$ T = 2 \\pi \\sqrt { \\frac {L} {g} } \\quad \\text {and} \\quad f = \\frac {1} {T} = \\frac {1} { 2 \\pi } \\sqrt { \\frac {g} {L} } $"
+  },
+  {
+    "type": "p",
+    "content": "Where $L$ is the length of the pendulum, and $g$ is the acceleration due to gravity."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "What is the period of a pendulum of length $ 0.24m $?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "$ T = 2 \\pi \\sqrt { \\frac {L} {g} } = 2 \\pi \\sqrt { \\frac { (0.24m) } { (9.81 \\frac {m} {s^2} }) } = 0.983s $"
+  }
+]

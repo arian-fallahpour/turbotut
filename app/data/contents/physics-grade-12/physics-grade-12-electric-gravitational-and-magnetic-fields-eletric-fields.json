@@ -1,0 +1,113 @@
+[
+  {
+    "type": "h1",
+    "content": "Basic definition"
+  },
+  {
+    "type": "p",
+    "content": "An electric field is a region around a charged particle where other charged particles experience a force. Imagine you have a charged balloon (static electricity). If you bring another small charged object (like a tiny piece of paper) near the balloon, it either gets attracted to or repelled by the balloon. This interaction happens because of the electric field created by the balloon."
+  },
+  {
+    "type": "h2",
+    "content": "Visualization"
+  },
+  {
+    "type": "p",
+    "content": "Think of an electric field like the wind around a fan. When the fan is on, it creates a region where you can feel the wind. Similarly, a charged object creates an electric field around it. You can’t see the field, but you can feel its effects."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's what is looks like more precisely:"
+  },
+  {
+    "type": "image",
+    "url": ""
+  },
+  {
+    "type": "p",
+    "content": "Electric fields are often represented by field lines. These lines show the direction a positive test charge would move if placed in the field. Here are some key points about electric field lines:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "They start on positive charges and end on negative charges."
+      },
+      {
+        "type": "p",
+        "content": "They never cross each other."
+      },
+      {
+        "type": "p",
+        "content": "The density of the lines indicates the strength of the electric field (closer lines mean a stronger field)."
+      },
+      {
+        "type": "p",
+        "content": "Like charges repel each other, while opposite charges attract each other."
+      }
+    ]
+  },
+  {
+    "type": "h1",
+    "content": "Electric Field Strength"
+  },
+  {
+    "type": "p",
+    "content": "The electric field strength at a point in space is defined as the force ($ \\vec {F}_e $) experienced by a small positive test charge ($ q $) placed at that point, divided by the magnitude of the charge."
+  },
+  {
+    "type": "latex",
+    "content": "$ | \\vec {E} | = \\frac { \\vec {F}_e } { q } \\quad [ \\frac {N} {C} \\ \\text {or} \\ \\frac {V} {m} ] $"
+  },
+  {
+    "type": "p",
+    "content": "The unit of electric field strength is newtons per coulomb ($ \\frac {N} {C} $) or volts per meter ($ \\frac {V} {m} $)."
+  },
+  {
+    "type": "h1",
+    "content": "Coulomb’s Law"
+  },
+  {
+    "type": "p",
+    "content": "To understand electric fields, we need to know Coulomb’s Law, which describes the force between two point charges:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {F}_e = k \\frac { q_1 q_2 } { r^2 } $"
+  },
+  {
+    "type": "p",
+    "content": "Where $  \\vec {F}_e $ is the force between the charges, $ k = 8.99 \\times 10^9 \\frac { N m^2 } { C^2 } $ is Coulomb's Constant, $ q_1 $ and $ q_2 $ are the magnitudes of both charges and $ r $ is the distance between them."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "From the equation above, we can also derive another equation for the strength of the electric field:"
+  },
+  {
+    "type": "latex",
+    "content": "$ | \\vec {E} | = k \\frac {q} { r^2 } $"
+  },
+  {
+    "type": "h1",
+    "content": "Superposition Principle"
+  },
+  {
+    "type": "p",
+    "content": "Electric fields follow the principle of superposition, meaning the total electric field created by multiple charges is the vector sum of the fields created by each charge individually. If you have two charges, $ q_1 $ and $ q_2 $, the total electric field at a point is:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {E}_{ \\text {total} } = \\vec {E}_1 + \\vec {E}_2 $"
+  },
+  {
+    "type": "h1",
+    "content": "Electric potential"
+  },
+  {
+    "type": "p",
+    "content": "Not to be confused"
+  }
+]

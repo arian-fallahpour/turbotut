@@ -1,0 +1,298 @@
+[
+  {
+    "type": "h1",
+    "content": "Energy"
+  },
+  {
+    "type": "p",
+    "content": "Energy is the ability of a system to do work. It is in the units of Joule ($J$) and it is a scalar quantity."
+  },
+  {
+    "type": "latex",
+    "content": "$ 1 J = \\frac { kg \\ \\cdot \\ m^2 } { s^2 } = N \\cdot m $"
+  },
+  {
+    "type": "p",
+    "content": "There are four types of energy that we will talk about:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "Kinetic Energy ($ E_k $)"
+      },
+      {
+        "type": "p",
+        "content": "Potential Energy ($ E_p $)"
+      },
+      {
+        "type": "p",
+        "content": "Mechanical Energy"
+      },
+      {
+        "type": "p",
+        "content": "Thermal Energy ($ E_T $)"
+      }
+    ]
+  },
+  {
+    "type": "h2",
+    "content": "Kinetic energy"
+  },
+  {
+    "type": "p",
+    "content": "Kinetic energy is the the type of energy that an object has when it is in motion. Any object that is moving has some kinetic energy."
+  },
+  {
+    "type": "p",
+    "content": "The kinetic energy of an object can be determined using the following equation:"
+  },
+  {
+    "type": "latex",
+    "content": "$ E_k = \\frac {1} {2} mv^2 $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ E_k $ is the kinetic energy of the object, $ m $ is the mass of the object and $ v $ is the speed of the object."
+  },
+  {
+    "type": "h2",
+    "content": "Potential energy"
+  },
+  {
+    "type": "p",
+    "content": "The potential energy is the energy stored in an object due to its position. This can be from a gravitational field, an elastic band that is stretched. A good way to determine whether an obejct has potential energy is if there was some **work** done to get it in that position."
+  },
+  {
+    "type": "p",
+    "content": "The potential energy of an object when lifted from the ground is:"
+  },
+  {
+    "type": "latex",
+    "content": "$ E_p = mgh $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ m $ is the mass of the object, $ g $ is the acceleration due to gravity and $ h $ is the height at which it is at above the ground."
+  },
+  {
+    "type": "h2",
+    "content": "Mechanical energy"
+  },
+  {
+    "type": "p",
+    "content": "The mechanical energy in a system is the sum of its kinetic energy and potential energy:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\text {Mechanical Energy} = E_k + E_p $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's what it looks like in a system where friction is neglected:"
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/energy-and-work-1.mp4"
+  },
+  {
+    "type": "p",
+    "content": "Notice how the ball's kinetic energy is the highest at the bottom, while equal to zero at the top. Also, the total energy in the system, or the mechanical energy remains the same."
+  },
+  {
+    "type": "h2",
+    "content": "Thermal energy"
+  },
+  {
+    "type": "p",
+    "content": "Thermal energy is the measure of the kinetic energy of the atoms and molecules that make up an object. Higher thermal energy means greater movement in the molecules and atoms."
+  },
+  {
+    "type": "h3",
+    "content": "Heat"
+  },
+  {
+    "type": "p",
+    "content": "Heat is the movement of thermal energy from a warmer region to a cooler region. The concept of coldness does not exist, it is just an illusion of our brains. In reality, we feel warmth when fast moving molecules move to colder regions."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "How much energy is in a $ 500g $ ball moving $ 10 \\frac {m} {s} $?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "We can use the equation for kinetic energy:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_k = \\frac {1} {2} m v^2 = \\frac {1} {2} (0.500kg)(10 \\frac {m} {s})^2 = 25 \\frac {kg \\ \\cdot \\ m^2} {s^2} = 25J $"
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "A $ 12.5kg $ object is held $ 2.0m $ above the ground. What is its potential energy?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "We can use the equation for the potential energy in a gravitational field:"
+  },
+  {
+    "type": "p",
+    "content": "$ E_p = mgh = (12.5kg)(9.81 \\frac {m} {s^2})(2.0m) = 245 \\frac {kg \\ \\cdot \\ m^2} {s^2} = 245J $"
+  },
+  {
+    "type": "h1",
+    "content": "Work"
+  },
+  {
+    "type": "p",
+    "content": "Work is the measure of the transfer of energy from one object/system to another. When work is done on an object, its energy is changed. It can also be defined as when a force causes an object to move a certain distance."
+  },
+  {
+    "type": "p",
+    "content": "Two equations that you can use to determine work are:"
+  },
+  {
+    "type": "latex",
+    "content": "$ \\text {Work} =  Fd \\quad \\text {or} \\quad \\text {Work} = \\vec {F} \\cdot \\vec {d} = | \\vec {F} | | \\vec {d} | \\cos \\theta \\quad [J] $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ \\vec {F} $ is the force applied onto the object, and $ d $ is the distance it travelled. The second equation is used when the direction of the force is not the same as the direction of the displacement. It is the dot product of the force and displacement."
+  },
+  {
+    "type": "p",
+    "content": "Something important to note, is that work is not the same as energy transfer. For example, you can push a big rock but not move it. In that case, you use energy in the attempt to move it, but you did not actually move it. So you did work, but you have not done work on the tree. You typically see work being done on an object when you are trying to overcome gravity, friction or any other opposing force."
+  },
+  {
+    "type": "h2",
+    "content": "Work-Energy Theorem"
+  },
+  {
+    "type": "p",
+    "content": "The work-energy theorem states that the work done by the net force is equal to the change in energy:"
+  },
+  {
+    "type": "latex",
+    "content": "$ W = \\Delta E \\newline $"
+  },
+  {
+    "type": "p",
+    "content": "If the change energy is only in kinetic energy, then:"
+  },
+  {
+    "type": "latex",
+    "content": "$ W = \\frac {1} {2} m (v_f^2 - v_i^2) $"
+  },
+  {
+    "type": "p",
+    "content": "If the change energy is only in potential, then:"
+  },
+  {
+    "type": "latex",
+    "content": "$ W = mg \\Delta h $"
+  },
+  {
+    "type": "p",
+    "content": "If both, then:"
+  },
+  {
+    "type": "latex",
+    "content": "$ W = \\frac {1} {2} m (v_f^2 - v_i^2) + mg \\Delta h $"
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "How much work is done on an object when it moves $ 20.0m $ after a force of $ 7.0N $ is applied?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "$ \\text {Work} = Fd = (7.0N)(20.0m) = 140J $"
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "How much work is done on a $ 500kg $ car that accelerates from rest to $ 10.0 \\frac {m} {s} $ in a distance of $ 40.0m $?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer 1"
+  },
+  {
+    "type": "p",
+    "content": "First let's determine the acceleration of the car:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v}_f^2 = \\vec {v}_i^2 + 2 \\vec {a} \\vec{d} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\vec {a} = \\frac { \\vec {v}_f^2 - \\vec {v}_i^2 } { \\vec {d} } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\vec {a} = \\frac { (10.0 \\frac {m} {s})^2 - (0.00 \\frac {m} {s})^2 } { 2(40.0m) } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\vec {a} = 1.25 \\frac {m} {s^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "We can now calculate the net force on the car:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_{ \\text {net} } = m \\vec {a} = (500kg)(1.25 \\frac {m} {s^2}) = 625N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Finally, the work applied onto the car is:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\text {Work} = Fd = (625N)(40.0m) = 25,000J $"
+  },
+  {
+    "type": "h3",
+    "content": "Answer 2"
+  },
+  {
+    "type": "p",
+    "content": "We can also use the Work-Energy theorem to get the answer more easily:"
+  },
+  {
+    "type": "p",
+    "content": "$ W = \\Delta E_k = \\frac {1} {2} m (\\vec {v}_f^2 - \\vec {v}_i^2) = \\frac {1} {2} (500kg) ((10.0 \\frac {m} {s})^2 - (0.00 \\frac {m} {s})^2) = 25,000 J $"
+  }
+]
