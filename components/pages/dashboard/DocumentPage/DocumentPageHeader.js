@@ -24,14 +24,14 @@ const Header = ({ collectionData }) => {
         FormElement={EditDocumentForm}
         formProps={{
           collectionData,
-          document,
+          defaultValues: document,
           setDocument,
         }}
       />
     );
   };
 
-  const deleteDocumentHandler = (id) => {
+  const deleteDocumentHandler = () => {
     showModal(
       <DocumentModal
         title={`Delete ${toSingular(collectionData.name)}`}
@@ -39,6 +39,7 @@ const Header = ({ collectionData }) => {
         formProps={{
           collectionData,
           document,
+          shouldLeavePage: true,
         }}
       />
     );
@@ -53,20 +54,10 @@ const Header = ({ collectionData }) => {
         <p className="paragraph">{document._id}</p>
       </div>
       <div className={classes.HeaderActions}>
-        <Button
-          className={classes.HeaderButton}
-          styleName="glass"
-          variantName="white"
-          onClick={editDocumentHandler}
-        >
+        <Button className={classes.HeaderButton} styleName="glass" variantName="white" onClick={editDocumentHandler}>
           <EditIcon />
         </Button>
-        <Button
-          className={classes.HeaderButton}
-          styleName="glass"
-          variantName="red"
-          onClick={deleteDocumentHandler}
-        >
+        <Button className={classes.HeaderButton} styleName="glass" variantName="red" onClick={deleteDocumentHandler}>
           <DeleteIcon />
         </Button>
       </div>

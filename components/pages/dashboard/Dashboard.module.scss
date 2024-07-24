@@ -3,3 +3,20 @@ section.DashboardSection {
   grid-template-columns: var(--length-sidebar-max) 1fr;
   padding: var(--gap-lg);
 }
+
+.Body {
+  display: grid;
+  gap: inherit;
+  align-content: start;
+}
+
+.Nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Main {
+  gap: inherit;
+  display: grid;
+  align-content: start;
+}

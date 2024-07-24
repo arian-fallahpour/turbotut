@@ -19,3 +19,18 @@
     justify-content: flex-end;
   }
 }
+
+.SwapDocumentsForm {
+  height: 50rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+
+  &Documents {
+    flex: 1;
+
+    display: grid;
+    align-content: start;
+
+    overflow-y: auto;
+  }
+}

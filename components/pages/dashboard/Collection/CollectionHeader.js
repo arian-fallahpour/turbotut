@@ -10,27 +10,54 @@ import { TableButtonRounded } from "@/components/Elements/Table/Table";
 import { ModalContext } from "@/store/modal-context";
 import DocumentModal from "../DocumentModal/DocumentModal";
 import CreateDocumentForm from "../DocumentModal/CreateDocumentForm";
-import { DocumentPageContext } from "@/store/document-page-context";
 import AddIcon from "@/components/Elements/Icons/AddIcon";
+import SwapIcon from "@/components/Elements/Icons/SwapIcon";
+import { DocumentPageContext } from "@/store/document-page-context";
+import SwapDocumentsForm from "../DocumentModal/SwapDocumentsForm";
 
 const CollectionHeader = ({
   collectionData,
+  collection,
   page,
   limit,
   onNextPage,
   onPrevPage,
   fetchCollection,
+  isSwappable,
 }) => {
   const { showModal } = useContext(ModalContext);
-  const { document, collections } = useContext(DocumentPageContext);
-  const collection = collections[collectionData.name];
+  const { document } = useContext(DocumentPageContext);
 
-  const handleCreateDocument = () => {
+  const createDocumentHandler = () => {
+    // Only works with one parent field
+    const parentField = collectionData.editableFields.find((field) => field.isParent);
+    const defaultValues = {};
+    if (parentField && document)
+      defaultValues[parentField.name] = { _id: document._id, name: document[parentField.path] };
+
     showModal(
       <DocumentModal
         title={`Create ${toSingular(collectionData.name)}`}
         FormElement={CreateDocumentForm}
-        formProps={{ document, collectionData, fetchCollection }}
+        formProps={{
+          defaultValues,
+          collectionData,
+          fetchCollection,
+        }}
+      />
+    );
+  };
+
+  const swapDocumentsHandler = () => {
+    showModal(
+      <DocumentModal
+        title={`Swap ${collectionData.name}`}
+        FormElement={SwapDocumentsForm}
+        formProps={{
+          document,
+          collectionData,
+          fetchCollection,
+        }}
       />
     );
   };
@@ -55,7 +82,13 @@ const CollectionHeader = ({
           />
         )}
 
-        <TableButtonRounded styleName="glass" onClick={handleCreateDocument}>
+        {isSwappable && (
+          <TableButtonRounded styleName="glass" variantName="white" onClick={swapDocumentsHandler}>
+            <SwapIcon />
+          </TableButtonRounded>
+        )}
+
+        <TableButtonRounded styleName="glass" variantName="white" onClick={createDocumentHandler}>
           <AddIcon />
         </TableButtonRounded>
       </div>

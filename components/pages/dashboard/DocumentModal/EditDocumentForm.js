@@ -1,46 +1,36 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React from "react";
 import classes from "./DocumentModal.module.scss";
 import Form, { FormRow } from "@/components/Elements/Form/Form";
 import Button from "@/components/Elements/Button/Button";
 import { startProgress, stopProgress } from "next-nprogress-bar";
 import { toSingular } from "@/utils/helper";
 import DocumentModalInput from "./DocumentModalInput";
-import { GlobalErrorContext } from "@/store/error-context";
+import { useForm } from "@/hooks/use-form";
 
 const EditDocumentForm = ({
-  disabled,
-  setDisabled,
-  cancelHandler,
+  isDisabled,
+  setIsDisabled,
   hideModal,
-  document,
-  setDocument,
+
+  defaultValues,
+  setDocument = () => {},
   collectionData,
 }) => {
-  const { setGlobalError } = useContext(GlobalErrorContext);
-  const [otherFields, setOtherFields] = useState({});
-  const [errors, setErrors] = useState({});
-
-  const setOtherField = (label, value) => {
-    setOtherFields((p) => ({ ...p, [label]: value }));
-  };
-
-  const setError = (field, message) => {
-    setErrors((p) => ({ ...p, [field]: message }));
-  };
+  const { inputErrors, setGlobalError, setInputErrors, setInputData, appendInputDataToForm } = useForm();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
     const fetchEditRequest = async () => {
       const formData = new FormData(e.target);
-      Object.keys(otherFields).forEach((key) => formData.append(key, otherFields[key]));
+      appendInputDataToForm(formData);
 
       startProgress();
-      setDisabled(true);
+      setIsDisabled(true);
 
-      const res = await fetch(`/api/${collectionData.name}/${document._id}/edit-by-form`, {
+      const res = await fetch(`/api/${collectionData.name}/${defaultValues._id}/edit-by-form`, {
         method: "PATCH",
         body: formData,
       });
@@ -48,19 +38,22 @@ const EditDocumentForm = ({
 
       stopProgress();
 
+      // Handle errors
       if (!res.ok) {
-        console.log(resData);
+        setIsDisabled(false);
+
         if (resData.errors) {
-          Object.keys(resData.errors).forEach((key, i) => setError(key, resData.errors[key]));
+          setInputErrors(resData.errors);
         } else {
           setGlobalError(resData.message);
         }
 
-        setDisabled(false);
-      } else {
-        setDocument(resData.data[toSingular(collectionData.name)]);
-        hideModal();
+        return;
       }
+
+      // Handle success
+      setDocument(resData.data[toSingular(collectionData.name)]);
+      hideModal();
     };
 
     fetchEditRequest();
@@ -71,27 +64,19 @@ const EditDocumentForm = ({
       {collectionData.editableFields.map((field) => (
         <DocumentModalInput
           key={field.name}
-          document={
-            field.type === "id"
-              ? {
-                  _id: document[toSingular(field.collection)],
-                  name: document[toSingular(field.collection)],
-                }
-              : document
-          }
+          defaultValues={defaultValues}
           field={field}
-          error={errors[field.name] ? errors[field.name] : null}
+          error={inputErrors[field.name] || null}
           collectionData={collectionData}
-          setOtherField={setOtherField}
-          setDefault
+          setFormValue={setInputData}
         />
       ))}
 
       <FormRow className={classes.DocumentModalActions}>
-        <Button styleName="glass" variantName="red" type="button" onClick={cancelHandler}>
+        <Button styleName="glass" variantName="red" type="button" onClick={() => hideModal()}>
           cancel
         </Button>
-        <Button isDisabled={disabled}>confirm</Button>
+        <Button isDisabled={isDisabled}>confirm</Button>
       </FormRow>
     </Form>
   );

@@ -52,7 +52,7 @@ class APIQuery {
 
   select() {
     // Limit by query
-    if (this.queryObject.select) {
+    if (!!this.queryObject.select) {
       const fields = this.queryObject.select.split(",").join(" ");
       this.query = this.query.select(fields);
     }
@@ -66,8 +66,12 @@ class APIQuery {
   }
 
   populate() {
-    if (this.queryObject.populate) {
-    }
+    // if (this.queryObject.populate) {
+    //   this.queryObject.populate.forEach
+
+    // }
+
+    return this;
   }
 
   paginate() {

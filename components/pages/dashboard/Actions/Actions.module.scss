@@ -5,10 +5,10 @@
 
   margin: -1rem 0;
 
-  & > button.ActionsButton:hover + &List,
-  & > button.ActionsButton:focus-visible + &List,
   &List:hover,
-  &List:focus-visible {
+  &List:focus-within,
+  & > button:hover + &List,
+  & > button:focus-visible + &List {
     opacity: 1;
     visibility: visible;
   }
@@ -31,49 +31,39 @@
   &List {
     position: absolute;
     right: 100%;
-    top: 0;
+    top: 50%;
+    translate: 0 -50%;
     list-style: none;
     background: var(--c-panel-bg);
     backdrop-filter: blur(10px);
-    border-radius: 1rem;
-    overflow: hidden;
+    border-radius: 22rem;
     border: 1px solid var(--c-panel-bd);
     z-index: 1;
+    padding: 0.25rem;
 
-    display: grid;
+    display: flex;
+    gap: 0.5rem;
 
     opacity: 0;
     visibility: hidden;
 
     transition: opacity 0.2s ease, visibility 0.2s ease;
-
-    &::before {
-      content: "";
-      width: calc(100% + 5rem);
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
   }
 
   &ListItem {
     justify-self: unset;
     display: grid;
-
-    &:not(:last-child) {
-      border-bottom: 1px solid var(--c-panel-bd);
-    }
   }
-}
 
-.Actions > .ActionsList > .ActionsListItem > button {
-  border: none;
-  border-radius: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  & > &List > &ListItem > button {
+    border: none;
+    border-radius: 0;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    padding: 0.6rem;
 
-  &:not(:hover) {
-    background: transparent;
+    &:not(:hover) {
+      background: transparent;
+    }
   }
 }

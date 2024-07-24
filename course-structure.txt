@@ -1,5 +1,0 @@
-CALCULUS AND VECTORS
-1. Limits
-2. Rates of Change
-3. Derivatives
-4. Vectors

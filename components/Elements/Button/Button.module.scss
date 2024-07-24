@@ -169,10 +169,13 @@
   }
 
   &Text {
-    &,
     &.size-small,
     &.size-normal,
-    &.size-large,
+    &.size-large {
+      padding: 0;
+    }
+
+    &,
     &Text:link,
     &Text:visited {
       display: inline-block;
@@ -192,12 +195,17 @@
   }
 
   &Nav {
+    &.size-small,
+    &.size-normal,
+    &.size-large {
+      padding: 0;
+    }
+
     &,
     &:link,
     &:visited {
       transition: color 0.2s, text-shadow 0.2s;
 
-      padding: 0;
       text-transform: lowercase;
       color: var(--txt-text);
       background: transparent;
@@ -277,11 +285,16 @@
   }
 
   &Icon {
+    &.size-small,
+    &.size-normal,
+    &.size-large {
+      padding: 0;
+    }
+
     &,
     &:link,
     &:visited {
       display: flex;
-      padding: 0;
       color: var(--txt-text);
       background: transparent;
       font-weight: var(--font-weight-normal);

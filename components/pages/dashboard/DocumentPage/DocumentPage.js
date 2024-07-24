@@ -3,24 +3,19 @@ import classes from "./DocumentPage.module.scss";
 import { fetchAuth, getDomain } from "@/utils/dataFetch";
 import { toSingular } from "@/utils/helper";
 
-import Button from "@/components/Elements/Button/Button";
 import DocumentPageHeader from "./DocumentPageHeader";
 
-import collectionsData from "@/app/data/dashboard/collections";
+import { getCollectionData } from "@/app/data/dashboard/collections";
 import DocumentPageSections from "./DocumentPageSections";
 import DocumentPageDetails from "./DocumentPageDetails";
 import DocumentPageProvider from "./DocumentPageProvider";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
-import WestIcon from "@/components/Elements/Icons/WestIcon";
 
 const getData = async function (collectionData, id) {
-  const res = await fetchAuth(
-    `${getDomain()}/api/${collectionData.name}/${id}`,
-    {
-      cache: "no-store",
-      next: { revalidate: 60 },
-    }
-  );
+  const res = await fetchAuth(`${getDomain()}/api/${collectionData.name}/${id}`, {
+    cache: "no-store",
+    next: { revalidate: 60 },
+  });
 
   const data = await res.json();
 
@@ -33,28 +28,18 @@ const getData = async function (collectionData, id) {
 };
 
 const DocumentPage = async ({ collectionName, id }) => {
-  const collectionData = collectionsData.find((i) => i.name === collectionName);
+  const collectionData = getCollectionData(collectionName);
   const { document, error } = await getData(collectionData, id);
 
   return (
     <DocumentPageProvider documentDefault={document}>
-      <main className={classes.Main}>
-        <Button className={classes.Back} styleName="icon" isBackButton>
-          <WestIcon />
-          Back
-        </Button>
-
+      <div className={classes.Main}>
         {/* Content */}
         {!error && (
           <>
             <DocumentPageHeader collectionData={collectionData} />
-
             <div className={classes.Content}>
-              <DocumentPageSections
-                document={document}
-                collectionData={collectionData}
-              />
-
+              <DocumentPageSections document={document} collectionData={collectionData} />
               <DocumentPageDetails collectionData={collectionData} />
             </div>
           </>
@@ -62,7 +47,7 @@ const DocumentPage = async ({ collectionName, id }) => {
 
         {/* Error */}
         {error && <ErrorBlock message={error.message} />}
-      </main>
+      </div>
     </DocumentPageProvider>
   );
 };

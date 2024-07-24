@@ -7,6 +7,9 @@ import { getServerSession } from "next-auth";
 import { options } from "../api/auth/[...nextauth]/options";
 import { Suspense } from "react";
 import LoaderBlock from "@/components/Elements/Loader/LoaderBlock";
+import Button from "@/components/Elements/Button/Button";
+import WestIcon from "@/components/Elements/Icons/WestIcon";
+import EastIcon from "@/components/Elements/Icons/EastIcon";
 
 export default async function Layout({ children, params }) {
   const session = await getServerSession(options);
@@ -15,7 +18,21 @@ export default async function Layout({ children, params }) {
     <Page background="flat" hideNav hideFooter session={session} requiresSession restrictTo={["admin"]}>
       <Section limit={null} className={classes.DashboardSection}>
         <Sidebar />
-        <Suspense fallback={<LoaderBlock />}>{children}</Suspense>
+        <div className={classes.Body}>
+          <nav className={classes.Nav}>
+            <Button className={classes.Back} styleName="icon" isBackButton>
+              <WestIcon />
+              Back
+            </Button>
+            <Button className={classes.Back} styleName="icon" isForwardButton>
+              Forward
+              <EastIcon />
+            </Button>
+          </nav>
+          <main className={classes.Main}>
+            <Suspense fallback={<LoaderBlock />}>{children}</Suspense>
+          </main>
+        </div>
       </Section>
     </Page>
   );

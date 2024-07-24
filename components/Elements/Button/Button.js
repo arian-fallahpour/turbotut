@@ -11,6 +11,7 @@ const Button = forwardRef(
   (
     {
       isBackButton,
+      isForwardButton,
       isLink,
       isHashLink,
       isActive,
@@ -30,15 +31,12 @@ const Button = forwardRef(
     const router = useRouter();
 
     // Add onFocus/onBlur if it doesn't exist mouseEnter/mouseLeave does
-    if (otherProps.onMouseEnter && !otherProps.onFocus)
-      otherProps.onFocus = otherProps.onMouseEnter;
-    if (otherProps.onMouseLeave && !otherProps.onBlur)
-      otherProps.onBlur = otherProps.onMouseLeave;
+    if (otherProps.onMouseEnter && !otherProps.onFocus) otherProps.onFocus = otherProps.onMouseEnter;
+    if (otherProps.onMouseLeave && !otherProps.onBlur) otherProps.onBlur = otherProps.onMouseLeave;
 
     // Determine className
     const styleClassName = classes["Button" + toCap(styleName || "")];
-    const variantClassName =
-      classes["Button" + toCap(styleName || "") + "--" + variantName];
+    const variantClassName = classes["Button" + toCap(styleName || "") + "--" + variantName];
 
     const buttonClassName = join(
       classes.Button,
@@ -57,6 +55,7 @@ const Button = forwardRef(
     const onClickHandler = () => {
       if (otherProps.onClick) otherProps.onClick();
       if (isBackButton) router.back();
+      if (isForwardButton) router.forward();
     };
 
     return (
@@ -70,11 +69,7 @@ const Button = forwardRef(
         target={openNewTab ? "_blank" : undefined}
         ref={ref}
       >
-        {["shiny", "circle"].includes(styleName) ? (
-          <span className={classes.children}>{children}</span>
-        ) : (
-          children
-        )}
+        {["shiny", "circle"].includes(styleName) ? <span className={classes.children}>{children}</span> : children}
         {isLoading && <span className={classes.loader} />}
       </Tag>
     );

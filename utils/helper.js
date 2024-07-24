@@ -15,15 +15,6 @@ export const toSingular = (string) => {
   return string.substring(0, string.length - 1);
 };
 
-export function createGridTemplateColumns(dataCollection) {
-  let gridTemplateColumns = dataCollection.tableFields.map(
-    (field) => field.spacing
-  );
-  gridTemplateColumns.push("8rem");
-  gridTemplateColumns = gridTemplateColumns.join(" ");
-  return gridTemplateColumns;
-}
-
 export const setDefault = (value, defaultValue) => {
   return value === undefined ? defaultValue : value;
 };

@@ -8,16 +8,23 @@ import Input from "@/components/Elements/Input/Input";
 import { GlobalErrorContext } from "@/store/error-context";
 import { startProgress, stopProgress, useRouter } from "next-nprogress-bar";
 
-const DeleteDocumentForm = ({ hideModal, document, collectionData, cancelHandler }) => {
+const DeleteDocumentForm = ({
+  hideModal,
+
+  document,
+  collectionData,
+  fetchCollection = () => {},
+  shouldLeavePage,
+}) => {
   const { setGlobalError } = useContext(GlobalErrorContext);
-  const [disabled, setDisabled] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(true);
   const router = useRouter();
 
   const onChangeHandler = (e) => {
     if (e.target.value === document.name) {
-      setDisabled(false);
+      setIsDisabled(false);
     } else {
-      setDisabled(true);
+      setIsDisabled(true);
     }
   };
 
@@ -26,20 +33,23 @@ const DeleteDocumentForm = ({ hideModal, document, collectionData, cancelHandler
 
     const fetchDeleteRequest = async () => {
       startProgress();
-      setDisabled(true);
+      setIsDisabled(true);
 
       const res = await fetch(`/api/${collectionData.name}/${document._id}/hard`, { method: "DELETE" });
 
       stopProgress();
 
+      // Handle errors
       if (!res.ok) {
+        setIsDisabled(false);
         const resData = await res.json();
-        setGlobalError(resData.message);
-        setDisabled(false);
-      } else {
-        router.back();
-        hideModal();
+        return setGlobalError(resData.message);
       }
+
+      // Handle success
+      if (shouldLeavePage) router.back();
+      fetchCollection();
+      hideModal();
     };
 
     fetchDeleteRequest();
@@ -64,10 +74,10 @@ const DeleteDocumentForm = ({ hideModal, document, collectionData, cancelHandler
       </FormRow>
 
       <FormRow className={classes.DocumentModalActions}>
-        <Button styleName="glass" variantName="red" type="button" onClick={cancelHandler}>
+        <Button styleName="glass" variantName="red" type="button" onClick={() => hideModal()}>
           cancel
         </Button>
-        <Button isDisabled={disabled}>confirm</Button>
+        <Button isDisabled={isDisabled}>confirm</Button>
       </FormRow>
     </Form>
   );

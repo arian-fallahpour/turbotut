@@ -17,15 +17,7 @@ const Table = ({ className, children, ...otherProps }) => {
 export const TableRow = ({ className, children, href, ...otherProps }) => {
   const Tag = href ? Link : "div";
   return (
-    <Tag
-      className={join(
-        className,
-        classes.TableRow,
-        href ? classes.TableLink : null
-      )}
-      href={href}
-      {...otherProps}
-    >
+    <Tag className={join(className, classes.TableRow, href ? classes.TableLink : null)} href={href} {...otherProps}>
       {children}
     </Tag>
   );
@@ -39,23 +31,12 @@ export const TableHeader = ({ className, children, ...otherProps }) => {
   );
 };
 
-export const TableCell = ({
-  className,
-  children,
-  href,
-  end = false,
-  ...otherProps
-}) => {
+export const TableCell = ({ className, children, href, end = false, ...otherProps }) => {
   const Tag = href ? Link : "div";
 
   return (
     <Tag
-      className={join(
-        className,
-        classes.TableCell,
-        href ? classes.TableLink : null,
-        end ? classes.TableEnd : null
-      )}
+      className={join(className, classes.TableCell, href ? classes.TableLink : null, end ? classes.TableEnd : null)}
       href={href}
       {...otherProps}
     >

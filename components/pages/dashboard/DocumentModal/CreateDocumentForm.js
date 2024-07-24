@@ -1,45 +1,33 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React from "react";
 import classes from "./DocumentModal.module.scss";
 import Form, { FormRow } from "@/components/Elements/Form/Form";
 import Button from "@/components/Elements/Button/Button";
 import { startProgress, stopProgress } from "next-nprogress-bar";
 import DocumentModalInput from "./DocumentModalInput";
-import { GlobalErrorContext } from "@/store/error-context";
+import { useForm } from "@/hooks/use-form";
 
 const CreateDocumentForm = ({
-  disabled,
-  setDisabled,
-  cancelHandler,
+  isDisabled,
+  setIsDisabled,
   hideModal,
-  document,
+
+  defaultValues,
   collectionData,
-  fetchCollection,
+  fetchCollection = () => {},
 }) => {
-  const { setGlobalError } = useContext(GlobalErrorContext);
-  const [otherFields, setOtherFields] = useState({});
-  const [errors, setErrors] = useState({});
-
-  const setOtherField = (label, value) => {
-    setOtherFields((p) => ({ ...p, [label]: value }));
-  };
-
-  const setError = (field, message) => {
-    setErrors((p) => ({ ...p, [field]: message }));
-  };
+  const { inputErrors, setInputData, setGlobalError, setInputErrors, appendInputDataToForm } = useForm();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
     const fetchCreateRequest = async () => {
       const formData = new FormData(e.target);
-      Object.keys(otherFields).forEach((key) =>
-        formData.append(key, otherFields[key])
-      );
+      appendInputDataToForm(formData);
 
       startProgress();
-      setDisabled(true);
+      setIsDisabled(true);
 
       const res = await fetch(`/api/${collectionData.name}/create-by-form`, {
         method: "POST",
@@ -49,22 +37,22 @@ const CreateDocumentForm = ({
 
       stopProgress();
 
+      // Handle errors
       if (!res.ok) {
-        console.log(resData.errors);
+        setIsDisabled(false);
 
         if (resData.errors) {
-          Object.keys(resData.errors).forEach((key, i) =>
-            setError(key, resData.errors[key])
-          );
+          setInputErrors(resData.errors);
         } else {
           setGlobalError(resData.message);
         }
 
-        setDisabled(false);
-      } else {
-        hideModal();
-        fetchCollection();
+        return;
       }
+
+      // Handle success
+      hideModal();
+      fetchCollection();
     };
 
     fetchCreateRequest();
@@ -72,29 +60,21 @@ const CreateDocumentForm = ({
 
   return (
     <Form className={classes.DocumentModalForm} onSubmit={onSubmitHandler}>
-      {collectionData.editableFields.map((field) => {
-        return (
-          <DocumentModalInput
-            key={field.name}
-            document={document}
-            field={field}
-            error={errors[field.name] ? errors[field.name] : null}
-            setOtherField={setOtherField}
-            setDefault={field.isParentId}
-          />
-        );
-      })}
+      {collectionData.editableFields.map((field) => (
+        <DocumentModalInput
+          key={field.name}
+          defaultValues={defaultValues}
+          field={field}
+          error={inputErrors[field.name] || null}
+          setFormValue={setInputData}
+        />
+      ))}
 
       <FormRow className={classes.DocumentModalActions}>
-        <Button
-          styleName="glass"
-          variantName="red"
-          type="button"
-          onClick={cancelHandler}
-        >
+        <Button styleName="glass" variantName="red" type="button" onClick={() => hideModal()}>
           cancel
         </Button>
-        <Button isDisabled={disabled}>confirm</Button>
+        <Button isDisabled={isDisabled}>confirm</Button>
       </FormRow>
     </Form>
   );

@@ -21,7 +21,6 @@ export const getAll = (Model) =>
     await connectDB();
 
     // Find documents
-
     const apiQuery = new APIQuery(Model.find(), req.data.query).filter().sort().search().select().paginate();
 
     const totalCount = await apiQuery.getTotalCount();
@@ -52,7 +51,8 @@ export const getOne = (Model) =>
     await connectDB();
 
     // Find document
-    const document = await Model.findById(params.id);
+    const apiQuery = new APIQuery(Model.findById(params.id), req.data.query).select();
+    const document = await apiQuery.execute();
 
     // Throw error if no document found
     if (!document) return new AppError(`No ${name} found`, 404);

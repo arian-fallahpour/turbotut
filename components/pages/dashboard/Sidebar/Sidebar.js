@@ -28,7 +28,6 @@ const Sidebar = () => {
                 )}
                 href={`/dashboard/${item.name}`}
                 isLink
-                replace
               >
                 <div className={classes.LinkIcon}>{item.icon}</div>
                 {item.name}

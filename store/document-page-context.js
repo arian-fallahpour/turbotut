@@ -7,11 +7,3 @@ export const DocumentPageContext = createContext({
   setCollections: (v) => {},
   setCollection: (data, collectionName) => {},
 });
-
-// collections = {
-//   courses: {
-//     totalResults: n,
-//     results: m,
-//     docs: [...]
-//   }
-// }
