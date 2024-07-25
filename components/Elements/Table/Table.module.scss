@@ -4,6 +4,9 @@
   display: grid;
   border-radius: var(--bd-radius);
   border: 1px solid var(--c-panel-bd);
+  max-width: 100%;
+
+  overflow: auto;
 
   & > *:not(:last-child) {
     border-bottom: inherit;

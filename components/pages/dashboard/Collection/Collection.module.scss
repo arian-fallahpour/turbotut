@@ -13,4 +13,8 @@ section.CollectionSection {
     display: flex;
     gap: var(--gap-sm);
   }
+
+  &Content {
+    display: grid;
+  }
 }

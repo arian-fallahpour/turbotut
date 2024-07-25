@@ -17,11 +17,9 @@ import { startProgress, stopProgress } from "next-nprogress-bar";
 import { GlobalErrorContext } from "@/store/error-context";
 import queryString from "query-string";
 
-const Actions = ({ document, collectionName, fetchCollection }) => {
+const Actions = ({ document, collectionData, fetchCollection }) => {
   const { showModal } = useContext(ModalContext);
   const { setGlobalError } = useContext(GlobalErrorContext);
-
-  const collectionData = getCollectionData(collectionName);
 
   const editDocumentHandler = async () => {
     startProgress();
@@ -109,6 +107,7 @@ const Actions = ({ document, collectionName, fetchCollection }) => {
       <Button className={classes.ActionsButton} styleName="glass" variantName="white">
         <MoreIcon />
       </Button>
+
       <div className={classes.ActionsList}>
         {collectionData.actions?.length > 0 &&
           collectionData.actions.map((action, i) => (

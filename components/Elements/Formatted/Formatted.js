@@ -108,9 +108,9 @@ const Formatted = ({ type, content, contents, rows, style, url, isChild, gridTem
 
 export default Formatted;
 
-export const FormattedContent = ({ children, ...otherProps }) => {
+export const FormattedContent = ({ className, children, ...otherProps }) => {
   return (
-    <div className={classes.Formatted} {...otherProps}>
+    <div className={join(className, classes.Formatted)} {...otherProps}>
       {children}
     </div>
   );

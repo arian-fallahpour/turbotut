@@ -50,16 +50,22 @@ const Header = ({ collectionData }) => {
       <div className={classes.HeaderIcon}>{collectionData.icon}</div>
       <div className={classes.HeaderTitle}>
         <p className="paragraph">{toSingular(collectionData.name)}</p>
-        <h1 className="header header-section">{document.name}</h1>
+        <h1 className="header header-section">
+          {document[collectionData.titleField] || toSingular(collectionData.name)}
+        </h1>
         <p className="paragraph">{document._id}</p>
       </div>
       <div className={classes.HeaderActions}>
-        <Button className={classes.HeaderButton} styleName="glass" variantName="white" onClick={editDocumentHandler}>
-          <EditIcon />
-        </Button>
-        <Button className={classes.HeaderButton} styleName="glass" variantName="red" onClick={deleteDocumentHandler}>
-          <DeleteIcon />
-        </Button>
+        {collectionData.isEditable && (
+          <Button className={classes.HeaderButton} styleName="glass" variantName="white" onClick={editDocumentHandler}>
+            <EditIcon />
+          </Button>
+        )}
+        {collectionData.isDeletable && (
+          <Button className={classes.HeaderButton} styleName="glass" variantName="red" onClick={deleteDocumentHandler}>
+            <DeleteIcon />
+          </Button>
+        )}
       </div>
     </div>
   );

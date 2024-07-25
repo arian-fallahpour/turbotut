@@ -1,0 +1,18 @@
+section.ContentSection {
+}
+
+.Content {
+  background: var(--c-panel-bg);
+  border: 1px solid var(--c-panel-bd);
+  border-radius: var(--bd-radius);
+  padding: var(--gap-lg);
+
+  max-height: 60rem;
+  overflow-y: auto;
+
+  font-size: 1.4rem;
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+}

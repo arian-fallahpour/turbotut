@@ -30,7 +30,7 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
       url: `/api/${collectionData.name}`,
       query: {
         ...queryObject,
-        select: collectionData.viewableFields.map((field) => field.name).join(","),
+        select: collectionData.tableFields.map((field) => field.name).join(","),
         page,
       },
     });
@@ -61,9 +61,10 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
     fetchCollectionHandler();
   }, [fetchCollectionHandler]);
 
+  console.log();
+
   return (
     <Section className={classes.CollectionSection} limit={null}>
-      {/* Header */}
       <CollectionHeader
         collectionData={collectionData}
         collection={collection}
@@ -73,36 +74,38 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
         isSwappable={isSwappable}
       />
 
-      {/* Table */}
-      {!loading && collection?.docs?.length > 0 && (
-        <Table>
-          <TableHeader style={{ gridTemplateColumns }}>
-            {collectionData.tableFields.map((field) => (
-              <TableCell key={field.label}>{field.label}</TableCell>
-            ))}
-            <TableCell></TableCell>
-          </TableHeader>
-          {collection.docs.map((doc) => (
-            <TableRow key={doc._id} style={{ gridTemplateColumns }}>
+      <div className={classes.CollectionContent}>
+        {!loading && collection?.docs?.length > 0 && (
+          <Table className={classes.CollectionTable}>
+            <TableHeader style={{ gridTemplateColumns }}>
               {collectionData.tableFields.map((field) => (
-                <TableCell key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
-                  <TableScroll>{doc[field.name]}</TableScroll>
-                </TableCell>
+                <TableCell key={field.label}>{field.label}</TableCell>
               ))}
-              <TableCell end>
-                <Actions document={doc} collectionName={collectionData.name} fetchCollection={fetchCollectionHandler} />
-              </TableCell>
-            </TableRow>
-          ))}
-        </Table>
-      )}
+              <TableCell></TableCell>
+            </TableHeader>
+            {collection.docs.map((doc) => (
+              <TableRow key={doc._id} style={{ gridTemplateColumns }}>
+                {collectionData.tableFields.map((field) => (
+                  <TableCell key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
+                    <TableScroll>{doc[field.name]}</TableScroll>
+                  </TableCell>
+                ))}
+                <TableCell end>
+                  {collectionData.actions.length > 0 && (
+                    <Actions document={doc} collectionData={collectionData} fetchCollection={fetchCollectionHandler} />
+                  )}
+                </TableCell>
+              </TableRow>
+            ))}
+          </Table>
+        )}
 
-      {/* States */}
-      {loading && <LoaderBlock />}
-      {error && <ErrorBlock message={error} />}
-      {!loading && !error && collection?.docs?.length === 0 && (
-        <ErrorBlock type="info" message={`No ${collectionData.name} found`} />
-      )}
+        {loading && <LoaderBlock />}
+        {error && collection?.docs?.length === 0 && <ErrorBlock message={error} />}
+        {!loading && !error && collection?.docs?.length === 0 && (
+          <ErrorBlock type="info" message={`No ${collectionData.name} found`} />
+        )}
+      </div>
     </Section>
   );
 };

@@ -7,6 +7,8 @@ import ArticleIcon from "@/components/Elements/Icons/ArticleIcon";
 import EditIcon from "@/components/Elements/Icons/EditIcon";
 import DeleteIcon from "@/components/Elements/Icons/DeleteIcon";
 import AddChildIcon from "@/components/Elements/Icons/AddChildIcon";
+import UserIcon from "@/components/Elements/Icons/UserIcon";
+import CartIcon from "@/components/Elements/Icons/CartIcon";
 
 /**
  * NOTES
@@ -18,9 +20,13 @@ const data = [
     name: "courses",
     icon: <SchoolIcon />,
     isSwappable: false,
+    isEditable: true,
+    isCreatable: true,
+    isDeletable: true,
+    titleField: "name",
     tableFields: [
       { label: "name", name: "name", spacing: "25rem" },
-      { label: "subject", name: "subject", spacing: "1fr" },
+      { label: "subject", name: "subject", spacing: "minmax(15rem, 1fr)" },
       { label: "chapters", name: "chaptersCount", spacing: "12.5rem" },
       { label: "lectures", name: "lecturesCount", spacing: "12.5rem" },
     ],
@@ -59,10 +65,14 @@ const data = [
     name: "chapters",
     icon: <LibraryIcon />,
     isSwappable: true,
+    isEditable: true,
+    isCreatable: true,
+    isDeletable: true,
     parentCollection: "courses",
+    titleField: "name",
     tableFields: [
       { label: "name", name: "name", spacing: "25rem" },
-      { label: "lectures", name: "lecturesCount", spacing: "1fr" },
+      { label: "lectures", name: "lecturesCount", spacing: "minmax(15rem, 1fr)" },
     ],
     viewableFields: [
       { type: "id", name: "course", collection: "courses" },
@@ -88,10 +98,14 @@ const data = [
     name: "lectures",
     icon: <BookIcon />,
     isSwappable: true,
+    isEditable: true,
+    isCreatable: true,
+    isDeletable: true,
     parentCollection: "chapters",
+    titleField: "name",
     tableFields: [
       { label: "name", name: "name", spacing: "25rem" },
-      { label: "type", name: "type", spacing: "1fr" },
+      { label: "type", name: "type", spacing: "minmax(15rem, 1fr)" },
     ],
     viewableFields: [
       { type: "id", name: "chapter", collection: "chapters" },
@@ -118,12 +132,15 @@ const data = [
   },
   {
     name: "contents",
-    isSwappable: false,
     icon: <ArticleIcon fontSize="inherit" />,
+    isSwappable: false,
+    isEditable: true,
+    isCreatable: true,
+    isDeletable: true,
     parentCollection: "lectures",
     tableFields: [
       { label: "lecture", name: "lecture", spacing: "25rem" },
-      { label: "url", name: "url", spacing: "1fr" },
+      { label: "url", name: "url", spacing: "minmax(15rem, 1fr)" },
     ],
     viewableFields: [
       { type: "id", name: "lecture", collection: "lectures" },
@@ -134,11 +151,58 @@ const data = [
       { type: "string", name: "url" },
     ],
     collectionSections: [],
-    documentSections: [],
+    documentSections: [{ type: "content" }],
     actions: [
       { type: "delete", label: <DeleteIcon /> },
       { type: "edit", label: <EditIcon /> },
     ],
+  },
+  {
+    name: "users",
+    icon: <UserIcon fontSize="inherit" />,
+    isSwappable: false,
+    isEditable: true,
+    isCreatable: false,
+    isDeletable: false,
+    titleField: "fullName",
+    tableFields: [
+      { label: "first name", name: "firstName", spacing: "20rem" },
+      { label: "last name", name: "lastName", spacing: "20rem" },
+      { label: "email", name: "email", spacing: "minmax(15rem, 1fr)" },
+    ],
+    viewableFields: [
+      { type: "string", label: "first name", name: "firstName" },
+      { type: "string", label: "last name", name: "lastName" },
+      { type: "string", label: "email", name: "email" },
+      { type: "string", label: "stripe customer id", name: "stripeCustomerId" },
+      { type: "string", label: "role", name: "role" },
+      { type: "image", label: "picture", name: "picture" },
+    ],
+    editableFields: [{ type: "string", name: "stripeCustomerId" }],
+    collectionSections: [],
+    documentSections: [{ type: "collection", collection: "orders" }],
+    actions: [{ type: "edit", label: <EditIcon /> }],
+  },
+  {
+    name: "orders",
+    icon: <CartIcon fontSize="inherit" />,
+    isSwappable: false,
+    isEditable: false,
+    isCreatable: false,
+    isDeletable: false,
+    parentCollection: "users",
+    tableFields: [
+      { label: "user", name: "user", spacing: "25rem" },
+      { label: "created at", name: "createdAt", spacing: "minmax(15rem, 1fr)" },
+    ],
+    viewableFields: [
+      { type: "string", label: "user", name: "user" },
+      { type: "string", label: "created at", name: "createdAt" },
+    ],
+    editableFields: [],
+    collectionSections: [],
+    documentSections: [],
+    actions: [],
   },
 ];
 

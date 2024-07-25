@@ -4,8 +4,8 @@ import { toSingular } from "@/utils/helper";
 
 import Collection from "../Collection/Collection";
 
-import collectionsData, { getCollectionData } from "@/app/data/dashboard/collections";
-import Content from "./Content/Content";
+import { getCollectionData } from "@/app/data/dashboard/collections";
+import ContentSection from "./ContentSection/ContentSection";
 
 const DocumentPageSections = ({ document, collectionData }) => {
   return (
@@ -32,7 +32,7 @@ const DocumentPageSections = ({ document, collectionData }) => {
 
         // Content section
         if (section.type === "content") {
-          return <Content key="section-content" className={classes.Section} document={document} />;
+          return <ContentSection key="section-content" className={classes.Section} document={document} />;
         }
       })}
     </div>
