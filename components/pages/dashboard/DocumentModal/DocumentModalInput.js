@@ -58,14 +58,12 @@ const DocumentModalInput = ({ defaultValues, field, error, setFormValue }) => {
   // ID FIELD
   if (field.type === "id") {
     const defaultValue =
-      defaultValues &&
-      defaultValues[field.name] !== undefined &&
-      (typeof defaultValues[field.name] === "object"
+      defaultValues && defaultValues[field.name] !== undefined && typeof defaultValues[field.name] === "object"
         ? {
             value: defaultValues[field.name]._id || defaultValues[field.name].id,
             label: defaultValues[field.name][field.path],
           }
-        : { value: defaultValues[field.name], label: defaultValues[field.name] });
+        : { value: defaultValues[field.name], label: defaultValues[field.name] };
 
     let documents;
     const loadOptions = debounce((val, callback) => {

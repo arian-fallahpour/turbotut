@@ -8,6 +8,7 @@ import Section from "@/components/Elements/Section/Section";
 import LoaderBlock from "@/components/Elements/Loader/LoaderBlock";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import Formatted, { FormattedContent } from "@/components/Elements/Formatted/Formatted";
+import { getNestedPath } from "@/app/data/dashboard/collections";
 
 const ContentSection = ({ className, document, sectionData }) => {
   const [data, setData] = useState(null);
@@ -15,12 +16,13 @@ const ContentSection = ({ className, document, sectionData }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const lectureId = getNestedPath(document, sectionData.name, sectionData.path);
+
     const fetchData = async () => {
       setLoading(true);
 
-      const res = await fetch(`/api/lectures/${document[sectionData.path]}/content`);
+      const res = await fetch(`/api/lectures/${lectureId}/content`);
       const resData = await res.json();
-      console.log(resData);
 
       setLoading(false);
       if (!res.ok) {
@@ -30,8 +32,15 @@ const ContentSection = ({ className, document, sectionData }) => {
       }
     };
 
-    fetchData();
+    if (lectureId) {
+      fetchData();
+    }
   }, [document, sectionData]);
+
+  // If no
+  if (!data) {
+    return null;
+  }
 
   return (
     <Section className={join(className, classes.ContentSection)}>

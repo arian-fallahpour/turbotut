@@ -1,5 +1,4 @@
-const excludedFields = ["page", "sort", "limit", "select", "search"];
-import queryStr from "query-string";
+const excludedFields = ["page", "sort", "limit", "select", "search", "populate"];
 
 class APIQuery {
   queryClone;
@@ -54,7 +53,6 @@ class APIQuery {
     // Limit by query
     if (!!this.queryObject.select) {
       const fields = this.queryObject.select.split(",").join(" ");
-      console.log(fields);
       this.query = this.query.select(fields);
     }
 
@@ -67,10 +65,21 @@ class APIQuery {
   }
 
   populate() {
-    // if (this.queryObject.populate) {
-    //   this.queryObject.populate.forEach
+    const populates = JSON.parse(this.queryObject.populate || "[]");
 
-    // }
+    if (populates.length) {
+      populates.forEach((populate) => {
+        this.query = this.query.populate({
+          path: populate.path,
+          select: populate.select,
+          math: populate.match,
+          options: {
+            limit: populate.options?.limit,
+          },
+          perDocumentLimit: populate.perDocumentLimit,
+        });
+      });
+    }
 
     return this;
   }

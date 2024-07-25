@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import classes from "./Collection.module.scss";
 import queryString from "query-string";
-import { getGridColumns } from "@/app/data/dashboard/collections";
+import { getGridColumns, getPopulates } from "@/app/data/dashboard/collections";
 
 import Table, { TableHeader, TableRow, TableCell } from "@/components/Elements/Table/Table";
 import TableScroll from "@/components/Elements/Table/TableScroll";
@@ -31,6 +31,7 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
       query: {
         ...queryObject,
         select: collectionData.tableFields.map((field) => field.name).join(","),
+        populate: getPopulates(collectionData.tableFields),
         page,
       },
     });
@@ -85,9 +86,7 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
               <TableRow key={doc._id} style={{ gridTemplateColumns }}>
                 {collectionData.tableFields.map((field) => (
                   <TableCell key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
-                    <TableScroll>
-                      {field.type === "string" ? doc[field.name] : JSON.stringify(doc[field.name])}
-                    </TableScroll>
+                    <TableScroll>{getCellValue(field, doc)}</TableScroll>
                   </TableCell>
                 ))}
                 <TableCell end>
@@ -109,5 +108,13 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
     </Section>
   );
 };
+
+function getCellValue(field, doc) {
+  if (field.type === "string") {
+    return (doc[field.name] && doc[field.name][field.path]) || doc[field.name];
+  } else {
+    return JSON.stringify(doc[field.name]);
+  }
+}
 
 export default Collection;

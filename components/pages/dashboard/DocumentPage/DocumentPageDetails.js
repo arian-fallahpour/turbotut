@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import classes from "./DocumentPage.module.scss";
 import Button from "@/components/Elements/Button/Button";
 import { DocumentPageContext } from "@/store/document-page-context";
+import { getNestedPath } from "@/app/data/dashboard/collections";
 
 const DocumentPageDetails = ({ collectionData }) => {
   const { document } = useContext(DocumentPageContext);
@@ -18,11 +19,7 @@ const DocumentPageDetails = ({ collectionData }) => {
 
             // BOOLEAN
             if (field.type === "boolean") {
-              content = (
-                <p className="paragraph">
-                  {JSON.stringify(document[field.name])}
-                </p>
-              );
+              content = <p className="paragraph">{JSON.stringify(document[field.name])}</p>;
             }
 
             // DATE
@@ -37,9 +34,7 @@ const DocumentPageDetails = ({ collectionData }) => {
                 <Button
                   className="paragraph"
                   styleName="text"
-                  href={
-                    document[field.name] || "/public/images/courses/default.png"
-                  }
+                  href={document[field.name] || "/public/images/courses/default.png"}
                   openNewTab
                   isLink
                 >
@@ -50,18 +45,20 @@ const DocumentPageDetails = ({ collectionData }) => {
 
             // ID
             else if (field.type === "id") {
-              content = (
-                <Button
-                  className="paragraph"
-                  styleName="text"
-                  href={`/dashboard/${field.collection}/${
-                    document[field.name]
-                  }`}
-                  isLink
-                >
-                  {document[field.name]}
-                </Button>
-              );
+              if (!document[field.name]) {
+                content = <p className="paragraph">not found</p>;
+              } else {
+                content = (
+                  <Button
+                    className="paragraph"
+                    styleName="text"
+                    href={`/dashboard/${field.collection}/${getNestedPath(document, field.name, "_id")}`}
+                    isLink
+                  >
+                    {getNestedPath(document, field.name, field.path)}
+                  </Button>
+                );
+              }
             }
 
             // OTHER

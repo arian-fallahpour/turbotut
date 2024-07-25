@@ -76,14 +76,27 @@ const data = [
       { type: "boolean", label: "archived", name: "isArchived", spacing: "minmax(12.5rem, 1fr)" },
     ],
     viewableFields: [
-      { type: "id", name: "course", collection: "courses" },
+      {
+        type: "id",
+        name: "course",
+        path: "name",
+        populate: { path: "course", select: "name" },
+        collection: "courses",
+      },
       { type: "string", name: "name" },
       { type: "date", name: "createdAt" },
       { type: "boolean", name: "isArchived" },
       { type: "number", name: "lecturesCount" },
     ],
     editableFields: [
-      { type: "id", name: "course", path: "name", collection: "courses", isParent: true },
+      {
+        type: "id",
+        name: "course",
+        path: "name",
+        populate: { path: "course", select: "name" },
+        collection: "courses",
+        isParent: true,
+      },
       { type: "string", name: "name" },
       { type: "boolean", name: "isArchived" },
     ],
@@ -110,7 +123,13 @@ const data = [
       { type: "boolean", label: "archived", name: "isArchived", spacing: "minmax(12.5rem, 1fr)" },
     ],
     viewableFields: [
-      { type: "id", name: "chapter", collection: "chapters" },
+      {
+        type: "id",
+        name: "chapter",
+        path: "name",
+        populate: { path: "chapter", select: "name" },
+        collection: "chapters",
+      },
       { type: "string", name: "name" },
       { type: "string", name: "slug" },
       { type: "date", name: "createdAt" },
@@ -118,7 +137,14 @@ const data = [
       { type: "enum", name: "type", values: enumValues.lecture.type },
     ],
     editableFields: [
-      { type: "id", name: "chapter", path: "name", collection: "chapters", isParent: true },
+      {
+        type: "id",
+        name: "chapter",
+        path: "name",
+        populate: { path: "chapter", select: "name" },
+        collection: "chapters",
+        isParent: true,
+      },
       { type: "string", name: "name" },
       { type: "string", name: "slug" },
       { type: "boolean", name: "isArchived" },
@@ -127,7 +153,7 @@ const data = [
     collectionSections: [],
     documentSections: [
       { type: "collection", collection: "contents" },
-      { type: "content", path: "_id" },
+      { type: "content", name: "_id" },
     ],
     actions: [
       { type: "delete", label: <DeleteIcon /> },
@@ -144,19 +170,39 @@ const data = [
     isDeletable: true,
     parentCollection: "lectures",
     tableFields: [
-      { type: "string", label: "lecture", name: "lecture", spacing: "25rem" },
+      {
+        type: "string",
+        label: "lecture",
+        name: "lecture",
+        path: "name",
+        populate: { path: "lecture", select: "name" },
+        spacing: "25rem",
+      },
       { type: "string", label: "url", name: "url", spacing: "minmax(15rem, 1fr)" },
     ],
     viewableFields: [
-      { type: "id", name: "lecture", collection: "lectures" },
+      {
+        type: "id",
+        name: "lecture",
+        path: "name",
+        populate: { path: "lecture", select: "name" },
+        collection: "lectures",
+      },
       { type: "string", name: "url" },
     ],
     editableFields: [
-      { type: "id", name: "lecture", path: "name", collection: "lectures", isParent: true },
+      {
+        type: "id",
+        name: "lecture",
+        path: "name",
+        populate: { path: "lecture", select: "name" },
+        collection: "lectures",
+        isParent: true,
+      },
       { type: "string", name: "url" },
     ],
     collectionSections: [],
-    documentSections: [{ type: "content", path: "lecture" }],
+    documentSections: [{ type: "content", name: "lecture", path: "_id" }],
     actions: [
       { type: "delete", label: <DeleteIcon /> },
       { type: "edit", label: <EditIcon /> },
@@ -197,7 +243,14 @@ const data = [
     isDeletable: false,
     parentCollection: "users",
     tableFields: [
-      { type: "string", label: "user", name: "user", spacing: "25rem" },
+      {
+        type: "string",
+        label: "user",
+        name: "user",
+        path: "email",
+        populate: { path: "user", select: "email" },
+        spacing: "25rem",
+      },
       { type: "string", label: "created at", name: "createdAt", spacing: "minmax(15rem, 1fr)" },
     ],
     viewableFields: [
@@ -221,3 +274,12 @@ export const getGridColumns = (dataCollection) => {
   gridTemplateColumns = gridTemplateColumns.join(" ");
   return gridTemplateColumns;
 };
+
+export function getPopulates(fields) {
+  const populates = fields.filter((field) => !!field.populate).map((field) => field.populate);
+  return populates[0] && JSON.stringify(populates);
+}
+
+export function getNestedPath(document, name, path) {
+  return document[name] && typeof document[name] === "object" ? document[name][path] : document[name];
+}

@@ -11,7 +11,7 @@ const Course = ({ course }) => {
         className={classes.CourseImage}
         src={course.image || "/images/courses/default.png"}
         alt={`${course.name} cover`}
-        sizes="(max-width: 400px) 90vw, (max-width: 600px) 50vw, (max-width: 900px) 33vw, (max-width: 1440px) 25vw, 20vw"
+        sizes="(max-width: 400px) 90vw, (max-width: 600px) 55vw, (max-width: 900px) 37vw, (max-width: 1440px) 30vw, 20vw"
         fill
       />
       <span className={classes.CourseGradient} />

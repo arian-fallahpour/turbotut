@@ -5,14 +5,22 @@ import { toSingular } from "@/utils/helper";
 
 import DocumentPageHeader from "./DocumentPageHeader";
 
-import { getCollectionData } from "@/app/data/dashboard/collections";
+import { getCollectionData, getPopulates } from "@/app/data/dashboard/collections";
 import DocumentPageSections from "./DocumentPageSections";
 import DocumentPageDetails from "./DocumentPageDetails";
 import DocumentPageProvider from "./DocumentPageProvider";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
+import queryString from "query-string";
 
 const getData = async function (collectionData, id) {
-  const res = await fetchAuth(`${getDomain()}/api/${collectionData.name}/${id}`, {
+  const url = queryString.stringifyUrl({
+    url: `${getDomain()}/api/${collectionData.name}/${id}`,
+    query: {
+      populate: getPopulates(collectionData.viewableFields),
+    },
+  });
+
+  const res = await fetchAuth(url, {
     cache: "no-store",
     next: { revalidate: 60 },
   });

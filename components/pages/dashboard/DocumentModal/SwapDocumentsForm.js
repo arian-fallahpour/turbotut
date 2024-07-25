@@ -160,32 +160,6 @@ const SwapDocumentsForm = ({
                 </div>
               </div>
             ))}
-          {collection?.length > 0 &&
-            collection.map((doc, i) => (
-              <div key={doc._id} className={classes.Document} tabIndex={0}>
-                <div className={classes.DocumentName}>{doc.name}</div>
-                <div className={classes.DocumentActions}>
-                  <Button
-                    className={classes.DocumentButton}
-                    styleName="icon"
-                    size="small"
-                    type="button"
-                    onClick={() => onSwapHandler(i, -1)}
-                  >
-                    <UpIcon />
-                  </Button>
-                  <Button
-                    className={classes.DocumentButton}
-                    styleName="icon"
-                    size="small"
-                    type="button"
-                    onClick={() => onSwapHandler(i, 1)}
-                  >
-                    <DownIcon />
-                  </Button>
-                </div>
-              </div>
-            ))}
         </FormCol>
       </FormRow>
 

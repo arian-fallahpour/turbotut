@@ -6,7 +6,7 @@ import Button from "@/components/Elements/Button/Button";
 
 import MoreIcon from "@/components/Elements/Icons/MoreIcon";
 
-import { getCollectionData } from "@/app/data/dashboard/collections";
+import { getCollectionData, getPopulates } from "@/app/data/dashboard/collections";
 import DocumentModal from "../DocumentModal/DocumentModal";
 import EditDocumentForm from "../DocumentModal/EditDocumentForm";
 import { ModalContext } from "@/store/modal-context";
@@ -28,6 +28,7 @@ const Actions = ({ document, collectionData, fetchCollection }) => {
       url: `/api/${collectionData.name}/${document._id}`,
       query: {
         select: collectionData.editableFields.map((field) => field.name).join(","),
+        populate: getPopulates(collectionData.editableFields),
       },
     });
 
