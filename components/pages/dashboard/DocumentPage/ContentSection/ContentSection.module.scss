@@ -1,3 +1,5 @@
+@import "@/sass/abstracts/mixins";
+
 section.ContentSection {
 }
 
@@ -6,11 +8,11 @@ section.ContentSection {
   border: 1px solid var(--c-panel-bd);
   border-radius: var(--bd-radius);
   padding: var(--gap-lg);
-
+  font-size: 1.4rem;
   max-height: 60rem;
   overflow-y: auto;
 
-  font-size: 1.4rem;
+  @include scrollbar();
 
   & > *:first-child {
     margin-top: 0;
