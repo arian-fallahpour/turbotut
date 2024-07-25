@@ -25,10 +25,10 @@ const data = [
     isDeletable: true,
     titleField: "name",
     tableFields: [
-      { label: "name", name: "name", spacing: "25rem" },
-      { label: "subject", name: "subject", spacing: "minmax(15rem, 1fr)" },
-      { label: "chapters", name: "chaptersCount", spacing: "12.5rem" },
-      { label: "lectures", name: "lecturesCount", spacing: "12.5rem" },
+      { type: "string", label: "name", name: "name", spacing: "25rem" },
+      { type: "string", label: "subject", name: "subject", spacing: "minmax(15rem, 1fr)" },
+      { type: "string", label: "chapters", name: "chaptersCount", spacing: "12.5rem" },
+      { type: "string", label: "lectures", name: "lecturesCount", spacing: "12.5rem" },
     ],
     viewableFields: [
       { type: "string", name: "name" },
@@ -71,8 +71,9 @@ const data = [
     parentCollection: "courses",
     titleField: "name",
     tableFields: [
-      { label: "name", name: "name", spacing: "25rem" },
-      { label: "lectures", name: "lecturesCount", spacing: "minmax(15rem, 1fr)" },
+      { type: "string", label: "name", name: "name", spacing: "25rem" },
+      { type: "string", label: "lectures", name: "lecturesCount", spacing: "10rem" },
+      { type: "boolean", label: "archived", name: "isArchived", spacing: "minmax(12.5rem, 1fr)" },
     ],
     viewableFields: [
       { type: "id", name: "course", collection: "courses" },
@@ -104,8 +105,9 @@ const data = [
     parentCollection: "chapters",
     titleField: "name",
     tableFields: [
-      { label: "name", name: "name", spacing: "25rem" },
-      { label: "type", name: "type", spacing: "minmax(15rem, 1fr)" },
+      { type: "string", label: "name", name: "name", spacing: "25rem" },
+      { type: "string", label: "type", name: "type", spacing: "10rem" },
+      { type: "boolean", label: "archived", name: "isArchived", spacing: "minmax(12.5rem, 1fr)" },
     ],
     viewableFields: [
       { type: "id", name: "chapter", collection: "chapters" },
@@ -123,7 +125,10 @@ const data = [
       { type: "enum", name: "type", values: enumValues.lecture.type },
     ],
     collectionSections: [],
-    documentSections: [{ type: "collection", collection: "contents" }],
+    documentSections: [
+      { type: "collection", collection: "contents" },
+      { type: "content", path: "_id" },
+    ],
     actions: [
       { type: "delete", label: <DeleteIcon /> },
       { type: "edit", label: <EditIcon /> },
@@ -139,8 +144,8 @@ const data = [
     isDeletable: true,
     parentCollection: "lectures",
     tableFields: [
-      { label: "lecture", name: "lecture", spacing: "25rem" },
-      { label: "url", name: "url", spacing: "minmax(15rem, 1fr)" },
+      { type: "string", label: "lecture", name: "lecture", spacing: "25rem" },
+      { type: "string", label: "url", name: "url", spacing: "minmax(15rem, 1fr)" },
     ],
     viewableFields: [
       { type: "id", name: "lecture", collection: "lectures" },
@@ -151,7 +156,7 @@ const data = [
       { type: "string", name: "url" },
     ],
     collectionSections: [],
-    documentSections: [{ type: "content" }],
+    documentSections: [{ type: "content", path: "lecture" }],
     actions: [
       { type: "delete", label: <DeleteIcon /> },
       { type: "edit", label: <EditIcon /> },
@@ -166,9 +171,9 @@ const data = [
     isDeletable: false,
     titleField: "fullName",
     tableFields: [
-      { label: "first name", name: "firstName", spacing: "20rem" },
-      { label: "last name", name: "lastName", spacing: "20rem" },
-      { label: "email", name: "email", spacing: "minmax(15rem, 1fr)" },
+      { type: "string", label: "first name", name: "firstName", spacing: "20rem" },
+      { type: "string", label: "last name", name: "lastName", spacing: "20rem" },
+      { type: "string", label: "email", name: "email", spacing: "minmax(15rem, 1fr)" },
     ],
     viewableFields: [
       { type: "string", label: "first name", name: "firstName" },
@@ -192,8 +197,8 @@ const data = [
     isDeletable: false,
     parentCollection: "users",
     tableFields: [
-      { label: "user", name: "user", spacing: "25rem" },
-      { label: "created at", name: "createdAt", spacing: "minmax(15rem, 1fr)" },
+      { type: "string", label: "user", name: "user", spacing: "25rem" },
+      { type: "string", label: "created at", name: "createdAt", spacing: "minmax(15rem, 1fr)" },
     ],
     viewableFields: [
       { type: "string", label: "user", name: "user" },

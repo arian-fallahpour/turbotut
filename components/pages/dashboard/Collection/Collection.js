@@ -61,8 +61,6 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
     fetchCollectionHandler();
   }, [fetchCollectionHandler]);
 
-  console.log();
-
   return (
     <Section className={classes.CollectionSection} limit={null}>
       <CollectionHeader
@@ -87,7 +85,9 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
               <TableRow key={doc._id} style={{ gridTemplateColumns }}>
                 {collectionData.tableFields.map((field) => (
                   <TableCell key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
-                    <TableScroll>{doc[field.name]}</TableScroll>
+                    <TableScroll>
+                      {field.type === "string" ? doc[field.name] : JSON.stringify(doc[field.name])}
+                    </TableScroll>
                   </TableCell>
                 ))}
                 <TableCell end>

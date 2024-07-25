@@ -9,7 +9,7 @@ import LoaderBlock from "@/components/Elements/Loader/LoaderBlock";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import Formatted, { FormattedContent } from "@/components/Elements/Formatted/Formatted";
 
-const ContentSection = ({ className, document }) => {
+const ContentSection = ({ className, document, sectionData }) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -18,8 +18,9 @@ const ContentSection = ({ className, document }) => {
     const fetchData = async () => {
       setLoading(true);
 
-      const res = await fetch(`/api/lectures/${document.lecture}/content`);
+      const res = await fetch(`/api/lectures/${document[sectionData.path]}/content`);
       const resData = await res.json();
+      console.log(resData);
 
       setLoading(false);
       if (!res.ok) {
@@ -30,7 +31,7 @@ const ContentSection = ({ className, document }) => {
     };
 
     fetchData();
-  }, [document]);
+  }, [document, sectionData]);
 
   return (
     <Section className={join(className, classes.ContentSection)}>
