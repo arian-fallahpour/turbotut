@@ -36,7 +36,7 @@ const business = {
     {
       title: "How long are the courses on average?",
       description:
-        "The courses are around 1-2 hours of length on average. They cover only the most necessary materials and do not waste any time.",
+        "The courses are around 3-4 hours of length on average. They cover all the necessary materials and do not waste any of your time.",
     },
     {
       title: "Will we be getting new courses?",

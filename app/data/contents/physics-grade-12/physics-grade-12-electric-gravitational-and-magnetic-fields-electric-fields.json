@@ -22,11 +22,20 @@
   },
   {
     "type": "image",
-    "url": ""
+    "url": "/images/lectures/electric-fields-1.png"
+  },
+  {
+    "type": "h2",
+    "content": "Electric Field Lines"
   },
   {
     "type": "p",
-    "content": "Electric fields are often represented by field lines. These lines show the direction a positive test charge would move if placed in the field. Here are some key points about electric field lines:"
+    "content": "Electric fields are often represented by field lines. These lines show the direction a positive test charge would move if placed in the field. You can draw electric field lines by connecting the vectors shown above."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here are some key points about electric field lines:"
   },
   {
     "type": "ul",
@@ -89,18 +98,6 @@
   {
     "type": "latex",
     "content": "$ | \\vec {E} | = k \\frac {q} { r^2 } $"
-  },
-  {
-    "type": "h1",
-    "content": "Superposition Principle"
-  },
-  {
-    "type": "p",
-    "content": "Electric fields follow the principle of superposition, meaning the total electric field created by multiple charges is the vector sum of the fields created by each charge individually. If you have two charges, $ q_1 $ and $ q_2 $, the total electric field at a point is:"
-  },
-  {
-    "type": "latex",
-    "content": "$ \\vec {E}_{ \\text {total} } = \\vec {E}_1 + \\vec {E}_2 $"
   },
   {
     "type": "h1",

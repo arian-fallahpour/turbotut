@@ -112,6 +112,18 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
 function getCellValue(field, doc) {
   if (field.type === "string") {
     return (doc[field.name] && doc[field.name][field.path]) || doc[field.name];
+  } else if (field.type === "date") {
+    const createdAt = new Date(doc[field.name]);
+    const date = createdAt.toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+    const time = createdAt.toLocaleTimeString(undefined, {
+      second: undefined,
+    });
+
+    return `${date} ${time}`;
   } else {
     return JSON.stringify(doc[field.name]);
   }

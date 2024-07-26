@@ -12,18 +12,6 @@
     "content": "Imagine a trampoline with a heavy ball in the center. The trampoline’s surface curves downward around the ball. If you place a smaller ball on the trampoline, it will roll towards the heavy ball because of the curved surface. This curving is analogous to how a gravitational field works in space."
   },
   {
-    "type": "h2",
-    "content": "visualization"
-  },
-  {
-    "type": "p",
-    "content": "Here's a visualization of what gravitational fields look like:"
-  },
-  {
-    "type": "image",
-    "url": "/images/lectures/gravitational-fields-1.png"
-  },
-  {
     "type": "h1",
     "content": "Gravitational Field Strength"
   },
@@ -50,7 +38,7 @@
   },
   {
     "type": "p",
-    "content": "question"
+    "content": "An object on Earth's surface weighs $ 80.0N $, and has a mass of $ 8.15kg $. What is the gravitational acceleration on Earth?"
   },
   {
     "type": "h3",
@@ -58,7 +46,7 @@
   },
   {
     "type": "p",
-    "content": "Solution"
+    "content": "$ \\vec {g} = \\frac { \\vec {F}_g } { m } = \\frac { 80.0N } { 8.15kg } = 9.82 \\frac {m} {s^2} $"
   },
   {
     "type": "h1",
@@ -87,7 +75,7 @@
   },
   {
     "type": "p",
-    "content": "question"
+    "content": "Knowing that Earth has a mass of $ 5.97 \\times 10^{24} kg $ and a radius of $ 6.37 \\times 10^6 m $, calculate the gravitational strength of Earth."
   },
   {
     "type": "h3",
@@ -95,6 +83,27 @@
   },
   {
     "type": "p",
-    "content": "Solution"
+    "content": "First, let's determine an equation for the gravitational strength in terms of the values we have:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_g = G \\frac { m_1 m_2 } { r^2 } $"
+  },
+  {
+    "type": "p",
+    "content": "$ m_2 \\vec {g} = G \\frac { m_1 m_2 } { r^2 } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {g} = G \\frac { m_1 } { r^2 } $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, all we need to do is solve:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {g} = G \\frac { m_1 } { r^2 } = (6.67 \\times 10^{-11}) \\frac { 5.97 \\times 10^{24} kg } { (6.37 \\times 10^6 m)^2 } = 9.81 \\frac {m} {s^2} $"
   }
 ]

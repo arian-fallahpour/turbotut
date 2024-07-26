@@ -3,10 +3,10 @@ import classes from "./CollectionPage.module.scss";
 
 import CollectionSection from "./CollectionSection/CollectionSection";
 
-import collectionsData from "@/app/data/dashboard/collections";
+import { getCollectionData } from "@/app/data/dashboard/collections";
 
 const CollectionPage = ({ collectionName, searchParams }) => {
-  const collectionData = collectionsData.find((col) => col.name === collectionName);
+  const collectionData = getCollectionData(collectionName);
 
   return (
     <div className={classes.CollectionPage}>

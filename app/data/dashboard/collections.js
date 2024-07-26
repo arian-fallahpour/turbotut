@@ -231,7 +231,7 @@ const data = [
     ],
     editableFields: [{ type: "string", name: "stripeCustomerId" }],
     collectionSections: [],
-    documentSections: [{ type: "collection", collection: "orders" }],
+    documentSections: [{ type: "collection", collection: "orders", sort: "-createdAt" }],
     actions: [{ type: "edit", label: <EditIcon /> }],
   },
   {
@@ -251,11 +251,11 @@ const data = [
         populate: { path: "user", select: "email" },
         spacing: "25rem",
       },
-      { type: "string", label: "created at", name: "createdAt", spacing: "minmax(15rem, 1fr)" },
+      { type: "date", label: "created at", name: "createdAt", spacing: "minmax(15rem, 1fr)" },
     ],
     viewableFields: [
       { type: "string", label: "user", name: "user" },
-      { type: "string", label: "created at", name: "createdAt" },
+      { type: "date", label: "created at", name: "createdAt" },
     ],
     editableFields: [],
     collectionSections: [],

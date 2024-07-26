@@ -21,7 +21,7 @@ const DocumentPageSections = ({ document, collectionData }) => {
               className={classes.Section}
               document={document}
               collectionData={childCollectionData}
-              queryObject={{ limit: 5, [toSingular(collectionData.name)]: document._id }}
+              queryObject={{ limit: 5, [toSingular(collectionData.name)]: document._id, sort: sectionData.sort }}
               isSwappable={childCollectionData.isSwappable}
             />
           );

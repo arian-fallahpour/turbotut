@@ -12,10 +12,9 @@
 
 html {
   box-sizing: border-box;
-  overscroll-behavior: none;
   font-size: calc(25% + 0.4vw);
-  scroll-behavior: smooth;
   background-image: var(--bg-main);
+  scroll-behavior: smooth;
 
   @include respond(1200) {
     font-size: 56.25%;

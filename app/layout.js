@@ -36,7 +36,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={join(openSans.className, "preload")}>
+      <body className={join(openSans.className, "preload")} id="body">
         <Providers>{children}</Providers>
       </body>
     </html>
