@@ -26,74 +26,88 @@ export const routeHandler = (fn, options = {}) =>
     const [req, { params }] = args;
     args[0].data = {};
 
-    // PARAMETER POLLUTION PROTECTION
-    // TODO
+    // TODO: PARAMETER POLLUTION PROTECTION
     args[0].data.query = queryString.parse(req.url.split("?")[1]);
 
-    // DATA SANITATION: NoSQL query injection
+    // DATA SANITATION: NoSQL query injection for body
     if (options.parseBody) {
       const body = await req.json().catch((err) => null);
-
       args[0].data.body = sanitizeFilter(body);
-    } else if (options.parseForm) {
-      const formData = await req.formData();
+    }
 
-      args[0].data.formData = {};
-      formData.forEach((value, key) => (args[0].data.formData[key] = value));
+    // DATA SANITATION: NoSQL query injection for formData
+    if (options.parseForm) {
+      const formData = await req.formData();
+      const formDataObject = {};
+      formData.forEach((value, key) => (formDataObject[key] = value));
+      args[0].data.formData = sanitizeFilter(formDataObject);
     }
 
     // RATE LIMITING
     const rateLimitError = rateLimit(req);
     if (rateLimitError) return rateLimitError;
 
+    // Get session if needed, but it is not required as of now
+    if (!options.getSession && !options.requiresSession && !options.restrictTo) return fn(...args);
+
     // Retrieve session
     const session = await getServerSession(authOptions);
     args[0].data.session = session;
 
-    // Get user if needed or required
-    let user;
-    if (session && session.user && (options.getSession || options.requiresSession || options.restrictTo)) {
-      await connectDB();
+    // Fetch user if needed
+    await connectDB();
+    const user = await User.findById(session?.user?._id).select("+isBanned");
+    args[0].data.user = user;
 
-      // Find user if session exists with user
-      user = await User.findById(session.user._id);
+    // AUTH: Session required
+    if (!options.requiresSession && !options.restrictTo) return fn(...args);
 
-      // Add user to request data if exists
-      if (user) args[0].data.user = user;
-    }
+    // Check if a session, and a user on that session exists
+    if (!session || !session.user) return new AppError("Please login to perform this action", 401);
 
-    // AUTH: Session requirement
-    if (options.requiresSession || options.restrictTo) {
-      // Check if a session, and a user on that session exists
-      if (!session || !session.user) return new AppError("Please login to perform this action", 401);
+    // Check if user exists
+    if (!user) return new AppError("Login session is invalid, please login again", 404);
 
-      // Check if user exists
-      if (!user) return new AppError("Login session is invalid, please login again", 404);
-    }
+    // Check if user is banned
+    if (user.isBanned) return new AppError("You have been banned", 401);
+
+    // Check if user was kicked off session or not logged in
+    if (!user.lastLoggedIn) return new AppError("Please login again", 401);
+
+    // Check if user logged in after current token was issued
+    const loggedInAfterTokenIssued = user.hasLoggedInAfterTokenIssued(session.tokenIssuedAt);
+    if (loggedInAfterTokenIssued) return new AppError("Please login again", 401);
 
     // AUTH: Role restriction
-    if (options.restrictTo && !options.restrictTo.includes(user.role)) {
-      return new AppError("You do not have access to this action", 401);
-    }
+    if (!options.restrictTo) return fn(...args);
 
-    // Continue with function if authorized
+    // Check if user has the appropriate role
+    if (!options.restrictTo.includes(user.role)) return new AppError("You do not have access to this action", 401);
+
     return fn(...args);
   });
 
-export const requiresSession = (session) => {
+export const requiresSession = async (session) => {
   if (!session || !session.user) {
     redirect("/");
   }
+
+  await connectDB();
+  const user = await User.findById(session.user._id).select("role isBanned lastLoggedIn");
+
+  if (
+    user.isBanned || // Check if user is banned
+    !user.lastLoggedIn || // Check if user was kicked off session or not logged in
+    user.hasLoggedInAfterTokenIssued(session.tokenIssuedAt) // Check if user logged in after current token was issued
+  ) {
+    redirect("/");
+  }
+
+  return user;
 };
 
-export const restrictTo = (session, roles) => {
-  if (!session || !session.user || !roles.includes(session.user.role)) {
+export const restrictTo = (user, roles) => {
+  if (!user || !roles.includes(user.role)) {
     redirect("/");
   }
 };
-
-function parseQuery(req) {
-  const query = req.url.split("?")[1];
-  if (!query) return {};
-  return JSON.parse('{"' + decodeURI(query).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
-}

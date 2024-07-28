@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import classes from "./Collection.module.scss";
 import queryString from "query-string";
-import { getGridColumns, getPopulates } from "@/app/data/dashboard/collections";
+import { getActionsMap, getGridColumns, getPopulates } from "@/app/data/dashboard/collections";
 
 import Table, { TableHeader, TableRow, TableCell } from "@/components/Elements/Table/Table";
 import TableScroll from "@/components/Elements/Table/TableScroll";
@@ -22,6 +22,8 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
   const [error, setError] = useState(null);
   const searchParams = useSearchParams();
   const page = searchParams.get("page") || 1;
+
+  const actionsMap = useMemo(() => getActionsMap(collectionData.actions), [collectionData.actions]);
 
   const fetchCollectionHandler = useCallback(async () => {
     setLoading(true);
@@ -100,7 +102,7 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
         )}
 
         {loading && <LoaderBlock />}
-        {error && collection?.docs?.length === 0 && <ErrorBlock message={error} />}
+        {!loading && error && <ErrorBlock message={error} />}
         {!loading && !error && collection?.docs?.length === 0 && (
           <ErrorBlock type="info" message={`No ${collectionData.name} found`} />
         )}

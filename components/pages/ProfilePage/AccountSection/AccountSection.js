@@ -16,7 +16,7 @@ const AccountSection = ({ className, limit, user }) => {
       <div className={classes.Account}>
         <div className={classes.AccountSidebar}>
           <div className={classes.AccountImage}>
-            <Image alt="change profile picture" src={user.image} fill />
+            <Image alt="change profile picture" src={user.picture} fill />
           </div>
         </div>
         <div className={classes.AccountContent}>
@@ -33,9 +33,7 @@ const AccountSection = ({ className, limit, user }) => {
             <span className={classes.AccountDataLeft}>last name:</span>
             <span className={classes.AccountDataRight}>{user.lastName}</span>
           </div>
-          <p className="paragraph text-center">
-            Your account data is linked to your login provider
-          </p>
+          <p className="paragraph text-center">Your account data is linked to your login provider</p>
           <Button
             className={classes.AccountSignout}
             styleName="shiny"

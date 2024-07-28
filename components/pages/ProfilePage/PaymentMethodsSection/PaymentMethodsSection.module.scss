@@ -83,7 +83,7 @@ section.PaymentMethodsSection {
   &Actions {
     display: flex;
     margin: $padding-top $padding-left 0 $padding-left;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
   @include respond(450px) {

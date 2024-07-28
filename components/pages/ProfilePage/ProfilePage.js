@@ -10,31 +10,19 @@ import { requiresSession } from "@/utils/authentication";
 
 const ProfilePage = async () => {
   const session = await getServerSession(options);
-  requiresSession(session);
+  await requiresSession(session);
 
   const sectionLimit = "70rem";
 
   return (
-    <Page session={session} requiresSession>
+    <Page session={session}>
       <div className={classes.ProfileSections}>
         <header className={classes.Header}>
-          <h1 className="header header-title text-center color-orange">
-            profile
-          </h1>
+          <h1 className="header header-title text-center color-orange">profile</h1>
         </header>
-        <AccountSection
-          className={classes.ProfileSection}
-          limit={sectionLimit}
-          user={session.user}
-        />
-        <SubscriptionSection
-          className={classes.ProfileSection}
-          limit={sectionLimit}
-        />
-        <PaymentMethodsSection
-          className={classes.ProfileSection}
-          limit={sectionLimit}
-        />
+        <AccountSection className={classes.ProfileSection} limit={sectionLimit} user={session.user} />
+        <SubscriptionSection className={classes.ProfileSection} limit={sectionLimit} />
+        <PaymentMethodsSection className={classes.ProfileSection} limit={sectionLimit} />
       </div>
     </Page>
   );

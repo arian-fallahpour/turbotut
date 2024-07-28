@@ -8,7 +8,7 @@ import GlobalError from "../GlobalError/GlobalError";
 
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
-import { requiresSession as enforeSessionOnly, restrictTo as restrictToRoles } from "@/utils/authentication";
+import { requiresSession, restrictTo } from "@/utils/authentication";
 
 const Page = async ({
   children,
@@ -17,20 +17,14 @@ const Page = async ({
   hideNav = false,
   hideFooter = false,
   session,
-  requiresSession,
-  restrictTo = [],
+  requiresSession: enforceSession,
+  restrictTo: restrictToRoles = [],
 }) => {
-  if (!session) {
-    session = await getServerSession(options);
-  }
+  if (!session) session = await getServerSession(options);
 
-  if (requiresSession) {
-    enforeSessionOnly(session);
-  }
-
-  if (restrictTo && restrictTo.length > 0) {
-    restrictToRoles(session, restrictTo);
-  }
+  let user;
+  if (enforceSession) user = await requiresSession(session);
+  if (restrictToRoles && restrictToRoles.length > 0) restrictTo(user, restrictToRoles);
 
   return (
     <Fragment>

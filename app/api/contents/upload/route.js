@@ -24,9 +24,7 @@ async function computeSHA256(file) {
   const buffer = await file.arrayBuffer();
   const hashBuffer = await crypto.subtle.digest("SHA-256", buffer);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
-  const hashHex = hashArray
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
+  const hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
   return hashHex;
 }
 
@@ -59,8 +57,7 @@ export const POST = routeHandler(
   async function (req) {
     return NextResponse.json({
       status: "fail",
-      message:
-        "This route is not going to be used until proper upload/retrieval functionality is implemented",
+      message: "This route is not going to be used until proper upload/retrieval functionality is implemented",
     });
     await connectDB();
 
@@ -77,9 +74,7 @@ export const POST = routeHandler(
     // Check if lecture already has content
     const existingContent = await Content.findOne({ lecture: lecture._id });
     if (existingContent)
-      return new AppError(
-        "Lecture already has content, please delete it before creating another one"
-      );
+      return new AppError("Lecture already has content, please delete it before creating another one");
 
     // Format contents and upload any files to AWS-S3
     let imageCount = 0,
@@ -140,7 +135,6 @@ export const POST = routeHandler(
       headers: { "Content-Type": "application/json" },
     });
 
-    // TODO: If content exists, replace it in AWS, and update url in content doc
     // Create content document
     const content = await Content.create({
       lecture: lectureId,

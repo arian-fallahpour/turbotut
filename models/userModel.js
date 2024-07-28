@@ -1,3 +1,4 @@
+import { connectDB } from "@/utils/database";
 import { toCap } from "@/utils/helper";
 import mongoose from "mongoose";
 import validator from "validator";
@@ -44,6 +45,13 @@ const userSchema = new mongoose.Schema(
     },
     picture: String,
     stripeCustomerId: String,
+    isBanned: {
+      type: Boolean,
+      default: false,
+      select: false,
+    },
+    lastLoggedIn: Date,
+    // kickedOffAt: Date, //TODO: use this instead of lastLoggedIn to avoid confusion?
   },
   {
     toJSON: { virtuals: true },
@@ -54,6 +62,44 @@ const userSchema = new mongoose.Schema(
 userSchema.virtual("fullName").get(function () {
   return this.firstName && this.lastName && `${this.firstName} ${this.lastName}`;
 });
+
+userSchema.statics.signupUpdateUser = async ({ firstName, lastName, email, picture }) => {
+  await connectDB();
+
+  let user = await User.findOne({ email }).select("+isBanned");
+  const lastLoggedIn = Date.now() - 2000;
+
+  // If user exists, update current one
+  if (user) {
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.email = email;
+    user.picture = picture;
+    user.lastLoggedIn = lastLoggedIn;
+    await user.save();
+  }
+
+  // If user does not exist, create a new one
+  else {
+    user = await User.create({
+      firstName,
+      lastName,
+      email,
+      picture,
+      lastLoggedIn: lastLoggedIn,
+    });
+  }
+
+  return user;
+};
+
+userSchema.methods.hasLoggedInAfterTokenIssued = function (tokenIssuedAt) {
+  if (this.lastLoggedIn) {
+    return this.lastLoggedIn.getTime() > tokenIssuedAt;
+  }
+
+  return false;
+};
 
 // Create stripe customer
 userSchema.pre("save", async function (next) {

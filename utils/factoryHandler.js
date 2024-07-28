@@ -20,8 +20,7 @@ export const getAll = (Model) =>
     // Connect to database
     await connectDB();
 
-    // Find documents
-    console.log(req.data.query);
+    // Find documents;
     const apiQuery = new APIQuery(Model.find(), req.data.query).filter().sort().search().select().populate().paginate();
 
     const totalCount = await apiQuery.getTotalCount();

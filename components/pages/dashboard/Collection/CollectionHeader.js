@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import classes from "./Collection.module.scss";
 
 import TableControls from "@/components/Elements/Table/TableControls";
@@ -14,7 +14,7 @@ import AddIcon from "@/components/Elements/Icons/AddIcon";
 import SwapIcon from "@/components/Elements/Icons/SwapIcon";
 import { DocumentPageContext } from "@/store/document-page-context";
 import SwapDocumentsForm from "../DocumentModal/SwapDocumentsForm";
-import { getCollectionData } from "@/app/data/dashboard/collections";
+import { getActionsMap, getCollectionData } from "@/app/data/dashboard/collections";
 
 const CollectionHeader = ({
   collectionData,
@@ -28,6 +28,9 @@ const CollectionHeader = ({
 }) => {
   const { showModal } = useContext(ModalContext);
   const { document, setDocument } = useContext(DocumentPageContext);
+
+  const actionsMap = useMemo(() => getActionsMap(collectionData.actions), [collectionData.actions]);
+  console.log(collectionData);
 
   const createDocumentHandler = () => {
     // Only works with one parent field
@@ -92,10 +95,11 @@ const CollectionHeader = ({
             <SwapIcon />
           </TableButtonRounded>
         )}
-
-        <TableButtonRounded styleName="glass" variantName="white" onClick={createDocumentHandler}>
-          <AddIcon />
-        </TableButtonRounded>
+        {!!actionsMap.create && (
+          <TableButtonRounded styleName="glass" variantName="white" onClick={createDocumentHandler}>
+            <AddIcon />
+          </TableButtonRounded>
+        )}
       </div>
     </div>
   );

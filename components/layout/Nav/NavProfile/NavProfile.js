@@ -28,9 +28,7 @@ const NavProfile = ({ user }) => {
       params.delete("login");
 
       showModal(<Login onExit={hideModal} />);
-      router.replace(
-        pathname + (params.toString() ? "?" + params.toString() : "")
-      );
+      router.replace(pathname + (params.toString() ? "?" + params.toString() : ""));
     }
   }, [searchParams, showModal, hideModal, pathname, router]);
 
@@ -38,14 +36,12 @@ const NavProfile = ({ user }) => {
     <div className={classes.NavProfile}>
       {user ? (
         <Link className={classes.NavProfileButton} href="/profile">
-          <Image alt={user.firstName} src={user.image} fill />
+          <Image alt={user.firstName} src={user.picture} fill />
         </Link>
       ) : (
         <Button onClick={loginHandler}>login</Button>
       )}
-      {user?.subscription === "premium" && (
-        <div className={classes.NavProfileSubscribed}>premium</div>
-      )}
+      {user?.subscription === "premium" && <div className={classes.NavProfileSubscribed}>premium</div>}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import classes from "./DocumentPage.module.scss";
 import { ModalContext } from "@/store/modal-context";
 import { DocumentPageContext } from "@/store/document-page-context";
@@ -12,10 +12,13 @@ import DeleteDocumentForm from "../DocumentModal/DeleteDocumentForm";
 import Button from "@/components/Elements/Button/Button";
 import EditIcon from "@/components/Elements/Icons/EditIcon";
 import DeleteIcon from "@/components/Elements/Icons/DeleteIcon";
+import { getActionsMap } from "@/app/data/dashboard/collections";
 
 const Header = ({ collectionData }) => {
   const { showModal } = useContext(ModalContext);
   const { document, setDocument } = useContext(DocumentPageContext);
+
+  const actionsMap = useMemo(() => getActionsMap(collectionData.actions), [collectionData.actions]);
 
   const editDocumentHandler = () => {
     showModal(
@@ -56,12 +59,12 @@ const Header = ({ collectionData }) => {
         <p className="paragraph">{document._id}</p>
       </div>
       <div className={classes.HeaderActions}>
-        {collectionData.isEditable && (
+        {!!actionsMap.edit && (
           <Button className={classes.HeaderButton} styleName="glass" variantName="white" onClick={editDocumentHandler}>
             <EditIcon />
           </Button>
         )}
-        {collectionData.isDeletable && (
+        {!!actionsMap.delete && (
           <Button className={classes.HeaderButton} styleName="glass" variantName="red" onClick={deleteDocumentHandler}>
             <DeleteIcon />
           </Button>

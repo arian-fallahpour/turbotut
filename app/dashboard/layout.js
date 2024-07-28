@@ -11,7 +11,7 @@ import Button from "@/components/Elements/Button/Button";
 import WestIcon from "@/components/Elements/Icons/WestIcon";
 import EastIcon from "@/components/Elements/Icons/EastIcon";
 
-export default async function Layout({ children, params }) {
+export default async function Layout({ children }) {
   const session = await getServerSession(options);
 
   return (

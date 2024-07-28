@@ -55,7 +55,7 @@ const SubscriptionSection = ({ className, limit }) => {
   };
 
   const changeSubscriptionConfirmHandler = (cancelsAtPeriodEnd) => {
-    const changeSubscription = async (cancelsAtPeriodEnd) => {
+    const changeSubscription = async () => {
       // Add loading state
       startProgress();
 
@@ -83,7 +83,7 @@ const SubscriptionSection = ({ className, limit }) => {
       }
     };
 
-    changeSubscription(cancelsAtPeriodEnd);
+    changeSubscription();
   };
 
   const changeSubscriptionModalHandler = (cancelsAtPeriodEnd) => {
@@ -125,7 +125,7 @@ const SubscriptionSection = ({ className, limit }) => {
                 <ErrorBlock className={classes.SubscriptionError} type="info" message={error.message} />
                 <div className={classes.SubscriptionActions}>
                   <Button styleName="shiny" href="/pricing" isLink>
-                    buy subscriptions
+                    buy subscription
                   </Button>
                 </div>
               </Fragment>

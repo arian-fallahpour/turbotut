@@ -11,22 +11,13 @@ export const GET = routeHandler(
 
     // Get customer's subscription
     const subscription = await Subscription.findActive(user._id);
-    if (!subscription)
-      return new AppError(
-        "You do not currently have an active subscription",
-        400
-      );
-
-    // Get stripe subscription
-    const stripeSubscription = await stripe.subscriptions.retrieve(
-      subscription.stripeSubscriptionId
-    );
+    if (!subscription) return new AppError("You do not currently have an active subscription", 400);
 
     // Format subscription data
     const subscriptionData = {
-      startsAt: new Date(stripeSubscription.current_period_start * 1000),
-      endsAt: new Date(stripeSubscription.current_period_end * 1000),
-      cancelsAtPeriodEnd: stripeSubscription.cancel_at_period_end,
+      startsAt: subscription.startsAt,
+      endsAt: subscription.endsAt,
+      cancelsAtPeriodEnd: subscription.cancelsAtPeriodEnd,
     };
 
     return NextResponse.json(
@@ -51,15 +42,14 @@ export const PATCH = routeHandler(
 
     // If user wants to keep renewing, check if they have a payment method
     if ("cancelsAtPeriodEnd" in body && !body.cancelsAtPeriodEnd) {
-      const stripePaymentMethods = await stripe.customers.listPaymentMethods(
-        user.stripeCustomerId
-      );
+      const stripePaymentMethods = await stripe.customers.listPaymentMethods(user.stripeCustomerId);
 
       if (stripePaymentMethods.data.length === 0)
-        return new AppError(
-          "Please add a payment method before allowing renewals for your subscription"
-        );
+        return new AppError("Please add a payment method before allowing renewals for your subscription");
     }
+
+    subscription.cancelsAtPeriodEnd = body.cancelsAtPeriodEnd;
+    await subscription.save();
 
     // Filter changes in body
     const filteredChanges = {
@@ -67,10 +57,7 @@ export const PATCH = routeHandler(
     };
 
     // Update stripe subscription
-    const stripeSubscription = await stripe.subscriptions.update(
-      subscription.stripeSubscriptionId,
-      filteredChanges
-    );
+    await stripe.subscriptions.update(subscription.stripeSubscriptionId, filteredChanges);
 
     // Send response
     return NextResponse.json(
@@ -79,14 +66,14 @@ export const PATCH = routeHandler(
         message: "Changes made!",
         data: {
           subscription: {
-            startsAt: new Date(stripeSubscription.current_period_start * 1000),
-            endsAt: new Date(stripeSubscription.current_period_end * 1000),
-            cancelsAtPeriodEnd: stripeSubscription.cancel_at_period_end,
+            startsAt: subscription.startsAt,
+            endsAt: subscription.endsAt,
+            cancelsAtPeriodEnd: subscription.cancelsAtPeriodEnd,
           },
         },
       },
       { status: 200 }
     );
   },
-  { requiresSession: true }
+  { requiresSession: true, parseBody: true }
 );

@@ -4,6 +4,15 @@ import Order from "./orderModel";
 import { doesObjectIdExist } from "@/utils/database";
 
 const subscriptionSchema = new mongoose.Schema({
+  status: {
+    type: String,
+    enum: {
+      values: ["active", "passed", "cancelled"],
+      message: "Status must be either active, passed or cancelled",
+    },
+    default: "active",
+    required: [true, "Subscription must have a status"],
+  },
   user: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
@@ -32,6 +41,11 @@ const subscriptionSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide a stripe subscription id"],
   },
+  cancelsAtPeriodEnd: {
+    type: Boolean,
+    default: false,
+    required: [true, "You must specify if this subscription will cancel at the end of its period or not"],
+  },
 });
 
 subscriptionSchema.path("user").validate(doesObjectIdExist(User), "User does not exist");
@@ -41,8 +55,7 @@ subscriptionSchema.statics.findActive = async function (userId, options) {
   return await mongoose.model("Subscription").findOne(
     {
       user: userId,
-      startsAt: { $lt: new Date(Date.now()) },
-      endsAt: { $gt: new Date(Date.now()) },
+      status: "active",
     },
     options
   );

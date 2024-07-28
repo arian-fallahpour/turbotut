@@ -26,42 +26,13 @@ export const connectDB = async () => {
     });
 
     isConnected = true;
-    console.log("<< Database connected >>");
+
+    if (process.env.NODE_ENV === "development") {
+      console.log("<< Database connected >>");
+    }
   } catch (err) {
-    console.log(err);
+    console.log("DATABASE CONNECTION ERROR: ", err);
   }
-};
-
-export const signupUpdateUser = async ({
-  firstName,
-  lastName,
-  email,
-  picture,
-}) => {
-  await connectDB();
-
-  let user = await User.findOne({ email });
-
-  // If user exists, update current one
-  if (user) {
-    user.firstName = firstName;
-    user.lastName = lastName;
-    user.email = email;
-    user.picture = picture;
-    await user.save();
-  }
-
-  // If user does not exist, create a new one
-  else {
-    user = await User.create({
-      firstName,
-      lastName,
-      email,
-      picture,
-    });
-  }
-
-  return user;
 };
 
 export const doesObjectIdExist = (Model) =>
@@ -73,8 +44,7 @@ export const doesObjectIdExist = (Model) =>
 export const filterPaymentMethods = (stripePaymentMethods, stripeCustomer) => {
   let defaultCardIndex;
   const cards = stripePaymentMethods.data.map((pm, i) => {
-    const isDefault =
-      stripeCustomer.invoice_settings.default_payment_method === pm.id;
+    const isDefault = stripeCustomer.invoice_settings.default_payment_method === pm.id;
     if (isDefault) defaultCardIndex = i;
 
     return {

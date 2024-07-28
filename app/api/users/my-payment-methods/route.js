@@ -1,5 +1,5 @@
 import Subscription from "@/models/subscriptionModel";
-import AppError from "@/utils/AppError";
+
 import { routeHandler } from "@/utils/authentication";
 import { getDomain } from "@/utils/dataFetch";
 import { filterPaymentMethods } from "@/utils/database";
@@ -12,14 +12,10 @@ export const GET = routeHandler(
   async function (req) {
     const { user } = req.data;
 
-    const stripeCustomer = await stripe.customers.retrieve(
-      user.stripeCustomerId
-    );
+    const stripeCustomer = await stripe.customers.retrieve(user.stripeCustomerId);
 
     // Get user's stripe payment methods
-    const stripePaymentMethods = await stripe.customers.listPaymentMethods(
-      user.stripeCustomerId
-    );
+    const stripePaymentMethods = await stripe.customers.listPaymentMethods(user.stripeCustomerId);
 
     // Filter payment methods data
     const cards = filterPaymentMethods(stripePaymentMethods, stripeCustomer);
@@ -27,9 +23,7 @@ export const GET = routeHandler(
     return NextResponse.json(
       {
         status: "success",
-        data: {
-          cards,
-        },
+        data: { cards },
       },
       { status: 200 }
     );

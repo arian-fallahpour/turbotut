@@ -8,8 +8,6 @@ export const PATCH = routeHandler(
   async function changeIndices(req, { params }) {
     await connectDB();
 
-    console.log(req.data.body);
-
     if (!req.data.body || !req.data.body.swaps) return new AppError("Please provide index swaps", 400);
 
     // Find course

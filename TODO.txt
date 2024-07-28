@@ -1,4 +1,4 @@
 Fix links and images for homepage
 Create content for courses
 Test endpoints for vulnerabilities
-Add CTA for LecturePage (maybe)
+Implement generateStaticParams on dynamic routes (NEEDED FOR LECTURE CONTENT ROUTES TO SPEED IT UP)

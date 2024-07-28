@@ -16,6 +16,9 @@ import CreateDocumentForm from "../DocumentModal/CreateDocumentForm";
 import { startProgress, stopProgress } from "next-nprogress-bar";
 import { GlobalErrorContext } from "@/store/error-context";
 import queryString from "query-string";
+import EditIcon from "@/components/Elements/Icons/EditIcon";
+import DeleteIcon from "@/components/Elements/Icons/DeleteIcon";
+import AddChildIcon from "@/components/Elements/Icons/AddChildIcon";
 
 const Actions = ({ document, collectionData, fetchCollection }) => {
   const { showModal } = useContext(ModalContext);
@@ -98,9 +101,16 @@ const Actions = ({ document, collectionData, fetchCollection }) => {
       editDocumentHandler();
     } else if (action.type === "delete") {
       deleteDocumentHandler();
-    } else if (action.type === "insert") {
+    } else if (action.type === "createChild") {
       createChildDocumentHandler(action.collection);
     }
+  };
+
+  const filteredActions = ["delete", "edit", "createChild"];
+  const icons = {
+    delete: <DeleteIcon />,
+    edit: <EditIcon />,
+    createChild: <AddChildIcon />,
   };
 
   return (
@@ -111,18 +121,20 @@ const Actions = ({ document, collectionData, fetchCollection }) => {
 
       <div className={classes.ActionsList}>
         {collectionData.actions?.length > 0 &&
-          collectionData.actions.map((action, i) => (
-            <li className={classes.ActionsListItem} key={i}>
-              <Button
-                styleName="glass"
-                variantName={action.type === "delete" ? "red" : "white"}
-                size="small"
-                onClick={() => onClickHandler(action)}
-              >
-                {action.label}
-              </Button>
-            </li>
-          ))}
+          collectionData.actions
+            .filter((action) => filteredActions.includes(action.type))
+            .map((action, i) => (
+              <li className={classes.ActionsListItem} key={i}>
+                <Button
+                  styleName="glass"
+                  variantName={action.type === "delete" ? "red" : "white"}
+                  size="small"
+                  onClick={() => onClickHandler(action)}
+                >
+                  {icons[action.type]}
+                </Button>
+              </li>
+            ))}
       </div>
     </div>
   );

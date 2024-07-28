@@ -16,7 +16,7 @@ const Select = ({ defaultValue, options, loadOptions, label, error, setFormValue
 
   useEffect(() => {
     if (defaultValue) setFormValue(label, defaultValue.value);
-  }, []);
+  }, []); // eslint-disable-line
 
   const Tag = isAsync ? AsyncSelect : ReactSelect;
 

@@ -75,6 +75,22 @@
     "content": "The unit of electric field strength is newtons per coulomb ($ \\frac {N} {C} $) or volts per meter ($ \\frac {V} {m} $)."
   },
   {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "Calculate the force applied onto an electron with an elemental charge of $ e = 1.60 \\times 10^{-19} C $ in the field of strength $ 1.25 \\times 10^{8} \\frac {N} {C} $."
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "$ | \\vec {E} | = \\frac { \\vec {F}_e } { q } \\ \\Rightarrow \\ \\vec {F}_e = | \\vec {E} | q = (1.25 \\times 10^{8} \\frac {N} {C})(1.60 \\times 10^{-19} C) = 2 \\times 10^{-11} N $"
+  },
+  {
     "type": "h1",
     "content": "Coulomb’s Law"
   },
@@ -100,11 +116,160 @@
     "content": "$ | \\vec {E} | = k \\frac {q} { r^2 } $"
   },
   {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "For two particles separated by distance of $ 5.00m $ with an equal magnitude of charge of $ 6.42 \\times 10^{-6} C $:"
+  },
+  {
+    "type": "p",
+    "content": "a) What is the magnitude of the electric force applied onto them?"
+  },
+  {
+    "type": "p",
+    "content": "b) If the particles are both positively charged, is the force repelling or attracting the particles?"
+  },
+  {
+    "type": "p",
+    "content": "c) If the particles are both negatively charged, is the force repelling or attracting the particles?"
+  },
+  {
+    "type": "p",
+    "content": "d) If one particle is positively charged and the other is negatively charged, is the force repelling or attracting the particles?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "a) We can use the equation we just used to calculate the magnitude of the electric force:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_e = k \\frac { q_1 q_2 } { r^2 } = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { (6.42 \\times 10^{-6} C)(6.42 \\times 10^{-6} C) } { (5.00m)^2 } = 0.0148 N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) Since both particles are positively charged, they are like, meaning they repel each other."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "c) Since both particles are negatively charged, they are like, meaning they repel each other."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "d) Since one particle is positively charged and the other is negatively charged, they are unlike, meaning they attract each other."
+  },
+  {
     "type": "h1",
     "content": "Electric potential"
   },
   {
     "type": "p",
-    "content": "Not to be confused"
+    "content": "Electric potential is a scalar quantity that represents the potential energy per unit charge at a specific point in an electric field. It gives a measure of how much work is needed to move a positive test charge from a reference point (infinitely far) to a point in an electric field without producing any acceleration."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's how you calculate it:"
+  },
+  {
+    "type": "latex",
+    "content": "$ V = \\frac { E_p } { q } $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ V $ is the electric potential, $ E_p $ is the **electric potential energy**, and $ q $ is the charge."
+  },
+  {
+    "type": "h2",
+    "content": "Electric potential difference"
+  },
+  {
+    "type": "p",
+    "content": "The electric potential difference is the difference of the electric potentials at two different points in an electric field."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's an image showing the electric potential at the charge compared to the electric potential at a point infinitely far from it:"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/electric-fields-2.png"
+  },
+  {
+    "type": "p",
+    "content": "As you can see, the electric potential difference $ \\Delta V $ starts at infinity, and ends at the point. This can help determine the total amount of work needed to get a positive test particle from infinity, to its center."
+  },
+  {
+    "type": "h2",
+    "content": "Electric potential energy"
+  },
+  {
+    "type": "p",
+    "content": "The electric potential energy can be derive by combining the equation for work, as well as the equation for the force of an electric field, we get:"
+  },
+  {
+    "type": "latex",
+    "content": "$ E_p = k \\frac { q_1 q_2 } { r } $"
+  },
+  {
+    "type": "p",
+    "content": "Where $ k = 8.99 \\times 10^9 \\frac { N m^2 } { C^2 } $ is Coulomb's Constant, $ q_1 $ is the source charge, $ q_2 $ is the test charge in the electric field, and $ r $ is the distance between them."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "By using this equation, we can derive another equation for electric potential:"
+  },
+  {
+    "type": "latex",
+    "content": "$ V = \\frac { E_p } { q } = k \\frac { q_1 q_2 } { r } \\frac {1} {q_2} = k \\frac { q_1 } { r } $"
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "Three charges and a point are placed in the form of a square with side length $ 1.00m $ as shown below. The charges of the particles are as follows: $ q_1 = 2.00 \\mu C $, $ q_2 = 4.00 \\mu C $, $ q_3 = -2.00 \\mu C $. Calculate the electric potential at point P."
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/electric-fields-3.png"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "To find the potential at point $ P $, we can calculate the individual potentials that occur due to each charge individually, then add them up:"
+  },
+  {
+    "type": "p",
+    "content": "$ V_{ \\text {total} } = V_1 + V_2 + V_3 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ V_1 = k \\frac {q_1} {r} = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { (2.00 \\times 10^{-6} C) } { (1.00m) } = 1.80 \\times 10^4 $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ V_2 = k \\frac {q_2} {r} = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { (4.00 \\times 10^{-6} C) } { (1.00m) } $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ V_2 = k \\frac {q_2} {r} = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { (-2.00 \\times 10^{-6} C) } { (1.00m) } $"
   }
 ]

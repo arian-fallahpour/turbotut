@@ -127,7 +127,7 @@ section.SolutionSection {
     display: flex;
     flex-direction: column;
     gap: var(--gap-lg);
-    align-content: start;
+    align-content: flex-start;
   }
 
   &List {

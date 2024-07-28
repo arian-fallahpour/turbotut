@@ -1,5 +1,6 @@
 import Subscription from "@/models/subscriptionModel";
-import { connectDB, signupUpdateUser } from "@/utils/database";
+import User from "@/models/userModel";
+import { connectDB } from "@/utils/database";
 import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -18,7 +19,7 @@ export const options = {
         const name = profile.name.split(" ");
 
         // Signup/update user
-        const user = await signupUpdateUser({
+        const user = await User.signupUpdateUser({
           firstName: name[0],
           lastName: name[1],
           email: profile.email,
@@ -27,7 +28,9 @@ export const options = {
 
         // Check if user has premium
         const subscription = await Subscription.findActive(user._id);
-        if (subscription) user.subscription = "premium";
+        if (subscription) {
+          user.subscription = "premium";
+        }
 
         return user;
       },
@@ -41,7 +44,7 @@ export const options = {
         const name = profile.name.split(" ");
 
         // Signup/update user
-        const user = await signupUpdateUser({
+        const user = await User.signupUpdateUser({
           firstName: name[0],
           lastName: name[1],
           email: profile.email,
@@ -50,7 +53,9 @@ export const options = {
 
         // Check if user has premium
         const subscription = await Subscription.findActive(user._id);
-        if (subscription) user.subscription = "premium";
+        if (subscription) {
+          user.subscription = "premium";
+        }
 
         return user;
       },
@@ -58,14 +63,18 @@ export const options = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-
   callbacks: {
+    async signIn({ user }) {
+      if (user.isBanned) return "/";
+
+      return true;
+    },
     async jwt({ token, user }) {
       if (user) {
         token._id = user._id;
         token.firstName = user.firstName;
         token.lastName = user.lastName;
-        token.image = user.picture;
+        token.picture = user.picture;
         token.role = user.role;
         token.subscription = user.subscription;
       }
@@ -78,8 +87,11 @@ export const options = {
         session.user.firstName = token.firstName;
         session.user.lastName = token.lastName;
         session.user.role = token.role;
-        session.user.image = token.image;
+        session.user.picture = token.picture;
         session.user.subscription = token.subscription;
+
+        session.tokenIssuedAt = token.iat * 1000;
+        session.tokenExpiresAt = token.exp * 1000;
       }
 
       if (session) {
@@ -88,3 +100,5 @@ export const options = {
     },
   },
 };
+
+// TODO: Check if token matches in database

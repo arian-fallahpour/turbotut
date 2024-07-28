@@ -6,6 +6,13 @@ import { NextResponse } from "next/server";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
+/**
+ *
+ * FIX:
+ * currently, subscriptions are seen as active if endsAt is greater than Date.now()
+ * we need to make it so that it is active based on its status
+ */
+
 export const POST = async function (req, {}) {
   await connectDB();
 
@@ -16,28 +23,29 @@ export const POST = async function (req, {}) {
   // Retrieve webhook event
   let event;
   try {
-    event = stripe.webhooks.constructEvent(
-      payload,
-      sig,
-      process.env.STRIPE_WEBHOOK_SECRET
-    );
+    event = stripe.webhooks.constructEvent(payload, sig, process.env.STRIPE_WEBHOOK_SECRET);
   } catch (err) {
     return NextResponse.json(`Webhook Error: ${err.message}`, { status: 400 });
   }
 
-  // Check if subscription invoice has been paid
+  // If subscription invoice has been paid, create a new order and subscription
   if (event.type === "invoice.paid") {
     const invoice = event.data.object;
 
     // Retrieve subscription object
-    const subscription = await stripe.subscriptions.retrieve(
-      invoice.subscription
-    );
+    const subscription = await stripe.subscriptions.retrieve(invoice.subscription);
 
     const { userId } = subscription.metadata;
 
-    //  Create order
-    const order = await Order.create({ user: userId });
+    // Set the status of the previously active subscription to passed if it exists
+    const passedSubscription = await Subscription.findOne({ user: userId, status: "active" });
+    if (passedSubscription) {
+      passedSubscription.status = "passed"; // NOTE: this webhook does not occur when the subscription is cancelled at period end on stripe
+      await passedSubscription.save();
+    }
+
+    //  Create an order
+    const order = await Order.create({ user: userId }); // Orders can be used universally if course purchases are a thing
 
     // Grant user access to premium for the billing cycle
     const invoiceDelaySeconds = 60 * 60 * 24 * 2; // Leeway for in between billing cycles
@@ -45,9 +53,7 @@ export const POST = async function (req, {}) {
       user: userId,
       order: order._id,
       startsAt: new Date(subscription.current_period_start * 1000),
-      endsAt: new Date(
-        (subscription.current_period_end + invoiceDelaySeconds) * 1000
-      ),
+      endsAt: new Date((subscription.current_period_end + invoiceDelaySeconds) * 1000),
       stripeSubscriptionId: subscription.id,
     });
   }
@@ -75,9 +81,7 @@ export const POST = async function (req, {}) {
 
     if (!customer.invoice_settings.default_payment_method) {
       // Find all customer's payment methods
-      const paymentMethods = await stripe.customers.listPaymentMethods(
-        customer.id
-      );
+      const paymentMethods = await stripe.customers.listPaymentMethods(customer.id);
       const firstPaymentMethod = paymentMethods.data[0];
 
       // Set customer's default payment method
@@ -89,16 +93,13 @@ export const POST = async function (req, {}) {
     }
   }
 
-  // Set subscription's endsAt to today when stripe subscription is cancelled
+  // Set subscription's status to cancelled when stripe subscription is cancelled
   if (event.type === "customer.subscription.deleted") {
-    const subscription = await Subscription.findOne({
-      stripeSubscriptionId: event.data.object.id,
-    });
-
-    // TODO: Set subscription status to cancelled
+    console.log(event.data.object);
+    const subscription = await Subscription.findOne({ status: "active", stripeSubscriptionId: event.data.object.id });
 
     if (subscription) {
-      subscription.endsAt = new Date(Date.now());
+      subscription.status = "cancelled";
       await subscription.save();
     }
   }

@@ -4,9 +4,6 @@ import SchoolIcon from "@/components/Elements/Icons/SchoolIcon";
 import LibraryIcon from "@/components/Elements/Icons/LibraryIcon";
 import BookIcon from "@/components/Elements/Icons/BookIcon";
 import ArticleIcon from "@/components/Elements/Icons/ArticleIcon";
-import EditIcon from "@/components/Elements/Icons/EditIcon";
-import DeleteIcon from "@/components/Elements/Icons/DeleteIcon";
-import AddChildIcon from "@/components/Elements/Icons/AddChildIcon";
 import UserIcon from "@/components/Elements/Icons/UserIcon";
 import CartIcon from "@/components/Elements/Icons/CartIcon";
 
@@ -20,9 +17,6 @@ const data = [
     name: "courses",
     icon: <SchoolIcon />,
     isSwappable: false,
-    isEditable: true,
-    isCreatable: true,
-    isDeletable: true,
     titleField: "name",
     tableFields: [
       { type: "string", label: "name", name: "name", spacing: "25rem" },
@@ -56,18 +50,16 @@ const data = [
     collectionSections: [],
     documentSections: [{ type: "collection", collection: "chapters" }],
     actions: [
-      { type: "delete", label: <DeleteIcon /> },
-      { type: "edit", label: <EditIcon /> },
-      { type: "insert", label: <AddChildIcon />, collection: "chapters" },
+      { type: "create" },
+      { type: "delete" },
+      { type: "edit" },
+      { type: "createChild", collection: "chapters" },
     ],
   },
   {
     name: "chapters",
     icon: <LibraryIcon />,
     isSwappable: true,
-    isEditable: true,
-    isCreatable: true,
-    isDeletable: true,
     parentCollection: "courses",
     titleField: "name",
     tableFields: [
@@ -103,18 +95,17 @@ const data = [
     collectionSections: [],
     documentSections: [{ type: "collection", collection: "lectures" }],
     actions: [
-      { type: "delete", label: <DeleteIcon /> },
-      { type: "edit", label: <EditIcon /> },
-      { type: "insert", label: <AddChildIcon />, collection: "lectures" },
+      { type: "create" },
+      { type: "delete" },
+      { type: "edit" },
+      { type: "createChild", collection: "lectures" },
+      { type: "swap" },
     ],
   },
   {
     name: "lectures",
     icon: <BookIcon />,
     isSwappable: true,
-    isEditable: true,
-    isCreatable: true,
-    isDeletable: true,
     parentCollection: "chapters",
     titleField: "name",
     tableFields: [
@@ -156,18 +147,17 @@ const data = [
       { type: "content", name: "_id" },
     ],
     actions: [
-      { type: "delete", label: <DeleteIcon /> },
-      { type: "edit", label: <EditIcon /> },
-      { type: "insert", label: <AddChildIcon />, collection: "contents" },
+      { type: "create" },
+      { type: "delete" },
+      { type: "edit" },
+      { type: "createChild", collection: "contents" },
+      { type: "swap" },
     ],
   },
   {
     name: "contents",
     icon: <ArticleIcon fontSize="inherit" />,
     isSwappable: false,
-    isEditable: true,
-    isCreatable: true,
-    isDeletable: true,
     parentCollection: "lectures",
     tableFields: [
       {
@@ -203,18 +193,12 @@ const data = [
     ],
     collectionSections: [],
     documentSections: [{ type: "content", name: "lecture", path: "_id" }],
-    actions: [
-      { type: "delete", label: <DeleteIcon /> },
-      { type: "edit", label: <EditIcon /> },
-    ],
+    actions: [{ type: "delete" }, { type: "edit" }],
   },
   {
     name: "users",
     icon: <UserIcon fontSize="inherit" />,
     isSwappable: false,
-    isEditable: true,
-    isCreatable: false,
-    isDeletable: false,
     titleField: "fullName",
     tableFields: [
       { type: "string", label: "first name", name: "firstName", spacing: "20rem" },
@@ -232,15 +216,12 @@ const data = [
     editableFields: [{ type: "string", name: "stripeCustomerId" }],
     collectionSections: [],
     documentSections: [{ type: "collection", collection: "orders", sort: "-createdAt" }],
-    actions: [{ type: "edit", label: <EditIcon /> }],
+    actions: [{ type: "create" }, { type: "edit" }],
   },
   {
     name: "orders",
     icon: <CartIcon fontSize="inherit" />,
     isSwappable: false,
-    isEditable: false,
-    isCreatable: false,
-    isDeletable: false,
     parentCollection: "users",
     tableFields: [
       {
@@ -283,3 +264,11 @@ export function getPopulates(fields) {
 export function getNestedPath(document, name, path) {
   return document[name] && typeof document[name] === "object" ? document[name][path] : document[name];
 }
+
+export function getActionsMap(actions) {
+  const map = {};
+  actions.forEach((action) => (map[action.type] = action));
+  return map;
+}
+
+// TODO: Replace "isEditable" with actions, and make that appear in the UI automatically
