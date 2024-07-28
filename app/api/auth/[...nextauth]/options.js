@@ -77,6 +77,7 @@ export const options = {
         token.picture = user.picture;
         token.role = user.role;
         token.subscription = user.subscription;
+        token.lastLoggedIn = user.lastLoggedIn;
       }
 
       return token;
@@ -90,8 +91,7 @@ export const options = {
         session.user.picture = token.picture;
         session.user.subscription = token.subscription;
 
-        session.tokenIssuedAt = token.iat * 1000;
-        session.tokenExpiresAt = token.exp * 1000;
+        session.tokenIssuedAt = token.lastLoggedIn;
       }
 
       if (session) {
@@ -100,5 +100,3 @@ export const options = {
     },
   },
 };
-
-// TODO: Check if token matches in database

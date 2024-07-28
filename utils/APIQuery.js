@@ -65,7 +65,13 @@ class APIQuery {
   }
 
   populate() {
-    const populates = JSON.parse(this.queryObject.populate || "[]");
+    let populates = [];
+
+    if (this.queryObject.populate && Array.isArray(this.queryObject.populate)) {
+      populates = JSON.parse(this.queryObject.populate);
+    } else if (this.queryObject.populate) {
+      populates = JSON.parse([this.queryObject.populate]);
+    }
 
     if (populates.length) {
       populates.forEach((populate) => {

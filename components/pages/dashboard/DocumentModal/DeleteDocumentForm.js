@@ -28,31 +28,27 @@ const DeleteDocumentForm = ({
     }
   };
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
 
-    const fetchDeleteRequest = async () => {
-      startProgress();
-      setIsDisabled(true);
+    startProgress();
+    setIsDisabled(true);
 
-      const res = await fetch(`/api/${collectionData.name}/${document._id}/hard`, { method: "DELETE" });
+    const res = await fetch(`/api/${collectionData.name}/${document._id}/hard`, { method: "DELETE" });
 
-      stopProgress();
+    stopProgress();
 
-      // Handle errors
-      if (!res.ok) {
-        setIsDisabled(false);
-        const resData = await res.json();
-        return setGlobalError(resData.message);
-      }
+    // Handle errors
+    if (!res.ok) {
+      setIsDisabled(false);
+      const resData = await res.json();
+      return setGlobalError(resData.message);
+    }
 
-      // Handle success
-      if (shouldLeavePage) router.back();
-      fetchCollection();
-      hideModal();
-    };
-
-    fetchDeleteRequest();
+    // Handle success
+    if (shouldLeavePage) router.back();
+    fetchCollection();
+    hideModal();
   };
 
   return (

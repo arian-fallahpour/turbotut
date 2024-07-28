@@ -95,7 +95,6 @@ export const POST = async function (req, {}) {
 
   // Set subscription's status to cancelled when stripe subscription is cancelled
   if (event.type === "customer.subscription.deleted") {
-    console.log(event.data.object);
     const subscription = await Subscription.findOne({ status: "active", stripeSubscriptionId: event.data.object.id });
 
     if (subscription) {

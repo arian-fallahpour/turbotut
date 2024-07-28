@@ -203,7 +203,8 @@ const data = [
     tableFields: [
       { type: "string", label: "first name", name: "firstName", spacing: "20rem" },
       { type: "string", label: "last name", name: "lastName", spacing: "20rem" },
-      { type: "string", label: "email", name: "email", spacing: "minmax(15rem, 1fr)" },
+      { type: "string", label: "email", name: "email", spacing: "25rem" },
+      { type: "boolean", label: "banned", name: "isBanned", spacing: "minmax(15rem, 1fr)" },
     ],
     viewableFields: [
       { type: "string", label: "first name", name: "firstName" },
@@ -212,11 +213,17 @@ const data = [
       { type: "string", label: "stripe customer id", name: "stripeCustomerId" },
       { type: "string", label: "role", name: "role" },
       { type: "image", label: "picture", name: "picture" },
+      { type: "boolean", label: "is banned", name: "isBanned" },
+      { type: "date", label: "last logged in", name: "lastLoggedIn" },
+      { type: "date", label: "kicked off at", name: "kickedOffAt" },
     ],
-    editableFields: [{ type: "string", name: "stripeCustomerId" }],
+    editableFields: [
+      { type: "boolean", name: "isBanned" },
+      { type: "string", name: "stripeCustomerId" },
+    ],
     collectionSections: [],
     documentSections: [{ type: "collection", collection: "orders", sort: "-createdAt" }],
-    actions: [{ type: "create" }, { type: "edit" }],
+    actions: [{ type: "create" }, { type: "edit" }, { type: "kick" }, { type: "ban" }],
   },
   {
     name: "orders",
@@ -270,5 +277,3 @@ export function getActionsMap(actions) {
   actions.forEach((action) => (map[action.type] = action));
   return map;
 }
-
-// TODO: Replace "isEditable" with actions, and make that appear in the UI automatically

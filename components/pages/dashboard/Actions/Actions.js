@@ -19,6 +19,10 @@ import queryString from "query-string";
 import EditIcon from "@/components/Elements/Icons/EditIcon";
 import DeleteIcon from "@/components/Elements/Icons/DeleteIcon";
 import AddChildIcon from "@/components/Elements/Icons/AddChildIcon";
+import KickUserForm from "../DocumentModal/KickUserForm";
+import KickIcon from "@/components/Elements/Icons/KickIcon";
+import BanIcon from "@/components/Elements/Icons/BanIcon";
+import BanUserForm from "../DocumentModal/BanUserForm";
 
 const Actions = ({ document, collectionData, fetchCollection }) => {
   const { showModal } = useContext(ModalContext);
@@ -96,6 +100,56 @@ const Actions = ({ document, collectionData, fetchCollection }) => {
     );
   };
 
+  const kickUserHandler = () => {
+    showModal(
+      <DocumentModal
+        title={`Kick user?`}
+        FormElement={KickUserForm}
+        formProps={{
+          user: document,
+        }}
+      />
+    );
+  };
+
+  const banUserHandler = async () => {
+    startProgress();
+
+    const url = queryString.stringifyUrl({
+      url: `/api/users/${document._id}`,
+      query: {
+        select: "isBanned",
+      },
+    });
+
+    const res = await fetch(url, {
+      method: "GET",
+      cache: "no-store",
+    });
+    const resData = await res.json();
+
+    stopProgress();
+
+    // Handle error
+    if (!res.ok) {
+      return setGlobalError(resData.message);
+    }
+
+    const { isBanned } = resData.data.user;
+
+    const user = { ...document, isBanned };
+
+    showModal(
+      <DocumentModal
+        title={`${user.isBanned ? "unban" : "ban"} user?`}
+        FormElement={BanUserForm}
+        formProps={{
+          user,
+        }}
+      />
+    );
+  };
+
   const onClickHandler = (action) => {
     if (action.type === "edit") {
       editDocumentHandler();
@@ -103,14 +157,20 @@ const Actions = ({ document, collectionData, fetchCollection }) => {
       deleteDocumentHandler();
     } else if (action.type === "createChild") {
       createChildDocumentHandler(action.collection);
+    } else if (action.type === "kick") {
+      kickUserHandler();
+    } else if (action.type === "ban") {
+      banUserHandler();
     }
   };
 
-  const filteredActions = ["delete", "edit", "createChild"];
+  const filteredActions = ["delete", "edit", "createChild", "kick", "ban"];
   const icons = {
     delete: <DeleteIcon />,
     edit: <EditIcon />,
     createChild: <AddChildIcon />,
+    kick: <KickIcon />,
+    ban: <BanIcon />,
   };
 
   return (

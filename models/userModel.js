@@ -51,7 +51,7 @@ const userSchema = new mongoose.Schema(
       select: false,
     },
     lastLoggedIn: Date,
-    // kickedOffAt: Date, //TODO: use this instead of lastLoggedIn to avoid confusion?
+    kickedOffAt: Date,
   },
   {
     toJSON: { virtuals: true },
@@ -95,15 +95,28 @@ userSchema.statics.signupUpdateUser = async ({ firstName, lastName, email, pictu
 
 userSchema.methods.hasLoggedInAfterTokenIssued = function (tokenIssuedAt) {
   if (this.lastLoggedIn) {
-    return this.lastLoggedIn.getTime() > tokenIssuedAt;
+    return this.lastLoggedIn.getTime() > new Date(tokenIssuedAt).getTime();
   }
 
   return false;
 };
 
+userSchema.methods.hasBeenKickedAfterTokenIssued = function (tokenIssuedAt) {
+  if (this.kickedOffAt) {
+    return this.kickedOffAt.getTime() > new Date(tokenIssuedAt).getTime();
+  }
+
+  return false;
+};
+
+userSchema.methods.kickOff = async function () {
+  this.kickedOffAt = Date.now();
+  await this.save();
+};
+
 // Create stripe customer
 userSchema.pre("save", async function (next) {
-  if (this.isNew || !this.stripeCustomerId) {
+  if (this.isNew || (this.isSelected("stripeCustomerId") && !this.stripeCustomerId)) {
     const customer = await stripe.customers.create({
       email: this.email,
       name: `${toCap(this.firstName)} ${toCap(this.lastName)}`,

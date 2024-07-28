@@ -30,7 +30,6 @@ const CollectionHeader = ({
   const { document, setDocument } = useContext(DocumentPageContext);
 
   const actionsMap = useMemo(() => getActionsMap(collectionData.actions), [collectionData.actions]);
-  console.log(collectionData);
 
   const createDocumentHandler = () => {
     // Only works with one parent field

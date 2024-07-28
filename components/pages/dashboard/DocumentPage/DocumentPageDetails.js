@@ -24,8 +24,12 @@ const DocumentPageDetails = ({ collectionData }) => {
 
             // DATE
             else if (field.type === "date") {
-              const date = new Date(document[field.name]);
-              content = <p className="paragraph">{date.toUTCString()}</p>;
+              if (!document[field.name]) {
+                content = <p className="paragraph">none</p>;
+              } else {
+                const date = new Date(document[field.name]);
+                content = <p className="paragraph">{date.toUTCString()}</p>;
+              }
             }
 
             // IMAGE

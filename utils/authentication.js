@@ -26,8 +26,8 @@ export const routeHandler = (fn, options = {}) =>
     const [req, { params }] = args;
     args[0].data = {};
 
-    // TODO: PARAMETER POLLUTION PROTECTION
-    args[0].data.query = queryString.parse(req.url.split("?")[1]);
+    // PARAMETER POLLUTION PROTECTION
+    args[0].data.query = sanitizeParameters(queryString.parse(req.url.split("?")[1]));
 
     // DATA SANITATION: NoSQL query injection for body
     if (options.parseBody) {
@@ -71,7 +71,11 @@ export const routeHandler = (fn, options = {}) =>
     // Check if user is banned
     if (user.isBanned) return new AppError("You have been banned", 401);
 
-    // Check if user was kicked off session or not logged in
+    // Check if user has been kicked off
+    const hasBeenKickedOff = user.hasBeenKickedAfterTokenIssued(session.tokenIssuedAt);
+    if (hasBeenKickedOff) return new AppError("You have been kicked off your account, please login again", 401);
+
+    // Check if user is logged in
     if (!user.lastLoggedIn) return new AppError("Please login again", 401);
 
     // Check if user logged in after current token was issued
@@ -93,14 +97,15 @@ export const requiresSession = async (session) => {
   }
 
   await connectDB();
-  const user = await User.findById(session.user._id).select("role isBanned lastLoggedIn");
+  const user = await User.findById(session.user._id).select("role isBanned lastLoggedIn kickedOffAt");
 
   if (
     user.isBanned || // Check if user is banned
+    user.hasBeenKickedAfterTokenIssued(session.tokenIssuedAt) || // Check if user has been kicked off
     !user.lastLoggedIn || // Check if user was kicked off session or not logged in
     user.hasLoggedInAfterTokenIssued(session.tokenIssuedAt) // Check if user logged in after current token was issued
   ) {
-    redirect("/");
+    redirect("/force-logout");
   }
 
   return user;
@@ -111,3 +116,18 @@ export const restrictTo = (user, roles) => {
     redirect("/");
   }
 };
+
+function sanitizeParameters(query) {
+  const sanitized = {};
+  const whitelist = ["populate"];
+
+  Object.keys(query).forEach((key) => {
+    if (Array.isArray(query[key]) && !whitelist.includes(key)) {
+      sanitized[key] = query[key][0];
+    } else {
+      sanitized[key] = query[key];
+    }
+  });
+
+  return sanitizeFilter(sanitized);
+}

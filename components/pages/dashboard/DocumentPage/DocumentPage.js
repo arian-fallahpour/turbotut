@@ -13,10 +13,13 @@ import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import queryString from "query-string";
 
 const getData = async function (collectionData, id) {
+  const select = collectionData.viewableFields.map((field) => field.name).join(" ");
+
   const url = queryString.stringifyUrl({
     url: `${getDomain()}/api/${collectionData.name}/${id}`,
     query: {
       populate: getPopulates(collectionData.viewableFields),
+      select,
     },
   });
 
