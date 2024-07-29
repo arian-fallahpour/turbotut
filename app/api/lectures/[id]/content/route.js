@@ -51,7 +51,7 @@ export const GET = routeHandler(
       contents = JSON.parse(contents);
     } catch (err) {
       console.error("CONTENT READFILE ERROR: ", err);
-      return new AppError("Something went wrong when reading lecture's contents", 400);
+      return new AppError("This lecture currently does not have any content", 400);
     }
 
     // Send response
