@@ -1,5 +1,7 @@
 const excludedFields = ["page", "sort", "limit", "select", "search", "populate"];
 
+// NOTE: Parameter pollution protection may cause weird bugs when using arrays in query
+
 class APIQuery {
   queryClone;
 
@@ -67,10 +69,11 @@ class APIQuery {
   populate() {
     let populates = [];
 
-    if (this.queryObject.populate && Array.isArray(this.queryObject.populate)) {
-      populates = JSON.parse(this.queryObject.populate);
-    } else if (this.queryObject.populate) {
-      populates = JSON.parse([this.queryObject.populate]);
+    const populatesQuery = JSON.parse(this.queryObject.populate || "[]");
+    if (populatesQuery && Array.isArray(populatesQuery)) {
+      populates = populatesQuery;
+    } else if (populatesQuery) {
+      populates = [populatesQuery];
     }
 
     if (populates.length) {

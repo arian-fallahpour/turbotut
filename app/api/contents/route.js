@@ -5,6 +5,7 @@ import { createOne, getAll } from "@/utils/factoryHandler";
 export const GET = routeHandler(getAll(Content), {
   requiresSession: true,
   restrictTo: ["admin"],
+  parameterPollutionWhitelist: ["_id"],
 });
 export const POST = routeHandler(createOne(Content), {
   parseBody: true,

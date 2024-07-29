@@ -13,8 +13,6 @@ import { rateLimit } from "./security";
 import { setDefault } from "./helper";
 import queryString from "query-string";
 
-const whitelistedQueryFields = ["populate"];
-
 export const routeHandler = (fn, options = {}) =>
   catchAsync(async (...args) => {
     options = {
@@ -23,13 +21,15 @@ export const routeHandler = (fn, options = {}) =>
       restrictTo: setDefault(options.restrictTo, null),
       parseBody: setDefault(options.parseBody, false),
       parseForm: setDefault(options.parseForm, false),
+      parameterPollutionWhitelist: setDefault(options.parameterPollutionWhitelist, []),
     };
 
     const [req, { params }] = args;
     args[0].data = {};
 
     // PARAMETER POLLUTION PROTECTION
-    args[0].data.query = sanitizeParameters(queryString.parse(req.url.split("?")[1]));
+    const parameterPollutionWhitelist = [...options.parameterPollutionWhitelist, "populate"];
+    args[0].data.query = sanitizeParameters(queryString.parse(req.url.split("?")[1]), parameterPollutionWhitelist);
 
     // DATA SANITATION: NoSQL query injection for body
     if (options.parseBody) {
@@ -119,13 +119,12 @@ export const restrictTo = (user, roles) => {
   }
 };
 
-function sanitizeParameters(query) {
+function sanitizeParameters(query, whitelist) {
   const sanitized = {};
 
   Object.keys(query).forEach((key) => {
-    if (Array.isArray(query[key]) && !whitelistedQueryFields.includes(key)) {
+    if (Array.isArray(query[key]) && !whitelist.includes(key)) {
       sanitized[key] = query[key][0];
-      ListedRateLimitPaths = ["/dashboard"];
     } else {
       sanitized[key] = query[key];
     }

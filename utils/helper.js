@@ -16,7 +16,7 @@ export const toSingular = (string) => {
 };
 
 export const setDefault = (value, defaultValue) => {
-  return value === undefined ? defaultValue : value;
+  return typeof value === "undefined" ? defaultValue : value;
 };
 
 export const debounce = (callback, delay) => {

@@ -48,6 +48,7 @@ const data = [
       { type: "string", name: "summary" },
       { type: "string", name: "description" },
     ],
+    selectAdditional: ["chapters"],
     collectionSections: [],
     documentSections: [{ type: "collection", collection: "chapters" }],
     actions: [
@@ -93,6 +94,7 @@ const data = [
       { type: "string", name: "name" },
       { type: "boolean", name: "isArchived" },
     ],
+    selectAdditional: ["lectures"],
     collectionSections: [],
     documentSections: [{ type: "collection", collection: "lectures" }],
     actions: [
@@ -142,6 +144,7 @@ const data = [
       { type: "boolean", name: "isArchived" },
       { type: "enum", name: "type", values: enumValues.lecture.type },
     ],
+    selectAdditional: [],
     collectionSections: [],
     documentSections: [
       { type: "collection", collection: "contents" },
@@ -192,6 +195,7 @@ const data = [
       },
       { type: "string", name: "url" },
     ],
+    selectAdditional: [],
     collectionSections: [],
     documentSections: [{ type: "content", name: "lecture", path: "_id" }],
     actions: [{ type: "delete" }, { type: "edit" }],
@@ -222,6 +226,7 @@ const data = [
       { type: "boolean", name: "isBanned" },
       { type: "string", name: "stripeCustomerId" },
     ],
+    selectAdditional: [],
     collectionSections: [],
     documentSections: [
       { type: "collection", collection: "orders", sort: "-createdAt" },
@@ -249,6 +254,7 @@ const data = [
       { type: "string", label: "user", name: "user" },
       { type: "date", label: "created at", name: "createdAt" },
     ],
+    selectAdditional: [],
     editableFields: [],
     collectionSections: [],
     documentSections: [],
@@ -293,6 +299,7 @@ const data = [
       { type: "boolean", label: "cancels at period end", name: "cancelsAtPeriodEnd" },
       { type: "string", label: "stripe subscription id", name: "stripeSubscriptionId" },
     ],
+    selectAdditional: [],
     collectionSections: [],
     documentSections: [],
     actions: [{ type: "edit" }],
@@ -301,7 +308,9 @@ const data = [
 
 export default data;
 
-export const getCollectionData = (collectionName) => data.find((i) => i.name === collectionName);
+const dataMap = {};
+data.forEach((d, i) => (dataMap[d.name] = i));
+export const getCollectionData = (collectionName) => data[dataMap[collectionName]];
 
 export const getGridColumns = (dataCollection) => {
   let gridTemplateColumns = dataCollection.tableFields.map((field) => field.spacing);
@@ -322,7 +331,16 @@ export function getPopulates(fields) {
         populates.push(field.populate);
       }
     });
-  return populates[0] && JSON.stringify(populates);
+
+  return JSON.stringify(populates);
+}
+
+export function getSelect(collectionData, fields) {
+  let select = fields.map((field) => field.name);
+  select.push(...collectionData.selectAdditional);
+  select = select.join(" ");
+
+  return select;
 }
 
 export function getNestedPath(document, name, path) {
