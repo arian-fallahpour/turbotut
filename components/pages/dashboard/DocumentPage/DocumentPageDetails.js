@@ -19,13 +19,21 @@ const DocumentPageDetails = ({ collectionData }) => {
 
             // BOOLEAN
             if (field.type === "boolean") {
-              content = <p className="paragraph">{JSON.stringify(document[field.name]) || "Not Specified"}</p>;
+              if (typeof document[field.name] === undefined) {
+                content = <p className="paragraph">Not Specified</p>;
+              } else {
+                content = <p className="paragraph">{JSON.stringify(document[field.name])}</p>;
+              }
             }
 
             // DATE
             else if (field.type === "date") {
-              const date = new Date(document[field.name]);
-              content = <p className="paragraph">{date.toUTCString() || "Not Specified"}</p>;
+              if (typeof document[field.name] === undefined) {
+                content = <p className="paragraph">Not Specified</p>;
+              } else {
+                const date = new Date(document[field.name]);
+                content = <p className="paragraph">{date.toUTCString()}</p>;
+              }
             }
 
             // IMAGE
@@ -45,16 +53,20 @@ const DocumentPageDetails = ({ collectionData }) => {
 
             // ID
             else if (field.type === "id") {
-              content = (
-                <Button
-                  className="paragraph"
-                  styleName="text"
-                  href={`/dashboard/${field.collection}/${getNestedPath(document, field.name, "_id")}`}
-                  isLink
-                >
-                  {getNestedPath(document, field.name, field.path) || "Not found"}
-                </Button>
-              );
+              if (typeof document[field.name] === undefined) {
+                content = <p className="paragraph">Not Found</p>;
+              } else {
+                content = (
+                  <Button
+                    className="paragraph"
+                    styleName="text"
+                    href={`/dashboard/${field.collection}/${getNestedPath(document, field.name, "_id")}`}
+                    isLink
+                  >
+                    {getNestedPath(document, field.name, field.path)}
+                  </Button>
+                );
+              }
             }
 
             // OTHER
