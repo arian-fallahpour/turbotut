@@ -22,12 +22,12 @@ const TableScroll = ({ children, innerProps = {}, ...otherProps }) => {
     const autoScroll = () => {
       if (widthDiff - scrollX > 0) {
         scrollX += increment;
-        innerRef.current.style.marginLeft = `-${scrollX}px`;
+        if (innerRef.current) innerRef.current.style.marginLeft = `-${scrollX}px`;
       } else {
         scrollX = 0;
         clearInterval(interval);
         timeout = setTimeout(() => {
-          innerRef.current.style.marginLeft = `0px`;
+          if (innerRef.current) innerRef.current.style.marginLeft = `0px`;
 
           clearTimeout(timeout);
           timeout = setTimeout(() => {
