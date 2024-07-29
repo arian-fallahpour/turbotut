@@ -11,7 +11,7 @@ const CollectionPage = ({ collectionName, searchParams }) => {
   return (
     <div className={classes.CollectionPage}>
       {/* Table */}
-      <CollectionSection collectionData={collectionData} searchParams={searchParams} />
+      <CollectionSection collectionData={collectionData} searchParams={searchParams} useParams />
 
       {/* Other sections */}
       {collectionData.collectionSections}

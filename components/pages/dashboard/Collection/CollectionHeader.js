@@ -20,11 +20,13 @@ const CollectionHeader = ({
   collectionData,
   collection,
   page,
+  setPage,
   limit,
   onNextPage,
   onPrevPage,
   fetchCollection,
   isSwappable,
+  useParams,
 }) => {
   const { showModal } = useContext(ModalContext);
   const { document, setDocument } = useContext(DocumentPageContext);
@@ -79,13 +81,14 @@ const CollectionHeader = ({
         {collection && collection.docs.length > 0 && (
           <TableControls
             page={page}
+            setPage={setPage}
             limit={limit}
             totalResults={collection.totalResults}
             isPrevDisabled={!notFirstPage}
             isNextDisabled={!notLastPage}
             onPrevPage={onPrevPage}
             onNextPage={onNextPage}
-            useParams
+            useParams={useParams}
           />
         )}
 

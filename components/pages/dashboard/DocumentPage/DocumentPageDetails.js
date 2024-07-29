@@ -19,17 +19,13 @@ const DocumentPageDetails = ({ collectionData }) => {
 
             // BOOLEAN
             if (field.type === "boolean") {
-              content = <p className="paragraph">{JSON.stringify(document[field.name])}</p>;
+              content = <p className="paragraph">{JSON.stringify(document[field.name]) || "Not Specified"}</p>;
             }
 
             // DATE
             else if (field.type === "date") {
-              if (!document[field.name]) {
-                content = <p className="paragraph">none</p>;
-              } else {
-                const date = new Date(document[field.name]);
-                content = <p className="paragraph">{date.toUTCString()}</p>;
-              }
+              const date = new Date(document[field.name]);
+              content = <p className="paragraph">{date.toUTCString() || "Not Specified"}</p>;
             }
 
             // IMAGE
@@ -49,25 +45,21 @@ const DocumentPageDetails = ({ collectionData }) => {
 
             // ID
             else if (field.type === "id") {
-              if (!document[field.name]) {
-                content = <p className="paragraph">not found</p>;
-              } else {
-                content = (
-                  <Button
-                    className="paragraph"
-                    styleName="text"
-                    href={`/dashboard/${field.collection}/${getNestedPath(document, field.name, "_id")}`}
-                    isLink
-                  >
-                    {getNestedPath(document, field.name, field.path)}
-                  </Button>
-                );
-              }
+              content = (
+                <Button
+                  className="paragraph"
+                  styleName="text"
+                  href={`/dashboard/${field.collection}/${getNestedPath(document, field.name, "_id")}`}
+                  isLink
+                >
+                  {getNestedPath(document, field.name, field.path) || "Not found"}
+                </Button>
+              );
             }
 
             // OTHER
             else {
-              content = <p className="paragraph">{document[field.name]}</p>;
+              content = <p className="paragraph">{document[field.name] || "Not Specified"}</p>;
             }
 
             return (

@@ -1,5 +1,0 @@
-create doc
-edit doc
-delete doc
-
-change collection order

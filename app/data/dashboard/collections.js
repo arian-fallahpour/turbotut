@@ -6,6 +6,7 @@ import BookIcon from "@/components/Elements/Icons/BookIcon";
 import ArticleIcon from "@/components/Elements/Icons/ArticleIcon";
 import UserIcon from "@/components/Elements/Icons/UserIcon";
 import CartIcon from "@/components/Elements/Icons/CartIcon";
+import StarIcon from "@/components/Elements/Icons/StarIcon";
 
 /**
  * NOTES
@@ -222,7 +223,10 @@ const data = [
       { type: "string", name: "stripeCustomerId" },
     ],
     collectionSections: [],
-    documentSections: [{ type: "collection", collection: "orders", sort: "-createdAt" }],
+    documentSections: [
+      { type: "collection", collection: "orders", sort: "-createdAt" },
+      { type: "collection", collection: "subscriptions", sort: "-createdAt" },
+    ],
     actions: [{ type: "create" }, { type: "edit" }, { type: "kick" }, { type: "ban" }],
   },
   {
@@ -250,6 +254,49 @@ const data = [
     documentSections: [],
     actions: [],
   },
+  {
+    name: "subscriptions",
+    icon: <StarIcon fontSize="inherit" />,
+    isSwappable: false,
+    tableFields: [
+      { type: "string", label: "status", name: "status", spacing: "12.5rem" },
+      {
+        type: "string",
+        label: "user",
+        name: "user",
+        path: "email",
+        populate: { path: "user", select: "email" },
+        spacing: "25rem",
+      },
+      { type: "date", label: "created at", name: "startsAt", spacing: "25rem" },
+      { type: "date", label: "ends at", name: "endsAt", spacing: "minmax(25rem, 1fr)" },
+    ],
+    viewableFields: [
+      { type: "string", label: "status", name: "status" },
+      {
+        type: "id",
+        label: "user",
+        name: "user",
+        path: "email",
+        populate: { path: "user", select: "email" },
+      },
+      { type: "id", label: "order", name: "order" },
+      { type: "date", label: "created at", name: "createdAt" },
+      { type: "date", label: "starts at", name: "startsAt" },
+      { type: "date", label: "ends at", name: "endsAt" },
+      { type: "boolean", label: "cancels at period end", name: "cancelsAtPeriodEnd" },
+      { type: "string", label: "stripe subscription id", name: "stripeSubscriptionId" },
+    ],
+    editableFields: [
+      { type: "date", label: "starts at", name: "startsAt" },
+      { type: "date", label: "ends at", name: "endsAt" },
+      { type: "boolean", label: "cancels at period end", name: "cancelsAtPeriodEnd" },
+      { type: "string", label: "stripe subscription id", name: "stripeSubscriptionId" },
+    ],
+    collectionSections: [],
+    documentSections: [],
+    actions: [{ type: "edit" }],
+  },
 ];
 
 export default data;
@@ -264,7 +311,17 @@ export const getGridColumns = (dataCollection) => {
 };
 
 export function getPopulates(fields) {
-  const populates = fields.filter((field) => !!field.populate).map((field) => field.populate);
+  let populates = [];
+
+  fields
+    .filter((field) => !!field.populate)
+    .forEach((field) => {
+      if (Array.isArray(field.populate)) {
+        populates.push(...field.populate);
+      } else {
+        populates.push(field.populate);
+      }
+    });
   return populates[0] && JSON.stringify(populates);
 }
 

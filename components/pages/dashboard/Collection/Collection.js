@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useMemo } from "react";
-import { useSearchParams } from "next/navigation";
+import React, { useState, useEffect, useCallback } from "react";
 import classes from "./Collection.module.scss";
 import queryString from "query-string";
-import { getActionsMap, getGridColumns, getPopulates } from "@/app/data/dashboard/collections";
+import { getGridColumns, getPopulates } from "@/app/data/dashboard/collections";
 
 import Table, { TableHeader, TableRow, TableCell } from "@/components/Elements/Table/Table";
 import TableScroll from "@/components/Elements/Table/TableScroll";
@@ -13,17 +12,15 @@ import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 import Section from "@/components/Elements/Section/Section";
 import CollectionHeader from "./CollectionHeader";
 import LoaderBlock from "@/components/Elements/Loader/LoaderBlock";
+import SolidTable from "@/components/Elements/Table/SolidTable";
 
-const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
+const Collection = ({ collectionData, queryObject = {}, isSwappable, useParams }) => {
   const gridTemplateColumns = getGridColumns(collectionData);
 
   const [collection, setCollection] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const searchParams = useSearchParams();
-  const page = searchParams.get("page") || 1;
-
-  const actionsMap = useMemo(() => getActionsMap(collectionData.actions), [collectionData.actions]);
+  const [page, setPage] = useState(1);
 
   const fetchCollectionHandler = useCallback(async () => {
     setLoading(true);
@@ -71,41 +68,48 @@ const Collection = ({ collectionData, queryObject = {}, isSwappable }) => {
         collection={collection}
         limit={queryObject.limit}
         page={page}
+        setPage={setPage}
         fetchCollection={fetchCollectionHandler}
         isSwappable={isSwappable}
+        useParams={useParams}
       />
-
       <div className={classes.CollectionContent}>
-        {!loading && collection?.docs?.length > 0 && (
-          <Table className={classes.CollectionTable}>
-            <TableHeader style={{ gridTemplateColumns }}>
-              {collectionData.tableFields.map((field) => (
-                <TableCell key={field.label}>{field.label}</TableCell>
-              ))}
-              <TableCell></TableCell>
-            </TableHeader>
-            {collection.docs.map((doc) => (
-              <TableRow key={doc._id} style={{ gridTemplateColumns }}>
+        <SolidTable rowsCount={queryObject.limit}>
+          {collection?.docs?.length > 0 && (
+            <Table>
+              <TableHeader style={{ gridTemplateColumns }}>
                 {collectionData.tableFields.map((field) => (
-                  <TableCell key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
-                    <TableScroll>{getCellValue(field, doc)}</TableScroll>
-                  </TableCell>
+                  <TableCell key={field.label}>{field.label}</TableCell>
                 ))}
-                <TableCell end>
-                  {collectionData.actions.length > 0 && (
-                    <Actions document={doc} collectionData={collectionData} fetchCollection={fetchCollectionHandler} />
-                  )}
-                </TableCell>
-              </TableRow>
-            ))}
-          </Table>
-        )}
+                <TableCell></TableCell>
+              </TableHeader>
+              {collection.docs.map((doc) => (
+                <TableRow key={doc._id} style={{ gridTemplateColumns }}>
+                  {collectionData.tableFields.map((field) => (
+                    <TableCell key={field.label} href={`/dashboard/${collectionData.name}/${doc._id}`}>
+                      <TableScroll>{getCellValue(field, doc)}</TableScroll>
+                    </TableCell>
+                  ))}
+                  <TableCell end>
+                    {collectionData.actions.length > 0 && (
+                      <Actions
+                        document={doc}
+                        collectionData={collectionData}
+                        fetchCollection={fetchCollectionHandler}
+                      />
+                    )}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </Table>
+          )}
 
-        {loading && <LoaderBlock />}
-        {!loading && error && <ErrorBlock message={error} />}
-        {!loading && !error && collection?.docs?.length === 0 && (
-          <ErrorBlock type="info" message={`No ${collectionData.name} found`} />
-        )}
+          {loading && !collection && <LoaderBlock />}
+          {!loading && error && !collection && <ErrorBlock message={error} />}
+          {!loading && !error && collection?.docs?.length === 0 && (
+            <ErrorBlock type="info" message={`No ${collectionData.name} found`} />
+          )}
+        </SolidTable>
       </div>
     </Section>
   );

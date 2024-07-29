@@ -12,6 +12,7 @@ import { TableButtonRounded } from "./Table";
 
 const TableControls = ({
   page,
+  setPage,
   limit,
   totalResults,
   isNextDisabled,
@@ -27,15 +28,23 @@ const TableControls = ({
 
   const onPrevPageHandler = () => {
     if (onPrevPage) onPrevPage();
-    if (useParams && page > 1) {
+    if (page <= 1) return;
+
+    if (useParams) {
       router.replace(`${pathname}?page=${JSON.parse(page) - 1}`);
+    } else {
+      setPage((p) => p - 1);
     }
   };
 
   const onNextPageHandler = () => {
     if (onNextPage) onNextPage();
-    if (useParams && page < totalResults) {
+    if (page >= totalResults) return;
+
+    if (useParams) {
       router.replace(`${pathname}?page=${JSON.parse(page) + 1}`);
+    } else {
+      setPage((p) => p + 1);
     }
   };
 
@@ -51,16 +60,8 @@ const TableControls = ({
       >
         <WestIcon />
       </Button>
-      <div className={classes.ControlsPage}>{`Page ${page}/${Math.max(
-        totalPages,
-        1
-      )}`}</div>
-      <TableButtonRounded
-        styleName="glass"
-        variantName="white"
-        isDisabled={isNextDisabled}
-        onClick={onNextPageHandler}
-      >
+      <div className={classes.ControlsPage}>{`Page ${page}/${Math.max(totalPages, 1)}`}</div>
+      <TableButtonRounded styleName="glass" variantName="white" isDisabled={isNextDisabled} onClick={onNextPageHandler}>
         <EastIcon />
       </TableButtonRounded>
     </div>

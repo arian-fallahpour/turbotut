@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import classes from "./Table.module.scss";
 
 import { join } from "@/utils/helper";
@@ -52,6 +52,7 @@ export const TableButtonRounded = ({ children, ...otherProps }) => {
     </Button>
   );
 };
+
 export const TableButton = ({ children, ...otherProps }) => {
   return (
     <Button className={classes.Button} size="small" {...otherProps}>

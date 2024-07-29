@@ -13,6 +13,8 @@ import { rateLimit } from "./security";
 import { setDefault } from "./helper";
 import queryString from "query-string";
 
+const whitelistedQueryFields = ["populate"];
+
 export const routeHandler = (fn, options = {}) =>
   catchAsync(async (...args) => {
     options = {
@@ -119,11 +121,11 @@ export const restrictTo = (user, roles) => {
 
 function sanitizeParameters(query) {
   const sanitized = {};
-  const whitelist = ["populate"];
 
   Object.keys(query).forEach((key) => {
-    if (Array.isArray(query[key]) && !whitelist.includes(key)) {
+    if (Array.isArray(query[key]) && !whitelistedQueryFields.includes(key)) {
       sanitized[key] = query[key][0];
+      ListedRateLimitPaths = ["/dashboard"];
     } else {
       sanitized[key] = query[key];
     }

@@ -6,6 +6,7 @@ export function rateLimit(req) {
   const ip = req.headers.get("x-forwarded-for") || req.connection.remoteAddress;
   const limit = 10; // Limiting requests per time frame
   const windowMs = 6 * 1000; // Time frame in ms
+  const pathname = req.url;
 
   if (!rateLimitMap.has(ip)) {
     rateLimitMap.set(ip, {

@@ -25,6 +25,7 @@ const ContentSection = ({ className, document, sectionData }) => {
       const resData = await res.json();
 
       setLoading(false);
+
       if (!res.ok) {
         setError(resData.message);
       } else {
@@ -36,11 +37,6 @@ const ContentSection = ({ className, document, sectionData }) => {
       fetchData();
     }
   }, [document, sectionData]);
-
-  // If no
-  if (!data) {
-    return null;
-  }
 
   return (
     <Section className={join(className, classes.ContentSection)}>
