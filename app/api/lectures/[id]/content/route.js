@@ -31,7 +31,6 @@ export const GET = routeHandler(
     // If lecture is paid and user is not admin, user must have a subscription to access it
     if (lecture.type === "paid" && user.role !== "admin") {
       const subscription = await Subscription.findActive(user._id, { select: { id: 1 } });
-
       if (!subscription) return new AppError("Buy premium to gain access to this lecture", 401);
     }
 
@@ -50,7 +49,6 @@ export const GET = routeHandler(
       contents = await fs.readFile(directory, "utf8");
       contents = JSON.parse(contents);
     } catch (err) {
-      console.error("CONTENT READFILE ERROR: ", err);
       return new AppError("This lecture currently does not have any content", 400);
     }
 

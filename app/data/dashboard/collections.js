@@ -198,7 +198,7 @@ const data = [
     selectAdditional: [],
     collectionSections: [],
     documentSections: [{ type: "content", name: "lecture", path: "_id" }],
-    actions: [{ type: "delete" }, { type: "edit" }],
+    actions: [{ type: "delete" }, { type: "edit" }, { type: "create" }],
   },
   {
     name: "users",
