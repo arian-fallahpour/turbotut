@@ -31,7 +31,7 @@ const Nav = ({ user, isAbsolute }) => {
       <div className={classes.NavHeader}>
         <div className={classes.NavLogo}>
           <div className={classes.NavLogoImage}>
-            <Image src="/logo.png" alt={`${business.name} logo`} fill />
+            <Image src="/logo.svg" alt={`${business.name} logo`} fill />
           </div>
         </div>
         <div className={classes.NavTitle}>{business.name}</div>

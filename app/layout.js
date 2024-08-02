@@ -18,8 +18,8 @@ export const metadata = {
   description: business.description,
   metadataBase: new URL("https://turbotut.com"),
   icons: {
-    icon: "/logo.ico",
-    apple: "/logo-apple.png",
+    icon: "/logo.svg",
+    apple: "/logo.svg",
   },
   twitter: {
     title: `${business.name} learning`,

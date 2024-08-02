@@ -1,0 +1,267 @@
+[
+  {
+    "type": "h1",
+    "content": "Gravitational Fields"
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "Planets $ A $ and $ B $ have the same mass, but the gravitational field strength of planet $ A $ is $ 1.50 $ times stronger than that of planet $ B $. How much bigger or smaller is the radius of planet $ B $ compared to planet $ A $?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Since we know the relative gravitational strengths, we should start there:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, \\vec {g}_A = 1.50 \\vec {g}_B $"
+  },
+  {
+    "type": "p",
+    "content": "$ G \\frac { m } { r_A^2 } = 1.50 G \\frac { m } { r_B^2 } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\cancel {G} \\frac { \\cancel {m} } { r_A^2 } = 1.50 \\cancel {G} \\frac { \\cancel {m} } { r_B^2 } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, \\, \\frac { 1 } { r_A^2 } = 1.50 \\frac { 1 } { r_B^2 } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, r_B^2 = 1.50 r_A^2 $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\ \\, r_B = 1.22 r_A $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, \\, r_A = 0.816 r_B $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ Planet $ A $'s radius is $ 0.816 $ times as big as planet $ B $'s radius."
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "A planet has a mass around $ 5.01 $ times greater than that of Earth with a radius that is also $ 2.86 $ times larger. What is the gravitational field strength on the surface of this planet?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "We need to determine the gravitational strength of the planet in terms of Earth's gravitational strength, then solve:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {g}_p = \\frac { G m_p } { r_p^2 } = \\frac { G (5.01 m_e) } { (2.86 r_e)^2 } = (\\frac { 5.01 } { 8.18 }) \\frac { G m_e } { r_e^2 } = 0.612 \\vec {g}_e = 0.612(9.81 \\frac {m} {s^2}) = 6.00 \\frac {m} {s} $"
+  },
+  {
+    "type": "h1",
+    "content": "Electric Fields"
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "One charge $ 5.67 \\times 10^{-6} C $ at point $ A $ is $ 50.0m $ to the left of a charge $ 3.46 \\times 10^{-6} C $ at point $ B $. What is the strength and direction of the electric field at the midway point of the charges?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "We can use the equation $ | \\vec {E} | = k \\frac { q } { r^2 } $ to determine the answer:"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For the charge on point $ A $:"
+  },
+  {
+    "type": "p",
+    "content": "$ | \\vec {E}_A | = k \\frac { q_A } { r } = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { 5.67 \\times 10^{-6} C } { (25.0m)^2 } = 81.6 \\frac {N} {C} $ [right]"
+  },
+  {
+    "type": "p",
+    "content": "This electric field points to the right because the charge is positive (comes out of the positive side)."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For the charge on point $ B $:"
+  },
+  {
+    "type": "p",
+    "content": "$ | \\vec {E}_B | = k \\frac { q_A } { r } = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { 3.46 \\times 10^{-6} C } { (25.0m)^2 } = 49.8 \\frac {N} {C} $ [left]"
+  },
+  {
+    "type": "p",
+    "content": "Electric field $ B $ points to the left because the charge is positive (comes out of the positive side)."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now all we need to do is add them up:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {E}_{ \\text {mid} } = \\vec {E}_A + \\vec {E}_B = (81.6 \\frac {N} {C}) + (-49.8 \\frac {N} {C}) = +31.6 \\frac {N} {C} = 31.6 \\frac {N} {C} $ [right]"
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "There are two points $ A $ and $ B $. The electric potential at point $ A $ is $ 15V $. When a $ 5.10C $ charge is moved from point $ B $ to point $ A $, $ 15.5J $ of work is done."
+  },
+  {
+    "type": "p",
+    "content": "a) What is the electric potential at point $ B $?"
+  },
+  {
+    "type": "p",
+    "content": "b) What is the electric potential difference for point $ B $ and a point infinitely far away?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "a) To find the electric potential at point $ B $, we need to determine the electric potential difference between $ A $ and $ B $. We can obtain it by using the work and the charge:"
+  },
+  {
+    "type": "p",
+    "content": "$ V_{BA} = \\frac { W } { q } = \\frac { 15.5J } { 5.10C } = 3.04V $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now we can use the equation of the potential difference to determine $ V_B $:"
+  },
+  {
+    "type": "p",
+    "content": "$ V_{BA} = - V_{AB} $"
+  },
+  {
+    "type": "p",
+    "content": "$ V_{BA} = -(V_B - V_A) $"
+  },
+  {
+    "type": "p",
+    "content": "$ V_{BA} = V_A - V_B $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, V_B = V_A - V_{BA} $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, V_B = 15V - 3.04V $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\, V_B = 12.0V $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "b) The electric potential difference between point $ B $ and a point infinitely far away is the same as the electric potential of $ B $ (refer to lecture):"
+  },
+  {
+    "type": "p",
+    "content": "$ V_{ \\infty B } = V_B - V_{ \\infty } = V_B - 0 = V_B $"
+  },
+  {
+    "type": "p",
+    "content": "So, $ V_{ \\infty B } = 12.0V $."
+  },
+
+  {
+    "type": "h1",
+    "content": "Magnetic Fields"
+  },
+  {
+    "type": "h2",
+    "content": "Question"
+  },
+  {
+    "type": "p",
+    "content": "An electron is trapped in a circular path with a radius of $ 0.345m $. If there is a magnetic field of $ 0.789T $ pointing perpendicular to the electron's velocity, what is the frequency of the electron's motion in its circular path?"
+  },
+  {
+    "type": "p",
+    "content": "Remember, the mass of an electron is $ 9.11 \\times 10^{-31} kg $ and its charge is $ e = 1.60 \\times 10^{-19} C $."
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "Using the right hand rule, the magnetic force is perpendicular to both the velocity and the magnetic field. This means it must be pointing towards the center of the circular motion, therefore acting as the centripetal force in this system:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\ \\, \\vec {F}_m = \\vec {F}_c $"
+  },
+  {
+    "type": "p",
+    "content": "$ q \\vec {v} \\vec {B} = \\frac { m \\vec {v}^2 } { r } $"
+  },
+  {
+    "type": "p",
+    "content": "$  \\quad \\, \\, \\vec {v} = \\frac { m \\vec {v}^2 } { q \\vec {B} r } $"
+  },
+  {
+    "type": "p",
+    "content": "$ \\quad \\ \\frac {1} { \\vec {v} } = \\frac { m } { q \\vec {B} r } $"
+  },
+  {
+    "type": "p",
+    "content": "$  \\quad \\, \\, \\vec {v} = \\frac { q \\vec {B} r } { m } $"
+  },
+  {
+    "type": "p",
+    "content": "$  \\quad \\, \\, \\vec {v} = \\frac { (1.60 \\times 10^{-19} C)(0.789T)(0.345m) } { (9.11 \\times 10^{-31} kg) } $"
+  },
+  {
+    "type": "p",
+    "content": "$  \\quad \\, \\, \\vec {v} = 4.78 \\times 10^{10} \\frac {m} {s} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we can substitude this value into the equation for the equation $ \\vec {v} = 2 \\pi r f $:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {v} = 2 \\pi r f \\ \\Rightarrow \\ f = \\frac { \\vec {v} } { 2 \\pi r } = \\frac { (4.78 \\times 10^{10} \\frac {m} {s}) } { 2 \\pi (0.345m) } = 2.21 \\times 10^{10} Hz $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The electron is going around at a frequency of $ 2.21 \\times 10^{10} Hz $."
+  }
+]

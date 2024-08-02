@@ -95,19 +95,77 @@
   },
   {
     "type": "latex",
-    "content": "$ | \\vec {B} | = \\frac { \\mu_0 I } { 2 \\pi r } $"
+    "content": "$ | \\vec {B} | = \\frac { \\mu_0 I } { 2 \\pi r } \\quad [T] $"
   },
   {
     "type": "p",
-    "content": "Where $ \\mu_0 = 4 \\pi \\times 10^{-7} \\frac {T \\ \\cdot \\ m} {A} $ is the permeability of free space, $ I $ is the current in flowing through the wire, and $ r $ is the distance from the wire."
+    "content": "Where $ \\mu_0 = 4 \\pi \\times 10^{-7} \\frac {T \\ \\cdot \\ m} {A} $ is the permeability of free space, $ I $ is the current in flowing through the wire, and $ r $ is the distance from the wire. The magnetic strength is in the units of Tesla ($ T $), and typically $ 1 T $ is a lot, so you will most likely end up with smaller values."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's a 3D visualization:"
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/magnetic-fields-2.mp4"
   },
   {
     "type": "h2",
     "content": "The Right Hand Rule"
   },
   {
+    "type": "p",
+    "content": "You can use a variant of the right hand rule to determine the rotation of a magnetic field around a wire."
+  },
+  {
+    "type": "p",
+    "content": "By pointing your thumb in the same direction as the current, and wrapping your fingers around, like a thumbs-up, your remaining fingers show you the dirction of rotation of the magnetic field:"
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/magnetic-fields-3.mp4"
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "What is the magnetic field $ 1.25m $ from a wire with a current of $ 12.5A $ passing through it?"
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "$ | \\vec {B} | = \\frac { \\mu_0 I } { 2 \\pi r } = \\frac { (4 \\pi \\times 10^{-7} \\frac {T \\ \\cdot \\ m} {A})(12.5A) } { 2 \\pi (1.25m) } = 2 \\times 10^{-6} T $"
+  },
+  {
     "type": "h1",
     "content": "Selenoids"
+  },
+  {
+    "type": "p",
+    "content": "A selenoid is essentially a wire coiled up that produces a magnetic field similar to that of a dipole magnet going through its center."
+  },
+  {
+    "type": "p",
+    "content": "Again, you can use the right hand rule to determine the direciton of the magnetic field lines by wrapping your fingers in the direction of the current, in which case your thumb points to the direction at which the magnetic field lines exit the selenoid."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here's what it looks like:"
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/magnetic-fields-4.mp4"
+  },
+  {
+    "type": "p",
+    "content": "As you can see, the current moves through the spiral of the selenoid. In this example, by using the right hand rule, the magnetic field would go out through the left side of the selenoid."
   },
   {
     "type": "h1",
@@ -143,20 +201,54 @@
   },
   {
     "type": "p",
-    "content": "You can use the right hand rule to remember the directions of the vectors. [add]"
-  },
-  { "type": "br" },
-  {
-    "type": "p",
-    "content": "Here's what it looks like:"
+    "content": "You can use the right hand rule to remember the directions of the vectors. In the picture below, you can use your index finger to represent the direction of the velocity of the charge, your thumb for the direction of the magnetic force, and your middle finger for the direction of the magnetic field."
   },
   {
     "type": "image",
-    "url": ""
+    "url": "/images/lectures/magnetic-fields-5.png"
   },
   {
     "type": "p",
     "content": "Where $ \\vec {F}_m $ is the magnetic force, $ q $ is the electric charge, $ v $ is the velocity of the charge, and $ B $ is the magnetic field."
+  },
+  {
+    "type": "h2",
+    "content": "Example"
+  },
+  {
+    "type": "p",
+    "content": "Calculate the acceleration of an electron that travels at a velocity of $ 3.15 \\times 10^4 \\frac {m} {s} $ east through a magnetic field of $ 0.295T $ pointing south. Remember, the mass of an electron is $ 9.11 \\times 10^{-31} kg $ and its charge is $ e = 1.60 \\times 10^{-19} C $."
+  },
+  {
+    "type": "h3",
+    "content": "Answer"
+  },
+  {
+    "type": "p",
+    "content": "First let's calculate the force:"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_m = q(\\vec {v} \\times \\vec {B}) = (1.60 \\times 10^{-19} C)(3.15 \\times 10^4 \\frac {m} {s})(0.295T) = 1.49 \\times 10^{-15} N $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Now, we can determine the acceleration"
+  },
+  {
+    "type": "p",
+    "content": "$ \\vec {F}_m = m_e \\vec {a} \\ \\Rightarrow \\ \\vec {a} = \\frac { \\vec {F}_m } { m_e } = \\frac { 1.49 \\times 10^{-15} N } { 9.11 \\times 10^{-31} kg } = 1.63 \\times 10^{15} \\frac {m} {s^2} $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "By using the right hand rule, we can determine that the acceleration is pointed upwards."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ \\therefore $ The electron is accelerating $ 1.63 \\times 10^{15} \\frac {m} {s^2} $ upwards."
   },
   {
     "type": "h1",
@@ -165,5 +257,18 @@
   {
     "type": "p",
     "content": "Electromagnetic induction is the process by which a changing magnetic field within a closed loop of wire induces an electromotive force (EMF) and, consequently, an electric current in the wire."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "This is what it looks like:"
+  },
+  {
+    "type": "video",
+    "url": "/videos/lectures/magnetic-fields-6.mp4"
+  },
+  {
+    "type": "p",
+    "content": "In the video, the red portion of the magnet is the north dipole, and the blue portion is the south dipole. You can see that as the red side moves into, then out of the selenoid, the currents follow the right hand rule. Inversely, this same principle applies when the blue side enters, then exits as well."
   }
 ]

@@ -251,7 +251,7 @@ const data = [
       { type: "date", label: "created at", name: "createdAt", spacing: "minmax(15rem, 1fr)" },
     ],
     viewableFields: [
-      { type: "string", label: "user", name: "user" },
+      { type: "id", label: "user", name: "user", collection: "users" },
       { type: "date", label: "created at", name: "createdAt" },
     ],
     selectAdditional: [],

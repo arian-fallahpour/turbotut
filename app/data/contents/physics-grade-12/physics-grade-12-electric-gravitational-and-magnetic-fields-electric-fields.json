@@ -25,6 +25,28 @@
     "url": "/images/lectures/electric-fields-1.png"
   },
   {
+    "type": "p",
+    "content": "The magnetic field lines here go out of the positive charge and into the negative charge."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "However, for charges of the same sign, the magnetic field lines steer away from each other:"
+  },
+  {
+    "type": "cols",
+    "contents": [
+      {
+        "type": "image",
+        "url": "/images/lectures/electric-fields-2.png"
+      },
+      {
+        "type": "image",
+        "url": "/images/lectures/electric-fields-3.png"
+      }
+    ]
+  },
+  {
     "type": "h2",
     "content": "Electric Field Lines"
   },
@@ -60,7 +82,15 @@
   },
   {
     "type": "h1",
-    "content": "Electric Field Strength"
+    "content": "Electric Force and Electric Field Strength"
+  },
+  {
+    "type": "p",
+    "content": "The electric force is a force caused from a particle being in an electric field. If $ q > 0 $, the force goes in the same direction as the electric field. If $ q < 0 $ then the force goes in the opposite direction as the electric field."
+  },
+  {
+    "type": "latex",
+    "content": "$ \\vec {F}_e = \\vec {E}q \\quad [N] $"
   },
   {
     "type": "p",
@@ -68,7 +98,7 @@
   },
   {
     "type": "latex",
-    "content": "$ | \\vec {E} | = \\frac { \\vec {F}_e } { q } \\quad [ \\frac {N} {C} \\ \\text {or} \\ \\frac {V} {m} ] $"
+    "content": "$ | \\vec {E} | = \\frac { | \\vec {F}_e | } { q } \\quad [ \\frac {N} {C} \\ \\text {or} \\ \\frac {V} {m} ] $"
   },
   {
     "type": "p",
@@ -80,7 +110,7 @@
   },
   {
     "type": "p",
-    "content": "Calculate the force applied onto an electron with an elemental charge of $ e = 1.60 \\times 10^{-19} C $ in the field of strength $ 1.25 \\times 10^{8} \\frac {N} {C} $."
+    "content": "Calculate the magnitude of the force applied onto an electron with an elemental charge of $ e = 1.60 \\times 10^{-19} C $ in the field of strength $ 1.25 \\times 10^{8} \\frac {N} {C} $."
   },
   {
     "type": "h3",
@@ -88,7 +118,7 @@
   },
   {
     "type": "p",
-    "content": "$ | \\vec {E} | = \\frac { \\vec {F}_e } { q } \\ \\Rightarrow \\ \\vec {F}_e = | \\vec {E} | q = (1.25 \\times 10^{8} \\frac {N} {C})(1.60 \\times 10^{-19} C) = 2 \\times 10^{-11} N $"
+    "content": "$ | \\vec {F}_e | = | \\vec {E} | q = (1.25 \\times 10^{8} \\frac {N} {C})(1.60 \\times 10^{-19} C) = 2 \\times 10^{-11} N $"
   },
   {
     "type": "h1",
@@ -172,7 +202,7 @@
   },
   {
     "type": "p",
-    "content": "Electric potential is a scalar quantity that represents the potential energy per unit charge at a specific point in an electric field. It gives a measure of how much work is needed to move a positive test charge from a reference point (infinitely far) to a point in an electric field without producing any acceleration."
+    "content": "Electric potential is a scalar quantity that represents the potential energy per unit charge at a specific point in an electric field. It gives a measure of how much work is needed to move a positive test charge from a reference point to a point in an electric field without producing any acceleration."
   },
   { "type": "br" },
   {
@@ -181,11 +211,11 @@
   },
   {
     "type": "latex",
-    "content": "$ V = \\frac { E_p } { q } $"
+    "content": "$ V = \\frac { E_p } { q } \\quad [V] $"
   },
   {
     "type": "p",
-    "content": "Where $ V $ is the electric potential, $ E_p $ is the **electric potential energy**, and $ q $ is the charge."
+    "content": "Where $ V $ is the electric potential, $ E_p $ is the **electric potential energy**, and $ q $ is the charge. It is in the units of Volts $ (V) $"
   },
   {
     "type": "h2",
@@ -195,6 +225,30 @@
     "type": "p",
     "content": "The electric potential difference is the difference of the electric potentials at two different points in an electric field."
   },
+  {
+    "type": "p",
+    "content": "The equation below describes the difference in electric potential energy for points $A$ and $B$:"
+  },
+  {
+    "type": "latex",
+    "content": "$ V_{AB} = V_B - V_A $"
+  },
+  {
+    "type": "p",
+    "content": "Just like how $ V_{AB} $ is relative to $ V_A $ and $ V_B $, both $ V_A $ and $ V_B $ are relative to some reference point as well. In most cases, that reference point will be somewhere infinitely far."
+  },
+  {
+    "type": "p",
+    "content": "This means that:"
+  },
+  {
+    "type": "p",
+    "content": "$ V_A = V_{ \\infty A} = V_A - V_{ \\infty } = V_A - 0 = V_A $"
+  },
+  {
+    "type": "p",
+    "content": "$ V_B = V_{ \\infty B} = V_B - V_{ \\infty } = V_B - 0 = V_B $"
+  },
   { "type": "br" },
   {
     "type": "p",
@@ -202,7 +256,7 @@
   },
   {
     "type": "image",
-    "url": "/images/lectures/electric-fields-2.png"
+    "url": "/images/lectures/electric-fields-4.png"
   },
   {
     "type": "p",
@@ -243,7 +297,7 @@
   },
   {
     "type": "image",
-    "url": "/images/lectures/electric-fields-3.png"
+    "url": "/images/lectures/electric-fields-5.png"
   },
   {
     "type": "h3",
@@ -260,16 +314,37 @@
   { "type": "br" },
   {
     "type": "p",
-    "content": "$ V_1 = k \\frac {q_1} {r} = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { (2.00 \\times 10^{-6} C) } { (1.00m) } = 1.80 \\times 10^4 $"
+    "content": "$ V_1 = k \\frac {q_1} {r} = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { (2.00 \\times 10^{-6} C) } { (1.00m) } = 1.80 \\times 10^4 V $"
   },
   { "type": "br" },
   {
     "type": "p",
-    "content": "$ V_2 = k \\frac {q_2} {r} = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { (4.00 \\times 10^{-6} C) } { (1.00m) } $"
+    "content": "$ V_2 = k \\frac {q_2} {r} = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { (4.00 \\times 10^{-6} C) } { \\sqrt {(1.00m)^2 + (1.00m)^2 } } = 2.54 \\times 10^4 V $"
   },
   { "type": "br" },
   {
     "type": "p",
-    "content": "$ V_2 = k \\frac {q_2} {r} = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { (-2.00 \\times 10^{-6} C) } { (1.00m) } $"
+    "content": "$ V_3 = k \\frac {q_2} {r} = (8.99 \\times 10^9 \\frac { N m^2 } { C^2 }) \\frac { (-2.00 \\times 10^{-6} C) } { (1.00m) } = -1.80 \\times 10^4 V $"
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "$ V_{ \\text {total} } = V_1 + V_2 + V_3 = (1.80 \\times 10^4 V) + (2.54 \\times 10^4 V) + (-1.80 \\times 10^4 V) = 2.54 \\times 10^4 V $"
+  },
+  {
+    "type": "h1",
+    "content": "Directions when going in/out the page"
+  },
+  {
+    "type": "p",
+    "content": "In order to represent a 3D figure on a 2D image, we use a convention for when a vector points into the page, or out of the page."
+  },
+  {
+    "type": "p",
+    "content": "When a vector points into the page, it is denoted by an \"x\". For a vector pointing out of the page, it is denoted by a dot."
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/electric-fields-6.png"
   }
 ]
