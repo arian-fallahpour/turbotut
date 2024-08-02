@@ -4,6 +4,7 @@ import { Open_Sans } from "next/font/google";
 import { Providers } from "./providers";
 import business from "@/app/data/business";
 import { join } from "@/utils/helper";
+import { Analytics } from "@vercel/analytics/react";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Analytics />
       <body className={join(openSans.className, "preload")} id="body">
         <Providers>{children}</Providers>
       </body>
