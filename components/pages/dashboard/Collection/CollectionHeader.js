@@ -15,6 +15,9 @@ import SwapIcon from "@/components/Elements/Icons/SwapIcon";
 import { DocumentPageContext } from "@/store/document-page-context";
 import SwapDocumentsForm from "../DocumentModal/SwapDocumentsForm";
 import { getActionsMap, getCollectionData } from "@/app/data/dashboard/collections";
+import queryString from "query-string";
+import { GlobalErrorContext } from "@/store/error-context";
+import { startProgress, stopProgress } from "next-nprogress-bar";
 
 const CollectionHeader = ({
   collectionData,
@@ -30,6 +33,7 @@ const CollectionHeader = ({
 }) => {
   const { showModal } = useContext(ModalContext);
   const { document, setDocument } = useContext(DocumentPageContext);
+  const { setGlobalError } = useContext(GlobalErrorContext);
 
   const actionsMap = useMemo(() => getActionsMap(collectionData.actions), [collectionData.actions]);
 
@@ -53,15 +57,40 @@ const CollectionHeader = ({
     );
   };
 
-  const swapDocumentsHandler = () => {
+  const swapDocumentsHandler = async () => {
     const parentCollectionData = getCollectionData(collectionData.parentCollection);
+
+    const url = queryString.stringifyUrl({
+      url: `/api/${parentCollectionData.name}/${document._id}`,
+      query: {
+        select: "lectures",
+      },
+    });
+
+    startProgress();
+
+    // Find updated child documents
+    const res = await fetch(url);
+    const resData = await res.json();
+
+    stopProgress();
+
+    // Handle error
+    if (!res.ok) {
+      return setGlobalError(resData.message);
+    }
+
+    const childDocuments = resData.data[toSingular(parentCollectionData.name)][collectionData.name];
 
     showModal(
       <DocumentModal
         title={`Swap ${collectionData.name}`}
         FormElement={SwapDocumentsForm}
         formProps={{
-          document,
+          document: {
+            ...document,
+            [collectionData.name]: childDocuments,
+          },
           setDocument,
           collectionData: parentCollectionData,
           childCollectionData: collectionData,

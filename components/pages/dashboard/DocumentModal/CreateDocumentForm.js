@@ -19,43 +19,39 @@ const CreateDocumentForm = ({
 }) => {
   const { inputErrors, setInputData, setGlobalError, setInputErrors, appendInputDataToForm } = useForm();
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
 
-    const fetchCreateRequest = async () => {
-      const formData = new FormData(e.target);
-      appendInputDataToForm(formData);
+    const formData = new FormData(e.target);
+    appendInputDataToForm(formData);
 
-      startProgress();
-      setIsDisabled(true);
+    startProgress();
+    setIsDisabled(true);
 
-      const res = await fetch(`/api/${collectionData.name}/create-by-form`, {
-        method: "POST",
-        body: formData,
-      });
-      const resData = await res.json();
+    const res = await fetch(`/api/${collectionData.name}/create-by-form`, {
+      method: "POST",
+      body: formData,
+    });
+    const resData = await res.json();
 
-      stopProgress();
+    stopProgress();
 
-      // Handle errors
-      if (!res.ok) {
-        setIsDisabled(false);
+    // Handle errors
+    if (!res.ok) {
+      setIsDisabled(false);
 
-        if (resData.errors) {
-          setInputErrors(resData.errors);
-        } else {
-          setGlobalError(resData.message);
-        }
-
-        return;
+      if (resData.errors) {
+        setInputErrors(resData.errors);
+      } else {
+        setGlobalError(resData.message);
       }
 
-      // Handle success
-      hideModal();
-      fetchCollection();
-    };
+      return;
+    }
 
-    fetchCreateRequest();
+    // Handle success
+    hideModal();
+    fetchCollection();
   };
 
   return (

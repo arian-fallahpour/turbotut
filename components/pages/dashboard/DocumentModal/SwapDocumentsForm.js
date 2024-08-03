@@ -65,6 +65,7 @@ const SwapDocumentsForm = ({
       );
 
       setCollection(orderedCollection);
+      setDocument((doc) => ({ ...doc, [childCollectionData.name]: orderedCollection }));
     };
 
     fetchData();
