@@ -63,7 +63,7 @@ const CollectionHeader = ({
     const url = queryString.stringifyUrl({
       url: `/api/${parentCollectionData.name}/${document._id}`,
       query: {
-        select: "lectures",
+        select: collectionData.name,
       },
     });
 
