@@ -17,46 +17,46 @@ const EditDocumentForm = ({
   defaultValues,
   setDocument = () => {},
   collectionData,
+  fetchCollection = async () => {},
 }) => {
   const { inputErrors, setGlobalError, setInputErrors, setInputData, appendInputDataToForm } = useForm();
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
 
-    const fetchEditRequest = async () => {
-      const formData = new FormData(e.target);
-      appendInputDataToForm(formData);
+    const formData = new FormData(e.target);
+    appendInputDataToForm(formData);
 
-      startProgress();
-      setIsDisabled(true);
+    startProgress();
+    setIsDisabled(true);
 
-      const res = await fetch(`/api/${collectionData.name}/${defaultValues._id}/edit-by-form`, {
-        method: "PATCH",
-        body: formData,
-      });
-      const resData = await res.json();
+    const res = await fetch(`/api/${collectionData.name}/${defaultValues._id}/edit-by-form`, {
+      method: "PATCH",
+      body: formData,
+    });
+    const resData = await res.json();
 
-      stopProgress();
+    stopProgress();
 
-      // Handle errors
-      if (!res.ok) {
-        setIsDisabled(false);
+    // Handle errors
+    if (!res.ok) {
+      setIsDisabled(false);
 
-        if (resData.errors) {
-          setInputErrors(resData.errors);
-        } else {
-          setGlobalError(resData.message);
-        }
-
-        return;
+      if (resData.errors) {
+        setInputErrors(resData.errors);
+      } else {
+        setGlobalError(resData.message);
       }
 
-      // Handle success
-      setDocument(resData.data[toSingular(collectionData.name)]);
-      hideModal();
-    };
+      return;
+    }
 
-    fetchEditRequest();
+    // Handle success
+    hideModal();
+
+    // Problem: may not select all viewable fields
+    setDocument(resData.data[toSingular(collectionData.name)]);
+    await fetchCollection();
   };
 
   return (

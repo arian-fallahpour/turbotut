@@ -15,7 +15,7 @@ const CreateDocumentForm = ({
 
   defaultValues,
   collectionData,
-  fetchCollection = () => {},
+  fetchCollection = async () => {},
 }) => {
   const { inputErrors, setInputData, setGlobalError, setInputErrors, appendInputDataToForm } = useForm();
 
@@ -51,7 +51,7 @@ const CreateDocumentForm = ({
 
     // Handle success
     hideModal();
-    fetchCollection();
+    await fetchCollection();
   };
 
   return (

@@ -60,6 +60,7 @@ const Actions = ({ document, collectionData, fetchCollection }) => {
         formProps={{
           defaultValues: resData.data[toSingular(collectionData.name)],
           collectionData,
+          fetchCollection,
         }}
       />
     );

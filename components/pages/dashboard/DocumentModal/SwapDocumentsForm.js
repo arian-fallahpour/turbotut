@@ -12,6 +12,7 @@ import { join } from "@/utils/helper";
 import UpIcon from "@/components/Elements/Icons/UpIcon";
 import DownIcon from "@/components/Elements/Icons/DownIcon";
 import { startProgress, stopProgress } from "next-nprogress-bar";
+import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
 
 const SwapDocumentsForm = ({
   hideModal,
@@ -22,7 +23,7 @@ const SwapDocumentsForm = ({
   setDocument,
   collectionData,
   childCollectionData,
-  fetchCollection,
+  fetchCollection = async () => {},
 }) => {
   const { setGlobalError } = useContext(GlobalErrorContext);
   const swaps = useRef([]);
@@ -99,9 +100,8 @@ const SwapDocumentsForm = ({
       obj[childCollectionData.name] = collection.map((doc) => doc._id);
       return obj;
     });
-
     hideModal();
-    fetchCollection();
+    await fetchCollection();
   };
 
   const onSwapHandler = (index, change) => {
@@ -134,6 +134,7 @@ const SwapDocumentsForm = ({
       <FormRow className={classes.SwapFormContainer}>
         <FormCol className={classes.Documents}>
           {isLoading && !collection && <LoaderBlock />}
+          {collection?.length === 0 && <ErrorBlock type="info" message="No documents to swap!" />}
 
           {collection?.length > 0 &&
             collection.map((doc, i) => (
@@ -168,7 +169,7 @@ const SwapDocumentsForm = ({
         <Button styleName="glass" variantName="red" type="button" onClick={() => hideModal()}>
           cancel
         </Button>
-        <Button isDisabled={isDisabled}>confirm</Button>
+        <Button isDisabled={isDisabled || collection?.length === 0}>confirm</Button>
       </FormRow>
     </Form>
   );
