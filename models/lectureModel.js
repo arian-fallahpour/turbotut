@@ -6,6 +6,7 @@ import AppError from "@/utils/AppError";
 import { doesObjectIdExist } from "@/utils/database";
 import enumValues from "@/app/data/enum-values";
 import mongooseFuzzySearching from "mongoose-fuzzy-searching";
+import validator from "validator";
 
 const lectureSchema = new mongoose.Schema({
   name: {
