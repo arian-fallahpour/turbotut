@@ -5,6 +5,7 @@ import AppError from "@/utils/AppError";
 import sharp from "sharp";
 import enumValues from "@/app/data/enum-values";
 import mongooseFuzzySearching from "mongoose-fuzzy-searching";
+import validator from "validator";
 
 const courseSchema = new mongoose.Schema({
   name: {
@@ -55,7 +56,13 @@ const courseSchema = new mongoose.Schema({
     default: new Date(Date.now()),
     immutable: [true, "Cannot change when course was created"],
   },
-  slug: String,
+  slug: {
+    type: String,
+    validate: {
+      validator: validator.isSlug,
+      message: "Please provide a valid slug",
+    },
+  },
   isArchived: { type: Boolean, default: false },
   comingSoon: { type: Boolean, default: false },
   lecturesCount: {

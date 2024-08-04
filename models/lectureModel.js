@@ -30,7 +30,13 @@ const lectureSchema = new mongoose.Schema({
     default: "paid",
   },
   isArchived: { type: Boolean, default: false },
-  slug: String,
+  slug: {
+    type: String,
+    validate: {
+      validator: validator.isSlug,
+      message: "Please provide a valid slug",
+    },
+  },
   createdAt: {
     type: Date,
     default: new Date(Date.now()),
@@ -38,9 +44,7 @@ const lectureSchema = new mongoose.Schema({
   },
 });
 
-lectureSchema
-  .path("chapter")
-  .validate(doesObjectIdExist(Chapter), "Chapter does not exist");
+lectureSchema.path("chapter").validate(doesObjectIdExist(Chapter), "Chapter does not exist");
 
 // Prevent duplicate values for index/name in each chapter
 lectureSchema.index({ chapter: 1, name: 1 }, { unique: true });
@@ -93,7 +97,6 @@ lectureSchema.post("save", { document: true }, async function (doc, next) {
   next();
 });
 
-const Lecture =
-  mongoose.models.Lecture || mongoose.model("Lecture", lectureSchema);
+const Lecture = mongoose.models.Lecture || mongoose.model("Lecture", lectureSchema);
 
 export default Lecture;
