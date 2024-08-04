@@ -65,10 +65,11 @@ select {
 
 .paragraph,
 .ul,
-.li {
-  font-size: var(--font-size-text);
+.li,
+.caption {
+  font-size: var(--font-size-normal);
   color: var(--txt-text);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-normal-bold);
 }
 
 .ul {

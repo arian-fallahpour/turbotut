@@ -98,7 +98,7 @@ section.Section {
     & > :global(.paragraph) {
       // max-height: 7.5rem;
       overflow-y: auto;
-      font-size: var(--font-size-text);
+      font-size: var(--font-size-normal);
 
       @include scrollbar();
     }

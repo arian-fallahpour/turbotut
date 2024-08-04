@@ -5,7 +5,7 @@ import { join } from "@/utils/helper";
 import Lecture from "../Lecture/Lecture";
 
 // DO NOT ADD ASYNC HERE (results in weird client component error)
-const Chapter = ({ course, session, chapter, lectureSlug, color }) => {
+const Chapter = ({ course, session, chapter, lectureSlug, color, setExpanded }) => {
   const hasPremium = session && session.user && session.user.subscription === "premium";
 
   return (
@@ -25,6 +25,7 @@ const Chapter = ({ course, session, chapter, lectureSlug, color }) => {
                 color={color}
                 isLocked={!hasPremium && lecture.type === "paid"}
                 isViewable={!hasPremium && lecture.type === "free"}
+                setExpanded={setExpanded}
               />
             </li>
           ))}

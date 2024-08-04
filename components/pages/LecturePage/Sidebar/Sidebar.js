@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useParams, usePathname } from "next/navigation";
+import { useParams } from "next/navigation";
 import classes from "./Sidebar.module.scss";
 import { join } from "@/utils/helper";
 
@@ -17,15 +17,12 @@ import CloseIcon from "@/components/Elements/Icons/CloseIcon";
 const Sidebar = ({ course, session }) => {
   const { lectureSlug } = useParams();
   const [expanded, setExpanded] = useState(false);
-  const pathname = usePathname();
 
   const { prevUrl, nextUrl } = findAdjacentLectures(course, lectureSlug);
 
   const onExpandHandler = () => setExpanded((p) => !p);
 
-  useEffect(() => {
-    setExpanded(false);
-  }, [pathname]);
+  useEffect(() => setExpanded(false), []);
 
   return (
     <aside className={join(classes.Sidebar, expanded ? classes.expanded : null)}>
@@ -52,7 +49,12 @@ const Sidebar = ({ course, session }) => {
           <div className={classes.SidebarIntro}>
             <ul className={classes.Intro}>
               <li className={classes.IntroItem}>
-                <Lecture name="overview" href={`/courses/${course.slug}`} isActive={!lectureSlug} />
+                <Lecture
+                  name="overview"
+                  href={`/courses/${course.slug}`}
+                  isActive={!lectureSlug}
+                  setExpanded={setExpanded}
+                />
               </li>
             </ul>
           </div>
@@ -67,6 +69,7 @@ const Sidebar = ({ course, session }) => {
                     session={session}
                     chapter={chapter}
                     lectureSlug={lectureSlug}
+                    setExpanded={setExpanded}
                   />
                 ))}
             </div>

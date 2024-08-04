@@ -20,19 +20,19 @@
 
   &.size-small {
     padding: 0.25rem 1rem;
-    font-size: 1.35rem;
+    font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
   }
 
   &.size-normal {
     padding: 0.75rem 1.75rem;
-    font-size: 1.7rem;
+    font-size: var(--font-size-normal);
     font-weight: var(--font-weight-bold);
   }
 
   &.size-large {
     padding: 1rem 2.25rem;
-    font-size: 1.95rem;
+    font-size: var(--font-size-large);
     font-weight: var(--font-weight-bold);
   }
 
@@ -174,7 +174,7 @@
     &.size-large {
       padding: 0;
       border-radius: 0;
-      font-size: var(--font-size-text);
+      font-size: var(--font-size-normal);
     }
 
     &,
@@ -185,7 +185,7 @@
       color: var(--txt-text);
       background: transparent;
       font-weight: var(--font-weight-normal);
-      font-size: var(--font-size-text);
+      font-size: var(--font-size-normal);
 
       transition: color 0.2s ease;
 
@@ -300,7 +300,7 @@
       color: var(--txt-text);
       background: transparent;
       font-weight: var(--font-weight-normal);
-      font-size: var(--font-size-text);
+      font-size: var(--font-size-normal);
       gap: 0.5rem;
 
       transition: color 0.2s ease, gap 0.2s ease;

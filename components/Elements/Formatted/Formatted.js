@@ -25,8 +25,8 @@ const Formatted = ({ type, content, contents, rows, style, url, isChild, gridTem
     );
   } else if (type === "image") {
     return (
-      <figure style={style}>
-        <Image src={url} width={1280} height={720} alt={content ? content : "No description"} />
+      <figure>
+        <Image src={url} width={1280} height={720} style={style} alt={content ? content : "No description"} sty />
         {content && (
           <figcaption>
             <Latex>{format(content)}</Latex>
@@ -57,9 +57,15 @@ const Formatted = ({ type, content, contents, rows, style, url, isChild, gridTem
     return (
       <div className="cols" style={style}>
         {contents.map((content, i) => (
-          <div key={i} className="col">
-            <Formatted {...content} />
-          </div>
+          <Formatted key={i} {...content} />
+        ))}
+      </div>
+    );
+  } else if (type === "rows") {
+    return (
+      <div className="rows" style={style}>
+        {contents.map((content, i) => (
+          <Formatted key={i} {...content} />
         ))}
       </div>
     );

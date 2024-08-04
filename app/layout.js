@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
-  weight: ["400", "700", "800"],
+  weight: ["400", "500", "700", "800"],
 });
 
 export const metadata = {

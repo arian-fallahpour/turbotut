@@ -5,11 +5,13 @@
   margin: 0 auto;
   position: relative;
   min-height: 70rem;
-  max-width: 100rem;
+  max-width: 70ch;
 
   display: grid;
   align-content: start;
+  font-size: var(--font-size-normal);
 
+  // Headers
   h1,
   h2,
   h3 {
@@ -31,11 +33,13 @@
     font-size: 1em;
   }
 
+  // Lists
   ul,
   ol {
     padding-inline-start: 1.37em;
   }
 
+  // Texts
   ul,
   ol,
   p,
@@ -44,19 +48,27 @@
     font-weight: var(--font-weight-thin);
   }
 
-  *:not(:first-child):not(
+  // Not special element
+  *:not(
       h1,
       h2,
       h3,
       span,
       figure,
+      img,
+      video,
       :global(.video),
-      :global(.cols),
       :global(.latex),
       :global(.table),
       :global(.table-row),
-      :global(.table-cell)
-    ) {
+      :global(.table-cell),
+      :global(.table-cell) > *,
+      :global(.ignore),
+      :global(.cols),
+      :global(.rows)
+    ),
+  *:global(.rows) > *:not(:global(.rows), :global(.cols)),
+  *:global(.cols) > *:not(:global(.rows), :global(.cols)) {
     margin-top: 0.75em;
   }
 
@@ -91,14 +103,13 @@
 
   figure {
     position: relative;
-    font-size: var(--font-size-text);
+    font-size: var(--font-size-normal);
 
     display: grid;
     justify-items: center;
     align-content: start;
 
     & > img {
-      // max-width: 50em;
       width: 100%;
       height: auto;
       border-radius: var(--bd-radius);
@@ -126,7 +137,6 @@
 
     video {
       display: block;
-      // max-width: 50em;
       width: 100%;
       height: auto;
       border-radius: var(--bd-radius);
@@ -144,21 +154,17 @@
 
   :global(.cols) {
     display: grid;
-    grid-auto-columns: 1fr;
     gap: 1em;
-    margin: 1em 0;
+    justify-content: start;
+    grid-auto-columns: 1fr;
+  }
 
-    :global(.col) {
-      display: grid;
-      justify-content: center;
+  :global(.rows) {
+    display: grid;
+    align-content: start;
 
-      grid-row: 1 / span 1;
-
-      &,
-      & > * {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
+    & > * {
+      grid-column: 1 / span 1;
     }
   }
 
@@ -180,6 +186,7 @@
     :global(.table-header) {
       background-color: var(--c-panel-bg);
       color: var(--txt-title);
+      font-weight: var(--font-weight-normal-bold);
     }
 
     :global(.table-row) {

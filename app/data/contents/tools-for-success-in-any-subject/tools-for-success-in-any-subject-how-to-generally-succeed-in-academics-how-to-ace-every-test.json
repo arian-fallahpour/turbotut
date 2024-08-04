@@ -1,0 +1,235 @@
+[
+  {
+    "type": "h1",
+    "content": "Preparation"
+  },
+  {
+    "type": "h2",
+    "content": "Study efficiently"
+  },
+  {
+    "type": "p",
+    "content": "If you want to have time for things other than studying, you need to study only the most important things. This process involves picking and choosing questions so that you can learn the most with the least amount of time spent learnning as possible."
+  },
+  {
+    "type": "p",
+    "content": "There are multiple ways that you can achieve this. Here's what we think the most effective way of studying looks like:"
+  },
+  {
+    "type": "h3",
+    "content": "Step 1: Understand the material"
+  },
+  {
+    "type": "p",
+    "content": "Before diving into questions, you need to have at least a small understanding about the material. Without this, you won't be able to know why a particular solution works."
+  },
+  {
+    "type": "h3",
+    "content": "Step 2: Answer the easiest question that you find difficult"
+  },
+  {
+    "type": "p",
+    "content": "Next, you would want to scan the questions given to you as homework. Most of the time, about half of the questions are basic ones that won't be on the test because they are too easy. These are questions that are used to get you familiar with the concepts."
+  },
+  {
+    "type": "p",
+    "content": "Try to find the easiest question that you can't answer, either because it is too difficult, or something else. Start with this question, then move onto harder and harder ones. This allows you to explore more territory."
+  },
+  {
+    "type": "p",
+    "content": "When answer these questions, you will frequently encounter difficulties. **This is a good sign**. In this phase, try your best to answer the question. Spend a minimum of 5-10 minutes trying to answer it. If you can't, it's not that big of a deal. Simply find the solution, and continue solving the problem while peeking at the solutions. If you gave the question a **good** try, you don't need to worry about not being able to solve it by yourself since the next step is what matters the most."
+  },
+
+  {
+    "type": "h3",
+    "content": "Step 3: Understand the solution fully"
+  },
+  {
+    "type": "p",
+    "content": "This is the key step. Once you solved the question, either with or without the answer key, **you must** review how you got to the answer. Was there a combination of concepts and methods used to answer this that makes the question difficult? Ask these questions:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "What concepts did you apply?"
+      },
+      {
+        "type": "p",
+        "content": "What trick was used when solving this problem?"
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "content": "Ask these questions, and try to find out how you really solved the problem. Spend most of your time in this step."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "If you have one of those weird teachers that don't provide the answers, even better. **Go find the answer online**. The process of you searching and searching, then finally getting the answer not only makes you feel good that you found the solution, but it also stays in your brain as the \"The question without an answer that you solved\"."
+  },
+  {
+    "type": "p",
+    "content": "This step is crucial because it increases the likelihood for you to **remember how to solved it**. Then, you can use this knowledge for questions that are similar. You can start recognizing patterns, and at that point, it becomes muscle memory."
+  },
+  {
+    "type": "h2",
+    "content": "Solving tough questions"
+  },
+  {
+    "type": "p",
+    "content": "Typically, the questions you receive as homework from your teacher are often not enough to fully prepare you for tests. The questions you will most likely find difficult would be critical thinking, or application questions."
+  },
+  {
+    "type": "p",
+    "content": "In most school systems, getting a +90% means you **exceed expectations**. So the homework your teacher gives you is only good enough for you to earn 70s or 80s, which means you need a source of harder questions."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Here are some ways you can find harder questions:"
+  },
+  {
+    "type": "ul",
+    "contents": [
+      {
+        "type": "p",
+        "content": "**Textbook questions**: The course's textbook has a wide selection of questionss to choose from. Most of them are basic and you should ignore them, however, there are some that can test your knowledge quite well."
+      },
+      {
+        "type": "p",
+        "content": "**Online websites**: By searching on the web, you can easily find harder questions. Use keywords such as \"critical thinking [...] questions\" or \"difficult [...] questions\" to find the best questions."
+      },
+      {
+        "type": "p",
+        "content": "**Youtube**: Going on youtube and entering questions is more helpful than it seems. Most of those videos explain the solution thoroughly as well."
+      }
+    ]
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "Also, the more difficult questions you know, the less difficult questions you don't know. This means that there is a greater chance for you to come across a similar question on the test. There's only so many different questions your teacher can ask you before they become the same, so try to answer as many difficult questions as possible."
+  },
+  {
+    "type": "h2",
+    "content": "Using chatGPT"
+  },
+  {
+    "type": "p",
+    "content": "ChatGPT is an amazing tool to help you learn concepts faster. It may not be suitable to teach you the entire subject, since it often misses key concepts, however, it is extremely helpful for specific tasks."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For example, if you don't understand what a derivative is, and you can't find a helpful definition online that isn't too complicated, ask ChatGPT!"
+  },
+  {
+    "type": "p",
+    "content": "You can prompt \"Explain the concept of derivatives like I'm a student in grade 12\", and it will give you a detailed explanation."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "You can also check out the \"GPTs\" feature on ChatGPT. It allows you to use specific chatGPT variants that are tailored to the specific use case."
+  },
+  {
+    "type": "image",
+    "url": ""
+  },
+  {
+    "type": "h2",
+    "content": "Other tips"
+  },
+  {
+    "type": "p",
+    "content": "Steering away from the course, it is always best to have a good night's sleep before the test. Make sure you get at least 8 hours of sleep. Try not to sleep for too long either, because then you'll feel drousy, which will work against you when you are trying to think."
+  },
+  {
+    "type": "p",
+    "content": "You can also drink a little bit of coffee before your test. The best time is around 30 minutes to 1 hour before your test. This will keep you more awake and allow you to think faster. However, don't overdo it since you may end up getting too hyper to focus on any thought."
+  },
+  {
+    "type": "h1",
+    "content": "Taking the test"
+  },
+  {
+    "type": "h2",
+    "content": "The basic strategy"
+  },
+  {
+    "type": "p",
+    "content": "Before starting to write answer, scan the entire test once. Make sure you read through everything, and identify the easiest/hardest questions."
+  },
+  {
+    "type": "p",
+    "content": "Complete the easiest questions first, since they will earn you the fastest points. While you are doing these easy questions, you may find a solution to the harder ones."
+  },
+  {
+    "type": "p",
+    "content": "For harder questions, if you can't figure out an answer, skip it and forget about it for a bit. This allows your brain to come back fresh with potentially a different point of view. If you are absotely struggling and you have no other option, think of different words that are related to the question."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For example, if you are struggling on a question that involves rate of change, think of some words that are similar, such as \"speed\", \"increasing\", \"derivative\". This way, you can build onto your thoughts and potentially think of a solution."
+  },
+  {
+    "type": "h2",
+    "content": "How to answer tough questions"
+  },
+  {
+    "type": "p",
+    "content": "If you find yourself with a difficult question, and you don't know where to start, here is a step by step process on how you can solve it:"
+  },
+  {
+    "type": "h3",
+    "content": "Step 1: Understand the problem"
+  },
+  {
+    "type": "p",
+    "content": "The first and most important step. Understand the problem. What is the question asking for? Translate that in terms of the terminology that is used in your course."
+  },
+  {
+    "type": "p",
+    "content": "For example, if the question asks you for the speed of the vehicle at a certain time, think of the first derivative."
+  },
+  {
+    "type": "h3",
+    "content": "Step 2: Find a way to solve the problem"
+  },
+  {
+    "type": "p",
+    "content": "Now that you know the problem, **work backwards** to try to find where to start. How do you obtain the final answer? What do you need in order to achieve it?"
+  },
+  {
+    "type": "p",
+    "content": "Going back to the speed example, you need the first derivative of the position function. You can determine that by using the tricks you learned in the course."
+  },
+  {
+    "type": "h3",
+    "content": "Step 3: Solve the problem"
+  },
+  {
+    "type": "p",
+    "content": "Finally, once you have a plan on how you will solve the problem, execute it!"
+  },
+  {
+    "type": "p",
+    "content": "The key to this strategy is to work backwards. Some questions are designed to trick you through wording, or with the information you begin with, and this method can bypass most of them."
+  },
+  {
+    "type": "h2",
+    "content": "What if you can't answer the question?"
+  },
+  {
+    "type": "p",
+    "content": "Even for the best students, sometimes a question is so difficult, or time consuming that it is not possible to fully answer it. For whatever the reason, here is what you should do."
+  },
+  {
+    "type": "p",
+    "content": ""
+  }
+]
