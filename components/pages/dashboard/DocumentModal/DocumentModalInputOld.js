@@ -72,7 +72,7 @@ const DocumentModalInput = ({ document, field, error, setOtherField, setDefault 
 
           callback(filterDocuments(documents));
         })
-        .catch((err) => console.log("EE", err));
+        .catch((err) => console.log("SEARCH ERROR: ", err));
     }, 1000);
 
     return (

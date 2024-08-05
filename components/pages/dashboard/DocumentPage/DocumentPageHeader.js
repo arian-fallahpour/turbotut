@@ -29,7 +29,6 @@ const Header = ({ collectionData }) => {
   const actionsMap = useMemo(() => getActionsMap(collectionData.actions), [collectionData.actions]);
 
   const editDocumentHandler = () => {
-    console.log(document);
     showModal(
       <DocumentModal
         title={`Edit ${toSingular(collectionData.name)}`}

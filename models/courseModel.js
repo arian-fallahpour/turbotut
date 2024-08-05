@@ -116,7 +116,6 @@ courseSchema.methods.uploadImageToS3 = async function (imageFile) {
   const imageS3Object = new S3Object(formattedBuffer, "image/webp", Buffer.byteLength(formattedBuffer));
 
   // If image does not exist, create key
-  console.log("IMAGE", this.image);
   let key;
   if (!this.image) {
     const filename = imageS3Object.getUniqueFilename(this.slug);
@@ -128,7 +127,6 @@ courseSchema.methods.uploadImageToS3 = async function (imageFile) {
   else {
     key = this.getImageKey();
   }
-  console.log("KEY", key);
   if (!key) throw new AppError("Image could not be uploaded", 400);
 
   // Create signed url
