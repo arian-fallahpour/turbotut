@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext, useState } from "react";
 import classes from "./DocumentModal.module.scss";
 import { toSingular } from "@/utils/helper";
@@ -6,7 +8,8 @@ import Button from "@/components/Elements/Button/Button";
 import Form, { FormRow } from "@/components/Elements/Form/Form";
 import Input from "@/components/Elements/Input/Input";
 import { GlobalErrorContext } from "@/store/error-context";
-import { startProgress, stopProgress, useRouter } from "next-nprogress-bar";
+import { startProgress, stopProgress } from "next-nprogress-bar";
+import { useRouter } from "next/navigation";
 
 const DeleteDocumentForm = ({
   hideModal,

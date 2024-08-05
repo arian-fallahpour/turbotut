@@ -1,8 +1,4 @@
-import {
-  DeleteObjectCommand,
-  PutObjectCommand,
-  S3Client,
-} from "@aws-sdk/client-s3";
+import { DeleteObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
 import crypto from "crypto";
@@ -33,13 +29,13 @@ class S3Object {
     const buffer = this.buffer;
     const hashBuffer = await crypto.subtle.digest("SHA-256", buffer);
     const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray
-      .map((b) => b.toString(16).padStart(2, "0"))
-      .join("");
+    const hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
     return hashHex;
   }
 
   async getSignedURL({ key, metadata }) {
+    if (!key) return;
+
     const checksum = await this.computeSHA256();
 
     const putObjectCommand = new PutObjectCommand({
@@ -71,15 +67,14 @@ class S3Object {
       headers: { "Content-Type": this.type },
     });
 
-    let appError;
     if (!res.ok) {
-      appError = new AppError("File could not be uploaded to storage", 400);
+      throw new AppError("File could not be uploaded to storage", 400);
     }
-
-    return appError;
   }
 
   static async deleteS3Object(key) {
+    if (!key) return;
+
     const deleteObjectCommand = new DeleteObjectCommand({
       Bucket: process.env.AWS_BUCKET_NAME,
       Key: key,

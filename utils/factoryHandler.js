@@ -212,9 +212,18 @@ export const createOneByForm = (Model, sendResponse = true) =>
     const filteredData = {};
     collectionData.editableFields.forEach((field) => {
       const value = req.data.formData[field.name];
-      if (field.type !== "image" && value !== undefined) {
-        filteredData[field.name] = value;
+      if (field.type === "image") {
+        if (value.size > 0) {
+          filteredData[field.name] = value.name;
+        }
+        return;
       }
+      if (typeof value === "undefined") return;
+      if (typeof value === "string" && !value.length) return;
+      if (typeof value === "object" && !Object.keys(value).length) return;
+      if (Array.isArray(value) && !value.length) return;
+
+      filteredData[field.name] = value;
     });
 
     // Connect to database
@@ -232,6 +241,7 @@ export const createOneByForm = (Model, sendResponse = true) =>
         { status: 200 }
       );
     } else {
+      if (document.image) document.image = undefined; // Remove document's image from output so it can be processed separately
       req.data[getName(Model)] = document;
     }
   };

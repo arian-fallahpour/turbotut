@@ -1,4 +1,5 @@
 import Chapter from "@/models/chapterModel";
+import Content from "@/models/contentModel";
 import Course from "@/models/courseModel";
 import Lecture from "@/models/lectureModel";
 import AppError from "@/utils/AppError";
@@ -14,15 +15,22 @@ export const DELETE = routeHandler(
     const chapter = await Chapter.findById(params.id);
     if (!chapter) return new AppError("No chapter found with the provided id", 404);
 
-    // Delete chapter's lectures (Query is ok in this case)
-    await Lecture.deleteMany({ chapter: chapter.id });
-
     // Update course
     const course = await Course.findOne({ chapters: chapter._id });
     course.chaptersCount -= 1;
     course.lecturesCount -= chapter.lecturesCount;
     course.chapters.pull(chapter._id);
     await course.save();
+
+    // Set all the content's isLectureDeleted status to true
+    const contents = await Content.find({ lecture: { $in: chapter.lectures } });
+    for (let i = 0; i < contents.length; i++) {
+      contents[i].isLectureDeleted = true;
+      await contents[i].save();
+    }
+
+    // Delete chapter's lectures (Query is ok in this case)
+    await Lecture.deleteMany({ chapter: chapter.id });
 
     // Delete chapter
     await chapter.deleteOne();

@@ -19,7 +19,7 @@ const DocumentPageDetails = ({ collectionData }) => {
 
             // BOOLEAN
             if (field.type === "boolean") {
-              if (typeof document[field.name] === undefined) {
+              if (typeof document[field.name] === undefined || document[field.name] === null) {
                 content = <p className="paragraph">Not Specified</p>;
               } else {
                 content = <p className="paragraph">{JSON.stringify(document[field.name])}</p>;
@@ -28,7 +28,7 @@ const DocumentPageDetails = ({ collectionData }) => {
 
             // DATE
             else if (field.type === "date") {
-              if (typeof document[field.name] === undefined) {
+              if (!document[field.name]) {
                 content = <p className="paragraph">Not Specified</p>;
               } else {
                 const date = new Date(document[field.name]);
@@ -53,7 +53,7 @@ const DocumentPageDetails = ({ collectionData }) => {
 
             // ID
             else if (field.type === "id") {
-              if (typeof document[field.name] === undefined) {
+              if (!document[field.name]) {
                 content = <p className="paragraph">Not Found</p>;
               } else {
                 content = (

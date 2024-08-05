@@ -42,15 +42,15 @@ const SolutionSection = () => {
                 <ul className={classes.ContentList}>
                   <li className={classes.ContentListItem}>
                     <LightningIcon />
-                    Animations to help you understand concepts faster
+                    <p className="paragraph">Animations to help you understand concepts faster</p>
                   </li>
                   <li className={classes.ContentListItem}>
                     <KeyIcon />
-                    Secret tricks used by top students
+                    <p className="paragraph">Secret tricks used by top students</p>
                   </li>
                   <li className={classes.ContentListItem}>
                     <SearchIcon />
-                    Critical thinking questions to push you further
+                    <p className="paragraph">Critical thinking questions to push you further</p>
                   </li>
                 </ul>
                 <Button styleName="shiny" variantName="green" href="/courses" isLink>

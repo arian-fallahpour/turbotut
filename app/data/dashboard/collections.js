@@ -183,6 +183,7 @@ const data = [
         collection: "lectures",
       },
       { type: "string", name: "url" },
+      { type: "boolean", name: "isLectureDeleted" },
     ],
     editableFields: [
       {

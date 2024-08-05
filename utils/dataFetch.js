@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 export async function fetchAuth(url, options = {}) {
   options = {
     headers: options.headers || {},
+    ...options,
   };
 
   return await fetch(url, {

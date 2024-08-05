@@ -13,7 +13,7 @@ import { getNestedPath } from "@/app/data/dashboard/collections";
 const ContentSection = ({ className, document, sectionData }) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const lectureId = getNestedPath(document, sectionData.name, sectionData.path);
@@ -35,6 +35,8 @@ const ContentSection = ({ className, document, sectionData }) => {
 
     if (lectureId) {
       fetchData();
+    } else {
+      setError("Lecture does not exist!");
     }
   }, [document, sectionData]);
 

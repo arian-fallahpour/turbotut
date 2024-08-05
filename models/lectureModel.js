@@ -55,16 +55,15 @@ lectureSchema.plugin(mongooseFuzzySearching, {
 
 lectureSchema.pre("save", function (next) {
   this.wasNew = this.isNew;
+  console.log("TTTT 1", this.isNew);
   next();
 });
 
 // Create slug
 lectureSchema.pre("save", async function (next) {
-  if (this.isNew) {
-    const chapter = await Chapter.findById(this.chapter).select({
-      course: 1,
-      name: 1,
-    });
+  console.log("TTTT 2", this.isNew, this.slug);
+  if (this.isNew && !this.slug) {
+    const chapter = await Chapter.findById(this.chapter).select({ course: 1, name: 1 });
     const course = await Course.findById(chapter.course).select({ name: 1 });
 
     this.slug = slugify(`${course.name} ${chapter.name} ${this.name}`);

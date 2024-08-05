@@ -11,7 +11,7 @@ const LecturePage = async ({ params, isOverview }) => {
   const course = await fetchCourse(courseSlug);
   const lecture = findLecture(course, lectureSlug);
 
-  // if (!isOverview && !lecture) redirect(`/courses/${course.slug}`);
+  if (!isOverview && !lecture) redirect(`/courses/${course.slug}`);
 
   if (isOverview) {
     return <Overview course={course} />;

@@ -13,6 +13,10 @@ const contentSchema = new mongoose.Schema({
     type: String,
     default: "none",
   },
+  isLectureDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 contentSchema.path("lecture").validate(doesObjectIdExist(Lecture), "Lecture does not exist");

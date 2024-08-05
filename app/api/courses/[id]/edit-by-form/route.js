@@ -11,11 +11,13 @@ export const PATCH = routeHandler(
 
     const { course } = req.data;
 
-    // If image was provided, upload replacement image
-    const imageFile = req.data.formData.image;
-    if (imageFile && imageFile.size > 0) {
-      const appError = await course.uploadImageToS3(imageFile);
-      if (appError) return appError;
+    // If image was provided, upload replacement to s3
+    try {
+      const imageFile = req.data.formData.image;
+      if (imageFile) await course.uploadImageToS3(imageFile);
+    } catch (appError) {
+      await fetchAuth(`${getDomain()}/api/courses/${course._id}/hard`, { method: "DELETE" });
+      throw appError;
     }
 
     // Send response

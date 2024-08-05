@@ -42,6 +42,7 @@ const courseSchema = new mongoose.Schema({
   },
   image: {
     type: String,
+    required: [true, "Please provide an image"],
     minLength: [3, "Image source must be at least 3 characters long"],
     maxLength: [500, "Image source cannot exceed 500 characters"],
   },
@@ -83,7 +84,7 @@ courseSchema.plugin(mongooseFuzzySearching, {
 
 // Create a new slug every time name is modified
 courseSchema.pre("save", function (next) {
-  if (this.isNew) {
+  if (this.isNew && !this.slug) {
     this.slug = slugify(this.name);
   }
 
@@ -91,20 +92,20 @@ courseSchema.pre("save", function (next) {
 });
 
 courseSchema.methods.getImageKey = function () {
-  return this.image.split("amazonaws.com/")[1];
+  return this.image && this.image.split("amazonaws.com/")[1];
 };
 
 courseSchema.methods.uploadImageToS3 = async function (imageFile) {
   // Check if image does not exceed 2MB
   const maxFileSize = 1024 * 1024 * 2; // 2Mb
   if (imageFile.size > maxFileSize) {
-    return new AppError("Image cannot be larger than 2MB", 400);
+    throw new AppError("Image cannot be larger than 2MB", 400);
   }
 
   // Check if image type is valid
   const acceptedFileTypes = [ "image/jpeg", "image/jpg", "image/png", "image/webp" ]; //prettier-ignore
   if (!acceptedFileTypes.includes(imageFile.type)) {
-    return new AppError("You must upload an image", 400);
+    throw new AppError("File type is not accepted", 400);
   }
 
   // Edit photo to fit sizes
@@ -115,6 +116,7 @@ courseSchema.methods.uploadImageToS3 = async function (imageFile) {
   const imageS3Object = new S3Object(formattedBuffer, "image/webp", Buffer.byteLength(formattedBuffer));
 
   // If image does not exist, create key
+  console.log("IMAGE", this.image);
   let key;
   if (!this.image) {
     const filename = imageS3Object.getUniqueFilename(this.slug);
@@ -126,16 +128,15 @@ courseSchema.methods.uploadImageToS3 = async function (imageFile) {
   else {
     key = this.getImageKey();
   }
+  console.log("KEY", key);
+  if (!key) throw new AppError("Image could not be uploaded", 400);
 
   // Create signed url
   const metadata = { course: JSON.stringify(this._id) };
   const signedURL = await imageS3Object.getSignedURL({ key, metadata });
 
-  // Upload file to S3 bucket and check if there was an error
-  const appError = await imageS3Object.upload(signedURL);
-  if (appError) {
-    return appError;
-  }
+  // Upload file to S3 bucket
+  await imageS3Object.upload(signedURL);
 
   // Get access url and add it to course
   const accessURL = imageS3Object.getAccessURL(signedURL);
