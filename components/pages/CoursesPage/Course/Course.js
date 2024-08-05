@@ -18,7 +18,7 @@ const Course = ({ data }) => {
   return (
     <Link
       href={`/courses/${data.slug}`}
-      className={join(classes.Course, data.comingSoon ? classes.unreleased : null)}
+      className={join(classes.Course, data.comingSoon ? classes.comingSoon : null)}
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
       onClick={() => startProgress()}
@@ -29,7 +29,7 @@ const Course = ({ data }) => {
             <Image src={data.image || `/images/courses/default.png`} alt="calculations" fill />
           </div>
           {data.comingSoon && (
-            <div className={classes.CourseUnreleased}>
+            <div className={classes.CourseComingSoon}>
               <span>Coming soon!</span>
             </div>
           )}

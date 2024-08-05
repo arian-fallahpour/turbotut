@@ -46,6 +46,7 @@
   },
   {
     "type": "cols",
+    "style": { "gridTemplateColumns": "repeat(2, 1fr)" },
     "contents": [
       { "type": "image", "url": "/images/lectures/cusp-graph-1.png" },
       { "type": "image", "url": "/images/lectures/cusp-graph-2.png" }
@@ -81,6 +82,7 @@
   },
   {
     "type": "cols",
+    "style": { "gridTemplateColumns": "repeat(2, 1fr)" },
     "contents": [
       {
         "type": "image",

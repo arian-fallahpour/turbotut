@@ -17,12 +17,7 @@
     box-shadow: 0 2rem 4.5rem -4rem var(--c-orange), 0 -2rem 4.5rem -4rem var(--c-orange);
   }
 
-  &.unreleased {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-  &.unreleased &Unreleased {
+  &.comingSoon &ComingSoon {
     display: block;
   }
 
@@ -43,14 +38,13 @@
     }
   }
 
-  &Unreleased {
+  &ComingSoon {
     display: none;
     right: var(--gap-md);
     top: var(--gap-md);
     padding: 0.5rem 1rem;
     border-radius: 22rem;
     font-size: 1.25rem;
-    opacity: 0.75;
 
     @include shiny("orange", 22rem);
     position: absolute;

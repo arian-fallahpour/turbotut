@@ -57,13 +57,17 @@
       },
       {
         "type": "p",
-        "content": "What trick was used when solving this problem?"
+        "content": "What specific trick was used when solving this problem?"
+      },
+      {
+        "type": "p",
+        "content": "What was your thought process?"
       }
     ]
   },
   {
     "type": "p",
-    "content": "Ask these questions, and try to find out how you really solved the problem. Spend most of your time in this step."
+    "content": "By reflecting on how you solved the problem, you are more likely to apply what you have learned on your next questions. Spend most of your time in this step."
   },
   { "type": "br" },
   {
@@ -226,10 +230,14 @@
   },
   {
     "type": "p",
-    "content": "Even for the best students, sometimes a question is so difficult, or time consuming that it is not possible to fully answer it. For whatever the reason, here is what you should do."
+    "content": "Even for the best students, sometimes a question is so difficult, or time consuming that it is not possible to fully answer it."
   },
   {
     "type": "p",
-    "content": ""
+    "content": "If you are absolutely sure you cannot answer it, think about how your teacher structured this question in terms of marks. There is usually 1-2 points reserved for the final answer, and the rest for the process involved in solving the problem."
+  },
+  {
+    "type": "p",
+    "content": "If you know the final answer, but not the process to find it, write it down as your final answer. Pretend as if you know it and come of with a fake process that leads you to that answer."
   }
 ]

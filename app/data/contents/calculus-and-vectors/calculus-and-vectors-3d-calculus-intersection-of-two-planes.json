@@ -5,6 +5,7 @@
   },
   {
     "type": "cols",
+    "style": { "gridTemplateColumns": "repeat(3, 1fr)" },
     "contents": [
       {
         "type": "image",

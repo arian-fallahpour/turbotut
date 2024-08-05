@@ -136,3 +136,5 @@ function replaceBold(string) {
 function replaceLink(inputString) {
   return inputString.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, `<a href="$2">$1</a>`);
 }
+
+// TODO: review type col to check if they are big enough

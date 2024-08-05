@@ -21,6 +21,10 @@
     }
   }
 
+  & > label {
+    font-weight: var(--font-weight-bold);
+  }
+
   &Outline {
     & > label {
       position: absolute;

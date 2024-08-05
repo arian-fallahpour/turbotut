@@ -1,0 +1,60 @@
+[
+  {
+    "type": "h1",
+    "content": "Math"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/subject-specific-tips-1.jpeg"
+  },
+  {
+    "type": "h2",
+    "content": "The best study method"
+  },
+  {
+    "type": "p",
+    "content": "Studying for math does not need to be difficult. If you fixate your mind on the tips below, it should be very easy."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "In math, you will not succeed by simply memorizing formulas. You need to understand the concepts fully so that you can use them"
+  },
+  {
+    "type": "h2",
+    "content": "What to look out for in tests"
+  },
+  {
+    "type": "p",
+    "content": "Typically in tests, there is one type of question that you should look out for."
+  },
+  {
+    "type": "p",
+    "content": "Critical thinking questions are the hardest, because they test your ability to use what you already know in a way that you haven't done before in class, or in other assignments."
+  },
+  {
+    "type": "p",
+    "content": "This is why understanding the concepts is so important. It allows you to use it to your advantage in difficult questions like these. If you don't understand the concept, you won't know what tools to use."
+  },
+  { "type": "br" },
+  {
+    "type": "p",
+    "content": "For example, say you know all the formulas to convert functions into their derivatives, but you don't know what the derivative is itself. Well, if you are only given two points, and are asked to find the value of the derivative of that function at those two points, you'll be stuck. If you know what a derivative is, you can easily answer this question because it is a rate of change."
+  },
+  {
+    "type": "h1",
+    "content": "Physics"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/subject-specific-tips-2.jpg"
+  },
+  {
+    "type": "h1",
+    "content": "Chemistry"
+  },
+  {
+    "type": "image",
+    "url": "/images/lectures/subject-specific-tips-3.jpg"
+  }
+]

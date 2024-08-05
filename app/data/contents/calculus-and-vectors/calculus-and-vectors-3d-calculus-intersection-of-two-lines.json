@@ -9,7 +9,7 @@
   },
   {
     "type": "cols",
-    "style": { "maxWidth": "40em", "justifySelf": "center" },
+    "style": { "gridTemplateColumns": "repeat(2, 1fr)" },
     "contents": [
       {
         "type": "image",
@@ -25,7 +25,7 @@
   },
   {
     "type": "cols",
-    "style": { "maxWidth": "40em", "justifySelf": "center" },
+    "style": { "gridTemplateColumns": "repeat(2, 1fr)" },
     "contents": [
       {
         "type": "image",

@@ -15,19 +15,6 @@ const Modal = () => {
     if (visible && input) input.focus();
   }, [visible]);
 
-  // Press "Esc" to hide modal
-  useEffect(() => {
-    const exitEscapeModalHandler = (e) => {
-      if (e.key === "Escape") hideModal();
-    };
-
-    document.addEventListener("keydown", exitEscapeModalHandler, false);
-
-    return () => {
-      document.removeEventListener("keydown", exitEscapeModalHandler, false);
-    };
-  }, [hideModal]);
-
   return (
     <Fragment>
       <span className={join(classes.Backdrop, visible ? classes.visible : null)} onClick={hideModal} />

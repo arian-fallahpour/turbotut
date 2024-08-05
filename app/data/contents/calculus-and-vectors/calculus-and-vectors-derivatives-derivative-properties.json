@@ -171,6 +171,7 @@
   },
   {
     "type": "cols",
+    "style": { "gridTemplateColumns": "repeat(2, 1fr)" },
     "contents": [
       {
         "type": "image",
@@ -186,6 +187,7 @@
   },
   {
     "type": "cols",
+    "style": { "gridTemplateColumns": "repeat(2, 1fr)" },
     "contents": [
       {
         "type": "image",
