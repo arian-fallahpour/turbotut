@@ -1,6 +1,22 @@
-<p align="center">
-  <img src="./public/logo.svg" width="100" alt="TurboTut Logo"/>
-</p>
+<header align="center">
+  <p>
+    <img src="./public/logo.svg" width="100" alt="TurboTut Logo"/>
+  </p>
+
+  <h1>TurboTut</h1>
+
+  <ul style="list-style: none; display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <li><a href="https://www.turbotut.com/">Home</a></li> 
+    <li>•</li> 
+    <li><a href="https://www.turbotut.com/courses">Courses</a></li>
+    <li>•</li> 
+    <li><a href="https://www.turbotut.com/pricing">Pricing</a></li>
+  </ul>
+
+  <p>
+  TurboTut is an online education platform designed to help high school students learn subjects faster and more effectively. Our focus is on delivering high-quality lessons in Grade 12 Physics and Grade 12 Calculus, making sure students have the knowledge and skills to excel.
+  </p>
+</header>
 
 # turbotut
 
