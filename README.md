@@ -86,3 +86,16 @@ Documents for users, subscriptions, orders, courses, course chapters, course lec
 2. Choose your subscription plan through **Stripe**.
 3. Start learning with our comprehensive lessons and chapter tests.
 4. If you're an admin, access the dashboard to manage content, users, and subscriptions.
+
+## Deployment
+
+First fork the project by clicking on the Fork button,
+then, in the directory you wish your project to be cloned in, do the following:
+
+```
+git clone https://github.com/[Your Username}/turbotut
+cd ./turbotut
+npm run dev
+```
+
+Now you should have the development version running on your computer at http://localhost:3000!
