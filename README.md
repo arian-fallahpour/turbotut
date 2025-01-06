@@ -18,6 +18,16 @@
   </p>
 </header>
 
+## Website
+
+The TurboTut website is accessible by visiting the following url: https://www.turbotut.com/
+
+## Youtube Channel
+
+TurboTut's website is not the only place that you can learn from us! We have a dedicated Youtube channel with over **3,000,000** views and more than **2,900** subscribers!
+
+Check us out at: https://www.youtube.com/@user-fl5xn8dw4k
+
 ## Features
 
 ### Learning Experience
