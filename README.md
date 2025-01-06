@@ -26,7 +26,6 @@
 ![Stripe](https://img.shields.io/badge/Stripe-5469d4?style=for-the-badge&logo=stripe&logoColor=ffffff)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Amazon S3](https://img.shields.io/badge/Amazon%20S3-FF9900?style=for-the-badge&logo=amazons3&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
 
 </header>
@@ -41,29 +40,38 @@ TurboTut's website is not the only place that you can learn from us! We have a d
 
 Check us out at: https://www.youtube.com/@user-fl5xn8dw4k
 
-## Technology Used
+## Technologies Used
 
-1. ReactJS
+| Technology                                                                                                      | Description                                                                                                                    |
+| --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)   | Utilized to create reusable components and smoothly handle front-end actions.                                                  |
+| ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)            | Handled the serverless back-end architecture of the application, and also implemented front-end image optimization.            |
+| ![Stripe](https://img.shields.io/badge/Stripe-5469d4?style=for-the-badge&logo=stripe&logoColor=ffffff)          | The Stripe API was used to implement subscription payments into the application, as well as track user spending.               |
+| ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) | Documents and user data were stored using MongoDB and created a basis for the logic of the subscription payments model system. |
+| ![Amazon S3](https://img.shields.io/badge/Amazon%20S3-FF9900?style=for-the-badge&logo=amazons3&logoColor=white) | User profile pictuers and course content (JSON) were stored and tracked in S3 buckets.                                         |
+| ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)         | ChatGPT was used to generate the course content faster by abiding to the JSON format the application reads off of.             |
+| Oauth                                                                                                           | Oauth was used to create a fast and easily login experience for users.                                                         |
 
-2. NextJS
+## Technical Architecture
 
-## Features
+### 📚 Content Management 📚
 
-### Learning Experience
+All lessons are managed through a content management system (CMS) using **ReactJS**, with data stored in **AWS S3** as JSON files and tracked using a **MongoDB** database.
 
-- **Comprehensive Lessons**: TurboTut provides essential lessons that cover all the key concepts required for Grade 12 Physics and Calculus.
-- **Interactive Questions**: Each lesson includes carefully crafted questions to help students grasp the material more deeply.
-- **Chapter Tests**: At the end of each chapter, students take a test with **critical thinking problems** to assess their understanding and application of the content.
+### 🔑 User Authentication 🔑
 
-### Technical Architecture
+TurboTut uses **OAuth** for secure login. This allowed for a fast, and secure login experience using common login providers such as Google and GitHub.
 
-- **Content Management**: All lessons are managed through a content management system (CMS), with data stored in **AWS S3** as JSON files and tracked using a **MongoDB** database.
-- **User Authentication**: TurboTut uses **OAuth** for secure login. Users are assigned a role of either "User" or "Admin."
-- **Role-based Access**:
-  - **Users** can take lessons, track progress, and manage subscriptions.
-  - **Admins** can access additional features like viewing and editing lectures, managing database documents via a custom dashboard, and more.
-- **Admin Dashboard**: Admins use a secure **REST API** to safely view and edit data stored in the database, providing full control over content and user management.
-- **Subscription Management**: TurboTut integrates with **Stripe** for subscription payments, offering users a seamless and secure payment experience.
+### 👤 Role-based Access 👤
+
+- Guests and Non-premium users can view free lectures and view/manage their profile.
+- Premium users can view paid lectures, managed their payment methods and choose to cancel/continue their subscription
+- Admins can access additional features like viewing and editing lectures, managing database documents via a custom dashboard, and more.
+  ents, offering users a seamless and secure payment experience.
+
+### 📄 Document Storage 📄
+
+Documents for users, subscriptions, orders, courses, course chapters, course lectures and more are stored in the non-relational **MongoDB** database.
 
 ## Admin Features
 
@@ -72,17 +80,9 @@ Check us out at: https://www.youtube.com/@user-fl5xn8dw4k
 - **Role Management**: Manage user roles and access levels.
 - **Subscription Control**: Full access to user subscription details and payment history via Stripe integration.
 
-## Technologies Used
+## How to Buy a Subscription
 
-- **AWS S3**: For content storage.
-- **MongoDB**: Database for tracking content and user data.
-- **OAuth**: Secure user authentication.
-- **Stripe**: Subscription payment processing.
-- **REST API**: Secure interaction between frontend and backend services.
-
-## How to Get Started
-
-1. Sign up for an account using **OAuth** (Google, Facebook, etc.).
+1. Sign up for an account using **OAuth** (Google or GitHub).
 2. Choose your subscription plan through **Stripe**.
 3. Start learning with our comprehensive lessons and chapter tests.
 4. If you're an admin, access the dashboard to manage content, users, and subscriptions.
