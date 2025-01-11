@@ -178,6 +178,7 @@ export const editOneByForm = (Model, sendResponse = true) =>
 
     // Find document
     const document = await Model.findById(params.id);
+    console.log(document);
     if (!document) return new AppError(`${toCap(name)} not found with provided id`, 404);
 
     // Update document
@@ -189,6 +190,7 @@ export const editOneByForm = (Model, sendResponse = true) =>
       }
     });
     await document.save();
+    console.log(document);
 
     if (sendResponse) {
       return NextResponse.json(

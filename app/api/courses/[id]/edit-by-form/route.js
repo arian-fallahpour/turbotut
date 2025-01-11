@@ -4,6 +4,7 @@ import { routeHandler } from "@/utils/authentication";
 import { NextResponse } from "next/server";
 import { editOneByForm } from "@/utils/factoryHandler";
 import { fetchAuth, getDomain } from "@/utils/dataFetch";
+import AppError from "@/utils/AppError";
 
 export const PATCH = routeHandler(
   async function (req, { params }) {
@@ -19,8 +20,7 @@ export const PATCH = routeHandler(
         await course.uploadImageToS3(imageFile);
       }
     } catch (appError) {
-      await fetchAuth(`${getDomain()}/api/courses/${course._id}/hard`, { method: "DELETE" });
-      throw appError;
+      return new AppError(appError.message, appError.code);
     }
 
     // Send response
