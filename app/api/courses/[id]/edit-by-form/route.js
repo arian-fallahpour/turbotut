@@ -15,7 +15,9 @@ export const PATCH = routeHandler(
     // If image was provided, upload replacement to s3
     try {
       const imageFile = req.data.formData.image;
-      if (imageFile) await course.uploadImageToS3(imageFile);
+      if (typeof imageFile !== "undefined" && imageFile.size > 0) {
+        await course.uploadImageToS3(imageFile);
+      }
     } catch (appError) {
       await fetchAuth(`${getDomain()}/api/courses/${course._id}/hard`, { method: "DELETE" });
       throw appError;
