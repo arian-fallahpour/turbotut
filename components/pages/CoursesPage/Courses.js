@@ -10,7 +10,7 @@ import { connectDB } from "@/utils/database";
 async function getData() {
   await connectDB();
 
-  const query = new APIQuery(CourseModel.find(), { isArchived: false, sort: "comingSoon,-createdAt" }).sort();
+  const query = new APIQuery(CourseModel.find(), { isArchived: false, comingSoon: false, sort: "-createdAt" }).sort();
   const courses = await query.execute();
 
   return JSON.parse(JSON.stringify(courses));

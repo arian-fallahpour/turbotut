@@ -3,6 +3,7 @@ import { routeHandler } from "@/utils/authentication";
 
 import { NextResponse } from "next/server";
 import { editOneByForm } from "@/utils/factoryHandler";
+import { fetchAuth, getDomain } from "@/utils/dataFetch";
 
 export const PATCH = routeHandler(
   async function (req, { params }) {

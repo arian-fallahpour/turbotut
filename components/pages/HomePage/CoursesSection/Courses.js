@@ -13,7 +13,7 @@ async function getData() {
 
   const query = new APIQuery(
     CourseModel.find(),
-    queryString.parse({ isArchived: false, sort: "comingSoon,-createdAt" })
+    queryString.parse({ isArchived: false, comingSoon: false, sort: "-createdAt" })
   )
     .sort()
     .filter();
