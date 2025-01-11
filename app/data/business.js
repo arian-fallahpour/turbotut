@@ -9,7 +9,7 @@ const business = {
     {
       name: "premium",
       stripeLookUpKey: "premium-plan",
-      price: 14.99,
+      price: 2.99,
       duration: "monthly",
       benefits: [
         {
