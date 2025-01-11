@@ -392,7 +392,7 @@
   { "type": "br" },
   {
     "type": "p",
-    "content": "We already have an entire chapter on vectors [here](/courses/calculus-and-vectors/lecture/calculus-and-vectors-vectors-properties-of-vectors#lecture-content), so check that out. You don't need to review the entire chapter, however, it would be helpful for you to know how to add and subtract vectors, as well as know the dot product and cross product in the future."
+    "content": "We already have an entire chapter on vectors [here](http://turbotut.com/courses/calculus-and-vectors/lecture/calculus-and-vectors-vectors-properties-of-vectors#lecture-content), so check that out. You don't need to review the entire chapter, however, it would be helpful for you to know how to add and subtract vectors, as well as know the dot product and cross product in the future."
   },
   { "type": "br" },
   {
