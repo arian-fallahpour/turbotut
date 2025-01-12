@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 import Course from "@/models/courseModel";
 
 import { createOneByForm } from "@/utils/factoryHandler";
-import { fetchAuth, getDomain } from "@/utils/dataFetch";
 
 export const POST = routeHandler(
   async function (req, { params }) {
@@ -12,13 +11,7 @@ export const POST = routeHandler(
     const { course } = req.data;
 
     // If image was provided, upload to s3
-    try {
-      const imageFile = req.data.formData.image;
-      if (imageFile) await course.uploadImageToS3(imageFile);
-    } catch (appError) {
-      await fetchAuth(`${getDomain()}/api/courses/${course._id}/hard`, { method: "DELETE" });
-      throw appError;
-    }
+    await course.uploadImageToS3(req.data.formData.image);
 
     return NextResponse.json(
       {
