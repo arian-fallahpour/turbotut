@@ -96,7 +96,7 @@ courseSchema.methods.getImageKey = function () {
 };
 
 courseSchema.methods.uploadImageToS3 = async function (imageFile) {
-  const imageNotProvided = typeof imageFile === "undefined" || imageFile.size > 0;
+  const imageNotProvided = typeof imageFile === "undefined" || imageFile.size === 0;
   if (imageNotProvided) return;
 
   // Check if image does not exceed 2MB

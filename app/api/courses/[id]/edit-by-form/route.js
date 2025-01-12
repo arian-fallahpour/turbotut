@@ -11,6 +11,7 @@ export const PATCH = routeHandler(
 
     const { course } = req.data;
 
+    console.log("HELLOW");
     // If image was provided, upload replacement to s3
     await course.uploadImageToS3(req.data.formData.image);
 

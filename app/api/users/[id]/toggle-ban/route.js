@@ -14,8 +14,6 @@ export const PATCH = routeHandler(
     const user = await User.findById(params.id).select("+isBanned");
     if (!user) return new AppError("No user found", 404);
 
-    console.log(user);
-
     // Ban user
     user.isBanned = !user.isBanned;
     await user.save();
