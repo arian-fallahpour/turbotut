@@ -4,6 +4,7 @@ import Button from "@/components/Elements/Button/Button";
 
 import business from "@/app/data/business";
 
+const currentYear = new Date(Date.now()).getFullYear();
 const Footer = () => {
   return (
     <footer className={classes.Footer}>
@@ -31,7 +32,7 @@ const Footer = () => {
       </ul>
       <p className="paragraph">Support: email@example.com</p>
       <p className="paragraph">
-        ©2024-{new Date(Date.now()).getFullYear()} {business.name}. All rights reserved.
+        ©2024-{currentYear} {business.name}. All rights reserved.
       </p>
     </footer>
   );
