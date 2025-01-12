@@ -1,5 +1,5 @@
 import React from "react";
-import ContentManager from "./ContentManager";
+import ContentManager from "../ContentManager";
 
 const ContentList = ({ Tag, content, contents, style, isChild }) => {
   return (

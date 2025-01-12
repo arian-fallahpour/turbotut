@@ -1,5 +1,5 @@
 import React from "react";
-import ContentManager from "./ContentManager";
+import ContentManager from "../ContentManager";
 
 const ContentCols = ({ style, contents }) => {
   return (

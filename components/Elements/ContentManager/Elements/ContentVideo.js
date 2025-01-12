@@ -1,8 +1,6 @@
-import "katex/dist/katex.min.css";
-
 import React from "react";
 import Latex from "react-latex-next";
-import { format } from "./ContentManager";
+import { format } from "../ContentManager";
 
 const ContentVideo = ({ src, style, content }) => {
   return (

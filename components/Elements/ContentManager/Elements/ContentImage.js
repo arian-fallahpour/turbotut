@@ -1,9 +1,7 @@
-import "katex/dist/katex.min.css";
-
 import Image from "next/image";
 import React from "react";
 import Latex from "react-latex-next";
-import { format } from "./ContentManager";
+import { format } from "../ContentManager";
 
 const ContentImage = ({ src, style, content }) => {
   return (

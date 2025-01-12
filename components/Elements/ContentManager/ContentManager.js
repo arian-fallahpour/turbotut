@@ -2,15 +2,16 @@ import "katex/dist/katex.min.css";
 
 import React from "react";
 import classes from "./ContentManager.module.scss";
-import Latex from "react-latex-next";
 import { join } from "@/utils/helper";
-import ContentImage from "./ContentImage";
-import ContentList from "./ContentList";
-import ContentVideo from "./ContentVideo";
-import ContentParagraph from "./ContentParagraph";
-import ContentCols from "./ContentCols";
-import ContentRows from "./ContentRows";
-import ContentTable from "./ContentTable";
+
+import Latex from "react-latex-next";
+import ContentImage from "./Elements/ContentImage";
+import ContentList from "./Elements/ContentList";
+import ContentVideo from "./Elements/ContentVideo";
+import ContentParagraph from "./Elements/ContentParagraph";
+import ContentCols from "./Elements/ContentCols";
+import ContentRows from "./Elements/ContentRows";
+import ContentTable from "./Elements/ContentTable";
 
 const ContentManager = ({ type, content, contents, rows, style, url, isChild, gridTemplateColumns }) => {
   const Tag = type;

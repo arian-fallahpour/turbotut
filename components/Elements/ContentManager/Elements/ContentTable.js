@@ -1,7 +1,5 @@
-import "katex/dist/katex.min.css";
-
 import React from "react";
-import ContentManager, { format } from "./ContentManager";
+import ContentManager, { format } from "../ContentManager";
 import Latex from "react-latex-next";
 import { join } from "@/utils/helper";
 
