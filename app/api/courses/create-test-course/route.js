@@ -2,12 +2,17 @@ import Chapter from "@/models/chapterModel";
 import Content from "@/models/contentModel";
 import Course from "@/models/courseModel";
 import Lecture from "@/models/lectureModel";
+import AppError from "@/utils/AppError";
 import { routeHandler } from "@/utils/authentication";
 import { connectDB } from "@/utils/database";
 import { NextResponse } from "next/server";
 
 export const POST = routeHandler(
   async function (req, { params }) {
+    if (process.env.NODE_ENV === "production") {
+      return new AppError("This route is not permitted in production!", 401);
+    }
+
     await connectDB();
 
     const chaptersPerCourse = 3;
