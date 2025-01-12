@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./LectureContent.module.scss";
 
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
-import Formatted, { FormattedContent } from "@/components/Elements/Formatted/Formatted";
+import ContentManager from "@/components/Elements/ContentManager/ContentManager";
 import { fetchAuth, getDomain } from "@/utils/dataFetch";
 
 // Should be revalidated every 60 seconds
@@ -32,9 +32,9 @@ const LectureContent = async ({ lecture }) => {
       </header>
       <div className={classes.LectureContentContainer}>
         {!error && (
-          <FormattedContent>
-            {contents?.length > 0 && contents.map((data, i) => <Formatted key={i} {...data} />)}
-          </FormattedContent>
+          <ContentManager.Wrapper>
+            {contents?.length > 0 && contents.map((data, i) => <ContentManager key={i} {...data} />)}
+          </ContentManager.Wrapper>
         )}
 
         {error && <ErrorBlock className={classes.LectureContentError} message={error.message} type="info" />}

@@ -46,13 +46,13 @@ const ContentSection = ({ className, document, sectionData }) => {
         <h2 className="header header-section">Preview</h2>
       </div>
 
-      {/* {!loading && !error && data?.length > 0 && (
+      {!loading && !error && data?.length > 0 && (
         <ContentManager.Wrapper className={classes.Content}>
           {data.map((obj, i) => (
             <ContentManager key={i} {...obj} />
           ))}
         </ContentManager.Wrapper>
-      )} */}
+      )}
 
       {loading && <LoaderBlock />}
       {error && <ErrorBlock message={error} />}

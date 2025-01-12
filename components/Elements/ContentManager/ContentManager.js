@@ -8,13 +8,16 @@ import ContentImage from "./ContentImage";
 import ContentList from "./ContentList";
 import ContentVideo from "./ContentVideo";
 import ContentParagraph from "./ContentParagraph";
+import ContentCols from "./ContentCols";
+import ContentRows from "./ContentRows";
+import ContentTable from "./ContentTable";
 
 const ContentManager = ({ type, content, contents, rows, style, url, isChild, gridTemplateColumns }) => {
   const Tag = type;
 
   const loopTypes = ["ul", "ol"];
   if (loopTypes.includes(type)) {
-    return <ContentList Tag={Tag} style={style} content={content} contents={contents} />;
+    return <ContentList Tag={Tag} style={style} content={content} contents={contents} isChild={isChild} />;
   } else if (type === "image") {
     return <ContentImage src={url} style={style} content={content} />;
   } else if (type === "video") {
@@ -22,53 +25,11 @@ const ContentManager = ({ type, content, contents, rows, style, url, isChild, gr
   } else if (type === "latex") {
     return <ContentParagraph style={style} content={content} />;
   } else if (type === "cols") {
-    return (
-      <div className="cols" style={style}>
-        {contents.map((content, i) => (
-          <ContentManager key={i} {...content} />
-        ))}
-      </div>
-    );
+    return <ContentCols style={style} contents={contents} />;
   } else if (type === "rows") {
-    return (
-      <div className="rows" style={style}>
-        {contents.map((content, i) => (
-          <ContentManager key={i} {...content} />
-        ))}
-      </div>
-    );
+    return <ContentRows style={style} contents={contents} />;
   } else if (type === "table") {
-    return (
-      <table className="table" style={style}>
-        <tbody className="table-content">
-          {rows.map((row, i) => (
-            <tr
-              key={i}
-              className={join("table-row", !!row.header ? "table-header" : null)}
-              style={{ ...row.style, gridTemplateColumns }}
-            >
-              {row.cells.map((col, j) => (
-                <td key={j} className={"table-cell"} style={col.style}>
-                  {!col.content && <span>&nbsp;</span>}
-                  {!!col.content && <ContentManager {...col} />}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-        {content && (
-          <tbody style={{ display: "grid", justifyContent: "center" }}>
-            <tr>
-              <td>
-                <p>
-                  <Latex>{format(content)}</Latex>
-                </p>
-              </td>
-            </tr>
-          </tbody>
-        )}
-      </table>
-    );
+    return <ContentTable style={style} content={content} rows={rows} gridTemplateColumns={gridTemplateColumns} />;
   } else if (type === "br") {
     return <br />;
   } else {
@@ -80,15 +41,16 @@ const ContentManager = ({ type, content, contents, rows, style, url, isChild, gr
   }
 };
 
-export default ContentManager;
+const Wrapper = ({ className, children, ...otherProps }) => {
+  return (
+    <div className={join(className, classes.ContentManager)} {...otherProps}>
+      {children}
+    </div>
+  );
+};
 
-// const Wrapper = ({ className, children, ...otherProps }) => {
-//   return (
-//     <div className={join(className, classes.ContentManager)} {...otherProps}>
-//       {children}
-//     </div>
-//   );
-// };
+ContentManager.Wrapper = Wrapper;
+export default ContentManager;
 
 export function format(string) {
   string = replaceBold(string);

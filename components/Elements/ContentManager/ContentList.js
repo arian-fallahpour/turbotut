@@ -1,7 +1,7 @@
 import React from "react";
 import ContentManager from "./ContentManager";
 
-const ContentList = ({ Tag, content, contents, style }) => {
+const ContentList = ({ Tag, content, contents, style, isChild }) => {
   return (
     <>
       {isChild && content}
