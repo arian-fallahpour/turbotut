@@ -30,7 +30,9 @@ const Footer = () => {
         </li> */}
       </ul>
       <p className="paragraph">Support: email@example.com</p>
-      <p className="paragraph">©2024-present {business.name}. All rights reserved.</p>
+      <p className="paragraph">
+        ©2024-{new Date(Date.now()).getFullYear()} {business.name}. All rights reserved.
+      </p>
     </footer>
   );
 };
