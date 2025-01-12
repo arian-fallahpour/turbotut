@@ -7,7 +7,7 @@ import { join } from "@/utils/helper";
 import Section from "@/components/Elements/Section/Section";
 import LoaderBlock from "@/components/Elements/Loader/LoaderBlock";
 import ErrorBlock from "@/components/Elements/ErrorBlock/ErrorBlock";
-import Formatted, { FormattedContent } from "@/components/Elements/Formatted/Formatted";
+import ContentManager from "@/components/Elements/ContentManager/ContentManager";
 import { getNestedPath } from "@/app/data/dashboard/collections";
 
 const ContentSection = ({ className, document, sectionData }) => {
@@ -46,13 +46,13 @@ const ContentSection = ({ className, document, sectionData }) => {
         <h2 className="header header-section">Preview</h2>
       </div>
 
-      {!loading && !error && data?.length > 0 && (
-        <FormattedContent className={classes.Content}>
+      {/* {!loading && !error && data?.length > 0 && (
+        <ContentManager.Wrapper className={classes.Content}>
           {data.map((obj, i) => (
-            <Formatted key={i} {...obj} />
+            <ContentManager key={i} {...obj} />
           ))}
-        </FormattedContent>
-      )}
+        </ContentManager.Wrapper>
+      )} */}
 
       {loading && <LoaderBlock />}
       {error && <ErrorBlock message={error} />}

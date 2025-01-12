@@ -1,0 +1,215 @@
+// NOTE: Be careful with margins, since it may affect latex
+
+.Formatted {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  min-height: 70rem;
+  max-width: 70ch;
+
+  display: grid;
+  align-content: start;
+  font-size: var(--font-size-normal);
+
+  // Headers
+  h1,
+  h2,
+  h3 {
+    color: var(--txt-title);
+    font-weight: var(--font-weight-bold);
+    text-transform: capitalize;
+    margin-top: 2em;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.37em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  // Lists
+  ul,
+  ol {
+    padding-inline-start: 1.37em;
+  }
+
+  // Texts
+  ul,
+  ol,
+  p,
+  figure,
+  :global(.video) {
+    font-weight: var(--font-weight-thin);
+  }
+
+  // Not special element
+  *:not(
+      h1,
+      h2,
+      h3,
+      span,
+      figure,
+      img,
+      video,
+      ul,
+      ol,
+      :global(.video),
+      :global(.katex),
+      :global(.katex) *,
+      :global(.table),
+      :global(.table-row),
+      :global(.table-cell),
+      :global(.table-cell) > *,
+      :global(.ignore),
+      :global(.cols),
+      :global(.rows)
+    ),
+  *:global(.rows) > *:not(:global(.rows), :global(.cols)),
+  *:global(.cols) > *:not(:global(.rows), :global(.cols)) {
+    margin-top: 0.75em;
+  }
+
+  p:global(.latex) {
+    text-align: center;
+    font-size: 1.5em;
+    justify-self: center;
+    margin: 1.5em 0;
+    line-height: 1rem;
+
+    & :global(.newline) {
+      height: 0.75em;
+    }
+  }
+
+  a {
+    color: var(--c-blue-light);
+    font-weight: var(--font-weight-bold);
+    border-bottom: 0.2rem solid var(--c-blue-light);
+
+    &:hover,
+    &:focus-visible {
+      filter: brightness(1.1);
+    }
+  }
+
+  figure,
+  :global(.video),
+  :global(.table) {
+    margin: 1em 0;
+  }
+
+  figure {
+    position: relative;
+    font-size: var(--font-size-normal);
+
+    display: grid;
+    justify-items: center;
+    align-content: start;
+
+    & > img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--bd-radius);
+      border: 1px solid var(--c-panel-bd);
+      display: block;
+
+      &:hover,
+      &:focus-visible {
+        cursor: zoom-in;
+      }
+    }
+
+    & > figcaption {
+      text-align: center;
+      font-style: italic;
+      font-size: inherit;
+      margin-top: 0.37em;
+    }
+  }
+
+  :global(.video) {
+    display: grid;
+    justify-items: center;
+    align-content: start;
+
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--bd-radius);
+      overflow: hidden;
+      border: 1px solid var(--c-panel-bd);
+    }
+
+    & > figcaption {
+      text-align: center;
+      font-style: italic;
+      font-size: inherit;
+      margin-top: 0.37em;
+    }
+  }
+
+  :global(.cols) {
+    display: grid;
+    gap: 1em;
+    justify-content: start;
+    grid-auto-columns: 1fr;
+  }
+
+  :global(.rows) {
+    display: grid;
+    align-content: start;
+
+    & > * {
+      grid-column: 1 / span 1;
+    }
+  }
+
+  :global(.table) {
+    display: block;
+    overflow-x: auto;
+    position: relative;
+    max-width: 100%;
+
+    :global(.table-content) {
+      display: inline-block;
+      overflow: hidden;
+
+      border: 1px solid var(--c-panel-bd);
+      border-radius: var(--bd-radius);
+      text-align: center;
+    }
+
+    :global(.table-header) {
+      background-color: var(--c-panel-bg);
+      color: var(--txt-title);
+      font-weight: var(--font-weight-normal-bold);
+    }
+
+    :global(.table-row) {
+      display: grid;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--c-panel-bd);
+      }
+    }
+
+    :global(.table-cell) {
+      padding: var(--gap-sm) var(--gap-md);
+
+      display: grid;
+      align-items: center;
+      grid-row: 1 / span 1;
+
+      &:not(:last-child) {
+        border-right: 1px solid var(--c-panel-bd);
+      }
+    }
+  }
+}
