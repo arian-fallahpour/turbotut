@@ -53,8 +53,9 @@ Check us out at: https://www.youtube.com/@user-fl5xn8dw4k
 | ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) | Documents and user data were stored using MongoDB and created a basis for the logic of the subscription payments model system.       |
 | ![Amazon S3](https://img.shields.io/badge/Amazon%20S3-FF9900?style=for-the-badge&logo=amazons3&logoColor=white) | User profile pictuers and course content (JSON) were stored and tracked in S3 buckets.                                               |
 | ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)         | ChatGPT was used to generate the course content faster by abiding to the JSON format the application reads off of.                   |
+| ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)          | Python was used to generate the animated math/physics videos.                                                                         |
 | Oauth                                                                                                           | Oauth was used to create a fast and easily login experience for users.                                                               |
-| ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)          | Python was used to generate the animated math/physics videos                                                                         |
+
 
 ## Technical Architecture
 
