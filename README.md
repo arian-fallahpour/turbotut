@@ -36,6 +36,8 @@
 
 The TurboTut website is accessible by visiting the following url: https://www.turbotut.com/
 
+<img width="1470" height="802" alt="Screenshot 2025-12-01 at 10 06 48 PM" src="https://github.com/user-attachments/assets/43dcef5f-e117-464b-8bca-a320230ac4b3" />
+
 ## Youtube Channel
 
 TurboTut's website is not the only place that you can learn from us! We have a dedicated Youtube channel with over **3,000,000** views and more than **2,900** subscribers!
