@@ -85,6 +85,9 @@ Documents for users, subscriptions, orders, courses, course chapters, course lec
 - **Role Management**: Manage user roles and access levels.
 - **Subscription Control**: Full access to user subscription details and payment history via Stripe integration.
 
+Admin dashboard: 
+<img width="1470" height="800" alt="Screenshot 2025-12-01 at 10 04 02 PM" src="https://github.com/user-attachments/assets/12f9eaf0-3546-45ba-80bd-a0ae4131933c" />
+
 ## How to Buy a Subscription
 
 1. Sign up for an account using **OAuth** (Google or GitHub).
